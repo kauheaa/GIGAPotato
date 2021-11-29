@@ -30,11 +30,8 @@ Try to use full words instead of abbreviations unless the name would be super lo
 - Use descriptive words instead of numbering:
     - `StartButton_Hover` instead of `StartButton_2`
 
--	No need for version numbering
-    -	There should only be one of each asset in the project folders. Old versions and duplicates should be deleted; Backups and old versions are stored in OneDrive, not the project. Placeholders and tests have their own folder.
-
 -	Only use numbering for objects that form sequences
-    -	`PathPoint01`, `PathPoint02`, `PathPoint03`...
+    -	`PathPoint_01`, `PathPoint_02`, `PathPoint_03`...
 
 ## Directory Structure
 Nothing should be placed in `Assets` folder except subfolders. If your thing doesn't have
