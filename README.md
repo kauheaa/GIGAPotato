@@ -21,9 +21,7 @@ No spaces or hyphens on file or directory names.
 
 Use descriptive names, in English.
 
-- Use full words, not abbreviations:
-    - `StartButton` instead of `StartButt`
-    - `LeftHand` instead of `LHand`
+Try to use full words instead of abbreviations unless the name would be super long so it's hard to see parts of it on project.
 
 -	Only use underscores for different aspects of same thing:
     -	`StartButton_Active` `StartButton_Inactive`
