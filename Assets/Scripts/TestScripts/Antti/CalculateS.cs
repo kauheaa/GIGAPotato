@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CalculateS : MonoBehaviour
 {
-    int firstValue, secondValue, tempValue, finalValue;
-
+    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
+    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,8 @@ public class CalculateS : MonoBehaviour
     {
         firstValue = Random.Range(1, 10);
         secondValue = Random.Range(1, 10);
+        FirstValue.text = firstValue.ToString();
+        SecondValue.text = secondValue.ToString();
 
         if (firstValue - secondValue < 0)
         {
@@ -39,27 +43,79 @@ public class CalculateS : MonoBehaviour
 
         if (operation == "Sum")
         {
+            Function.text = "+";
             finalValue = firstValue + secondValue;
+            
+            
         }
         if (operation == "Subtract")
         {
+            Function.text = "-";
             finalValue = firstValue - secondValue;
+           
         }
         if (operation == "Multiply")
         {
+            Function.text = "*";
             finalValue = firstValue * secondValue;
+           
         }
         if (operation == "Divide")
         {
+            Function.text = "/";
             finalValue = firstValue / secondValue;
+            
         }
 
-       
+        // FIRST ALTERNATIVE
+        tempValue = Random.Range(2, 20);
+        while(tempValue == finalValue)
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative1 = tempValue;
+
+        //Second Alternative
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue || (tempValue == Alternative1))
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative2 = tempValue;
+
+        tempValue = Random.Range(1, 6);
+        if(tempValue == 1)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 2)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 3)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 4)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+        }
+        if (tempValue == 5)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 6)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+        }
+
+
+
+
+
         Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
-
-
-
     }
+    
 
     public void SumFunction()
     {
@@ -79,6 +135,8 @@ public class CalculateS : MonoBehaviour
         Calculate("Divide");
     }
 
+
+   
 
 
 }
