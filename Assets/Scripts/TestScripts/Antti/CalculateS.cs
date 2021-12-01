@@ -6,20 +6,23 @@ using UnityEngine.UI;
 public class CalculateS : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3;
+    [SerializeField] public int score;
+    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;      
+    public GameObject ONE, TWO, THREE;
+ 
     
 
     // Start is called before the first frame update
     void Start()
     {
-
+        AnswerSpot.text = "?";
+        score = 0;
     }
 
     // Update is called once per frame
     void Update()
-    {        
-
-
+    {
+        scoreCount.text = score.ToString();
     }
 
     public void AddFunction()
@@ -115,28 +118,92 @@ public class CalculateS : MonoBehaviour
 
         Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
     }
-    
-
-    public void SumFunction()
+    public void AltOne()
     {
+        if (Alt1.text == finalValue.ToString())
+        {
+            ONE.gameObject.SetActive(true);
+            Correct();           
+        }
+    }
+
+        public void AltTwo()
+    {
+        
+        if(Alt2.text == finalValue.ToString())
+        {
+            TWO.gameObject.SetActive(true);
+            Correct();            
+        }
+       
+    }
+    public void AltThree()
+    {
+        if (Alt3.text == finalValue.ToString())
+        {
+            THREE.gameObject.SetActive(true);
+            Correct();            
+        }
+    }
+
+        public void SumFunction()
+    {
+        Reset();
         Calculate("Sum");
     }
 
     public void SubtractFunction()
     {
+        Reset();
         Calculate("Subtract");
     }
     public void MultiplyFunction()
     {
+        Reset();
         Calculate("Multiply");
     }
     public void DivideFunction()
     {
+        Reset();
         Calculate("Divide");
+    }
+    
+    public void Reset()
+    {
+        ONE.gameObject.SetActive(false);
+        TWO.gameObject.SetActive(false);
+        THREE.gameObject.SetActive(false);
+        AnswerSpot.text = "?";
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Alt1"))
+        {
+            Correct();
+            Debug.Log(finalValue);
+        }
+
+    }
+    public void Correct()
+    {
+        AnswerSpot.text = finalValue.ToString();
+        score = score + 1;
+        
+    }
+
+    public void SaveScore()
+    {
+        saveScore.SaveScore(this);
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadScore();        
+        score = data.score;
     }
 
 
-   
+
 
 
 }

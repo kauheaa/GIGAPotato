@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class DragUI : EventTrigger
 {
-
+    private CalculateS calculateS;
     private bool startDragging;
     // Start is called before the first frame update
     void Start()
     {
-        
+        calculateS = GetComponent<CalculateS>();
     }
 
     // Update is called once per frame
@@ -30,23 +30,14 @@ public class DragUI : EventTrigger
     {
         startDragging = false;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+   
+
+        /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("AnswerSpot"))
         {
-
             Debug.Log("Correct");
-
-        }
-    }
-
-
-        private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("AnswerSpot"))
-        {
-           
         }
        
-    }
+    }*/
 }
