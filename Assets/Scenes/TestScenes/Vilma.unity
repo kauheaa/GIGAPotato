@@ -10338,7 +10338,7 @@ MonoBehaviour:
   TWO: {fileID: 2031333085}
   THREE: {fileID: 1020647078}
   appleSpawn: {fileID: 692906330}
-  apple: {fileID: 0}
+  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
 --- !u!1 &1505371125
 GameObject:
   m_ObjectHideFlags: 0
@@ -11430,6 +11430,7 @@ GameObject:
   - component: {fileID: 1700972760}
   - component: {fileID: 1700972762}
   - component: {fileID: 1700972761}
+  - component: {fileID: 1700972763}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -11494,6 +11495,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700972759}
   m_CullTransparentMesh: 1
+--- !u!58 &1700972763
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700972759}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.3451233, y: 28.553146}
+  serializedVersion: 2
+  m_Radius: 194.0272
 --- !u!1 &1708108600
 GameObject:
   m_ObjectHideFlags: 0
