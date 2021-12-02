@@ -8,7 +8,8 @@ public class CalculateS : MonoBehaviour
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
     [SerializeField] public int score;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;      
-    public GameObject ONE, TWO, THREE;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple;
+    
  
     
 
@@ -46,6 +47,7 @@ public class CalculateS : MonoBehaviour
 
         if (operation == "Sum")
         {
+           
             Function.text = "+";
             finalValue = firstValue + secondValue;
             
@@ -150,6 +152,7 @@ public class CalculateS : MonoBehaviour
     {
         Reset();
         Calculate("Sum");
+        AppleDrop();
     }
 
     public void SubtractFunction()
@@ -200,6 +203,12 @@ public class CalculateS : MonoBehaviour
     {
         scoreData data = saveScore.LoadScore();        
         score = data.score;
+    }
+
+    public void AppleDrop()
+    {
+        GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+        projectile.GetComponent<Rigidbody>();
     }
 
 
