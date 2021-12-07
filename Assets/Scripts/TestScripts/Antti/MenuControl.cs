@@ -11,16 +11,16 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform farmWorld;
     [SerializeField] private Transform additionCat;
     [SerializeField] private Transform substractCat;
-    [SerializeField] private Transform level1;
-    [SerializeField] private Transform level2;
-    [SerializeField] private Transform level3;
-    [SerializeField] private Transform level4;
-    [SerializeField] private Transform level5;
-    [SerializeField] private Transform level6;
-    [SerializeField] private Transform level7;
-    [SerializeField] private Transform level8;
-    [SerializeField] private Transform level9;
-    [SerializeField] private Transform level10;
+    [SerializeField] private Transform countingCat;
+    [SerializeField] private Transform addLevel1;
+    [SerializeField] private Transform addLevel2;
+    [SerializeField] private Transform addLevel3;
+    [SerializeField] private Transform subLevel1;
+    [SerializeField] private Transform subLevel2;
+    [SerializeField] private Transform subLevel3;
+    [SerializeField] private Transform countLevel1;
+    [SerializeField] private Transform countLevel2;
+    [SerializeField] private Transform countLevel3;
     [SerializeField] private Transform level11;
 
 
@@ -37,11 +37,11 @@ public class MenuControl : MonoBehaviour
         PauseGame();
     }
 
-    public void StickerButtonPressed()
+    public void OpenStickerBook()
     {
         stickerBook.gameObject.SetActive(true);
     }
-    public void CloseSticker()
+    public void CloseStickerBook()
     {
         stickerBook.gameObject.SetActive(false);
     }
@@ -71,91 +71,83 @@ public class MenuControl : MonoBehaviour
     }
     public void OpenCountingCategory()
     {
-        substractCat.gameObject.SetActive(true);
+        countingCat.gameObject.SetActive(true);
     }
     public void CloseCountingCategory()
     {
-        substractCat.gameObject.SetActive(false);
+        countingCat.gameObject.SetActive(false);
     }
-    public void OpenLevel1()
+    public void OpenAddLevel1()
     {
-        level1.gameObject.SetActive(true);
+        addLevel1.gameObject.SetActive(true);
     }
-    public void CloseLevel1()
+    public void CloseAddLevel1()
     {
-        level1.gameObject.SetActive(false);
+        addLevel1.gameObject.SetActive(false);
     }
-    public void OpenLevel2()
+    public void OpenAddLevel2()
     {
-        level2.gameObject.SetActive(true);
+        addLevel2.gameObject.SetActive(true);
     }
-    public void CloseLevel2()
+    public void CloseAddLevel2()
     {
-        level2.gameObject.SetActive(false);
+        addLevel2.gameObject.SetActive(false);
     }
-    public void OpenLevel3()
+    public void OpenAddLevel3()
     {
-        level3.gameObject.SetActive(true);
+        addLevel3.gameObject.SetActive(true);
     }
-    public void CloseLevel3()
+    public void CloseAddLevel3()
     {
-        level3.gameObject.SetActive(false);
+        addLevel3.gameObject.SetActive(false);
     }
-    public void OpenLevel4()
+    public void OpenSubLevel1()
     {
-        level4.gameObject.SetActive(true);
+        subLevel1.gameObject.SetActive(true);
     }
-    public void CloseLevel4()
+    public void CloseSubLevel1()
     {
-        level4.gameObject.SetActive(false);
+        subLevel1.gameObject.SetActive(false);
     }
-    public void OpenLevel5()
+    public void OpenSubLevel2()
     {
-        level5.gameObject.SetActive(true);
+        subLevel2.gameObject.SetActive(true);
     }
-    public void CloseLevel5()
+    public void CloseSubLevel2()
     {
-        level5.gameObject.SetActive(false);
+        subLevel2.gameObject.SetActive(false);
     }
-    public void OpenLevel6()
+    public void OpenSubLevel3()
     {
-        level6.gameObject.SetActive(true);
+        subLevel3.gameObject.SetActive(true);
     }
-    public void CloseLevel6()
+    public void CloseSubLevel3()
     {
-        level6.gameObject.SetActive(false);
+        subLevel3.gameObject.SetActive(false);
     }
-    public void OpenLevel7()
+    public void OpenCountLevel1()
     {
-        level7.gameObject.SetActive(true);
+        countLevel1.gameObject.SetActive(true);
     }
-    public void CloseLevel7()
+    public void CloseCountLevel1()
     {
-        level7.gameObject.SetActive(false);
+        countLevel1.gameObject.SetActive(false);
     }
-    public void OpenLevel8()
+    public void OpenCountLevel2()
     {
-        level8.gameObject.SetActive(true);
+        countLevel2.gameObject.SetActive(true);
     }
-    public void CloseLevel8()
+    public void CloseCountLevel2()
     {
-        level8.gameObject.SetActive(false);
+        countLevel2.gameObject.SetActive(false);
     }
-    public void OpenLevel9()
+    public void OpenCountLevel3()
     {
-        level9.gameObject.SetActive(true);
+        countLevel3.gameObject.SetActive(true);
     }
-    public void CloseLevel9()
+    public void CloseCountLevel3()
     {
-        level9.gameObject.SetActive(false);
-    }
-    public void OpenLevel10()
-    {
-        level10.gameObject.SetActive(true);
-    }
-    public void CloseLevel10()
-    {
-        level10.gameObject.SetActive(false);
+        countLevel3.gameObject.SetActive(false);
     }
     public void OpenLevel11()
     {
