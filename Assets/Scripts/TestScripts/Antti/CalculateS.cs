@@ -126,7 +126,8 @@ public class CalculateS : MonoBehaviour
         if (Alt1.text == finalValue.ToString())
         {
             ONE.gameObject.SetActive(true);
-            Correct();           
+            Correct();
+        
         }
     }
 
@@ -136,16 +137,18 @@ public class CalculateS : MonoBehaviour
         if(Alt2.text == finalValue.ToString())
         {
             TWO.gameObject.SetActive(true);
-            Correct();            
-        }
+            Correct();
        
+        }
+
     }
     public void AltThree()
     {
         if (Alt3.text == finalValue.ToString())
         {
             THREE.gameObject.SetActive(true);
-            Correct();            
+            Correct();
+      
         }
     }
 
@@ -194,9 +197,11 @@ public class CalculateS : MonoBehaviour
     }
     public void Correct()
     {
+       
         AnswerSpot.text = finalValue.ToString();
-        score = score + 1;
-        
+        score = score + 1;      
+
+
     }
 
     public void SaveScore()
