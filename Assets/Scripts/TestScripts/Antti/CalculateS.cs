@@ -18,6 +18,7 @@ public class CalculateS : MonoBehaviour
     {
         AnswerSpot.text = "?";
         score = 0;
+        
     }
 
     // Update is called once per frame
@@ -159,16 +160,19 @@ public class CalculateS : MonoBehaviour
     {
         Reset();
         Calculate("Subtract");
+        AppleDrop();
     }
     public void MultiplyFunction()
     {
         Reset();
         Calculate("Multiply");
+        AppleDrop();    
     }
     public void DivideFunction()
     {
         Reset();
         Calculate("Divide");
+        AppleDrop();
     }
     
     public void Reset()
@@ -207,10 +211,491 @@ public class CalculateS : MonoBehaviour
 
     public void AppleDrop()
     {
-        GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
-        projectile.GetComponent<Rigidbody>();
+        if (finalValue == 1)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 2)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 3)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>(); 
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 4)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 5)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 6)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 7)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 8)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 9)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+
+        }
+        if (finalValue == 10)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 11)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 12)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 13)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 14)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile14 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+    
+        if (finalValue == 15)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile15 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile14 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 16)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile16 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile15 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile14 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+            if (finalValue == 17)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+                GameObject projectile17 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile16 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile15 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile14 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+                GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+                projectile.GetComponent<Rigidbody>();
+            }
+        if (finalValue == 18)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile18 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile17 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile16 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile15 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile14 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 19)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile19 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile18 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile17 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile16 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile15 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile14 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
+        if (finalValue == 20)
+        {
+            GameObject projectile = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile20 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile19 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile18 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile17 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile16 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile15 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile14 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile13 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile12 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile11 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile10 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile9 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile8 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile7 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile6 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile5 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile4 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile2 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+            GameObject projectile3 = Instantiate(apple, appleSpawn.transform.position, Quaternion.identity);
+            projectile.GetComponent<Rigidbody>();
+        }
     }
 
+   
 
 
 
