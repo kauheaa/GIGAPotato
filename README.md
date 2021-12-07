@@ -21,9 +21,7 @@ No spaces or hyphens on file or directory names.
 
 Use descriptive names, in English.
 
-- Use full words, not abbreviations:
-    - `StartButton` instead of `StartButt`
-    - `LeftHand` instead of `LHand`
+Try to use full words instead of abbreviations unless the name would be super long so it's hard to see parts of it on project.
 
 -	Only use underscores for different aspects of same thing:
     -	`StartButton_Active` `StartButton_Inactive`
@@ -32,11 +30,8 @@ Use descriptive names, in English.
 - Use descriptive words instead of numbering:
     - `StartButton_Hover` instead of `StartButton_2`
 
--	No need for version numbering
-    -	There should only be one of each asset in the project folders. Old versions and duplicates should be deleted; Backups and old versions are stored in OneDrive, not the project. Placeholders and tests have their own folder.
-
 -	Only use numbering for objects that form sequences
-    -	`PathPoint01`, `PathPoint02`, `PathPoint03`...
+    -	`PathPoint_01`, `PathPoint_02`, `PathPoint_03`...
 
 ## Directory Structure
 Nothing should be placed in `Assets` folder except subfolders. If your thing doesn't have
