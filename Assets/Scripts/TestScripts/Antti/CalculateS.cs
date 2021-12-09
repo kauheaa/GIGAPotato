@@ -18,13 +18,14 @@ public class CalculateS : MonoBehaviour
     {
         AnswerSpot.text = "?";
         score = 0;
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreCount.text = score.ToString();
+        
     }
 
     public void AddFunction()
@@ -199,7 +200,9 @@ public class CalculateS : MonoBehaviour
     {
        
         AnswerSpot.text = finalValue.ToString();
-        score = score + 1;      
+        score = score + 1;
+        scoreCount.text = score.ToString();
+
 
 
     }
