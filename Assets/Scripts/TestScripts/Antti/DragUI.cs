@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DragUI : EventTrigger
 {
-    private CalculateS calculateS;
+    /*private CalculateS calculateS;
     private bool startDragging;
     // Start is called before the first frame update
     void Start()
