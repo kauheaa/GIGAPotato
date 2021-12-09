@@ -7,8 +7,9 @@ public class CalculateS : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
     [SerializeField] public int score;
-    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;      
-    public GameObject ONE, TWO, THREE, appleSpawn, apple;
+    
+    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne;
     
  
     
@@ -17,16 +18,23 @@ public class CalculateS : MonoBehaviour
     void Start()
     {
         AnswerSpot.text = "?";
-        score = 0;
+        score = 0;        
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        
+        if (score >= 5)
+        {
+            stickerOne.gameObject.SetActive(true);
+        }
+
     }
+   
 
     public void AddFunction()
     {
@@ -200,11 +208,12 @@ public class CalculateS : MonoBehaviour
     {
        
         AnswerSpot.text = finalValue.ToString();
-        score = score + 1;
+        Score();
         scoreCount.text = score.ToString();
-
-
-
+    }
+    public void Score()
+    {
+        score += 1;
     }
 
     public void SaveScore()
@@ -216,6 +225,7 @@ public class CalculateS : MonoBehaviour
         scoreData data = saveScore.LoadScore();        
         score = data.score;
     }
+
 
     public void AppleDrop()
     {
