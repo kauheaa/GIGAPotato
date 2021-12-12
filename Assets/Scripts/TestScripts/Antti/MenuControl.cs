@@ -6,8 +6,11 @@ using UnityEngine.UI;
 
 public class MenuControl : MonoBehaviour
 {    
-    [SerializeField] private Transform settingsMenu;   
+    [SerializeField] private Transform settingsMenu;
     [SerializeField] private Transform stickerBook;
+    [SerializeField] private Transform stickerSpreadFirst;
+    [SerializeField] private Transform stickerSpreadMid1;
+    [SerializeField] private Transform stickerSpreadLast;
     [SerializeField] private Transform farmWorld;
     [SerializeField] private Transform additionCat;
     [SerializeField] private Transform substractCat;
@@ -46,6 +49,7 @@ public class MenuControl : MonoBehaviour
         PauseGame();
     }
 
+    /*Stickerbook related buttons*/
     public void OpenStickerBook()
     {
         stickerBook.gameObject.SetActive(true);
@@ -54,6 +58,32 @@ public class MenuControl : MonoBehaviour
     {
         stickerBook.gameObject.SetActive(false);
     }
+    public void OpenStickerSpreadFirst()
+    {
+        stickerSpreadFirst.gameObject.SetActive(true);
+    }
+    public void CloseStickerSpreadFirst()
+    {
+        stickerSpreadFirst.gameObject.SetActive(false);
+    }
+    public void OpenStickerSpreadMid1()
+    {
+        stickerSpreadMid1.gameObject.SetActive(true);
+    }
+    public void CloseStickerSpreadMid1 ()
+    {
+        stickerSpreadMid1.gameObject.SetActive(false);
+    }
+    public void OpenStickerSpreadLast()
+    {
+        stickerSpreadLast.gameObject.SetActive(true);
+    }
+    public void CloseStickerSpreadLast()
+    {
+        stickerSpreadLast.gameObject.SetActive(false);
+    }
+
+
     public void OpenFarmWorld()
     {
         farmWorld.gameObject.SetActive(true);
