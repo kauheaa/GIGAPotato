@@ -1050,8 +1050,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1162996276}
-        m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
+      - m_Target: {fileID: 1162996278}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
         m_MethodName: AltOne
         m_Mode: 1
         m_Arguments:
@@ -1263,8 +1263,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1162996276}
-        m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
+      - m_Target: {fileID: 1162996278}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
         m_MethodName: AltTwo
         m_Mode: 1
         m_Arguments:
@@ -2481,6 +2481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  score2: 0
+  score3: 0
   FirstValue: {fileID: 0}
   SecondValue: {fileID: 0}
   Function: {fileID: 0}
@@ -2494,6 +2496,9 @@ MonoBehaviour:
   THREE: {fileID: 0}
   appleSpawn: {fileID: 0}
   apple: {fileID: 0}
+  stickerOne: {fileID: 0}
+  stickerTwo: {fileID: 0}
+  stickerThree: {fileID: 0}
 --- !u!1 &860279324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,8 +3037,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1162996276}
-        m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
+      - m_Target: {fileID: 1162996278}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
         m_MethodName: AltThree
         m_Mode: 1
         m_Arguments:
@@ -3545,6 +3550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162996277}
   - component: {fileID: 1162996276}
+  - component: {fileID: 1162996278}
   m_Layer: 0
   m_Name: Calculate
   m_TagString: Untagged
@@ -3559,9 +3565,54 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162996275}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8ed6e5d6b7c2e54aba8cad28dd7ddec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  score2: 0
+  score3: 0
+  FirstValue: {fileID: 2089052018}
+  SecondValue: {fileID: 1087390928}
+  Function: {fileID: 254215290}
+  Alt1: {fileID: 1870903154}
+  Alt2: {fileID: 1710580668}
+  Alt3: {fileID: 951915306}
+  AnswerSpot: {fileID: 2001567720}
+  scoreCount: {fileID: 1438423865}
+  ONE: {fileID: 1211602254}
+  TWO: {fileID: 1310870070}
+  THREE: {fileID: 53115064}
+  appleSpawn: {fileID: 1555829178}
+  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
+  stickerOne: {fileID: 0}
+  stickerTwo: {fileID: 0}
+  stickerThree: {fileID: 0}
+--- !u!4 &1162996277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162996275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162996278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162996275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
@@ -3578,20 +3629,12 @@ MonoBehaviour:
   THREE: {fileID: 53115064}
   appleSpawn: {fileID: 1555829178}
   apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
---- !u!4 &1162996277
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162996275}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  stickerOne: {fileID: 0}
+  stickerTwo: {fileID: 0}
+  stickerThree: {fileID: 0}
+  button1: {fileID: 321965434}
+  button2: {fileID: 374105448}
+  button3: {fileID: 1046122011}
 --- !u!1 &1171705686
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,9 +4084,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1162996276}
-        m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-        m_MethodName: SumFunction
+      - m_Target: {fileID: 1162996278}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: StartFarm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6000,6 +6043,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  score2: 0
+  score3: 0
   FirstValue: {fileID: 0}
   SecondValue: {fileID: 0}
   Function: {fileID: 0}
@@ -6013,6 +6058,9 @@ MonoBehaviour:
   THREE: {fileID: 0}
   appleSpawn: {fileID: 0}
   apple: {fileID: 0}
+  stickerOne: {fileID: 0}
+  stickerTwo: {fileID: 0}
+  stickerThree: {fileID: 0}
 --- !u!61 &1853568190
 BoxCollider2D:
   m_ObjectHideFlags: 0
