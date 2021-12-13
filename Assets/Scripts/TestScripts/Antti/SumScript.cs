@@ -7,15 +7,27 @@ public class SumScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
     [SerializeField] public int sumScore = 0;
+    [SerializeField] public int subScore = 0;
+    [SerializeField] public int divScore = 0;
+    [SerializeField] public int multScore = 0;
+
+    private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
     public Button button1, button2, button3;
     [SerializeField] private Transform switchOff, switchOn;
+    DivideScript div;
+    MultiplyScript mult;
+    SubScript sub;
     
 
     private void Start()
     {
         AnswerSpot.text = "?";
+        subScore = sub.subScore;
+        multScore = mult.multScore;
+        divScore = div.divScore;
+        
     }
 
     // Update is called once per frame
@@ -118,15 +130,19 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
 public void AltTwo()
 {
 
-    if (Alt2.text == finalValue.ToString())
-    {
-        TWO.gameObject.SetActive(true);
+        if (Alt2.text == finalValue.ToString())
+        {
+            TWO.gameObject.SetActive(true);
             button2.interactable = false;
             StartCoroutine(Correct());
-
         }
+        if(Alt2.text != finalValue.ToString())
+        {
+            
+        }
+       
 
-}
+    }
 public void AltThree()
 {
     if (Alt3.text == finalValue.ToString())
@@ -241,6 +257,13 @@ public void ResetV()
     {
         scoreData data = saveScore.LoadSumScore();
         sumScore = data.sumScore;
+        subScore = data.subScore;
+        multScore = data.multScore;
+        divScore = data.divScore;
+    }
+    public void ResetScore()
+    {
+         sumScore = 0;
     }
 
 }

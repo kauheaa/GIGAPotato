@@ -6,15 +6,25 @@ using UnityEngine.UI;
 public class DivideScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
+    [SerializeField] public int sumScore = 0;
+    [SerializeField] public int subScore = 0;
     [SerializeField] public int divScore = 0;
+    [SerializeField] public int multScore = 0;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
     public Button button1, button2, button3;
+    SumScript sum;
+    MultiplyScript mult;
+    SubScript sub;
+
 
 
     private void Start()
     {
         AnswerSpot.text = "?";
+        sumScore = sum.subScore;
+        subScore = sub.subScore;
+        multScore = mult.divScore;
     }
 
     public void DivFarm()
@@ -197,6 +207,18 @@ public class DivideScript : MonoBehaviour
     {
         ResetV();
         DivSpace();
+    }
+    public void SaveScore()
+    {
+        saveScore.SaveSumScore(sum);
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadSumScore();
+        sumScore = data.sumScore;
+        subScore = data.subScore;
+        multScore = data.multScore;
+        divScore = data.divScore;
     }
 
 }

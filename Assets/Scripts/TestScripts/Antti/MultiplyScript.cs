@@ -6,15 +6,24 @@ using UnityEngine.UI;
 public class MultiplyScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
+    [SerializeField] public int sumScore = 0;
+    [SerializeField] public int subScore = 0;
     [SerializeField] public int divScore = 0;
+    [SerializeField] public int multScore = 0;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
     public Button button1, button2, button3;
+    DivideScript div;
+    SubScript sub;
+    SumScript sum;
 
 
     private void Start()
     {
         AnswerSpot.text = "?";
+        sumScore = sum.subScore;
+        subScore = sub.subScore;
+        divScore = div.divScore;
     }
 
     public void MultFarm()
@@ -133,7 +142,7 @@ public class MultiplyScript : MonoBehaviour
     {
         Score();
         AnswerSpot.text = finalValue.ToString();
-        scoreCount.text = divScore.ToString();
+        scoreCount.text = multScore.ToString();
         yield return new WaitForSeconds(1f);
         ResetV();
 
@@ -143,7 +152,7 @@ public class MultiplyScript : MonoBehaviour
     }
     void Score()
     {
-        divScore += 1;
+        multScore += 1;
     }
 
     public void MultJungle()
@@ -197,6 +206,18 @@ public class MultiplyScript : MonoBehaviour
     {
         ResetV();
         MultSpace();
+    }
+    public void SaveScore()
+    {
+        saveScore.SaveSumScore(sum);
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadSumScore();
+        sumScore = data.sumScore;
+        subScore = data.subScore;
+        multScore = data.multScore;
+        divScore = data.divScore;
     }
 
 }

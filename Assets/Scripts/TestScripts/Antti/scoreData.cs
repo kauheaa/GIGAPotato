@@ -11,6 +11,9 @@ public class scoreData
     public scoreData(SumScript sum)
     {
         sumScore = sum.sumScore;
+        subScore = sum.subScore;
+        divScore = sum.divScore;
+        multScore = sum.multScore;
 
 
     }
