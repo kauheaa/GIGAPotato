@@ -233,15 +233,15 @@ public class CalculateS : MonoBehaviour
         score += 1;
     }
 
-    public void SaveScore()
+    /*public void SaveScore()
     {
-        saveScore.SaveScore(this);
+        saveScore.SaveSumScore(S);
     }
     public void LoadScore()
     {
-        scoreData data = saveScore.LoadScore();        
-        score = data.score;
-    }
+        scoreData data = saveScore.LoadSumScore();        
+        score = data.sumScore;
+    }*/
 
 
     public void AppleDrop()

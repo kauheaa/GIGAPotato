@@ -10,6 +10,7 @@ public class SumScript : MonoBehaviour
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
     public Button button1, button2, button3;
+    [SerializeField] private Transform farmWorld;
     
 
     private void Start()
@@ -120,6 +121,10 @@ public void AltThree()
 }
 public void ResetV()
     {
+        if(sumScore == 5)
+        {
+            farmWorld.gameObject.SetActive(false);
+        }
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
         TWO.gameObject.SetActive(false);
@@ -197,6 +202,15 @@ public void ResetV()
     {
         ResetV();
         SumSpace();
+    }
+    public void SaveScore()
+    {
+        saveScore.SaveSumScore(this);
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadSumScore();
+        sumScore = data.sumScore;
     }
 
 }

@@ -17,7 +17,7 @@ public class saveScore
         stream.Close();
         Debug.Log("Save sumscore");
     }
-    public static void SaveSubScore(SubScript sub)
+    /*public static void SaveSubScore(SubScript sub)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/subscore.txt";
@@ -29,7 +29,7 @@ public class saveScore
         stream.Close();
         Debug.Log("Save subscore");
     }
-
+    */
     public static scoreData LoadSumScore()
     {
         string path = Application.persistentDataPath + "/sumscore.txt";
@@ -52,7 +52,7 @@ public class saveScore
         }
 
     }
-    public static scoreData LoadSubScore()
+    /*public static scoreData LoadSubScore()
     {
         string path = Application.persistentDataPath + "/sumscore.txt";
         if (File.Exists(path))
@@ -73,5 +73,5 @@ public class saveScore
             return null;
         }
 
-    }
+    }*/
 }
