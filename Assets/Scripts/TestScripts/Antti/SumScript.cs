@@ -18,6 +18,25 @@ public class SumScript : MonoBehaviour
         AnswerSpot.text = "?";
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        //   score = int.Parse(scoreCount.text);
+
+        if (sumScore >= 5)
+        {
+            stickerOne.gameObject.SetActive(true);
+        }
+        if (sumScore >= 10)
+        {
+            stickerTwo.gameObject.SetActive(true);
+        }
+        if (sumScore >= 15)
+        {
+            stickerThree.gameObject.SetActive(true);
+        }
+    }
+
     public void SumFarm()
     {
         
@@ -123,8 +142,8 @@ public void ResetV()
     {
         if(sumScore == 5)
         {
-            switchOn.gameObject.SetActive(false);
-            switchOff.gameObject.SetActive(true);
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
         }
         if (sumScore == 10)
         {

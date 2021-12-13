@@ -30,7 +30,7 @@ public class CalculateS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = int.Parse(scoreCount.text);
+     //   score = int.Parse(scoreCount.text);
 
         if (score >= 5)
         {
