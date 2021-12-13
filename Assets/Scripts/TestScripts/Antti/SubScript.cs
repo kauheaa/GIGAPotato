@@ -6,15 +6,43 @@ using UnityEngine.UI;
 public class SubScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
+    [SerializeField] public int sumScore = 0;
     [SerializeField] public int subScore = 0;
+    [SerializeField] public int divScore = 0;
+    [SerializeField] public int multScore = 0;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
     public Button button1, button2, button3;
+    DivideScript div;
+    MultiplyScript mult;
+    SumScript sum;
+
 
 
     private void Start()
     {
         AnswerSpot.text = "?";
+        sumScore = sum.subScore;
+        multScore = mult.multScore;
+        divScore = div.divScore;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        //   score = int.Parse(scoreCount.text);
+
+        if (subScore >= 5)
+        {
+            stickerOne.gameObject.SetActive(true);
+        }
+        if (subScore >= 10)
+        {
+            stickerTwo.gameObject.SetActive(true);
+        }
+        if (subScore >= 15)
+        {
+            stickerThree.gameObject.SetActive(true);
+        }
     }
 
     public void SubFarm()
@@ -197,6 +225,18 @@ public class SubScript : MonoBehaviour
     {
         ResetV();
         SubSpace();
+    }
+    public void SaveScore()
+    {
+        saveScore.SaveSumScore(sum);
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadSumScore();
+        sumScore = data.sumScore;
+        subScore = data.subScore;
+        multScore = data.multScore;
+        divScore = data.divScore;
     }
 
 }
