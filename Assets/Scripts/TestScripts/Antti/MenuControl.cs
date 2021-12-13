@@ -17,10 +17,13 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform countingCat;
     [SerializeField] private Transform addLevel1Start;
     [SerializeField] private Transform addLevel1;
+    [SerializeField] private Transform addLevel1End;
     [SerializeField] private Transform addLevel2Start;
     [SerializeField] private Transform addLevel2;
+    [SerializeField] private Transform addLevel2End;
     [SerializeField] private Transform addLevel3Start;
     [SerializeField] private Transform addLevel3;
+    [SerializeField] private Transform addLevel3End;
     [SerializeField] private Transform subLevel1Start;
     [SerializeField] private Transform subLevel1;
     [SerializeField] private Transform subLevel2Start;
@@ -136,6 +139,14 @@ public class MenuControl : MonoBehaviour
     {
         addLevel1.gameObject.SetActive(false);
     }
+    public void OpenAddLevel1End()
+    {
+        addLevel1End.gameObject.SetActive(true);
+    }
+    public void CloseAddLevel1End()
+    {
+        addLevel1End.gameObject.SetActive(false);
+    }
 
     /*Farm Addition level 2 buttons*/
     public void OpenAddLevel2Start()
@@ -154,6 +165,14 @@ public class MenuControl : MonoBehaviour
     {
         addLevel2.gameObject.SetActive(false);
     }
+    public void OpenAddLevel2End()
+    {
+        addLevel2End.gameObject.SetActive(true);
+    }
+    public void CloseAddLevel2End()
+    {
+        addLevel2End.gameObject.SetActive(false);
+    }
 
     /*Farm Addition level 3 buttons*/
     public void OpenAddLevel3Start()
@@ -171,6 +190,14 @@ public class MenuControl : MonoBehaviour
     public void CloseAddLevel3()
     {
         addLevel3.gameObject.SetActive(false);
+    }
+    public void OpenAddLevel3End()
+    {
+        addLevel3End.gameObject.SetActive(true);
+    }
+    public void CloseAddLevel3End()
+    {
+        addLevel3End.gameObject.SetActive(false);
     }
 
     /*Farm Subtraction level 1 buttons*/
