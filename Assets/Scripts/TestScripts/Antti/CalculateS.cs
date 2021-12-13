@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class CalculateS : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    [SerializeField] public int score;
-    
+    [SerializeField] public int score = 0;
+    [SerializeField] public int score2 = 0;
+    [SerializeField] public int score3 = 0;
+
+
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
     
  
     
@@ -17,8 +20,9 @@ public class CalculateS : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AnswerSpot.text = "?";
-        score = 0;        
+        AnswerSpot.text = "?";    
+      
+        
 
 
     }
@@ -26,13 +30,24 @@ public class CalculateS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+        score = int.Parse(scoreCount.text);
+
         if (score >= 5)
         {
             stickerOne.gameObject.SetActive(true);
         }
-
+        if (score2 >= 5)
+        {
+            stickerTwo.gameObject.SetActive(true);
+        }
+        if (score3 >= 5)
+        {
+            stickerThree.gameObject.SetActive(true);
+        }
+        if (score == 6)
+        {
+            score -= 5;
+        }
     }
    
 
@@ -210,21 +225,23 @@ public class CalculateS : MonoBehaviour
         AnswerSpot.text = finalValue.ToString();
         Score();
         scoreCount.text = score.ToString();
+
+        
     }
     public void Score()
     {
         score += 1;
     }
 
-    public void SaveScore()
+    /*public void SaveScore()
     {
-        saveScore.SaveScore(this);
+        saveScore.SaveSumScore(S);
     }
     public void LoadScore()
     {
-        scoreData data = saveScore.LoadScore();        
-        score = data.score;
-    }
+        scoreData data = saveScore.LoadSumScore();        
+        score = data.sumScore;
+    }*/
 
 
     public void AppleDrop()

@@ -5,22 +5,34 @@ using UnityEngine;
 
 public class saveScore 
 {
-    public static void SaveScore(CalculateS calc)
+    public static void SaveSumScore(SumScript sum)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/score.txt";
+        string path = Application.persistentDataPath + "/sumscore.txt";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-       scoreData data = new scoreData(calc);
+       scoreData data = new scoreData(sum);
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save score");
+        Debug.Log("Save sumscore");
     }
-
-    public static scoreData LoadScore()
+    /*public static void SaveSubScore(SubScript sub)
     {
-        string path = Application.persistentDataPath + "/score.txt";
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/subscore.txt";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        scoreData data1 = new scoreData(sub);
+
+        formatter.Serialize(stream, data1);
+        stream.Close();
+        Debug.Log("Save subscore");
+    }
+    */
+    public static scoreData LoadSumScore()
+    {
+        string path = Application.persistentDataPath + "/sumscore.txt";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -40,4 +52,26 @@ public class saveScore
         }
 
     }
+    /*public static scoreData LoadSubScore()
+    {
+        string path = Application.persistentDataPath + "/sumscore.txt";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            scoreData data1 = formatter.Deserialize(stream) as scoreData;
+            stream.Close();
+            Debug.Log("Load score");
+            return data;
+
+
+        }
+        else
+        {
+            Debug.LogError("Save file not found in" + path);
+            return null;
+        }
+
+    }*/
 }
