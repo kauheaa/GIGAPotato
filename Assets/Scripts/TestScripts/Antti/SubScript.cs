@@ -260,7 +260,7 @@ public class SubScript : MonoBehaviour
 
     public void ResetScore()
     {
-        sumScore = 0;
+        subScore = 0;
         scoreCount.text = sumScore.ToString();
     }
 
