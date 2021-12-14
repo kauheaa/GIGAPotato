@@ -15,32 +15,41 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform additionCat;
     [SerializeField] private Transform substractCat;
     [SerializeField] private Transform countingCat;
+    [SerializeField] private Transform addLevel1Canvas;
     [SerializeField] private Transform addLevel1Start;
-    [SerializeField] private Transform addLevel1;
+    [SerializeField] private Transform addLevel1Level;
     [SerializeField] private Transform addLevel1End;
+    [SerializeField] private Transform addLevel2Canvas;
     [SerializeField] private Transform addLevel2Start;
-    [SerializeField] private Transform addLevel2;
+    [SerializeField] private Transform addLevel2Level;
     [SerializeField] private Transform addLevel2End;
+    [SerializeField] private Transform addLevel3Canvas;
     [SerializeField] private Transform addLevel3Start;
-    [SerializeField] private Transform addLevel3;
+    [SerializeField] private Transform addLevel3Level;
     [SerializeField] private Transform addLevel3End;
+    [SerializeField] private Transform subLevel1Canvas;
     [SerializeField] private Transform subLevel1Start;
-    [SerializeField] private Transform subLevel1;
+    [SerializeField] private Transform subLevel1Level;
     [SerializeField] private Transform subLevel1End;
+    [SerializeField] private Transform subLevel2Canvas;
     [SerializeField] private Transform subLevel2Start;
-    [SerializeField] private Transform subLevel2;
+    [SerializeField] private Transform subLevel2Level;
     [SerializeField] private Transform subLevel2End;
+    [SerializeField] private Transform subLevel3Canvas;
     [SerializeField] private Transform subLevel3Start;
-    [SerializeField] private Transform subLevel3;
+    [SerializeField] private Transform subLevel3Level;
     [SerializeField] private Transform subLevel3End;
+    [SerializeField] private Transform countLevel1Canvas;
     [SerializeField] private Transform countLevel1Start;
-    [SerializeField] private Transform countLevel1;
+    [SerializeField] private Transform countLevel1Level;
     [SerializeField] private Transform countLevel1End;
+    [SerializeField] private Transform countLevel2Canvas;
     [SerializeField] private Transform countLevel2Start;
-    [SerializeField] private Transform countLevel2;
+    [SerializeField] private Transform countLevel2Level;
     [SerializeField] private Transform countLevel2End;
+    [SerializeField] private Transform countLevel3Canvas;
     [SerializeField] private Transform countLevel3Start;
-    [SerializeField] private Transform countLevel3;
+    [SerializeField] private Transform countLevel3Level;
     [SerializeField] private Transform countLevel3End;
     [SerializeField] private Transform levelExitWarning;
 
@@ -129,6 +138,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Addition level 1 buttons*/
+    public void OpenAddLevel1Canvas()
+    {
+        addLevel1Canvas.gameObject.SetActive(true);
+    }
+    public void CloseAddLevel1Canvas()
+    {
+        addLevel1Canvas.gameObject.SetActive(false);
+    }
     public void OpenAddLevel1Start()
     {
         addLevel1Start.gameObject.SetActive(true);
@@ -137,13 +154,13 @@ public class MenuControl : MonoBehaviour
     {
         addLevel1Start.gameObject.SetActive(false);
     }
-    public void OpenAddLevel1()
+    public void OpenAddLevel1Level()
     {
-        addLevel1.gameObject.SetActive(true);
+        addLevel1Level.gameObject.SetActive(true);
     }
-    public void CloseAddLevel1()
+    public void CloseAddLevel1Level()
     {
-        addLevel1.gameObject.SetActive(false);
+        addLevel1Level.gameObject.SetActive(false);
     }
     public void OpenAddLevel1End()
     {
@@ -155,6 +172,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Addition level 2 buttons*/
+    public void OpenAddLevel2Canvas()
+    {
+        addLevel2Canvas.gameObject.SetActive(true);
+    }
+    public void CloseAddLevel2Canvas()
+    {
+        addLevel2Canvas.gameObject.SetActive(false);
+    }
     public void OpenAddLevel2Start()
     {
         addLevel2Start.gameObject.SetActive(true);
@@ -163,13 +188,13 @@ public class MenuControl : MonoBehaviour
     {
         addLevel2Start.gameObject.SetActive(false);
     }
-    public void OpenAddLevel2()
+    public void OpenAddLevel2Level()
     {
-        addLevel2.gameObject.SetActive(true);
+        addLevel2Level.gameObject.SetActive(true);
     }
-    public void CloseAddLevel2()
+    public void CloseAddLevel2Level()
     {
-        addLevel2.gameObject.SetActive(false);
+        addLevel2Level.gameObject.SetActive(false);
     }
     public void OpenAddLevel2End()
     {
@@ -181,6 +206,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Addition level 3 buttons*/
+    public void OpenAddLevel3Canvas()
+    {
+        addLevel3Canvas.gameObject.SetActive(true);
+    }
+    public void CloseAddLevel3Canvas()
+    {
+        addLevel3Canvas.gameObject.SetActive(false);
+    }
     public void OpenAddLevel3Start()
     {
         addLevel3Start.gameObject.SetActive(true);
@@ -189,13 +222,13 @@ public class MenuControl : MonoBehaviour
     {
         addLevel3Start.gameObject.SetActive(false);
     }
-    public void OpenAddLevel3()
+    public void OpenAddLevel3Level()
     {
-        addLevel3.gameObject.SetActive(true);
+        addLevel3Level.gameObject.SetActive(true);
     }
-    public void CloseAddLevel3()
+    public void CloseAddLevel3Level()
     {
-        addLevel3.gameObject.SetActive(false);
+        addLevel3Level.gameObject.SetActive(false);
     }
     public void OpenAddLevel3End()
     {
@@ -207,6 +240,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Subtraction level 1 buttons*/
+    public void OpenSubLevel1Canvas()
+    {
+        subLevel1Canvas.gameObject.SetActive(true);
+    }
+    public void CloseSubLevel1Canvas()
+    {
+        subLevel1Canvas.gameObject.SetActive(false);
+    }
     public void OpenSubLevel1Start()
     {
         subLevel1Start.gameObject.SetActive(true);
@@ -215,13 +256,13 @@ public class MenuControl : MonoBehaviour
     {
         subLevel1Start.gameObject.SetActive(false);
     }
-    public void OpenSubLevel1()
+    public void OpenSubLevel1Level()
     {
-        subLevel1.gameObject.SetActive(true);
+        subLevel1Level.gameObject.SetActive(true);
     }
-    public void CloseSubLevel1()
+    public void CloseSubLevel1Level()
     {
-        subLevel1.gameObject.SetActive(false);
+        subLevel1Level.gameObject.SetActive(false);
     }
     public void OpenSubLevel1End()
     {
@@ -233,6 +274,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Subtraction level 2 buttons*/
+    public void OpenSubLevel2Canvas()
+    {
+        subLevel2Canvas.gameObject.SetActive(true);
+    }
+    public void CloseSubLevel2Canvas()
+    {
+        subLevel2Canvas.gameObject.SetActive(false);
+    }
     public void OpenSubLevel2Start()
     {
         subLevel2Start.gameObject.SetActive(true);
@@ -241,13 +290,13 @@ public class MenuControl : MonoBehaviour
     {
         subLevel2Start.gameObject.SetActive(false);
     }
-    public void OpenSubLevel2()
+    public void OpenSubLevel2Level()
     {
-        subLevel2.gameObject.SetActive(true);
+        subLevel2Level.gameObject.SetActive(true);
     }
-    public void CloseSubLevel2()
+    public void CloseSubLevel2Level()
     {
-        subLevel2.gameObject.SetActive(false);
+        subLevel2Level.gameObject.SetActive(false);
     }
     public void OpenSubLevel2End()
     {
@@ -259,6 +308,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Subtraction level 3 buttons*/
+    public void OpenSubLevel3Canvas()
+    {
+        subLevel3Canvas.gameObject.SetActive(true);
+    }
+    public void CloseSubLevel3Canvas()
+    {
+        subLevel3Canvas.gameObject.SetActive(false);
+    }
     public void OpenSubLevel3Start()
     {
         subLevel3Start.gameObject.SetActive(true);
@@ -267,13 +324,13 @@ public class MenuControl : MonoBehaviour
     {
         subLevel3Start.gameObject.SetActive(false);
     }
-    public void OpenSubLevel3()
+    public void OpenSubLevel3Level()
     {
-        subLevel3.gameObject.SetActive(true);
+        subLevel3Level.gameObject.SetActive(true);
     }
-    public void CloseSubLevel3()
+    public void CloseSubLevel3Level()
     {
-        subLevel3.gameObject.SetActive(false);
+        subLevel3Level.gameObject.SetActive(false);
     }
     public void OpenSubLevel3End()
     {
@@ -285,6 +342,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Counting level 1 buttons*/
+    public void OpenCountLevel1Canvas()
+    {
+        countLevel1Canvas.gameObject.SetActive(true);
+    }
+    public void CloseCountLevel1Canvas()
+    {
+        countLevel1Canvas.gameObject.SetActive(false);
+    }
     public void OpenCountLevel1Start()
     {
         countLevel1Start.gameObject.SetActive(true);
@@ -293,13 +358,13 @@ public class MenuControl : MonoBehaviour
     {
         countLevel1Start.gameObject.SetActive(false);
     }
-    public void OpenCountLevel1()
+    public void OpenCountLevel1Level()
     {
-        countLevel1.gameObject.SetActive(true);
+        countLevel1Level.gameObject.SetActive(true);
     }
-    public void CloseCountLevel1()
+    public void CloseCountLevel1Level()
     {
-        countLevel1.gameObject.SetActive(false);
+        countLevel1Level.gameObject.SetActive(false);
     }
     public void OpenCountLevel1End()
     {
@@ -311,6 +376,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Counting level 2 buttons*/
+    public void OpenCountLevel2Canvas()
+    {
+        countLevel2Canvas.gameObject.SetActive(true);
+    }
+    public void CloseCountLevel2Canvas()
+    {
+        countLevel2Canvas.gameObject.SetActive(false);
+    }
     public void OpenCountLevel2Start()
     {
         countLevel2Start.gameObject.SetActive(true);
@@ -319,13 +392,13 @@ public class MenuControl : MonoBehaviour
     {
         countLevel2Start.gameObject.SetActive(false);
     }
-    public void OpenCountLevel2()
+    public void OpenCountLevel2Level()
     {
-        countLevel2.gameObject.SetActive(true);
+        countLevel2Level.gameObject.SetActive(true);
     }
-    public void CloseCountLevel2()
+    public void CloseCountLevel2Level()
     {
-        countLevel2.gameObject.SetActive(false);
+        countLevel2Level.gameObject.SetActive(false);
     }
     public void OpenCountLevel2End()
     {
@@ -337,6 +410,14 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Counting level 3 buttons*/
+    public void OpenCountLevel3Canvas()
+    {
+        countLevel3Canvas.gameObject.SetActive(true);
+    }
+    public void CloseCountLevel3Canvas()
+    {
+        countLevel3Canvas.gameObject.SetActive(false);
+    }
     public void OpenCountLevel3Start()
     {
         countLevel3Start.gameObject.SetActive(true);
@@ -345,13 +426,13 @@ public class MenuControl : MonoBehaviour
     {
         countLevel3Start.gameObject.SetActive(false);
     }
-    public void OpenCountLevel3()
+    public void OpenCountLevel3Level()
     {
-        countLevel3.gameObject.SetActive(true);
+        countLevel3Level.gameObject.SetActive(true);
     }
-    public void CloseCountLevel3()
+    public void CloseCountLevel3Level()
     {
-        countLevel3.gameObject.SetActive(false);
+        countLevel3Level.gameObject.SetActive(false);
     }
     public void OpenCountLevel3End()
     {
