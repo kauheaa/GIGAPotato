@@ -186,7 +186,7 @@ public class SubScript : MonoBehaviour
 
 
     }
-    void Score()
+    public void Score()
     {
         subScore += 1;
     }
