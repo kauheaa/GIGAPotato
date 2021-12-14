@@ -16232,8 +16232,8 @@ RectTransform:
   m_Children:
   - {fileID: 862776106}
   - {fileID: 474736766}
-  - {fileID: 1212961985}
   - {fileID: 1052157973}
+  - {fileID: 1212961985}
   - {fileID: 947693205}
   - {fileID: 90068222}
   - {fileID: 1050328468}
@@ -39758,7 +39758,7 @@ RectTransform:
   m_Children:
   - {fileID: 746297201}
   m_Father: {fileID: 479733830}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0.5}
   m_AnchorMax: {x: 0.25, y: 0.5}
@@ -47845,7 +47845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4231637990720777547, guid: 1f36ce957c1926741a180e640a40d291, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4231637990720777547, guid: 1f36ce957c1926741a180e640a40d291, type: 3}
       propertyPath: m_AnchorMax.x
@@ -55707,6 +55707,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1498324802}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
         m_MethodName: StartFarm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: CloseAddLevel1End
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -63761,13 +63773,13 @@ MonoBehaviour:
   subLevel3: {fileID: 1934070463}
   subLevel3End: {fileID: 579370631}
   countLevel1Start: {fileID: 1385008518}
-  countLevel1: {fileID: 1904938977}
+  countLevel1: {fileID: 0}
   countLevel1End: {fileID: 847393712}
   countLevel2Start: {fileID: 1385008518}
-  countLevel2: {fileID: 1904938977}
+  countLevel2: {fileID: 0}
   countLevel2End: {fileID: 0}
   countLevel3Start: {fileID: 1385008518}
-  countLevel3: {fileID: 1904938977}
+  countLevel3: {fileID: 0}
   countLevel3End: {fileID: 0}
   levelExitWarning: {fileID: 1023217412}
 --- !u!4 &2030866128
@@ -68006,6 +68018,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2004335065}
     m_Modifications:
+    - target: {fileID: 58990476, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 933653171, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1747224479749102047, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
