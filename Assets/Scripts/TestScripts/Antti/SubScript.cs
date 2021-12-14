@@ -232,6 +232,8 @@ public class SubScript : MonoBehaviour
     {
         ResetV();
         SubFarm();
+        ResetScore();
+
     }
     public void StartJungle()
     {
@@ -254,6 +256,12 @@ public class SubScript : MonoBehaviour
         subScore = data.subScore;
         multScore = data.multScore;
         divScore = data.divScore;
+    }
+
+    public void ResetScore()
+    {
+        sumScore = 0;
+        scoreCount.text = sumScore.ToString();
     }
 
 }
