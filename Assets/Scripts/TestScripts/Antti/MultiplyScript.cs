@@ -12,7 +12,7 @@ public class MultiplyScript : MonoBehaviour
     [SerializeField] public int multScore = 0;
     [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
     DivideScript div;
     SubScript sub;
@@ -25,6 +25,27 @@ public class MultiplyScript : MonoBehaviour
         sumScore = sum.subScore;
         subScore = sub.subScore;
         divScore = div.divScore;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        //   score = int.Parse(scoreCount.text);
+
+        if (multScore >= 5)
+        {
+            stickerOne.gameObject.SetActive(true);
+            star.gameObject.SetActive(true);
+        }
+        if (multScore >= 10)
+        {
+            stickerTwo.gameObject.SetActive(true);
+
+        }
+        if (multScore >= 15)
+        {
+            stickerThree.gameObject.SetActive(true);
+
+        }
     }
 
     public void MultFarm()

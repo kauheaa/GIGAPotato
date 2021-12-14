@@ -12,7 +12,7 @@ public class SubScript : MonoBehaviour
     [SerializeField] public int multScore = 0;
     [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
     DivideScript div;
     MultiplyScript mult;
@@ -35,6 +35,7 @@ public class SubScript : MonoBehaviour
         if (subScore >= 5)
         {
             stickerOne.gameObject.SetActive(true);
+            star.gameObject.SetActive(true);
         }
         if (subScore >= 10)
         {

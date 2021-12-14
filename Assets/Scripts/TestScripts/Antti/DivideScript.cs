@@ -12,7 +12,7 @@ public class DivideScript : MonoBehaviour
     [SerializeField] public int multScore = 0;
     [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
     SumScript sum;
     MultiplyScript mult;
@@ -27,6 +27,29 @@ public class DivideScript : MonoBehaviour
         subScore = sub.subScore;
         multScore = mult.divScore;
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //   score = int.Parse(scoreCount.text);
+
+        if (divScore >= 5)
+        {
+            stickerOne.gameObject.SetActive(true);
+            star.gameObject.SetActive(true);
+        }
+        if (divScore >= 10)
+        {
+            stickerTwo.gameObject.SetActive(true);
+
+        }
+        if (divScore >= 15)
+        {
+            stickerThree.gameObject.SetActive(true);
+
+        }
+    }
+
 
     public void DivFarm()
     {
