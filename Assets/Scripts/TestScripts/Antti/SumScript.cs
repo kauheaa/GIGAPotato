@@ -22,6 +22,7 @@ public class SumScript : MonoBehaviour
 
     private void Start()
     {
+        scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
         subScore = sub.subScore;
         multScore = mult.multScore;
