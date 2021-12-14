@@ -9,11 +9,10 @@ public class SumScript : MonoBehaviour
     [SerializeField] public int sumScore = 0;
     [SerializeField] public int subScore = 0;
     [SerializeField] public int divScore = 0;
-    [SerializeField] public int multScore = 0;
-
+    [SerializeField] public int multScore = 0;    
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
     [SerializeField] private Transform switchOff, switchOn;
     DivideScript div;
@@ -23,6 +22,7 @@ public class SumScript : MonoBehaviour
 
     private void Start()
     {
+        scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
         subScore = sub.subScore;
         multScore = mult.multScore;
@@ -38,14 +38,17 @@ public class SumScript : MonoBehaviour
         if (sumScore >= 5)
         {
             stickerOne.gameObject.SetActive(true);
+            star.gameObject.SetActive(true);
         }
         if (sumScore >= 10)
         {
             stickerTwo.gameObject.SetActive(true);
+            
         }
         if (sumScore >= 15)
         {
             stickerThree.gameObject.SetActive(true);
+           
         }
     }
 
