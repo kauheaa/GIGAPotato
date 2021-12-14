@@ -195,7 +195,7 @@ public void ResetV()
 
 
     }
-    void Score()
+    public void Score()
     {
         sumScore += 1;
     }
@@ -241,6 +241,8 @@ public void ResetV()
     {
         ResetV();
         SumFarm();
+        ResetScore();
+
     }
     public void StartJungle()
     {
@@ -266,7 +268,8 @@ public void ResetV()
     }
     public void ResetScore()
     {
-         sumScore = 0;
+        sumScore = 0;
+        scoreCount.text = sumScore.ToString();
     }
 
 }
