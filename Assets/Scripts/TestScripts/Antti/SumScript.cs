@@ -14,6 +14,7 @@ public class SumScript : MonoBehaviour
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
+    public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
     DivideScript div;
     MultiplyScript mult;
@@ -118,46 +119,66 @@ if (tempValue == 6)
 
 Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
     }
+
     public void AltOne()
-{
-    if (Alt1.text == finalValue.ToString())
     {
-        ONE.gameObject.SetActive(true);
+        if (Alt1.text == finalValue.ToString())
+        {
+            ONE.gameObject.SetActive(true);
             button1.interactable = false;
+            button2.interactable = false;
+            button3.interactable = false;
+            ONE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-           
-
         }
-}
+        if (Alt1.text != finalValue.ToString())
+        {
+            ONE.gameObject.SetActive(true);
+            button1.interactable = false;
+            ONE.GetComponent<Image>().sprite = redButton;
+        }
+    }
 
-public void AltTwo()
-{
+    public void AltTwo()
+    {
 
         if (Alt2.text == finalValue.ToString())
         {
             TWO.gameObject.SetActive(true);
+            button1.interactable = false;
             button2.interactable = false;
-            StartCoroutine(Correct());
-        }
-        if(Alt2.text != finalValue.ToString())
-        {
-            
-        }
-       
-
-    }
-public void AltThree()
-{
-    if (Alt3.text == finalValue.ToString())
-    {
-        THREE.gameObject.SetActive(true);
             button3.interactable = false;
+            TWO.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-        
-
+        }
+        if (Alt2.text != finalValue.ToString())
+        {
+            TWO.gameObject.SetActive(true);
+            button2.interactable = false;
+            TWO.GetComponent<Image>().sprite = redButton;
+        }
     }
-}
-public void ResetV()
+
+    public void AltThree()
+    {
+        if (Alt3.text == finalValue.ToString())
+        {
+            THREE.gameObject.SetActive(true);
+            button1.interactable = false;
+            button2.interactable = false;
+            button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = greenButton;
+            StartCoroutine(Correct());
+        }
+        if (Alt3.text != finalValue.ToString())
+        {
+            THREE.gameObject.SetActive(true);
+            button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = redButton;
+        }
+    }
+
+    public void ResetV()
     {
         if(sumScore == 5)
         {
