@@ -35,6 +35,7 @@ public class CountScript : MonoBehaviour
     {
         totalQuestions = QnA.Count;
         GoPanel.SetActive(false);
+        Quizpanel.SetActive(true);
         generateQuestion();
     }
 
@@ -43,6 +44,7 @@ public class CountScript : MonoBehaviour
         ResetScore();
         totalQuestions = QnA.Count;
         GoPanel.SetActive(false);
+        Quizpanel.SetActive(true);
         generateQuestion();
     }
 
