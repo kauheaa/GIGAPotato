@@ -35,11 +35,14 @@ public class CountScript : MonoBehaviour
     {
         totalQuestions = QnA.Count;
         GoPanel.SetActive(false);
+        generateQuestion();
     }
 
     public void StartCount()
     {
         ResetScore();
+        totalQuestions = QnA.Count;
+        GoPanel.SetActive(false);
         generateQuestion();
     }
 
