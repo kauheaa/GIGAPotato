@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// "CountScript" is your "QuizManager"
 public class CountScript : MonoBehaviour
 {
     public List<QuestionAndAnswers> QnA;
@@ -13,6 +14,7 @@ public class CountScript : MonoBehaviour
     public GameObject Quizpanel;
     public GameObject GoPanel;
 
+    // The sticker that will activate in stickerbook when level score is 5
     public GameObject sticker;
 
     public Text QuestionTxt;
@@ -21,6 +23,8 @@ public class CountScript : MonoBehaviour
     int totalQuestions = 0;
     public int score;
 
+
+    // Checks the score and unlocks the sticker in stickerbook when score is 5
     void Update()
     { 
             if (score >= 5)
@@ -28,6 +32,7 @@ public class CountScript : MonoBehaviour
             sticker.gameObject.SetActive(true);
         }
 
+        // Show the score real-time instead of only LevelEnd to check if sticker works correctly
         ScoreTxt.text = score + "/" + totalQuestions;
     }
 
@@ -39,6 +44,10 @@ public class CountScript : MonoBehaviour
         generateQuestion();
     }
 
+
+     //  I'm not sure if this is needed at all, or if ResetScore is enough on it's own. Depends on how replaying the level will work..?
+     //  ResetScore will be needed when/if opening LevelEnd is bound to score; score needs to be reset before replaying, so LevelEnd is not opened at the level start.
+     //  You can delete this if you feel it's unnecessary.
     public void StartCount()
     {
         ResetScore();
@@ -47,6 +56,7 @@ public class CountScript : MonoBehaviour
         Quizpanel.SetActive(true);
         generateQuestion();
     }
+
 
     public void retry()
     {
@@ -80,6 +90,23 @@ public class CountScript : MonoBehaviour
         generateQuestion();
     }
 
+/*
+    void SetAnswers()
+    {
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].GetComponent<Image>().color = options[i].GetComponent<AnswerScript>().startColor;
+            options[i].GetComponent<AnswerScript>().isCorrect = false;
+            options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
+            
+            if(QnA[currentQuestion].CorrectAnswer == i+1)
+            {
+                options[i].GetComponent<AnswerScript>().isCorrect = true;
+            }
+        }
+    }
+*/
+// Looks for sprites instead of color of the image I assume
     void SetAnswers()
     {
         for (int i = 0; i < options.Length; i++)
@@ -114,7 +141,8 @@ public class CountScript : MonoBehaviour
     }
 
 
-
+    // ResetScore will be needed when/if opening LevelEnd is bound to score; score needs to be reset before replaying, so LevelEnd is not opened at the level start
+    // and also so LevelEnd can be reopened when the level is replayed.
     public void ResetScore()
     {
         score = 0;
