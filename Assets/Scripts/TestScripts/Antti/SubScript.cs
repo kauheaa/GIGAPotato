@@ -14,6 +14,7 @@ public class SubScript : MonoBehaviour
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
+    public Sprite blueButton, redButton, greenButton;
     DivideScript div;
     MultiplyScript mult;
     SumScript sum;
@@ -119,9 +120,16 @@ public class SubScript : MonoBehaviour
         {
             ONE.gameObject.SetActive(true);
             button1.interactable = false;
+            button2.interactable = false;
+            button3.interactable = false;
+            ONE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
-
+        }
+        if (Alt1.text != finalValue.ToString())
+        {
+            ONE.gameObject.SetActive(true);
+            button1.interactable = false;
+            ONE.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -131,23 +139,39 @@ public class SubScript : MonoBehaviour
         if (Alt2.text == finalValue.ToString())
         {
             TWO.gameObject.SetActive(true);
+            button1.interactable = false;
             button2.interactable = false;
+            button3.interactable = false;
+            TWO.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
         }
-
+        if (Alt2.text != finalValue.ToString())
+        {
+            TWO.gameObject.SetActive(true);
+            button2.interactable = false;
+            TWO.GetComponent<Image>().sprite = redButton;
+        }
     }
+
     public void AltThree()
     {
         if (Alt3.text == finalValue.ToString())
         {
             THREE.gameObject.SetActive(true);
+            button1.interactable = false;
+            button2.interactable = false;
             button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
-
+        }
+        if (Alt3.text != finalValue.ToString())
+        {
+            THREE.gameObject.SetActive(true);
+            button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = redButton;
         }
     }
+
     public void ResetV()
     {
         if (subScore == 5)
@@ -186,7 +210,7 @@ public class SubScript : MonoBehaviour
 
 
     }
-    void Score()
+    public void Score()
     {
         subScore += 1;
     }
@@ -232,6 +256,8 @@ public class SubScript : MonoBehaviour
     {
         ResetV();
         SubFarm();
+        ResetScore();
+
     }
     public void StartJungle()
     {
@@ -254,6 +280,12 @@ public class SubScript : MonoBehaviour
         subScore = data.subScore;
         multScore = data.multScore;
         divScore = data.divScore;
+    }
+
+    public void ResetScore()
+    {
+        subScore = 0;
+        scoreCount.text = sumScore.ToString();
     }
 
 }

@@ -50,10 +50,8 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform countLevel3Canvas;
     [SerializeField] private Transform countLevel3Start;
     [SerializeField] private Transform countLevel3Level;
-    [SerializeField] private Transform countLevel3End;
+    [SerializeField] private Transform countLevel3End; 
     [SerializeField] private Transform levelExitWarning;
-
-
 
 
 
@@ -376,6 +374,7 @@ public class MenuControl : MonoBehaviour
     }
 
     /*Farm Counting level 2 buttons*/
+    
     public void OpenCountLevel2Canvas()
     {
         countLevel2Canvas.gameObject.SetActive(true);
@@ -408,8 +407,9 @@ public class MenuControl : MonoBehaviour
     {
         countLevel2End.gameObject.SetActive(false);
     }
-
+    
     /*Farm Counting level 3 buttons*/
+    
     public void OpenCountLevel3Canvas()
     {
         countLevel3Canvas.gameObject.SetActive(true);
@@ -442,7 +442,7 @@ public class MenuControl : MonoBehaviour
     {
         countLevel3End.gameObject.SetActive(false);
     }
-
+    
     /*Exit level warning popup*/
     public void OpenLevelExitWarning()
     {
