@@ -48,9 +48,8 @@ public class QuizManager : MonoBehaviour
 
     public void wrong()
     {
-        //when you answer wrong
-        QnA.RemoveAt(currentQuestion);
-        StartCoroutine(waitForNext());
+        
+        
     }
 
     IEnumerator waitForNext()
