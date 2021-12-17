@@ -16,18 +16,14 @@ public class SumScript : MonoBehaviour
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
-    DivideScript div;
-    MultiplyScript mult;
-    SubScript sub;
+   
     
 
     private void Start()
     {
         scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
-        subScore = sub.subScore;
-        multScore = mult.multScore;
-        divScore = div.divScore;
+        
         
     }
 
@@ -282,10 +278,7 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
     public void LoadScore()
     {
         scoreData data = saveScore.LoadSumScore();
-        sumScore = data.sumScore;
-        subScore = data.subScore;
-        multScore = data.multScore;
-        divScore = data.divScore;
+       
     }
     public void ResetScore()
     {

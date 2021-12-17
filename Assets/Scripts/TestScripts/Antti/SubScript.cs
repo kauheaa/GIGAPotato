@@ -15,18 +15,14 @@ public class SubScript : MonoBehaviour
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
-    DivideScript div;
-    MultiplyScript mult;
-    SumScript sum;
+  
 
 
 
     private void Start()
     {
         AnswerSpot.text = "?";
-        sumScore = sum.subScore;
-        multScore = mult.multScore;
-        divScore = div.divScore;
+        
     }
     // Update is called once per frame
     void Update()
@@ -271,15 +267,13 @@ public class SubScript : MonoBehaviour
     }
     public void SaveScore()
     {
-        saveScore.SaveSumScore(sum);
+        save2score.SaveSubScore(this);
     }
     public void LoadScore()
     {
-        scoreData data = saveScore.LoadSumScore();
-        sumScore = data.sumScore;
+        score2data data = save2score.LoadSubScore();        
         subScore = data.subScore;
-        multScore = data.multScore;
-        divScore = data.divScore;
+      
     }
 
     public void ResetScore()
