@@ -30,6 +30,7 @@ public class CountScript : MonoBehaviour
     public Sprite oneStar, twoStar, threeStar;
     public GameObject countStars, menuStars;
 
+    // saves sticker score and updates it to all instances of same script in the scene
     public void SaveScore()
     {
         saveScore.SaveCountScore(this);
@@ -40,6 +41,7 @@ public class CountScript : MonoBehaviour
         }
 
     }
+    // loads sticker scores
     public void LoadScore()
     {
         scoreData data = saveScore.LoadCountScore();
@@ -50,10 +52,12 @@ public class CountScript : MonoBehaviour
         Debug.Log("corn: " + threeCornStickerScore + " another corn: " + twoCornStickerScore + " lamb: " + lambStickerScore);
 
     }
+    // gives level an index that separates it from other levels; added in inspector
     public void SetLevelIndex(int index)
     {
         levelIndex = index;
     }
+    // Gives stickers +1 at level end if they have < 1
     public void CheckStickers()
     {
         if (score >= 5)
@@ -78,7 +82,7 @@ public class CountScript : MonoBehaviour
                     if (lambStickerScore < 1)
                     {
                         lambStickerScore += 1;
-                        Debug.Log("Nani");
+                        Debug.Log("Lamb unlocked");
                     }
                     break;
                 default:
@@ -88,10 +92,9 @@ public class CountScript : MonoBehaviour
 
         }
     }
-    // Checks the score and unlocks the sticker in stickerbook when score is 5
-    void Update()
+    // Unlocks stickers if their score is 1
+    public void UnlockStickers()
     {
-        countStarCount = threeCornStickerScore + twoCornStickerScore + lambStickerScore;
 
         if (threeCornStickerScore == 1)
         {
@@ -105,6 +108,12 @@ public class CountScript : MonoBehaviour
         {
             stickerThree.gameObject.SetActive(true);
         }
+    }
+    // Unlocks a star each time a sticker is unlocked
+    public void UnlockStars()
+    {
+        countStarCount = threeCornStickerScore + twoCornStickerScore + lambStickerScore;
+
         if (countStarCount == 1)
         {
             countStars.GetComponent<Image>().sprite = oneStar;
@@ -120,12 +129,9 @@ public class CountScript : MonoBehaviour
             countStars.GetComponent<Image>().sprite = threeStar;
             menuStars.GetComponent<Image>().sprite = threeStar;
         }
-
-        // Show the score real-time instead of only LevelEnd to check if sticker works correctly
-        ScoreTxt.text = score + "/" + totalQuestions;
-
-
     }
+
+
 
     private void Start()
     {
@@ -135,10 +141,19 @@ public class CountScript : MonoBehaviour
         generateQuestion();
     }
 
+    void Update()
+    {
 
-     //  I'm not sure if this is needed at all, or if ResetScore is enough on it's own. Depends on how replaying the level will work..?
-     //  ResetScore will be needed when/if opening LevelEnd is bound to score; score needs to be reset before replaying, so LevelEnd is not opened at the level start.
-     //  You can delete this if you feel it's unnecessary.
+        CheckStickers();
+        UnlockStickers();
+        UnlockStars();
+        // Show the score real-time instead of only LevelEnd to check if sticker works correctly
+        ScoreTxt.text = score + "/" + totalQuestions;
+    }
+
+    //  I'm not sure if this is needed at all, or if ResetScore is enough on it's own. Depends on how replaying the level will work..?
+    //  ResetScore will be needed when/if opening LevelEnd is bound to score; score needs to be reset before replaying, so LevelEnd is not opened at the level start.
+    //  You can delete this if you feel it's unnecessary.
     public void StartCount()
     {
         ResetScore();
@@ -165,7 +180,7 @@ public class CountScript : MonoBehaviour
     {
         //when you are right
         score += 1;
-        QnA.RemoveAt(currentQuestion);
+        //QnA.RemoveAt(currentQuestion);
         StartCoroutine(waitForNext());
     }
 
@@ -217,7 +232,8 @@ public class CountScript : MonoBehaviour
 
     void generateQuestion()
     {
-        if(QnA.Count > 0)
+        //if(QnA.Count > 0)
+        if(score <= 4)
         {
             currentQuestion = Random.Range(0, QnA.Count);
 
