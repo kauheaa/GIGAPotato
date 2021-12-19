@@ -22,7 +22,7 @@ public class MultiplyScript : MonoBehaviour
     private void Start()
     {
         AnswerSpot.text = "?";
-        sumScore = sum.subScore;
+        sumScore = sum.sumScore;
         subScore = sub.subScore;
         divScore = div.divScore;
     }
@@ -244,6 +244,7 @@ public class MultiplyScript : MonoBehaviour
         ResetV();
         MultSpace();
     }
+    /*
     public void SaveScore()
     {
         saveScore.SaveSumScore(sum);
@@ -256,5 +257,6 @@ public class MultiplyScript : MonoBehaviour
         multScore = data.multScore;
         divScore = data.divScore;
     }
+    */
 
 }

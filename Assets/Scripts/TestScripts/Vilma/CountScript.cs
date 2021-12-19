@@ -14,26 +14,117 @@ public class CountScript : MonoBehaviour
     public GameObject Quizpanel;
     public GameObject GoPanel;
 
-    // The sticker that will activate in stickerbook when level score is 5
-    public GameObject sticker;
-
     public Text QuestionTxt;
     public Text ScoreTxt;
 
     int totalQuestions = 0;
     public int score;
 
+    // These are needed for Stickers, Starcount and saving
+    public int levelIndex = 0;
+    [SerializeField] public int countStarCount = 0;
+    [SerializeField] public int threeCornStickerScore = 0;
+    [SerializeField] public int twoCornStickerScore = 0;
+    [SerializeField] public int lambStickerScore = 0;
+    public GameObject stickerOne, stickerTwo, stickerThree;
+    public Sprite oneStar, twoStar, threeStar;
+    public GameObject countStars, menuStars;
 
+    public void SaveScore()
+    {
+        saveScore.SaveCountScore(this);
+        CountScript[] tempArray = GameObject.FindObjectsOfType<CountScript>();
+        foreach (CountScript i in tempArray)
+        {
+            i.LoadScore();
+        }
+
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadCountScore();
+        countStarCount = data.countStarCount;
+        threeCornStickerScore = data.threeCornStickerScore;
+        twoCornStickerScore = data.twoCornStickerScore;
+        lambStickerScore = data.lambStickerScore;
+        Debug.Log("corn: " + threeCornStickerScore + " another corn: " + twoCornStickerScore + " lamb: " + lambStickerScore);
+
+    }
+    public void SetLevelIndex(int index)
+    {
+        levelIndex = index;
+    }
+    public void CheckStickers()
+    {
+        if (score >= 5)
+        {
+            switch (levelIndex)
+            {
+                case 1:
+                    if (threeCornStickerScore < 1)
+                    {
+                        threeCornStickerScore += 1;
+                        Debug.Log("Corn unlocked");
+                    }
+                    break;
+                case 2:
+                    if (twoCornStickerScore < 1)
+                    {
+                        twoCornStickerScore += 1;
+                        Debug.Log("More Corn unlocked");
+                    }
+                    break;
+                case 3:
+                    if (lambStickerScore < 1)
+                    {
+                        lambStickerScore += 1;
+                        Debug.Log("Nani");
+                    }
+                    break;
+                default:
+                    Debug.Log("No level index set");
+                    break;
+            }
+
+        }
+    }
     // Checks the score and unlocks the sticker in stickerbook when score is 5
     void Update()
-    { 
-            if (score >= 5)
+    {
+        countStarCount = threeCornStickerScore + twoCornStickerScore + lambStickerScore;
+
+        if (threeCornStickerScore == 1)
         {
-            sticker.gameObject.SetActive(true);
+            stickerOne.gameObject.SetActive(true);
+        }
+        if (twoCornStickerScore == 1)
+        {
+            stickerTwo.gameObject.SetActive(true);
+        }
+        if (lambStickerScore == 1)
+        {
+            stickerThree.gameObject.SetActive(true);
+        }
+        if (countStarCount == 1)
+        {
+            countStars.GetComponent<Image>().sprite = oneStar;
+            menuStars.GetComponent<Image>().sprite = oneStar;
+        }
+        if (countStarCount == 2)
+        {
+            countStars.GetComponent<Image>().sprite = twoStar;
+            menuStars.GetComponent<Image>().sprite = twoStar;
+        }
+        if (countStarCount == 3)
+        {
+            countStars.GetComponent<Image>().sprite = threeStar;
+            menuStars.GetComponent<Image>().sprite = threeStar;
         }
 
         // Show the score real-time instead of only LevelEnd to check if sticker works correctly
         ScoreTxt.text = score + "/" + totalQuestions;
+
+
     }
 
     private void Start()
@@ -122,6 +213,8 @@ public class CountScript : MonoBehaviour
         }
     }
 
+
+
     void generateQuestion()
     {
         if(QnA.Count > 0)
@@ -130,11 +223,15 @@ public class CountScript : MonoBehaviour
 
             QuestionTxt.text = QnA[currentQuestion].Question;
             SetAnswers();
+
+            CheckStickers();
         }
         else
         {
             Debug.Log("Out of Questions");
             GameOver();
+
+            CheckStickers();
         }
 
 

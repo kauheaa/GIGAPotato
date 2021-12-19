@@ -6,23 +6,40 @@ public class scoreData
 
 
 {
-    public int sumScore, subScore, divScore, multScore;
+    public int sumStarCount, appleStickerScore, basketStickerScore, pigStickerScore;
+    public int subStarCount, carrotStickerScore, bucketStickerScore, bunnyStickerScore;
+    public int countStarCount, threeCornStickerScore, twoCornStickerScore, lambStickerScore;
 
     public scoreData(SumScript sum)
     {
-        sumScore = sum.sumScore;
-        subScore = sum.subScore;
-        divScore = sum.divScore;
-        multScore = sum.multScore;
-
-
+        sumStarCount = sum.sumStarCount;
+        appleStickerScore = sum.appleStickerScore;
+        basketStickerScore = sum.basketStickerScore;
+        pigStickerScore = sum.pigStickerScore;
     }
+
+    public scoreData(SubScript sub)
+    {
+        subStarCount = sub.subStarCount;
+        carrotStickerScore = sub.carrotStickerScore;
+        bucketStickerScore = sub.bucketStickerScore;
+        bunnyStickerScore = sub.bunnyStickerScore;
+    }
+
+    public scoreData(CountScript count)
+    {
+        countStarCount = count.countStarCount;
+        threeCornStickerScore = count.threeCornStickerScore;
+        twoCornStickerScore = count.twoCornStickerScore;
+        lambStickerScore = count.lambStickerScore;
+    }
+
 
 
     /*public sumScoreData(SumScript sum)
     {
         sumScore = sum.sumScore;
-
+    }
 
     
     public subScoreData(SubScript sub)
