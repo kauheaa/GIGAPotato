@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StarCount : MonoBehaviour
 {
-    private CalculateS calculate;
+    private SumScript sum;
     public GameObject star1, star2, star3, star4, star5, star6;
     // Start is called before the first frame update
     void Start()
@@ -14,18 +14,18 @@ public class StarCount : MonoBehaviour
 
     void Update()
     {
-        if (calculate.score >= 5)
+        if (sum.sumScore >= 5)
         {
 
             star1.gameObject.SetActive(true);
         }
 
-        if (calculate.score >= 10)
+        if (sum.sumScore >= 10)
         {
             star2.gameObject.SetActive(true);
         }
 
-        if (calculate.score >= 15)
+        if (sum.sumScore >= 15)
         {
             star3.gameObject.SetActive(true);
         }

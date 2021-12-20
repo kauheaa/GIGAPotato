@@ -10,8 +10,9 @@ public class MultiplyScript : MonoBehaviour
     [SerializeField] public int subScore = 0;
     [SerializeField] public int divScore = 0;
     [SerializeField] public int multScore = 0;
+    [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
     DivideScript div;
     SubScript sub;
@@ -21,9 +22,30 @@ public class MultiplyScript : MonoBehaviour
     private void Start()
     {
         AnswerSpot.text = "?";
-        sumScore = sum.subScore;
+        sumScore = sum.sumScore;
         subScore = sub.subScore;
         divScore = div.divScore;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        //   score = int.Parse(scoreCount.text);
+
+        if (multScore >= 5)
+        {
+            stickerOne.gameObject.SetActive(true);
+            star.gameObject.SetActive(true);
+        }
+        if (multScore >= 10)
+        {
+            stickerTwo.gameObject.SetActive(true);
+
+        }
+        if (multScore >= 15)
+        {
+            stickerThree.gameObject.SetActive(true);
+
+        }
     }
 
     public void MultFarm()
@@ -129,6 +151,21 @@ public class MultiplyScript : MonoBehaviour
     }
     public void ResetV()
     {
+        if (multScore == 5)
+        {
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
+        }
+        if (multScore == 10)
+        {
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
+        }
+        if (multScore == 15)
+        {
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
+        }
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
         TWO.gameObject.SetActive(false);
@@ -169,7 +206,7 @@ public class MultiplyScript : MonoBehaviour
             firstValue = tempValue;
         }
 
-        Function.text = "+";
+        Function.text = "*";
         finalValue = firstValue * secondValue;
 
     }
@@ -207,6 +244,7 @@ public class MultiplyScript : MonoBehaviour
         ResetV();
         MultSpace();
     }
+    /*
     public void SaveScore()
     {
         saveScore.SaveSumScore(sum);
@@ -219,5 +257,6 @@ public class MultiplyScript : MonoBehaviour
         multScore = data.multScore;
         divScore = data.divScore;
     }
+    */
 
 }

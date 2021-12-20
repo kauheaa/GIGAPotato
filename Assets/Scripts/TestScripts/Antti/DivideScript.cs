@@ -10,8 +10,9 @@ public class DivideScript : MonoBehaviour
     [SerializeField] public int subScore = 0;
     [SerializeField] public int divScore = 0;
     [SerializeField] public int multScore = 0;
+    [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
     public Button button1, button2, button3;
     SumScript sum;
     MultiplyScript mult;
@@ -22,10 +23,33 @@ public class DivideScript : MonoBehaviour
     private void Start()
     {
         AnswerSpot.text = "?";
-        sumScore = sum.subScore;
+        sumScore = sum.sumScore;
         subScore = sub.subScore;
         multScore = mult.divScore;
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //   score = int.Parse(scoreCount.text);
+
+        if (divScore >= 5)
+        {
+            stickerOne.gameObject.SetActive(true);
+            star.gameObject.SetActive(true);
+        }
+        if (divScore >= 10)
+        {
+            stickerTwo.gameObject.SetActive(true);
+
+        }
+        if (divScore >= 15)
+        {
+            stickerThree.gameObject.SetActive(true);
+
+        }
+    }
+
 
     public void DivFarm()
     {
@@ -42,7 +66,7 @@ public class DivideScript : MonoBehaviour
             firstValue = tempValue;
         }
 
-        Function.text = "+";
+        Function.text = "/";
         finalValue = firstValue / secondValue;
 
 
@@ -130,6 +154,21 @@ public class DivideScript : MonoBehaviour
     }
     public void ResetV()
     {
+        if (divScore == 5)
+        {
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
+        }
+        if (divScore == 10)
+        {
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
+        }
+        if (divScore == 15)
+        {
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
+        }
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
         TWO.gameObject.SetActive(false);
@@ -208,7 +247,7 @@ public class DivideScript : MonoBehaviour
         ResetV();
         DivSpace();
     }
-    public void SaveScore()
+ /*   public void SaveScore()
     {
         saveScore.SaveSumScore(sum);
     }
@@ -220,5 +259,6 @@ public class DivideScript : MonoBehaviour
         multScore = data.multScore;
         divScore = data.divScore;
     }
+ */
 
 }

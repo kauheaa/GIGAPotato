@@ -6,42 +6,99 @@ using UnityEngine.UI;
 public class SubScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    [SerializeField] public int sumScore = 0;
+    //[SerializeField] public int sumScore = 0;
+    //[SerializeField] public int divScore = 0;
+    //[SerializeField] public int multScore = 0;
     [SerializeField] public int subScore = 0;
-    [SerializeField] public int divScore = 0;
-    [SerializeField] public int multScore = 0;
+    [SerializeField] public int subStarCount = 0;
+    [SerializeField] public int carrotStickerScore = 0;
+    [SerializeField] public int bucketStickerScore = 0;
+    [SerializeField] public int bunnyStickerScore = 0;
+    public int levelIndex = 0;
+    [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public Sprite oneStar, twoStar, threeStar;
+    public GameObject subStars, menuStars;
     public Button button1, button2, button3;
-    DivideScript div;
-    MultiplyScript mult;
-    SumScript sum;
+    public Sprite blueButton, redButton, greenButton;
 
 
+    public void SaveScore()
+    {
+        saveScore.SaveSubScore(this);
+
+        //luo väliaikaisen listan, joka etsii hierarkiassa olevat subScore instanssit ja käy läpi,
+        //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
+        //näin kaikissa subScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+        //ei ylikirjoita arvoja nollaksi 
+        SubScript[] tempArray = GameObject.FindObjectsOfType<SubScript>();
+        foreach (SubScript i in tempArray)
+        {
+            i.LoadScore();
+        }
+
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadSubScore();
+        subStarCount = data.subStarCount;
+        carrotStickerScore = data.carrotStickerScore;
+        bucketStickerScore = data.bucketStickerScore;
+        bunnyStickerScore = data.bunnyStickerScore;
+        Debug.Log("carrot: " + carrotStickerScore + " bucket: " + bucketStickerScore + " bunny: " + bunnyStickerScore);
+
+    }
+
+    public void SetLevelIndex(int index)
+    {
+        levelIndex = index;
+    }
+
+    public void ResetScore()
+    {
+        subScore = 0;
+        scoreCount.text = subScore.ToString();
+    }
 
     private void Start()
     {
         AnswerSpot.text = "?";
-        sumScore = sum.subScore;
-        multScore = mult.multScore;
-        divScore = div.divScore;
+        
     }
     // Update is called once per frame
     void Update()
     {
         //   score = int.Parse(scoreCount.text);
 
-        if (subScore >= 5)
+        subStarCount = carrotStickerScore + bucketStickerScore + bunnyStickerScore;
+
+        if (carrotStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
         }
-        if (subScore >= 10)
+        if (bucketStickerScore == 1)
         {
             stickerTwo.gameObject.SetActive(true);
         }
-        if (subScore >= 15)
+        if (bunnyStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
+        }
+        if (subStarCount == 1)
+        {
+            subStars.GetComponent<Image>().sprite = oneStar;
+            menuStars.GetComponent<Image>().sprite = oneStar;
+        }
+        if (subStarCount == 2)
+        {
+            subStars.GetComponent<Image>().sprite = twoStar;
+            menuStars.GetComponent<Image>().sprite = twoStar;
+        }
+        if (subStarCount == 3)
+        {
+            subStars.GetComponent<Image>().sprite = threeStar;
+            menuStars.GetComponent<Image>().sprite = threeStar;
         }
     }
 
@@ -60,7 +117,7 @@ public class SubScript : MonoBehaviour
             firstValue = tempValue;
         }
 
-        Function.text = "+";
+        Function.text = "-";
         finalValue = firstValue - secondValue;
 
 
@@ -117,9 +174,16 @@ public class SubScript : MonoBehaviour
         {
             ONE.gameObject.SetActive(true);
             button1.interactable = false;
+            button2.interactable = false;
+            button3.interactable = false;
+            ONE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
-
+        }
+        if (Alt1.text != finalValue.ToString())
+        {
+            ONE.gameObject.SetActive(true);
+            button1.interactable = false;
+            ONE.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -129,25 +193,73 @@ public class SubScript : MonoBehaviour
         if (Alt2.text == finalValue.ToString())
         {
             TWO.gameObject.SetActive(true);
+            button1.interactable = false;
             button2.interactable = false;
+            button3.interactable = false;
+            TWO.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
         }
-
+        if (Alt2.text != finalValue.ToString())
+        {
+            TWO.gameObject.SetActive(true);
+            button2.interactable = false;
+            TWO.GetComponent<Image>().sprite = redButton;
+        }
     }
+
     public void AltThree()
     {
         if (Alt3.text == finalValue.ToString())
         {
             THREE.gameObject.SetActive(true);
+            button1.interactable = false;
+            button2.interactable = false;
             button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
-
+        }
+        if (Alt3.text != finalValue.ToString())
+        {
+            THREE.gameObject.SetActive(true);
+            button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = redButton;
         }
     }
+
     public void ResetV()
     {
+        if (subScore == 5)
+        {
+            switchOn.gameObject.SetActive(true);
+            switchOff.gameObject.SetActive(false);
+            switch (levelIndex)
+            {
+                case 1:
+                    if (carrotStickerScore < 1)
+                    {
+                        carrotStickerScore += 1;
+                        Debug.Log("Carrot unlocked");
+                    }
+                    break;
+                case 2:
+                    if (bucketStickerScore < 1)
+                    {
+                        bucketStickerScore += 1;
+                        Debug.Log("Bucket unlocked");
+                    }
+                    break;
+                case 3:
+                    if (bunnyStickerScore < 1)
+                    {
+                        bunnyStickerScore += 1;
+                        Debug.Log("Bunny unlocked");
+                    }
+                    break;
+                default:
+                    Debug.Log("No level index set");
+                    break;
+            }
+        }
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
         TWO.gameObject.SetActive(false);
@@ -169,7 +281,7 @@ public class SubScript : MonoBehaviour
 
 
     }
-    void Score()
+    public void Score()
     {
         subScore += 1;
     }
@@ -215,6 +327,8 @@ public class SubScript : MonoBehaviour
     {
         ResetV();
         SubFarm();
+        ResetScore();
+
     }
     public void StartJungle()
     {
@@ -226,17 +340,6 @@ public class SubScript : MonoBehaviour
         ResetV();
         SubSpace();
     }
-    public void SaveScore()
-    {
-        saveScore.SaveSumScore(sum);
-    }
-    public void LoadScore()
-    {
-        scoreData data = saveScore.LoadSumScore();
-        sumScore = data.sumScore;
-        subScore = data.subScore;
-        multScore = data.multScore;
-        divScore = data.divScore;
-    }
+
 
 }
