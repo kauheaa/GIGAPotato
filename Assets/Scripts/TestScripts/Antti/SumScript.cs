@@ -402,6 +402,53 @@ public class SumScript : MonoBehaviour
         Function.text = "+";
         finalValue = firstValue + secondValue;
 
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue)
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative1 = tempValue;
+
+        //Second Alternative
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue || (tempValue == Alternative1))
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative2 = tempValue;
+
+        tempValue = Random.Range(1, 6);
+        if (tempValue == 1)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 2)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 3)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 4)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+        }
+        if (tempValue == 5)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 6)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+        }
+
+
+
+
+
+        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
+
     }
     public void SumSpace()
     {
@@ -419,6 +466,54 @@ public class SumScript : MonoBehaviour
 
         Function.text = "+";
         finalValue = firstValue + secondValue;
+
+
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue)
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative1 = tempValue;
+
+        //Second Alternative
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue || (tempValue == Alternative1))
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative2 = tempValue;
+
+        tempValue = Random.Range(1, 6);
+        if (tempValue == 1)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 2)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 3)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 4)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+        }
+        if (tempValue == 5)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 6)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+        }
+
+
+
+
+
+        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
 
     }
 
