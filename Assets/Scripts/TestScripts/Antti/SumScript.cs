@@ -28,7 +28,7 @@ public class SumScript : MonoBehaviour
     public void SaveScore()
     {
         saveScore.SaveSumScore(this);
-        
+
         //luo väliaikaisen listan, joka etsii hierarkiassa olevat sumScore instanssit ja käy läpi,
         //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
         //näin kaikissa sumScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
@@ -107,7 +107,7 @@ public class SumScript : MonoBehaviour
 
     public void SumFarm()
     {
-        
+
         firstValue = Random.Range(1, 10);
         secondValue = Random.Range(1, 10);
         FirstValue.text = firstValue.ToString();
@@ -119,57 +119,57 @@ public class SumScript : MonoBehaviour
             secondValue = firstValue;
             firstValue = tempValue;
         }
-      
-            Function.text = "+";
-            finalValue = firstValue + secondValue;
-        
-     
-    tempValue = Random.Range(2, 20);
-        while(tempValue == finalValue)
+
+        Function.text = "+";
+        finalValue = firstValue + secondValue;
+
+
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue)
         {
             tempValue = Random.Range(2, 20);
         }
-Alternative1 = tempValue;
+        Alternative1 = tempValue;
 
-//Second Alternative
-tempValue = Random.Range(2, 20);
-while (tempValue == finalValue || (tempValue == Alternative1))
-{
-    tempValue = Random.Range(2, 20);
-}
-Alternative2 = tempValue;
+        //Second Alternative
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue || (tempValue == Alternative1))
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative2 = tempValue;
 
-tempValue = Random.Range(1, 6);
-if (tempValue == 1)
-{
-    Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
-}
-if (tempValue == 2)
-{
-    Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
-}
-if (tempValue == 3)
-{
-    Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
-}
-if (tempValue == 4)
-{
-    Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
-}
-if (tempValue == 5)
-{
-    Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
-}
-if (tempValue == 6)
-{
-    Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
-}
-
-
+        tempValue = Random.Range(1, 6);
+        if (tempValue == 1)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 2)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 3)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 4)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+        }
+        if (tempValue == 5)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 6)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+        }
 
 
 
-Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
+
+
+        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
     }
 
     public void AltOne()
@@ -265,7 +265,7 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
             }
 
         }
-    
+
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
         TWO.gameObject.SetActive(false);
@@ -274,6 +274,101 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
         button3.interactable = true;
         AnswerSpot.text = "?";
         SumFarm();
+    }
+
+    public void ResetJungle()
+    {
+        {
+            if (sumScore >= 5)
+            {
+                switchOn.gameObject.SetActive(true);
+                switchOff.gameObject.SetActive(false);
+                switch (levelIndex)
+                {
+                    case 1:
+                        if (appleStickerScore < 1)
+                        {
+                            appleStickerScore += 1;
+                            Debug.Log("Apple unlocked");
+                        }
+                        break;
+                    case 2:
+                        if (basketStickerScore < 1)
+                        {
+                            basketStickerScore += 1;
+                            Debug.Log("Basket unlocked");
+                        }
+                        break;
+                    case 3:
+                        if (pigStickerScore < 1)
+                        {
+                            pigStickerScore += 1;
+                            Debug.Log("Pig unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+
+            }
+
+            ONE.gameObject.SetActive(false);
+            button1.interactable = true;
+            TWO.gameObject.SetActive(false);
+            button2.interactable = true;
+            THREE.gameObject.SetActive(false);
+            button3.interactable = true;
+            AnswerSpot.text = "?";
+            SumJungle();
+        }
+    }
+    public void ResetSpace()
+    {
+        {
+            if (sumScore >= 5)
+            {
+                switchOn.gameObject.SetActive(true);
+                switchOff.gameObject.SetActive(false);
+                switch (levelIndex)
+                {
+                    case 1:
+                        if (appleStickerScore < 1)
+                        {
+                            appleStickerScore += 1;
+                            Debug.Log("Apple unlocked");
+                        }
+                        break;
+                    case 2:
+                        if (basketStickerScore < 1)
+                        {
+                            basketStickerScore += 1;
+                            Debug.Log("Basket unlocked");
+                        }
+                        break;
+                    case 3:
+                        if (pigStickerScore < 1)
+                        {
+                            pigStickerScore += 1;
+                            Debug.Log("Pig unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+
+            }
+
+            ONE.gameObject.SetActive(false);
+            button1.interactable = true;
+            TWO.gameObject.SetActive(false);
+            button2.interactable = true;
+            THREE.gameObject.SetActive(false);
+            button3.interactable = true;
+            AnswerSpot.text = "?";
+            SumSpace();
+        }
     }
 
     IEnumerator Correct()
@@ -334,15 +429,18 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
         ResetScore();
 
     }
+
     public void StartJungle()
     {
-        ResetV();
+        ResetJungle();
         SumJungle();
+        ResetScore();
     }
     public void StartSpace()
     {
-        ResetV();
+        ResetSpace();
         SumSpace();
+        ResetScore();
     }
 
 
