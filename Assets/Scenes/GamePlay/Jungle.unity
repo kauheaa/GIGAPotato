@@ -9456,10 +9456,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
   subScore: 0
-  divScore: 0
-  multScore: 0
+  subStarCount: 0
+  carrotStickerScore: 0
+  bucketStickerScore: 0
+  bunnyStickerScore: 0
+  levelIndex: 0
   switchOff: {fileID: 887163345}
   switchOn: {fileID: 463188864}
   FirstValue: {fileID: 1081382124}
@@ -9478,7 +9480,11 @@ MonoBehaviour:
   stickerOne: {fileID: 1271604329}
   stickerTwo: {fileID: 0}
   stickerThree: {fileID: 0}
-  star: {fileID: 1335529889}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  subStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 25769661}
   button2: {fileID: 2077896569}
   button3: {fileID: 2047906954}
@@ -9561,9 +9567,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sumScore: 0
-  subScore: 0
-  divScore: 0
-  multScore: 0
+  sumStarCount: 0
+  appleStickerScore: 0
+  basketStickerScore: 0
+  pigStickerScore: 0
+  levelIndex: 0
   FirstValue: {fileID: 1002869910}
   SecondValue: {fileID: 807270265}
   Function: {fileID: 917268916}
@@ -9580,7 +9588,11 @@ MonoBehaviour:
   stickerOne: {fileID: 307599861}
   stickerTwo: {fileID: 0}
   stickerThree: {fileID: 0}
-  star: {fileID: 1440922830}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  sumStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 204926828}
   button2: {fileID: 198595759}
   button3: {fileID: 2048008838}
@@ -11922,7 +11934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &479733830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12010,11 +12022,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &497881465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2787937726705110856, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 973064300315609845}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &498273791
 GameObject:
   m_ObjectHideFlags: 0
@@ -13733,10 +13740,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
   subScore: 0
-  divScore: 0
-  multScore: 0
+  subStarCount: 0
+  carrotStickerScore: 0
+  bucketStickerScore: 0
+  bunnyStickerScore: 0
+  levelIndex: 0
   switchOff: {fileID: 1355504108}
   switchOn: {fileID: 579370631}
   FirstValue: {fileID: 569720510}
@@ -13755,7 +13764,11 @@ MonoBehaviour:
   stickerOne: {fileID: 639977215}
   stickerTwo: {fileID: 0}
   stickerThree: {fileID: 0}
-  star: {fileID: 1335529889}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  subStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 1556660412}
   button2: {fileID: 1703337559}
   button3: {fileID: 2120128715}
@@ -14068,9 +14081,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sumScore: 0
-  subScore: 0
-  divScore: 0
-  multScore: 0
+  sumStarCount: 0
+  appleStickerScore: 0
+  basketStickerScore: 0
+  pigStickerScore: 0
+  levelIndex: 0
   FirstValue: {fileID: 2025424889}
   SecondValue: {fileID: 1710707265}
   Function: {fileID: 1756440054}
@@ -14087,7 +14102,11 @@ MonoBehaviour:
   stickerOne: {fileID: 1318589033}
   stickerTwo: {fileID: 1271604329}
   stickerThree: {fileID: 639977215}
-  star: {fileID: 1440922830}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  sumStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 1114535264}
   button2: {fileID: 111349184}
   button3: {fileID: 69315042}
@@ -17280,10 +17299,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
   subScore: 0
-  divScore: 0
-  multScore: 0
+  subStarCount: 0
+  carrotStickerScore: 0
+  bucketStickerScore: 0
+  bunnyStickerScore: 0
+  levelIndex: 0
   switchOff: {fileID: 1506112771}
   switchOn: {fileID: 1855497450}
   FirstValue: {fileID: 401612474}
@@ -17302,7 +17323,11 @@ MonoBehaviour:
   stickerOne: {fileID: 328665135}
   stickerTwo: {fileID: 0}
   stickerThree: {fileID: 0}
-  star: {fileID: 1335529889}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  subStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 527451506}
   button2: {fileID: 1039260904}
   button3: {fileID: 1607503939}
@@ -27538,11 +27563,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087338185}
   m_CullTransparentMesh: 1
---- !u!1 &1094034303 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5676771327779652057, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 973064300315609845}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1111636100
 GameObject:
   m_ObjectHideFlags: 0
@@ -28801,10 +28821,22 @@ MonoBehaviour:
   currentQuestion: 0
   Quizpanel: {fileID: 1362821124}
   GoPanel: {fileID: 1026566311}
-  sticker: {fileID: 1094034303}
   QuestionTxt: {fileID: 1885694582}
   ScoreTxt: {fileID: 1720326781}
   score: 0
+  levelIndex: 0
+  countStarCount: 0
+  threeCornStickerScore: 0
+  twoCornStickerScore: 0
+  lambStickerScore: 0
+  stickerOne: {fileID: 0}
+  stickerTwo: {fileID: 0}
+  stickerThree: {fileID: 0}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  countStars: {fileID: 0}
+  menuStars: {fileID: 0}
 --- !u!114 &1173210011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31039,7 +31071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1232621727
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34515,10 +34547,22 @@ MonoBehaviour:
   currentQuestion: 0
   Quizpanel: {fileID: 225356150}
   GoPanel: {fileID: 1992225797}
-  sticker: {fileID: 497881465}
   QuestionTxt: {fileID: 1880897087}
   ScoreTxt: {fileID: 195459412}
   score: 0
+  levelIndex: 0
+  countStarCount: 0
+  threeCornStickerScore: 0
+  twoCornStickerScore: 0
+  lambStickerScore: 0
+  stickerOne: {fileID: 0}
+  stickerTwo: {fileID: 0}
+  stickerThree: {fileID: 0}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  countStars: {fileID: 0}
+  menuStars: {fileID: 0}
 --- !u!1 &1344193583
 GameObject:
   m_ObjectHideFlags: 0
@@ -37988,9 +38032,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sumScore: 0
-  subScore: 0
-  divScore: 0
-  multScore: 0
+  sumStarCount: 0
+  appleStickerScore: 0
+  basketStickerScore: 0
+  pigStickerScore: 0
+  levelIndex: 0
   FirstValue: {fileID: 1545086976}
   SecondValue: {fileID: 400385279}
   Function: {fileID: 1425711255}
@@ -38007,7 +38053,11 @@ MonoBehaviour:
   stickerOne: {fileID: 446858899}
   stickerTwo: {fileID: 1318589033}
   stickerThree: {fileID: 307599861}
-  star: {fileID: 1440922830}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  sumStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 672239156}
   button2: {fileID: 1657541207}
   button3: {fileID: 2062353488}
@@ -50184,11 +50234,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986481441}
   m_CullTransparentMesh: 1
---- !u!1 &1989673304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4287893758202308374, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 973064300315609845}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1992225797
 GameObject:
   m_ObjectHideFlags: 0
@@ -50696,10 +50741,22 @@ MonoBehaviour:
   currentQuestion: 0
   Quizpanel: {fileID: 166052302}
   GoPanel: {fileID: 1231323480}
-  sticker: {fileID: 1989673304}
   QuestionTxt: {fileID: 240864708}
   ScoreTxt: {fileID: 608647223}
   score: 0
+  levelIndex: 0
+  countStarCount: 0
+  threeCornStickerScore: 0
+  twoCornStickerScore: 0
+  lambStickerScore: 0
+  stickerOne: {fileID: 0}
+  stickerTwo: {fileID: 0}
+  stickerThree: {fileID: 0}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  countStars: {fileID: 0}
+  menuStars: {fileID: 0}
 --- !u!114 &2008525894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55099,6 +55156,54 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2030866127}
+    - target: {fileID: 1747224479749102047, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveToFarm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480794020965, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 1747224480794020965, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenFarmWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480794020965, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480794020965, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480828224763, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480828224763, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480828224763, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 1747224480828224763, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480828224763, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveToSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480828224763, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747224480828224763, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1747224480830268489, guid: 289c79c5f42b09943b4ee0a55c1e916b, type: 3}
       propertyPath: m_Name
       value: WorldMenu
