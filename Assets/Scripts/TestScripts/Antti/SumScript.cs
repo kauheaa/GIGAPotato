@@ -402,18 +402,18 @@ public class SumScript : MonoBehaviour
         Function.text = "+";
         finalValue = firstValue + secondValue;
 
-        tempValue = Random.Range(2, 20);
+        tempValue = Random.Range(30, 200);
         while (tempValue == finalValue)
         {
-            tempValue = Random.Range(2, 20);
+            tempValue = Random.Range(30, 200);
         }
         Alternative1 = tempValue;
 
         //Second Alternative
-        tempValue = Random.Range(2, 20);
+        tempValue = Random.Range(30, 200);
         while (tempValue == finalValue || (tempValue == Alternative1))
         {
-            tempValue = Random.Range(2, 20);
+            tempValue = Random.Range(30, 200);
         }
         Alternative2 = tempValue;
 
@@ -468,18 +468,18 @@ public class SumScript : MonoBehaviour
         finalValue = firstValue + secondValue;
 
 
-        tempValue = Random.Range(2, 20);
+        tempValue = Random.Range(50, 1900);
         while (tempValue == finalValue)
         {
-            tempValue = Random.Range(2, 20);
+            tempValue = Random.Range(50, 1900);
         }
         Alternative1 = tempValue;
 
         //Second Alternative
-        tempValue = Random.Range(2, 20);
+        tempValue = Random.Range(50, 1900);
         while (tempValue == finalValue || (tempValue == Alternative1))
         {
-            tempValue = Random.Range(2, 20);
+            tempValue = Random.Range(50, 1900);
         }
         Alternative2 = tempValue;
 
