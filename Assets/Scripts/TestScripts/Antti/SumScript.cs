@@ -6,25 +6,67 @@ using UnityEngine.UI;
 public class SumScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
+    //[SerializeField] public int subScore = 0;
+    //[SerializeField] public int divScore = 0;
+    //[SerializeField] public int multScore = 0;
     [SerializeField] public int sumScore = 0;
-    [SerializeField] public int subScore = 0;
-    [SerializeField] public int divScore = 0;
-    [SerializeField] public int multScore = 0;    
+    [SerializeField] public int sumStarCount = 0;
+    [SerializeField] public int appleStickerScore = 0;
+    [SerializeField] public int basketStickerScore = 0;
+    [SerializeField] public int pigStickerScore = 0;
+    public int levelIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star, star2;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public Sprite oneStar, twoStar, threeStar;
+    public GameObject sumStars, menuStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
-   
-    
+
+
+    public void SaveScore()
+    {
+        saveScore.SaveSumScore(this);
+        
+        //luo väliaikaisen listan, joka etsii hierarkiassa olevat sumScore instanssit ja käy läpi,
+        //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
+        //näin kaikissa sumScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+        //ei ylikirjoita arvoja nollaksi 
+        SumScript[] tempArray = GameObject.FindObjectsOfType<SumScript>();
+        foreach (SumScript i in tempArray)
+        {
+            i.LoadScore();
+        }
+
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadSumScore();
+        sumStarCount = data.sumStarCount;
+        appleStickerScore = data.appleStickerScore;
+        basketStickerScore = data.basketStickerScore;
+        pigStickerScore = data.pigStickerScore;
+        Debug.Log("apple: " + appleStickerScore + " basket: " + basketStickerScore + " pig: " + pigStickerScore);
+
+    }
+
+    public void SetLevelIndex(int index)
+    {
+        levelIndex = index;
+    }
+
+    public void ResetScore()
+    {
+        sumScore = 0;
+        scoreCount.text = sumScore.ToString();
+    }
 
     private void Start()
     {
         scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
-        
-        
+
     }
 
     // Update is called once per frame
@@ -32,23 +74,34 @@ public class SumScript : MonoBehaviour
     {
         //   score = int.Parse(scoreCount.text);
 
-        if (sumScore >= 5)
+        sumStarCount = appleStickerScore + basketStickerScore + pigStickerScore;
+
+        if (appleStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
-            star.gameObject.SetActive(true);
-            star2.gameObject.SetActive(true);
         }
-        if (sumScore >= 10)
+        if (basketStickerScore == 1)
         {
             stickerTwo.gameObject.SetActive(true);
-          
-
         }
-        if (sumScore >= 15)
+        if (pigStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
-       
-
+        }
+        if (sumStarCount == 1)
+        {
+            sumStars.GetComponent<Image>().sprite = oneStar;
+            menuStars.GetComponent<Image>().sprite = oneStar;
+        }
+        if (sumStarCount == 2)
+        {
+            sumStars.GetComponent<Image>().sprite = twoStar;
+            menuStars.GetComponent<Image>().sprite = twoStar;
+        }
+        if (sumStarCount == 3)
+        {
+            sumStars.GetComponent<Image>().sprite = threeStar;
+            menuStars.GetComponent<Image>().sprite = threeStar;
         }
     }
 
@@ -179,21 +232,40 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
 
     public void ResetV()
     {
-        if(sumScore == 5)
+        if (sumScore >= 5)
         {
             switchOn.gameObject.SetActive(true);
             switchOff.gameObject.SetActive(false);
+            switch (levelIndex)
+            {
+                case 1:
+                    if (appleStickerScore < 1)
+                    {
+                        appleStickerScore += 1;
+                        Debug.Log("Apple unlocked");
+                    }
+                    break;
+                case 2:
+                    if (basketStickerScore < 1)
+                    {
+                        basketStickerScore += 1;
+                        Debug.Log("Basket unlocked");
+                    }
+                    break;
+                case 3:
+                    if (pigStickerScore < 1)
+                    {
+                        pigStickerScore += 1;
+                        Debug.Log("Pig unlocked");
+                    }
+                    break;
+                default:
+                    Debug.Log("No level index set");
+                    break;
+            }
+
         }
-        if (sumScore == 10)
-        {
-            switchOn.gameObject.SetActive(false);
-            switchOff.gameObject.SetActive(true);
-        }
-        if (sumScore == 15)
-        {
-            switchOn.gameObject.SetActive(false);
-            switchOff.gameObject.SetActive(true);
-        }
+    
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
         TWO.gameObject.SetActive(false);
@@ -203,6 +275,7 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
         AnswerSpot.text = "?";
         SumFarm();
     }
+
     IEnumerator Correct()
     {
         Score();       
@@ -210,11 +283,8 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
         scoreCount.text = sumScore.ToString();
         yield return new WaitForSeconds(1f);
         ResetV();
-
-       
-
-
     }
+
     public void Score()
     {
         sumScore += 1;
@@ -274,19 +344,6 @@ Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
         ResetV();
         SumSpace();
     }
-    public void SaveScore()
-    {
-        saveScore.SaveSumScore(this);
-    }
-    public void LoadScore()
-    {
-        scoreData data = saveScore.LoadSumScore();
-       
-    }
-    public void ResetScore()
-    {
-        sumScore = 0;
-        scoreCount.text = sumScore.ToString();
-    }
+
 
 }

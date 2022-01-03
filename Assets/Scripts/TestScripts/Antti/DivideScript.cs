@@ -23,7 +23,7 @@ public class DivideScript : MonoBehaviour
     private void Start()
     {
         AnswerSpot.text = "?";
-        sumScore = sum.subScore;
+        sumScore = sum.sumScore;
         subScore = sub.subScore;
         multScore = mult.divScore;
     }
@@ -247,7 +247,7 @@ public class DivideScript : MonoBehaviour
         ResetV();
         DivSpace();
     }
-    public void SaveScore()
+ /*   public void SaveScore()
     {
         saveScore.SaveSumScore(sum);
     }
@@ -259,5 +259,6 @@ public class DivideScript : MonoBehaviour
         multScore = data.multScore;
         divScore = data.divScore;
     }
+ */
 
 }

@@ -6,18 +6,60 @@ using UnityEngine.UI;
 public class SubScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    [SerializeField] public int sumScore = 0;
+    //[SerializeField] public int sumScore = 0;
+    //[SerializeField] public int divScore = 0;
+    //[SerializeField] public int multScore = 0;
     [SerializeField] public int subScore = 0;
-    [SerializeField] public int divScore = 0;
-    [SerializeField] public int multScore = 0;
+    [SerializeField] public int subStarCount = 0;
+    [SerializeField] public int carrotStickerScore = 0;
+    [SerializeField] public int bucketStickerScore = 0;
+    [SerializeField] public int bunnyStickerScore = 0;
+    public int levelIndex = 0;
     [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star, star2;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public Sprite oneStar, twoStar, threeStar;
+    public GameObject subStars, menuStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
-  
 
 
+    public void SaveScore()
+    {
+        saveScore.SaveSubScore(this);
+
+        //luo väliaikaisen listan, joka etsii hierarkiassa olevat subScore instanssit ja käy läpi,
+        //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
+        //näin kaikissa subScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+        //ei ylikirjoita arvoja nollaksi 
+        SubScript[] tempArray = GameObject.FindObjectsOfType<SubScript>();
+        foreach (SubScript i in tempArray)
+        {
+            i.LoadScore();
+        }
+
+    }
+    public void LoadScore()
+    {
+        scoreData data = saveScore.LoadSubScore();
+        subStarCount = data.subStarCount;
+        carrotStickerScore = data.carrotStickerScore;
+        bucketStickerScore = data.bucketStickerScore;
+        bunnyStickerScore = data.bunnyStickerScore;
+        Debug.Log("carrot: " + carrotStickerScore + " bucket: " + bucketStickerScore + " bunny: " + bunnyStickerScore);
+
+    }
+
+    public void SetLevelIndex(int index)
+    {
+        levelIndex = index;
+    }
+
+    public void ResetScore()
+    {
+        subScore = 0;
+        scoreCount.text = subScore.ToString();
+    }
 
     private void Start()
     {
@@ -29,22 +71,34 @@ public class SubScript : MonoBehaviour
     {
         //   score = int.Parse(scoreCount.text);
 
-        if (subScore >= 5)
+        subStarCount = carrotStickerScore + bucketStickerScore + bunnyStickerScore;
+
+        if (carrotStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
-            star.gameObject.SetActive(true);
-            star2.gameObject.SetActive(true);
-
-
         }
-        if (subScore >= 10)
+        if (bucketStickerScore == 1)
         {
             stickerTwo.gameObject.SetActive(true);
-
         }
-        if (subScore >= 15)
+        if (bunnyStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
+        }
+        if (subStarCount == 1)
+        {
+            subStars.GetComponent<Image>().sprite = oneStar;
+            menuStars.GetComponent<Image>().sprite = oneStar;
+        }
+        if (subStarCount == 2)
+        {
+            subStars.GetComponent<Image>().sprite = twoStar;
+            menuStars.GetComponent<Image>().sprite = twoStar;
+        }
+        if (subStarCount == 3)
+        {
+            subStars.GetComponent<Image>().sprite = threeStar;
+            menuStars.GetComponent<Image>().sprite = threeStar;
         }
     }
 
@@ -178,16 +232,33 @@ public class SubScript : MonoBehaviour
         {
             switchOn.gameObject.SetActive(true);
             switchOff.gameObject.SetActive(false);
-        }
-        if (subScore == 10)
-        {
-            switchOn.gameObject.SetActive(true);
-            switchOff.gameObject.SetActive(false);
-        }
-        if (subScore == 15)
-        {
-            switchOn.gameObject.SetActive(true);
-            switchOff.gameObject.SetActive(false);
+            switch (levelIndex)
+            {
+                case 1:
+                    if (carrotStickerScore < 1)
+                    {
+                        carrotStickerScore += 1;
+                        Debug.Log("Carrot unlocked");
+                    }
+                    break;
+                case 2:
+                    if (bucketStickerScore < 1)
+                    {
+                        bucketStickerScore += 1;
+                        Debug.Log("Bucket unlocked");
+                    }
+                    break;
+                case 3:
+                    if (bunnyStickerScore < 1)
+                    {
+                        bunnyStickerScore += 1;
+                        Debug.Log("Bunny unlocked");
+                    }
+                    break;
+                default:
+                    Debug.Log("No level index set");
+                    break;
+            }
         }
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
@@ -269,21 +340,6 @@ public class SubScript : MonoBehaviour
         ResetV();
         SubSpace();
     }
-    public void SaveScore()
-    {
-        save2score.SaveSubScore(this);
-    }
-    public void LoadScore()
-    {
-        score2data data = save2score.LoadSubScore();        
-        subScore = data.subScore;
-      
-    }
 
-    public void ResetScore()
-    {
-        subScore = 0;
-        scoreCount.text = sumScore.ToString();
-    }
 
 }
