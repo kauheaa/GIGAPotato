@@ -21,7 +21,7 @@ public class SumScript : MonoBehaviour
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
     private Animator anim;
-
+    public bool Activate = false;
 
     public void SaveScore()
     {
@@ -64,6 +64,7 @@ public class SumScript : MonoBehaviour
     {
         scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
+        anim.SetBool("Activate", false);
 
     }
 
