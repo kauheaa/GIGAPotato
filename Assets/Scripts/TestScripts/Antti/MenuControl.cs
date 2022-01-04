@@ -65,6 +65,11 @@ public class MenuControl : MonoBehaviour
         PauseGame();
     }
 
+    //public void ResetGame()
+    //{
+    //    StickerBook.setBool("AllScoresZero", true);
+    //}
+
     public void MoveToJungle()
     {
         SceneManager.LoadScene("Jungle");

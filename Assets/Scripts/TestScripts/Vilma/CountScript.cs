@@ -11,10 +11,12 @@ public class CountScript : MonoBehaviour
     public GameObject[] options;
     public int currentQuestion;
 
-    public GameObject Quizpanel;
+    public GameObject QuestionImg;
     public GameObject GoPanel;
 
     public Text QuestionTxt;
+    //public GameObject QuestionImg;
+    public Sprite QuestionSprite;
     public Text ScoreTxt;
 
     int totalQuestions = 0;
@@ -137,8 +139,9 @@ public class CountScript : MonoBehaviour
     {
         totalQuestions = QnA.Count;
         GoPanel.SetActive(false);
-        Quizpanel.SetActive(true);
+        QuestionImg.SetActive(true);
         generateQuestion();
+        LoadScore();
     }
 
     void Update()
@@ -159,7 +162,7 @@ public class CountScript : MonoBehaviour
         ResetScore();
         totalQuestions = QnA.Count;
         GoPanel.SetActive(false);
-        Quizpanel.SetActive(true);
+        QuestionImg.SetActive(true);
         generateQuestion();
     }
 
@@ -171,7 +174,7 @@ public class CountScript : MonoBehaviour
 
     void GameOver()
     {
-        Quizpanel.SetActive(false);
+        QuestionImg.SetActive(false);
         GoPanel.SetActive(true);
  //       ScoreTxt.text = score + "/" + totalQuestions;
     }
@@ -237,7 +240,9 @@ public class CountScript : MonoBehaviour
         {
             currentQuestion = Random.Range(0, QnA.Count);
 
-            QuestionTxt.text = QnA[currentQuestion].Question;
+            //QuestionTxt.text = QnA[currentQuestion].Question;
+            QuestionSprite = QnA[currentQuestion].Objects;
+            QuestionImg.GetComponent<Image>().sprite = QuestionSprite;
             SetAnswers();
 
             CheckStickers();

@@ -94,7 +94,7 @@ public class saveScore
         stream.Close();
         Debug.Log("Save count stickers");
     }
-    // COUNT LOAD
+    // MULTIPLY LOAD
     public static scoreData LoadCountScore()
     {
         string path = Application.persistentDataPath + "/countscore.txt";
@@ -127,7 +127,7 @@ public class saveScore
         stream.Close();
         Debug.Log("Save count stickers");
     }
-    // COUNT LOAD
+    // MULTIPLY LOAD
     public static scoreData LoadMultScore()
     {
         string path = Application.persistentDataPath + "/multscore.txt";
@@ -148,6 +148,8 @@ public class saveScore
         }
 
     }
+
+    //DIVIDE SAVE
     public static void SaveDivScore(DivideScript div)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -160,7 +162,8 @@ public class saveScore
         stream.Close();
         Debug.Log("Save count stickers");
     }
-    // COUNT LOAD
+
+    // DIVIDE LOAD
     public static scoreData LoadDivScore()
     {
         string path = Application.persistentDataPath + "/divscore.txt";
@@ -180,5 +183,20 @@ public class saveScore
             return null;
         }
 
+    }
+
+
+    //RESET ALL SCORES
+    public static void ResetAllScore(SumScript sum, SubScript sub)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/sumscore.txt";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        scoreData data = new scoreData(sum);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+        Debug.Log("Reset all sticker scores");
     }
 }

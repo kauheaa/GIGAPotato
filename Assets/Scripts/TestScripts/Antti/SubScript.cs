@@ -63,6 +63,7 @@ public class SubScript : MonoBehaviour
 
     private void Start()
     {
+        LoadScore();
         AnswerSpot.text = "?";
         
     }

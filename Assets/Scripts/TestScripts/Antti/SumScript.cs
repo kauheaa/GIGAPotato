@@ -21,7 +21,7 @@ public class SumScript : MonoBehaviour
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
     private Animator anim;
-    public bool Activate = false;
+    //public bool Activate = false;
 
     public void SaveScore()
     {
@@ -62,9 +62,10 @@ public class SumScript : MonoBehaviour
 
     private void Start()
     {
+        LoadScore();
         scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
-        anim.SetBool("Activate", false);
+        //anim.SetBool("Activate", false);
 
     }
 
@@ -332,7 +333,7 @@ public class SumScript : MonoBehaviour
         THREE.gameObject.SetActive(false);
         button3.interactable = true;
         AnswerSpot.text = "?";
-        anim.SetBool("Activate", false);
+        //anim.SetBool("Activate", false);
         SumFarm();
     }
 
@@ -436,7 +437,7 @@ public class SumScript : MonoBehaviour
         Score();       
         AnswerSpot.text = finalValue.ToString();       
         scoreCount.text = sumScore.ToString();
-        anim.SetBool("Activate", true);
+        //anim.SetBool("Activate", true);
         yield return new WaitForSeconds(1f);
         ResetV();
     }

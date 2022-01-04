@@ -1354,7 +1354,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseCountLevel1Canvas
+        m_MethodName: CloseCountLevel2Canvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2531,7 +2531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &109076770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2549,7 +2549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 0.25, y: 0.25}
-  m_AnchoredPosition: {x: -74, y: 633}
+  m_AnchoredPosition: {x: 195, y: 693}
   m_SizeDelta: {x: -100, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109076771
@@ -2596,109 +2596,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498324802}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
+      - m_Target: {fileID: 11500000, guid: c2371a4a8459b3149b32d827b2998c32, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 557324541}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 373085302}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 727255512}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 371488627}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 547726276}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1342980262}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1173210010}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2008525893}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4207,8 +4111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220, y: 85}
-  m_SizeDelta: {x: 601.507, y: 187.9831}
+  m_AnchoredPosition: {x: 209.54004, y: -25.059998}
+  m_SizeDelta: {x: 363, y: 363}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166052304
 MonoBehaviour:
@@ -4238,16 +4142,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6324,10 +6228,10 @@ RectTransform:
   m_Father: {fileID: 2024309068}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220, y: 85}
-  m_SizeDelta: {x: 601.507, y: 187.9831}
+  m_AnchorMin: {x: 0.442625, y: 0.2553333}
+  m_AnchorMax: {x: 0.775646, y: 0.6427038}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: -290, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225356152
 MonoBehaviour:
@@ -6357,16 +6261,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6960,7 +6864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &240864707
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24944,7 +24848,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseCountLevel1Canvas
+        m_MethodName: CloseCountLevel3Canvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28767,44 +28671,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: ONE
+  - Question: SIX
+    Objects: {fileID: 21300000, guid: 6283c92d57d518644aecbfc16234b4c6, type: 3}
     Answers:
-    - 7
-    - 1
-    - 0
+    - 5
+    - 6
+    - 8
     CorrectAnswer: 2
   - Question: SEVEN
+    Objects: {fileID: 21300000, guid: c1c8efe2812a7f84eb285cb1194feead, type: 3}
     Answers:
-    - 3
-    - 2
+    - 4
     - 7
-    CorrectAnswer: 3
+    - 9
+    CorrectAnswer: 2
   - Question: EIGHT
+    Objects: {fileID: 21300000, guid: a408bc774df461e449f462ca15f1b2fb, type: 3}
     Answers:
+    - 6
+    - 4
     - 8
-    - 3
-    - 9
-    CorrectAnswer: 1
-  - Question: TWO
+    CorrectAnswer: 3
+  - Question: NINE
+    Objects: {fileID: 21300000, guid: e84918456af7d044da7aad5e31e5eb6a, type: 3}
     Answers:
-    - 3
+    - 7
+    - 6
     - 9
-    - 2
     CorrectAnswer: 3
   - Question: TEN
+    Objects: {fileID: 21300000, guid: 534763413bae6e44b97b0d9996010245, type: 3}
     Answers:
     - 7
     - 10
-    - 8
+    - 9
     CorrectAnswer: 2
   options:
   - {fileID: 1646763993}
   - {fileID: 773737448}
   - {fileID: 841342850}
   currentQuestion: 0
-  Quizpanel: {fileID: 1362821124}
+  QuestionImg: {fileID: 1362821124}
   GoPanel: {fileID: 1026566311}
   QuestionTxt: {fileID: 1885694582}
+  QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
   ScoreTxt: {fileID: 1720326781}
   score: 0
   levelIndex: 2
@@ -28834,30 +28744,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QnA:
   - Question: ONE
+    Objects: {fileID: 0}
     Answers:
     - 7
     - 1
     - 2
     CorrectAnswer: 2
   - Question: TWO
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 3
     - 2
     CorrectAnswer: 3
   - Question: THREE
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 3
     - 8
     CorrectAnswer: 2
   - Question: FOUR
+    Objects: {fileID: 0}
     Answers:
     - 7
     - 10
     - 4
     CorrectAnswer: 3
   - Question: FIVE
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 6
@@ -34095,30 +34010,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QnA:
   - Question: ONE
+    Objects: {fileID: 0}
     Answers:
     - 7
     - 1
     - 2
     CorrectAnswer: 2
   - Question: TWO
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 3
     - 2
     CorrectAnswer: 3
   - Question: THREE
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 3
     - 8
     CorrectAnswer: 2
   - Question: FOUR
+    Objects: {fileID: 0}
     Answers:
     - 7
     - 10
     - 4
     CorrectAnswer: 3
   - Question: FIVE
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 6
@@ -34148,49 +34068,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QnA:
   - Question: ONE
+    Objects: {fileID: 21300000, guid: 2b7862c448361e24eb91fe51526e2a5b, type: 3}
     Answers:
-    - 7
+    - 5
     - 1
     - 0
     CorrectAnswer: 2
-  - Question: SEVEN
-    Answers:
-    - 3
-    - 2
-    - 7
-    CorrectAnswer: 3
-  - Question: EIGHT
-    Answers:
-    - 8
-    - 3
-    - 9
-    CorrectAnswer: 1
   - Question: TWO
+    Objects: {fileID: 21300000, guid: 114faad35d3889649b03b8c067448a52, type: 3}
     Answers:
     - 3
-    - 9
+    - 7
     - 2
     CorrectAnswer: 3
-  - Question: TEN
+  - Question: THREE
+    Objects: {fileID: 21300000, guid: 805e691809ed8c449b30d5a92f41ee65, type: 3}
     Answers:
-    - 7
-    - 10
     - 8
+    - 3
+    - 9
     CorrectAnswer: 2
-  - Question: TEN
+  - Question: FOUR
+    Objects: {fileID: 21300000, guid: 08575a216891a164994f543dd2200494, type: 3}
     Answers:
+    - 4
     - 7
-    - 10
-    - 8
-    CorrectAnswer: 2
+    - 2
+    CorrectAnswer: 1
+  - Question: FIVE
+    Objects: {fileID: 21300000, guid: 7c7ca24358392d949ab5f43c330c60e1, type: 3}
+    Answers:
+    - 5
+    - 6
+    - 3
+    CorrectAnswer: 1
   options:
   - {fileID: 1037902512}
   - {fileID: 1435308103}
   - {fileID: 1240521030}
   currentQuestion: 0
-  Quizpanel: {fileID: 225356150}
+  QuestionImg: {fileID: 225356150}
   GoPanel: {fileID: 1992225797}
   QuestionTxt: {fileID: 1880897087}
+  QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
   ScoreTxt: {fileID: 195459412}
   score: 0
   levelIndex: 1
@@ -34790,8 +34710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220, y: 85}
-  m_SizeDelta: {x: 601.507, y: 187.9831}
+  m_AnchoredPosition: {x: 209.54004, y: -25.059998}
+  m_SizeDelta: {x: 363, y: 363}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362821126
 MonoBehaviour:
@@ -34821,16 +34741,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -43946,7 +43866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SAVE
+  m_Text: RESET
 --- !u!222 &1750012437
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46691,7 +46611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1880897087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46770,7 +46690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1885694581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50141,44 +50061,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: ONE
-    Answers:
-    - 7
-    - 1
-    - 0
-    CorrectAnswer: 2
-  - Question: SEVEN
-    Answers:
-    - 3
-    - 2
-    - 7
-    CorrectAnswer: 3
-  - Question: EIGHT
-    Answers:
-    - 8
-    - 3
-    - 9
-    CorrectAnswer: 1
   - Question: TWO
-    Answers:
-    - 3
-    - 9
-    - 2
-    CorrectAnswer: 3
-  - Question: TEN
+    Objects: {fileID: 21300000, guid: 114faad35d3889649b03b8c067448a52, type: 3}
     Answers:
     - 7
-    - 10
-    - 8
+    - 2
+    - 0
     CorrectAnswer: 2
   options:
   - {fileID: 1791106466}
   - {fileID: 1509230199}
   - {fileID: 1336624797}
   currentQuestion: 0
-  Quizpanel: {fileID: 166052302}
+  QuestionImg: {fileID: 166052302}
   GoPanel: {fileID: 1231323480}
   QuestionTxt: {fileID: 240864708}
+  QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
   ScoreTxt: {fileID: 608647223}
   score: 0
   levelIndex: 3
@@ -50208,30 +50106,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QnA:
   - Question: ONE
+    Objects: {fileID: 0}
     Answers:
     - 7
     - 1
     - 2
     CorrectAnswer: 2
   - Question: TWO
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 3
     - 2
     CorrectAnswer: 3
   - Question: THREE
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 3
     - 8
     CorrectAnswer: 2
   - Question: FOUR
+    Objects: {fileID: 0}
     Answers:
     - 7
     - 10
     - 4
     CorrectAnswer: 3
   - Question: FIVE
+    Objects: {fileID: 0}
     Answers:
     - 5
     - 6
