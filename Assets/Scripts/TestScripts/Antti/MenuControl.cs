@@ -15,6 +15,8 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform additionCat;
     [SerializeField] private Transform substractCat;
     [SerializeField] private Transform countingCat;
+    [SerializeField] private Transform multiplyCat;
+    [SerializeField] private Transform divideCat;
     [SerializeField] private Transform addLevel1Canvas;
     [SerializeField] private Transform addLevel1Start;
     [SerializeField] private Transform addLevel1Level;
@@ -50,7 +52,31 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform countLevel3Canvas;
     [SerializeField] private Transform countLevel3Start;
     [SerializeField] private Transform countLevel3Level;
-    [SerializeField] private Transform countLevel3End; 
+    [SerializeField] private Transform countLevel3End;
+    [SerializeField] private Transform multLevel1Canvas;
+    [SerializeField] private Transform multLevel1Start;
+    [SerializeField] private Transform multLevel1Level;
+    [SerializeField] private Transform multLevel1End;
+    [SerializeField] private Transform multLevel2Canvas;
+    [SerializeField] private Transform multLevel2Start;
+    [SerializeField] private Transform multLevel2Level;
+    [SerializeField] private Transform multLevel2End;
+    [SerializeField] private Transform multLevel3Canvas;
+    [SerializeField] private Transform multLevel3Start;
+    [SerializeField] private Transform multLevel3Level;
+    [SerializeField] private Transform multLevel3End;
+    [SerializeField] private Transform divLevel1Canvas;
+    [SerializeField] private Transform divLevel1Start;
+    [SerializeField] private Transform divLevel1Level;
+    [SerializeField] private Transform divLevel1End;
+    [SerializeField] private Transform divLevel2Canvas;
+    [SerializeField] private Transform divLevel2Start;
+    [SerializeField] private Transform divLevel2Level;
+    [SerializeField] private Transform divLevel2End;
+    [SerializeField] private Transform divLevel3Canvas;
+    [SerializeField] private Transform divLevel3Start;
+    [SerializeField] private Transform divLevel3Level;
+    [SerializeField] private Transform divLevel3End;
     [SerializeField] private Transform levelExitWarning;
 
 
@@ -159,8 +185,25 @@ public class MenuControl : MonoBehaviour
     {
         countingCat.gameObject.SetActive(false);
     }
+    public void OpenMultiplyCategory()
+    {
+        multiplyCat.gameObject.SetActive(true);
+    }
+    public void CloseMultiplyCategory()
+    {
+        multiplyCat.gameObject.SetActive(false);
+    }
 
-    /*Farm Addition level 1 buttons*/
+    public void OpenDivideCategory()
+    {
+        divideCat.gameObject.SetActive(true);
+    }
+    public void CloseDivideCategory()
+    {
+        divideCat.gameObject.SetActive(false);
+    }
+
+    /*Addition level 1 buttons*/
     public void OpenAddLevel1Canvas()
     {
         addLevel1Canvas.gameObject.SetActive(true);
@@ -194,7 +237,7 @@ public class MenuControl : MonoBehaviour
         addLevel1End.gameObject.SetActive(false);
     }
 
-    /*Farm Addition level 2 buttons*/
+    /*Addition level 2 buttons*/
     public void OpenAddLevel2Canvas()
     {
         addLevel2Canvas.gameObject.SetActive(true);
@@ -228,7 +271,7 @@ public class MenuControl : MonoBehaviour
         addLevel2End.gameObject.SetActive(false);
     }
 
-    /*Farm Addition level 3 buttons*/
+    /*Addition level 3 buttons*/
     public void OpenAddLevel3Canvas()
     {
         addLevel3Canvas.gameObject.SetActive(true);
@@ -262,7 +305,7 @@ public class MenuControl : MonoBehaviour
         addLevel3End.gameObject.SetActive(false);
     }
 
-    /*Farm Subtraction level 1 buttons*/
+    /*Subtraction level 1 buttons*/
     public void OpenSubLevel1Canvas()
     {
         subLevel1Canvas.gameObject.SetActive(true);
@@ -296,7 +339,7 @@ public class MenuControl : MonoBehaviour
         subLevel1End.gameObject.SetActive(false);
     }
 
-    /*Farm Subtraction level 2 buttons*/
+    /*Subtraction level 2 buttons*/
     public void OpenSubLevel2Canvas()
     {
         subLevel2Canvas.gameObject.SetActive(true);
@@ -330,7 +373,7 @@ public class MenuControl : MonoBehaviour
         subLevel2End.gameObject.SetActive(false);
     }
 
-    /*Farm Subtraction level 3 buttons*/
+    /*Subtraction level 3 buttons*/
     public void OpenSubLevel3Canvas()
     {
         subLevel3Canvas.gameObject.SetActive(true);
@@ -364,7 +407,7 @@ public class MenuControl : MonoBehaviour
         subLevel3End.gameObject.SetActive(false);
     }
 
-    /*Farm Counting level 1 buttons*/
+    /*Counting level 1 buttons*/
     public void OpenCountLevel1Canvas()
     {
         countLevel1Canvas.gameObject.SetActive(true);
@@ -398,7 +441,7 @@ public class MenuControl : MonoBehaviour
         countLevel1End.gameObject.SetActive(false);
     }
 
-    /*Farm Counting level 2 buttons*/
+    /*Counting level 2 buttons*/
     
     public void OpenCountLevel2Canvas()
     {
@@ -433,7 +476,7 @@ public class MenuControl : MonoBehaviour
         countLevel2End.gameObject.SetActive(false);
     }
     
-    /*Farm Counting level 3 buttons*/
+    /*Counting level 3 buttons*/
     
     public void OpenCountLevel3Canvas()
     {
@@ -467,7 +510,211 @@ public class MenuControl : MonoBehaviour
     {
         countLevel3End.gameObject.SetActive(false);
     }
-    
+
+    /*Multiply level 1 buttons*/
+    public void OpenMultLevel1Canvas()
+    {
+        multLevel1Canvas.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel1Canvas()
+    {
+        multLevel1Canvas.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel1Start()
+    {
+        multLevel1Start.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel1Start()
+    {
+        multLevel1Start.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel1Level()
+    {
+        multLevel1Level.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel1Level()
+    {
+        multLevel1Level.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel1End()
+    {
+        multLevel1End.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel1End()
+    {
+        multLevel1End.gameObject.SetActive(false);
+    }
+
+    /*Multiply level 2 buttons*/
+    public void OpenMultLevel2Canvas()
+    {
+        multLevel2Canvas.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel2Canvas()
+    {
+        multLevel2Canvas.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel2Start()
+    {
+        multLevel2Start.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel2Start()
+    {
+        multLevel2Start.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel2Level()
+    {
+        multLevel2Level.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel2Level()
+    {
+        multLevel2Level.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel2End()
+    {
+        multLevel2End.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel2End()
+    {
+        multLevel2End.gameObject.SetActive(false);
+    }
+
+    /*Multiply level 3 buttons*/
+    public void OpenMultLevel3Canvas()
+    {
+        multLevel3Canvas.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel3Canvas()
+    {
+        multLevel3Canvas.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel3Start()
+    {
+        multLevel3Start.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel3Start()
+    {
+        multLevel3Start.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel3Level()
+    {
+        multLevel3Level.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel3Level()
+    {
+        multLevel3Level.gameObject.SetActive(false);
+    }
+    public void OpenMultLevel3End()
+    {
+        multLevel3End.gameObject.SetActive(true);
+    }
+    public void CloseMultLevel3End()
+    {
+        multLevel3End.gameObject.SetActive(false);
+    }
+
+    /*Divide level 1 buttons*/
+    public void OpenDivLevel1Canvas()
+    {
+        divLevel1Canvas.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel1Canvas()
+    {
+        divLevel1Canvas.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel1Start()
+    {
+        divLevel1Start.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel1Start()
+    {
+        divLevel1Start.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel1Level()
+    {
+        divLevel1Level.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel1Level()
+    {
+        divLevel1Level.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel1End()
+    {
+        divLevel1End.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel1End()
+    {
+        divLevel1End.gameObject.SetActive(false);
+    }
+
+    /*Divide level 2 buttons*/
+    public void OpenDivLevel2Canvas()
+    {
+        divLevel2Canvas.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel2Canvas()
+    {
+        divLevel2Canvas.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel2Start()
+    {
+        divLevel2Start.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel2Start()
+    {
+        divLevel2Start.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel2Level()
+    {
+        divLevel2Level.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel2Level()
+    {
+        divLevel2Level.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel2End()
+    {
+        divLevel2End.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel2End()
+    {
+        divLevel2End.gameObject.SetActive(false);
+    }
+
+    /*Divide level 3 buttons*/
+    public void OpenDivLevel3Canvas()
+    {
+        divLevel3Canvas.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel3Canvas()
+    {
+        divLevel3Canvas.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel3Start()
+    {
+        divLevel3Start.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel3Start()
+    {
+        divLevel3Start.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel3Level()
+    {
+        divLevel3Level.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel3Level()
+    {
+        divLevel3Level.gameObject.SetActive(false);
+    }
+    public void OpenDivLevel3End()
+    {
+        divLevel3End.gameObject.SetActive(true);
+    }
+    public void CloseDivLevel3End()
+    {
+        divLevel3End.gameObject.SetActive(false);
+    }
+
     /*Exit level warning popup*/
     public void OpenLevelExitWarning()
     {

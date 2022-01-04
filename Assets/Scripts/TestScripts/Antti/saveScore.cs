@@ -184,19 +184,4 @@ public class saveScore
         }
 
     }
-
-
-    //RESET ALL SCORES
-    public static void ResetAllScore(SumScript sum, SubScript sub)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/sumscore.txt";
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        scoreData data = new scoreData(sum);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
-        Debug.Log("Reset all sticker scores");
-    }
 }
