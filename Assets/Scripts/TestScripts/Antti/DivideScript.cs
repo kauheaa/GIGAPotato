@@ -20,6 +20,8 @@ public class DivideScript : MonoBehaviour
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
+    
+   
 
 
     public void SaveScore()

@@ -104,11 +104,69 @@ public class SubScript : MonoBehaviour
 
     public void SubFarm()
     {
-
-        firstValue = Random.Range(7, 10);
-        secondValue = Random.Range(1, 6);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
+        if (levelIndex == 1)
+        {
+            firstValue = Random.Range(6, 10);
+            secondValue = Random.Range(1, 5);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 2)
+        {
+            firstValue = Random.Range(11, 15);
+            secondValue = Random.Range(1, 10);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 3)
+        {
+            firstValue = Random.Range(20, 25);
+            secondValue = Random.Range(1, 19);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 4)
+        {
+            firstValue = Random.Range(20, 25);
+            secondValue = Random.Range(20, 25);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 5)
+        {
+            firstValue = Random.Range(20, 25);
+            secondValue = Random.Range(20, 25);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 6)
+        {
+            firstValue = Random.Range(20, 25);
+            secondValue = Random.Range(20, 25);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 7)
+        {
+            firstValue = Random.Range(20, 25);
+            secondValue = Random.Range(20, 25);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 8)
+        {
+            firstValue = Random.Range(20, 25);
+            secondValue = Random.Range(20, 25);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
+        if (levelIndex == 9)
+        {
+            firstValue = Random.Range(20, 25);
+            secondValue = Random.Range(20, 25);
+            FirstValue.text = firstValue.ToString();
+            SecondValue.text = secondValue.ToString();
+        }
 
         if (firstValue - secondValue < 0)
         {
