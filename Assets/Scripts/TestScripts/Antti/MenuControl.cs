@@ -65,6 +65,21 @@ public class MenuControl : MonoBehaviour
         PauseGame();
     }
 
+    public void MoveToJungle()
+    {
+        SceneManager.LoadScene("Jungle");
+    }
+
+    public void MoveToFarm()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void MoveToSpace()
+    {
+        SceneManager.LoadScene("Space");
+    }
+
     /*Stickerbook related buttons*/
     public void OpenStickerBook()
     {
