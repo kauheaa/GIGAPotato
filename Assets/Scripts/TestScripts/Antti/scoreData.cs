@@ -33,6 +33,22 @@ public class scoreData
         twoCornStickerScore = count.twoCornStickerScore;
         lambStickerScore = count.lambStickerScore;
     }
+    public scoreData(MultiplyScript mult)
+    {
+        {
+            sumStarCount = mult.sumStarCount;
+            appleStickerScore = mult.appleStickerScore;
+            basketStickerScore = mult.basketStickerScore;
+            pigStickerScore = mult.pigStickerScore;
+        }
+    }
+    public scoreData(DivideScript div)
+    {
+        sumStarCount = div.sumStarCount;
+        appleStickerScore = div.appleStickerScore;
+        basketStickerScore = div.basketStickerScore;
+        pigStickerScore = div.pigStickerScore;
+    }
 
 
 

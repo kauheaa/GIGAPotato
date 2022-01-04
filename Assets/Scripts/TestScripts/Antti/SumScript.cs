@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class SumScript : MonoBehaviour
 {
-    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    //[SerializeField] public int subScore = 0;
-    //[SerializeField] public int divScore = 0;
-    //[SerializeField] public int multScore = 0;
+    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;   
     [SerializeField] public int sumScore = 0;
     [SerializeField] public int sumStarCount = 0;
     [SerializeField] public int appleStickerScore = 0;
