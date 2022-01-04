@@ -72,12 +72,17 @@ public class MenuControl : MonoBehaviour
 
     public void MoveToFarm()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Farm");
     }
 
     public void MoveToSpace()
     {
         SceneManager.LoadScene("Space");
+    }
+
+    public void MoveToMain()
+    {
+        SceneManager.LoadScene("Main");
     }
 
     /*Stickerbook related buttons*/
