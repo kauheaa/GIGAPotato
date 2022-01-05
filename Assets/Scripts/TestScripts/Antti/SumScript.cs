@@ -8,15 +8,23 @@ public class SumScript : MonoBehaviour
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;   
     [SerializeField] public int sumScore = 0;
     [SerializeField] public int sumStarCount = 0;
+    [SerializeField] public int sumJungleStarCount = 0;
+    [SerializeField] public int sumSpaceStarCount = 0;
     [SerializeField] public int appleStickerScore = 0;
     [SerializeField] public int basketStickerScore = 0;
     [SerializeField] public int pigStickerScore = 0;
+    [SerializeField] public int bananaStickerScore = 0;
+    [SerializeField] public int clusterStickerScore = 0;
+    [SerializeField] public int monkeyStickerScore = 0;
+    [SerializeField] public int asteroidStickerScore = 0;
+    [SerializeField] public int blackholeStickerScore = 0;
+    [SerializeField] public int llamaStickerScore = 0; 
     public int levelIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix, StickerSeven, StickerEight, StickerNine;
     public Sprite oneStar, twoStar, threeStar;
-    public GameObject sumStars, menuStars;
+    public GameObject sumStars, menuStars, sumJungleStars, menuJungleStars, sumSpaceStars, menuSpaceStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
@@ -42,10 +50,21 @@ public class SumScript : MonoBehaviour
     {
         scoreData data = saveScore.LoadSumScore();
         sumStarCount = data.sumStarCount;
+        sumJungleStarCount = data.sumJungleStarCount;
+        sumSpaceStarCount = data.sumSpaceStarCount;
+
         appleStickerScore = data.appleStickerScore;
         basketStickerScore = data.basketStickerScore;
         pigStickerScore = data.pigStickerScore;
-        Debug.Log("apple: " + appleStickerScore + " basket: " + basketStickerScore + " pig: " + pigStickerScore);
+
+        bananaStickerScore = data.bananaStickerScore;
+        clusterStickerScore = data.clusterStickerScore;
+        monkeyStickerScore = data.monkeyStickerScore;
+
+        asteroidStickerScore = data.asteroidStickerScore;
+        blackholeStickerScore = data.blackholeStickerScore;
+        llamaStickerScore = data.llamaStickerScore;
+        Debug.Log(appleStickerScore + "APPLE " + basketStickerScore + "BASKET " + pigStickerScore + "PIG " + bananaStickerScore + "BANANA " + clusterStickerScore + "CLUSTER " + monkeyStickerScore + "MONKEY");
 
     }
 

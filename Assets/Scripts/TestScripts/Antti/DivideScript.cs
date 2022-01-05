@@ -7,16 +7,20 @@ public class DivideScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
     [SerializeField] public int divScore = 0;
-    [SerializeField] public int sumStarCount = 0;
-    [SerializeField] public int appleStickerScore = 0;
-    [SerializeField] public int basketStickerScore = 0;
-    [SerializeField] public int pigStickerScore = 0;
+    [SerializeField] public int divJungleStarCount = 0;
+    [SerializeField] public int divSpaceStarCount = 0;
+    [SerializeField] public int avocadoStickerScore = 0;
+    [SerializeField] public int toolStickerScore = 0;
+    [SerializeField] public int tigerStickerScore = 0;
+    [SerializeField] public int driedfishStickerScore = 0;
+    [SerializeField] public int octopusStickerScore = 0;
+    [SerializeField] public int catStickerScore = 0;
     public int levelIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix;
     public Sprite oneStar, twoStar, threeStar;
-    public GameObject sumStars, menuStars;
+    public GameObject divStars, menuStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
@@ -28,9 +32,9 @@ public class DivideScript : MonoBehaviour
     {
         saveScore.SaveDivScore(this);
 
-        //luo väliaikaisen listan, joka etsii hierarkiassa olevat sumScore instanssit ja käy läpi,
+        //luo väliaikaisen listan, joka etsii hierarkiassa olevat divScore instanssit ja käy läpi,
         //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
-        //näin kaikissa sumScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+        //näin kaikissa divScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
         //ei ylikirjoita arvoja nollaksi 
         DivideScript[] tempArray = GameObject.FindObjectsOfType<DivideScript>();
         foreach (DivideScript i in tempArray)
@@ -42,11 +46,11 @@ public class DivideScript : MonoBehaviour
     public void LoadScore()
     {
         scoreData data = saveScore.LoadDivScore();
-        sumStarCount = data.sumStarCount;
-        appleStickerScore = data.appleStickerScore;
-        basketStickerScore = data.basketStickerScore;
-        pigStickerScore = data.pigStickerScore;
-        Debug.Log("apple: " + appleStickerScore + " basket: " + basketStickerScore + " pig: " + pigStickerScore);
+        divJungleStarCount = data.divJungleStarCount;
+        avocadoStickerScore = data.avocadoStickerScore;
+        toolStickerScore = data.toolStickerScore;
+        tigerStickerScore = data.tigerStickerScore;
+        Debug.Log("apple: " + avocadoStickerScore + " basket: " + toolStickerScore + " pig: " + tigerStickerScore);
 
     }
 
@@ -71,35 +75,35 @@ public class DivideScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
-        sumStarCount = appleStickerScore + basketStickerScore + pigStickerScore;
 
-        if (appleStickerScore == 1)
+        divJungleStarCount = avocadoStickerScore + toolStickerScore + tigerStickerScore;
+
+        if (avocadoStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
         }
-        if (basketStickerScore == 1)
+        if (toolStickerScore == 1)
         {
             stickerTwo.gameObject.SetActive(true);
         }
-        if (pigStickerScore == 1)
+        if (tigerStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
         }
-        if (sumStarCount == 1)
+        if (divJungleStarCount == 1)
         {
-            sumStars.GetComponent<Image>().sprite = oneStar;
+            divStars.GetComponent<Image>().sprite = oneStar;
             menuStars.GetComponent<Image>().sprite = oneStar;
         }
-        if (sumStarCount == 2)
+        if (divJungleStarCount == 2)
         {
-            sumStars.GetComponent<Image>().sprite = twoStar;
+            divStars.GetComponent<Image>().sprite = twoStar;
             menuStars.GetComponent<Image>().sprite = twoStar;
         }
-        if (sumStarCount == 3)
+        if (divJungleStarCount == 3)
         {
-            sumStars.GetComponent<Image>().sprite = threeStar;
+            divStars.GetComponent<Image>().sprite = threeStar;
             menuStars.GetComponent<Image>().sprite = threeStar;
         }
     }
@@ -302,23 +306,23 @@ public class DivideScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 1:
-                        if (appleStickerScore < 1)
+                        if (avocadoStickerScore < 1)
                         {
-                            appleStickerScore += 1;
+                            avocadoStickerScore += 1;
                             Debug.Log("Apple unlocked");
                         }
                         break;
                     case 2:
-                        if (basketStickerScore < 1)
+                        if (toolStickerScore < 1)
                         {
-                            basketStickerScore += 1;
+                            toolStickerScore += 1;
                             Debug.Log("Basket unlocked");
                         }
                         break;
                     case 3:
-                        if (pigStickerScore < 1)
+                        if (tigerStickerScore < 1)
                         {
-                            pigStickerScore += 1;
+                            tigerStickerScore += 1;
                             Debug.Log("Pig unlocked");
                         }
                         break;
@@ -349,23 +353,23 @@ public class DivideScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 1:
-                        if (appleStickerScore < 1)
+                        if (avocadoStickerScore < 1)
                         {
-                            appleStickerScore += 1;
+                            avocadoStickerScore += 1;
                             Debug.Log("Apple unlocked");
                         }
                         break;
                     case 2:
-                        if (basketStickerScore < 1)
+                        if (toolStickerScore < 1)
                         {
-                            basketStickerScore += 1;
+                            toolStickerScore += 1;
                             Debug.Log("Basket unlocked");
                         }
                         break;
                     case 3:
-                        if (pigStickerScore < 1)
+                        if (tigerStickerScore < 1)
                         {
-                            pigStickerScore += 1;
+                            tigerStickerScore += 1;
                             Debug.Log("Pig unlocked");
                         }
                         break;

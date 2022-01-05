@@ -21,9 +21,11 @@ public class CountScript : MonoBehaviour
     // These are needed for Stickers, Starcount and saving
     public int levelIndex = 0;
     [SerializeField] public int countStarCount = 0;
+    [SerializeField] public int countSpaceStarCount = 0;
     [SerializeField] public int threeCornStickerScore = 0;
     [SerializeField] public int twoCornStickerScore = 0;
     [SerializeField] public int lambStickerScore = 0;
+
     public GameObject stickerOne, stickerTwo, stickerThree;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject countStars, menuStars;

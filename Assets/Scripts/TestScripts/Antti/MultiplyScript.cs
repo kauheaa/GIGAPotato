@@ -6,17 +6,21 @@ using UnityEngine.UI;
 public class MultiplyScript : MonoBehaviour
 {
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    [SerializeField] public int sumScore = 0;
-    [SerializeField] public int sumStarCount = 0;
-    [SerializeField] public int appleStickerScore = 0;
-    [SerializeField] public int basketStickerScore = 0;
-    [SerializeField] public int pigStickerScore = 0;
+    [SerializeField] public int multScore = 0;
+    [SerializeField] public int multJungleStarCount = 0;
+    [SerializeField] public int multSpaceStarCount = 0;
+    [SerializeField] public int lycheeStickerScore = 0;
+    [SerializeField] public int pitahayaStickerScore = 0;
+    [SerializeField] public int frogStickerScore = 0;
+    [SerializeField] public int flagStickerScore = 0;
+    [SerializeField] public int rocketStickerScore = 0;
+    [SerializeField] public int laikaStickerScore = 0;
     public int levelIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix;
     public Sprite oneStar, twoStar, threeStar;
-    public GameObject sumStars, menuStars;
+    public GameObject multStars, menuStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
@@ -26,9 +30,9 @@ public class MultiplyScript : MonoBehaviour
     {
         saveScore.SaveMultScore(this);
 
-        //luo väliaikaisen listan, joka etsii hierarkiassa olevat sumScore instanssit ja käy läpi,
+        //luo väliaikaisen listan, joka etsii hierarkiassa olevat multScore instanssit ja käy läpi,
         //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
-        //näin kaikissa sumScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+        //näin kaikissa multScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
         //ei ylikirjoita arvoja nollaksi 
         MultiplyScript[] tempArray = GameObject.FindObjectsOfType<MultiplyScript>();
         foreach (MultiplyScript i in tempArray)
@@ -40,11 +44,11 @@ public class MultiplyScript : MonoBehaviour
     public void LoadScore()
     {
         scoreData data = saveScore.LoadSumScore();
-        sumStarCount = data.sumStarCount;
-        appleStickerScore = data.appleStickerScore;
-        basketStickerScore = data.basketStickerScore;
-        pigStickerScore = data.pigStickerScore;
-        Debug.Log("apple: " + appleStickerScore + " basket: " + basketStickerScore + " pig: " + pigStickerScore);
+        multJungleStarCount = data.multJungleStarCount;
+        lycheeStickerScore = data.lycheeStickerScore;
+        pitahayaStickerScore = data.pitahayaStickerScore;
+        frogStickerScore = data.frogStickerScore;
+        Debug.Log("apple: " + lycheeStickerScore + " basket: " + pitahayaStickerScore + " pig: " + frogStickerScore);
 
     }
 
@@ -55,13 +59,13 @@ public class MultiplyScript : MonoBehaviour
 
     public void ResetScore()
     {
-        sumScore = 0;
-        scoreCount.text = sumScore.ToString();
+        multScore = 0;
+        scoreCount.text = multScore.ToString();
     }
 
     private void Start()
     {
-        scoreCount.text = sumScore.ToString();
+        scoreCount.text = multScore.ToString();
         AnswerSpot.text = "?";
 
     }
@@ -71,33 +75,33 @@ public class MultiplyScript : MonoBehaviour
     {
         //   score = int.Parse(scoreCount.text);
 
-        sumStarCount = appleStickerScore + basketStickerScore + pigStickerScore;
+        multJungleStarCount = lycheeStickerScore + pitahayaStickerScore + frogStickerScore;
 
-        if (appleStickerScore == 1)
+        if (lycheeStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
         }
-        if (basketStickerScore == 1)
+        if (pitahayaStickerScore == 1)
         {
             stickerTwo.gameObject.SetActive(true);
         }
-        if (pigStickerScore == 1)
+        if (frogStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
         }
-        if (sumStarCount == 1)
+        if (multJungleStarCount == 1)
         {
-            sumStars.GetComponent<Image>().sprite = oneStar;
+            multStars.GetComponent<Image>().sprite = oneStar;
             menuStars.GetComponent<Image>().sprite = oneStar;
         }
-        if (sumStarCount == 2)
+        if (multJungleStarCount == 2)
         {
-            sumStars.GetComponent<Image>().sprite = twoStar;
+            multStars.GetComponent<Image>().sprite = twoStar;
             menuStars.GetComponent<Image>().sprite = twoStar;
         }
-        if (sumStarCount == 3)
+        if (multJungleStarCount == 3)
         {
-            sumStars.GetComponent<Image>().sprite = threeStar;
+            multStars.GetComponent<Image>().sprite = threeStar;
             menuStars.GetComponent<Image>().sprite = threeStar;
         }
     }
@@ -167,30 +171,30 @@ public class MultiplyScript : MonoBehaviour
     public void ResetJungle()
     {
         {
-            if (sumScore >= 5)
+            if (multScore >= 5)
             {
                 switchOn.gameObject.SetActive(true);
                 switchOff.gameObject.SetActive(false);
                 switch (levelIndex)
                 {
                     case 1:
-                        if (appleStickerScore < 1)
+                        if (lycheeStickerScore < 1)
                         {
-                            appleStickerScore += 1;
+                            lycheeStickerScore += 1;
                             Debug.Log("Apple unlocked");
                         }
                         break;
                     case 2:
-                        if (basketStickerScore < 1)
+                        if (pitahayaStickerScore < 1)
                         {
-                            basketStickerScore += 1;
+                            pitahayaStickerScore += 1;
                             Debug.Log("Basket unlocked");
                         }
                         break;
                     case 3:
-                        if (pigStickerScore < 1)
+                        if (frogStickerScore < 1)
                         {
-                            pigStickerScore += 1;
+                            frogStickerScore += 1;
                             Debug.Log("Pig unlocked");
                         }
                         break;
@@ -214,30 +218,30 @@ public class MultiplyScript : MonoBehaviour
     public void ResetSpace()
     {
         {
-            if (sumScore >= 5)
+            if (multScore >= 5)
             {
                 switchOn.gameObject.SetActive(true);
                 switchOff.gameObject.SetActive(false);
                 switch (levelIndex)
                 {
                     case 1:
-                        if (appleStickerScore < 1)
+                        if (lycheeStickerScore < 1)
                         {
-                            appleStickerScore += 1;
+                            lycheeStickerScore += 1;
                             Debug.Log("Apple unlocked");
                         }
                         break;
                     case 2:
-                        if (basketStickerScore < 1)
+                        if (pitahayaStickerScore < 1)
                         {
-                            basketStickerScore += 1;
+                            pitahayaStickerScore += 1;
                             Debug.Log("Basket unlocked");
                         }
                         break;
                     case 3:
-                        if (pigStickerScore < 1)
+                        if (frogStickerScore < 1)
                         {
-                            pigStickerScore += 1;
+                            frogStickerScore += 1;
                             Debug.Log("Pig unlocked");
                         }
                         break;
@@ -263,14 +267,14 @@ public class MultiplyScript : MonoBehaviour
     {
         Score();
         AnswerSpot.text = finalValue.ToString();
-        scoreCount.text = sumScore.ToString();
+        scoreCount.text = multScore.ToString();
         yield return new WaitForSeconds(1f);
         ResetJungle();
     }
 
     public void Score()
     {
-        sumScore += 1;
+        multScore += 1;
     }
 
     public void MultJungle()

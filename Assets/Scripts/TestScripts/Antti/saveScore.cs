@@ -19,7 +19,7 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save addition stickers");
+        Debug.Log("Sum saved");
     }
 // SUM LOAD
     public static scoreData LoadSumScore()
@@ -32,7 +32,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load sum sticker scores");
+            Debug.Log("Load sum");
             return data;
         }
         else
@@ -56,7 +56,7 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save sub stickers");
+        Debug.Log("Sub saved");
     }
 // SUB LOAD
     public static scoreData LoadSubScore()
@@ -69,7 +69,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load sub sticker scores");
+            Debug.Log("Load sub");
             return data;
         }
         else
@@ -92,7 +92,7 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save count stickers");
+        Debug.Log("Count saved");
     }
     // MULTIPLY LOAD
     public static scoreData LoadCountScore()
@@ -105,7 +105,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load count sticker scores");
+            Debug.Log("Load count");
             return data;
         }
         else
@@ -125,7 +125,7 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save count stickers");
+        Debug.Log("Mult saved");
     }
     // MULTIPLY LOAD
     public static scoreData LoadMultScore()
@@ -138,7 +138,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load count sticker scores");
+            Debug.Log("Load mult");
             return data;
         }
         else
@@ -160,7 +160,7 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save count stickers");
+        Debug.Log("Div saved");
     }
 
     // DIVIDE LOAD
@@ -174,7 +174,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load count sticker scores");
+            Debug.Log("Load div");
             return data;
         }
         else
