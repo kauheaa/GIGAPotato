@@ -22,6 +22,7 @@ public class SubScript : MonoBehaviour
     public GameObject subStars, menuStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
+    public GameObject Animal;
 
 
     public void SaveScore()
@@ -287,9 +288,10 @@ public class SubScript : MonoBehaviour
 
     public void ResetV()
     {
-        if (subScore == 5)
+        if (subScore >= 5)
         {
             switchOn.gameObject.SetActive(true);
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
             switchOff.gameObject.SetActive(false);
             switch (levelIndex)
             {
@@ -327,12 +329,14 @@ public class SubScript : MonoBehaviour
         button3.interactable = true;
         AnswerSpot.text = "?";
         SubFarm();
+        Animal.GetComponent<Animator>().SetBool("Happy", false);
     }
     IEnumerator Correct()
     {
         Score();
         AnswerSpot.text = finalValue.ToString();
         scoreCount.text = subScore.ToString();
+        Animal.GetComponent<Animator>().SetBool("Happy", true);
         yield return new WaitForSeconds(1f);
         ResetV();
 

@@ -10,18 +10,14 @@ public class CountScript : MonoBehaviour
     public List<QuestionAndAnswers> QnA;
     public GameObject[] options;
     public int currentQuestion;
-
     public GameObject QuestionImg;
     public GameObject GoPanel;
-
     public Text QuestionTxt;
     //public GameObject QuestionImg;
     public Sprite QuestionSprite;
     public Text ScoreTxt;
-
     int totalQuestions = 0;
     public int score;
-
     // These are needed for Stickers, Starcount and saving
     public int levelIndex = 0;
     [SerializeField] public int countStarCount = 0;
@@ -31,6 +27,7 @@ public class CountScript : MonoBehaviour
     public GameObject stickerOne, stickerTwo, stickerThree;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject countStars, menuStars;
+    public GameObject Animal;
 
     // saves sticker score and updates it to all instances of same script in the scene
     public void SaveScore()
@@ -183,6 +180,7 @@ public class CountScript : MonoBehaviour
     {
         //when you are right
         score += 1;
+        Animal.GetComponent<Animator>().SetBool("Happy", true);
         //QnA.RemoveAt(currentQuestion);
         StartCoroutine(waitForNext());
     }
@@ -238,8 +236,8 @@ public class CountScript : MonoBehaviour
         //if(QnA.Count > 0)
         if(score <= 4)
         {
+            Animal.GetComponent<Animator>().SetBool("Happy", false);
             currentQuestion = Random.Range(0, QnA.Count);
-
             //QuestionTxt.text = QnA[currentQuestion].Question;
             QuestionSprite = QnA[currentQuestion].Objects;
             QuestionImg.GetComponent<Image>().sprite = QuestionSprite;
@@ -249,6 +247,7 @@ public class CountScript : MonoBehaviour
         }
         else
         {
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
             Debug.Log("Out of Questions");
             GameOver();
 

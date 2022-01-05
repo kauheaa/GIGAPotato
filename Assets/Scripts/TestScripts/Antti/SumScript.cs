@@ -20,9 +20,9 @@ public class SumScript : MonoBehaviour
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
-    private Animator anim;
-    //public bool Activate = false;
-
+    public GameObject Animal;
+    //private Characters character;
+    
     public void SaveScore()
     {
         saveScore.SaveSumScore(this);
@@ -65,8 +65,6 @@ public class SumScript : MonoBehaviour
         LoadScore();
         scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
-        //anim.SetBool("Activate", false);
-
     }
 
     // Update is called once per frame
@@ -292,9 +290,11 @@ public class SumScript : MonoBehaviour
 
     public void ResetV()
     {
+  
         if (sumScore >= 5)
         {
             switchOn.gameObject.SetActive(true);
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
             switchOff.gameObject.SetActive(false);
             switch (levelIndex)
             {
@@ -333,8 +333,8 @@ public class SumScript : MonoBehaviour
         THREE.gameObject.SetActive(false);
         button3.interactable = true;
         AnswerSpot.text = "?";
-        //anim.SetBool("Activate", false);
         SumFarm();
+        Animal.GetComponent<Animator>().SetBool("Happy", false);
     }
 
     public void ResetJungle()
@@ -434,12 +434,13 @@ public class SumScript : MonoBehaviour
 
     IEnumerator Correct()
     {
-        Score();       
+        Animal.GetComponent<Animator>().SetBool("Happy", true);
+        Score();
         AnswerSpot.text = finalValue.ToString();       
         scoreCount.text = sumScore.ToString();
-        //anim.SetBool("Activate", true);
         yield return new WaitForSeconds(1f);
         ResetV();
+
     }
 
     public void Score()
