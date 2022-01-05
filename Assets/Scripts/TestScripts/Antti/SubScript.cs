@@ -55,7 +55,7 @@ public class SubScript : MonoBehaviour
         carrotStickerScore = data.carrotStickerScore;
         bucketStickerScore = data.bucketStickerScore;
         bunnyStickerScore = data.bunnyStickerScore;
-        Debug.Log("carrot: " + carrotStickerScore + " bucket: " + bucketStickerScore + " bunny: " + bunnyStickerScore);
+        Debug.Log("sub stickers loaded");
 
     }
 
@@ -70,19 +70,8 @@ public class SubScript : MonoBehaviour
         scoreCount.text = subScore.ToString();
     }
 
-    private void Start()
+    public void CheckStickers()
     {
-        LoadScore();
-        AnswerSpot.text = "?";
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        //   score = int.Parse(scoreCount.text);
-
-        subStarCount = carrotStickerScore + bucketStickerScore + bunnyStickerScore;
-
         if (carrotStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
@@ -95,6 +84,16 @@ public class SubScript : MonoBehaviour
         {
             stickerThree.gameObject.SetActive(true);
         }
+    }
+    public void StarCount()
+    {
+        subStarCount = carrotStickerScore + bucketStickerScore + bunnyStickerScore;
+        subJungleStarCount = coconutStickerScore + ocularsStickerScore + slothStickerScore;
+        subSpaceStarCount = starStickerScore + planetStickerScore + cowStickerScore;
+    }
+
+    public void CheckStars()
+    {
         if (subStarCount == 1)
         {
             subStars.GetComponent<Image>().sprite = oneStar;
@@ -110,6 +109,45 @@ public class SubScript : MonoBehaviour
             subStars.GetComponent<Image>().sprite = threeStar;
             menuStars.GetComponent<Image>().sprite = threeStar;
         }
+    }
+
+    private void Start()
+    {
+        LoadScore();
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        AnswerSpot.text = "?";
+    }
+
+    public void UpdateStickers()
+    {
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        SaveScore();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        //   score = int.Parse(scoreCount.text);
+    }
+
+    public void ResetStickers()
+    {
+        subStarCount = 0;
+        subJungleStarCount = 0;
+        subSpaceStarCount = 0;
+        carrotStickerScore = 0;
+        bucketStickerScore = 0;
+        bunnyStickerScore = 0;
+        coconutStickerScore = 0;
+        ocularsStickerScore = 0;
+        slothStickerScore = 0;
+        starStickerScore = 0;
+        planetStickerScore = 0;
+        cowStickerScore = 0;
+        SaveScore();
     }
 
     public void SubFarm()

@@ -25,7 +25,6 @@ public class CountScript : MonoBehaviour
     [SerializeField] public int threeCornStickerScore = 0;
     [SerializeField] public int twoCornStickerScore = 0;
     [SerializeField] public int lambStickerScore = 0;
-
     public GameObject stickerOne, stickerTwo, stickerThree;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject countStars, menuStars;
@@ -50,7 +49,7 @@ public class CountScript : MonoBehaviour
         threeCornStickerScore = data.threeCornStickerScore;
         twoCornStickerScore = data.twoCornStickerScore;
         lambStickerScore = data.lambStickerScore;
-        Debug.Log("corn: " + threeCornStickerScore + " another corn: " + twoCornStickerScore + " lamb: " + lambStickerScore);
+        Debug.Log("count stickers loaded");
 
     }
     // gives level an index that separates it from other levels; added in inspector
@@ -145,12 +144,23 @@ public class CountScript : MonoBehaviour
 
     void Update()
     {
-
+        // Show the score real-time instead of only LevelEnd to check if sticker works correctly
+        ScoreTxt.text = score + "/" + totalQuestions;
+    }
+    public void UpdateStickers()
+    {
         CheckStickers();
         UnlockStickers();
         UnlockStars();
-        // Show the score real-time instead of only LevelEnd to check if sticker works correctly
-        ScoreTxt.text = score + "/" + totalQuestions;
+        SaveScore();
+    }
+    public void ResetStickers()
+    {
+        countStarCount = 0;
+        threeCornStickerScore = 0;
+        twoCornStickerScore = 0;
+        lambStickerScore = 0;
+        SaveScore();
     }
 
     //  I'm not sure if this is needed at all, or if ResetScore is enough on it's own. Depends on how replaying the level will work..?

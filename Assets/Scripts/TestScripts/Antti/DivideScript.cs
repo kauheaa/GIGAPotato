@@ -18,7 +18,7 @@ public class DivideScript : MonoBehaviour
     public int levelIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject divStars, menuStars;
     public Button button1, button2, button3;
@@ -50,7 +50,10 @@ public class DivideScript : MonoBehaviour
         avocadoStickerScore = data.avocadoStickerScore;
         toolStickerScore = data.toolStickerScore;
         tigerStickerScore = data.tigerStickerScore;
-        Debug.Log("apple: " + avocadoStickerScore + " basket: " + toolStickerScore + " pig: " + tigerStickerScore);
+        driedfishStickerScore = data.driedfishStickerScore;
+        octopusStickerScore = data.octopusStickerScore;
+        catStickerScore = data.catStickerScore;
+        Debug.Log("div stickers loaded");
 
     }
 
@@ -64,21 +67,8 @@ public class DivideScript : MonoBehaviour
         divScore = 0;
         scoreCount.text = divScore.ToString();
     }
-
-    private void Start()
+    public void CheckStickers()
     {
-        scoreCount.text = divScore.ToString();
-        AnswerSpot.text = "?";
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        divJungleStarCount = avocadoStickerScore + toolStickerScore + tigerStickerScore;
-
         if (avocadoStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
@@ -91,6 +81,28 @@ public class DivideScript : MonoBehaviour
         {
             stickerThree.gameObject.SetActive(true);
         }
+        if (driedfishStickerScore == 1)
+        {
+            stickerFour.gameObject.SetActive(true);
+        }
+        if (octopusStickerScore == 1)
+        {
+            stickerFive.gameObject.SetActive(true);
+        }
+        if (catStickerScore == 1)
+        {
+            stickerSix.gameObject.SetActive(true);
+        }
+    }
+
+    public void StarCount()
+    {
+        divJungleStarCount = avocadoStickerScore + toolStickerScore + tigerStickerScore;
+        divSpaceStarCount = driedfishStickerScore + octopusStickerScore + catStickerScore;
+    }
+
+    public void CheckStars()
+    {
         if (divJungleStarCount == 1)
         {
             divStars.GetComponent<Image>().sprite = oneStar;
@@ -108,8 +120,43 @@ public class DivideScript : MonoBehaviour
         }
     }
 
-    
-        public void DivJungle()
+    private void Start()
+    {
+        //LoadScore();
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        scoreCount.text = divScore.ToString();
+        AnswerSpot.text = "?";
+
+    }
+
+    public void UpdateStickers()
+    {
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        SaveScore();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void ResetStickers()
+    {
+        avocadoStickerScore = 0;
+        toolStickerScore = 0;
+        tigerStickerScore = 0;
+        driedfishStickerScore = 0;
+        octopusStickerScore = 0;
+        catStickerScore = 0;
+        SaveScore();
+    }
+
+    public void DivJungle()
         {
         if (levelIndex == 1)
         {
@@ -394,6 +441,9 @@ public class DivideScript : MonoBehaviour
     IEnumerator Correct()
     {
         Score();
+        CheckStickers();
+        StarCount();
+        CheckStars();
         AnswerSpot.text = finalValue.ToString();
         scoreCount.text = divScore.ToString();
         yield return new WaitForSeconds(1f);

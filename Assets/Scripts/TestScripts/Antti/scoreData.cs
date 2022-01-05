@@ -6,9 +6,7 @@ public class scoreData
 
 
 {
-    public int sumStarCount, appleStickerScore, basketStickerScore, pigStickerScore;
-    public int sumJungleStarCount, bananaStickerScore, clusterStickerScore, monkeyStickerScore;
-    public int sumSpaceStarCount, asteroidStickerScore, blackholeStickerScore, llamaStickerScore;
+
 
     public int subStarCount, carrotStickerScore, bucketStickerScore, bunnyStickerScore;
     public int subJungleStarCount, coconutStickerScore, ocularsStickerScore, slothStickerScore;
@@ -22,6 +20,10 @@ public class scoreData
     public int divJungleStarCount, avocadoStickerScore, toolStickerScore, tigerStickerScore;
     public int divSpaceStarCount, driedfishStickerScore, octopusStickerScore, catStickerScore;
 
+
+    public int sumStarCount, appleStickerScore, basketStickerScore, pigStickerScore;
+    public int sumJungleStarCount, bananaStickerScore, clusterStickerScore, monkeyStickerScore;
+    public int sumSpaceStarCount, asteroidStickerScore, blackholeStickerScore, llamaStickerScore;
     public scoreData(SumScript sum)
     {
         sumStarCount = sum.sumStarCount;

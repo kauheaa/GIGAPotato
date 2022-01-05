@@ -18,7 +18,7 @@ public class MultiplyScript : MonoBehaviour
     public int levelIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject multStars, menuStars;
     public Button button1, button2, button3;
@@ -43,12 +43,15 @@ public class MultiplyScript : MonoBehaviour
     }
     public void LoadScore()
     {
-        scoreData data = saveScore.LoadSumScore();
+        scoreData data = saveScore.LoadMultScore();
         multJungleStarCount = data.multJungleStarCount;
         lycheeStickerScore = data.lycheeStickerScore;
         pitahayaStickerScore = data.pitahayaStickerScore;
         frogStickerScore = data.frogStickerScore;
-        Debug.Log("apple: " + lycheeStickerScore + " basket: " + pitahayaStickerScore + " pig: " + frogStickerScore);
+        flagStickerScore = data.flagStickerScore;
+        rocketStickerScore = data.rocketStickerScore;
+        laikaStickerScore = data.laikaStickerScore;
+        Debug.Log("mult stickers loaded");
 
     }
 
@@ -63,20 +66,8 @@ public class MultiplyScript : MonoBehaviour
         scoreCount.text = multScore.ToString();
     }
 
-    private void Start()
+    public void CheckStickers()
     {
-        scoreCount.text = multScore.ToString();
-        AnswerSpot.text = "?";
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //   score = int.Parse(scoreCount.text);
-
-        multJungleStarCount = lycheeStickerScore + pitahayaStickerScore + frogStickerScore;
-
         if (lycheeStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
@@ -89,6 +80,28 @@ public class MultiplyScript : MonoBehaviour
         {
             stickerThree.gameObject.SetActive(true);
         }
+        if (flagStickerScore == 1)
+        {
+            stickerFour.gameObject.SetActive(true);
+        }
+        if (rocketStickerScore == 1)
+        {
+            stickerFive.gameObject.SetActive(true);
+        }
+        if (laikaStickerScore == 1)
+        {
+            stickerSix.gameObject.SetActive(true);
+        }
+    }
+
+    public void StarCount()
+    {
+        multJungleStarCount = lycheeStickerScore + pitahayaStickerScore + frogStickerScore;
+        multSpaceStarCount = flagStickerScore + rocketStickerScore + laikaStickerScore;
+    }
+
+    public void CheckStars()
+    {
         if (multJungleStarCount == 1)
         {
             multStars.GetComponent<Image>().sprite = oneStar;
@@ -105,8 +118,40 @@ public class MultiplyScript : MonoBehaviour
             menuStars.GetComponent<Image>().sprite = threeStar;
         }
     }
+    private void Start()
+    {
+        //LoadScore();
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        scoreCount.text = multScore.ToString();
+        AnswerSpot.text = "?";
+    }
 
-    
+    public void UpdateStickers()
+    {
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        SaveScore();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void ResetStickers()
+    {
+        lycheeStickerScore = 0;
+        pitahayaStickerScore = 0;
+        frogStickerScore = 0;
+        flagStickerScore = 0;
+        rocketStickerScore = 0;
+        laikaStickerScore = 0;
+        SaveScore();
+    }
 
     public void AltOne()
     {

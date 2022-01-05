@@ -24,7 +24,7 @@ public class SumScript : MonoBehaviour
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix, StickerSeven, StickerEight, StickerNine;
     public Sprite oneStar, twoStar, threeStar;
-    public GameObject sumStars, menuStars, sumJungleStars, menuJungleStars, sumSpaceStars, menuSpaceStars;
+    public GameObject sumStars, menuStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
@@ -64,7 +64,7 @@ public class SumScript : MonoBehaviour
         asteroidStickerScore = data.asteroidStickerScore;
         blackholeStickerScore = data.blackholeStickerScore;
         llamaStickerScore = data.llamaStickerScore;
-        Debug.Log(appleStickerScore + "APPLE " + basketStickerScore + "BASKET " + pigStickerScore + "PIG " + bananaStickerScore + "BANANA " + clusterStickerScore + "CLUSTER " + monkeyStickerScore + "MONKEY");
+        Debug.Log("sum stickers loaded");
 
     }
 
@@ -78,21 +78,8 @@ public class SumScript : MonoBehaviour
         sumScore = 0;
         scoreCount.text = sumScore.ToString();
     }
-
-    private void Start()
+    public void CheckStickers()
     {
-        LoadScore();
-        scoreCount.text = sumScore.ToString();
-        AnswerSpot.text = "?";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //   score = int.Parse(scoreCount.text);
-
-        sumStarCount = appleStickerScore + basketStickerScore + pigStickerScore;
-
         if (appleStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
@@ -105,6 +92,17 @@ public class SumScript : MonoBehaviour
         {
             stickerThree.gameObject.SetActive(true);
         }
+    }
+
+    public void StarCount()
+    {
+        sumStarCount = appleStickerScore + basketStickerScore + pigStickerScore;
+        sumJungleStarCount = bananaStickerScore + clusterStickerScore + monkeyStickerScore;
+        sumSpaceStarCount = asteroidStickerScore + blackholeStickerScore + llamaStickerScore;
+    }
+
+    public void CheckStars()
+    {
         if (sumStarCount == 1)
         {
             sumStars.GetComponent<Image>().sprite = oneStar;
@@ -120,6 +118,46 @@ public class SumScript : MonoBehaviour
             sumStars.GetComponent<Image>().sprite = threeStar;
             menuStars.GetComponent<Image>().sprite = threeStar;
         }
+    }
+    private void Start()
+    {
+        LoadScore();
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        scoreCount.text = sumScore.ToString();
+        AnswerSpot.text = "?";
+    }
+
+    public void UpdateStickers()
+    {
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        SaveScore();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void ResetStickers()
+    {
+        sumStarCount = 0;
+        sumJungleStarCount = 0;
+        sumSpaceStarCount = 0;
+        appleStickerScore = 0;
+        basketStickerScore = 0;
+        pigStickerScore = 0;
+        bananaStickerScore = 0;
+        clusterStickerScore = 0;
+        monkeyStickerScore = 0;
+        asteroidStickerScore = 0;
+        blackholeStickerScore = 0;
+        llamaStickerScore = 0;
+        SaveScore();
     }
 
     public void SumFarm()

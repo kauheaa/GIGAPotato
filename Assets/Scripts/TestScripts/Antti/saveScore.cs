@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class saveScore 
 {
-
 // SUM SAVE
     public static void SaveSumScore(SumScript sum)
     {
@@ -32,7 +31,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load sum");
+            //Debug.Log("Load sum");
             return data;
         }
         else
@@ -69,7 +68,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load sub");
+            //Debug.Log("Load sub");
             return data;
         }
         else
@@ -105,7 +104,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load count");
+            //Debug.Log("Load count");
             return data;
         }
         else
@@ -138,7 +137,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load mult");
+            //Debug.Log("Load mult");
             return data;
         }
         else
@@ -174,7 +173,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load div");
+            //Debug.Log("Load div");
             return data;
         }
         else

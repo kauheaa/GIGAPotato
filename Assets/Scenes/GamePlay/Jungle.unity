@@ -1339,6 +1339,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &41483809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2872880850789100396, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &42566426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,10 +3264,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 1022386183}
   menuStars: {fileID: 1505387751}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 1386439373}
   button2: {fileID: 67941085}
   button3: {fileID: 2059993884}
@@ -8990,9 +8991,9 @@ MonoBehaviour:
   stickerOne: {fileID: 387420723}
   stickerTwo: {fileID: 1078449013}
   stickerThree: {fileID: 442784024}
-  StickerFour: {fileID: 1055835412}
-  StickerFive: {fileID: 1199095784}
-  StickerSix: {fileID: 1854176452}
+  stickerFour: {fileID: 0}
+  stickerFive: {fileID: 0}
+  stickerSix: {fileID: 0}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -15562,10 +15563,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 1022386183}
   menuStars: {fileID: 1505387751}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 262507104}
   button2: {fileID: 676549831}
   button3: {fileID: 1346997171}
@@ -16892,18 +16889,6 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadLast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1391882187}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19594,6 +19579,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 846800662572404065, guid: 3f719eb1ebe249c46bac56417d2fa549, type: 3}
   m_PrefabInstance: {fileID: 483360851}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &484536419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8088257858148987840, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &485306181
 GameObject:
   m_ObjectHideFlags: 0
@@ -19866,18 +19856,6 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadLast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 347189555}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20850,18 +20828,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadMid1
@@ -20889,6 +20855,54 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: OpenStickerSpreadFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20935,81 +20949,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511506301}
-  m_CullTransparentMesh: 1
---- !u!1 &512731199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 512731200}
-  - component: {fileID: 512731202}
-  - component: {fileID: 512731201}
-  m_Layer: 5
-  m_Name: Starcount_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &512731200
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512731199}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1119881580}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &512731201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512731199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &512731202
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512731199}
   m_CullTransparentMesh: 1
 --- !u!1 &513473233
 GameObject:
@@ -21875,81 +21814,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &545393697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 545393698}
-  - component: {fileID: 545393700}
-  - component: {fileID: 545393699}
-  m_Layer: 5
-  m_Name: Starcount_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &545393698
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545393697}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2095371363}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &545393699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545393697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &545393700
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545393697}
-  m_CullTransparentMesh: 1
 --- !u!1 &546640876
 GameObject:
   m_ObjectHideFlags: 0
@@ -24409,7 +24273,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24421,7 +24285,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: CloseStickerSpreadLast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24443,9 +24307,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 715659774}
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25615,37 +25515,37 @@ MonoBehaviour:
   octopusStickerScore: 0
   catStickerScore: 0
   levelIndex: 2
-  FirstValue: {fileID: 0}
-  SecondValue: {fileID: 0}
-  Function: {fileID: 0}
-  Alt1: {fileID: 0}
-  Alt2: {fileID: 0}
-  Alt3: {fileID: 0}
-  AnswerSpot: {fileID: 0}
-  scoreCount: {fileID: 0}
-  ONE: {fileID: 0}
-  TWO: {fileID: 0}
-  THREE: {fileID: 0}
+  FirstValue: {fileID: 1475835214}
+  SecondValue: {fileID: 1987163974}
+  Function: {fileID: 924743891}
+  Alt1: {fileID: 335683295}
+  Alt2: {fileID: 467832849}
+  Alt3: {fileID: 1726847837}
+  AnswerSpot: {fileID: 1232449729}
+  scoreCount: {fileID: 2034105342}
+  ONE: {fileID: 2009949677}
+  TWO: {fileID: 2056386129}
+  THREE: {fileID: 881314817}
   appleSpawn: {fileID: 0}
   apple: {fileID: 0}
-  stickerOne: {fileID: 0}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
+  stickerOne: {fileID: 1451988622}
+  stickerTwo: {fileID: 943862442}
+  stickerThree: {fileID: 41483809}
+  stickerFour: {fileID: 1764820923}
+  stickerFive: {fileID: 1104104459}
+  stickerSix: {fileID: 484536419}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  divStars: {fileID: 0}
+  divStars: {fileID: 1119881579}
   menuStars: {fileID: 2138780503}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  blueButton: {fileID: 0}
-  redButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  switchOff: {fileID: 0}
+  button1: {fileID: 819256048}
+  button2: {fileID: 420485294}
+  button3: {fileID: 92096463}
+  blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
+  redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
+  greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  switchOff: {fileID: 1844982670}
   switchOn: {fileID: 0}
 --- !u!1 &610623940
 GameObject:
@@ -28770,7 +28670,7 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 0}
+  subStars: {fileID: 2095371362}
   menuStars: {fileID: 1198049900}
   button1: {fileID: 1637914943}
   button2: {fileID: 2065234006}
@@ -30348,7 +30248,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30360,7 +30260,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: CloseStickerSpreadLast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30382,9 +30282,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33212,81 +33148,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819256044}
-  m_CullTransparentMesh: 1
---- !u!1 &821461060
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 821461061}
-  - component: {fileID: 821461063}
-  - component: {fileID: 821461062}
-  m_Layer: 5
-  m_Name: Starcount_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &821461061
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821461060}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2095371363}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &821461062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821461060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &821461063
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821461060}
   m_CullTransparentMesh: 1
 --- !u!1 &822415596
 GameObject:
@@ -37005,7 +36866,7 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 0}
+  subStars: {fileID: 2095371362}
   menuStars: {fileID: 1198049900}
   button1: {fileID: 642158558}
   button2: {fileID: 896966508}
@@ -37209,7 +37070,7 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 0}
+  subStars: {fileID: 2095371362}
   menuStars: {fileID: 1198049900}
   button1: {fileID: 357914587}
   button2: {fileID: 1455455678}
@@ -38057,81 +37918,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5394624945872519665, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 802231659}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &930595283
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 930595284}
-  - component: {fileID: 930595286}
-  - component: {fileID: 930595285}
-  m_Layer: 5
-  m_Name: Starcount_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &930595284
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930595283}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1022386186}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &930595285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930595283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &930595286
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930595283}
-  m_CullTransparentMesh: 1
 --- !u!1 &931077706
 GameObject:
   m_ObjectHideFlags: 0
@@ -38672,6 +38458,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942513839}
   m_CullTransparentMesh: 1
+--- !u!1 &943862442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5726737999206567466, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &946260135
 GameObject:
   m_ObjectHideFlags: 0
@@ -39165,81 +38956,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &956342162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 956342163}
-  - component: {fileID: 956342165}
-  - component: {fileID: 956342164}
-  m_Layer: 5
-  m_Name: Starcount_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &956342163
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956342162}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1119881580}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &956342164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956342162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &956342165
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956342162}
-  m_CullTransparentMesh: 1
 --- !u!1 &960677550
 GameObject:
   m_ObjectHideFlags: 0
@@ -42281,10 +41997,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2143838129}
-  - {fileID: 930595284}
-  - {fileID: 1237077483}
+  m_Children: []
   m_Father: {fileID: 195873094}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43852,18 +43565,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadMid1
@@ -43891,6 +43592,54 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: OpenStickerSpreadFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44169,9 +43918,9 @@ MonoBehaviour:
   stickerOne: {fileID: 387420723}
   stickerTwo: {fileID: 1078449013}
   stickerThree: {fileID: 442784024}
-  StickerFour: {fileID: 1055835412}
-  StickerFive: {fileID: 1199095784}
-  StickerSix: {fileID: 1854176452}
+  stickerFour: {fileID: 0}
+  stickerFive: {fileID: 0}
+  stickerSix: {fileID: 0}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -45890,6 +45639,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1104104459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1827309280057240390, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104362923
 GameObject:
   m_ObjectHideFlags: 0
@@ -46531,10 +46285,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1791225121}
-  - {fileID: 956342163}
-  - {fileID: 512731200}
+  m_Children: []
   m_Father: {fileID: 2131256981}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47250,18 +47001,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadMid1
@@ -47289,6 +47028,54 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: OpenStickerSpreadFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48155,38 +47942,38 @@ MonoBehaviour:
   octopusStickerScore: 0
   catStickerScore: 0
   levelIndex: 3
-  FirstValue: {fileID: 0}
-  SecondValue: {fileID: 0}
-  Function: {fileID: 0}
-  Alt1: {fileID: 0}
-  Alt2: {fileID: 0}
-  Alt3: {fileID: 0}
-  AnswerSpot: {fileID: 0}
-  scoreCount: {fileID: 0}
-  ONE: {fileID: 0}
-  TWO: {fileID: 0}
-  THREE: {fileID: 0}
+  FirstValue: {fileID: 1925949355}
+  SecondValue: {fileID: 873899778}
+  Function: {fileID: 1108046131}
+  Alt1: {fileID: 1082196197}
+  Alt2: {fileID: 604383566}
+  Alt3: {fileID: 1812128745}
+  AnswerSpot: {fileID: 414159168}
+  scoreCount: {fileID: 71156363}
+  ONE: {fileID: 496912820}
+  TWO: {fileID: 1771361233}
+  THREE: {fileID: 72840403}
   appleSpawn: {fileID: 0}
   apple: {fileID: 0}
-  stickerOne: {fileID: 0}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
+  stickerOne: {fileID: 1451988622}
+  stickerTwo: {fileID: 943862442}
+  stickerThree: {fileID: 41483809}
+  stickerFour: {fileID: 1764820923}
+  stickerFive: {fileID: 1104104459}
+  stickerSix: {fileID: 484536419}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  divStars: {fileID: 0}
+  divStars: {fileID: 1119881579}
   menuStars: {fileID: 2138780503}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  blueButton: {fileID: 0}
-  redButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  switchOff: {fileID: 0}
-  switchOn: {fileID: 0}
+  button1: {fileID: 2025704127}
+  button2: {fileID: 652724992}
+  button3: {fileID: 1937626094}
+  blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
+  redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
+  greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  switchOff: {fileID: 1278284872}
+  switchOn: {fileID: 2088515847}
 --- !u!1 &1154494256
 GameObject:
   m_ObjectHideFlags: 0
@@ -49170,81 +48957,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194542002}
   m_CullTransparentMesh: 1
---- !u!1 &1194651169
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1194651170}
-  - component: {fileID: 1194651172}
-  - component: {fileID: 1194651171}
-  m_Layer: 5
-  m_Name: Starcount_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1194651170
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194651169}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2095371363}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1194651171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194651169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1194651172
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194651169}
-  m_CullTransparentMesh: 1
 --- !u!1 &1198049900
 GameObject:
   m_ObjectHideFlags: 0
@@ -49448,18 +49160,6 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadLast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1010229507}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50738,81 +50438,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236481125}
-  m_CullTransparentMesh: 1
---- !u!1 &1237077482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1237077483}
-  - component: {fileID: 1237077485}
-  - component: {fileID: 1237077484}
-  m_Layer: 5
-  m_Name: Starcount_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1237077483
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237077482}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1022386186}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1237077484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237077482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1237077485
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237077482}
   m_CullTransparentMesh: 1
 --- !u!1 &1237945295
 GameObject:
@@ -54951,18 +54576,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadMid1
@@ -54990,6 +54603,54 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: OpenStickerSpreadFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55547,7 +55208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55559,7 +55220,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: CloseStickerSpreadLast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55581,9 +55242,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 906460866}
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59221,10 +58918,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 1022386183}
   menuStars: {fileID: 1505387751}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 1726005080}
   button2: {fileID: 410094601}
   button3: {fileID: 357580242}
@@ -60232,6 +59925,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451467530}
   m_CullTransparentMesh: 0
+--- !u!1 &1451988622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2285146341217843248, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1455455672
 GameObject:
   m_ObjectHideFlags: 0
@@ -65605,7 +65303,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65617,7 +65315,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: CloseStickerSpreadLast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65639,9 +65337,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65798,7 +65532,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65810,7 +65544,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: CloseStickerSpreadLast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65832,9 +65566,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 715659774}
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -68598,38 +68368,38 @@ MonoBehaviour:
   rocketStickerScore: 0
   laikaStickerScore: 0
   levelIndex: 3
-  FirstValue: {fileID: 0}
-  SecondValue: {fileID: 0}
-  Function: {fileID: 0}
-  Alt1: {fileID: 0}
-  Alt2: {fileID: 0}
-  Alt3: {fileID: 0}
-  AnswerSpot: {fileID: 0}
+  FirstValue: {fileID: 978397528}
+  SecondValue: {fileID: 1592421385}
+  Function: {fileID: 1265966556}
+  Alt1: {fileID: 1809765414}
+  Alt2: {fileID: 1484588034}
+  Alt3: {fileID: 1129638483}
+  AnswerSpot: {fileID: 1133578788}
   scoreCount: {fileID: 252958705}
-  ONE: {fileID: 0}
-  TWO: {fileID: 0}
-  THREE: {fileID: 0}
+  ONE: {fileID: 834922816}
+  TWO: {fileID: 791790881}
+  THREE: {fileID: 1700828248}
   appleSpawn: {fileID: 0}
   apple: {fileID: 0}
   stickerOne: {fileID: 387420723}
   stickerTwo: {fileID: 1078449013}
   stickerThree: {fileID: 442784024}
-  StickerFour: {fileID: 1055835412}
-  StickerFive: {fileID: 1199095784}
-  StickerSix: {fileID: 1854176452}
+  stickerFour: {fileID: 1055835412}
+  stickerFive: {fileID: 1199095784}
+  stickerSix: {fileID: 1854176452}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  multStars: {fileID: 0}
+  multStars: {fileID: 186057282}
   menuStars: {fileID: 2009467766}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  blueButton: {fileID: 0}
-  redButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  switchOff: {fileID: 0}
-  switchOn: {fileID: 0}
+  button1: {fileID: 1584457579}
+  button2: {fileID: 1382473613}
+  button3: {fileID: 476873630}
+  blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
+  redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
+  greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  switchOff: {fileID: 405478029}
+  switchOn: {fileID: 546731083}
 --- !u!1 &1661885146
 GameObject:
   m_ObjectHideFlags: 0
@@ -69971,7 +69741,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -69983,7 +69753,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: CloseStickerSpreadLast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -70005,9 +69775,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 906460866}
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -73454,6 +73260,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763131120}
   m_CullTransparentMesh: 1
+--- !u!1 &1764820923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1873862350567911975, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767572889
 GameObject:
   m_ObjectHideFlags: 0
@@ -75157,81 +74968,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 00
---- !u!1 &1791225120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1791225121}
-  - component: {fileID: 1791225123}
-  - component: {fileID: 1791225122}
-  m_Layer: 5
-  m_Name: Starcount_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1791225121
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791225120}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1119881580}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1791225122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791225120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1791225123
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791225120}
-  m_CullTransparentMesh: 1
 --- !u!1 &1791341928
 GameObject:
   m_ObjectHideFlags: 0
@@ -78478,18 +78214,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadMid1
@@ -78517,6 +78241,54 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: OpenStickerSpreadFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -81193,18 +80965,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadMid1
@@ -81232,6 +80992,54 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: OpenStickerSpreadFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 385868508}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912344939}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -88934,10 +88742,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1194651170}
-  - {fileID: 821461061}
-  - {fileID: 545393698}
+  m_Children: []
   m_Father: {fileID: 1434402548}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -90035,38 +89840,38 @@ MonoBehaviour:
   octopusStickerScore: 0
   catStickerScore: 0
   levelIndex: 1
-  FirstValue: {fileID: 0}
-  SecondValue: {fileID: 0}
-  Function: {fileID: 0}
-  Alt1: {fileID: 0}
-  Alt2: {fileID: 0}
-  Alt3: {fileID: 0}
-  AnswerSpot: {fileID: 0}
-  scoreCount: {fileID: 0}
-  ONE: {fileID: 0}
-  TWO: {fileID: 0}
-  THREE: {fileID: 0}
+  FirstValue: {fileID: 1465641944}
+  SecondValue: {fileID: 1466465129}
+  Function: {fileID: 916553412}
+  Alt1: {fileID: 513473235}
+  Alt2: {fileID: 1905469511}
+  Alt3: {fileID: 142314313}
+  AnswerSpot: {fileID: 771478876}
+  scoreCount: {fileID: 2046981528}
+  ONE: {fileID: 953396140}
+  TWO: {fileID: 156541000}
+  THREE: {fileID: 1532423198}
   appleSpawn: {fileID: 0}
   apple: {fileID: 0}
-  stickerOne: {fileID: 0}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
+  stickerOne: {fileID: 1451988622}
+  stickerTwo: {fileID: 943862442}
+  stickerThree: {fileID: 41483809}
+  stickerFour: {fileID: 1764820923}
+  stickerFive: {fileID: 1104104459}
+  stickerSix: {fileID: 484536419}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  divStars: {fileID: 0}
+  divStars: {fileID: 1119881579}
   menuStars: {fileID: 2138780503}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  blueButton: {fileID: 0}
-  redButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  switchOff: {fileID: 0}
-  switchOn: {fileID: 0}
+  button1: {fileID: 1104625756}
+  button2: {fileID: 889080884}
+  button3: {fileID: 167266298}
+  blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
+  redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
+  greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  switchOff: {fileID: 291601920}
+  switchOn: {fileID: 1471740282}
 --- !u!1 &2133291036
 GameObject:
   m_ObjectHideFlags: 0
@@ -90299,81 +90104,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138780503}
-  m_CullTransparentMesh: 1
---- !u!1 &2143838128
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2143838129}
-  - component: {fileID: 2143838131}
-  - component: {fileID: 2143838130}
-  m_Layer: 5
-  m_Name: Starcount_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2143838129
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143838128}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1022386186}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.46002197, y: 0}
-  m_SizeDelta: {x: 331, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2143838130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143838128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2143838131
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143838128}
   m_CullTransparentMesh: 1
 --- !u!1 &2145154525
 GameObject:

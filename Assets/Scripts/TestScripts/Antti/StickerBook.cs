@@ -9,13 +9,41 @@ public class StickerBook : MonoBehaviour
     [SerializeField] public int appleStickerScore = 0;
     [SerializeField] public int basketStickerScore = 0;
     [SerializeField] public int pigStickerScore = 0;
+    [SerializeField] public int bananaStickerScore = 0;
+    [SerializeField] public int clusterStickerScore = 0;
+    [SerializeField] public int monkeyStickerScore = 0;
+    [SerializeField] public int asteroidStickerScore = 0;
+    [SerializeField] public int blackholeStickerScore = 0;
+    [SerializeField] public int llamaStickerScore = 0;
+
     [SerializeField] public int carrotStickerScore = 0;
     [SerializeField] public int bucketStickerScore = 0;
     [SerializeField] public int bunnyStickerScore = 0;
+    [SerializeField] public int coconutStickerScore = 0;
+    [SerializeField] public int ocularsStickerScore = 0;
+    [SerializeField] public int slothStickerScore = 0;
+    [SerializeField] public int starStickerScore = 0;
+    [SerializeField] public int planetStickerScore = 0;
+    [SerializeField] public int cowStickerScore = 0;
+
     [SerializeField] public int threeCornStickerScore = 0;
     [SerializeField] public int twoCornStickerScore = 0;
     [SerializeField] public int lambStickerScore = 0;
-    public bool AllScoresZero = false;
+
+    [SerializeField] public int lycheeStickerScore = 0;
+    [SerializeField] public int pitahayaStickerScore = 0;
+    [SerializeField] public int frogStickerScore = 0;
+    [SerializeField] public int flagStickerScore = 0;
+    [SerializeField] public int rocketStickerScore = 0;
+    [SerializeField] public int laikaStickerScore = 0;
+
+    [SerializeField] public int avocadoStickerScore = 0;
+    [SerializeField] public int toolStickerScore = 0;
+    [SerializeField] public int tigerStickerScore = 0;
+    [SerializeField] public int driedfishStickerScore = 0;
+    [SerializeField] public int octopusStickerScore = 0;
+    [SerializeField] public int catStickerScore = 0;
+    //public bool AllScoresZero = false;
     //   public List<Sticker> StickerList;
 
 
@@ -25,6 +53,14 @@ public class StickerBook : MonoBehaviour
         appleStickerScore = data.appleStickerScore;
         basketStickerScore = data.basketStickerScore;
         pigStickerScore = data.pigStickerScore;
+
+        bananaStickerScore = data.bananaStickerScore;
+        clusterStickerScore = data.clusterStickerScore;
+        monkeyStickerScore = data.monkeyStickerScore;
+
+        asteroidStickerScore = data.asteroidStickerScore;
+        blackholeStickerScore = data.blackholeStickerScore;
+        llamaStickerScore = data.llamaStickerScore;
     }
 
     public void LoadSubScore()
@@ -33,6 +69,14 @@ public class StickerBook : MonoBehaviour
         carrotStickerScore = data.carrotStickerScore;
         bucketStickerScore = data.bucketStickerScore;
         bunnyStickerScore = data.bunnyStickerScore;
+
+        coconutStickerScore = data.coconutStickerScore;
+        ocularsStickerScore = data.ocularsStickerScore;
+        slothStickerScore = data.slothStickerScore;
+
+        starStickerScore = data.starStickerScore;
+        planetStickerScore = data.planetStickerScore;
+        cowStickerScore = data.cowStickerScore;
     }
 
     public void LoadCountScore()
@@ -42,6 +86,28 @@ public class StickerBook : MonoBehaviour
         twoCornStickerScore = data.twoCornStickerScore;
         lambStickerScore = data.lambStickerScore;
     }
+    public void LoadMultScore()
+    {
+        scoreData data = saveScore.LoadMultScore();
+        lycheeStickerScore = data.lycheeStickerScore;
+        pitahayaStickerScore = data.pitahayaStickerScore;
+        frogStickerScore = data.frogStickerScore;
+
+        flagStickerScore = data.flagStickerScore;
+        rocketStickerScore = data.rocketStickerScore;
+        laikaStickerScore = data.laikaStickerScore;
+    }
+    public void LoadDivScore()
+    {
+        scoreData data = saveScore.LoadDivScore();
+        avocadoStickerScore = data.avocadoStickerScore;
+        toolStickerScore = data.toolStickerScore;
+        tigerStickerScore = data.tigerStickerScore;
+
+        driedfishStickerScore = data.driedfishStickerScore;
+        octopusStickerScore = data.octopusStickerScore;
+        catStickerScore = data.catStickerScore;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +115,8 @@ public class StickerBook : MonoBehaviour
         LoadSumScore();
         LoadSubScore();
         LoadCountScore();
+        //LoadMultScore();
+        //LoadDivScore();
         if (appleStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
@@ -85,6 +153,7 @@ public class StickerBook : MonoBehaviour
         {
             stickerNine.gameObject.SetActive(true);
         }
+
     }
 
     //public void ResetScore()
