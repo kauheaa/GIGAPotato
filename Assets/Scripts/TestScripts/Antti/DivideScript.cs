@@ -191,8 +191,8 @@ public class DivideScript : MonoBehaviour
         {
         if (levelIndex == 1)
         {
-            firstValue = Random.Range(1, 10);
-            secondValue = Random.Range(1, 10);
+            firstValue = Random.Range(4, 10);
+            secondValue = Random.Range(1, 4);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
@@ -503,8 +503,8 @@ public class DivideScript : MonoBehaviour
             firstValue = tempValue;
         }
 
-        Function.text = "+";
-        finalValue = firstValue + secondValue;
+        Function.text = "/";
+        finalValue = firstValue / secondValue;
 
 
         tempValue = Random.Range(50, 1900);

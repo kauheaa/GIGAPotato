@@ -132,6 +132,11 @@ public class MenuControl : MonoBehaviour
     public void OpenStickerSpreadFirst()
     {
         stickerSpreadFirst.gameObject.SetActive(true);
+        stickerSpreadLast.gameObject.SetActive(false);
+        stickerSpreadMid4.gameObject.SetActive(false);
+        stickerSpreadMid3.gameObject.SetActive(false);
+        stickerSpreadMid2.gameObject.SetActive(false);
+        stickerSpreadMid1.gameObject.SetActive(false);
     }
     public void CloseStickerSpreadFirst()
     {
@@ -140,6 +145,10 @@ public class MenuControl : MonoBehaviour
     public void OpenStickerSpreadMid1()
     {
         stickerSpreadMid1.gameObject.SetActive(true);
+        stickerSpreadLast.gameObject.SetActive(false);
+        stickerSpreadMid4.gameObject.SetActive(false);
+        stickerSpreadMid3.gameObject.SetActive(false);
+        stickerSpreadMid2.gameObject.SetActive(false);
     }
     public void CloseStickerSpreadMid1 ()
     {
@@ -148,6 +157,9 @@ public class MenuControl : MonoBehaviour
     public void OpenStickerSpreadMid2()
     {
         stickerSpreadMid2.gameObject.SetActive(true);
+        stickerSpreadLast.gameObject.SetActive(false);
+        stickerSpreadMid4.gameObject.SetActive(false);
+        stickerSpreadMid3.gameObject.SetActive(false);
     }
     public void CloseStickerSpreadMid2()
     {
@@ -156,6 +168,8 @@ public class MenuControl : MonoBehaviour
     public void OpenStickerSpreadMid3()
     {
         stickerSpreadMid3.gameObject.SetActive(true);
+        stickerSpreadLast.gameObject.SetActive(false);
+        stickerSpreadMid4.gameObject.SetActive(false);
     }
     public void CloseStickerSpreadMid3()
     {
@@ -164,6 +178,7 @@ public class MenuControl : MonoBehaviour
     public void OpenStickerSpreadMid4()
     {
         stickerSpreadMid4.gameObject.SetActive(true);
+        stickerSpreadLast.gameObject.SetActive(false);
     }
     public void CloseStickerSpreadMid4()
     {
