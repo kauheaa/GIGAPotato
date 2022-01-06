@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuControl : MonoBehaviour
-{    
+{
+    public GameObject stickerbookButton;
     [SerializeField] private Transform settingsMenu;
     [SerializeField] private Transform stickerBook;
     [SerializeField] private Transform stickerSpreadFirst;
@@ -86,7 +87,7 @@ public class MenuControl : MonoBehaviour
 
     private void Start()
     {
-       
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     private void Update()
@@ -178,6 +179,16 @@ public class MenuControl : MonoBehaviour
     }
 
 
+    public void PlaySaveAnim()
+    {
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", true);
+    }
+
+
+
+
+
+    //FARM
     public void OpenFarmWorld()
     {
         farmWorld.gameObject.SetActive(true);
@@ -262,6 +273,7 @@ public class MenuControl : MonoBehaviour
     public void CloseAddLevel1End()
     {
         addLevel1End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Addition level 2 buttons*/
@@ -296,6 +308,7 @@ public class MenuControl : MonoBehaviour
     public void CloseAddLevel2End()
     {
         addLevel2End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Addition level 3 buttons*/
@@ -330,6 +343,7 @@ public class MenuControl : MonoBehaviour
     public void CloseAddLevel3End()
     {
         addLevel3End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Subtraction level 1 buttons*/
@@ -364,6 +378,7 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel1End()
     {
         subLevel1End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Subtraction level 2 buttons*/
@@ -398,6 +413,7 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel2End()
     {
         subLevel2End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Subtraction level 3 buttons*/
@@ -432,6 +448,7 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel3End()
     {
         subLevel3End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Counting level 1 buttons*/
@@ -466,6 +483,7 @@ public class MenuControl : MonoBehaviour
     public void CloseCountLevel1End()
     {
         countLevel1End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Counting level 2 buttons*/
@@ -501,6 +519,7 @@ public class MenuControl : MonoBehaviour
     public void CloseCountLevel2End()
     {
         countLevel2End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
     
     /*Counting level 3 buttons*/
@@ -536,6 +555,7 @@ public class MenuControl : MonoBehaviour
     public void CloseCountLevel3End()
     {
         countLevel3End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Multiply level 1 buttons*/
@@ -570,6 +590,7 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel1End()
     {
         multLevel1End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Multiply level 2 buttons*/
@@ -604,6 +625,7 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel2End()
     {
         multLevel2End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Multiply level 3 buttons*/
@@ -638,6 +660,7 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel3End()
     {
         multLevel3End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Divide level 1 buttons*/
@@ -672,6 +695,7 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel1End()
     {
         divLevel1End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Divide level 2 buttons*/
@@ -706,6 +730,7 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel2End()
     {
         divLevel2End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Divide level 3 buttons*/
@@ -740,6 +765,7 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel3End()
     {
         divLevel3End.gameObject.SetActive(false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
     /*Exit level warning popup*/

@@ -20,6 +20,7 @@ public class CountScript : MonoBehaviour
     public int score;
     // These are needed for Stickers, Starcount and saving
     public int levelIndex = 0;
+    public int worldIndex = 0;
     [SerializeField] public int countStarCount = 0;
     [SerializeField] public int countSpaceStarCount = 0;
     [SerializeField] public int threeCornStickerScore = 0;
@@ -56,6 +57,10 @@ public class CountScript : MonoBehaviour
     public void SetLevelIndex(int index)
     {
         levelIndex = index;
+    }
+    public void SetWorld(int world)
+    {
+        worldIndex = world;
     }
     // Gives stickers +1 at level end if they have < 1
     public void CheckStickers()

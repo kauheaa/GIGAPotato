@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4887357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6085630533084024225, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+  m_PrefabInstance: {fileID: 6085630532913101383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &11381246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,6 +2507,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1342980262}
         m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5181,6 +5198,54 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1498324802}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 727255512}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1342980262}
+        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &191684767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6587,6 +6652,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1342980262}
         m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9893,6 +9970,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 2
+  worldIndex: 1
   switchOff: {fileID: 887163345}
   switchOn: {fileID: 463188864}
   FirstValue: {fileID: 1081382124}
@@ -10018,6 +10096,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 3
+  worldIndex: 1
   FirstValue: {fileID: 1002869910}
   SecondValue: {fileID: 807270265}
   Function: {fileID: 917268916}
@@ -10045,10 +10124,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 865204667}
   menuStars: {fileID: 693728070}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 204926828}
   button2: {fileID: 198595759}
   button3: {fileID: 2048008838}
@@ -14021,6 +14096,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 3
+  worldIndex: 1
   switchOff: {fileID: 1355504108}
   switchOn: {fileID: 579370631}
   FirstValue: {fileID: 569720510}
@@ -14376,6 +14452,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 2
+  worldIndex: 1
   FirstValue: {fileID: 2025424889}
   SecondValue: {fileID: 1710707265}
   Function: {fileID: 1756440054}
@@ -14403,10 +14480,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 865204667}
   menuStars: {fileID: 693728070}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 1114535264}
   button2: {fileID: 111349184}
   button3: {fileID: 69315042}
@@ -17614,6 +17687,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 1
+  worldIndex: 1
   switchOff: {fileID: 1506112771}
   switchOn: {fileID: 1855497450}
   FirstValue: {fileID: 401612474}
@@ -25696,6 +25770,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1034818362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28686,6 +28772,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1153237465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28974,6 +29072,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 1720326781}
   score: 0
   levelIndex: 2
+  worldIndex: 1
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -29180,6 +29279,54 @@ MonoBehaviour:
       - m_Target: {fileID: 1342980262}
         m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: SaveScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1498324802}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 727255512}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1342980262}
+        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32893,6 +33040,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1300212644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34418,6 +34577,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 195459412}
   score: 0
   levelIndex: 1
+  worldIndex: 1
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -37596,6 +37756,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 1
+  worldIndex: 1
   FirstValue: {fileID: 1545086976}
   SecondValue: {fileID: 400385279}
   Function: {fileID: 1425711255}
@@ -37623,10 +37784,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 865204667}
   menuStars: {fileID: 693728070}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 672239156}
   button2: {fileID: 1657541207}
   button3: {fileID: 2062353488}
@@ -38547,6 +38704,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1342980262}
         m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41117,6 +41286,54 @@ MonoBehaviour:
       - m_Target: {fileID: 1173210010}
         m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: SaveScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1498324802}
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 727255512}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1342980262}
+        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
+        m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50470,6 +50687,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 608647223}
   score: 0
   levelIndex: 3
+  worldIndex: 1
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -51162,6 +51380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stickerbookButton: {fileID: 4887357}
   settingsMenu: {fileID: 0}
   stickerBook: {fileID: 585713513}
   stickerSpreadFirst: {fileID: 324467290}
@@ -55102,6 +55321,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024224, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024224, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024224, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024224, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024224, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -55269,6 +55508,38 @@ PrefabInstance:
     - target: {fileID: 6085630534270478215, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728448, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728462, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_Text
+      value: SAVED
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728462, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728462, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728462, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728462, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19215688
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728463, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728463, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6085630534523819249, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_AnchoredPosition.x

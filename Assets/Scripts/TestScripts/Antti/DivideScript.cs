@@ -16,6 +16,7 @@ public class DivideScript : MonoBehaviour
     [SerializeField] public int octopusStickerScore = 0;
     [SerializeField] public int catStickerScore = 0;
     public int levelIndex = 0;
+    public int worldIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix;
@@ -24,8 +25,9 @@ public class DivideScript : MonoBehaviour
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
-    
-   
+    public GameObject Animal;
+
+
 
 
     public void SaveScore()
@@ -60,6 +62,10 @@ public class DivideScript : MonoBehaviour
     public void SetLevelIndex(int index)
     {
         levelIndex = index;
+    }
+    public void SetWorld(int world)
+    {
+        worldIndex = world;
     }
 
     public void ResetScore()
@@ -103,24 +109,49 @@ public class DivideScript : MonoBehaviour
 
     public void CheckStars()
     {
-        if (divJungleStarCount == 1)
+        switch (worldIndex)
         {
-            divStars.GetComponent<Image>().sprite = oneStar;
-            menuStars.GetComponent<Image>().sprite = oneStar;
-        }
-        if (divJungleStarCount == 2)
-        {
-            divStars.GetComponent<Image>().sprite = twoStar;
-            menuStars.GetComponent<Image>().sprite = twoStar;
-        }
-        if (divJungleStarCount == 3)
-        {
-            divStars.GetComponent<Image>().sprite = threeStar;
-            menuStars.GetComponent<Image>().sprite = threeStar;
+            case 2:
+                if (divJungleStarCount == 1)
+                {
+                    divStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (divJungleStarCount == 2)
+                {
+                    divStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (divJungleStarCount == 3)
+                {
+                    divStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                }
+                break;
+            case 3:
+                if (divSpaceStarCount == 1)
+                {
+                    divStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (divSpaceStarCount == 2)
+                {
+                    divStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (divSpaceStarCount == 3)
+                {
+                    divStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                }
+                break;
+            default:
+                Debug.Log("No level index set");
+                break;
         }
     }
 
-    private void Start()
+        private void Start()
     {
         //LoadScore();
         CheckStickers();
@@ -349,6 +380,7 @@ public class DivideScript : MonoBehaviour
             if (divScore >= 5)
             {
                 switchOn.gameObject.SetActive(true);
+                Animal.GetComponent<Animator>().SetBool("Dance", true);
                 switchOff.gameObject.SetActive(false);
                 switch (levelIndex)
                 {
@@ -388,6 +420,7 @@ public class DivideScript : MonoBehaviour
             button3.interactable = true;
             AnswerSpot.text = "?";
             DivJungle();
+            Animal.GetComponent<Animator>().SetBool("Happy", false);
         }
     }
     public void ResetSpace()

@@ -1373,6 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stickerbookButton: {fileID: 1612285898}
   settingsMenu: {fileID: 0}
   stickerBook: {fileID: 802231672}
   stickerSpreadFirst: {fileID: 802231671}
@@ -3237,6 +3238,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 3
+  worldIndex: 0
   FirstValue: {fileID: 1349105976}
   SecondValue: {fileID: 259505536}
   Function: {fileID: 162647501}
@@ -3262,8 +3264,8 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 1022386183}
-  menuStars: {fileID: 1505387751}
+  sumStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 1386439373}
   button2: {fileID: 67941085}
   button3: {fileID: 2059993884}
@@ -3272,7 +3274,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 337827793}
   switchOn: {fileID: 1996556127}
-  Animal: {fileID: 0}
+  Animal: {fileID: 1383844494}
 --- !u!114 &78942763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8298,7 +8300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -8586,7 +8588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -8975,6 +8977,7 @@ MonoBehaviour:
   rocketStickerScore: 0
   laikaStickerScore: 0
   levelIndex: 1
+  worldIndex: 0
   FirstValue: {fileID: 1137862115}
   SecondValue: {fileID: 561884868}
   Function: {fileID: 1524635781}
@@ -9007,6 +9010,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 804867374}
   switchOn: {fileID: 1439016459}
+  Animal: {fileID: 1515095547}
 --- !u!1 &225804227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14268,6 +14272,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 556417414}
   score: 0
   levelIndex: 1
+  worldIndex: 0
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -15536,6 +15541,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 1
+  worldIndex: 0
   FirstValue: {fileID: 1789822907}
   SecondValue: {fileID: 704152903}
   Function: {fileID: 1775194724}
@@ -15561,8 +15567,8 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 1022386183}
-  menuStars: {fileID: 1505387751}
+  sumStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 262507104}
   button2: {fileID: 676549831}
   button3: {fileID: 1346997171}
@@ -15571,7 +15577,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 1167373306}
   switchOn: {fileID: 962181325}
-  Animal: {fileID: 0}
+  Animal: {fileID: 1193697087}
 --- !u!114 &385868509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16889,6 +16895,18 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadLast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19865,6 +19883,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &491064187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20903,6 +20933,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23449,8 +23491,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -23461,8 +23503,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1391882187}
+        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -23473,8 +23515,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1154250889}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -24346,6 +24388,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25515,6 +25569,7 @@ MonoBehaviour:
   octopusStickerScore: 0
   catStickerScore: 0
   levelIndex: 2
+  worldIndex: 0
   FirstValue: {fileID: 1475835214}
   SecondValue: {fileID: 1987163974}
   Function: {fileID: 924743891}
@@ -25545,8 +25600,9 @@ MonoBehaviour:
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  switchOff: {fileID: 1844982670}
-  switchOn: {fileID: 0}
+  switchOff: {fileID: 1526498471}
+  switchOn: {fileID: 1844982670}
+  Animal: {fileID: 680393919}
 --- !u!1 &610623940
 GameObject:
   m_ObjectHideFlags: 0
@@ -27717,7 +27773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -28643,6 +28699,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 2
+  worldIndex: 0
   switchOff: {fileID: 442362057}
   switchOn: {fileID: 822415597}
   FirstValue: {fileID: 196384925}
@@ -28670,15 +28727,15 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 2095371362}
-  menuStars: {fileID: 1198049900}
+  subStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 1637914943}
   button2: {fileID: 2065234006}
   button3: {fileID: 1448507690}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  Animal: {fileID: 0}
+  Animal: {fileID: 1801652512}
 --- !u!114 &715659775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29672,7 +29729,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel2Canvas
+        m_MethodName: OpenMultLevel2Canvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29682,8 +29739,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -29694,8 +29751,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1065523398}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -29706,8 +29763,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1659828921}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -29720,7 +29777,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel2Start
+        m_MethodName: OpenMultLevel2Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29732,7 +29789,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel2Level
+        m_MethodName: OpenMultLevel2Level
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29744,7 +29801,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseAddLevel2End
+        m_MethodName: CloseMultLevel2End
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30321,6 +30378,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35134,7 +35203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -36839,6 +36908,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 3
+  worldIndex: 0
   switchOff: {fileID: 993616420}
   switchOn: {fileID: 1373176529}
   FirstValue: {fileID: 1451286229}
@@ -36866,15 +36936,15 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 2095371362}
-  menuStars: {fileID: 1198049900}
+  subStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 642158558}
   button2: {fileID: 896966508}
   button3: {fileID: 2013939806}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  Animal: {fileID: 0}
+  Animal: {fileID: 519214900}
 --- !u!114 &906460867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37043,6 +37113,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 1
+  worldIndex: 0
   switchOff: {fileID: 504004279}
   switchOn: {fileID: 1335454314}
   FirstValue: {fileID: 264349092}
@@ -37070,15 +37141,15 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 2095371362}
-  menuStars: {fileID: 1198049900}
+  subStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 357914587}
   button2: {fileID: 1455455678}
   button3: {fileID: 1808956149}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  Animal: {fileID: 0}
+  Animal: {fileID: 1564891915}
 --- !u!114 &912344940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40223,7 +40294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -41396,6 +41467,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 997176631}
   score: 0
   levelIndex: 3
+  worldIndex: 0
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -43649,6 +43721,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1052586108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43902,6 +43986,7 @@ MonoBehaviour:
   rocketStickerScore: 0
   laikaStickerScore: 0
   levelIndex: 2
+  worldIndex: 0
   FirstValue: {fileID: 568176993}
   SecondValue: {fileID: 952972478}
   Function: {fileID: 2023726271}
@@ -43934,6 +44019,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 1664417431}
   switchOn: {fileID: 1745758067}
+  Animal: {fileID: 1715451969}
 --- !u!1 &1066070537
 GameObject:
   m_ObjectHideFlags: 0
@@ -44589,7 +44675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -47085,6 +47171,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1132793741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47942,6 +48040,7 @@ MonoBehaviour:
   octopusStickerScore: 0
   catStickerScore: 0
   levelIndex: 3
+  worldIndex: 0
   FirstValue: {fileID: 1925949355}
   SecondValue: {fileID: 873899778}
   Function: {fileID: 1108046131}
@@ -47974,6 +48073,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 1278284872}
   switchOn: {fileID: 2088515847}
+  Animal: {fileID: 1193697087}
 --- !u!1 &1154494256
 GameObject:
   m_ObjectHideFlags: 0
@@ -48740,7 +48840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -49160,6 +49260,18 @@ MonoBehaviour:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadLast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49881,7 +49993,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel3Canvas
+        m_MethodName: OpenMultLevel3Canvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49891,8 +50003,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -49903,8 +50015,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1065523398}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -49915,8 +50027,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1659828921}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -49929,7 +50041,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel3Start
+        m_MethodName: OpenMultLevel3Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49941,7 +50053,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel3Level
+        m_MethodName: OpenMultLevel1Level
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49953,7 +50065,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseAddLevel3End
+        m_MethodName: CloseMultLevel3End
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -54660,6 +54772,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1349503629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55281,6 +55405,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -56889,6 +57025,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 1437245709}
   score: 0
   levelIndex: 2
+  worldIndex: 0
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -58891,6 +59028,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 2
+  worldIndex: 0
   FirstValue: {fileID: 1032758415}
   SecondValue: {fileID: 977707363}
   Function: {fileID: 71935366}
@@ -58916,8 +59054,8 @@ MonoBehaviour:
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 1022386183}
-  menuStars: {fileID: 1505387751}
+  sumStars: {fileID: 0}
+  menuStars: {fileID: 0}
   button1: {fileID: 1726005080}
   button2: {fileID: 410094601}
   button3: {fileID: 357580242}
@@ -58926,7 +59064,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 797852995}
   switchOn: {fileID: 1721728819}
-  Animal: {fileID: 0}
+  Animal: {fileID: 1383844494}
 --- !u!114 &1436757936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62552,7 +62690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -65385,6 +65523,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1601504246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65605,6 +65755,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -66113,6 +66275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6085630534465728462, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_Text
+      value: SAVED
+      objectReference: {fileID: 0}
     - target: {fileID: 6085630534523819249, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -112
@@ -66146,6 +66312,11 @@ PrefabInstance:
 --- !u!224 &1612285897 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6085630534270478214, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+  m_PrefabInstance: {fileID: 1612285896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1612285898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6085630533084024225, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
   m_PrefabInstance: {fileID: 1612285896}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1614702774
@@ -68368,6 +68539,7 @@ MonoBehaviour:
   rocketStickerScore: 0
   laikaStickerScore: 0
   levelIndex: 3
+  worldIndex: 0
   FirstValue: {fileID: 978397528}
   SecondValue: {fileID: 1592421385}
   Function: {fileID: 1265966556}
@@ -68400,6 +68572,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 405478029}
   switchOn: {fileID: 546731083}
+  Animal: {fileID: 1080816427}
 --- !u!1 &1661885146
 GameObject:
   m_ObjectHideFlags: 0
@@ -69430,8 +69603,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -69442,8 +69615,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1391882187}
+        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -69454,8 +69627,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1154250889}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -69814,6 +69987,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -70475,7 +70660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -72566,7 +72751,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel1Canvas
+        m_MethodName: OpenMultLevel1Canvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -72576,8 +72761,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 221378034}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -72588,8 +72773,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1065523398}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -72600,8 +72785,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1659828921}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -72614,7 +72799,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel1Start
+        m_MethodName: OpenMultLevel1Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -72626,7 +72811,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenAddLevel1Level
+        m_MethodName: OpenMultLevel1Level
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -72638,7 +72823,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseAddLevel1End
+        m_MethodName: CloseMultLevel1End
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -73789,7 +73974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123300, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 353783439623123302, guid: c73d2e829df837f408ede993177b82d1, type: 3}
       propertyPath: m_Pivot.x
@@ -78298,6 +78483,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1837242270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81040,6 +81237,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PlaySaveAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -89594,8 +89803,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 2132550888}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -89606,8 +89815,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1391882187}
+        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -89618,8 +89827,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+      - m_Target: {fileID: 1154250889}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -89840,6 +90049,7 @@ MonoBehaviour:
   octopusStickerScore: 0
   catStickerScore: 0
   levelIndex: 1
+  worldIndex: 0
   FirstValue: {fileID: 1465641944}
   SecondValue: {fileID: 1466465129}
   Function: {fileID: 916553412}
@@ -89872,6 +90082,7 @@ MonoBehaviour:
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
   switchOff: {fileID: 291601920}
   switchOn: {fileID: 1471740282}
+  Animal: {fileID: 1773362912}
 --- !u!1 &2133291036
 GameObject:
   m_ObjectHideFlags: 0

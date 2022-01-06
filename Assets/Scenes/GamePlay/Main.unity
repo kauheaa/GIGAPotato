@@ -3312,6 +3312,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132670838}
   m_CullTransparentMesh: 1
+--- !u!1 &135442697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6085630533084024225, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+  m_PrefabInstance: {fileID: 6085630532913101383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &141692591
 GameObject:
   m_ObjectHideFlags: 0
@@ -9804,6 +9809,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 2
+  worldIndex: 0
   switchOff: {fileID: 887163345}
   switchOn: {fileID: 463188864}
   FirstValue: {fileID: 1081382124}
@@ -9929,6 +9935,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 3
+  worldIndex: 0
   FirstValue: {fileID: 1002869910}
   SecondValue: {fileID: 807270265}
   Function: {fileID: 917268916}
@@ -9956,10 +9963,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 865204667}
   menuStars: {fileID: 693728070}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 204926828}
   button2: {fileID: 198595759}
   button3: {fileID: 2048008838}
@@ -13917,6 +13920,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 3
+  worldIndex: 0
   switchOff: {fileID: 1355504108}
   switchOn: {fileID: 579370631}
   FirstValue: {fileID: 569720510}
@@ -14272,6 +14276,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 2
+  worldIndex: 0
   FirstValue: {fileID: 2025424889}
   SecondValue: {fileID: 1710707265}
   Function: {fileID: 1756440054}
@@ -14299,10 +14304,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 865204667}
   menuStars: {fileID: 693728070}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 1114535264}
   button2: {fileID: 111349184}
   button3: {fileID: 69315042}
@@ -17510,6 +17511,7 @@ MonoBehaviour:
   planetStickerScore: 0
   cowStickerScore: 0
   levelIndex: 1
+  worldIndex: 0
   switchOff: {fileID: 1506112771}
   switchOn: {fileID: 1855497450}
   FirstValue: {fileID: 401612474}
@@ -28789,6 +28791,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 1720326781}
   score: 0
   levelIndex: 2
+  worldIndex: 0
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -34194,6 +34197,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 195459412}
   score: 0
   levelIndex: 1
+  worldIndex: 0
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -37372,6 +37376,7 @@ MonoBehaviour:
   blackholeStickerScore: 0
   llamaStickerScore: 0
   levelIndex: 1
+  worldIndex: 0
   FirstValue: {fileID: 1545086976}
   SecondValue: {fileID: 400385279}
   Function: {fileID: 1425711255}
@@ -37399,10 +37404,6 @@ MonoBehaviour:
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
   sumStars: {fileID: 865204667}
   menuStars: {fileID: 693728070}
-  sumJungleStars: {fileID: 0}
-  menuJungleStars: {fileID: 0}
-  sumSpaceStars: {fileID: 0}
-  menuSpaceStars: {fileID: 0}
   button1: {fileID: 672239156}
   button2: {fileID: 1657541207}
   button3: {fileID: 2062353488}
@@ -50209,6 +50210,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 608647223}
   score: 0
   levelIndex: 3
+  worldIndex: 0
   countStarCount: 0
   countSpaceStarCount: 0
   threeCornStickerScore: 0
@@ -50901,6 +50903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stickerbookButton: {fileID: 135442697}
   settingsMenu: {fileID: 0}
   stickerBook: {fileID: 585713513}
   stickerSpreadFirst: {fileID: 324467290}

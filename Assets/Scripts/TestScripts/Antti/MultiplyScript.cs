@@ -16,6 +16,7 @@ public class MultiplyScript : MonoBehaviour
     [SerializeField] public int rocketStickerScore = 0;
     [SerializeField] public int laikaStickerScore = 0;
     public int levelIndex = 0;
+    public int worldIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix;
@@ -24,7 +25,7 @@ public class MultiplyScript : MonoBehaviour
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
-
+    public GameObject Animal;
 
     public void SaveScore()
     {
@@ -58,6 +59,10 @@ public class MultiplyScript : MonoBehaviour
     public void SetLevelIndex(int index)
     {
         levelIndex = index;
+    }
+    public void SetWorld(int world)
+    {
+        worldIndex = world;
     }
 
     public void ResetScore()
@@ -102,23 +107,49 @@ public class MultiplyScript : MonoBehaviour
 
     public void CheckStars()
     {
-        if (multJungleStarCount == 1)
+        switch (worldIndex)
         {
-            multStars.GetComponent<Image>().sprite = oneStar;
-            menuStars.GetComponent<Image>().sprite = oneStar;
-        }
-        if (multJungleStarCount == 2)
-        {
-            multStars.GetComponent<Image>().sprite = twoStar;
-            menuStars.GetComponent<Image>().sprite = twoStar;
-        }
-        if (multJungleStarCount == 3)
-        {
-            multStars.GetComponent<Image>().sprite = threeStar;
-            menuStars.GetComponent<Image>().sprite = threeStar;
+            case 2:
+                if (multJungleStarCount == 1)
+                {
+                    multStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (multJungleStarCount == 2)
+                {
+                    multStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (multJungleStarCount == 3)
+                {
+                    multStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                }
+                break;
+            case 3:
+                if (multSpaceStarCount == 1)
+                {
+                    multStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (multSpaceStarCount == 2)
+                {
+                    multStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (multSpaceStarCount == 3)
+                {
+                    multStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                }
+                break;
+            default:
+                Debug.Log("No level index set");
+                break;
         }
     }
-    private void Start()
+
+        private void Start()
     {
         //LoadScore();
         CheckStickers();
@@ -219,6 +250,7 @@ public class MultiplyScript : MonoBehaviour
             if (multScore >= 5)
             {
                 switchOn.gameObject.SetActive(true);
+                Animal.GetComponent<Animator>().SetBool("Dance", true);
                 switchOff.gameObject.SetActive(false);
                 switch (levelIndex)
                 {
@@ -257,7 +289,8 @@ public class MultiplyScript : MonoBehaviour
             THREE.gameObject.SetActive(false);
             button3.interactable = true;
             AnswerSpot.text = "?";
-           MultJungle();
+            MultJungle();
+            Animal.GetComponent<Animator>().SetBool("Happy", false);
         }
     }
     public void ResetSpace()

@@ -23,6 +23,7 @@ public class SubScript : MonoBehaviour
     [SerializeField] public int planetStickerScore = 0;
     [SerializeField] public int cowStickerScore = 0;
     public int levelIndex = 0;
+    public int worldIndex = 0;
     [SerializeField] private Transform switchOff, switchOn;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix, StickerSeven, StickerEight, StickerNine;
@@ -63,6 +64,10 @@ public class SubScript : MonoBehaviour
     {
         levelIndex = index;
     }
+    public void SetWorld(int world)
+    {
+        worldIndex = world;
+    }
 
     public void ResetScore()
     {
@@ -94,22 +99,65 @@ public class SubScript : MonoBehaviour
 
     public void CheckStars()
     {
-        if (subStarCount == 1)
+        switch (worldIndex)
         {
-            subStars.GetComponent<Image>().sprite = oneStar;
-            menuStars.GetComponent<Image>().sprite = oneStar;
-        }
-        if (subStarCount == 2)
-        {
-            subStars.GetComponent<Image>().sprite = twoStar;
-            menuStars.GetComponent<Image>().sprite = twoStar;
-        }
-        if (subStarCount == 3)
-        {
-            subStars.GetComponent<Image>().sprite = threeStar;
-            menuStars.GetComponent<Image>().sprite = threeStar;
+            case 1:
+                if (subStarCount == 1)
+                {
+                    subStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (subStarCount == 2)
+                {
+                    subStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (subStarCount == 3)
+                {
+                    subStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                }
+                break;
+            case 2:
+                if (subJungleStarCount == 1)
+                {
+                    subStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (subJungleStarCount == 2)
+                {
+                    subStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (subJungleStarCount == 3)
+                {
+                    subStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                }
+                break;
+            case 3:
+                if (subSpaceStarCount == 1)
+                {
+                    subStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (subSpaceStarCount == 2)
+                {
+                    subStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (subSpaceStarCount == 3)
+                {
+                    subStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                }
+                break;
+            default:
+                Debug.Log("No level index set");
+                break;
         }
     }
+
 
     private void Start()
     {
