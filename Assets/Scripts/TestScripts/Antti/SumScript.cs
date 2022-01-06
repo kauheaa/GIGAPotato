@@ -213,64 +213,64 @@ public class SumScript : MonoBehaviour
     {
         if (levelIndex == 1)
         {
-            firstValue = Random.Range(1, 10);
-            secondValue = Random.Range(1, 10);
+            firstValue = Random.Range(0, 5);
+            secondValue = Random.Range(0, 5);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if(levelIndex == 2)
         {
-            firstValue = Random.Range(11, 15);
-            secondValue = Random.Range(11, 15);
+            firstValue = Random.Range(5, 10);
+            secondValue = Random.Range(5, 10);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if(levelIndex == 3)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(10, 25);
+            secondValue = Random.Range(10, 25);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 4)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(25, 50);
+            secondValue = Random.Range(25, 50);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 5)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(50, 100);
+            secondValue = Random.Range(50, 100);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 6)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(100, 500);
+            secondValue = Random.Range(100, 500);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 7)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(0, 5000);
+            secondValue = Random.Range(100, 5000);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 8)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(100, 5000);
+            secondValue = Random.Range(1000, 50000);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 9)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(1000, 50000);
+            secondValue = Random.Range(1000, 50000);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
@@ -288,18 +288,18 @@ public class SumScript : MonoBehaviour
         finalValue = firstValue + secondValue;
 
 
-        tempValue = Random.Range(2, 20);
+        tempValue = Random.Range(2, 100);
         while (tempValue == finalValue)
         {
-            tempValue = Random.Range(2, 20);
+            tempValue = Random.Range(2, 100);
         }
         Alternative1 = tempValue;
 
         //Second Alternative
-        tempValue = Random.Range(2, 20);
+        tempValue = Random.Range(2, 100);
         while (tempValue == finalValue || (tempValue == Alternative1))
         {
-            tempValue = Random.Range(2, 20);
+            tempValue = Random.Range(2, 100);
         }
         Alternative2 = tempValue;
 

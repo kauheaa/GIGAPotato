@@ -359,22 +359,22 @@ public class MultiplyScript : MonoBehaviour
     {
         if (levelIndex == 1)
         {
-            firstValue = Random.Range(1, 10);
-            secondValue = Random.Range(1, 10);
+            firstValue = Random.Range(1, 5);
+            secondValue = Random.Range(0, 5);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 2)
         {
-            firstValue = Random.Range(11, 15);
-            secondValue = Random.Range(11, 15);
+            firstValue = Random.Range(0, 5);
+            secondValue = Random.Range(5, 10);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
         if (levelIndex == 3)
         {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
+            firstValue = Random.Range(0, 10);
+            secondValue = Random.Range(5, 10);
             FirstValue.text = firstValue.ToString();
             SecondValue.text = secondValue.ToString();
         }
@@ -428,8 +428,8 @@ public class MultiplyScript : MonoBehaviour
             firstValue = tempValue;
         }
 
-        Function.text = "+";
-        finalValue = firstValue + secondValue;
+        Function.text = "×";
+        finalValue = firstValue * secondValue;
 
         tempValue = Random.Range(30, 200);
         while (tempValue == finalValue)
