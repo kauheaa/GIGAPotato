@@ -215,205 +215,203 @@ public class DivideScript : MonoBehaviour
         //else
         //    return false;
 
-        switch (levelIndex)
+        if (levelIndex == 1)
         {
-            case 1:
-                firstValue = Random.Range(1, 5);
-                secondValue = Random.Range(1, 5);
-                thirdValue = firstValue * secondValue;
-                if (firstValue > secondValue)
-                {
-                    fourthValue = secondValue;
-                }
-                else
-                {
-                    fourthValue = firstValue;
-                }
-                FirstValue.text = thirdValue.ToString();
-                SecondValue.text = fourthValue.ToString();
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if(firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
 
-                finalValue = firstValue / secondValue;
+            finalValue = firstValue / secondValue;
 
-                //First Alterntive
-                tempValue = Random.Range(1, 10);
-                while (tempValue == finalValue)
-                {
-                    tempValue = Random.Range(1, 10);
-                }
-                Alternative1 = tempValue;
-                //Second Alternative
-                tempValue = Random.Range(1, 10);
-                while (tempValue == finalValue || (tempValue == Alternative1))
-                {
-                    tempValue = Random.Range(1, 10);
-                }
-                Alternative2 = tempValue;
-                break;
-
-            case 2:
-                firstValue = Random.Range(1, 10);
-                secondValue = Random.Range(1, 5);
-                thirdValue = firstValue * secondValue;
-                if (firstValue > secondValue)
-                {
-                    fourthValue = secondValue;
-                }
-                else
-                {
-                    fourthValue = firstValue;
-                }
-                FirstValue.text = thirdValue.ToString();
-                SecondValue.text = fourthValue.ToString();
-
-                finalValue = firstValue / secondValue;
-
-                //First Alterntive
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue)
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative1 = tempValue;
-                //Second Alternative
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue || (tempValue == Alternative1))
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative2 = tempValue;
-                break;
+            }
+            Alternative2 = tempValue;
+        }
+        if (levelIndex == 2)
+        {
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
 
-            case 3:
-                firstValue = Random.Range(1, 10);
-                secondValue = Random.Range(1, 5);
-                thirdValue = firstValue * secondValue;
-                if (firstValue > secondValue)
-                {
-                    fourthValue = secondValue;
-                }
-                else
-                {
-                    fourthValue = firstValue;
-                }
-                FirstValue.text = thirdValue.ToString();
-                SecondValue.text = fourthValue.ToString();
+            finalValue = firstValue / secondValue;
 
-                finalValue = firstValue / secondValue;
-
-                //First Alterntive
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue)
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative1 = tempValue;
-                //Second Alternative
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue || (tempValue == Alternative1))
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative2 = tempValue;
-                break;
+            }
+            Alternative2 = tempValue;
+        }
+        if (levelIndex == 3)
+        {
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
 
-            case 4:
-                firstValue = Random.Range(1, 10);
-                secondValue = Random.Range(1, 5);
-                thirdValue = firstValue * secondValue;
-                if (firstValue > secondValue)
-                {
-                    fourthValue = secondValue;
-                }
-                else
-                {
-                    fourthValue = firstValue;
-                }
-                FirstValue.text = thirdValue.ToString();
-                SecondValue.text = fourthValue.ToString();
+            finalValue = firstValue / secondValue;
 
-                finalValue = firstValue / secondValue;
-
-                //First Alterntive
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue)
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative1 = tempValue;
-                //Second Alternative
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue || (tempValue == Alternative1))
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative2 = tempValue;
-                break;
+            }
+            Alternative2 = tempValue;
+        }
+        if (levelIndex == 4)
+        {
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
 
-            case 5:
-                firstValue = Random.Range(1, 10);
-                secondValue = Random.Range(1, 5);
-                thirdValue = firstValue * secondValue;
-                if (firstValue > secondValue)
-                {
-                    fourthValue = secondValue;
-                }
-                else
-                {
-                    fourthValue = firstValue;
-                }
-                FirstValue.text = thirdValue.ToString();
-                SecondValue.text = fourthValue.ToString();
+            finalValue = firstValue / secondValue;
 
-                finalValue = firstValue / secondValue;
-
-                //First Alterntive
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue)
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative1 = tempValue;
-                //Second Alternative
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue || (tempValue == Alternative1))
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative2 = tempValue;
-                break;
+            }
+            Alternative2 = tempValue;
+        }
+        if (levelIndex == 5)
+        {
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
 
-            case 6:
-                firstValue = Random.Range(1, 10);
-                secondValue = Random.Range(1, 5);
-                thirdValue = firstValue * secondValue;
-                if (firstValue > secondValue)
-                {
-                    fourthValue = secondValue;
-                }
-                else
-                {
-                    fourthValue = firstValue;
-                }
-                FirstValue.text = thirdValue.ToString();
-                SecondValue.text = fourthValue.ToString();
+            finalValue = firstValue / secondValue;
 
-                finalValue = firstValue / secondValue;
-
-                //First Alterntive
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue)
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative1 = tempValue;
-                //Second Alternative
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
                 tempValue = Random.Range(0, 10);
-                while (tempValue == finalValue || (tempValue == Alternative1))
-                {
-                    tempValue = Random.Range(0, 10);
-                }
-                Alternative2 = tempValue;
-                break;
+            }
+            Alternative2 = tempValue;
+        }
+        if (levelIndex == 6)
+        {
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
+
+            finalValue = firstValue / secondValue;
+
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative2 = tempValue;
         }
 
         if (firstValue - secondValue < 2)
@@ -424,6 +422,23 @@ public class DivideScript : MonoBehaviour
             }
 
             Function.text = "/";
+            finalValue = thirdValue / fourthValue;
+
+
+            tempValue = Random.Range(2, 20);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(2, 20);
+            }
+            Alternative1 = tempValue;
+
+            //Second Alternative
+            tempValue = Random.Range(2, 20);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(2, 20);
+            }
+            Alternative2 = tempValue;
 
             tempValue = Random.Range(1, 6);
             if (tempValue == 1)
