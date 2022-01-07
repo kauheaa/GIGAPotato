@@ -442,16 +442,11 @@ public class MultiplyScript : MonoBehaviour
         }
     }
 
-   
-
-    public void ResetJungle()
+    public void stickerScoreCount()
     {
+        switch (worldIndex)
         {
-            if (multScore >= 5)
-            {
-                switchOn.gameObject.SetActive(true);
-                Animal.GetComponent<Animator>().SetBool("Dance", true);
-                switchOff.gameObject.SetActive(false);
+            case 2:
                 switch (levelIndex)
                 {
                     case 1:
@@ -479,8 +474,50 @@ public class MultiplyScript : MonoBehaviour
                         Debug.Log("No level index set");
                         break;
                 }
+                break;
 
-            }
+            case 3:
+                switch (levelIndex)
+                {
+                    case 4:
+                        if (flagStickerScore < 1)
+                        {
+                            flagStickerScore += 1;
+                            Debug.Log("Apple unlocked");
+                        }
+                        break;
+                    case 5:
+                        if (rocketStickerScore < 1)
+                        {
+                            rocketStickerScore += 1;
+                            Debug.Log("Basket unlocked");
+                        }
+                        break;
+                    case 6:
+                        if (laikaStickerScore < 1)
+                        {
+                            laikaStickerScore += 1;
+                            Debug.Log("Pig unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+    }
+
+    public void ResetJungle()
+    {
+
+        if (multScore >= 5)
+        {
+            stickerScoreCount();
+            switchOn.gameObject.SetActive(true);
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
+            switchOff.gameObject.SetActive(false);
+        }
 
             ONE.gameObject.SetActive(false);
             button1.interactable = true;
@@ -491,151 +528,120 @@ public class MultiplyScript : MonoBehaviour
             AnswerSpot.text = "?";
             MultJungle();
             Animal.GetComponent<Animator>().SetBool("Happy", false);
-        }
-    }
-    public void ResetSpace()
-    {
-        {
-            if (multScore >= 5)
-            {
-                switchOn.gameObject.SetActive(true);
-                switchOff.gameObject.SetActive(false);
-                switch (levelIndex)
-                {
-                    case 1:
-                        if (lycheeStickerScore < 1)
-                        {
-                            lycheeStickerScore += 1;
-                            Debug.Log("Apple unlocked");
-                        }
-                        break;
-                    case 2:
-                        if (pitahayaStickerScore < 1)
-                        {
-                            pitahayaStickerScore += 1;
-                            Debug.Log("Basket unlocked");
-                        }
-                        break;
-                    case 3:
-                        if (frogStickerScore < 1)
-                        {
-                            frogStickerScore += 1;
-                            Debug.Log("Pig unlocked");
-                        }
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-
-            }
-
-            ONE.gameObject.SetActive(false);
-            button1.interactable = true;
-            TWO.gameObject.SetActive(false);
-            button2.interactable = true;
-            THREE.gameObject.SetActive(false);
-            button3.interactable = true;
-            AnswerSpot.text = "?";
-            MultSpace();
-        }
     }
 
-    IEnumerator Correct()
-    {
-        Score();
-        AnswerSpot.text = finalValue.ToString();
-        scoreCount.text = multScore.ToString();
-        yield return new WaitForSeconds(1f);
-        ResetJungle();
-    }
+//public void ResetSpace()
+//{
+//    {
+//        if (multScore >= 5)
+//        {
+//            stickerScoreCount();
+//            switchOn.gameObject.SetActive(true);
+//            Animal.GetComponent<Animator>().SetBool("Dance", true);
+//            switchOff.gameObject.SetActive(false);
+//        }
 
-    public void Score()
+//        ONE.gameObject.SetActive(false);
+//        button1.interactable = true;
+//        TWO.gameObject.SetActive(false);
+//        button2.interactable = true;
+//        THREE.gameObject.SetActive(false);
+//        button3.interactable = true;
+//        AnswerSpot.text = "?";
+//        MultSpace();
+//        Animal.GetComponent<Animator>().SetBool("Happy", false);
+//    }
+//}
+
+IEnumerator Correct()
+{
+    Animal.GetComponent<Animator>().SetBool("Happy", true);
+    Score();
+    AnswerSpot.text = finalValue.ToString();
+    scoreCount.text = multScore.ToString();
+    yield return new WaitForSeconds(1f);
+    ResetJungle();
+}
+
+public void Score()
     {
         multScore += 1;
     }
 
+        //public void MultSpace()
+        //{
+        //    firstValue = Random.Range(1, 100);
+        //    secondValue = Random.Range(1, 100);
+        //    FirstValue.text = firstValue.ToString();
+        //    SecondValue.text = secondValue.ToString();
 
-    
-        public void MultSpace()
-        {
-            firstValue = Random.Range(1, 100);
-            secondValue = Random.Range(1, 100);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
+        //    if (firstValue - secondValue < 0)
+        //    {
+        //        tempValue = secondValue;
+        //        secondValue = firstValue;
+        //        firstValue = tempValue;
+        //    }
 
-            if (firstValue - secondValue < 0)
-            {
-                tempValue = secondValue;
-                secondValue = firstValue;
-                firstValue = tempValue;
-            }
+        //    Function.text = "+";
+        //    finalValue = firstValue + secondValue;
 
-            Function.text = "+";
-            finalValue = firstValue + secondValue;
+        //    tempValue = Random.Range(30, 200);
+        //    while (tempValue == finalValue)
+        //    {
+        //        tempValue = Random.Range(30, 200);
+        //    }
+        //    Alternative1 = tempValue;
 
-            tempValue = Random.Range(30, 200);
-            while (tempValue == finalValue)
-            {
-                tempValue = Random.Range(30, 200);
-            }
-            Alternative1 = tempValue;
+        //    //Second Alternative
+        //    tempValue = Random.Range(30, 200);
+        //    while (tempValue == finalValue || (tempValue == Alternative1))
+        //    {
+        //        tempValue = Random.Range(30, 200);
+        //    }
+        //    Alternative2 = tempValue;
 
-            //Second Alternative
-            tempValue = Random.Range(30, 200);
-            while (tempValue == finalValue || (tempValue == Alternative1))
-            {
-                tempValue = Random.Range(30, 200);
-            }
-            Alternative2 = tempValue;
+        //    tempValue = Random.Range(1, 6);
+        //    if (tempValue == 1)
+        //    {
+        //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+        //    }
+        //    if (tempValue == 2)
+        //    {
+        //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+        //    }
+        //    if (tempValue == 3)
+        //    {
+        //        Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+        //    }
+        //    if (tempValue == 4)
+        //    {
+        //        Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+        //    }
+        //    if (tempValue == 5)
+        //    {
+        //        Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+        //    }
+        //    if (tempValue == 6)
+        //    {
+        //        Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+        //    }
 
-            tempValue = Random.Range(1, 6);
-            if (tempValue == 1)
-            {
-                Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
-            }
-            if (tempValue == 2)
-            {
-                Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
-            }
-            if (tempValue == 3)
-            {
-                Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
-            }
-            if (tempValue == 4)
-            {
-                Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
-            }
-            if (tempValue == 5)
-            {
-                Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
-            }
-            if (tempValue == 6)
-            {
-                Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
-            }
+        //    Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
 
-
-
-
-
-            Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
-
-        }
-
+        //}
 
         public void StartJungle()
-    {
-        ResetJungle();
-        MultJungle();
-        ResetScore();
-    }
-    public void StartSpace()
-    {
-        ResetSpace();
-        MultSpace();
-        ResetScore();
-    }
+        {
+            ResetJungle();
+            MultJungle();
+            ResetScore();
+        }
+    //public void StartSpace()
+    //{
+    //    ResetSpace();
+    //    MultSpace();
+    //    ResetScore();
+    //}
 
 
 }

@@ -670,7 +670,6 @@ public class SumScript : MonoBehaviour
             switchOn.gameObject.SetActive(true);
             Animal.GetComponent<Animator>().SetBool("Dance", true);
             switchOff.gameObject.SetActive(false);
-
         }
 
         ONE.gameObject.SetActive(false);
