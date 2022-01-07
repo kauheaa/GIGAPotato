@@ -248,6 +248,7 @@ public class CountScript : MonoBehaviour
     {
         for (int i = 0; i < options.Length; i++)
         {
+            options[i].GetComponent<Button>().interactable = true;
             options[i].GetComponent<Image>().sprite = options[i].GetComponent<CountAnswerScript>().blueButton;
             options[i].GetComponent<CountAnswerScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
