@@ -7,7 +7,13 @@ using UnityEngine;
 
 public class saveScore 
 {
-// SUM SAVE
+    private SumScript sum;
+    //private SubScript sub;
+    //private CountScript count;
+    //private MultiplyScript mult;
+    //private DivideScript div;
+
+    // SUM SAVE
     public static void SaveSumScore(SumScript sum)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -23,6 +29,7 @@ public class saveScore
 // SUM LOAD
     public static scoreData LoadSumScore()
     {
+
         string path = Application.persistentDataPath + "/sumscore.txt";
         if (File.Exists(path))
         {
@@ -39,10 +46,7 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
-
     }
-
-
 
 // SUB SAVE
     public static void SaveSubScore(SubScript sub)

@@ -2434,54 +2434,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1498324802}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1498324802}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -5187,42 +5139,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2008525893}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1498324802}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 727255512}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1342980262}
         m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
@@ -9890,7 +9806,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 371488626}
-  - component: {fileID: 371488625}
   - component: {fileID: 371488627}
   m_Layer: 0
   m_Name: SubScript_2
@@ -9899,37 +9814,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &371488625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371488624}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ed6e5d6b7c2e54aba8cad28dd7ddec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  score2: 0
-  score3: 0
-  FirstValue: {fileID: 1081382124}
-  SecondValue: {fileID: 25354080}
-  Function: {fileID: 171040942}
-  Alt1: {fileID: 327058734}
-  Alt2: {fileID: 662876015}
-  Alt3: {fileID: 429474216}
-  AnswerSpot: {fileID: 648562733}
-  scoreCount: {fileID: 467756815}
-  ONE: {fileID: 2049327790}
-  TWO: {fileID: 336149637}
-  THREE: {fileID: 161775086}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
-  stickerOne: {fileID: 1271604329}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
 --- !u!4 &371488626
 Transform:
   m_ObjectHideFlags: 0
@@ -9989,12 +9873,12 @@ MonoBehaviour:
   stickerOne: {fileID: 328665135}
   stickerTwo: {fileID: 1271604329}
   stickerThree: {fileID: 639977215}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
-  StickerSeven: {fileID: 0}
-  StickerEight: {fileID: 0}
-  StickerNine: {fileID: 0}
+  stickerFour: {fileID: 0}
+  stickerFive: {fileID: 0}
+  stickerSix: {fileID: 0}
+  stickerSeven: {fileID: 0}
+  stickerEight: {fileID: 0}
+  stickerNine: {fileID: 0}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -10016,7 +9900,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 373085301}
-  - component: {fileID: 373085300}
   - component: {fileID: 373085302}
   m_Layer: 0
   m_Name: SumScript_3
@@ -10025,37 +9908,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &373085300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373085299}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ed6e5d6b7c2e54aba8cad28dd7ddec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  score2: 0
-  score3: 0
-  FirstValue: {fileID: 1002869910}
-  SecondValue: {fileID: 807270265}
-  Function: {fileID: 917268916}
-  Alt1: {fileID: 1503392514}
-  Alt2: {fileID: 1866369533}
-  Alt3: {fileID: 750383639}
-  AnswerSpot: {fileID: 918262151}
-  scoreCount: {fileID: 1428282837}
-  ONE: {fileID: 638253759}
-  TWO: {fileID: 1965640582}
-  THREE: {fileID: 1275057252}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
-  stickerOne: {fileID: 307599861}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
 --- !u!4 &373085301
 Transform:
   m_ObjectHideFlags: 0
@@ -10113,12 +9965,12 @@ MonoBehaviour:
   stickerOne: {fileID: 446858899}
   stickerTwo: {fileID: 1318589033}
   stickerThree: {fileID: 307599861}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
-  StickerSeven: {fileID: 0}
-  StickerEight: {fileID: 0}
-  StickerNine: {fileID: 0}
+  stickerFour: {fileID: 973064300315609851}
+  stickerFive: {fileID: 973064300315609850}
+  stickerSix: {fileID: 973064300315609849}
+  stickerSeven: {fileID: 973064300315609854}
+  stickerEight: {fileID: 973064300315609853}
+  stickerNine: {fileID: 973064300315609852}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -14016,7 +13868,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547726275}
-  - component: {fileID: 547726274}
   - component: {fileID: 547726276}
   m_Layer: 0
   m_Name: SubScript_3
@@ -14025,37 +13876,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &547726274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547726273}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ed6e5d6b7c2e54aba8cad28dd7ddec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  score2: 0
-  score3: 0
-  FirstValue: {fileID: 569720510}
-  SecondValue: {fileID: 379823510}
-  Function: {fileID: 610655316}
-  Alt1: {fileID: 1485245007}
-  Alt2: {fileID: 708119284}
-  Alt3: {fileID: 870720499}
-  AnswerSpot: {fileID: 1424720521}
-  scoreCount: {fileID: 1344193586}
-  ONE: {fileID: 2014302695}
-  TWO: {fileID: 1495901286}
-  THREE: {fileID: 2015109006}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
-  stickerOne: {fileID: 639977215}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
 --- !u!4 &547726275
 Transform:
   m_ObjectHideFlags: 0
@@ -14115,12 +13935,12 @@ MonoBehaviour:
   stickerOne: {fileID: 328665135}
   stickerTwo: {fileID: 1271604329}
   stickerThree: {fileID: 639977215}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
-  StickerSeven: {fileID: 0}
-  StickerEight: {fileID: 0}
-  StickerNine: {fileID: 0}
+  stickerFour: {fileID: 0}
+  stickerFive: {fileID: 0}
+  stickerSix: {fileID: 0}
+  stickerSeven: {fileID: 0}
+  stickerEight: {fileID: 0}
+  stickerNine: {fileID: 0}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -14372,7 +14192,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557324540}
-  - component: {fileID: 557324539}
   - component: {fileID: 557324541}
   m_Layer: 0
   m_Name: SumScript_2
@@ -14381,37 +14200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &557324539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557324538}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ed6e5d6b7c2e54aba8cad28dd7ddec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  score2: 0
-  score3: 0
-  FirstValue: {fileID: 2025424889}
-  SecondValue: {fileID: 1710707265}
-  Function: {fileID: 1756440054}
-  Alt1: {fileID: 1842854851}
-  Alt2: {fileID: 666216157}
-  Alt3: {fileID: 421658547}
-  AnswerSpot: {fileID: 1083362796}
-  scoreCount: {fileID: 582334110}
-  ONE: {fileID: 1655143433}
-  TWO: {fileID: 514434741}
-  THREE: {fileID: 548494574}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
-  stickerOne: {fileID: 1318589033}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
 --- !u!4 &557324540
 Transform:
   m_ObjectHideFlags: 0
@@ -14469,12 +14257,12 @@ MonoBehaviour:
   stickerOne: {fileID: 446858899}
   stickerTwo: {fileID: 1318589033}
   stickerThree: {fileID: 307599861}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
-  StickerSeven: {fileID: 0}
-  StickerEight: {fileID: 0}
-  StickerNine: {fileID: 0}
+  stickerFour: {fileID: 973064300315609851}
+  stickerFive: {fileID: 973064300315609850}
+  stickerSix: {fileID: 973064300315609849}
+  stickerSeven: {fileID: 973064300315609854}
+  stickerEight: {fileID: 973064300315609853}
+  stickerNine: {fileID: 973064300315609852}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -17607,7 +17395,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 727255511}
-  - component: {fileID: 727255510}
   - component: {fileID: 727255512}
   m_Layer: 0
   m_Name: SubScript_1
@@ -17616,37 +17403,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &727255510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727255509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ed6e5d6b7c2e54aba8cad28dd7ddec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  score2: 0
-  score3: 0
-  FirstValue: {fileID: 401612474}
-  SecondValue: {fileID: 174559965}
-  Function: {fileID: 1912976407}
-  Alt1: {fileID: 752403795}
-  Alt2: {fileID: 1062936517}
-  Alt3: {fileID: 1893264783}
-  AnswerSpot: {fileID: 1701989529}
-  scoreCount: {fileID: 2020627426}
-  ONE: {fileID: 91935049}
-  TWO: {fileID: 1902639384}
-  THREE: {fileID: 702060685}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
-  stickerOne: {fileID: 328665135}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
 --- !u!4 &727255511
 Transform:
   m_ObjectHideFlags: 0
@@ -17706,12 +17462,12 @@ MonoBehaviour:
   stickerOne: {fileID: 328665135}
   stickerTwo: {fileID: 1271604329}
   stickerThree: {fileID: 639977215}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
-  StickerSeven: {fileID: 0}
-  StickerEight: {fileID: 0}
-  StickerNine: {fileID: 0}
+  stickerFour: {fileID: 0}
+  stickerFive: {fileID: 0}
+  stickerSix: {fileID: 0}
+  stickerSeven: {fileID: 0}
+  stickerEight: {fileID: 0}
+  stickerNine: {fileID: 0}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -18597,7 +18353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &773737452
 MonoBehaviour:
@@ -20754,7 +20510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &841342854
 MonoBehaviour:
@@ -22382,7 +22138,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1342980261}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: retry
         m_Mode: 1
@@ -25949,7 +25705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1037902515
 MonoBehaviour:
@@ -28989,7 +28745,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1173210009}
-  - component: {fileID: 1173210011}
   - component: {fileID: 1173210010}
   m_Layer: 0
   m_Name: CountScript_2
@@ -29087,64 +28842,6 @@ MonoBehaviour:
   countStars: {fileID: 1469187563}
   menuStars: {fileID: 1077831095}
   Animal: {fileID: 527557108}
---- !u!114 &1173210011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173210008}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717340f2e2e4e1842baabcc27b6c0ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QnA:
-  - Question: ONE
-    Objects: {fileID: 0}
-    Answers:
-    - 7
-    - 1
-    - 2
-    CorrectAnswer: 2
-  - Question: TWO
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 3
-    - 2
-    CorrectAnswer: 3
-  - Question: THREE
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 3
-    - 8
-    CorrectAnswer: 2
-  - Question: FOUR
-    Objects: {fileID: 0}
-    Answers:
-    - 7
-    - 10
-    - 4
-    CorrectAnswer: 3
-  - Question: FIVE
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 6
-    - 9
-    CorrectAnswer: 1
-  options:
-  - {fileID: 1037902512}
-  - {fileID: 1435308103}
-  - {fileID: 1240521030}
-  currentQuestion: 0
-  Quizpanel: {fileID: 2024309067}
-  GoPanel: {fileID: 1992225797}
-  QuestionTxt: {fileID: 1880897087}
-  ScoreTxt: {fileID: 195459412}
-  score: 0
 --- !u!1 &1180362172
 GameObject:
   m_ObjectHideFlags: 0
@@ -29267,42 +28964,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: CloseStickerSpreadLast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1342980262}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1498324802}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 727255512}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31392,7 +31053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1240521032
 MonoBehaviour:
@@ -32214,7 +31875,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1342980261}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: retry
         m_Mode: 1
@@ -34252,7 +33913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1336624801
 MonoBehaviour:
@@ -34436,7 +34097,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342980260}
-  - component: {fileID: 1342980261}
   - component: {fileID: 1342980262}
   m_Layer: 0
   m_Name: CountScript_1
@@ -34459,64 +34119,6 @@ Transform:
   m_Father: {fileID: 2033176122}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1342980261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342980259}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717340f2e2e4e1842baabcc27b6c0ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QnA:
-  - Question: ONE
-    Objects: {fileID: 0}
-    Answers:
-    - 7
-    - 1
-    - 2
-    CorrectAnswer: 2
-  - Question: TWO
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 3
-    - 2
-    CorrectAnswer: 3
-  - Question: THREE
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 3
-    - 8
-    CorrectAnswer: 2
-  - Question: FOUR
-    Objects: {fileID: 0}
-    Answers:
-    - 7
-    - 10
-    - 4
-    CorrectAnswer: 3
-  - Question: FIVE
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 6
-    - 9
-    CorrectAnswer: 1
-  options:
-  - {fileID: 1037902512}
-  - {fileID: 1435308103}
-  - {fileID: 1240521030}
-  currentQuestion: 0
-  Quizpanel: {fileID: 2024309067}
-  GoPanel: {fileID: 1992225797}
-  QuestionTxt: {fileID: 1880897087}
-  ScoreTxt: {fileID: 195459412}
-  score: 0
 --- !u!114 &1342980262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36572,7 +36174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1435308106
 MonoBehaviour:
@@ -37676,7 +37278,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1498324800}
-  - component: {fileID: 1498324801}
   - component: {fileID: 1498324802}
   m_Layer: 0
   m_Name: SumScript_1
@@ -37699,37 +37300,6 @@ Transform:
   m_Father: {fileID: 2033176122}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1498324801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498324799}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ed6e5d6b7c2e54aba8cad28dd7ddec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  score2: 0
-  score3: 0
-  FirstValue: {fileID: 1545086976}
-  SecondValue: {fileID: 400385279}
-  Function: {fileID: 1425711255}
-  Alt1: {fileID: 478317786}
-  Alt2: {fileID: 852701393}
-  Alt3: {fileID: 1188587774}
-  AnswerSpot: {fileID: 560926380}
-  scoreCount: {fileID: 928057759}
-  ONE: {fileID: 1199755486}
-  TWO: {fileID: 1742225127}
-  THREE: {fileID: 1392362178}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
-  stickerOne: {fileID: 446858899}
-  stickerTwo: {fileID: 0}
-  stickerThree: {fileID: 0}
 --- !u!114 &1498324802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37769,16 +37339,16 @@ MonoBehaviour:
   TWO: {fileID: 1742225127}
   THREE: {fileID: 1392362178}
   appleSpawn: {fileID: 1716067473}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
+  apple: {fileID: 5939439161111798659, guid: 839bc45f72cb697458d54cb5a0d68b71, type: 3}
   stickerOne: {fileID: 446858899}
   stickerTwo: {fileID: 1318589033}
   stickerThree: {fileID: 307599861}
-  StickerFour: {fileID: 0}
-  StickerFive: {fileID: 0}
-  StickerSix: {fileID: 0}
-  StickerSeven: {fileID: 0}
-  StickerEight: {fileID: 0}
-  StickerNine: {fileID: 0}
+  stickerFour: {fileID: 973064300315609851}
+  stickerFive: {fileID: 973064300315609850}
+  stickerSix: {fileID: 973064300315609849}
+  stickerSeven: {fileID: 973064300315609854}
+  stickerEight: {fileID: 973064300315609853}
+  stickerNine: {fileID: 973064300315609852}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -38272,7 +37842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1509230203
 MonoBehaviour:
@@ -41285,42 +40855,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1173210010}
         m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: SaveScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1498324802}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 727255512}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1342980262}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -41531,7 +41065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1646763997
 MonoBehaviour:
@@ -45349,7 +44883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1342980261}
+  quizManager: {fileID: 0}
   startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1791106470
 MonoBehaviour:
@@ -50632,7 +50166,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2008525892}
-  - component: {fileID: 2008525894}
   - component: {fileID: 2008525893}
   m_Layer: 0
   m_Name: CountScript_3
@@ -50702,64 +50235,6 @@ MonoBehaviour:
   countStars: {fileID: 1469187563}
   menuStars: {fileID: 1077831095}
   Animal: {fileID: 973761439}
---- !u!114 &2008525894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008525891}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717340f2e2e4e1842baabcc27b6c0ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QnA:
-  - Question: ONE
-    Objects: {fileID: 0}
-    Answers:
-    - 7
-    - 1
-    - 2
-    CorrectAnswer: 2
-  - Question: TWO
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 3
-    - 2
-    CorrectAnswer: 3
-  - Question: THREE
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 3
-    - 8
-    CorrectAnswer: 2
-  - Question: FOUR
-    Objects: {fileID: 0}
-    Answers:
-    - 7
-    - 10
-    - 4
-    CorrectAnswer: 3
-  - Question: FIVE
-    Objects: {fileID: 0}
-    Answers:
-    - 5
-    - 6
-    - 9
-    CorrectAnswer: 1
-  options:
-  - {fileID: 1037902512}
-  - {fileID: 1435308103}
-  - {fileID: 1240521030}
-  currentQuestion: 0
-  Quizpanel: {fileID: 2024309067}
-  GoPanel: {fileID: 1992225797}
-  QuestionTxt: {fileID: 1880897087}
-  ScoreTxt: {fileID: 195459412}
-  score: 0
 --- !u!1 &2014302695
 GameObject:
   m_ObjectHideFlags: 0
@@ -51385,9 +50860,9 @@ MonoBehaviour:
   stickerBook: {fileID: 585713513}
   stickerSpreadFirst: {fileID: 324467290}
   stickerSpreadMid1: {fileID: 2109838077}
-  stickerSpreadMid2: {fileID: 0}
-  stickerSpreadMid3: {fileID: 0}
-  stickerSpreadMid4: {fileID: 0}
+  stickerSpreadMid2: {fileID: 973064300315609848}
+  stickerSpreadMid3: {fileID: 973064300315609847}
+  stickerSpreadMid4: {fileID: 973064300315609846}
   stickerSpreadLast: {fileID: 1724755014}
   farmWorld: {fileID: 1913762940}
   additionCat: {fileID: 479733830}
@@ -54731,6 +54206,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2004335065}
     m_Modifications:
     - target: {fileID: 188583283, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 188583283, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2030866127}
@@ -54739,6 +54218,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2030866127}
     - target: {fileID: 346786755, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 346786755, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2030866127}
@@ -54746,9 +54229,29 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2030866127}
+    - target: {fileID: 346786755, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid2
+      objectReference: {fileID: 0}
+    - target: {fileID: 322528500458447521, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 322528500458447521, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 322528500458447521, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid2
+      objectReference: {fileID: 0}
     - target: {fileID: 973064299717390719, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973064300287014792, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 973064300287014792, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -54758,6 +54261,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2030866127}
+    - target: {fileID: 973064300287014792, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid1
+      objectReference: {fileID: 0}
     - target: {fileID: 973064300525436753, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -54858,6 +54365,58 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2230808032695676605, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230808032695676605, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 2230808032695676605, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadLast
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764020001926330071, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764020001926330071, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 2764020001926330071, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772421788221970809, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772421788221970809, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 4772421788221970809, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 4772421788221970809, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772421788221970809, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OpenStickerSpreadMid1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772421788221970809, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983721485984115896, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5983721485984115896, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -54866,6 +54425,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2030866127}
+    - target: {fileID: 5983721485984115896, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062887947514802008, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062887947514802008, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 6062887947514802008, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001891811257781913, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001891811257781913, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030866127}
+    - target: {fileID: 7001891811257781913, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerSpreadMid3
+      objectReference: {fileID: 0}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: StickerList.Array.size
       value: 7
@@ -54997,6 +54584,51 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+--- !u!224 &973064300315609846 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5307396464739256759, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &973064300315609847 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2595092226307531094, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &973064300315609848 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3429686591764532362, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &973064300315609849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4781292998840097010, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &973064300315609850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3858413582356388994, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &973064300315609851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3656002267160674726, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &973064300315609852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7342166315772834198, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &973064300315609853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3079262171634800183, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &973064300315609854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5394624945872519665, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1747224479575733874
 PrefabInstance:
   m_ObjectHideFlags: 0

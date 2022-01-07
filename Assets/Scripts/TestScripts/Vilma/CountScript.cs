@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 // "CountScript" is your "QuizManager"
 public class CountScript : MonoBehaviour
@@ -45,14 +46,24 @@ public class CountScript : MonoBehaviour
     // loads sticker scores
     public void LoadScore()
     {
-        scoreData data = saveScore.LoadCountScore();
-        countStarCount = data.countStarCount;
-        threeCornStickerScore = data.threeCornStickerScore;
-        twoCornStickerScore = data.twoCornStickerScore;
-        lambStickerScore = data.lambStickerScore;
-        Debug.Log("count stickers loaded");
+        string path = Application.persistentDataPath + "/countscore.txt";
+        if (File.Exists(path))
+        {
+            scoreData data = saveScore.LoadCountScore();
+            countStarCount = data.countStarCount;
 
+            threeCornStickerScore = data.threeCornStickerScore;
+            twoCornStickerScore = data.twoCornStickerScore;
+            lambStickerScore = data.lambStickerScore;
+
+            Debug.Log("count stickers loaded");
+        }
+        else
+        {
+            SaveScore();
+        }
     }
+  
     // gives level an index that separates it from other levels; added in inspector
     public void SetLevelIndex(int index)
     {
@@ -139,12 +150,15 @@ public class CountScript : MonoBehaviour
 
 
     private void Start()
-    {
+    {   
+        LoadScore();
+        CheckStickers();
+        UnlockStickers();
+        UnlockStars();
         totalQuestions = QnA.Count;
         GoPanel.SetActive(false);
         QuestionImg.SetActive(true);
         generateQuestion();
-        LoadScore();
     }
 
     void Update()
@@ -179,7 +193,6 @@ public class CountScript : MonoBehaviour
         QuestionImg.SetActive(true);
         generateQuestion();
     }
-
 
     public void retry()
     {

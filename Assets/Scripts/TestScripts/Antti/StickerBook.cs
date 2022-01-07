@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class StickerBook : MonoBehaviour
 {
     public GameObject stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix, stickerSeven, stickerEight, stickerNine;
+    public GameObject stickerTen, stickerEleven, stickerTwelve, stickerThirteen, stickerFourteen, stickerFifteen, stickerSixteen, stickerSeventeen, stickerEighteen;
+    public GameObject stickerNineteen, stickerTwenty, stickerTwentyone, stickerTwentytwo, stickerTwentythree, stickerTwentyfour, stickerTwentyfive, stickerTwentysix, stickerTwentyseven;
+    public GameObject stickerTwentyeight, stickerTwentynine, stickerThirty, stickerThirtyone, stickerThirtytwo, stickerThirtythree;
+
     [SerializeField] public int appleStickerScore = 0;
     [SerializeField] public int basketStickerScore = 0;
     [SerializeField] public int pigStickerScore = 0;
@@ -109,14 +113,19 @@ public class StickerBook : MonoBehaviour
         catStickerScore = data.catStickerScore;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void UpdateAll()
     {
         LoadSumScore();
         LoadSubScore();
         LoadCountScore();
-        //LoadMultScore();
-        //LoadDivScore();
+        LoadMultScore();
+        LoadDivScore();
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        UpdateAll();
+        //FARM
         if (appleStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
@@ -153,22 +162,104 @@ public class StickerBook : MonoBehaviour
         {
             stickerNine.gameObject.SetActive(true);
         }
+        //JUNGLE
+        if (bananaStickerScore == 1)
+        {
+            stickerTen.gameObject.SetActive(true);
+        }
+        if (clusterStickerScore == 1)
+        {
+            stickerEleven.gameObject.SetActive(true);
+        }
+        if (monkeyStickerScore == 1)
+        {
+            stickerTwelve.gameObject.SetActive(true);
+        }
+        if (coconutStickerScore == 1)
+        {
+            stickerThirteen.gameObject.SetActive(true);
+        }
+        if (ocularsStickerScore == 1)
+        {
+            stickerFourteen.gameObject.SetActive(true);
+        }
+        if (slothStickerScore == 1)
+        {
+            stickerFifteen.gameObject.SetActive(true);
+        }
+        if (lycheeStickerScore == 1)
+        {
+            stickerSixteen.gameObject.SetActive(true);
+        }
+        if (pitahayaStickerScore == 1)
+        {
+            stickerSeventeen.gameObject.SetActive(true);
+        }
+        if (frogStickerScore == 1)
+        {
+            stickerEighteen.gameObject.SetActive(true);
+        }
+        if (avocadoStickerScore == 1)
+        {
+            stickerNineteen.gameObject.SetActive(true);
+        }
+        if (toolStickerScore == 1)
+        {
+            stickerTwenty.gameObject.SetActive(true);
+        }
+        if (tigerStickerScore == 1)
+        {
+            stickerTwentyone.gameObject.SetActive(true);
+        }
+        //SPACE
+        if (asteroidStickerScore == 1)
+        {
+            stickerTwentytwo.gameObject.SetActive(true);
+        }
+        if (blackholeStickerScore == 1)
+        {
+            stickerTwentythree.gameObject.SetActive(true);
+        }
+        if (llamaStickerScore == 1)
+        {
+            stickerTwentyfour.gameObject.SetActive(true);
+        }
+        if (starStickerScore == 1)
+        {
+            stickerTwentyfive.gameObject.SetActive(true);
+        }
+        if (planetStickerScore == 1)
+        {
+            stickerTwentysix.gameObject.SetActive(true);
+        }
+        if (cowStickerScore == 1)
+        {
+            stickerTwentyseven.gameObject.SetActive(true);
+        }
+        if (flagStickerScore == 1)
+        {
+            stickerTwentyeight.gameObject.SetActive(true);
+        }
+        if (rocketStickerScore == 1)
+        {
+            stickerTwentynine.gameObject.SetActive(true);
+        }
+        if (laikaStickerScore == 1)
+        {
+            stickerThirty.gameObject.SetActive(true);
+        }
+        if (driedfishStickerScore == 1)
+        {
+            stickerThirtyone.gameObject.SetActive(true);
+        }
+        if (octopusStickerScore == 1)
+        {
+            stickerThirtytwo.gameObject.SetActive(true);
+        }
+        if (catStickerScore == 1)
+        {
+            stickerThirtythree.gameObject.SetActive(true);
+        }
 
     }
-
-    //public void ResetScore()
-    //{
-    //    if (allScoresZero = true)
-    //    {
-    //        appleStickerScore = 0;
-    //        basketStickerScore = 0;
-    //        pigStickerScore = 0;
-    //        carrotStickerScore = 0;
-    //        bucketStickerScore = 0;
-    //        bunnyStickerScore = 0;
-    //        threeCornStickerScore = 0;
-    //        twoCornStickerScore = 0;
-    //        lambStickerScore = 0;
-    //    }
-    //}
 }

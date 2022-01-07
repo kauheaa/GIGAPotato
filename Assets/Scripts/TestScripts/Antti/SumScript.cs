@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,14 +24,18 @@ public class SumScript : MonoBehaviour
     public int worldIndex = 0;
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, StickerFour, StickerFive, StickerSix, StickerSeven, StickerEight, StickerNine;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple;
+    public GameObject stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix, stickerSeven, stickerEight, stickerNine;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject sumStars, menuStars;
     public Button button1, button2, button3;
     public Sprite blueButton, redButton, greenButton;
     [SerializeField] private Transform switchOff, switchOn;
     public GameObject Animal;
-    //private Characters character;
+
+    //public GameObject ObjectSlot;
+    //public Sprite FirstObject;
+    //public Sprite SecondObject;
     
     public void SaveScore()
     {
@@ -49,24 +54,31 @@ public class SumScript : MonoBehaviour
     }
     public void LoadScore()
     {
-        scoreData data = saveScore.LoadSumScore();
-        sumStarCount = data.sumStarCount;
-        sumJungleStarCount = data.sumJungleStarCount;
-        sumSpaceStarCount = data.sumSpaceStarCount;
+        string path = Application.persistentDataPath + "/sumscore.txt";
+        if (File.Exists(path))
+        { 
+            scoreData data = saveScore.LoadSumScore();
+            sumStarCount = data.sumStarCount;
+            sumJungleStarCount = data.sumJungleStarCount;
+            sumSpaceStarCount = data.sumSpaceStarCount;
 
-        appleStickerScore = data.appleStickerScore;
-        basketStickerScore = data.basketStickerScore;
-        pigStickerScore = data.pigStickerScore;
+            appleStickerScore = data.appleStickerScore;
+            basketStickerScore = data.basketStickerScore;
+            pigStickerScore = data.pigStickerScore;
 
-        bananaStickerScore = data.bananaStickerScore;
-        clusterStickerScore = data.clusterStickerScore;
-        monkeyStickerScore = data.monkeyStickerScore;
+            bananaStickerScore = data.bananaStickerScore;
+            clusterStickerScore = data.clusterStickerScore;
+            monkeyStickerScore = data.monkeyStickerScore;
 
-        asteroidStickerScore = data.asteroidStickerScore;
-        blackholeStickerScore = data.blackholeStickerScore;
-        llamaStickerScore = data.llamaStickerScore;
-        Debug.Log("sum stickers loaded");
-
+            asteroidStickerScore = data.asteroidStickerScore;
+            blackholeStickerScore = data.blackholeStickerScore;
+            llamaStickerScore = data.llamaStickerScore;
+            Debug.Log("sum stickers loaded");
+        }
+        else
+        {
+            SaveScore();
+        }
     }
 
     public void SetLevelIndex(int index)
@@ -97,6 +109,30 @@ public class SumScript : MonoBehaviour
         if (pigStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
+        }
+        if (bananaStickerScore == 1)
+        {
+            stickerFour.gameObject.SetActive(true);
+        }
+        if (clusterStickerScore == 1)
+        {
+            stickerFive.gameObject.SetActive(true);
+        }
+        if (monkeyStickerScore == 1)
+        {
+            stickerSix.gameObject.SetActive(true);
+        }
+        if (asteroidStickerScore == 1)
+        {
+            stickerSeven.gameObject.SetActive(true);
+        }
+        if (blackholeStickerScore == 1)
+        {
+            stickerEight.gameObject.SetActive(true);
+        }
+        if (llamaStickerScore == 1)
+        {
+            stickerNine.gameObject.SetActive(true);
         }
     }
 
@@ -166,8 +202,8 @@ public class SumScript : MonoBehaviour
                 Debug.Log("No level index set");
                 break;
         }
-
     }
+
     private void Start()
     {
         LoadScore();
@@ -211,71 +247,229 @@ public class SumScript : MonoBehaviour
 
     public void SumFarm()
     {
-        if (levelIndex == 1)
+        switch (levelIndex)
         {
-            firstValue = Random.Range(0, 5);
-            secondValue = Random.Range(0, 5);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if(levelIndex == 2)
-        {
-            firstValue = Random.Range(5, 10);
-            secondValue = Random.Range(5, 10);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if(levelIndex == 3)
-        {
-            firstValue = Random.Range(10, 25);
-            secondValue = Random.Range(10, 25);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 4)
-        {
-            firstValue = Random.Range(25, 50);
-            secondValue = Random.Range(25, 50);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 5)
-        {
-            firstValue = Random.Range(50, 100);
-            secondValue = Random.Range(50, 100);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 6)
-        {
-            firstValue = Random.Range(100, 500);
-            secondValue = Random.Range(100, 500);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 7)
-        {
-            firstValue = Random.Range(0, 5000);
-            secondValue = Random.Range(100, 5000);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 8)
-        {
-            firstValue = Random.Range(100, 5000);
-            secondValue = Random.Range(1000, 50000);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 9)
-        {
-            firstValue = Random.Range(1000, 50000);
-            secondValue = Random.Range(1000, 50000);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
+            case 1:
+                firstValue = Random.Range(0, 5);
+                secondValue = Random.Range(0, 5);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 10);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 10);
+                }
+                Alternative1 = tempValue;
+
+                //Second Alternative
+                tempValue = Random.Range(0, 10);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 10);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 2:
+                firstValue = Random.Range(5, 10);
+                secondValue = Random.Range(5, 10);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(10, 20);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(10, 20);
+                }
+                Alternative1 = tempValue;
+
+                //Second Alternative
+                tempValue = Random.Range(10, 20);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(10, 20);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 3:
+                firstValue = Random.Range(10, 15);
+                secondValue = Random.Range(1, 15);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 30);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 30);
+                }
+                Alternative1 = tempValue;
+
+                //Second Alternative
+                tempValue = Random.Range(0, 50);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 50);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 4:
+                firstValue = Random.Range(0, 25);
+                secondValue = Random.Range(0, 25);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 50);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 50);
+                }
+                Alternative1 = tempValue;
+                //Second Alternative
+                tempValue = Random.Range(0, 50);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 50);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 5:
+                firstValue = Random.Range(10, 50);
+                secondValue = Random.Range(10, 50);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative1 = tempValue;
+                //Second Alternative
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 6:
+                firstValue = Random.Range(25, 50);
+                secondValue = Random.Range(25, 50);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative1 = tempValue;
+                //Second Alternative
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 7:
+                firstValue = Random.Range(25, 50);
+                secondValue = Random.Range(25, 50);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative1 = tempValue;
+                //Second Alternative
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 8:
+                firstValue = Random.Range(25, 50);
+                secondValue = Random.Range(25, 50);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative1 = tempValue;
+                //Second Alternative
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 9:
+                firstValue = Random.Range(25, 50);
+                secondValue = Random.Range(25, 50);
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                finalValue = firstValue + secondValue;
+
+                //First Alterntive
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative1 = tempValue;
+                //Second Alternative
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative2 = tempValue;
+                break;
         }
 
-
+        Function.text = "+";
 
         if (firstValue - secondValue < 0)
         {
@@ -283,25 +477,6 @@ public class SumScript : MonoBehaviour
             secondValue = firstValue;
             firstValue = tempValue;
         }
-
-        Function.text = "+";
-        finalValue = firstValue + secondValue;
-
-
-        tempValue = Random.Range(2, 100);
-        while (tempValue == finalValue)
-        {
-            tempValue = Random.Range(2, 100);
-        }
-        Alternative1 = tempValue;
-
-        //Second Alternative
-        tempValue = Random.Range(2, 100);
-        while (tempValue == finalValue || (tempValue == Alternative1))
-        {
-            tempValue = Random.Range(2, 100);
-        }
-        Alternative2 = tempValue;
 
         tempValue = Random.Range(1, 6);
         if (tempValue == 1)
@@ -329,13 +504,13 @@ public class SumScript : MonoBehaviour
             Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
         }
 
-
-
-
-
         Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
     }
 
+    //public void ChooseObject()
+    //{
+    //    if (firstValue = )
+    //}
     public void AltOne()
     {
         if (Alt1.text == finalValue.ToString())
@@ -394,41 +569,107 @@ public class SumScript : MonoBehaviour
         }
     }
 
+    public void stickerScoreCount()
+    {
+        switch (worldIndex)
+        {
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        if (appleStickerScore < 1)
+                        {
+                            appleStickerScore += 1;
+                            Debug.Log("Apple unlocked");
+                        }
+                        break;
+                    case 2:
+                        if (basketStickerScore < 1)
+                        {
+                            basketStickerScore += 1;
+                            Debug.Log("Basket unlocked");
+                        }
+                        break;
+                    case 3:
+                        if (pigStickerScore < 1)
+                        {
+                            pigStickerScore += 1;
+                            Debug.Log("Pig unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 2:
+                switch (levelIndex)
+                {
+                    case 4:
+                        if (bananaStickerScore < 1)
+                        {
+                            bananaStickerScore += 1;
+                            Debug.Log("Banana unlocked");
+                        }
+                        break;
+                    case 5:
+                        if (clusterStickerScore < 1)
+                        {
+                            clusterStickerScore += 1;
+                            Debug.Log("Cluster unlocked");
+                        }
+                        break;
+                    case 6:
+                        if (monkeyStickerScore < 1)
+                        {
+                            monkeyStickerScore += 1;
+                            Debug.Log("Monkey unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 7:
+                        if (asteroidStickerScore < 1)
+                        {
+                            asteroidStickerScore += 1;
+                            Debug.Log("Asteroid unlocked");
+                        }
+                        break;
+                    case 8:
+                        if (blackholeStickerScore < 1)
+                        {
+                            blackholeStickerScore += 1;
+                            Debug.Log("Blackhole unlocked");
+                        }
+                        break;
+                    case 9:
+                        if (llamaStickerScore < 1)
+                        {
+                            llamaStickerScore += 1;
+                            Debug.Log("Llama unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+    }
     public void ResetV()
     {
-  
         if (sumScore >= 5)
         {
+            stickerScoreCount();
             switchOn.gameObject.SetActive(true);
             Animal.GetComponent<Animator>().SetBool("Dance", true);
             switchOff.gameObject.SetActive(false);
-            switch (levelIndex)
-            {
-                case 1:
-                    if (appleStickerScore < 1)
-                    {
-                        appleStickerScore += 1;
-                        Debug.Log("Apple unlocked");
-                    }
-                    break;
-                case 2:
-                    if (basketStickerScore < 1)
-                    {
-                        basketStickerScore += 1;
-                        Debug.Log("Basket unlocked");
-                    }
-                    break;
-                case 3:
-                    if (pigStickerScore < 1)
-                    {
-                        pigStickerScore += 1;
-                        Debug.Log("Pig unlocked");
-                    }
-                    break;
-                default:
-                    Debug.Log("No level index set");
-                    break;
-            }
 
         }
 
@@ -443,100 +684,46 @@ public class SumScript : MonoBehaviour
         Animal.GetComponent<Animator>().SetBool("Happy", false);
     }
 
-    public void ResetJungle()
-    {
-        {
-            if (sumScore >= 5)
-            {
-                switchOn.gameObject.SetActive(true);
-                switchOff.gameObject.SetActive(false);
-                switch (levelIndex)
-                {
-                    case 1:
-                        if (appleStickerScore < 1)
-                        {
-                            appleStickerScore += 1;
-                            Debug.Log("Apple unlocked");
-                        }
-                        break;
-                    case 2:
-                        if (basketStickerScore < 1)
-                        {
-                            basketStickerScore += 1;
-                            Debug.Log("Basket unlocked");
-                        }
-                        break;
-                    case 3:
-                        if (pigStickerScore < 1)
-                        {
-                            pigStickerScore += 1;
-                            Debug.Log("Pig unlocked");
-                        }
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
+    //public void ResetJungle()
+    //{
+    //    {
+    //        if (sumScore >= 5)
+    //        {
+    //            switchOn.gameObject.SetActive(true);
+    //            switchOff.gameObject.SetActive(false);
+    //            stickerScoreCount();
+    //        }
 
-            }
+    //        ONE.gameObject.SetActive(false);
+    //        button1.interactable = true;
+    //        TWO.gameObject.SetActive(false);
+    //        button2.interactable = true;
+    //        THREE.gameObject.SetActive(false);
+    //        button3.interactable = true;
+    //        AnswerSpot.text = "?";
+    //        SumJungle();
+    //    }
+    //}
+    //public void ResetSpace()
+    //{
+    //    {
+    //        if (sumScore >= 5)
+    //        {
+    //            switchOn.gameObject.SetActive(true);
+    //            switchOff.gameObject.SetActive(false);
+    //            stickerScoreCount();
+    //        }
 
-            ONE.gameObject.SetActive(false);
-            button1.interactable = true;
-            TWO.gameObject.SetActive(false);
-            button2.interactable = true;
-            THREE.gameObject.SetActive(false);
-            button3.interactable = true;
-            AnswerSpot.text = "?";
-            SumJungle();
-        }
-    }
-    public void ResetSpace()
-    {
-        {
-            if (sumScore >= 5)
-            {
-                switchOn.gameObject.SetActive(true);
-                switchOff.gameObject.SetActive(false);
-                switch (levelIndex)
-                {
-                    case 1:
-                        if (appleStickerScore < 1)
-                        {
-                            appleStickerScore += 1;
-                            Debug.Log("Apple unlocked");
-                        }
-                        break;
-                    case 2:
-                        if (basketStickerScore < 1)
-                        {
-                            basketStickerScore += 1;
-                            Debug.Log("Basket unlocked");
-                        }
-                        break;
-                    case 3:
-                        if (pigStickerScore < 1)
-                        {
-                            pigStickerScore += 1;
-                            Debug.Log("Pig unlocked");
-                        }
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-
-            }
-
-            ONE.gameObject.SetActive(false);
-            button1.interactable = true;
-            TWO.gameObject.SetActive(false);
-            button2.interactable = true;
-            THREE.gameObject.SetActive(false);
-            button3.interactable = true;
-            AnswerSpot.text = "?";
-            SumSpace();
-        }
-    }
+    //        ONE.gameObject.SetActive(false);
+    //        button1.interactable = true;
+    //        TWO.gameObject.SetActive(false);
+    //        button2.interactable = true;
+    //        THREE.gameObject.SetActive(false);
+    //        button3.interactable = true;
+    //        AnswerSpot.text = "?";
+    //        SumSpace();
+    //    }
+    //}
 
     IEnumerator Correct()
     {
@@ -554,137 +741,137 @@ public class SumScript : MonoBehaviour
         sumScore += 1;
     }
   
-    public void SumJungle()
-    {
-        firstValue = Random.Range(1, 100);
-        secondValue = Random.Range(1, 100);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
+    //public void SumJungle()
+    //{
+    //    firstValue = Random.Range(1, 100);
+    //    secondValue = Random.Range(1, 100);
+    //    FirstValue.text = firstValue.ToString();
+    //    SecondValue.text = secondValue.ToString();
 
-        if (firstValue - secondValue < 0)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
+    //    if (firstValue - secondValue < 0)
+    //    {
+    //        tempValue = secondValue;
+    //        secondValue = firstValue;
+    //        firstValue = tempValue;
+    //    }
 
-        Function.text = "+";
-        finalValue = firstValue + secondValue;
+    //    Function.text = "+";
+    //    finalValue = firstValue + secondValue;
 
-        tempValue = Random.Range(30, 200);
-        while (tempValue == finalValue)
-        {
-            tempValue = Random.Range(30, 200);
-        }
-        Alternative1 = tempValue;
+    //    tempValue = Random.Range(30, 200);
+    //    while (tempValue == finalValue)
+    //    {
+    //        tempValue = Random.Range(30, 200);
+    //    }
+    //    Alternative1 = tempValue;
 
-        //Second Alternative
-        tempValue = Random.Range(30, 200);
-        while (tempValue == finalValue || (tempValue == Alternative1))
-        {
-            tempValue = Random.Range(30, 200);
-        }
-        Alternative2 = tempValue;
+    //    //Second Alternative
+    //    tempValue = Random.Range(30, 200);
+    //    while (tempValue == finalValue || (tempValue == Alternative1))
+    //    {
+    //        tempValue = Random.Range(30, 200);
+    //    }
+    //    Alternative2 = tempValue;
 
-        tempValue = Random.Range(1, 6);
-        if (tempValue == 1)
-        {
-            Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
-        }
-        if (tempValue == 2)
-        {
-            Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
-        }
-        if (tempValue == 3)
-        {
-            Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
-        }
-        if (tempValue == 4)
-        {
-            Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
-        }
-        if (tempValue == 5)
-        {
-            Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
-        }
-        if (tempValue == 6)
-        {
-            Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
-        }
-
-
-
-
-
-        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
-
-    }
-    public void SumSpace()
-    {
-        firstValue = Random.Range(1, 1000);
-        secondValue = Random.Range(1, 1000);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
-
-        if (firstValue - secondValue < 0)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
-
-        Function.text = "+";
-        finalValue = firstValue + secondValue;
-
-
-        tempValue = Random.Range(50, 1900);
-        while (tempValue == finalValue)
-        {
-            tempValue = Random.Range(50, 1900);
-        }
-        Alternative1 = tempValue;
-
-        //Second Alternative
-        tempValue = Random.Range(50, 1900);
-        while (tempValue == finalValue || (tempValue == Alternative1))
-        {
-            tempValue = Random.Range(50, 1900);
-        }
-        Alternative2 = tempValue;
-
-        tempValue = Random.Range(1, 6);
-        if (tempValue == 1)
-        {
-            Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
-        }
-        if (tempValue == 2)
-        {
-            Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
-        }
-        if (tempValue == 3)
-        {
-            Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
-        }
-        if (tempValue == 4)
-        {
-            Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
-        }
-        if (tempValue == 5)
-        {
-            Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
-        }
-        if (tempValue == 6)
-        {
-            Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
-        }
+    //    tempValue = Random.Range(1, 6);
+    //    if (tempValue == 1)
+    //    {
+    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+    //    }
+    //    if (tempValue == 2)
+    //    {
+    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+    //    }
+    //    if (tempValue == 3)
+    //    {
+    //        Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+    //    }
+    //    if (tempValue == 4)
+    //    {
+    //        Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+    //    }
+    //    if (tempValue == 5)
+    //    {
+    //        Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+    //    }
+    //    if (tempValue == 6)
+    //    {
+    //        Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+    //    }
 
 
 
 
 
-        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
+    //    Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
 
-    }
+    //}
+    //public void SumSpace()
+    //{
+    //    firstValue = Random.Range(1, 1000);
+    //    secondValue = Random.Range(1, 1000);
+    //    FirstValue.text = firstValue.ToString();
+    //    SecondValue.text = secondValue.ToString();
+
+    //    if (firstValue - secondValue < 0)
+    //    {
+    //        tempValue = secondValue;
+    //        secondValue = firstValue;
+    //        firstValue = tempValue;
+    //    }
+
+    //    Function.text = "+";
+    //    finalValue = firstValue + secondValue;
+
+
+    //    tempValue = Random.Range(50, 1900);
+    //    while (tempValue == finalValue)
+    //    {
+    //        tempValue = Random.Range(50, 1900);
+    //    }
+    //    Alternative1 = tempValue;
+
+    //    //Second Alternative
+    //    tempValue = Random.Range(50, 1900);
+    //    while (tempValue == finalValue || (tempValue == Alternative1))
+    //    {
+    //        tempValue = Random.Range(50, 1900);
+    //    }
+    //    Alternative2 = tempValue;
+
+    //    tempValue = Random.Range(1, 6);
+    //    if (tempValue == 1)
+    //    {
+    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+    //    }
+    //    if (tempValue == 2)
+    //    {
+    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+    //    }
+    //    if (tempValue == 3)
+    //    {
+    //        Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+    //    }
+    //    if (tempValue == 4)
+    //    {
+    //        Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+    //    }
+    //    if (tempValue == 5)
+    //    {
+    //        Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+    //    }
+    //    if (tempValue == 6)
+    //    {
+    //        Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+    //    }
+
+
+
+
+
+    //    Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
+
+    //}
 
    public void StartFarm()
     {
@@ -694,18 +881,18 @@ public class SumScript : MonoBehaviour
 
     }
 
-    public void StartJungle()
-    {
-        ResetJungle();
-        SumJungle();
-        ResetScore();
-    }
-    public void StartSpace()
-    {
-        ResetSpace();
-        SumSpace();
-        ResetScore();
-    }
+    //public void StartJungle()
+    //{
+    //    ResetJungle();
+    //    SumJungle();
+    //    ResetScore();
+    //}
+    //public void StartSpace()
+    //{
+    //    ResetSpace();
+    //    SumSpace();
+    //    ResetScore();
+    //}
 
 
 }

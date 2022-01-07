@@ -3255,17 +3255,17 @@ MonoBehaviour:
   stickerOne: {fileID: 802231666}
   stickerTwo: {fileID: 802231665}
   stickerThree: {fileID: 802231664}
-  StickerFour: {fileID: 756320350}
-  StickerFive: {fileID: 404703126}
-  StickerSix: {fileID: 712146883}
-  StickerSeven: {fileID: 929747279}
-  StickerEight: {fileID: 1059226102}
-  StickerNine: {fileID: 1543463660}
+  stickerFour: {fileID: 756320350}
+  stickerFive: {fileID: 404703126}
+  stickerSix: {fileID: 712146883}
+  stickerSeven: {fileID: 929747279}
+  stickerEight: {fileID: 1059226102}
+  stickerNine: {fileID: 1543463660}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 0}
-  menuStars: {fileID: 0}
+  sumStars: {fileID: 1022386183}
+  menuStars: {fileID: 1505387751}
   button1: {fileID: 1386439373}
   button2: {fileID: 67941085}
   button3: {fileID: 2059993884}
@@ -4977,7 +4977,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 42566427}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseMultLevel2Canvas
+        m_MethodName: OpenMultLevel2Canvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15558,17 +15558,17 @@ MonoBehaviour:
   stickerOne: {fileID: 802231666}
   stickerTwo: {fileID: 802231665}
   stickerThree: {fileID: 802231664}
-  StickerFour: {fileID: 756320350}
-  StickerFive: {fileID: 404703126}
-  StickerSix: {fileID: 712146883}
-  StickerSeven: {fileID: 929747279}
-  StickerEight: {fileID: 1059226102}
-  StickerNine: {fileID: 1543463660}
+  stickerFour: {fileID: 756320350}
+  stickerFive: {fileID: 404703126}
+  stickerSix: {fileID: 712146883}
+  stickerSeven: {fileID: 929747279}
+  stickerEight: {fileID: 1059226102}
+  stickerNine: {fileID: 1543463660}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 0}
-  menuStars: {fileID: 0}
+  sumStars: {fileID: 1022386183}
+  menuStars: {fileID: 1505387751}
   button1: {fileID: 262507104}
   button2: {fileID: 676549831}
   button3: {fileID: 1346997171}
@@ -20858,44 +20858,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
+      - m_Target: {fileID: 1436757935}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -24289,44 +24253,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
+      - m_Target: {fileID: 715659774}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -28675,17 +28603,17 @@ MonoBehaviour:
   stickerOne: {fileID: 802231661}
   stickerTwo: {fileID: 802231663}
   stickerThree: {fileID: 802231662}
-  StickerFour: {fileID: 699017415}
-  StickerFive: {fileID: 1435587012}
-  StickerSix: {fileID: 1210317241}
-  StickerSeven: {fileID: 1932917645}
-  StickerEight: {fileID: 850603114}
-  StickerNine: {fileID: 897954652}
+  stickerFour: {fileID: 699017415}
+  stickerFive: {fileID: 1435587012}
+  stickerSix: {fileID: 1210317241}
+  stickerSeven: {fileID: 1932917645}
+  stickerEight: {fileID: 850603114}
+  stickerNine: {fileID: 897954652}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 0}
-  menuStars: {fileID: 0}
+  subStars: {fileID: 2095371362}
+  menuStars: {fileID: 1198049900}
   button1: {fileID: 1637914943}
   button2: {fileID: 2065234006}
   button3: {fileID: 1448507690}
@@ -30332,42 +30260,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
@@ -32486,6 +32378,114 @@ PrefabInstance:
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: StickerList.Array.data[6].stickerName
       value: PigSticker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548417381919930247, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 385868508}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 912344939}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 221378034}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2132550888}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 347189553}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetStickers
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetStickers
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ResetStickers
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetStickers
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SumScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SubScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MultiplyScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: DivideScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -37148,17 +37148,17 @@ MonoBehaviour:
   stickerOne: {fileID: 802231661}
   stickerTwo: {fileID: 802231663}
   stickerThree: {fileID: 802231662}
-  StickerFour: {fileID: 699017415}
-  StickerFive: {fileID: 1435587012}
-  StickerSix: {fileID: 1210317241}
-  StickerSeven: {fileID: 1932917645}
-  StickerEight: {fileID: 850603114}
-  StickerNine: {fileID: 897954652}
+  stickerFour: {fileID: 699017415}
+  stickerFive: {fileID: 1435587012}
+  stickerSix: {fileID: 1210317241}
+  stickerSeven: {fileID: 1932917645}
+  stickerEight: {fileID: 850603114}
+  stickerNine: {fileID: 897954652}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 0}
-  menuStars: {fileID: 0}
+  subStars: {fileID: 2095371362}
+  menuStars: {fileID: 1198049900}
   button1: {fileID: 642158558}
   button2: {fileID: 896966508}
   button3: {fileID: 2013939806}
@@ -37353,17 +37353,17 @@ MonoBehaviour:
   stickerOne: {fileID: 802231661}
   stickerTwo: {fileID: 802231663}
   stickerThree: {fileID: 802231662}
-  StickerFour: {fileID: 699017415}
-  StickerFive: {fileID: 1435587012}
-  StickerSix: {fileID: 1210317241}
-  StickerSeven: {fileID: 1932917645}
-  StickerEight: {fileID: 850603114}
-  StickerNine: {fileID: 897954652}
+  stickerFour: {fileID: 699017415}
+  stickerFive: {fileID: 1435587012}
+  stickerSix: {fileID: 1210317241}
+  stickerSeven: {fileID: 1932917645}
+  stickerEight: {fileID: 850603114}
+  stickerNine: {fileID: 897954652}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 0}
-  menuStars: {fileID: 0}
+  subStars: {fileID: 2095371362}
+  menuStars: {fileID: 1198049900}
   button1: {fileID: 357914587}
   button2: {fileID: 1455455678}
   button3: {fileID: 1808956149}
@@ -43858,44 +43858,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
+      - m_Target: {fileID: 78942762}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -47284,44 +47248,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 221378034}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -54861,44 +54789,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
+      - m_Target: {fileID: 1065523398}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -55479,44 +55371,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
+      - m_Target: {fileID: 906460866}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -59170,17 +59026,17 @@ MonoBehaviour:
   stickerOne: {fileID: 802231666}
   stickerTwo: {fileID: 802231665}
   stickerThree: {fileID: 802231664}
-  StickerFour: {fileID: 756320350}
-  StickerFive: {fileID: 404703126}
-  StickerSix: {fileID: 712146883}
-  StickerSeven: {fileID: 929747279}
-  StickerEight: {fileID: 1059226102}
-  StickerNine: {fileID: 1543463660}
+  stickerFour: {fileID: 756320350}
+  stickerFive: {fileID: 404703126}
+  stickerSix: {fileID: 712146883}
+  stickerSeven: {fileID: 929747279}
+  stickerEight: {fileID: 1059226102}
+  stickerNine: {fileID: 1543463660}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 0}
-  menuStars: {fileID: 0}
+  sumStars: {fileID: 1022386183}
+  menuStars: {fileID: 1505387751}
   button1: {fileID: 1726005080}
   button2: {fileID: 410094601}
   button3: {fileID: 357580242}
@@ -65564,44 +65420,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -65793,43 +65613,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
+      - m_Target: {fileID: 609377424}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
@@ -66246,7 +66030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -70001,43 +69785,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
+      - m_Target: {fileID: 1154250889}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
@@ -78469,44 +78217,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
+      - m_Target: {fileID: 1659828921}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
@@ -81210,42 +80922,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 385868508}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: UpdateStickers
         m_Mode: 1
         m_Arguments:
