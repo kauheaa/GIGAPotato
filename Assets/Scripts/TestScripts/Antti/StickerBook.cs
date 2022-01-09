@@ -47,6 +47,20 @@ public class StickerBook : MonoBehaviour
     [SerializeField] public int driedfishStickerScore = 0;
     [SerializeField] public int octopusStickerScore = 0;
     [SerializeField] public int catStickerScore = 0;
+
+    public Text statsAll;
+    public Text statsFarm;
+    public Text statsJungle;
+    public Text statsSpace;
+    public Text congrats;
+    public Text allCollected;
+
+    [SerializeField] public int statsAllInt = 0;
+    [SerializeField] public int statsCollectedInt = 0;
+    [SerializeField] public int statsFarmInt = 0;
+    [SerializeField] public int statsJungleInt = 0;
+    [SerializeField] public int statsSpaceInt = 0;
+
     //public bool AllScoresZero = false;
     //   public List<Sticker> StickerList;
 
@@ -113,6 +127,28 @@ public class StickerBook : MonoBehaviour
         catStickerScore = data.catStickerScore;
     }
 
+
+
+    public void UpdateStats()
+    {
+        statsAllInt = 33;
+        statsCollectedInt = appleStickerScore + basketStickerScore + pigStickerScore + bananaStickerScore + clusterStickerScore + monkeyStickerScore + asteroidStickerScore + blackholeStickerScore + llamaStickerScore + carrotStickerScore + bucketStickerScore + bunnyStickerScore + coconutStickerScore + ocularsStickerScore + slothStickerScore + starStickerScore + planetStickerScore + cowStickerScore + threeCornStickerScore + twoCornStickerScore + lambStickerScore + lycheeStickerScore + pitahayaStickerScore + flagStickerScore + rocketStickerScore + laikaStickerScore + avocadoStickerScore + toolStickerScore + tigerStickerScore + driedfishStickerScore + octopusStickerScore + catStickerScore;
+        statsFarmInt = appleStickerScore + basketStickerScore + pigStickerScore + carrotStickerScore + bucketStickerScore + bunnyStickerScore + threeCornStickerScore + twoCornStickerScore + lambStickerScore;
+        statsJungleInt = bananaStickerScore + clusterStickerScore + monkeyStickerScore + coconutStickerScore + ocularsStickerScore + slothStickerScore + lycheeStickerScore + pitahayaStickerScore + avocadoStickerScore + toolStickerScore + tigerStickerScore;
+        statsSpaceInt = asteroidStickerScore + blackholeStickerScore + llamaStickerScore + starStickerScore + planetStickerScore + cowStickerScore + flagStickerScore + rocketStickerScore + laikaStickerScore + driedfishStickerScore + octopusStickerScore + catStickerScore;
+
+        statsAll.text = statsCollectedInt + " / " + statsAllInt;
+        statsFarm.text = statsFarmInt + " / 9";
+        statsJungle.text = statsJungleInt + " / 12";
+        statsSpace.text = statsSpaceInt + " / 12";
+
+        if (statsCollectedInt == statsAllInt)
+        {
+            congrats.text = "CONGRATULATIONS!";
+            allCollected.text = "YOU'VE COLLECTED ALL STICKERS!";
+        }
+    }
+
     public void UpdateAll()
     {
         LoadSumScore();
@@ -120,6 +156,7 @@ public class StickerBook : MonoBehaviour
         LoadCountScore();
         LoadMultScore();
         LoadDivScore();
+        UpdateStats();
     }
     // Start is called before the first frame update
     void Start()
@@ -262,4 +299,5 @@ public class StickerBook : MonoBehaviour
         }
 
     }
+
 }

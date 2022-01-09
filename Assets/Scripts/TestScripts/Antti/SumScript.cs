@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SumScript : MonoBehaviour
 {
-    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;   
+    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
     [SerializeField] public int sumScore = 0;
     [SerializeField] public int sumStarCount = 0;
     [SerializeField] public int sumJungleStarCount = 0;
@@ -19,7 +19,7 @@ public class SumScript : MonoBehaviour
     [SerializeField] public int monkeyStickerScore = 0;
     [SerializeField] public int asteroidStickerScore = 0;
     [SerializeField] public int blackholeStickerScore = 0;
-    [SerializeField] public int llamaStickerScore = 0; 
+    [SerializeField] public int llamaStickerScore = 0;
     public int levelIndex = 0;
     public int worldIndex = 0;
     private int stick1, stick2, stick3;
@@ -33,10 +33,16 @@ public class SumScript : MonoBehaviour
     [SerializeField] private Transform switchOff, switchOn;
     public GameObject Animal;
 
-    //public GameObject ObjectSlot;
-    //public Sprite FirstObject;
-    //public Sprite SecondObject;
-    
+    public GameObject firstObjectSlot;
+    public GameObject secondObjectSlot;
+    public GameObject firstTenObjectSlot;
+    public GameObject firstOverTenSlot;
+    public GameObject secondTenObjectSlot;
+    public GameObject secondOverTenSlot;
+
+    public Sprite[] objectSprite;
+    public Sprite[] tenObjectSprite;
+
     public void SaveScore()
     {
         saveScore.SaveSumScore(this);
@@ -245,23 +251,340 @@ public class SumScript : MonoBehaviour
         SaveScore();
     }
 
+    public void ChooseObject()
+    {
+        for (int i = 0; i < objectSprite.Length; i++)
+        {
+            //FIRST CALCULATION OBJECT SPRITE
+
+            //first object sprite when first value is 10 or smaller
+            if (firstValue <= 10)
+            {
+                firstObjectSlot.gameObject.SetActive(true);
+                firstTenObjectSlot.gameObject.SetActive(false);
+                switch (firstValue)
+                {
+                    case 0:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
+                        break;
+                    case 1:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[1];
+                        break;
+                    case 2:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[2];
+                        break;
+                    case 3:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[3];
+                        break;
+                    case 4:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[4];
+                        break;
+                    case 5:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[5];
+                        break;
+                    case 6:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[6];
+                        break;
+                    case 7:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[7];
+                        break;
+                    case 8:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[8];
+                        break;
+                    case 9:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[9];
+                        break;
+                }
+            }
+            //deactivates first sprite and activates tens and over tens sprite when first value is bigger than 10
+            if (firstValue >= 10 && firstValue / 10 >= 1)
+            { 
+                if (worldIndex >= 2)
+                {
+                firstObjectSlot.gameObject.SetActive(false);
+                firstTenObjectSlot.gameObject.SetActive(true);
+                firstOverTenSlot.gameObject.SetActive(true);
+                }
+                else
+                {
+                    firstObjectSlot.gameObject.SetActive(true);
+                    firstTenObjectSlot.gameObject.SetActive(false);
+                    switch (firstValue)
+                    {
+                        case 10:
+                            firstObjectSlot.GetComponent<Image>().sprite = objectSprite[10];
+                            break;
+                        case 11:
+                            firstObjectSlot.GetComponent<Image>().sprite = objectSprite[11];
+                            break;
+                        case 12:
+                            firstObjectSlot.GetComponent<Image>().sprite = objectSprite[12];
+                            break;
+                        case 13:
+                            firstObjectSlot.GetComponent<Image>().sprite = objectSprite[13];
+                            break;
+                        case 14:
+                            firstObjectSlot.GetComponent<Image>().sprite = objectSprite[14];
+                            break;
+                        case 15:
+                            firstObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
+                            break;
+                    }
+                }
+
+                // first sprite presenting tens
+                switch (firstValue / 10)
+                {
+                    case 1:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[0];
+                        break;
+
+                    case 2:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[1];
+                        break;
+
+                    case 3:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[2];
+                        break;
+
+                    case 4:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[3];
+                        break;
+
+                    case 5:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[4];
+                        break;
+
+                    case 6:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[5];
+                        break;
+
+                    case 7:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[6];
+                        break;
+
+                    case 8:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[7];
+                        break;
+
+                    case 9:
+                        firstTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[8];
+                        break;
+                }
+                // first sprite presenting numbers over then but less than next ten
+                switch (firstValue - 10)
+                {
+                    case 0:
+                        firstOverTenSlot.gameObject.SetActive(false);
+                        break;
+                    case 1:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[1];
+                        break;
+                    case 2:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[2];
+                        break;
+                    case 3:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[3];
+                        break;
+                    case 4:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[4];
+                        break;
+                    case 5:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[5];
+                        break;
+                    case 6:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[6];
+                        break;
+                    case 7:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[7];
+                        break;
+                    case 8:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[8];
+                        break;
+                    case 9:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[9];
+                        break;
+                    case 10:
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[10];
+                        break;
+                }
+            }
+            //SECOND OBJECT SPRITE
+
+            //second object sprite when first value is 10 or smaller
+            if (secondValue <= 10)
+            {
+                secondObjectSlot.gameObject.SetActive(true);
+                secondTenObjectSlot.gameObject.SetActive(false);
+                switch (secondValue)
+                {
+                    case 0:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
+                        break;
+                    case 1:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[1];
+                        break;
+                    case 2:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[2];
+                        break;
+                    case 3:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[3];
+                        break;
+                    case 4:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[4];
+                        break;
+                    case 5:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[5];
+                        break;
+                    case 6:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[6];
+                        break;
+                    case 7:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[7];
+                        break;
+                    case 8:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[8];
+                        break;
+                    case 9:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[9];
+                        break;
+                }
+            }
+            //deactivates second sprite and activates tens and over tens sprite when second value is bigger than 10
+            if (secondValue >= 10 && secondValue / 10 >= 1)
+            {
+                if (worldIndex >= 2)
+                {
+                    secondObjectSlot.gameObject.SetActive(false);
+                    secondTenObjectSlot.gameObject.SetActive(true);
+                    secondOverTenSlot.gameObject.SetActive(true);
+                }
+                else
+                {
+                    secondObjectSlot.gameObject.SetActive(true);
+                    secondTenObjectSlot.gameObject.SetActive(false);
+                    switch (secondValue)
+                    {
+                        case 10:
+                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[10];
+                            break;
+                        case 11:
+                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[11];
+                            break;
+                        case 12:
+                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[12];
+                            break;
+                        case 13:
+                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[13];
+                            break;
+                        case 14:
+                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[14];
+                            break;
+                        case 15:
+                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
+                            break;
+                    }
+                }
+
+                // second sprite presenting tens
+                switch (secondValue / 10)
+                {
+                    case 1:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[0];
+                        break;
+
+                    case 2:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[1];
+                        break;
+
+                    case 3:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[2];
+                        break;
+
+                    case 4:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[3];
+                        break;
+
+                    case 5:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[4];
+                        break;
+
+                    case 6:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[5];
+                        break;
+
+                    case 7:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[6];
+                        break;
+
+                    case 8:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[7];
+                        break;
+
+                    case 9:
+                        secondTenObjectSlot.GetComponent<Image>().sprite = tenObjectSprite[8];
+                        break;
+                }
+                // second sprite presenting numbers over then but less than next ten
+                switch (secondValue - 10)
+                {
+                    case 0:
+                        secondOverTenSlot.gameObject.SetActive(false);
+                        break;
+                    case 1:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[1];
+                        break;
+                    case 2:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[2];
+                        break;
+                    case 3:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[3];
+                        break;
+                    case 4:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[4];
+                        break;
+                    case 5:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[5];
+                        break;
+                    case 6:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[6];
+                        break;
+                    case 7:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[7];
+                        break;
+                    case 8:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[8];
+                        break;
+                    case 9:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[9];
+                        break;
+                    case 10:
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[10];
+                        break;
+                }
+            }
+        }
+        Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
+    }
     public void SumFarm()
     {
         switch (levelIndex)
         {
             case 1:
-                firstValue = Random.Range(0, 5);
-                secondValue = Random.Range(0, 5);
+                firstValue = Random.Range(1, 5);
+                secondValue = Random.Range(1, 5);
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
 
+                ChooseObject();
+
                 //First Alterntive
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(1, 10);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(1, 10);
                 }
                 Alternative1 = tempValue;
 
@@ -281,6 +604,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(10, 20);
@@ -306,6 +630,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(0, 30);
@@ -331,6 +656,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(0, 50);
@@ -355,6 +681,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(0, 100);
@@ -379,6 +706,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(0, 100);
@@ -403,6 +731,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(0, 100);
@@ -427,6 +756,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(0, 100);
@@ -451,6 +781,7 @@ public class SumScript : MonoBehaviour
                 SecondValue.text = secondValue.ToString();
 
                 finalValue = firstValue + secondValue;
+                ChooseObject();
 
                 //First Alterntive
                 tempValue = Random.Range(0, 100);
@@ -507,10 +838,6 @@ public class SumScript : MonoBehaviour
         Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
     }
 
-    //public void ChooseObject()
-    //{
-    //    if (firstValue = )
-    //}
     public void AltOne()
     {
         if (Alt1.text == finalValue.ToString())

@@ -16,8 +16,7 @@ public class CountAnswerScript : MonoBehaviour
 
     private void Start()
     {
-//      startColor = GetComponent<Image>().color;
-
+        //      startColor = GetComponent<Image>().color;
         blueButton = GetComponent<Image>().sprite;
     }
 
