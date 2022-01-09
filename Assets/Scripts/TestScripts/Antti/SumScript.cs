@@ -372,10 +372,10 @@ public class SumScript : MonoBehaviour
                         break;
                 }
                 // first sprite presenting numbers over then but less than next ten
-                switch (firstValue - 10)
+                switch (firstValue % 10)
                 {
                     case 0:
-                        firstOverTenSlot.gameObject.SetActive(false);
+                        firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[0];
                         break;
                     case 1:
                         firstOverTenSlot.GetComponent<Image>().sprite = objectSprite[1];
@@ -526,10 +526,10 @@ public class SumScript : MonoBehaviour
                         break;
                 }
                 // second sprite presenting numbers over then but less than next ten
-                switch (secondValue - 10)
+                switch (secondValue % 10)
                 {
                     case 0:
-                        secondOverTenSlot.gameObject.SetActive(false);
+                        secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[0];
                         break;
                     case 1:
                         secondOverTenSlot.GetComponent<Image>().sprite = objectSprite[1];

@@ -368,7 +368,7 @@ public class SubScript : MonoBehaviour
                         break;
                 }
                 // first sprite presenting numbers over then but less than next ten
-                switch (firstValue - 10)
+                switch (firstValue % 10)
                 {
                     case 0:
                         firstOverTenSlot.gameObject.SetActive(false);
@@ -524,7 +524,7 @@ public class SubScript : MonoBehaviour
                         break;
                 }
                 // second sprite presenting numbers over then but less than next ten
-                switch (secondValue - 10)
+                switch (secondValue % 10)
                 {
                     case 0:
                         secondOverTenSlot.gameObject.SetActive(false);
@@ -674,8 +674,8 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 4:
-                firstValue = Random.Range(0, 5);
-                secondValue = Random.Range(0, 5);
+                firstValue = Random.Range(10, 20);
+                secondValue = Random.Range(1, 15);
                 thirdValue = firstValue;
                 fourthValue = secondValue;
 
@@ -692,18 +692,18 @@ public class SubScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 20);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 20);
                 }
                 Alternative1 = tempValue;
 
                 //Second Alternative
-                tempValue = Random.Range(1, 10);
+                tempValue = Random.Range(1, 20);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(1, 10);
+                    tempValue = Random.Range(1, 20);
                 }
                 Alternative2 = tempValue;
                 break;
