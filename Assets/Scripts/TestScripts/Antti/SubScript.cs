@@ -781,8 +781,8 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 7:
-                firstValue = Random.Range(0, 5);
-                secondValue = Random.Range(0, 5);
+                firstValue = Random.Range(250, 500);
+                secondValue = Random.Range(100, 500);
                 thirdValue = firstValue;
                 fourthValue = secondValue;
 
@@ -799,25 +799,25 @@ public class SubScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 500);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 500);
                 }
                 Alternative1 = tempValue;
 
                 //Second Alternative
-                tempValue = Random.Range(1, 10);
+                tempValue = Random.Range(0, 500);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(1, 10);
+                    tempValue = Random.Range(0, 500);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 8:
-                firstValue = Random.Range(0, 5);
-                secondValue = Random.Range(0, 5);
+                firstValue = Random.Range(500, 1000);
+                secondValue = Random.Range(250, 1000);
                 thirdValue = firstValue;
                 fourthValue = secondValue;
 
@@ -834,25 +834,25 @@ public class SubScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 1000);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 1000);
                 }
                 Alternative1 = tempValue;
 
                 //Second Alternative
-                tempValue = Random.Range(1, 10);
+                tempValue = Random.Range(0, 1000);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(1, 10);
+                    tempValue = Random.Range(0, 1000);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 9:
-                firstValue = Random.Range(0, 5);
-                secondValue = Random.Range(0, 5);
+                firstValue = Random.Range(1000, 10000);
+                secondValue = Random.Range(1000, 10000);
                 thirdValue = firstValue;
                 fourthValue = secondValue;
 
@@ -869,18 +869,18 @@ public class SubScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 10000);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 10000);
                 }
                 Alternative1 = tempValue;
 
                 //Second Alternative
-                tempValue = Random.Range(1, 10);
+                tempValue = Random.Range(0, 10000);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(1, 10);
+                    tempValue = Random.Range(0, 10000);
                 }
                 Alternative2 = tempValue;
                 break;
