@@ -236,7 +236,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadLast
+        m_MethodName: OpenStickerSpreadMid2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1385,7 +1385,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+        m_MethodName: CloseStickerSpreadMid3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1397,7 +1397,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: OpenStickerSpreadMid2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2361,7 +2361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &973064299717390718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3247,9 +3247,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CloseStickerSpreadFirst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3261,7 +3261,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadFirst
+        m_MethodName: OpenStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3781,7 +3781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &973064300803673500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3836,21 +3836,21 @@ MonoBehaviour:
   stickerSixteen: {fileID: 7751017368296436236}
   stickerSeventeen: {fileID: 5522778503846685669}
   stickerEighteen: {fileID: 774669713174927727}
-  stickerNineteen: {fileID: 8585628677130250073}
-  stickerTwenty: {fileID: 2209351320338588003}
-  stickerTwentyone: {fileID: 565681036438202203}
-  stickerTwentytwo: {fileID: 1087604456327940319}
-  stickerTwentythree: {fileID: 1741024999407717696}
-  stickerTwentyfour: {fileID: 908869186354667851}
-  stickerTwentyfive: {fileID: 1873862350567911975}
-  stickerTwentysix: {fileID: 1827309280057240390}
-  stickerTwentyseven: {fileID: 8088257858148987840}
-  stickerTwentyeight: {fileID: 0}
-  stickerTwentynine: {fileID: 0}
-  stickerThirty: {fileID: 0}
-  stickerThirtyone: {fileID: 0}
-  stickerThirtytwo: {fileID: 0}
-  stickerThirtythree: {fileID: 0}
+  stickerNineteen: {fileID: 2285146341217843248}
+  stickerTwenty: {fileID: 5726737999206567466}
+  stickerTwentyone: {fileID: 2872880850789100396}
+  stickerTwentytwo: {fileID: 5394624945872519665}
+  stickerTwentythree: {fileID: 3079262171634800183}
+  stickerTwentyfour: {fileID: 7342166315772834198}
+  stickerTwentyfive: {fileID: 8585628677130250073}
+  stickerTwentysix: {fileID: 2209351320338588003}
+  stickerTwentyseven: {fileID: 565681036438202203}
+  stickerTwentyeight: {fileID: 1087604456327940319}
+  stickerTwentynine: {fileID: 1741024999407717696}
+  stickerThirty: {fileID: 908869186354667851}
+  stickerThirtyone: {fileID: 1873862350567911975}
+  stickerThirtytwo: {fileID: 1827309280057240390}
+  stickerThirtythree: {fileID: 8088257858148987840}
   appleStickerScore: 0
   basketStickerScore: 0
   pigStickerScore: 0
@@ -3938,7 +3938,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &973064300803673502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4805,7 +4805,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadMid1
+        m_MethodName: OpenStickerSpreadMid4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5560,7 +5560,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+        m_MethodName: CloseStickerSpreadMid2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5572,7 +5572,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: OpenStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7690,7 +7690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+        m_MethodName: CloseStickerSpreadMid4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7702,7 +7702,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: OpenStickerSpreadMid3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8687,7 +8687,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8699,7 +8699,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: OpenStickerSpreadMid4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10091,7 +10091,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10103,7 +10103,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: OpenStickerSpreadMid3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11046,7 +11046,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadLast
+        m_MethodName: CloseStickerSpreadMid4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11058,7 +11058,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadMid1
+        m_MethodName: OpenStickerSpreadLast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12661,12 +12661,60 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
+        m_MethodName: ResetStickers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
+        m_MethodName: ResetStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
+        m_MethodName: ResetStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
+        m_MethodName: ResetStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
+        m_MethodName: ResetStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

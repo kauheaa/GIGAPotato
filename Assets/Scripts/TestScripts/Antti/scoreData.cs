@@ -79,7 +79,7 @@ public class scoreData
         frogStickerScore = mult.frogStickerScore;
 
         flagStickerScore = mult.flagStickerScore;
-        rocketStickerScore = mult.flagStickerScore;
+        rocketStickerScore = mult.rocketStickerScore;
         laikaStickerScore = mult.laikaStickerScore;
     }
     public scoreData(DivideScript div)
@@ -91,9 +91,9 @@ public class scoreData
         toolStickerScore = div.toolStickerScore;
         tigerStickerScore = div.tigerStickerScore;
 
-        driedfishStickerScore = div.avocadoStickerScore;
-        octopusStickerScore = div.toolStickerScore;
-        catStickerScore = div.tigerStickerScore;
+        driedfishStickerScore = div.driedfishStickerScore;
+        octopusStickerScore = div.octopusStickerScore;
+        catStickerScore = div.catStickerScore;
     }
 
 

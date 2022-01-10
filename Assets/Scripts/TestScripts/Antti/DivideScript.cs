@@ -199,24 +199,27 @@ public class DivideScript : MonoBehaviour
         SaveScore();
     }
 
+    public void ChooseObject()
+    { }
 
     public void DivJungle()
-        {
-        //secondValue = randomizer.Next(2, 11);
-        //int tempValue = randomizer.Next(2, 11);
-        //firstValue = secondValue * tempValue;
-        //quotient.Value = 0;
+    {
+    //secondValue = randomizer.Next(2, 11);
+    //int tempValue = randomizer.Next(2, 11);
+    //firstValue = secondValue * tempValue;
+    //quotient.Value = 0;
 
-        //if ((addend1 + addend2 == sum.Value)
-        //&& (minuend - subtrahend == difference.Value)
-        //&& (multiplicand * multiplier == product.Value)
-        //&& (dividend / divisor == quotient.Value))
-        //    return true;
-        //else
-        //    return false;
+    //if ((addend1 + addend2 == sum.Value)
+    //&& (minuend - subtrahend == difference.Value)
+    //&& (multiplicand * multiplier == product.Value)
+    //&& (dividend / divisor == quotient.Value))
+    //    return true;
+    //else
+    //    return false;
 
-        if (levelIndex == 1)
+        switch (levelIndex)
         {
+                case 1:
             firstValue = Random.Range(1, 10);
             secondValue = Random.Range(1, 5);
             thirdValue = firstValue * secondValue;
@@ -247,9 +250,8 @@ public class DivideScript : MonoBehaviour
                 tempValue = Random.Range(0, 10);
             }
             Alternative2 = tempValue;
-        }
-        if (levelIndex == 2)
-        {
+                    break;
+                case 2:
             firstValue = Random.Range(1, 10);
             secondValue = Random.Range(1, 5);
             thirdValue = firstValue * secondValue;
@@ -280,9 +282,8 @@ public class DivideScript : MonoBehaviour
                 tempValue = Random.Range(0, 10);
             }
             Alternative2 = tempValue;
-        }
-        if (levelIndex == 3)
-        {
+                    break;
+                case 3:
             firstValue = Random.Range(1, 10);
             secondValue = Random.Range(1, 5);
             thirdValue = firstValue * secondValue;
@@ -313,9 +314,8 @@ public class DivideScript : MonoBehaviour
                 tempValue = Random.Range(0, 10);
             }
             Alternative2 = tempValue;
-        }
-        if (levelIndex == 4)
-        {
+                    break;
+                case 4:
             firstValue = Random.Range(1, 10);
             secondValue = Random.Range(1, 5);
             thirdValue = firstValue * secondValue;
@@ -346,9 +346,8 @@ public class DivideScript : MonoBehaviour
                 tempValue = Random.Range(0, 10);
             }
             Alternative2 = tempValue;
-        }
-        if (levelIndex == 5)
-        {
+                    break;
+                case 5:
             firstValue = Random.Range(1, 10);
             secondValue = Random.Range(1, 5);
             thirdValue = firstValue * secondValue;
@@ -379,9 +378,8 @@ public class DivideScript : MonoBehaviour
                 tempValue = Random.Range(0, 10);
             }
             Alternative2 = tempValue;
-        }
-        if (levelIndex == 6)
-        {
+                    break;
+                case 6:
             firstValue = Random.Range(1, 10);
             secondValue = Random.Range(1, 5);
             thirdValue = firstValue * secondValue;
@@ -412,66 +410,63 @@ public class DivideScript : MonoBehaviour
                 tempValue = Random.Range(0, 10);
             }
             Alternative2 = tempValue;
+                    break;
         }
 
-        if (firstValue - secondValue < 2)
-            {
-                tempValue = secondValue;
-                secondValue = firstValue;
-                firstValue = tempValue;
-            }
+    if (firstValue - secondValue < 2)
+        {
+            tempValue = secondValue;
+            secondValue = firstValue;
+            firstValue = tempValue;
+        }
 
-            Function.text = "/";
-            finalValue = thirdValue / fourthValue;
+        Function.text = "/";
+        finalValue = thirdValue / fourthValue;
 
 
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue)
+        {
             tempValue = Random.Range(2, 20);
-            while (tempValue == finalValue)
-            {
-                tempValue = Random.Range(2, 20);
-            }
-            Alternative1 = tempValue;
-
-            //Second Alternative
-            tempValue = Random.Range(2, 20);
-            while (tempValue == finalValue || (tempValue == Alternative1))
-            {
-                tempValue = Random.Range(2, 20);
-            }
-            Alternative2 = tempValue;
-
-            tempValue = Random.Range(1, 6);
-            if (tempValue == 1)
-            {
-                Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
-            }
-            if (tempValue == 2)
-            {
-                Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
-            }
-            if (tempValue == 3)
-            {
-                Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
-            }
-            if (tempValue == 4)
-            {
-                Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
-            }
-            if (tempValue == 5)
-            {
-                Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
-            }
-            if (tempValue == 6)
-            {
-                Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
-            }
-
-
-
-
-
-            Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
         }
+        Alternative1 = tempValue;
+
+        //Second Alternative
+        tempValue = Random.Range(2, 20);
+        while (tempValue == finalValue || (tempValue == Alternative1))
+        {
+            tempValue = Random.Range(2, 20);
+        }
+        Alternative2 = tempValue;
+
+        tempValue = Random.Range(1, 6);
+        if (tempValue == 1)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 2)
+        {
+            Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 3)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
+        }
+        if (tempValue == 4)
+        {
+            Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
+        }
+        if (tempValue == 5)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
+        }
+        if (tempValue == 6)
+        {
+            Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
+        }
+
+        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
+    }
 
     
 
@@ -533,104 +528,138 @@ public class DivideScript : MonoBehaviour
         }
     }
 
-    
 
+    public void StickerScoreCount()
+    {
+        switch (worldIndex)
+        {
+            case 2:
+                switch (levelIndex)
+                {
+                    case 1:
+                        if (avocadoStickerScore < 1)
+                        {
+                            avocadoStickerScore += 1;
+                            Debug.Log("Avocado unlocked");
+                        }
+                        break;
+                    case 2:
+                        if (toolStickerScore < 1)
+                        {
+                            toolStickerScore += 1;
+                            Debug.Log("Tool unlocked");
+                        }
+                        break;
+                    case 3:
+                        if (tigerStickerScore < 1)
+                        {
+                            tigerStickerScore += 1;
+                            Debug.Log("Tiger unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 4:
+                        if (driedfishStickerScore < 1)
+                        {
+                            driedfishStickerScore += 1;
+                            Debug.Log("Dried fish unlocked");
+                        }
+                        break;
+                    case 5:
+                        if (octopusStickerScore < 1)
+                        {
+                            octopusStickerScore += 1;
+                            Debug.Log("Octopus unlocked");
+                        }
+                        break;
+                    case 6:
+                        if (catStickerScore < 1)
+                        {
+                            catStickerScore += 1;
+                            Debug.Log("Cat unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+    }
     public void ResetJungle()
     {
+        if (divScore >= 5)
         {
-            if (divScore >= 5)
-            {
-                switchOn.gameObject.SetActive(true);
-                Animal.GetComponent<Animator>().SetBool("Dance", true);
-                switchOff.gameObject.SetActive(false);
-                switch (levelIndex)
-                {
-                    case 1:
-                        if (avocadoStickerScore < 1)
-                        {
-                            avocadoStickerScore += 1;
-                            Debug.Log("Apple unlocked");
-                        }
-                        break;
-                    case 2:
-                        if (toolStickerScore < 1)
-                        {
-                            toolStickerScore += 1;
-                            Debug.Log("Basket unlocked");
-                        }
-                        break;
-                    case 3:
-                        if (tigerStickerScore < 1)
-                        {
-                            tigerStickerScore += 1;
-                            Debug.Log("Pig unlocked");
-                        }
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-
-            }
-
-            ONE.gameObject.SetActive(false);
-            button1.interactable = true;
-            TWO.gameObject.SetActive(false);
-            button2.interactable = true;
-            THREE.gameObject.SetActive(false);
-            button3.interactable = true;
-            AnswerSpot.text = "?";
-            DivJungle();
-            Animal.GetComponent<Animator>().SetBool("Happy", false);
+            StickerScoreCount();
+            switchOn.gameObject.SetActive(true);
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
+            switchOff.gameObject.SetActive(false);
         }
-    }
-    public void ResetSpace()
-    {
-        {
-            if (divScore >= 5)
-            {
-                switchOn.gameObject.SetActive(true);
-                switchOff.gameObject.SetActive(false);
-                switch (levelIndex)
-                {
-                    case 1:
-                        if (avocadoStickerScore < 1)
-                        {
-                            avocadoStickerScore += 1;
-                            Debug.Log("Apple unlocked");
-                        }
-                        break;
-                    case 2:
-                        if (toolStickerScore < 1)
-                        {
-                            toolStickerScore += 1;
-                            Debug.Log("Basket unlocked");
-                        }
-                        break;
-                    case 3:
-                        if (tigerStickerScore < 1)
-                        {
-                            tigerStickerScore += 1;
-                            Debug.Log("Pig unlocked");
-                        }
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
 
-            }
-
-            ONE.gameObject.SetActive(false);
-            button1.interactable = true;
-            TWO.gameObject.SetActive(false);
-            button2.interactable = true;
-            THREE.gameObject.SetActive(false);
-            button3.interactable = true;
-            AnswerSpot.text = "?";
-            DivSpace();
-        }
+        ONE.gameObject.SetActive(false);
+        button1.interactable = true;
+        TWO.gameObject.SetActive(false);
+        button2.interactable = true;
+        THREE.gameObject.SetActive(false);
+        button3.interactable = true;
+        AnswerSpot.text = "?";
+        DivJungle();
+        Animal.GetComponent<Animator>().SetBool("Happy", false);
     }
+    //public void ResetSpace()
+    //{
+    //    {
+    //        if (divScore >= 5)
+    //        {
+    //            switchOn.gameObject.SetActive(true);
+    //            switchOff.gameObject.SetActive(false);
+    //            switch (levelIndex)
+    //            {
+    //                case 1:
+    //                    if (avocadoStickerScore < 1)
+    //                    {
+    //                        avocadoStickerScore += 1;
+    //                        Debug.Log("Apple unlocked");
+    //                    }
+    //                    break;
+    //                case 2:
+    //                    if (toolStickerScore < 1)
+    //                    {
+    //                        toolStickerScore += 1;
+    //                        Debug.Log("Basket unlocked");
+    //                    }
+    //                    break;
+    //                case 3:
+    //                    if (tigerStickerScore < 1)
+    //                    {
+    //                        tigerStickerScore += 1;
+    //                        Debug.Log("Pig unlocked");
+    //                    }
+    //                    break;
+    //                default:
+    //                    Debug.Log("No level index set");
+    //                    break;
+    //            }
+
+    //        }
+
+    //        ONE.gameObject.SetActive(false);
+    //        button1.interactable = true;
+    //        TWO.gameObject.SetActive(false);
+    //        button2.interactable = true;
+    //        THREE.gameObject.SetActive(false);
+    //        button3.interactable = true;
+    //        AnswerSpot.text = "?";
+    //        DivSpace();
+    //    }
+    //}
 
     IEnumerator Correct()
     {
@@ -725,12 +754,12 @@ public class DivideScript : MonoBehaviour
         DivJungle();
         ResetScore();
     }
-    public void StartSpace()
-    {
-        ResetSpace();
-        DivSpace();
-        ResetScore();
-    }
+    //public void StartSpace()
+    //{
+    //    ResetSpace();
+    //    DivSpace();
+    //    ResetScore();
+    //}
 
 
 }

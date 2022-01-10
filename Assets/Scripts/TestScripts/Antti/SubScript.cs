@@ -127,18 +127,18 @@ public class SubScript : MonoBehaviour
         {
             stickerSix.gameObject.SetActive(true);
         }
-        if (starStickerScore == 1)
-        {
-            stickerSeven.gameObject.SetActive(true);
-        }
-        if (planetStickerScore == 1)
-        {
-            stickerEight.gameObject.SetActive(true);
-        }
-        if (cowStickerScore == 1)
-        {
-            stickerNine.gameObject.SetActive(true);
-        }
+        //if (starStickerScore == 1)
+        //{
+        //    stickerSeven.gameObject.SetActive(true);
+        //}
+        //if (planetStickerScore == 1)
+        //{
+        //    stickerEight.gameObject.SetActive(true);
+        //}
+        //if (cowStickerScore == 1)
+        //{
+        //    stickerNine.gameObject.SetActive(true);
+        //}
     }
     public void StarCount()
     {
