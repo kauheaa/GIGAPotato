@@ -633,18 +633,18 @@ public class SumScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alterntive
-                tempValue = Random.Range(0, 30);
+                tempValue = Random.Range(10, 30);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 30);
+                    tempValue = Random.Range(10, 30);
                 }
                 Alternative1 = tempValue;
 
                 //Second Alternative
-                tempValue = Random.Range(0, 50);
+                tempValue = Random.Range(10, 40);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 50);
+                    tempValue = Random.Range(10, 40);
                 }
                 Alternative2 = tempValue;
                 break;
@@ -666,10 +666,10 @@ public class SumScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
                 //Second Alternative
-                tempValue = Random.Range(0, 50);
+                tempValue = Random.Range(10, 50);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 50);
+                    tempValue = Random.Range(10, 50);
                 }
                 Alternative2 = tempValue;
                 break;
@@ -684,24 +684,24 @@ public class SumScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alterntive
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(20, 100);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(20, 100);
                 }
                 Alternative1 = tempValue;
                 //Second Alternative
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(20, 100);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(20, 100);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 6:
-                firstValue = Random.Range(25, 50);
-                secondValue = Random.Range(25, 50);
+                firstValue = Random.Range(50, 250);
+                secondValue = Random.Range(50, 250);
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
 
@@ -709,24 +709,24 @@ public class SumScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alterntive
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(100, 500);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(100, 500);
                 }
                 Alternative1 = tempValue;
                 //Second Alternative
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(100, 500);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(100, 500);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 7:
-                firstValue = Random.Range(25, 50);
-                secondValue = Random.Range(25, 50);
+                firstValue = Random.Range(100, 500);
+                secondValue = Random.Range(1, 500);
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
 
@@ -734,24 +734,24 @@ public class SumScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alterntive
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(100, 1000);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(100, 1000);
                 }
                 Alternative1 = tempValue;
                 //Second Alternative
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(100, 1000);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(100, 1000);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 8:
-                firstValue = Random.Range(25, 50);
-                secondValue = Random.Range(25, 50);
+                firstValue = Random.Range(500, 2500);
+                secondValue = Random.Range(500, 2500);
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
 
@@ -759,24 +759,24 @@ public class SumScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alterntive
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(1000, 5000);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(1000, 5000);
                 }
                 Alternative1 = tempValue;
                 //Second Alternative
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(1000, 5000);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(1000, 5000);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 9:
-                firstValue = Random.Range(25, 50);
-                secondValue = Random.Range(25, 50);
+                firstValue = Random.Range(1000, 5000);
+                secondValue = Random.Range(1000, 5000);
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
 
@@ -784,17 +784,17 @@ public class SumScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alterntive
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(2000, 10000);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(2000, 10000);
                 }
                 Alternative1 = tempValue;
                 //Second Alternative
-                tempValue = Random.Range(0, 100);
+                tempValue = Random.Range(2000, 10000);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 100);
+                    tempValue = Random.Range(2000, 10000);
                 }
                 Alternative2 = tempValue;
                 break;

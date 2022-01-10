@@ -127,18 +127,18 @@ public class SubScript : MonoBehaviour
         {
             stickerSix.gameObject.SetActive(true);
         }
-        //if (starStickerScore == 1)
-        //{
-        //    stickerSeven.gameObject.SetActive(true);
-        //}
-        //if (planetStickerScore == 1)
-        //{
-        //    stickerEight.gameObject.SetActive(true);
-        //}
-        //if (cowStickerScore == 1)
-        //{
-        //    stickerNine.gameObject.SetActive(true);
-        //}
+        if (starStickerScore == 1)
+        {
+            stickerSeven.gameObject.SetActive(true);
+        }
+        if (planetStickerScore == 1)
+        {
+            stickerEight.gameObject.SetActive(true);
+        }
+        if (cowStickerScore == 1)
+        {
+            stickerNine.gameObject.SetActive(true);
+        }
     }
     public void StarCount()
     {
@@ -451,6 +451,8 @@ public class SubScript : MonoBehaviour
             //deactivates second sprite and activates tens and over tens sprite when second value is bigger than 10
             if (secondValue >= 10 && secondValue / 10 >= 1)
             {
+                secondTenObjectSlot.GetComponent<Image>().color = new Color(0, 0, 0, .5f);
+                secondOverTenSlot.GetComponent<Image>().color = new Color(0, 0, 0, .5f);
                 if (worldIndex >= 2)
                 {
                     secondObjectSlot.gameObject.SetActive(false);
@@ -709,8 +711,8 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 5:
-                firstValue = Random.Range(0, 5);
-                secondValue = Random.Range(0, 5);
+                firstValue = Random.Range(10, 50);
+                secondValue = Random.Range(10, 50);
                 thirdValue = firstValue;
                 fourthValue = secondValue;
 
@@ -727,25 +729,25 @@ public class SubScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 50);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 50);
                 }
                 Alternative1 = tempValue;
 
                 //Second Alternative
-                tempValue = Random.Range(1, 10);
+                tempValue = Random.Range(1, 50);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(1, 10);
+                    tempValue = Random.Range(1, 50);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 6:
-                firstValue = Random.Range(0, 5);
-                secondValue = Random.Range(0, 5);
+                firstValue = Random.Range(10, 100);
+                secondValue = Random.Range(10, 100);
                 thirdValue = firstValue;
                 fourthValue = secondValue;
 
@@ -762,10 +764,10 @@ public class SubScript : MonoBehaviour
                 ChooseObject();
 
                 //First Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 100);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 100);
                 }
                 Alternative1 = tempValue;
 
