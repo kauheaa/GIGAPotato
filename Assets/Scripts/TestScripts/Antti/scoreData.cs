@@ -24,6 +24,13 @@ public class scoreData
     public int sumStarCount, appleStickerScore, basketStickerScore, pigStickerScore;
     public int sumJungleStarCount, bananaStickerScore, clusterStickerScore, monkeyStickerScore;
     public int sumSpaceStarCount, asteroidStickerScore, blackholeStickerScore, llamaStickerScore;
+
+    public bool resolutionCheck;
+
+    public scoreData(GraphicsWarning reso)
+    {
+        resolutionCheck = reso.resolutionCheck;
+    }
     public scoreData(SumScript sum)
     {
         sumStarCount = sum.sumStarCount;

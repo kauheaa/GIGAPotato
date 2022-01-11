@@ -12,8 +12,9 @@ public class saveScore
     //private CountScript count;
     //private MultiplyScript mult;
     //private DivideScript div;
+    //private MenuControl menu;
 
-    // SUM SAVE
+    //SUM SAVE
     public static void SaveSumScore(SumScript sum)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -80,7 +81,6 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
-
     }
 
 
@@ -116,7 +116,6 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
-
     }
     public static void SaveMultScore(MultiplyScript mult)
     {
@@ -149,7 +148,6 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
-
     }
 
     //DIVIDE SAVE
@@ -185,6 +183,37 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
+    }
 
+    // SAVE RESOLUTION CHECK
+    public static void SaveResoCheck(GraphicsWarning reso)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/resocheck.txt";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        scoreData data = new scoreData(reso);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+        Debug.Log("Reso check saved");
+    }
+    // LOAD RESOLUTION CHECK
+    public static scoreData LoadResoCheck()
+    {
+        string path = Application.persistentDataPath + "/resocheck.txt";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            scoreData data = formatter.Deserialize(stream) as scoreData;
+            stream.Close();
+            return data;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

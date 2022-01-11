@@ -9294,8 +9294,8 @@ RectTransform:
   m_Father: {fileID: 25769657}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10104,6 +10104,10 @@ MonoBehaviour:
   stickerSeven: {fileID: 445144728}
   stickerEight: {fileID: 1005988729}
   stickerNine: {fileID: 976168755}
+  subMenuButton: {fileID: 953794044}
+  levelButton1: {fileID: 962879648}
+  levelButton2: {fileID: 784317852}
+  levelButton3: {fileID: 1135346501}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -10115,13 +10119,10 @@ MonoBehaviour:
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   Animal: {fileID: 489721405}
   firstObjectSlot: {fileID: 155462122}
   secondObjectSlot: {fileID: 45408793}
-  firstTenObjectSlot: {fileID: 144747454}
-  firstOverTenSlot: {fileID: 484067968}
-  secondTenObjectSlot: {fileID: 792085067}
-  secondOverTenSlot: {fileID: 1712933235}
   objectSprite:
   - {fileID: 21300000, guid: 6423cb1d48aa25f4ea1043abcf998f80, type: 3}
   - {fileID: 21300000, guid: 497a4a2d2156cfc419449e32b654ed7d, type: 3}
@@ -10135,12 +10136,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bd25ac2501f2f140942d88ab7d57bbe, type: 3}
   - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
   - {fileID: 21300000, guid: 2a33de7b8d5f5594e8ce7c78a14aabb0, type: 3}
-  - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
+  - {fileID: 21300000, guid: 8b61e32e5fa81de4b914ced6a7a5379a, type: 3}
   - {fileID: 21300000, guid: 33014a0ec3258e745a99e3804548f050, type: 3}
   - {fileID: 21300000, guid: a10b6ce8358774841b36209a89e637a3, type: 3}
   - {fileID: 21300000, guid: 0d2222e70e3ed7341bf79e8f3369cc91, type: 3}
-  tenObjectSprite:
-  - {fileID: 21300000, guid: 0e19622ec37d7c04e8c777ebc9e10abb, type: 3}
 --- !u!1 &373085299
 GameObject:
   m_ObjectHideFlags: 0
@@ -10221,6 +10220,10 @@ MonoBehaviour:
   stickerSeven: {fileID: 973064300315609854}
   stickerEight: {fileID: 973064300315609853}
   stickerNine: {fileID: 973064300315609852}
+  sumMenuButton: {fileID: 1733980915}
+  levelButton1: {fileID: 1212961984}
+  levelButton2: {fileID: 947693204}
+  levelButton3: {fileID: 90068221}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -10232,15 +10235,12 @@ MonoBehaviour:
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   switchOff: {fileID: 825579665}
   switchOn: {fileID: 2088087516}
   Animal: {fileID: 198044229}
   firstObjectSlot: {fileID: 388750546}
   secondObjectSlot: {fileID: 155057855}
-  firstTenObjectSlot: {fileID: 144747454}
-  firstOverTenSlot: {fileID: 484067968}
-  secondTenObjectSlot: {fileID: 792085067}
-  secondOverTenSlot: {fileID: 1712933235}
   objectSprite:
   - {fileID: 21300000, guid: 74860dfaf37a42d4eb7f9fb468c9f9fe, type: 3}
   - {fileID: 21300000, guid: 497a4a2d2156cfc419449e32b654ed7d, type: 3}
@@ -10254,12 +10254,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bd25ac2501f2f140942d88ab7d57bbe, type: 3}
   - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
   - {fileID: 21300000, guid: 2a33de7b8d5f5594e8ce7c78a14aabb0, type: 3}
-  - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
+  - {fileID: 21300000, guid: 8b61e32e5fa81de4b914ced6a7a5379a, type: 3}
   - {fileID: 21300000, guid: 33014a0ec3258e745a99e3804548f050, type: 3}
   - {fileID: 21300000, guid: a10b6ce8358774841b36209a89e637a3, type: 3}
   - {fileID: 21300000, guid: 0d2222e70e3ed7341bf79e8f3369cc91, type: 3}
-  tenObjectSprite:
-  - {fileID: 21300000, guid: 0e19622ec37d7c04e8c777ebc9e10abb, type: 3}
 --- !u!1 &373610600
 GameObject:
   m_ObjectHideFlags: 0
@@ -10948,8 +10946,8 @@ RectTransform:
   m_Father: {fileID: 69315038}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11102,8 +11100,8 @@ RectTransform:
   m_Father: {fileID: 2047906950}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12301,10 +12299,10 @@ RectTransform:
   m_Father: {fileID: 672239152}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
-  m_AnchoredPosition: {x: -2.5, y: 5}
-  m_SizeDelta: {x: 5, y: 185}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478317786
 MonoBehaviour:
@@ -14535,6 +14533,10 @@ MonoBehaviour:
   stickerSeven: {fileID: 445144728}
   stickerEight: {fileID: 1005988729}
   stickerNine: {fileID: 976168755}
+  subMenuButton: {fileID: 953794044}
+  levelButton1: {fileID: 962879648}
+  levelButton2: {fileID: 784317852}
+  levelButton3: {fileID: 1135346501}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -14546,13 +14548,10 @@ MonoBehaviour:
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   Animal: {fileID: 1260534824}
   firstObjectSlot: {fileID: 1832286226}
   secondObjectSlot: {fileID: 911042420}
-  firstTenObjectSlot: {fileID: 144747454}
-  firstOverTenSlot: {fileID: 484067968}
-  secondTenObjectSlot: {fileID: 792085067}
-  secondOverTenSlot: {fileID: 1712933235}
   objectSprite:
   - {fileID: 21300000, guid: 6423cb1d48aa25f4ea1043abcf998f80, type: 3}
   - {fileID: 21300000, guid: 497a4a2d2156cfc419449e32b654ed7d, type: 3}
@@ -14566,12 +14565,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bd25ac2501f2f140942d88ab7d57bbe, type: 3}
   - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
   - {fileID: 21300000, guid: 2a33de7b8d5f5594e8ce7c78a14aabb0, type: 3}
-  - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
+  - {fileID: 21300000, guid: 8b61e32e5fa81de4b914ced6a7a5379a, type: 3}
   - {fileID: 21300000, guid: 33014a0ec3258e745a99e3804548f050, type: 3}
   - {fileID: 21300000, guid: a10b6ce8358774841b36209a89e637a3, type: 3}
   - {fileID: 21300000, guid: 0d2222e70e3ed7341bf79e8f3369cc91, type: 3}
-  tenObjectSprite:
-  - {fileID: 21300000, guid: 0e19622ec37d7c04e8c777ebc9e10abb, type: 3}
 --- !u!1 &548494574
 GameObject:
   m_ObjectHideFlags: 0
@@ -14882,6 +14879,10 @@ MonoBehaviour:
   stickerSeven: {fileID: 973064300315609854}
   stickerEight: {fileID: 973064300315609853}
   stickerNine: {fileID: 973064300315609852}
+  sumMenuButton: {fileID: 1733980915}
+  levelButton1: {fileID: 1212961984}
+  levelButton2: {fileID: 947693204}
+  levelButton3: {fileID: 90068221}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -14893,15 +14894,12 @@ MonoBehaviour:
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   switchOff: {fileID: 535273185}
   switchOn: {fileID: 2028930187}
   Animal: {fileID: 526594367}
   firstObjectSlot: {fileID: 224776310}
   secondObjectSlot: {fileID: 1046360630}
-  firstTenObjectSlot: {fileID: 144747454}
-  firstOverTenSlot: {fileID: 484067968}
-  secondTenObjectSlot: {fileID: 792085067}
-  secondOverTenSlot: {fileID: 1712933235}
   objectSprite:
   - {fileID: 21300000, guid: 74860dfaf37a42d4eb7f9fb468c9f9fe, type: 3}
   - {fileID: 21300000, guid: 497a4a2d2156cfc419449e32b654ed7d, type: 3}
@@ -14915,14 +14913,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bd25ac2501f2f140942d88ab7d57bbe, type: 3}
   - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
   - {fileID: 21300000, guid: 2a33de7b8d5f5594e8ce7c78a14aabb0, type: 3}
-  - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
+  - {fileID: 21300000, guid: 8b61e32e5fa81de4b914ced6a7a5379a, type: 3}
   - {fileID: 21300000, guid: 33014a0ec3258e745a99e3804548f050, type: 3}
   - {fileID: 21300000, guid: a10b6ce8358774841b36209a89e637a3, type: 3}
   - {fileID: 21300000, guid: 0d2222e70e3ed7341bf79e8f3369cc91, type: 3}
-  tenObjectSprite:
-  - {fileID: 21300000, guid: 65afc7bfbf39e974a806f76ef48ea362, type: 3}
-  - {fileID: 21300000, guid: 9a33c07badca0e441905cb8f2ab8c7f3, type: 3}
-  - {fileID: 21300000, guid: 71fc324edb0d30b42a46610b7bd3b480, type: 3}
 --- !u!1 &560926378
 GameObject:
   m_ObjectHideFlags: 0
@@ -16455,8 +16449,8 @@ RectTransform:
   m_Father: {fileID: 2077896565}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16534,8 +16528,8 @@ RectTransform:
   m_Father: {fileID: 111349180}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17497,8 +17491,8 @@ RectTransform:
   m_Father: {fileID: 1703337555}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18114,6 +18108,10 @@ MonoBehaviour:
   stickerSeven: {fileID: 445144728}
   stickerEight: {fileID: 1005988729}
   stickerNine: {fileID: 976168755}
+  subMenuButton: {fileID: 953794044}
+  levelButton1: {fileID: 962879648}
+  levelButton2: {fileID: 784317852}
+  levelButton3: {fileID: 1135346501}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -18125,13 +18123,10 @@ MonoBehaviour:
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   Animal: {fileID: 1316775135}
   firstObjectSlot: {fileID: 1893165465}
   secondObjectSlot: {fileID: 502707678}
-  firstTenObjectSlot: {fileID: 144747454}
-  firstOverTenSlot: {fileID: 484067968}
-  secondTenObjectSlot: {fileID: 792085067}
-  secondOverTenSlot: {fileID: 1712933235}
   objectSprite:
   - {fileID: 21300000, guid: 6423cb1d48aa25f4ea1043abcf998f80, type: 3}
   - {fileID: 21300000, guid: 497a4a2d2156cfc419449e32b654ed7d, type: 3}
@@ -18145,12 +18140,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bd25ac2501f2f140942d88ab7d57bbe, type: 3}
   - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
   - {fileID: 21300000, guid: 2a33de7b8d5f5594e8ce7c78a14aabb0, type: 3}
-  - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
+  - {fileID: 21300000, guid: 8b61e32e5fa81de4b914ced6a7a5379a, type: 3}
   - {fileID: 21300000, guid: 33014a0ec3258e745a99e3804548f050, type: 3}
   - {fileID: 21300000, guid: a10b6ce8358774841b36209a89e637a3, type: 3}
   - {fileID: 21300000, guid: 0d2222e70e3ed7341bf79e8f3369cc91, type: 3}
-  tenObjectSprite:
-  - {fileID: 21300000, guid: 0e19622ec37d7c04e8c777ebc9e10abb, type: 3}
 --- !u!1 &727616074
 GameObject:
   m_ObjectHideFlags: 0
@@ -18599,8 +18592,8 @@ RectTransform:
   m_Father: {fileID: 2048008834}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18678,8 +18671,8 @@ RectTransform:
   m_Father: {fileID: 527451502}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21467,10 +21460,10 @@ RectTransform:
   m_Father: {fileID: 1657541203}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
-  m_AnchoredPosition: {x: -2.5, y: 5}
-  m_SizeDelta: {x: 5, y: 185}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852701393
 MonoBehaviour:
@@ -22003,8 +21996,8 @@ RectTransform:
   m_Father: {fileID: 2120128711}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -27456,8 +27449,8 @@ RectTransform:
   m_Father: {fileID: 1039260900}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -29711,6 +29704,11 @@ MonoBehaviour:
   stickerOne: {fileID: 497881465}
   stickerTwo: {fileID: 1094034303}
   stickerThree: {fileID: 1989673304}
+  countMenuButton: {fileID: 0}
+  levelButton1: {fileID: 1611086599}
+  levelButton2: {fileID: 1333439736}
+  levelButton3: {fileID: 274410843}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -30366,10 +30364,10 @@ RectTransform:
   m_Father: {fileID: 2062353484}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
-  m_AnchoredPosition: {x: -2.5, y: 5}
-  m_SizeDelta: {x: 5, y: 185}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188587774
 MonoBehaviour:
@@ -35025,6 +35023,11 @@ MonoBehaviour:
   stickerOne: {fileID: 497881465}
   stickerTwo: {fileID: 1094034303}
   stickerThree: {fileID: 1989673304}
+  countMenuButton: {fileID: 0}
+  levelButton1: {fileID: 1611086599}
+  levelButton2: {fileID: 1333439736}
+  levelButton3: {fileID: 274410843}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -37718,8 +37721,8 @@ RectTransform:
   m_Father: {fileID: 1556660408}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -38191,6 +38194,10 @@ MonoBehaviour:
   stickerSeven: {fileID: 973064300315609854}
   stickerEight: {fileID: 973064300315609853}
   stickerNine: {fileID: 973064300315609852}
+  sumMenuButton: {fileID: 1733980915}
+  levelButton1: {fileID: 1212961984}
+  levelButton2: {fileID: 947693204}
+  levelButton3: {fileID: 90068221}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -38202,15 +38209,12 @@ MonoBehaviour:
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   switchOff: {fileID: 266804666}
   switchOn: {fileID: 1022735153}
   Animal: {fileID: 1939661947}
   firstObjectSlot: {fileID: 1000135519}
   secondObjectSlot: {fileID: 2074039279}
-  firstTenObjectSlot: {fileID: 144747454}
-  firstOverTenSlot: {fileID: 484067968}
-  secondTenObjectSlot: {fileID: 792085067}
-  secondOverTenSlot: {fileID: 1712933235}
   objectSprite:
   - {fileID: 21300000, guid: 74860dfaf37a42d4eb7f9fb468c9f9fe, type: 3}
   - {fileID: 21300000, guid: 497a4a2d2156cfc419449e32b654ed7d, type: 3}
@@ -38224,14 +38228,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bd25ac2501f2f140942d88ab7d57bbe, type: 3}
   - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
   - {fileID: 21300000, guid: 2a33de7b8d5f5594e8ce7c78a14aabb0, type: 3}
-  - {fileID: 21300000, guid: 7b842bc2c732dfd44ad47d1a3d23aa08, type: 3}
+  - {fileID: 21300000, guid: 8b61e32e5fa81de4b914ced6a7a5379a, type: 3}
   - {fileID: 21300000, guid: 33014a0ec3258e745a99e3804548f050, type: 3}
   - {fileID: 21300000, guid: a10b6ce8358774841b36209a89e637a3, type: 3}
   - {fileID: 21300000, guid: 0d2222e70e3ed7341bf79e8f3369cc91, type: 3}
-  tenObjectSprite:
-  - {fileID: 21300000, guid: 65afc7bfbf39e974a806f76ef48ea362, type: 3}
-  - {fileID: 21300000, guid: 9a33c07badca0e441905cb8f2ab8c7f3, type: 3}
-  - {fileID: 21300000, guid: 71fc324edb0d30b42a46610b7bd3b480, type: 3}
 --- !u!1 &1501065755
 GameObject:
   m_ObjectHideFlags: 0
@@ -38444,8 +38444,8 @@ RectTransform:
   m_Father: {fileID: 204926824}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -46958,8 +46958,8 @@ RectTransform:
   m_Father: {fileID: 1114535260}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -47627,8 +47627,8 @@ RectTransform:
   m_Father: {fileID: 198595755}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -48018,8 +48018,8 @@ RectTransform:
   m_Father: {fileID: 1607503935}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0.955, y: 0.5}
+  m_AnchorMin: {x: 0.05, y: 0.5}
+  m_AnchorMax: {x: 0.9, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -51279,7 +51279,7 @@ MonoBehaviour:
     - 19
     CorrectAnswer: 2
   - Question: FIFTEEN
-    Objects: {fileID: 21300000, guid: 114faad35d3889649b03b8c067448a52, type: 3}
+    Objects: {fileID: 21300000, guid: 0d2222e70e3ed7341bf79e8f3369cc91, type: 3}
     Answers:
     - 12
     - 18
@@ -51341,6 +51341,11 @@ MonoBehaviour:
   stickerOne: {fileID: 497881465}
   stickerTwo: {fileID: 1094034303}
   stickerThree: {fileID: 1989673304}
+  countMenuButton: {fileID: 0}
+  levelButton1: {fileID: 1611086599}
+  levelButton2: {fileID: 1333439736}
+  levelButton3: {fileID: 274410843}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
   twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
   threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
@@ -51969,6 +51974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stickerbookButton: {fileID: 4887357}
   settingsMenu: {fileID: 0}
+  resetWarning: {fileID: 0}
   stickerBook: {fileID: 585713513}
   stickerSpreadFirst: {fileID: 324467290}
   stickerSpreadMid1: {fileID: 2109838077}
@@ -55840,6 +55846,10 @@ PrefabInstance:
       propertyPath: StickerList.Array.data[6].stickerName
       value: PigSticker
       objectReference: {fileID: 0}
+    - target: {fileID: 8707621640895703512, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -55955,6 +55965,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5394624945872519665, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 973064300315609845}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &973064300315609855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df0da8921302ad4b921b1fca8f10f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1747224479575733874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56325,7 +56346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -56337,6 +56358,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
@@ -56356,6 +56381,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2008525893}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 973064300315609855}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -56365,6 +56394,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
@@ -56380,6 +56413,10 @@ PrefabInstance:
       value: UpdateStickers
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: UpdateAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SumScript, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -56392,6 +56429,10 @@ PrefabInstance:
       value: CountScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: StickerBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -56401,6 +56442,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6085630534270478214, guid: d251688abbacd0a4597df54957b5e50f, type: 3}

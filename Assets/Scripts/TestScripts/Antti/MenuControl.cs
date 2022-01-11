@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class MenuControl : MonoBehaviour
 {
     public GameObject stickerbookButton;
     [SerializeField] private Transform settingsMenu;
+    [SerializeField] private Transform resetWarning;
     [SerializeField] private Transform stickerBook;
     [SerializeField] private Transform stickerSpreadFirst;
     [SerializeField] private Transform stickerSpreadMid1;
@@ -84,7 +86,6 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform levelExitWarning;
 
 
-
     private void Start()
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
@@ -95,10 +96,10 @@ public class MenuControl : MonoBehaviour
         PauseGame();
     }
 
-    //public void ResetGame()
-    //{
-    //    StickerBook.setBool("AllScoresZero", true);
-    //}
+    public void OpenResetWarning()
+    {
+        resetWarning.gameObject.SetActive(true);
+    }
 
     public void MoveToJungle()
     {

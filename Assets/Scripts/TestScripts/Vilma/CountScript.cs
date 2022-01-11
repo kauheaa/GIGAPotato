@@ -28,6 +28,8 @@ public class CountScript : MonoBehaviour
     [SerializeField] public int twoCornStickerScore = 0;
     [SerializeField] public int lambStickerScore = 0;
     public GameObject stickerOne, stickerTwo, stickerThree;
+    public GameObject countMenuButton, levelButton1, levelButton2, levelButton3;
+    public Sprite completedButton;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject countStars, menuStars;
     public GameObject Animal;
@@ -115,14 +117,26 @@ public class CountScript : MonoBehaviour
         if (threeCornStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
+            if (worldIndex == 1)
+            {
+                levelButton1.GetComponent<Image>().sprite = completedButton;
+            }
         }
         if (twoCornStickerScore == 1)
         {
             stickerTwo.gameObject.SetActive(true);
+            if (worldIndex == 1)
+            {
+                levelButton2.GetComponent<Image>().sprite = completedButton;
+            }
         }
         if (lambStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
+            if (worldIndex == 1)
+            {
+                levelButton3.GetComponent<Image>().sprite = completedButton;
+            }
         }
     }
     // Unlocks a star each time a sticker is unlocked
@@ -144,6 +158,8 @@ public class CountScript : MonoBehaviour
         {
             countStars.GetComponent<Image>().sprite = threeStar;
             menuStars.GetComponent<Image>().sprite = threeStar;
+            countMenuButton.GetComponent<Image>().sprite = completedButton;
+
         }
     }
 

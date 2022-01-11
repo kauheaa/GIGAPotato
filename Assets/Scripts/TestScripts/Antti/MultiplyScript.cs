@@ -21,10 +21,11 @@ public class MultiplyScript : MonoBehaviour
     private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
     public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix;
+    public GameObject multMenuButton, levelButton1, levelButton2, levelButton3;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject multStars, menuStars;
     public Button button1, button2, button3;
-    public Sprite blueButton, redButton, greenButton;
+    public Sprite blueButton, redButton, greenButton, completedButton;
     [SerializeField] private Transform switchOff, switchOn;
     public GameObject Animal;
 
@@ -83,26 +84,50 @@ public class MultiplyScript : MonoBehaviour
         if (lycheeStickerScore == 1)
         {
             stickerOne.gameObject.SetActive(true);
+            if (worldIndex == 2)
+            {
+                levelButton1.GetComponent<Image>().sprite = completedButton;
+            }
         }
         if (pitahayaStickerScore == 1)
         {
             stickerTwo.gameObject.SetActive(true);
+            if (worldIndex == 2)
+            {
+                levelButton2.GetComponent<Image>().sprite = completedButton;
+            }
         }
         if (frogStickerScore == 1)
         {
             stickerThree.gameObject.SetActive(true);
+            if (worldIndex == 2)
+            {
+                levelButton3.GetComponent<Image>().sprite = completedButton;
+            }
         }
         if (flagStickerScore == 1)
         {
             stickerFour.gameObject.SetActive(true);
+            if (worldIndex == 3)
+            {
+                levelButton1.GetComponent<Image>().sprite = completedButton;
+            }
         }
         if (rocketStickerScore == 1)
         {
             stickerFive.gameObject.SetActive(true);
+            if (worldIndex == 3)
+            {
+                levelButton2.GetComponent<Image>().sprite = completedButton;
+            }
         }
         if (laikaStickerScore == 1)
         {
             stickerSix.gameObject.SetActive(true);
+            if (worldIndex == 3)
+            {
+                levelButton3.GetComponent<Image>().sprite = completedButton;
+            }
         }
     }
 
@@ -131,6 +156,7 @@ public class MultiplyScript : MonoBehaviour
                 {
                     multStars.GetComponent<Image>().sprite = threeStar;
                     menuStars.GetComponent<Image>().sprite = threeStar;
+                    multMenuButton.GetComponent<Image>().sprite = completedButton;
                 }
                 break;
             case 3:
@@ -148,6 +174,7 @@ public class MultiplyScript : MonoBehaviour
                 {
                     multStars.GetComponent<Image>().sprite = threeStar;
                     menuStars.GetComponent<Image>().sprite = threeStar;
+                    multMenuButton.GetComponent<Image>().sprite = completedButton;
                 }
                 break;
             default:
