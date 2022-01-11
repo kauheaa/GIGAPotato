@@ -7,8 +7,14 @@ using UnityEngine;
 
 public class saveScore 
 {
+    private SumScript sum;
+    //private SubScript sub;
+    //private CountScript count;
+    //private MultiplyScript mult;
+    //private DivideScript div;
+    //private MenuControl menu;
 
-// SUM SAVE
+    //SUM SAVE
     public static void SaveSumScore(SumScript sum)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -19,11 +25,12 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save addition stickers");
+        Debug.Log("Sum saved");
     }
 // SUM LOAD
     public static scoreData LoadSumScore()
     {
+
         string path = Application.persistentDataPath + "/sumscore.txt";
         if (File.Exists(path))
         {
@@ -32,7 +39,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load sum sticker scores");
+            //Debug.Log("Load sum");
             return data;
         }
         else
@@ -40,10 +47,7 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
-
     }
-
-
 
 // SUB SAVE
     public static void SaveSubScore(SubScript sub)
@@ -56,7 +60,7 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save sub stickers");
+        Debug.Log("Sub saved");
     }
 // SUB LOAD
     public static scoreData LoadSubScore()
@@ -69,7 +73,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load sub sticker scores");
+            //Debug.Log("Load sub");
             return data;
         }
         else
@@ -77,7 +81,6 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
-
     }
 
 
@@ -92,9 +95,9 @@ public class saveScore
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Save count stickers");
+        Debug.Log("Count saved");
     }
-    // COUNT LOAD
+    // MULTIPLY LOAD
     public static scoreData LoadCountScore()
     {
         string path = Application.persistentDataPath + "/countscore.txt";
@@ -105,7 +108,7 @@ public class saveScore
 
             scoreData data = formatter.Deserialize(stream) as scoreData;
             stream.Close();
-            Debug.Log("Load count sticker scores");
+            //Debug.Log("Load count");
             return data;
         }
         else
@@ -113,6 +116,104 @@ public class saveScore
             Debug.LogError("Save file not found in" + path);
             return null;
         }
+    }
+    public static void SaveMultScore(MultiplyScript mult)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/multscore.txt";
+        FileStream stream = new FileStream(path, FileMode.Create);
 
+        scoreData data = new scoreData(mult);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+        Debug.Log("Mult saved");
+    }
+    // MULTIPLY LOAD
+    public static scoreData LoadMultScore()
+    {
+        string path = Application.persistentDataPath + "/multscore.txt";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            scoreData data = formatter.Deserialize(stream) as scoreData;
+            stream.Close();
+            //Debug.Log("Load mult");
+            return data;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in" + path);
+            return null;
+        }
+    }
+
+    //DIVIDE SAVE
+    public static void SaveDivScore(DivideScript div)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/divscore.txt";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        scoreData data = new scoreData(div);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+        Debug.Log("Div saved");
+    }
+
+    // DIVIDE LOAD
+    public static scoreData LoadDivScore()
+    {
+        string path = Application.persistentDataPath + "/divscore.txt";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            scoreData data = formatter.Deserialize(stream) as scoreData;
+            stream.Close();
+            //Debug.Log("Load div");
+            return data;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in" + path);
+            return null;
+        }
+    }
+
+    // SAVE RESOLUTION CHECK
+    public static void SaveResoCheck(GraphicsWarning reso)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/resocheck.txt";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        scoreData data = new scoreData(reso);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+        Debug.Log("Reso check saved");
+    }
+    // LOAD RESOLUTION CHECK
+    public static scoreData LoadResoCheck()
+    {
+        string path = Application.persistentDataPath + "/resocheck.txt";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            scoreData data = formatter.Deserialize(stream) as scoreData;
+            stream.Close();
+            return data;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

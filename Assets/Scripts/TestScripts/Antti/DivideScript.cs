@@ -1,65 +1,446 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DivideScript : MonoBehaviour
 {
-    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    [SerializeField] public int sumScore = 0;
-    [SerializeField] public int subScore = 0;
+    int firstValue, secondValue, thirdValue, fourthValue, tempValue, finalValue, Alternative1, Alternative2;
     [SerializeField] public int divScore = 0;
-    [SerializeField] public int multScore = 0;
-    [SerializeField] private Transform switchOff, switchOn;
+    [SerializeField] public int divJungleStarCount = 0;
+    [SerializeField] public int divSpaceStarCount = 0;
+    [SerializeField] public int avocadoStickerScore = 0;
+    [SerializeField] public int toolStickerScore = 0;
+    [SerializeField] public int tigerStickerScore = 0;
+    [SerializeField] public int driedfishStickerScore = 0;
+    [SerializeField] public int octopusStickerScore = 0;
+    [SerializeField] public int catStickerScore = 0;
+    public int levelIndex = 0;
+    public int worldIndex = 0;
+    private int stick1, stick2, stick3;
     public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, star;
+    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix;
+    public GameObject divMenuButton, levelButton1, levelButton2, levelButton3;
+    public Sprite oneStar, twoStar, threeStar;
+    public GameObject divStars, menuStars;
     public Button button1, button2, button3;
-    SumScript sum;
-    MultiplyScript mult;
-    SubScript sub;
+    public Sprite blueButton, redButton, greenButton, completedButton;
+    [SerializeField] private Transform switchOff, switchOn;
+    public GameObject Animal;
 
 
 
-    private void Start()
+
+    public void SaveScore()
     {
+        saveScore.SaveDivScore(this);
+
+        //luo väliaikaisen listan, joka etsii hierarkiassa olevat divScore instanssit ja käy läpi,
+        //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
+        //näin kaikissa divScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+        //ei ylikirjoita arvoja nollaksi 
+        DivideScript[] tempArray = GameObject.FindObjectsOfType<DivideScript>();
+        foreach (DivideScript i in tempArray)
+        {
+            i.LoadScore();
+        }
+
+    }
+    public void LoadScore()
+    {
+        string path = Application.persistentDataPath + "/divscore.txt";
+        if (File.Exists(path))
+        {
+            scoreData data = saveScore.LoadDivScore();
+            divJungleStarCount = data.divJungleStarCount;
+            divSpaceStarCount = data.divJungleStarCount;
+
+            avocadoStickerScore = data.avocadoStickerScore;
+            toolStickerScore = data.toolStickerScore;
+            tigerStickerScore = data.tigerStickerScore;
+
+            driedfishStickerScore = data.driedfishStickerScore;
+            octopusStickerScore = data.octopusStickerScore;
+            catStickerScore = data.catStickerScore;
+
+            Debug.Log("div stickers loaded");
+        }
+        else
+        {
+            SaveScore();
+        }
+    }
+
+    public void SetLevelIndex(int index)
+    {
+        levelIndex = index;
+    }
+    public void SetWorld(int world)
+    {
+        worldIndex = world;
+    }
+
+    public void ResetScore()
+    {
+        divScore = 0;
+        scoreCount.text = divScore.ToString();
+    }
+    public void CheckStickers()
+    {
+        if (avocadoStickerScore == 1)
+        {
+            stickerOne.gameObject.SetActive(true);
+            if (worldIndex == 2)
+            {
+                levelButton1.GetComponent<Image>().sprite = completedButton;
+            }
+        }
+        if (toolStickerScore == 1)
+        {
+            stickerTwo.gameObject.SetActive(true);
+            if (worldIndex == 2)
+            {
+                levelButton2.GetComponent<Image>().sprite = completedButton;
+            }
+        }
+        if (tigerStickerScore == 1)
+        {
+            stickerThree.gameObject.SetActive(true);
+            if (worldIndex == 2)
+            {
+                levelButton3.GetComponent<Image>().sprite = completedButton;
+            }
+        }
+        if (driedfishStickerScore == 1)
+        {
+            stickerFour.gameObject.SetActive(true);
+            if (worldIndex == 3)
+            {
+                levelButton1.GetComponent<Image>().sprite = completedButton;
+            }
+        }
+        if (octopusStickerScore == 1)
+        {
+            stickerFive.gameObject.SetActive(true);
+            if (worldIndex == 3)
+            {
+                levelButton2.GetComponent<Image>().sprite = completedButton;
+            }
+        }
+        if (catStickerScore == 1)
+        {
+            stickerSix.gameObject.SetActive(true);
+            if (worldIndex == 3)
+            {
+                levelButton3.GetComponent<Image>().sprite = completedButton;
+            }
+        }
+    }
+
+    public void StarCount()
+    {
+        divJungleStarCount = avocadoStickerScore + toolStickerScore + tigerStickerScore;
+        divSpaceStarCount = driedfishStickerScore + octopusStickerScore + catStickerScore;
+    }
+
+    public void CheckStars()
+    {
+        switch (worldIndex)
+        {
+            case 2:
+                if (divJungleStarCount == 1)
+                {
+                    divStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (divJungleStarCount == 2)
+                {
+                    divStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (divJungleStarCount == 3)
+                {
+                    divStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                    divMenuButton.GetComponent<Image>().sprite = completedButton;
+                }
+                break;
+            case 3:
+                if (divSpaceStarCount == 1)
+                {
+                    divStars.GetComponent<Image>().sprite = oneStar;
+                    menuStars.GetComponent<Image>().sprite = oneStar;
+                }
+                if (divSpaceStarCount == 2)
+                {
+                    divStars.GetComponent<Image>().sprite = twoStar;
+                    menuStars.GetComponent<Image>().sprite = twoStar;
+                }
+                if (divSpaceStarCount == 3)
+                {
+                    divStars.GetComponent<Image>().sprite = threeStar;
+                    menuStars.GetComponent<Image>().sprite = threeStar;
+                    divMenuButton.GetComponent<Image>().sprite = completedButton;
+                }
+                break;
+            default:
+                Debug.Log("No level index set");
+                break;
+        }
+    }
+
+        private void Start()
+    {
+        LoadScore();
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        scoreCount.text = divScore.ToString();
         AnswerSpot.text = "?";
-        sumScore = sum.sumScore;
-        subScore = sub.subScore;
-        multScore = mult.divScore;
+
+    }
+
+    public void UpdateStickers()
+    {
+        CheckStickers();
+        StarCount();
+        CheckStars();
+        SaveScore();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //   score = int.Parse(scoreCount.text);
 
-        if (divScore >= 5)
-        {
-            stickerOne.gameObject.SetActive(true);
-            star.gameObject.SetActive(true);
-        }
-        if (divScore >= 10)
-        {
-            stickerTwo.gameObject.SetActive(true);
-
-        }
-        if (divScore >= 15)
-        {
-            stickerThree.gameObject.SetActive(true);
-
-        }
     }
 
-
-    public void DivFarm()
+    public void ResetStickers()
     {
+        avocadoStickerScore = 0;
+        toolStickerScore = 0;
+        tigerStickerScore = 0;
+        driedfishStickerScore = 0;
+        octopusStickerScore = 0;
+        catStickerScore = 0;
+        SaveScore();
+    }
 
-        firstValue = Random.Range(2, 10);
-        secondValue = Random.Range(2, 10);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
+    public void ChooseObject()
+    { }
 
-        if (firstValue - secondValue < 2)
+    public void DivJungle()
+    {
+    //secondValue = randomizer.Next(2, 11);
+    //int tempValue = randomizer.Next(2, 11);
+    //firstValue = secondValue * tempValue;
+    //quotient.Value = 0;
+
+    //if ((addend1 + addend2 == sum.Value)
+    //&& (minuend - subtrahend == difference.Value)
+    //&& (multiplicand * multiplier == product.Value)
+    //&& (dividend / divisor == quotient.Value))
+    //    return true;
+    //else
+    //    return false;
+
+        switch (levelIndex)
+        {
+                case 1:
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if(firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
+
+            finalValue = firstValue / secondValue;
+
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative2 = tempValue;
+                    break;
+                case 2:
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
+
+            finalValue = firstValue / secondValue;
+
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative2 = tempValue;
+                    break;
+                case 3:
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
+
+            finalValue = firstValue / secondValue;
+
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative2 = tempValue;
+                    break;
+                case 4:
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
+
+            finalValue = firstValue / secondValue;
+
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative2 = tempValue;
+                    break;
+                case 5:
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
+
+            finalValue = firstValue / secondValue;
+
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative2 = tempValue;
+                    break;
+                case 6:
+            firstValue = Random.Range(1, 10);
+            secondValue = Random.Range(1, 5);
+            thirdValue = firstValue * secondValue;
+            if (firstValue > secondValue)
+            {
+                fourthValue = secondValue;
+            }
+            else
+            {
+                fourthValue = firstValue;
+            }
+            FirstValue.text = thirdValue.ToString();
+            SecondValue.text = fourthValue.ToString();
+
+            finalValue = firstValue / secondValue;
+
+            //First Alterntive
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue)
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative1 = tempValue;
+            //Second Alternative
+            tempValue = Random.Range(0, 10);
+            while (tempValue == finalValue || (tempValue == Alternative1))
+            {
+                tempValue = Random.Range(0, 10);
+            }
+            Alternative2 = tempValue;
+                    break;
+        }
+
+    if (firstValue - secondValue < 2)
         {
             tempValue = secondValue;
             secondValue = firstValue;
@@ -67,7 +448,7 @@ public class DivideScript : MonoBehaviour
         }
 
         Function.text = "/";
-        finalValue = firstValue / secondValue;
+        finalValue = thirdValue / fourthValue;
 
 
         tempValue = Random.Range(2, 20);
@@ -111,21 +492,27 @@ public class DivideScript : MonoBehaviour
             Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
         }
 
-
-
-
-
         Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
     }
+
+    
+
     public void AltOne()
     {
         if (Alt1.text == finalValue.ToString())
         {
             ONE.gameObject.SetActive(true);
             button1.interactable = false;
+            button2.interactable = false;
+            button3.interactable = false;
+            ONE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
-
+        }
+        if (Alt1.text != finalValue.ToString())
+        {
+            ONE.gameObject.SetActive(true);
+            button1.interactable = false;
+            ONE.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -135,40 +522,114 @@ public class DivideScript : MonoBehaviour
         if (Alt2.text == finalValue.ToString())
         {
             TWO.gameObject.SetActive(true);
+            button1.interactable = false;
             button2.interactable = false;
+            button3.interactable = false;
+            TWO.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
         }
-
+        if (Alt2.text != finalValue.ToString())
+        {
+            TWO.gameObject.SetActive(true);
+            button2.interactable = false;
+            TWO.GetComponent<Image>().sprite = redButton;
+        }
     }
+
     public void AltThree()
     {
         if (Alt3.text == finalValue.ToString())
         {
             THREE.gameObject.SetActive(true);
+            button1.interactable = false;
+            button2.interactable = false;
             button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
-
-
+        }
+        if (Alt3.text != finalValue.ToString())
+        {
+            THREE.gameObject.SetActive(true);
+            button3.interactable = false;
+            THREE.GetComponent<Image>().sprite = redButton;
         }
     }
-    public void ResetV()
+
+
+    public void StickerScoreCount()
     {
-        if (divScore == 5)
+        switch (worldIndex)
         {
+            case 2:
+                switch (levelIndex)
+                {
+                    case 1:
+                        if (avocadoStickerScore < 1)
+                        {
+                            avocadoStickerScore += 1;
+                            Debug.Log("Avocado unlocked");
+                        }
+                        break;
+                    case 2:
+                        if (toolStickerScore < 1)
+                        {
+                            toolStickerScore += 1;
+                            Debug.Log("Tool unlocked");
+                        }
+                        break;
+                    case 3:
+                        if (tigerStickerScore < 1)
+                        {
+                            tigerStickerScore += 1;
+                            Debug.Log("Tiger unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 4:
+                        if (driedfishStickerScore < 1)
+                        {
+                            driedfishStickerScore += 1;
+                            Debug.Log("Dried fish unlocked");
+                        }
+                        break;
+                    case 5:
+                        if (octopusStickerScore < 1)
+                        {
+                            octopusStickerScore += 1;
+                            Debug.Log("Octopus unlocked");
+                        }
+                        break;
+                    case 6:
+                        if (catStickerScore < 1)
+                        {
+                            catStickerScore += 1;
+                            Debug.Log("Cat unlocked");
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+    }
+    public void ResetJungle()
+    {
+        if (divScore >= 5)
+        {
+            StickerScoreCount();
             switchOn.gameObject.SetActive(true);
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
             switchOff.gameObject.SetActive(false);
         }
-        if (divScore == 10)
-        {
-            switchOn.gameObject.SetActive(true);
-            switchOff.gameObject.SetActive(false);
-        }
-        if (divScore == 15)
-        {
-            switchOn.gameObject.SetActive(true);
-            switchOff.gameObject.SetActive(false);
-        }
+
         ONE.gameObject.SetActive(false);
         button1.interactable = true;
         TWO.gameObject.SetActive(false);
@@ -176,89 +637,35 @@ public class DivideScript : MonoBehaviour
         THREE.gameObject.SetActive(false);
         button3.interactable = true;
         AnswerSpot.text = "?";
-        DivFarm();
+        DivJungle();
+        Animal.GetComponent<Animator>().SetBool("Happy", false);
     }
+
     IEnumerator Correct()
     {
+        Animal.GetComponent<Animator>().SetBool("Happy", true);
         Score();
+        CheckStickers();
+        StarCount();
+        CheckStars();
         AnswerSpot.text = finalValue.ToString();
         scoreCount.text = divScore.ToString();
         yield return new WaitForSeconds(1f);
-        ResetV();
-
-
-
-
+        ResetJungle();
     }
-    void Score()
+
+    public void Score()
     {
         divScore += 1;
     }
 
-    public void DivJungle()
-    {
-        firstValue = Random.Range(2, 100);
-        secondValue = Random.Range(2, 100);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
-
-        if (firstValue - secondValue < 2)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
-
-        Function.text = "+";
-        finalValue = firstValue / secondValue;
-
-    }
-    public void DivSpace()
-    {
-        firstValue = Random.Range(2, 1000);
-        secondValue = Random.Range(2, 1000);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
-
-        if (firstValue - secondValue < 2)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
-
-        Function.text = "+";
-        finalValue = firstValue / secondValue;
-
-    }
-
-    public void StartFarm()
-    {
-        ResetV();
-        DivFarm();
-    }
     public void StartJungle()
     {
-        ResetV();
+        ResetJungle();
         DivJungle();
+        ResetScore();
     }
-    public void StartSpace()
-    {
-        ResetV();
-        DivSpace();
-    }
- /*   public void SaveScore()
-    {
-        saveScore.SaveSumScore(sum);
-    }
-    public void LoadScore()
-    {
-        scoreData data = saveScore.LoadSumScore();
-        sumScore = data.sumScore;
-        subScore = data.subScore;
-        multScore = data.multScore;
-        divScore = data.divScore;
-    }
- */
+
 
 }
+
