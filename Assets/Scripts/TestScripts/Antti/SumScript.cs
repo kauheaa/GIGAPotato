@@ -27,6 +27,7 @@ public class SumScript : MonoBehaviour
     public GameObject ONE, TWO, THREE, appleSpawn, apple;
     public GameObject stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix, stickerSeven, stickerEight, stickerNine;
     public GameObject sumMenuButton, levelButton1, levelButton2, levelButton3;
+    public GameObject animatedLevelEnd1, animatedLevelEnd2, animatedLevelEnd3;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject sumStars, menuStars;
     public Button button1, button2, button3;
@@ -67,7 +68,7 @@ public class SumScript : MonoBehaviour
     {
         string path = Application.persistentDataPath + "/sumscore.txt";
         if (File.Exists(path))
-        { 
+        {
             scoreData data = saveScore.LoadSumScore();
             sumStarCount = data.sumStarCount;
             sumJungleStarCount = data.sumJungleStarCount;
@@ -264,11 +265,88 @@ public class SumScript : MonoBehaviour
         AnswerSpot.text = "?";
     }
 
+    //public void UpdateLevelEnd()
+    //{
+
+    //    if (appleStickerScore == 1)
+    //    {
+    //        if (worldIndex == 1)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd1.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (basketStickerScore == 1)
+    //    {
+    //        if (worldIndex == 1)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd2.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (pigStickerScore == 1)
+    //    {
+    //        if (worldIndex == 1)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd3.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (bananaStickerScore == 1)
+    //    {
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd1.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (clusterStickerScore == 1)
+    //    {
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd2.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (monkeyStickerScore == 1)
+    //    {
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd3.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (asteroidStickerScore == 1)
+    //    {
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd1.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (blackholeStickerScore == 1)
+    //    {
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd2.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //    if (llamaStickerScore == 1)
+    //    {
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //            animatedLevelEnd3.GetComponent<Animator>().SetBool("Completed", true);
+    //        }
+    //    }
+    //}
     public void UpdateStickers()
     {
         CheckStickers();
         StarCount();
         CheckStars();
+        //UpdateLevelEnd();
         SaveScore();
     }
 
@@ -297,7 +375,7 @@ public class SumScript : MonoBehaviour
 
     public void ChooseObject()
     {
-        if(worldIndex == 1)
+        if (worldIndex == 1)
         {
             for (int i = 0; i < objectSprite.Length; i++)
             {
@@ -360,60 +438,60 @@ public class SumScript : MonoBehaviour
 
                 //second object sprite when first value is 10 or smaller
 
-                    switch (secondValue)
-                    {
-                        case 0:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
-                            break;
-                        case 1:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[1];
-                            break;
-                        case 2:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[2];
-                            break;
-                        case 3:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[3];
-                            break;
-                        case 4:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[4];
-                            break;
-                        case 5:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[5];
-                            break;
-                        case 6:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[6];
-                            break;
-                        case 7:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[7];
-                            break;
-                        case 8:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[8];
-                            break;
-                        case 9:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[9];
-                            break;
-                        case 10:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[10];
-                            break;
-                        case 11:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[11];
-                            break;
-                        case 12:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[12];
-                            break;
-                        case 13:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[13];
-                            break;
-                        case 14:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[14];
-                            break;
-                        case 15:
-                            secondObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
-                            break;
-                    }
+                switch (secondValue)
+                {
+                    case 0:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
+                        break;
+                    case 1:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[1];
+                        break;
+                    case 2:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[2];
+                        break;
+                    case 3:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[3];
+                        break;
+                    case 4:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[4];
+                        break;
+                    case 5:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[5];
+                        break;
+                    case 6:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[6];
+                        break;
+                    case 7:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[7];
+                        break;
+                    case 8:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[8];
+                        break;
+                    case 9:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[9];
+                        break;
+                    case 10:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[10];
+                        break;
+                    case 11:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[11];
+                        break;
+                    case 12:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[12];
+                        break;
+                    case 13:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[13];
+                        break;
+                    case 14:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[14];
+                        break;
+                    case 15:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
+                        break;
+                }
 
             }
-        Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
+            Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
 
         }
     }
@@ -907,7 +985,7 @@ public class SumScript : MonoBehaviour
     {
         Animal.GetComponent<Animator>().SetBool("Happy", true);
         Score();
-        AnswerSpot.text = finalValue.ToString();       
+        AnswerSpot.text = finalValue.ToString();
         scoreCount.text = sumScore.ToString();
         yield return new WaitForSeconds(1f);
         ResetV();
@@ -918,7 +996,7 @@ public class SumScript : MonoBehaviour
     {
         sumScore += 1;
     }
-  
+
     //public void SumJungle()
     //{
     //    firstValue = Random.Range(1, 100);
@@ -1051,7 +1129,7 @@ public class SumScript : MonoBehaviour
 
     //}
 
-   public void StartFarm()
+    public void StartFarm()
     {
         ResetV();
         SumFarm();
