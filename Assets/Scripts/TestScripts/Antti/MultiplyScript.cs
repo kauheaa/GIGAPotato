@@ -29,7 +29,7 @@ public class MultiplyScript : MonoBehaviour
     [SerializeField] private Transform switchOff, switchOn;
     public GameObject Animal;
 
-    //public void SaveScore()
+    //public void saveScore()
     //{
     //    saveScore.SaveMultScore(this);
     //    MultiplyScript[] tempArray = GameObject.FindObjectsOfType<MultiplyScript>();
@@ -60,7 +60,7 @@ public class MultiplyScript : MonoBehaviour
     //    }
     //    else
     //    {
-    //        SaveScore();
+    //        saveScore();
     //    }
     //}
 
@@ -198,7 +198,7 @@ public class MultiplyScript : MonoBehaviour
         //CheckStickers();
         StarCount();
         CheckStars();
-        //SaveScore();
+        //saveScore();
     }
 
     // Update is called once per frame
@@ -215,7 +215,7 @@ public class MultiplyScript : MonoBehaviour
     //    flagStickerScore = 0;
     //    rocketStickerScore = 0;
     //    laikaStickerScore = 0;
-    //    //SaveScore();
+    //    //saveScore();
     //}
 
     public void MultJungle()

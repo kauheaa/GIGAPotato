@@ -6,14 +6,15 @@ using UnityEngine.UI;
 
 public class SubScript : MonoBehaviour
 {
+    public StickerBook book;
     int firstValue, secondValue, thirdValue, fourthValue, tempValue, finalValue, Alternative1, Alternative2;
     //[SerializeField] public int sumScore = 0;
     //[SerializeField] public int divScore = 0;
     //[SerializeField] public int multScore = 0;
     [SerializeField] public int subScore = 0;
-    [SerializeField] public int subStarCount = 0;
-    [SerializeField] public int subJungleStarCount = 0;
-    [SerializeField] public int subSpaceStarCount = 0;
+    [SerializeField] public int farmStarCount = 0;
+    [SerializeField] public int jungleStarCount = 0;
+    [SerializeField] public int spaceStarCount = 0;
     [SerializeField] public int carrotStickerScore = 0;
     [SerializeField] public int bucketStickerScore = 0;
     [SerializeField] public int bunnyStickerScore = 0;
@@ -47,7 +48,7 @@ public class SubScript : MonoBehaviour
     //public Sprite[] tenObjectSprite;
 
 
-    //public void SaveScore()
+    //public void saveScore()
     //{
     //    saveScore.SaveSubScore(this);
     //    SubScript[] tempArray = GameObject.FindObjectsOfType<SubScript>();
@@ -82,7 +83,7 @@ public class SubScript : MonoBehaviour
     //    }
     //    else
     //    {
-    //        SaveScore();
+    //        saveScore();
     //    }
 
     //}
@@ -179,9 +180,9 @@ public class SubScript : MonoBehaviour
     }
     public void StarCount()
     {
-        subStarCount = carrotStickerScore + bucketStickerScore + bunnyStickerScore;
-        subJungleStarCount = coconutStickerScore + ocularsStickerScore + slothStickerScore;
-        subSpaceStarCount = starStickerScore + planetStickerScore + cowStickerScore;
+        farmStarCount = book.subFarmStarCount;
+        jungleStarCount = book.subJungleStarCount;
+        spaceStarCount = book.subSpaceStarCount;
     }
 
     public void CheckStars()
@@ -189,17 +190,17 @@ public class SubScript : MonoBehaviour
         switch (worldIndex)
         {
             case 1:
-                if (subStarCount == 1)
+                if (farmStarCount == 1)
                 {
                     subStars.GetComponent<Image>().sprite = oneStar;
                     menuStars.GetComponent<Image>().sprite = oneStar;
                 }
-                if (subStarCount == 2)
+                if (farmStarCount == 2)
                 {
                     subStars.GetComponent<Image>().sprite = twoStar;
                     menuStars.GetComponent<Image>().sprite = twoStar;
                 }
-                if (subStarCount == 3)
+                if (farmStarCount == 3)
                 {
                     subStars.GetComponent<Image>().sprite = threeStar;
                     menuStars.GetComponent<Image>().sprite = threeStar;
@@ -207,17 +208,17 @@ public class SubScript : MonoBehaviour
                 }
                 break;
             case 2:
-                if (subJungleStarCount == 1)
+                if (jungleStarCount == 1)
                 {
                     subStars.GetComponent<Image>().sprite = oneStar;
                     menuStars.GetComponent<Image>().sprite = oneStar;
                 }
-                if (subJungleStarCount == 2)
+                if (jungleStarCount == 2)
                 {
                     subStars.GetComponent<Image>().sprite = twoStar;
                     menuStars.GetComponent<Image>().sprite = twoStar;
                 }
-                if (subJungleStarCount == 3)
+                if (jungleStarCount == 3)
                 {
                     subStars.GetComponent<Image>().sprite = threeStar;
                     menuStars.GetComponent<Image>().sprite = threeStar;
@@ -225,17 +226,17 @@ public class SubScript : MonoBehaviour
                 }
                 break;
             case 3:
-                if (subSpaceStarCount == 1)
+                if (spaceStarCount == 1)
                 {
                     subStars.GetComponent<Image>().sprite = oneStar;
                     menuStars.GetComponent<Image>().sprite = oneStar;
                 }
-                if (subSpaceStarCount == 2)
+                if (spaceStarCount == 2)
                 {
                     subStars.GetComponent<Image>().sprite = twoStar;
                     menuStars.GetComponent<Image>().sprite = twoStar;
                 }
-                if (subSpaceStarCount == 3)
+                if (spaceStarCount == 3)
                 {
                     subStars.GetComponent<Image>().sprite = threeStar;
                     menuStars.GetComponent<Image>().sprite = threeStar;
@@ -262,30 +263,13 @@ public class SubScript : MonoBehaviour
         CheckStickers();
         StarCount();
         CheckStars();
-        //SaveScore();
+        //saveScore();
     }
     // Update is called once per frame
     void Update()
     {
         //   score = int.Parse(scoreCount.text);
     }
-
-    //public void ResetStickers()
-    //{
-    //    subStarCount = 0;
-    //    subJungleStarCount = 0;
-    //    subSpaceStarCount = 0;
-    //    carrotStickerScore = 0;
-    //    bucketStickerScore = 0;
-    //    bunnyStickerScore = 0;
-    //    coconutStickerScore = 0;
-    //    ocularsStickerScore = 0;
-    //    slothStickerScore = 0;
-    //    starStickerScore = 0;
-    //    planetStickerScore = 0;
-    //    cowStickerScore = 0;
-    //    SaveScore();
-    //}
 
     public void ChooseObject()
     {
@@ -406,7 +390,7 @@ public class SubScript : MonoBehaviour
         }
         Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
     }
-    public void SubFarm()
+    public void GenerateTask()
     {
         switch (levelIndex)
         {
@@ -919,7 +903,7 @@ public class SubScript : MonoBehaviour
         }
     }
 
-    public void ResetV()
+    public void ResetTask()
     {
         if (subScore >= 5)
         {
@@ -936,7 +920,7 @@ public class SubScript : MonoBehaviour
         THREE.gameObject.SetActive(false);
         button3.interactable = true;
         AnswerSpot.text = "?";
-        SubFarm();
+        GenerateTask();
         Animal.GetComponent<Animator>().SetBool("Happy", false);
     }
 
@@ -947,71 +931,18 @@ public class SubScript : MonoBehaviour
         scoreCount.text = subScore.ToString();
         Animal.GetComponent<Animator>().SetBool("Happy", true);
         yield return new WaitForSeconds(1f);
-        ResetV();
-
-
-
-
+        ResetTask();
     }
     public void Score()
     {
         subScore += 1;
     }
 
-    public void SubJungle()
+    public void StartLevel()
     {
-        firstValue = Random.Range(1, 100);
-        secondValue = Random.Range(1, 100);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
-
-        if (firstValue - secondValue < 0)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
-
-        Function.text = "+";
-        finalValue = firstValue - secondValue;
-
-    }
-    public void SubSpace()
-    {
-        firstValue = Random.Range(1, 1000);
-        secondValue = Random.Range(1, 1000);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
-
-        if (firstValue - secondValue < 0)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
-
-        Function.text = "+";
-        finalValue = firstValue - secondValue;
-
-    }
-
-    public void StartFarm()
-    {
-        ResetV();
-        SubFarm();
+        ResetTask();
+        GenerateTask();
         ResetScore();
 
     }
-    public void StartJungle()
-    {
-        ResetV();
-        SubJungle();
-    }
-    public void StartSpace()
-    {
-        ResetV();
-        SubSpace();
-    }
-
-
 }

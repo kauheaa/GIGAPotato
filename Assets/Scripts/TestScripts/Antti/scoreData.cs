@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 public class scoreData
-
 {
-    private SumScript sum;
-    private SubScript sub;
-    private CountScript count;
-    private MultiplyScript mult;
-    private DivideScript div;
-    private StickerBook book;
+    //private SumScript sum;
+    //private SubScript sub;
+    //private CountScript count;
+    //private MultiplyScript mult;
+    //private DivideScript div;
+    //public StickerBook book;
 
     // StarCounts of all categories in all worlds
-    public int sumStarCount, sumJungleStarCount, sumSpaceStarCount, subStarCount, subJungleStarCount, subSpaceStarCount, multJungleStarCount, multSpaceStarCount, divJungleStarCount, divSpaceStarCount, countStarCount;
+    public int sumFarmStarCount, sumJungleStarCount, sumSpaceStarCount;
+    public int subFarmStarCount, subJungleStarCount, subSpaceStarCount;
+    public int countFarmStarCount, countJungleStarCount, countSpaceStarCount;
+    public int multJungleStarCount, multSpaceStarCount;
+    public int divJungleStarCount, divSpaceStarCount;
 
     // Farm sticker scores
     public int appleStickerScore, basketStickerScore, pigStickerScore;
@@ -34,62 +37,52 @@ public class scoreData
 
     public scoreData(StickerBook book)
     {
-        // Load all starCounts
-        sumStarCount = book.sumStarCount;
+        sumFarmStarCount = book.sumFarmStarCount;
         sumJungleStarCount = book.sumJungleStarCount;
         sumSpaceStarCount = book.sumSpaceStarCount;
-        subStarCount = book.subStarCount;
-        subJungleStarCount = book.subStarCount;
-        subSpaceStarCount = book.subStarCount;
-        countStarCount = book.countStarCount;
+        subFarmStarCount = book.subFarmStarCount;
+        subJungleStarCount = book.subJungleStarCount;
+        subSpaceStarCount = book.subSpaceStarCount;
+        countFarmStarCount = book.countFarmStarCount;
+        countJungleStarCount = book.countJungleStarCount;
+        countSpaceStarCount = book.countSpaceStarCount;
         multJungleStarCount = book.multJungleStarCount;
         multSpaceStarCount = book.multSpaceStarCount;
         divJungleStarCount = book.divJungleStarCount;
         divSpaceStarCount = book.divSpaceStarCount;
 
-        // Load Farm stickers
         appleStickerScore = book.appleStickerScore;
         basketStickerScore = book.basketStickerScore;
         pigStickerScore = book.pigStickerScore;
-
         carrotStickerScore = book.carrotStickerScore;
         bucketStickerScore = book.bucketStickerScore;
         bunnyStickerScore = book.bunnyStickerScore;
-
         threeCornStickerScore = book.threeCornStickerScore;
         twoCornStickerScore = book.twoCornStickerScore;
         lambStickerScore = book.lambStickerScore;
 
-        // Load Jungle stickers
         bananaStickerScore = book.bananaStickerScore;
         clusterStickerScore = book.clusterStickerScore;
         monkeyStickerScore = book.monkeyStickerScore;
-
         coconutStickerScore = book.coconutStickerScore;
         ocularsStickerScore = book.ocularsStickerScore;
         slothStickerScore = book.slothStickerScore;
-
         lycheeStickerScore = book.lycheeStickerScore;
         pitahayaStickerScore = book.pitahayaStickerScore;
         frogStickerScore = book.frogStickerScore;
-
         avocadoStickerScore = book.avocadoStickerScore;
         toolStickerScore = book.toolStickerScore;
         tigerStickerScore = book.tigerStickerScore;
 
-        // Load Space stickers
         asteroidStickerScore = book.asteroidStickerScore;
         blackholeStickerScore = book.blackholeStickerScore;
         llamaStickerScore = book.llamaStickerScore;
-
         starStickerScore = book.starStickerScore;
         planetStickerScore = book.planetStickerScore;
         cowStickerScore = book.cowStickerScore;
-
         flagStickerScore = book.flagStickerScore;
         rocketStickerScore = book.rocketStickerScore;
         laikaStickerScore = book.laikaStickerScore;
-
         driedfishStickerScore = book.driedfishStickerScore;
         octopusStickerScore = book.octopusStickerScore;
         catStickerScore = book.catStickerScore;
@@ -172,25 +165,25 @@ public class scoreData
 
 
 
-    /*public sumScoreData(SumScript sum)
+    /*public sumscoreData(SumScript sum)
     {
         sumScore = sum.sumScore;
     }
 
     
-    public subScoreData(SubScript sub)
+    public subscoreData(SubScript sub)
     {
         subScore = sub.subScore;
 
 
     }
-    public divScoreData(DivideScript div)
+    public divscoreData(DivideScript div)
     {
         divScore = div.divScore;
 
 
     }
-    public multScoreData(MultiplyScript mult)
+    public multscoreData(MultiplyScript mult)
      {
          multScore = mult.multScore;
 

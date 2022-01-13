@@ -3771,6 +3771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973064300803673500}
   - component: {fileID: 8526706297711603445}
+  - component: {fileID: 7147586787748065954}
   - component: {fileID: 973064300803673496}
   - component: {fileID: 973064300803673497}
   - component: {fileID: 973064300803673502}
@@ -3818,13 +3819,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df0da8921302ad4b921b1fca8f10f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumStarCount: 0
+  starCount: {fileID: 7147586787748065954}
+  bookIndex: 0
+  worldIndex: 0
+  sumFarmStarCount: 0
   sumJungleStarCount: 0
   sumSpaceStarCount: 0
-  subStarCount: 0
+  subFarmStarCount: 0
   subJungleStarCount: 0
   subSpaceStarCount: 0
-  countStarCount: 0
+  countFarmStarCount: 0
+  countJungleStarCount: 0
+  countSpaceStarCount: 0
   multJungleStarCount: 0
   multSpaceStarCount: 0
   divJungleStarCount: 0
@@ -3906,6 +3912,53 @@ MonoBehaviour:
   statsSpace: {fileID: 5213647773412931898}
   congrats: {fileID: 5005477708751816636}
   allCollected: {fileID: 3137945999196406248}
+--- !u!114 &7147586787748065954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973064300803673501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  book: {fileID: 8526706297711603445}
+  worldIndex: 0
+  levelIndex: 0
+  sumMenuButton: {fileID: 0}
+  subMenuButton: {fileID: 0}
+  countMenuButton: {fileID: 0}
+  multMenuButton: {fileID: 0}
+  divMenuButton: {fileID: 0}
+  completedButton: {fileID: 0}
+  oneStar: {fileID: 0}
+  twoStar: {fileID: 0}
+  threeStar: {fileID: 0}
+  sumStars: {fileID: 0}
+  sumMenuStars: {fileID: 0}
+  subStars: {fileID: 0}
+  subMenuStars: {fileID: 0}
+  countStars: {fileID: 0}
+  countMenuStars: {fileID: 0}
+  multStars: {fileID: 0}
+  multMenuStars: {fileID: 0}
+  divStars: {fileID: 0}
+  divMenuStars: {fileID: 0}
+  sumFarmStarCount: 0
+  sumJungleStarCount: 0
+  sumSpaceStarCount: 0
+  subFarmStarCount: 0
+  subJungleStarCount: 0
+  subSpaceStarCount: 0
+  countFarmStarCount: 0
+  countJungleStarCount: 0
+  countSpaceStarCount: 0
+  multJungleStarCount: 0
+  multSpaceStarCount: 0
+  divJungleStarCount: 0
+  divSpaceStarCount: 0
 --- !u!223 &973064300803673496
 Canvas:
   m_ObjectHideFlags: 0

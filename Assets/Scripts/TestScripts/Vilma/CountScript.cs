@@ -8,6 +8,7 @@ using System.IO;
 // "CountScript" is your "QuizManager"
 public class CountScript : MonoBehaviour
 {
+    public StickerBook book;
     public List<QuestionAndAnswers> QnA;
     public GameObject[] options;
     public int currentQuestion;
@@ -22,8 +23,9 @@ public class CountScript : MonoBehaviour
     // These are needed for Stickers, Starcount and saving
     public int levelIndex = 0;
     public int worldIndex = 0;
-    [SerializeField] public int countStarCount = 0;
-    [SerializeField] public int countSpaceStarCount = 0;
+    [SerializeField] public int farmStarCount = 0;
+    [SerializeField] public int jungleStarCount = 0;
+    [SerializeField] public int spaceStarCount = 0;
     [SerializeField] public int threeCornStickerScore = 0;
     [SerializeField] public int twoCornStickerScore = 0;
     [SerializeField] public int lambStickerScore = 0;
@@ -35,7 +37,7 @@ public class CountScript : MonoBehaviour
     public GameObject Animal;
 
     // saves sticker score and updates it to all instances of same script in the scene
-    //public void SaveScore()
+    //public void saveScore()
     //{
     //    saveScore.SaveCountScore(this);
     //    CountScript[] tempArray = GameObject.FindObjectsOfType<CountScript>();
@@ -62,7 +64,7 @@ public class CountScript : MonoBehaviour
     //    }
     //    else
     //    {
-    //        SaveScore();
+    //        saveScore();
     //    }
     //}
   
@@ -142,19 +144,21 @@ public class CountScript : MonoBehaviour
     // Unlocks a star each time a sticker is unlocked
     public void UnlockStars()
     {
-        countStarCount = threeCornStickerScore + twoCornStickerScore + lambStickerScore;
+        farmStarCount = book.countFarmStarCount;
+        jungleStarCount = book.countJungleStarCount;
+        spaceStarCount = book.countSpaceStarCount;
 
-        if (countStarCount == 1)
+        if (farmStarCount == 1)
         {
             countStars.GetComponent<Image>().sprite = oneStar;
             menuStars.GetComponent<Image>().sprite = oneStar;
         }
-        if (countStarCount == 2)
+        if (farmStarCount == 2)
         {
             countStars.GetComponent<Image>().sprite = twoStar;
             menuStars.GetComponent<Image>().sprite = twoStar;
         }
-        if (countStarCount == 3)
+        if (farmStarCount == 3)
         {
             countStars.GetComponent<Image>().sprite = threeStar;
             menuStars.GetComponent<Image>().sprite = threeStar;
@@ -187,15 +191,7 @@ public class CountScript : MonoBehaviour
         //CheckStickers();
         UnlockStickers();
         UnlockStars();
-        //SaveScore();
-    }
-    public void ResetStickers()
-    {
-        countStarCount = 0;
-        threeCornStickerScore = 0;
-        twoCornStickerScore = 0;
-        lambStickerScore = 0;
-        //SaveScore();
+        //saveScore();
     }
 
     //  I'm not sure if this is needed at all, or if ResetScore is enough on it's own. Depends on how replaying the level will work..?

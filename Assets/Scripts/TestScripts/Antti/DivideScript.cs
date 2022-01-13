@@ -32,7 +32,7 @@ public class DivideScript : MonoBehaviour
 
 
 
-    //public void SaveScore()
+    //public void saveScore()
     //{
     //    saveScore.SaveDivScore(this);
 
@@ -68,7 +68,7 @@ public class DivideScript : MonoBehaviour
     //    }
     //    else
     //    {
-    //        SaveScore();
+    //        saveScore();
     //    }
     //}
 
@@ -206,7 +206,7 @@ public class DivideScript : MonoBehaviour
         //CheckStickers();
         StarCount();
         CheckStars();
-        //SaveScore();
+        //saveScore();
     }
 
     // Update is called once per frame
@@ -223,7 +223,7 @@ public class DivideScript : MonoBehaviour
     //    driedfishStickerScore = 0;
     //    octopusStickerScore = 0;
     //    catStickerScore = 0;
-    //    //SaveScore();
+    //    //saveScore();
     //}
 
     public void ChooseObject()

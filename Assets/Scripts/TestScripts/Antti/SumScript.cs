@@ -6,263 +6,86 @@ using UnityEngine.UI;
 
 public class SumScript : MonoBehaviour
 {
-    public StickerBook book;
-    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    [SerializeField] public int sumScore = 0;
-    [SerializeField] public int sumStarCount = 0;
-    [SerializeField] public int sumJungleStarCount = 0;
-    [SerializeField] public int sumSpaceStarCount = 0;
-    //[SerializeField] public int appleStickerScore = 0;
-    //[SerializeField] public int basketStickerScore = 0;
-    //[SerializeField] public int pigStickerScore = 0;
-    //[SerializeField] public int bananaStickerScore = 0;
-    //[SerializeField] public int clusterStickerScore = 0;
-    //[SerializeField] public int monkeyStickerScore = 0;
-    //[SerializeField] public int asteroidStickerScore = 0;
-    //[SerializeField] public int blackholeStickerScore = 0;
-    //[SerializeField] public int llamaStickerScore = 0;
-    public int levelIndex = 0;
-    public int worldIndex = 0;
-    private int stick1, stick2, stick3;
-    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple;
-    public GameObject stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix, stickerSeven, stickerEight, stickerNine;
-    public GameObject sumMenuButton, levelButton1, levelButton2, levelButton3;
-    //public GameObject animatedLevelEnd1, animatedLevelEnd2, animatedLevelEnd3;
-    public Sprite oneStar, twoStar, threeStar;
-    public GameObject sumStars, menuStars;
-    public Button button1, button2, button3;
-    public Sprite blueButton, redButton, greenButton, completedButton;
-    [SerializeField] private Transform switchOff, switchOn;
-    public GameObject Animal;
+    public StickerBook book; // StickerBook
+    public StarCount starCount; // StarCount
 
-    public GameObject firstObjectSlot;
-    public GameObject secondObjectSlot;
+    // MENU
+    public GameObject levelButton1, levelButton2, levelButton3; // Category and Level buttons which' sprites change when category or level is completed
+    public Sprite completedButton; // Sprite for completed level and category button
 
-    //public GameObject firstTenObjectSlot;
-    //public GameObject firstHundredObjectSlot;
-    //public GameObject firstOverTenSlot;
+    // LEVEL
+    public int worldIndex = 0; // Number defining world (1 = Farm, 2 = Jungle, 3 = Space)
+    public int levelIndex = 0; // Number of level in category
+    public GameObject Animal; // Character that reacts to answers
+    [SerializeField] private Transform level, levelEnd; // level and level end canvas that are opened and closed when score is 5
+    public GameObject animatedLevelEnd; // LevelEnd with flying sticker and Next button, different if level has been completed before
+    [SerializeField] public int sumScore = 0; // Temporary level score, reset after unlocking sticker or restarting level
+    public int task = 0; // Tells the running number of the current task in level
 
-    //public GameObject secondTenObjectSlot;
-    //public GameObject secondHundredObjectSlot;
-    //public GameObject secondOverTenSlot;
+    // TASK
+    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2; // Task calculation values
+    public Text FirstValue, SecondValue, Function, AnswerSpot, taskNumber; // Text boxes for task calculation values
 
-    public Sprite[] objectSprite;
-    //public Sprite[] tenObjectSprite;
+    // ANSWER BUTTONS
+    public Text Alt1, Alt2, Alt3;
+    public Button button1, button2, button3; // Task answer buttons
+    public GameObject ONE, TWO, THREE; // Answer button's children image object that are unlocked when answer is clicked, sprite changes to red or green
+    public Sprite blueButton, redButton, greenButton; // Sprites for answer buttons
 
-    //public void SaveScore()
-    //{
-    //    saveScore.SaveSumScore(this);
+    // COUNTABLE OBJECT
+    public GameObject firstObjectSlot; // Countable object that changes based on task's firstValue
+    public GameObject secondObjectSlot; // Countable object that changes based on task's secondValue
+    public Sprite[] objectSprite; // List of countable object sprites for different numbers
 
-    //    //luo väliaikaisen listan, joka etsii hierarkiassa olevat sumScore instanssit ja käy läpi,
-    //    //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
-    //    //näin kaikissa sumScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
-    //    //ei ylikirjoita arvoja nollaksi 
-    //    SumScript[] tempArray = GameObject.FindObjectsOfType<SumScript>();
-    //    foreach (SumScript i in tempArray)
-    //    {
-    //        i.LoadScore();
-    //    }
-
-    //}
-    //public void LoadScore()
-    //{
-    //    string path = Application.persistentDataPath + "/sumscore.txt";
-    //    if (File.Exists(path))
-    //    {
-    //        scoreData data = saveScore.LoadSumScore();
-    //        sumStarCount = data.sumStarCount;
-    //        sumJungleStarCount = data.sumJungleStarCount;
-    //        sumSpaceStarCount = data.sumSpaceStarCount;
-
-    //        appleStickerScore = data.appleStickerScore;
-    //        basketStickerScore = data.basketStickerScore;
-    //        pigStickerScore = data.pigStickerScore;
-
-    //        bananaStickerScore = data.bananaStickerScore;
-    //        clusterStickerScore = data.clusterStickerScore;
-    //        monkeyStickerScore = data.monkeyStickerScore;
-
-    //        asteroidStickerScore = data.asteroidStickerScore;
-    //        blackholeStickerScore = data.blackholeStickerScore;
-    //        llamaStickerScore = data.llamaStickerScore;
-    //        Debug.Log("sum stickers loaded");
-    //    }
-    //    else
-    //    {
-    //        SaveScore();
-    //    }
-    //}
-
+    public void CountStars() // Checks StarCounts and updates stars
+    {
+        starCount.SumStarCount();
+    }
+    public void Save()      // Saves Stickers and StarCounts
+    {
+        book.SaveBook();
+    }
+    public void Load()      // Loads saved Stickers and StarCounts or creates empty save if there is none
+    {
+        book.LoadBook();
+    }
     public void SetLevelIndex(int index)
     {
         levelIndex = index;
     }
-
     public void SetWorld(int world)
     {
-        worldIndex = world;
+        worldIndex = book.worldIndex;
+    }
+    public void SetTaskNumber()
+    {
+        task = sumScore + 1;
     }
 
-    public void ResetScore()
+    public void ResetScore() // resets temporart level score
     {
         sumScore = 0;
-        scoreCount.text = sumScore.ToString();
-    }
-    //public void CheckStickers()
-    //{
-    //    if (appleStickerScore == 1)
-    //    {
-    //        stickerOne.gameObject.SetActive(true);
-    //        if (worldIndex == 1)
-    //        {
-    //            levelButton1.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (basketStickerScore == 1)
-    //    {
-    //        stickerTwo.gameObject.SetActive(true);
-    //        if (worldIndex == 1)
-    //        {
-    //            levelButton2.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (pigStickerScore == 1)
-    //    {
-    //        stickerThree.gameObject.SetActive(true);
-    //        if (worldIndex == 1)
-    //        {
-    //            levelButton3.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (bananaStickerScore == 1)
-    //    {
-    //        stickerFour.gameObject.SetActive(true);
-    //        if (worldIndex == 2)
-    //        {
-    //            levelButton1.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (clusterStickerScore == 1)
-    //    {
-    //        stickerFive.gameObject.SetActive(true);
-    //        if (worldIndex == 2)
-    //        {
-    //            levelButton2.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (monkeyStickerScore == 1)
-    //    {
-    //        stickerSix.gameObject.SetActive(true);
-    //        if (worldIndex == 2)
-    //        {
-    //            levelButton3.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (asteroidStickerScore == 1)
-    //    {
-    //        stickerSeven.gameObject.SetActive(true);
-    //        if (worldIndex == 3)
-    //        {
-    //            levelButton1.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (blackholeStickerScore == 1)
-    //    {
-    //        stickerEight.gameObject.SetActive(true);
-    //        if (worldIndex == 3)
-    //        {
-    //            levelButton2.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //    if (llamaStickerScore == 1)
-    //    {
-    //        stickerNine.gameObject.SetActive(true);
-    //        if (worldIndex == 3)
-    //        {
-    //            levelButton3.GetComponent<Image>().sprite = completedButton;
-    //        }
-    //    }
-    //}
-
-    //public void StarCount()
-    //{
-    //    sumStarCount = book.appleStickerScore + book.basketStickerScore + book.pigStickerScore;
-    //    sumJungleStarCount = book.bananaStickerScore + book.clusterStickerScore + book.monkeyStickerScore;
-    //    sumSpaceStarCount = book.asteroidStickerScore + book.blackholeStickerScore + book.llamaStickerScore;
-    //}
-
-    public void CheckStars()
-    {
-        switch (worldIndex)
-        {
-            case 1:
-                if (sumStarCount == 1)
-                {
-                    sumStars.GetComponent<Image>().sprite = oneStar;
-                    menuStars.GetComponent<Image>().sprite = oneStar;
-                }
-                if (sumStarCount == 2)
-                {
-                    sumStars.GetComponent<Image>().sprite = twoStar;
-                    menuStars.GetComponent<Image>().sprite = twoStar;
-                }
-                if (sumStarCount == 3)
-                {
-                    sumStars.GetComponent<Image>().sprite = threeStar;
-                    menuStars.GetComponent<Image>().sprite = threeStar;
-                    sumMenuButton.GetComponent<Image>().sprite = completedButton;
-                }
-                break;
-            case 2:
-                if (sumJungleStarCount == 1)
-                {
-                    sumStars.GetComponent<Image>().sprite = oneStar;
-                    menuStars.GetComponent<Image>().sprite = oneStar;
-                }
-                if (sumJungleStarCount == 2)
-                {
-                    sumStars.GetComponent<Image>().sprite = twoStar;
-                    menuStars.GetComponent<Image>().sprite = twoStar;
-                }
-                if (sumJungleStarCount == 3)
-                {
-                    sumStars.GetComponent<Image>().sprite = threeStar;
-                    menuStars.GetComponent<Image>().sprite = threeStar;
-                    sumMenuButton.GetComponent<Image>().sprite = completedButton;
-                }
-                break;
-            case 3:
-                if (sumSpaceStarCount == 1)
-                {
-                    sumStars.GetComponent<Image>().sprite = oneStar;
-                    menuStars.GetComponent<Image>().sprite = oneStar;
-                }
-                if (sumSpaceStarCount == 2)
-                {
-                    sumStars.GetComponent<Image>().sprite = twoStar;
-                    menuStars.GetComponent<Image>().sprite = twoStar;
-                }
-                if (sumSpaceStarCount == 3)
-                {
-                    sumStars.GetComponent<Image>().sprite = threeStar;
-                    menuStars.GetComponent<Image>().sprite = threeStar;
-                    sumMenuButton.GetComponent<Image>().sprite = completedButton;
-                }
-                break;
-            default:
-                Debug.Log("No level index set");
-                break;
-        }
     }
 
-    private void Start()
+    public void Score() // score defines when level end pops up
     {
-        //LoadScore();
-        //CheckStickers();
-        //StarCount();
-        //CheckStars();
-        scoreCount.text = sumScore.ToString();
+        sumScore += 1;
+        SetTaskNumber();
+    }
+
+    public void AnimatedLevelEnd()
+    {
+
+    }
+
+
+        private void Start()
+    {
+        completedButton = starCount.completedButton;
+        Load();
+        CountStars();
+        SetTaskNumber();
+        taskNumber.text = task + "/5";
         AnswerSpot.text = "?";
     }
 
@@ -342,38 +165,8 @@ public class SumScript : MonoBehaviour
     //        }
     //    }
     //}
-    public void UpdateStickers()
-    {
-        //CheckStickers();
-        book.StarCount();
-        CheckStars();
-        //SaveScore();
-        //UpdateLevelEnd();
-        
-    }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    //public void ResetStickers()
-    //{
-    //    sumStarCount = 0;
-    //    sumJungleStarCount = 0;
-    //    sumSpaceStarCount = 0;
-    //    appleStickerScore = 0;
-    //    basketStickerScore = 0;
-    //    pigStickerScore = 0;
-    //    bananaStickerScore = 0;
-    //    clusterStickerScore = 0;
-    //    monkeyStickerScore = 0;
-    //    asteroidStickerScore = 0;
-    //    blackholeStickerScore = 0;
-    //    llamaStickerScore = 0;
-    //    SaveScore();
-    //}
 
     public void ChooseObject()
     {
@@ -382,9 +175,7 @@ public class SumScript : MonoBehaviour
             for (int i = 0; i < objectSprite.Length; i++)
             {
                 //FIRST CALCULATION OBJECT SPRITE
-
-                //first object sprite when first value is 10 or smaller
-                switch (firstValue)
+                switch (firstValue) //first object sprite when first value is 10 or smaller
                 {
                     case 0:
                         firstObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
@@ -437,10 +228,7 @@ public class SumScript : MonoBehaviour
                 }
 
                 //SECOND OBJECT SPRITE
-
-                //second object sprite when first value is 10 or smaller
-
-                switch (secondValue)
+                switch (secondValue) //second object sprite when first value is 10 or smaller
                 {
                     case 0:
                         secondObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
@@ -491,14 +279,13 @@ public class SumScript : MonoBehaviour
                         secondObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
                         break;
                 }
-
             }
             Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
-
         }
     }
 
-    public void SumFarm()
+    // Task calculation randomization
+    public void GenerateTask()
     {
         switch (levelIndex)
         {
@@ -828,7 +615,7 @@ public class SumScript : MonoBehaviour
         }
     }
 
-    public void stickerScoreCount()
+    public void StickerScoreCount()
     {
         switch (worldIndex)
         {
@@ -836,21 +623,16 @@ public class SumScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 1:
-                        book.unlockApple();
+                        book.UnlockApple();
+                        levelButton1.GetComponent<Image>().sprite = completedButton;
                         break;
                     case 2:
-                        if (book.basketStickerScore < 1)
-                        {
-                            book.basketStickerScore += 1;
-                            Debug.Log("Basket unlocked");
-                        }
+                        book.UnlockBasket();
+                        levelButton2.GetComponent<Image>().sprite = completedButton;
                         break;
                     case 3:
-                        if (book.pigStickerScore < 1)
-                        {
-                            book.pigStickerScore += 1;
-                            Debug.Log("Pig unlocked");
-                        }
+                        book.UnlockPig();
+                        levelButton3.GetComponent<Image>().sprite = completedButton;
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -861,25 +643,16 @@ public class SumScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 4:
-                        if (book.bananaStickerScore < 1)
-                        {
-                            book.bananaStickerScore += 1;
-                            Debug.Log("Banana unlocked");
-                        }
+                        book.UnlockBanana();
+                        levelButton1.GetComponent<Image>().sprite = completedButton;
                         break;
                     case 5:
-                        if (book.clusterStickerScore < 1)
-                        {
-                            book.clusterStickerScore += 1;
-                            Debug.Log("Cluster unlocked");
-                        }
+                        book.UnlockCluster();
+                        levelButton2.GetComponent<Image>().sprite = completedButton;
                         break;
                     case 6:
-                        if (book.monkeyStickerScore < 1)
-                        {
-                            book.monkeyStickerScore += 1;
-                            Debug.Log("Monkey unlocked");
-                        }
+                        book.UnlockMonkey();
+                        levelButton3.GetComponent<Image>().sprite = completedButton;
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -890,25 +663,16 @@ public class SumScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 7:
-                        if (book.asteroidStickerScore < 1)
-                        {
-                            book.asteroidStickerScore += 1;
-                            Debug.Log("Asteroid unlocked");
-                        }
+                        book.UnlockAsteroid();
+                        levelButton1.GetComponent<Image>().sprite = completedButton;
                         break;
                     case 8:
-                        if (book.blackholeStickerScore < 1)
-                        {
-                            book.blackholeStickerScore += 1;
-                            Debug.Log("Blackhole unlocked");
-                        }
+                        book.UnlockBlackhole();
+                        levelButton2.GetComponent<Image>().sprite = completedButton;
                         break;
                     case 9:
-                        if (book.llamaStickerScore < 1)
-                        {
-                            book.llamaStickerScore += 1;
-                            Debug.Log("Llama unlocked");
-                        }
+                        book.UnlockLlama();
+                        levelButton3.GetComponent<Image>().sprite = completedButton;
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -916,237 +680,50 @@ public class SumScript : MonoBehaviour
                 }
                 break;
         }
+        book.UpdateStickers();
     }
-    public void ResetV()
+    public void ResetTask()
     {
         if (sumScore >= 5)
         {
-            stickerScoreCount();
-            switchOn.gameObject.SetActive(true);
+            StickerScoreCount();
+            levelEnd.gameObject.SetActive(true);
             Animal.GetComponent<Animator>().SetBool("Dance", true);
-            switchOff.gameObject.SetActive(false);
+            level.gameObject.SetActive(false);
         }
-
-        ONE.gameObject.SetActive(false);
-        button1.interactable = true;
-        TWO.gameObject.SetActive(false);
-        button2.interactable = true;
-        THREE.gameObject.SetActive(false);
-        button3.interactable = true;
-        AnswerSpot.text = "?";
-        SumFarm();
-        Animal.GetComponent<Animator>().SetBool("Happy", false);
+        else
+        {
+            SetTaskNumber();
+            taskNumber.text = task + "/5";
+            ONE.gameObject.SetActive(false);
+            button1.interactable = true;
+            TWO.gameObject.SetActive(false);
+            button2.interactable = true;
+            THREE.gameObject.SetActive(false);
+            button3.interactable = true;
+            AnswerSpot.text = "?";
+            GenerateTask();
+            Animal.GetComponent<Animator>().SetBool("Happy", false);
+        }
     }
-
-    //public void ResetJungle()
-    //{
-    //    {
-    //        if (sumScore >= 5)
-    //        {
-    //            switchOn.gameObject.SetActive(true);
-    //            switchOff.gameObject.SetActive(false);
-    //            stickerScoreCount();
-    //        }
-
-    //        ONE.gameObject.SetActive(false);
-    //        button1.interactable = true;
-    //        TWO.gameObject.SetActive(false);
-    //        button2.interactable = true;
-    //        THREE.gameObject.SetActive(false);
-    //        button3.interactable = true;
-    //        AnswerSpot.text = "?";
-    //        SumJungle();
-    //    }
-    //}
-    //public void ResetSpace()
-    //{
-    //    {
-    //        if (sumScore >= 5)
-    //        {
-    //            switchOn.gameObject.SetActive(true);
-    //            switchOff.gameObject.SetActive(false);
-    //            stickerScoreCount();
-    //        }
-
-    //        ONE.gameObject.SetActive(false);
-    //        button1.interactable = true;
-    //        TWO.gameObject.SetActive(false);
-    //        button2.interactable = true;
-    //        THREE.gameObject.SetActive(false);
-    //        button3.interactable = true;
-    //        AnswerSpot.text = "?";
-    //        SumSpace();
-    //    }
-    //}
 
     IEnumerator Correct()
     {
         Animal.GetComponent<Animator>().SetBool("Happy", true);
         Score();
         AnswerSpot.text = finalValue.ToString();
-        scoreCount.text = sumScore.ToString();
         yield return new WaitForSeconds(1f);
-        ResetV();
-
+        ResetTask();
     }
 
-    public void Score()
+    public void StartLevel()
     {
-        sumScore += 1;
-    }
-
-    //public void SumJungle()
-    //{
-    //    firstValue = Random.Range(1, 100);
-    //    secondValue = Random.Range(1, 100);
-    //    FirstValue.text = firstValue.ToString();
-    //    SecondValue.text = secondValue.ToString();
-
-    //    if (firstValue - secondValue < 0)
-    //    {
-    //        tempValue = secondValue;
-    //        secondValue = firstValue;
-    //        firstValue = tempValue;
-    //    }
-
-    //    Function.text = "+";
-    //    finalValue = firstValue + secondValue;
-
-    //    tempValue = Random.Range(30, 200);
-    //    while (tempValue == finalValue)
-    //    {
-    //        tempValue = Random.Range(30, 200);
-    //    }
-    //    Alternative1 = tempValue;
-
-    //    //Second Alternative
-    //    tempValue = Random.Range(30, 200);
-    //    while (tempValue == finalValue || (tempValue == Alternative1))
-    //    {
-    //        tempValue = Random.Range(30, 200);
-    //    }
-    //    Alternative2 = tempValue;
-
-    //    tempValue = Random.Range(1, 6);
-    //    if (tempValue == 1)
-    //    {
-    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
-    //    }
-    //    if (tempValue == 2)
-    //    {
-    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
-    //    }
-    //    if (tempValue == 3)
-    //    {
-    //        Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
-    //    }
-    //    if (tempValue == 4)
-    //    {
-    //        Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
-    //    }
-    //    if (tempValue == 5)
-    //    {
-    //        Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
-    //    }
-    //    if (tempValue == 6)
-    //    {
-    //        Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
-    //    }
-
-
-
-
-
-    //    Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
-
-    //}
-    //public void SumSpace()
-    //{
-    //    firstValue = Random.Range(1, 1000);
-    //    secondValue = Random.Range(1, 1000);
-    //    FirstValue.text = firstValue.ToString();
-    //    SecondValue.text = secondValue.ToString();
-
-    //    if (firstValue - secondValue < 0)
-    //    {
-    //        tempValue = secondValue;
-    //        secondValue = firstValue;
-    //        firstValue = tempValue;
-    //    }
-
-    //    Function.text = "+";
-    //    finalValue = firstValue + secondValue;
-
-
-    //    tempValue = Random.Range(50, 1900);
-    //    while (tempValue == finalValue)
-    //    {
-    //        tempValue = Random.Range(50, 1900);
-    //    }
-    //    Alternative1 = tempValue;
-
-    //    //Second Alternative
-    //    tempValue = Random.Range(50, 1900);
-    //    while (tempValue == finalValue || (tempValue == Alternative1))
-    //    {
-    //        tempValue = Random.Range(50, 1900);
-    //    }
-    //    Alternative2 = tempValue;
-
-    //    tempValue = Random.Range(1, 6);
-    //    if (tempValue == 1)
-    //    {
-    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = Alternative2.ToString();
-    //    }
-    //    if (tempValue == 2)
-    //    {
-    //        Alt1.text = finalValue.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = Alternative1.ToString();
-    //    }
-    //    if (tempValue == 3)
-    //    {
-    //        Alt1.text = Alternative1.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative2.ToString();
-    //    }
-    //    if (tempValue == 4)
-    //    {
-    //        Alt1.text = Alternative1.ToString(); Alt2.text = Alternative2.ToString(); Alt3.text = finalValue.ToString();
-    //    }
-    //    if (tempValue == 5)
-    //    {
-    //        Alt1.text = Alternative2.ToString(); Alt2.text = finalValue.ToString(); Alt3.text = Alternative1.ToString();
-    //    }
-    //    if (tempValue == 6)
-    //    {
-    //        Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
-    //    }
-
-
-
-
-
-    //    Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
-
-    //}
-
-    public void StartFarm()
-    {
-        ResetV();
-        SumFarm();
+        ResetTask();
+        GenerateTask();
         ResetScore();
+    }
+    void Update()
+    {
 
     }
-
-    //public void StartJungle()
-    //{
-    //    ResetJungle();
-    //    SumJungle();
-    //    ResetScore();
-    //}
-    //public void StartSpace()
-    //{
-    //    ResetSpace();
-    //    SumSpace();
-    //    ResetScore();
-    //}
-
-
 }
