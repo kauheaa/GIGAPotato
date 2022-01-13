@@ -6,20 +6,21 @@ using UnityEngine.UI;
 
 public class SumScript : MonoBehaviour
 {
+    public StickerBook book;
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
     [SerializeField] public int sumScore = 0;
     [SerializeField] public int sumStarCount = 0;
     [SerializeField] public int sumJungleStarCount = 0;
     [SerializeField] public int sumSpaceStarCount = 0;
-    [SerializeField] public int appleStickerScore = 0;
-    [SerializeField] public int basketStickerScore = 0;
-    [SerializeField] public int pigStickerScore = 0;
-    [SerializeField] public int bananaStickerScore = 0;
-    [SerializeField] public int clusterStickerScore = 0;
-    [SerializeField] public int monkeyStickerScore = 0;
-    [SerializeField] public int asteroidStickerScore = 0;
-    [SerializeField] public int blackholeStickerScore = 0;
-    [SerializeField] public int llamaStickerScore = 0;
+    //[SerializeField] public int appleStickerScore = 0;
+    //[SerializeField] public int basketStickerScore = 0;
+    //[SerializeField] public int pigStickerScore = 0;
+    //[SerializeField] public int bananaStickerScore = 0;
+    //[SerializeField] public int clusterStickerScore = 0;
+    //[SerializeField] public int monkeyStickerScore = 0;
+    //[SerializeField] public int asteroidStickerScore = 0;
+    //[SerializeField] public int blackholeStickerScore = 0;
+    //[SerializeField] public int llamaStickerScore = 0;
     public int levelIndex = 0;
     public int worldIndex = 0;
     private int stick1, stick2, stick3;
@@ -27,7 +28,7 @@ public class SumScript : MonoBehaviour
     public GameObject ONE, TWO, THREE, appleSpawn, apple;
     public GameObject stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix, stickerSeven, stickerEight, stickerNine;
     public GameObject sumMenuButton, levelButton1, levelButton2, levelButton3;
-    public GameObject animatedLevelEnd1, animatedLevelEnd2, animatedLevelEnd3;
+    //public GameObject animatedLevelEnd1, animatedLevelEnd2, animatedLevelEnd3;
     public Sprite oneStar, twoStar, threeStar;
     public GameObject sumStars, menuStars;
     public Button button1, button2, button3;
@@ -49,49 +50,49 @@ public class SumScript : MonoBehaviour
     public Sprite[] objectSprite;
     //public Sprite[] tenObjectSprite;
 
-    public void SaveScore()
-    {
-        saveScore.SaveSumScore(this);
+    //public void SaveScore()
+    //{
+    //    saveScore.SaveSumScore(this);
 
-        //luo väliaikaisen listan, joka etsii hierarkiassa olevat sumScore instanssit ja käy läpi,
-        //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
-        //näin kaikissa sumScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
-        //ei ylikirjoita arvoja nollaksi 
-        SumScript[] tempArray = GameObject.FindObjectsOfType<SumScript>();
-        foreach (SumScript i in tempArray)
-        {
-            i.LoadScore();
-        }
+    //    //luo väliaikaisen listan, joka etsii hierarkiassa olevat sumScore instanssit ja käy läpi,
+    //    //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
+    //    //näin kaikissa sumScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+    //    //ei ylikirjoita arvoja nollaksi 
+    //    SumScript[] tempArray = GameObject.FindObjectsOfType<SumScript>();
+    //    foreach (SumScript i in tempArray)
+    //    {
+    //        i.LoadScore();
+    //    }
 
-    }
-    public void LoadScore()
-    {
-        string path = Application.persistentDataPath + "/sumscore.txt";
-        if (File.Exists(path))
-        {
-            scoreData data = saveScore.LoadSumScore();
-            sumStarCount = data.sumStarCount;
-            sumJungleStarCount = data.sumJungleStarCount;
-            sumSpaceStarCount = data.sumSpaceStarCount;
+    //}
+    //public void LoadScore()
+    //{
+    //    string path = Application.persistentDataPath + "/sumscore.txt";
+    //    if (File.Exists(path))
+    //    {
+    //        scoreData data = saveScore.LoadSumScore();
+    //        sumStarCount = data.sumStarCount;
+    //        sumJungleStarCount = data.sumJungleStarCount;
+    //        sumSpaceStarCount = data.sumSpaceStarCount;
 
-            appleStickerScore = data.appleStickerScore;
-            basketStickerScore = data.basketStickerScore;
-            pigStickerScore = data.pigStickerScore;
+    //        appleStickerScore = data.appleStickerScore;
+    //        basketStickerScore = data.basketStickerScore;
+    //        pigStickerScore = data.pigStickerScore;
 
-            bananaStickerScore = data.bananaStickerScore;
-            clusterStickerScore = data.clusterStickerScore;
-            monkeyStickerScore = data.monkeyStickerScore;
+    //        bananaStickerScore = data.bananaStickerScore;
+    //        clusterStickerScore = data.clusterStickerScore;
+    //        monkeyStickerScore = data.monkeyStickerScore;
 
-            asteroidStickerScore = data.asteroidStickerScore;
-            blackholeStickerScore = data.blackholeStickerScore;
-            llamaStickerScore = data.llamaStickerScore;
-            Debug.Log("sum stickers loaded");
-        }
-        else
-        {
-            SaveScore();
-        }
-    }
+    //        asteroidStickerScore = data.asteroidStickerScore;
+    //        blackholeStickerScore = data.blackholeStickerScore;
+    //        llamaStickerScore = data.llamaStickerScore;
+    //        Debug.Log("sum stickers loaded");
+    //    }
+    //    else
+    //    {
+    //        SaveScore();
+    //    }
+    //}
 
     public void SetLevelIndex(int index)
     {
@@ -108,88 +109,88 @@ public class SumScript : MonoBehaviour
         sumScore = 0;
         scoreCount.text = sumScore.ToString();
     }
-    public void CheckStickers()
-    {
-        if (appleStickerScore == 1)
-        {
-            stickerOne.gameObject.SetActive(true);
-            if (worldIndex == 1)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (basketStickerScore == 1)
-        {
-            stickerTwo.gameObject.SetActive(true);
-            if (worldIndex == 1)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (pigStickerScore == 1)
-        {
-            stickerThree.gameObject.SetActive(true);
-            if (worldIndex == 1)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (bananaStickerScore == 1)
-        {
-            stickerFour.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (clusterStickerScore == 1)
-        {
-            stickerFive.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (monkeyStickerScore == 1)
-        {
-            stickerSix.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (asteroidStickerScore == 1)
-        {
-            stickerSeven.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (blackholeStickerScore == 1)
-        {
-            stickerEight.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (llamaStickerScore == 1)
-        {
-            stickerNine.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-    }
+    //public void CheckStickers()
+    //{
+    //    if (appleStickerScore == 1)
+    //    {
+    //        stickerOne.gameObject.SetActive(true);
+    //        if (worldIndex == 1)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (basketStickerScore == 1)
+    //    {
+    //        stickerTwo.gameObject.SetActive(true);
+    //        if (worldIndex == 1)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (pigStickerScore == 1)
+    //    {
+    //        stickerThree.gameObject.SetActive(true);
+    //        if (worldIndex == 1)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (bananaStickerScore == 1)
+    //    {
+    //        stickerFour.gameObject.SetActive(true);
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (clusterStickerScore == 1)
+    //    {
+    //        stickerFive.gameObject.SetActive(true);
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (monkeyStickerScore == 1)
+    //    {
+    //        stickerSix.gameObject.SetActive(true);
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (asteroidStickerScore == 1)
+    //    {
+    //        stickerSeven.gameObject.SetActive(true);
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (blackholeStickerScore == 1)
+    //    {
+    //        stickerEight.gameObject.SetActive(true);
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (llamaStickerScore == 1)
+    //    {
+    //        stickerNine.gameObject.SetActive(true);
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //}
 
-    public void StarCount()
-    {
-        sumStarCount = appleStickerScore + basketStickerScore + pigStickerScore;
-        sumJungleStarCount = bananaStickerScore + clusterStickerScore + monkeyStickerScore;
-        sumSpaceStarCount = asteroidStickerScore + blackholeStickerScore + llamaStickerScore;
-    }
+    //public void StarCount()
+    //{
+    //    sumStarCount = book.appleStickerScore + book.basketStickerScore + book.pigStickerScore;
+    //    sumJungleStarCount = book.bananaStickerScore + book.clusterStickerScore + book.monkeyStickerScore;
+    //    sumSpaceStarCount = book.asteroidStickerScore + book.blackholeStickerScore + book.llamaStickerScore;
+    //}
 
     public void CheckStars()
     {
@@ -257,10 +258,10 @@ public class SumScript : MonoBehaviour
 
     private void Start()
     {
-        LoadScore();
-        CheckStickers();
-        StarCount();
-        CheckStars();
+        //LoadScore();
+        //CheckStickers();
+        //StarCount();
+        //CheckStars();
         scoreCount.text = sumScore.ToString();
         AnswerSpot.text = "?";
     }
@@ -343,11 +344,12 @@ public class SumScript : MonoBehaviour
     //}
     public void UpdateStickers()
     {
-        CheckStickers();
-        StarCount();
+        //CheckStickers();
+        book.StarCount();
         CheckStars();
+        //SaveScore();
         //UpdateLevelEnd();
-        SaveScore();
+        
     }
 
     // Update is called once per frame
@@ -356,22 +358,22 @@ public class SumScript : MonoBehaviour
 
     }
 
-    public void ResetStickers()
-    {
-        sumStarCount = 0;
-        sumJungleStarCount = 0;
-        sumSpaceStarCount = 0;
-        appleStickerScore = 0;
-        basketStickerScore = 0;
-        pigStickerScore = 0;
-        bananaStickerScore = 0;
-        clusterStickerScore = 0;
-        monkeyStickerScore = 0;
-        asteroidStickerScore = 0;
-        blackholeStickerScore = 0;
-        llamaStickerScore = 0;
-        SaveScore();
-    }
+    //public void ResetStickers()
+    //{
+    //    sumStarCount = 0;
+    //    sumJungleStarCount = 0;
+    //    sumSpaceStarCount = 0;
+    //    appleStickerScore = 0;
+    //    basketStickerScore = 0;
+    //    pigStickerScore = 0;
+    //    bananaStickerScore = 0;
+    //    clusterStickerScore = 0;
+    //    monkeyStickerScore = 0;
+    //    asteroidStickerScore = 0;
+    //    blackholeStickerScore = 0;
+    //    llamaStickerScore = 0;
+    //    SaveScore();
+    //}
 
     public void ChooseObject()
     {
@@ -834,23 +836,19 @@ public class SumScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 1:
-                        if (appleStickerScore < 1)
-                        {
-                            appleStickerScore += 1;
-                            Debug.Log("Apple unlocked");
-                        }
+                        book.unlockApple();
                         break;
                     case 2:
-                        if (basketStickerScore < 1)
+                        if (book.basketStickerScore < 1)
                         {
-                            basketStickerScore += 1;
+                            book.basketStickerScore += 1;
                             Debug.Log("Basket unlocked");
                         }
                         break;
                     case 3:
-                        if (pigStickerScore < 1)
+                        if (book.pigStickerScore < 1)
                         {
-                            pigStickerScore += 1;
+                            book.pigStickerScore += 1;
                             Debug.Log("Pig unlocked");
                         }
                         break;
@@ -863,23 +861,23 @@ public class SumScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 4:
-                        if (bananaStickerScore < 1)
+                        if (book.bananaStickerScore < 1)
                         {
-                            bananaStickerScore += 1;
+                            book.bananaStickerScore += 1;
                             Debug.Log("Banana unlocked");
                         }
                         break;
                     case 5:
-                        if (clusterStickerScore < 1)
+                        if (book.clusterStickerScore < 1)
                         {
-                            clusterStickerScore += 1;
+                            book.clusterStickerScore += 1;
                             Debug.Log("Cluster unlocked");
                         }
                         break;
                     case 6:
-                        if (monkeyStickerScore < 1)
+                        if (book.monkeyStickerScore < 1)
                         {
-                            monkeyStickerScore += 1;
+                            book.monkeyStickerScore += 1;
                             Debug.Log("Monkey unlocked");
                         }
                         break;
@@ -892,23 +890,23 @@ public class SumScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 7:
-                        if (asteroidStickerScore < 1)
+                        if (book.asteroidStickerScore < 1)
                         {
-                            asteroidStickerScore += 1;
+                            book.asteroidStickerScore += 1;
                             Debug.Log("Asteroid unlocked");
                         }
                         break;
                     case 8:
-                        if (blackholeStickerScore < 1)
+                        if (book.blackholeStickerScore < 1)
                         {
-                            blackholeStickerScore += 1;
+                            book.blackholeStickerScore += 1;
                             Debug.Log("Blackhole unlocked");
                         }
                         break;
                     case 9:
-                        if (llamaStickerScore < 1)
+                        if (book.llamaStickerScore < 1)
                         {
-                            llamaStickerScore += 1;
+                            book.llamaStickerScore += 1;
                             Debug.Log("Llama unlocked");
                         }
                         break;

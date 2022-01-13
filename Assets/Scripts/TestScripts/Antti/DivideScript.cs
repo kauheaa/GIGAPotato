@@ -32,45 +32,45 @@ public class DivideScript : MonoBehaviour
 
 
 
-    public void SaveScore()
-    {
-        saveScore.SaveDivScore(this);
+    //public void SaveScore()
+    //{
+    //    saveScore.SaveDivScore(this);
 
-        //luo väliaikaisen listan, joka etsii hierarkiassa olevat divScore instanssit ja käy läpi,
-        //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
-        //näin kaikissa divScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
-        //ei ylikirjoita arvoja nollaksi 
-        DivideScript[] tempArray = GameObject.FindObjectsOfType<DivideScript>();
-        foreach (DivideScript i in tempArray)
-        {
-            i.LoadScore();
-        }
+    //    //luo väliaikaisen listan, joka etsii hierarkiassa olevat divScore instanssit ja käy läpi,
+    //    //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
+    //    //näin kaikissa divScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
+    //    //ei ylikirjoita arvoja nollaksi 
+    //    DivideScript[] tempArray = GameObject.FindObjectsOfType<DivideScript>();
+    //    foreach (DivideScript i in tempArray)
+    //    {
+    //        i.LoadScore();
+    //    }
 
-    }
-    public void LoadScore()
-    {
-        string path = Application.persistentDataPath + "/divscore.txt";
-        if (File.Exists(path))
-        {
-            scoreData data = saveScore.LoadDivScore();
-            divJungleStarCount = data.divJungleStarCount;
-            divSpaceStarCount = data.divJungleStarCount;
+    //}
+    //public void LoadScore()
+    //{
+    //    string path = Application.persistentDataPath + "/divscore.txt";
+    //    if (File.Exists(path))
+    //    {
+    //        scoreData data = saveScore.LoadDivScore();
+    //        divJungleStarCount = data.divJungleStarCount;
+    //        divSpaceStarCount = data.divJungleStarCount;
 
-            avocadoStickerScore = data.avocadoStickerScore;
-            toolStickerScore = data.toolStickerScore;
-            tigerStickerScore = data.tigerStickerScore;
+    //        avocadoStickerScore = data.avocadoStickerScore;
+    //        toolStickerScore = data.toolStickerScore;
+    //        tigerStickerScore = data.tigerStickerScore;
 
-            driedfishStickerScore = data.driedfishStickerScore;
-            octopusStickerScore = data.octopusStickerScore;
-            catStickerScore = data.catStickerScore;
+    //        driedfishStickerScore = data.driedfishStickerScore;
+    //        octopusStickerScore = data.octopusStickerScore;
+    //        catStickerScore = data.catStickerScore;
 
-            Debug.Log("div stickers loaded");
-        }
-        else
-        {
-            SaveScore();
-        }
-    }
+    //        Debug.Log("div stickers loaded");
+    //    }
+    //    else
+    //    {
+    //        SaveScore();
+    //    }
+    //}
 
     public void SetLevelIndex(int index)
     {
@@ -192,7 +192,7 @@ public class DivideScript : MonoBehaviour
 
         private void Start()
     {
-        LoadScore();
+        //LoadScore();
         CheckStickers();
         StarCount();
         CheckStars();
@@ -203,10 +203,10 @@ public class DivideScript : MonoBehaviour
 
     public void UpdateStickers()
     {
-        CheckStickers();
+        //CheckStickers();
         StarCount();
         CheckStars();
-        SaveScore();
+        //SaveScore();
     }
 
     // Update is called once per frame
@@ -215,16 +215,16 @@ public class DivideScript : MonoBehaviour
 
     }
 
-    public void ResetStickers()
-    {
-        avocadoStickerScore = 0;
-        toolStickerScore = 0;
-        tigerStickerScore = 0;
-        driedfishStickerScore = 0;
-        octopusStickerScore = 0;
-        catStickerScore = 0;
-        SaveScore();
-    }
+    //public void ResetStickers()
+    //{
+    //    avocadoStickerScore = 0;
+    //    toolStickerScore = 0;
+    //    tigerStickerScore = 0;
+    //    driedfishStickerScore = 0;
+    //    octopusStickerScore = 0;
+    //    catStickerScore = 0;
+    //    //SaveScore();
+    //}
 
     public void ChooseObject()
     { }

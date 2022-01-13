@@ -1,52 +1,90 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class StickerBook : MonoBehaviour
 {
-    public GameObject stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix, stickerSeven, stickerEight, stickerNine;
-    public GameObject stickerTen, stickerEleven, stickerTwelve, stickerThirteen, stickerFourteen, stickerFifteen, stickerSixteen, stickerSeventeen, stickerEighteen;
-    public GameObject stickerNineteen, stickerTwenty, stickerTwentyone, stickerTwentytwo, stickerTwentythree, stickerTwentyfour, stickerTwentyfive, stickerTwentysix, stickerTwentyseven;
-    public GameObject stickerTwentyeight, stickerTwentynine, stickerThirty, stickerThirtyone, stickerThirtytwo, stickerThirtythree;
+    public SumScript sum;
 
+    // All starCounts
+    public int sumStarCount, sumJungleStarCount, sumSpaceStarCount;
+    public int subStarCount, subJungleStarCount, subSpaceStarCount;
+    public int countStarCount;
+    public int multJungleStarCount, multSpaceStarCount;
+    public int divJungleStarCount, divSpaceStarCount;
+
+    // Farm stickers
+    public GameObject appleSticker, basketSticker, pigSticker;
+    public GameObject carrotSticker, bucketSticker, bunnySticker;
+    public GameObject threeCornSticker, twoCornSticker, lambSticker;
+
+    // Jungle stickers
+    public GameObject bananaSticker, clusterSticker, monkeySticker;
+    public GameObject coconutSticker, ocularsSticker, slothSticker;
+    public GameObject lycheeSticker, pitahayaSticker, frogSticker;
+    public GameObject avocadoSticker, toolSticker, tigerSticker;
+
+    // Space stickers
+    public GameObject asteroidSticker, blackholeSticker, llamaSticker;
+    public GameObject starSticker, planetSticker, cowSticker;
+    public GameObject flagSticker, rocketSticker, laikaSticker;
+    public GameObject driedfishSticker, octopusSticker, catSticker;
+
+    // Farm sticker scores
     [SerializeField] public int appleStickerScore = 0;
     [SerializeField] public int basketStickerScore = 0;
     [SerializeField] public int pigStickerScore = 0;
-    [SerializeField] public int bananaStickerScore = 0;
-    [SerializeField] public int clusterStickerScore = 0;
-    [SerializeField] public int monkeyStickerScore = 0;
-    [SerializeField] public int asteroidStickerScore = 0;
-    [SerializeField] public int blackholeStickerScore = 0;
-    [SerializeField] public int llamaStickerScore = 0;
 
     [SerializeField] public int carrotStickerScore = 0;
     [SerializeField] public int bucketStickerScore = 0;
     [SerializeField] public int bunnyStickerScore = 0;
-    [SerializeField] public int coconutStickerScore = 0;
-    [SerializeField] public int ocularsStickerScore = 0;
-    [SerializeField] public int slothStickerScore = 0;
-    [SerializeField] public int starStickerScore = 0;
-    [SerializeField] public int planetStickerScore = 0;
-    [SerializeField] public int cowStickerScore = 0;
 
     [SerializeField] public int threeCornStickerScore = 0;
     [SerializeField] public int twoCornStickerScore = 0;
     [SerializeField] public int lambStickerScore = 0;
 
+    // Jungle sticker scores
+    [SerializeField] public int bananaStickerScore = 0;
+    [SerializeField] public int clusterStickerScore = 0;
+    [SerializeField] public int monkeyStickerScore = 0;
+
+    [SerializeField] public int coconutStickerScore = 0;
+    [SerializeField] public int ocularsStickerScore = 0;
+    [SerializeField] public int slothStickerScore = 0;
+
     [SerializeField] public int lycheeStickerScore = 0;
     [SerializeField] public int pitahayaStickerScore = 0;
     [SerializeField] public int frogStickerScore = 0;
-    [SerializeField] public int flagStickerScore = 0;
-    [SerializeField] public int rocketStickerScore = 0;
-    [SerializeField] public int laikaStickerScore = 0;
 
     [SerializeField] public int avocadoStickerScore = 0;
     [SerializeField] public int toolStickerScore = 0;
     [SerializeField] public int tigerStickerScore = 0;
+
+    // Space sticker scores
+    [SerializeField] public int asteroidStickerScore = 0;
+    [SerializeField] public int blackholeStickerScore = 0;
+    [SerializeField] public int llamaStickerScore = 0;
+
+    [SerializeField] public int starStickerScore = 0;
+    [SerializeField] public int planetStickerScore = 0;
+    [SerializeField] public int cowStickerScore = 0;
+
+    [SerializeField] public int flagStickerScore = 0;
+    [SerializeField] public int rocketStickerScore = 0;
+    [SerializeField] public int laikaStickerScore = 0;
+
     [SerializeField] public int driedfishStickerScore = 0;
     [SerializeField] public int octopusStickerScore = 0;
     [SerializeField] public int catStickerScore = 0;
+
+    // Sticker book last page stats
+    [SerializeField] public int statsAllInt = 0;
+    [SerializeField] public int statsCollectedInt = 0;
+    [SerializeField] public int statsFarmInt = 0;
+    [SerializeField] public int statsJungleInt = 0;
+    [SerializeField] public int statsSpaceInt = 0;
 
     public Text statsAll;
     public Text statsFarm;
@@ -55,77 +93,155 @@ public class StickerBook : MonoBehaviour
     public Text congrats;
     public Text allCollected;
 
-    [SerializeField] public int statsAllInt = 0;
-    [SerializeField] public int statsCollectedInt = 0;
-    [SerializeField] public int statsFarmInt = 0;
-    [SerializeField] public int statsJungleInt = 0;
-    [SerializeField] public int statsSpaceInt = 0;
 
-    //public bool AllScoresZero = false;
-    //   public List<Sticker> StickerList;
-
-
-    public void LoadSumScore()
+    public void SaveBook()
     {
-        scoreData data = saveScore.LoadSumScore();
-        appleStickerScore = data.appleStickerScore;
-        basketStickerScore = data.basketStickerScore;
-        pigStickerScore = data.pigStickerScore;
+        saveScore.SaveBook(this);
 
-        bananaStickerScore = data.bananaStickerScore;
-        clusterStickerScore = data.clusterStickerScore;
-        monkeyStickerScore = data.monkeyStickerScore;
+        // Est‰‰ instanssiduplikaatteja p‰ivitt‰m‰tt‰ scorea nollaksi
+        StickerBook[] tempArray = GameObject.FindObjectsOfType<StickerBook>();
+        foreach (StickerBook i in tempArray)
+        {
+            i.LoadBook();
+        }
+    }
+    public void LoadBook()
+    {
+        string path = Application.persistentDataPath + "/booksave.txt";
+        if (File.Exists(path))
+        {
+            scoreData data = saveScore.LoadBook();
+            {
+                // Load all starCounts
+                sumStarCount = data.sumStarCount;
+                sumJungleStarCount = data.sumJungleStarCount;
+                sumSpaceStarCount = data.sumSpaceStarCount;
+                subStarCount = data.subStarCount;
+                subJungleStarCount = data.subStarCount;
+                subSpaceStarCount = data.subStarCount;
+                countStarCount = data.countStarCount;
+                multJungleStarCount = data.multJungleStarCount;
+                multSpaceStarCount = data.multSpaceStarCount;
+                divJungleStarCount = data.divJungleStarCount;
+                divSpaceStarCount = data.divSpaceStarCount;
 
-        asteroidStickerScore = data.asteroidStickerScore;
-        blackholeStickerScore = data.blackholeStickerScore;
-        llamaStickerScore = data.llamaStickerScore;
+                // Load Farm stickers
+                appleStickerScore = data.appleStickerScore;
+                basketStickerScore = data.basketStickerScore;
+                pigStickerScore = data.pigStickerScore;
+
+                carrotStickerScore = data.carrotStickerScore;
+                bucketStickerScore = data.bucketStickerScore;
+                bunnyStickerScore = data.bunnyStickerScore;
+
+                threeCornStickerScore = data.threeCornStickerScore;
+                twoCornStickerScore = data.twoCornStickerScore;
+                lambStickerScore = data.lambStickerScore;
+
+                // Load Jungle stickers
+                bananaStickerScore = data.bananaStickerScore;
+                clusterStickerScore = data.clusterStickerScore;
+                monkeyStickerScore = data.monkeyStickerScore;
+
+                coconutStickerScore = data.coconutStickerScore;
+                ocularsStickerScore = data.ocularsStickerScore;
+                slothStickerScore = data.slothStickerScore;
+
+                lycheeStickerScore = data.lycheeStickerScore;
+                pitahayaStickerScore = data.pitahayaStickerScore;
+                frogStickerScore = data.frogStickerScore;
+
+                avocadoStickerScore = data.avocadoStickerScore;
+                toolStickerScore = data.toolStickerScore;
+                tigerStickerScore = data.tigerStickerScore;
+
+                // Load Space stickers
+                asteroidStickerScore = data.asteroidStickerScore;
+                blackholeStickerScore = data.blackholeStickerScore;
+                llamaStickerScore = data.llamaStickerScore;
+
+                starStickerScore = data.starStickerScore;
+                planetStickerScore = data.planetStickerScore;
+                cowStickerScore = data.cowStickerScore;
+
+                flagStickerScore = data.flagStickerScore;
+                rocketStickerScore = data.rocketStickerScore;
+                laikaStickerScore = data.laikaStickerScore;
+
+                driedfishStickerScore = data.driedfishStickerScore;
+                octopusStickerScore = data.octopusStickerScore;
+                catStickerScore = data.catStickerScore;
+
+                Debug.Log("Stickers and StarCounts loaded");
+            }
+        }
+        else
+        {
+            SaveBook();
+        }
     }
 
-    public void LoadSubScore()
-    {
-        scoreData data = saveScore.LoadSubScore();
-        carrotStickerScore = data.carrotStickerScore;
-        bucketStickerScore = data.bucketStickerScore;
-        bunnyStickerScore = data.bunnyStickerScore;
+        //public void LoadSumScore()
+        //{
+        //        scoreData data = saveScore.LoadSumScore();
+        //        appleStickerScore = data.appleStickerScore;
+        //        basketStickerScore = data.basketStickerScore;
+        //        pigStickerScore = data.pigStickerScore;
 
-        coconutStickerScore = data.coconutStickerScore;
-        ocularsStickerScore = data.ocularsStickerScore;
-        slothStickerScore = data.slothStickerScore;
+        //        bananaStickerScore = data.bananaStickerScore;
+        //        clusterStickerScore = data.clusterStickerScore;
+        //        monkeyStickerScore = data.monkeyStickerScore;
 
-        starStickerScore = data.starStickerScore;
-        planetStickerScore = data.planetStickerScore;
-        cowStickerScore = data.cowStickerScore;
-    }
+        //        asteroidStickerScore = data.asteroidStickerScore;
+        //        blackholeStickerScore = data.blackholeStickerScore;
+        //        llamaStickerScore = data.llamaStickerScore;
+        //}
 
-    public void LoadCountScore()
-    {
-        scoreData data = saveScore.LoadCountScore();
-        threeCornStickerScore = data.threeCornStickerScore;
-        twoCornStickerScore = data.twoCornStickerScore;
-        lambStickerScore = data.lambStickerScore;
-    }
-    public void LoadMultScore()
-    {
-        scoreData data = saveScore.LoadMultScore();
-        lycheeStickerScore = data.lycheeStickerScore;
-        pitahayaStickerScore = data.pitahayaStickerScore;
-        frogStickerScore = data.frogStickerScore;
+        //public void LoadSubScore()
+        //{
+        //    scoreData data = saveScore.LoadSubScore();
+        //    carrotStickerScore = data.carrotStickerScore;
+        //    bucketStickerScore = data.bucketStickerScore;
+        //    bunnyStickerScore = data.bunnyStickerScore;
 
-        flagStickerScore = data.flagStickerScore;
-        rocketStickerScore = data.rocketStickerScore;
-        laikaStickerScore = data.laikaStickerScore;
-    }
-    public void LoadDivScore()
-    {
-        scoreData data = saveScore.LoadDivScore();
-        avocadoStickerScore = data.avocadoStickerScore;
-        toolStickerScore = data.toolStickerScore;
-        tigerStickerScore = data.tigerStickerScore;
+        //    coconutStickerScore = data.coconutStickerScore;
+        //    ocularsStickerScore = data.ocularsStickerScore;
+        //    slothStickerScore = data.slothStickerScore;
 
-        driedfishStickerScore = data.driedfishStickerScore;
-        octopusStickerScore = data.octopusStickerScore;
-        catStickerScore = data.catStickerScore;
-    }
+        //    starStickerScore = data.starStickerScore;
+        //    planetStickerScore = data.planetStickerScore;
+        //    cowStickerScore = data.cowStickerScore;
+        //}
+
+        //public void LoadCountScore()
+        //{
+        //    scoreData data = saveScore.LoadCountScore();
+        //    threeCornStickerScore = data.threeCornStickerScore;
+        //    twoCornStickerScore = data.twoCornStickerScore;
+        //    lambStickerScore = data.lambStickerScore;
+        //}
+        //public void LoadMultScore()
+        //{
+        //    scoreData data = saveScore.LoadMultScore();
+        //    lycheeStickerScore = data.lycheeStickerScore;
+        //    pitahayaStickerScore = data.pitahayaStickerScore;
+        //    frogStickerScore = data.frogStickerScore;
+
+        //    flagStickerScore = data.flagStickerScore;
+        //    rocketStickerScore = data.rocketStickerScore;
+        //    laikaStickerScore = data.laikaStickerScore;
+        //}
+        //public void LoadDivScore()
+        //{
+        //    scoreData data = saveScore.LoadDivScore();
+        //    avocadoStickerScore = data.avocadoStickerScore;
+        //    toolStickerScore = data.toolStickerScore;
+        //    tigerStickerScore = data.tigerStickerScore;
+
+        //    driedfishStickerScore = data.driedfishStickerScore;
+        //    octopusStickerScore = data.octopusStickerScore;
+        //    catStickerScore = data.catStickerScore;
+        //}
 
 
 
@@ -148,154 +264,168 @@ public class StickerBook : MonoBehaviour
             allCollected.text = "YOU'VE COLLECTED ALL STICKERS!";
         }
     }
+    public void StarCount()
+    {
+        sumStarCount = appleStickerScore + basketStickerScore + pigStickerScore;
+        sumJungleStarCount = bananaStickerScore + clusterStickerScore + monkeyStickerScore;
+        sumSpaceStarCount = asteroidStickerScore + blackholeStickerScore + llamaStickerScore;
+    }
+    public void unlockApple()
+    {
+        if (appleStickerScore < 1)
+        {
+            appleStickerScore += 1;
+        }
+    }
 
     public void UpdateAll()
     {
-        LoadSumScore();
-        LoadSubScore();
-        LoadCountScore();
-        LoadMultScore();
-        LoadDivScore();
+        //LoadSumScore();
+        //LoadSubScore();
+        //LoadCountScore();
+        //LoadMultScore();
+        //LoadDivScore();
+        //LoadBook();
         UpdateStats();
     }
     // Start is called before the first frame update
     void Start()
     {
         UpdateAll();
-        //FARM
+        // Unlock farm stickers
         if (appleStickerScore == 1)
         {
-            stickerOne.gameObject.SetActive(true);
+            appleSticker.gameObject.SetActive(true);
         }
         if (basketStickerScore == 1)
         {
-            stickerTwo.gameObject.SetActive(true);
+            basketSticker.gameObject.SetActive(true);
         }
         if (pigStickerScore == 1)
         {
-            stickerThree.gameObject.SetActive(true);
+            pigSticker.gameObject.SetActive(true);
         }
         if (carrotStickerScore == 1)
         {
-            stickerFour.gameObject.SetActive(true);
+            carrotSticker.gameObject.SetActive(true);
         }
         if (bucketStickerScore == 1)
         {
-            stickerFive.gameObject.SetActive(true);
+            bucketSticker.gameObject.SetActive(true);
         }
         if (bunnyStickerScore == 1)
         {
-            stickerSix.gameObject.SetActive(true);
+            bunnySticker.gameObject.SetActive(true);
         }
         if (threeCornStickerScore == 1)
         {
-            stickerSeven.gameObject.SetActive(true);
+            threeCornSticker.gameObject.SetActive(true);
         }
         if (twoCornStickerScore == 1)
         {
-            stickerEight.gameObject.SetActive(true);
+            twoCornSticker.gameObject.SetActive(true);
         }
         if (lambStickerScore == 1)
         {
-            stickerNine.gameObject.SetActive(true);
+            lambSticker.gameObject.SetActive(true);
         }
-        //JUNGLE
+        // Unlock jungle stickers
         if (bananaStickerScore == 1)
         {
-            stickerTen.gameObject.SetActive(true);
+            bananaSticker.gameObject.SetActive(true);
         }
         if (clusterStickerScore == 1)
         {
-            stickerEleven.gameObject.SetActive(true);
+            clusterSticker.gameObject.SetActive(true);
         }
         if (monkeyStickerScore == 1)
         {
-            stickerTwelve.gameObject.SetActive(true);
+            monkeySticker.gameObject.SetActive(true);
         }
         if (coconutStickerScore == 1)
         {
-            stickerThirteen.gameObject.SetActive(true);
+            coconutSticker.gameObject.SetActive(true);
         }
         if (ocularsStickerScore == 1)
         {
-            stickerFourteen.gameObject.SetActive(true);
+            ocularsSticker.gameObject.SetActive(true);
         }
         if (slothStickerScore == 1)
         {
-            stickerFifteen.gameObject.SetActive(true);
+            slothSticker.gameObject.SetActive(true);
         }
         if (lycheeStickerScore == 1)
         {
-            stickerSixteen.gameObject.SetActive(true);
+            lycheeSticker.gameObject.SetActive(true);
         }
         if (pitahayaStickerScore == 1)
         {
-            stickerSeventeen.gameObject.SetActive(true);
+            pitahayaSticker.gameObject.SetActive(true);
         }
         if (frogStickerScore == 1)
         {
-            stickerEighteen.gameObject.SetActive(true);
+            frogSticker.gameObject.SetActive(true);
         }
         if (avocadoStickerScore == 1)
         {
-            stickerNineteen.gameObject.SetActive(true);
+            avocadoSticker.gameObject.SetActive(true);
         }
         if (toolStickerScore == 1)
         {
-            stickerTwenty.gameObject.SetActive(true);
+            toolSticker.gameObject.SetActive(true);
         }
         if (tigerStickerScore == 1)
         {
-            stickerTwentyone.gameObject.SetActive(true);
+            tigerSticker.gameObject.SetActive(true);
         }
-        //SPACE
+        // Unlock Space stickers
         if (asteroidStickerScore == 1)
         {
-            stickerTwentytwo.gameObject.SetActive(true);
+            asteroidSticker.gameObject.SetActive(true);
         }
         if (blackholeStickerScore == 1)
         {
-            stickerTwentythree.gameObject.SetActive(true);
+            blackholeSticker.gameObject.SetActive(true);
         }
         if (llamaStickerScore == 1)
         {
-            stickerTwentyfour.gameObject.SetActive(true);
+            llamaSticker.gameObject.SetActive(true);
         }
         if (starStickerScore == 1)
         {
-            stickerTwentyfive.gameObject.SetActive(true);
+            starSticker.gameObject.SetActive(true);
         }
         if (planetStickerScore == 1)
         {
-            stickerTwentysix.gameObject.SetActive(true);
+            planetSticker.gameObject.SetActive(true);
         }
         if (cowStickerScore == 1)
         {
-            stickerTwentyseven.gameObject.SetActive(true);
+            cowSticker.gameObject.SetActive(true);
         }
         if (flagStickerScore == 1)
         {
-            stickerTwentyeight.gameObject.SetActive(true);
+            flagSticker.gameObject.SetActive(true);
         }
         if (rocketStickerScore == 1)
         {
-            stickerTwentynine.gameObject.SetActive(true);
+            rocketSticker.gameObject.SetActive(true);
         }
         if (laikaStickerScore == 1)
         {
-            stickerThirty.gameObject.SetActive(true);
+            laikaSticker.gameObject.SetActive(true);
         }
         if (driedfishStickerScore == 1)
         {
-            stickerThirtyone.gameObject.SetActive(true);
+            driedfishSticker.gameObject.SetActive(true);
         }
         if (octopusStickerScore == 1)
         {
-            stickerThirtytwo.gameObject.SetActive(true);
+            octopusSticker.gameObject.SetActive(true);
         }
         if (catStickerScore == 1)
         {
-            stickerThirtythree.gameObject.SetActive(true);
+            catSticker.gameObject.SetActive(true);
         }
 
     }

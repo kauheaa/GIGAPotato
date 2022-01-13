@@ -47,45 +47,45 @@ public class SubScript : MonoBehaviour
     //public Sprite[] tenObjectSprite;
 
 
-    public void SaveScore()
-    {
-        saveScore.SaveSubScore(this);
-        SubScript[] tempArray = GameObject.FindObjectsOfType<SubScript>();
-        foreach (SubScript i in tempArray)
-        {
-            i.LoadScore();
-        }
+    //public void SaveScore()
+    //{
+    //    saveScore.SaveSubScore(this);
+    //    SubScript[] tempArray = GameObject.FindObjectsOfType<SubScript>();
+    //    foreach (SubScript i in tempArray)
+    //    {
+    //        i.LoadScore();
+    //    }
 
-    }
-    public void LoadScore()
-    {
-        string path = Application.persistentDataPath + "/subscore.txt";
-        if (File.Exists(path))
-        {
-            scoreData data = saveScore.LoadSubScore();
-            subStarCount = data.subStarCount;
-            subJungleStarCount = data.subJungleStarCount;
-            subSpaceStarCount = data.subSpaceStarCount;
+    //}
+    //public void LoadScore()
+    //{
+    //    string path = Application.persistentDataPath + "/subscore.txt";
+    //    if (File.Exists(path))
+    //    {
+    //        scoreData data = saveScore.LoadSubScore();
+    //        subStarCount = data.subStarCount;
+    //        subJungleStarCount = data.subJungleStarCount;
+    //        subSpaceStarCount = data.subSpaceStarCount;
 
-            carrotStickerScore = data.carrotStickerScore;
-            bucketStickerScore = data.bucketStickerScore;
-            bunnyStickerScore = data.bunnyStickerScore;
+    //        carrotStickerScore = data.carrotStickerScore;
+    //        bucketStickerScore = data.bucketStickerScore;
+    //        bunnyStickerScore = data.bunnyStickerScore;
 
-            coconutStickerScore = data.coconutStickerScore;
-            ocularsStickerScore = data.ocularsStickerScore;
-            slothStickerScore = data.slothStickerScore;
+    //        coconutStickerScore = data.coconutStickerScore;
+    //        ocularsStickerScore = data.ocularsStickerScore;
+    //        slothStickerScore = data.slothStickerScore;
 
-            starStickerScore = data.starStickerScore;
-            planetStickerScore = data.planetStickerScore;
-            cowStickerScore = data.cowStickerScore;
-            Debug.Log("sub stickers loaded");
-        }
-        else
-        {
-            SaveScore();
-        }
+    //        starStickerScore = data.starStickerScore;
+    //        planetStickerScore = data.planetStickerScore;
+    //        cowStickerScore = data.cowStickerScore;
+    //        Debug.Log("sub stickers loaded");
+    //    }
+    //    else
+    //    {
+    //        SaveScore();
+    //    }
 
-    }
+    //}
 
     public void SetLevelIndex(int index)
     {
@@ -250,7 +250,7 @@ public class SubScript : MonoBehaviour
 
     private void Start()
     {
-        LoadScore();
+        //LoadScore();
         CheckStickers();
         StarCount();
         CheckStars();
@@ -262,7 +262,7 @@ public class SubScript : MonoBehaviour
         CheckStickers();
         StarCount();
         CheckStars();
-        SaveScore();
+        //SaveScore();
     }
     // Update is called once per frame
     void Update()
@@ -270,22 +270,22 @@ public class SubScript : MonoBehaviour
         //   score = int.Parse(scoreCount.text);
     }
 
-    public void ResetStickers()
-    {
-        subStarCount = 0;
-        subJungleStarCount = 0;
-        subSpaceStarCount = 0;
-        carrotStickerScore = 0;
-        bucketStickerScore = 0;
-        bunnyStickerScore = 0;
-        coconutStickerScore = 0;
-        ocularsStickerScore = 0;
-        slothStickerScore = 0;
-        starStickerScore = 0;
-        planetStickerScore = 0;
-        cowStickerScore = 0;
-        SaveScore();
-    }
+    //public void ResetStickers()
+    //{
+    //    subStarCount = 0;
+    //    subJungleStarCount = 0;
+    //    subSpaceStarCount = 0;
+    //    carrotStickerScore = 0;
+    //    bucketStickerScore = 0;
+    //    bunnyStickerScore = 0;
+    //    coconutStickerScore = 0;
+    //    ocularsStickerScore = 0;
+    //    slothStickerScore = 0;
+    //    starStickerScore = 0;
+    //    planetStickerScore = 0;
+    //    cowStickerScore = 0;
+    //    SaveScore();
+    //}
 
     public void ChooseObject()
     {

@@ -35,36 +35,36 @@ public class CountScript : MonoBehaviour
     public GameObject Animal;
 
     // saves sticker score and updates it to all instances of same script in the scene
-    public void SaveScore()
-    {
-        saveScore.SaveCountScore(this);
-        CountScript[] tempArray = GameObject.FindObjectsOfType<CountScript>();
-        foreach (CountScript i in tempArray)
-        {
-            i.LoadScore();
-        }
+    //public void SaveScore()
+    //{
+    //    saveScore.SaveCountScore(this);
+    //    CountScript[] tempArray = GameObject.FindObjectsOfType<CountScript>();
+    //    foreach (CountScript i in tempArray)
+    //    {
+    //        i.LoadScore();
+    //    }
 
-    }
-    // loads sticker scores
-    public void LoadScore()
-    {
-        string path = Application.persistentDataPath + "/countscore.txt";
-        if (File.Exists(path))
-        {
-            scoreData data = saveScore.LoadCountScore();
-            countStarCount = data.countStarCount;
+    //}
+    //// loads sticker scores
+    //public void LoadScore()
+    //{
+    //    string path = Application.persistentDataPath + "/countscore.txt";
+    //    if (File.Exists(path))
+    //    {
+    //        scoreData data = saveScore.LoadCountScore();
+    //        countStarCount = data.countStarCount;
 
-            threeCornStickerScore = data.threeCornStickerScore;
-            twoCornStickerScore = data.twoCornStickerScore;
-            lambStickerScore = data.lambStickerScore;
+    //        threeCornStickerScore = data.threeCornStickerScore;
+    //        twoCornStickerScore = data.twoCornStickerScore;
+    //        lambStickerScore = data.lambStickerScore;
 
-            Debug.Log("count stickers loaded");
-        }
-        else
-        {
-            SaveScore();
-        }
-    }
+    //        Debug.Log("count stickers loaded");
+    //    }
+    //    else
+    //    {
+    //        SaveScore();
+    //    }
+    //}
   
     // gives level an index that separates it from other levels; added in inspector
     public void SetLevelIndex(int index)
@@ -167,7 +167,7 @@ public class CountScript : MonoBehaviour
 
     private void Start()
     {   
-        LoadScore();
+        //LoadScore();
         CheckStickers();
         UnlockStickers();
         UnlockStars();
@@ -184,10 +184,10 @@ public class CountScript : MonoBehaviour
     }
     public void UpdateStickers()
     {
-        CheckStickers();
+        //CheckStickers();
         UnlockStickers();
         UnlockStars();
-        SaveScore();
+        //SaveScore();
     }
     public void ResetStickers()
     {
@@ -195,7 +195,7 @@ public class CountScript : MonoBehaviour
         threeCornStickerScore = 0;
         twoCornStickerScore = 0;
         lambStickerScore = 0;
-        SaveScore();
+        //SaveScore();
     }
 
     //  I'm not sure if this is needed at all, or if ResetScore is enough on it's own. Depends on how replaying the level will work..?

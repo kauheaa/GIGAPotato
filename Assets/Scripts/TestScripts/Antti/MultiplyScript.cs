@@ -29,40 +29,40 @@ public class MultiplyScript : MonoBehaviour
     [SerializeField] private Transform switchOff, switchOn;
     public GameObject Animal;
 
-    public void SaveScore()
-    {
-        saveScore.SaveMultScore(this);
-        MultiplyScript[] tempArray = GameObject.FindObjectsOfType<MultiplyScript>();
-        foreach (MultiplyScript i in tempArray)
-        {
-            i.LoadScore();
-        }
+    //public void SaveScore()
+    //{
+    //    saveScore.SaveMultScore(this);
+    //    MultiplyScript[] tempArray = GameObject.FindObjectsOfType<MultiplyScript>();
+    //    foreach (MultiplyScript i in tempArray)
+    //    {
+    //        i.LoadScore();
+    //    }
 
-    }
-    public void LoadScore()
-    {
-        string path = Application.persistentDataPath + "/multscore.txt";
-        if (File.Exists(path))
-        {
-            scoreData data = saveScore.LoadMultScore();
-            multJungleStarCount = data.multJungleStarCount;
-            multSpaceStarCount = data.multSpaceStarCount;
+    //}
+    //public void LoadScore()
+    //{
+    //    string path = Application.persistentDataPath + "/multscore.txt";
+    //    if (File.Exists(path))
+    //    {
+    //        scoreData data = saveScore.LoadMultScore();
+    //        multJungleStarCount = data.multJungleStarCount;
+    //        multSpaceStarCount = data.multSpaceStarCount;
 
-            lycheeStickerScore = data.lycheeStickerScore;
-            pitahayaStickerScore = data.pitahayaStickerScore;
-            frogStickerScore = data.frogStickerScore;
+    //        lycheeStickerScore = data.lycheeStickerScore;
+    //        pitahayaStickerScore = data.pitahayaStickerScore;
+    //        frogStickerScore = data.frogStickerScore;
 
-            flagStickerScore = data.flagStickerScore;
-            rocketStickerScore = data.rocketStickerScore;
-            laikaStickerScore = data.laikaStickerScore;
+    //        flagStickerScore = data.flagStickerScore;
+    //        rocketStickerScore = data.rocketStickerScore;
+    //        laikaStickerScore = data.laikaStickerScore;
 
-            Debug.Log("mult stickers loaded");
-        }
-        else
-        {
-            SaveScore();
-        }
-    }
+    //        Debug.Log("mult stickers loaded");
+    //    }
+    //    else
+    //    {
+    //        SaveScore();
+    //    }
+    //}
 
     public void SetLevelIndex(int index)
     {
@@ -79,57 +79,57 @@ public class MultiplyScript : MonoBehaviour
         scoreCount.text = multScore.ToString();
     }
 
-    public void CheckStickers()
-    {
-        if (lycheeStickerScore == 1)
-        {
-            stickerOne.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (pitahayaStickerScore == 1)
-        {
-            stickerTwo.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (frogStickerScore == 1)
-        {
-            stickerThree.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (flagStickerScore == 1)
-        {
-            stickerFour.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (rocketStickerScore == 1)
-        {
-            stickerFive.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (laikaStickerScore == 1)
-        {
-            stickerSix.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-    }
+    //public void CheckStickers()
+    //{
+    //    if (lycheeStickerScore == 1)
+    //    {
+    //        stickerOne.gameObject.SetActive(true);
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (pitahayaStickerScore == 1)
+    //    {
+    //        stickerTwo.gameObject.SetActive(true);
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (frogStickerScore == 1)
+    //    {
+    //        stickerThree.gameObject.SetActive(true);
+    //        if (worldIndex == 2)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (flagStickerScore == 1)
+    //    {
+    //        stickerFour.gameObject.SetActive(true);
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton1.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (rocketStickerScore == 1)
+    //    {
+    //        stickerFive.gameObject.SetActive(true);
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton2.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //    if (laikaStickerScore == 1)
+    //    {
+    //        stickerSix.gameObject.SetActive(true);
+    //        if (worldIndex == 3)
+    //        {
+    //            levelButton3.GetComponent<Image>().sprite = completedButton;
+    //        }
+    //    }
+    //}
 
     public void StarCount()
     {
@@ -185,8 +185,8 @@ public class MultiplyScript : MonoBehaviour
 
         private void Start()
     {
-        LoadScore();
-        CheckStickers();
+        //LoadScore();
+        //CheckStickers();
         StarCount();
         CheckStars();
         scoreCount.text = multScore.ToString();
@@ -195,10 +195,10 @@ public class MultiplyScript : MonoBehaviour
 
     public void UpdateStickers()
     {
-        CheckStickers();
+        //CheckStickers();
         StarCount();
         CheckStars();
-        SaveScore();
+        //SaveScore();
     }
 
     // Update is called once per frame
@@ -207,16 +207,16 @@ public class MultiplyScript : MonoBehaviour
 
     }
 
-    public void ResetStickers()
-    {
-        lycheeStickerScore = 0;
-        pitahayaStickerScore = 0;
-        frogStickerScore = 0;
-        flagStickerScore = 0;
-        rocketStickerScore = 0;
-        laikaStickerScore = 0;
-        SaveScore();
-    }
+    //public void ResetStickers()
+    //{
+    //    lycheeStickerScore = 0;
+    //    pitahayaStickerScore = 0;
+    //    frogStickerScore = 0;
+    //    flagStickerScore = 0;
+    //    rocketStickerScore = 0;
+    //    laikaStickerScore = 0;
+    //    //SaveScore();
+    //}
 
     public void MultJungle()
     {
