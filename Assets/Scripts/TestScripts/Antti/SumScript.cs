@@ -54,6 +54,15 @@ public class SumScript : MonoBehaviour
         task = sumScore + 1;
     }
 
+    public void SetWorldIndex()
+    {
+        worldIndex = book.worldIndex;
+    }
+    public void SetLevelIndex(int level)
+    {
+        levelIndex = level;
+    }
+
     public void ResetScore() // resets temporart level score
     {
         sumScore = 0;
@@ -730,6 +739,7 @@ public class SumScript : MonoBehaviour
 
     private void Start()
     {
+        SetWorldIndex();
         completedButton = starCount.completedButton;
         clearButton = starCount.clearButton;
         Load();

@@ -9,8 +9,7 @@ public class StarCount : MonoBehaviour
     public StickerBook book;
 
     // WORLD
-    public int worldIndex = 0;
-    public int levelIndex = 0;
+    public int worldIndex;
 
     // MENU
     public GameObject sumMenuButton, subMenuButton, countMenuButton, multMenuButton, divMenuButton; // Category buttons that change sprites when category is completed
@@ -26,14 +25,8 @@ public class StarCount : MonoBehaviour
     public int multJungleStarCount, multSpaceStarCount;
     public int divJungleStarCount, divSpaceStarCount;
 
-    public void SetWorldIndex()
-    {
-        worldIndex = book.worldIndex;
-    }
-
     public void UpdateStarCounts()
     {
-        SetWorldIndex();
         book.UpdateStarCounts();
         sumFarmStarCount = book.sumFarmStarCount;
         sumJungleStarCount = book.sumJungleStarCount;
@@ -257,56 +250,56 @@ public class StarCount : MonoBehaviour
                         break;
                 }
                 break;
-            case 2:
-                switch (countJungleStarCount)
-                {
-                    case 0:
-                        countStars.GetComponent<Image>().sprite = noStars;
-                        countMenuStars.GetComponent<Image>().sprite = noStars;
-                        countMenuButton.GetComponent<Image>().sprite = clearButton;
-                        break;
-                    case 1:
-                        countStars.GetComponent<Image>().sprite = oneStar;
-                        countMenuStars.GetComponent<Image>().sprite = oneStar;
-                        countMenuButton.GetComponent<Image>().sprite = clearButton;
-                        break;
-                    case 2:
-                        countStars.GetComponent<Image>().sprite = twoStar;
-                        countMenuStars.GetComponent<Image>().sprite = twoStar;
-                        countMenuButton.GetComponent<Image>().sprite = clearButton;
-                        break;
-                    case 3:
-                        countStars.GetComponent<Image>().sprite = threeStar;
-                        countMenuStars.GetComponent<Image>().sprite = threeStar;
-                        countMenuButton.GetComponent<Image>().sprite = completedButton;
-                        break;
-                }
-                break;
-            case 3:
-                switch (countSpaceStarCount)
-                {
-                    case 0:
-                        countStars.GetComponent<Image>().sprite = noStars;
-                        countMenuStars.GetComponent<Image>().sprite = noStars;
-                        countMenuButton.GetComponent<Image>().sprite = clearButton;
-                        break;
-                    case 1:
-                        countStars.GetComponent<Image>().sprite = oneStar;
-                        countMenuStars.GetComponent<Image>().sprite = oneStar;
-                        countMenuButton.GetComponent<Image>().sprite = clearButton;
-                        break;
-                    case 2:
-                        countStars.GetComponent<Image>().sprite = twoStar;
-                        countMenuStars.GetComponent<Image>().sprite = twoStar;
-                        countMenuButton.GetComponent<Image>().sprite = clearButton;
-                        break;
-                    case 3:
-                        countStars.GetComponent<Image>().sprite = threeStar;
-                        countMenuStars.GetComponent<Image>().sprite = threeStar;
-                        countMenuButton.GetComponent<Image>().sprite = completedButton;
-                        break;
-                }
-                break;
+            //case 2:
+            //    switch (countJungleStarCount)
+            //    {
+            //        case 0:
+            //            countStars.GetComponent<Image>().sprite = noStars;
+            //            countMenuStars.GetComponent<Image>().sprite = noStars;
+            //            countMenuButton.GetComponent<Image>().sprite = clearButton;
+            //            break;
+            //        case 1:
+            //            countStars.GetComponent<Image>().sprite = oneStar;
+            //            countMenuStars.GetComponent<Image>().sprite = oneStar;
+            //            countMenuButton.GetComponent<Image>().sprite = clearButton;
+            //            break;
+            //        case 2:
+            //            countStars.GetComponent<Image>().sprite = twoStar;
+            //            countMenuStars.GetComponent<Image>().sprite = twoStar;
+            //            countMenuButton.GetComponent<Image>().sprite = clearButton;
+            //            break;
+            //        case 3:
+            //            countStars.GetComponent<Image>().sprite = threeStar;
+            //            countMenuStars.GetComponent<Image>().sprite = threeStar;
+            //            countMenuButton.GetComponent<Image>().sprite = completedButton;
+            //            break;
+            //    }
+            //    break;
+            //case 3:
+            //    switch (countSpaceStarCount)
+            //    {
+            //        case 0:
+            //            countStars.GetComponent<Image>().sprite = noStars;
+            //            countMenuStars.GetComponent<Image>().sprite = noStars;
+            //            countMenuButton.GetComponent<Image>().sprite = clearButton;
+            //            break;
+            //        case 1:
+            //            countStars.GetComponent<Image>().sprite = oneStar;
+            //            countMenuStars.GetComponent<Image>().sprite = oneStar;
+            //            countMenuButton.GetComponent<Image>().sprite = clearButton;
+            //            break;
+            //        case 2:
+            //            countStars.GetComponent<Image>().sprite = twoStar;
+            //            countMenuStars.GetComponent<Image>().sprite = twoStar;
+            //            countMenuButton.GetComponent<Image>().sprite = clearButton;
+            //            break;
+            //        case 3:
+            //            countStars.GetComponent<Image>().sprite = threeStar;
+            //            countMenuStars.GetComponent<Image>().sprite = threeStar;
+            //            countMenuButton.GetComponent<Image>().sprite = completedButton;
+            //            break;
+            //    }
+            //    break;
             default:
                 Debug.Log("No world index set");
                 break;

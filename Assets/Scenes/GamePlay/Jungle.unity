@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 31641656}
   - component: {fileID: 31641655}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,8 +676,8 @@ RectTransform:
   m_Father: {fileID: 280581197}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -714,7 +714,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &31641656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1131,11 +1131,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &41483809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2872880850789100396, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &42566426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 0}
   stickerbookButton: {fileID: 1612285898}
   settingsMenu: {fileID: 0}
   resetWarning: {fileID: 1521758081}
@@ -1351,7 +1347,7 @@ GameObject:
   - component: {fileID: 48919497}
   - component: {fileID: 48919496}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2680,7 +2676,7 @@ GameObject:
   - component: {fileID: 71156364}
   - component: {fileID: 71156363}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2700,8 +2696,8 @@ RectTransform:
   m_Father: {fileID: 1007352534}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2738,7 +2734,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &71156364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3022,65 +3018,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
-  sumStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  appleStickerScore: 0
-  basketStickerScore: 0
-  pigStickerScore: 0
-  bananaStickerScore: 0
-  clusterStickerScore: 0
-  monkeyStickerScore: 0
-  asteroidStickerScore: 0
-  blackholeStickerScore: 0
-  llamaStickerScore: 0
-  levelIndex: 6
-  worldIndex: 2
-  FirstValue: {fileID: 1349105976}
-  SecondValue: {fileID: 259505536}
-  Function: {fileID: 162647501}
-  Alt1: {fileID: 1314522442}
-  Alt2: {fileID: 1961140017}
-  Alt3: {fileID: 1357524193}
-  AnswerSpot: {fileID: 691143068}
-  scoreCount: {fileID: 282589888}
-  ONE: {fileID: 790125427}
-  TWO: {fileID: 656932128}
-  THREE: {fileID: 1242656794}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 802231666}
-  stickerTwo: {fileID: 802231665}
-  stickerThree: {fileID: 802231664}
-  stickerFour: {fileID: 756320350}
-  stickerFive: {fileID: 404703126}
-  stickerSix: {fileID: 712146883}
-  stickerSeven: {fileID: 929747279}
-  stickerEight: {fileID: 1059226102}
-  stickerNine: {fileID: 1543463660}
-  sumMenuButton: {fileID: 1127849941}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1797065426}
   levelButton2: {fileID: 639277659}
   levelButton3: {fileID: 1780259574}
-  animatedLevelEnd1: {fileID: 0}
-  animatedLevelEnd2: {fileID: 0}
-  animatedLevelEnd3: {fileID: 0}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 1022386183}
-  menuStars: {fileID: 1505387751}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 6
+  Animal: {fileID: 1798440918}
+  level: {fileID: 337827793}
+  levelEnd: {fileID: 1996556127}
+  animatedLevelEnd: {fileID: 1052586104}
+  sumScore: 0
+  task: 0
+  FirstValue: {fileID: 1349105976}
+  SecondValue: {fileID: 259505536}
+  Function: {fileID: 162647501}
+  AnswerSpot: {fileID: 691143068}
+  taskNumber: {fileID: 282589888}
+  Alt1: {fileID: 1314522442}
+  Alt2: {fileID: 1961140017}
+  Alt3: {fileID: 1357524193}
   button1: {fileID: 1386439373}
   button2: {fileID: 67941085}
   button3: {fileID: 2059993884}
+  ONE: {fileID: 790125427}
+  TWO: {fileID: 656932128}
+  THREE: {fileID: 1242656794}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 337827793}
-  switchOn: {fileID: 1996556127}
-  Animal: {fileID: 1798440918}
   firstObjectSlot: {fileID: 1332904431}
   secondObjectSlot: {fileID: 613559204}
   objectSprite:
@@ -4140,7 +4109,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 385868508}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4961,7 +4930,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1065523398}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5057,7 +5026,7 @@ GameObject:
   - component: {fileID: 119229475}
   - component: {fileID: 119229476}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5077,8 +5046,8 @@ RectTransform:
   m_Father: {fileID: 1388845043}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5123,7 +5092,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &119899948
 GameObject:
   m_ObjectHideFlags: 0
@@ -6126,7 +6095,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 912344939}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6262,7 +6231,7 @@ GameObject:
   - component: {fileID: 152895050}
   - component: {fileID: 152895049}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8287,7 +8256,7 @@ GameObject:
   - component: {fileID: 199430716}
   - component: {fileID: 199430715}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8648,55 +8617,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba5c32cc8cce8a43950670f985adc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multScore: 0
-  multJungleStarCount: 0
-  multSpaceStarCount: 0
-  lycheeStickerScore: 0
-  pitahayaStickerScore: 0
-  frogStickerScore: 0
-  flagStickerScore: 0
-  rocketStickerScore: 0
-  laikaStickerScore: 0
-  levelIndex: 1
-  worldIndex: 2
-  FirstValue: {fileID: 1137862115}
-  SecondValue: {fileID: 561884868}
-  Function: {fileID: 1524635781}
-  Alt1: {fileID: 1194542004}
-  Alt2: {fileID: 1625715927}
-  Alt3: {fileID: 243949376}
-  AnswerSpot: {fileID: 1668752177}
-  scoreCount: {fileID: 428428348}
-  ONE: {fileID: 148949056}
-  TWO: {fileID: 1114814315}
-  THREE: {fileID: 829557016}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 387420723}
-  stickerTwo: {fileID: 1078449013}
-  stickerThree: {fileID: 442784024}
-  stickerFour: {fileID: 1055835412}
-  stickerFive: {fileID: 1199095784}
-  stickerSix: {fileID: 1854176452}
-  multMenuButton: {fileID: 1329916127}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1759831453}
   levelButton2: {fileID: 751126222}
   levelButton3: {fileID: 1219321122}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  multStars: {fileID: 186057282}
-  menuStars: {fileID: 2009467766}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 1
+  Animal: {fileID: 947199243}
+  level: {fileID: 804867374}
+  levelEnd: {fileID: 1439016459}
+  animatedLevelEnd: {fileID: 1132793737}
+  multScore: 0
+  task: 0
+  FirstValue: {fileID: 1137862115}
+  SecondValue: {fileID: 561884868}
+  Function: {fileID: 1524635781}
+  AnswerSpot: {fileID: 1668752177}
+  taskNumber: {fileID: 428428348}
+  Alt1: {fileID: 1194542004}
+  Alt2: {fileID: 1625715927}
+  Alt3: {fileID: 243949376}
   button1: {fileID: 779899284}
   button2: {fileID: 1011412400}
   button3: {fileID: 554076615}
+  ONE: {fileID: 148949056}
+  TWO: {fileID: 1114814315}
+  THREE: {fileID: 829557016}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 804867374}
-  switchOn: {fileID: 1439016459}
-  Animal: {fileID: 947199243}
+  firstObjectSlot: {fileID: 0}
+  secondObjectSlot: {fileID: 0}
+  objectSprite: []
 --- !u!1 &225804227
 GameObject:
   m_ObjectHideFlags: 0
@@ -9849,7 +9804,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1167373306}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22479166, y: 0.64722216}
   m_AnchorMax: {x: 0.30600002, y: 0.7962963}
@@ -9962,7 +9917,7 @@ GameObject:
   - component: {fileID: 252958706}
   - component: {fileID: 252958705}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9982,8 +9937,8 @@ RectTransform:
   m_Father: {fileID: 1749521968}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10020,7 +9975,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &252958706
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11756,7 +11711,7 @@ GameObject:
   - component: {fileID: 280581199}
   - component: {fileID: 280581198}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12057,7 +12012,7 @@ GameObject:
   - component: {fileID: 282589887}
   - component: {fileID: 282589888}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12077,8 +12032,8 @@ RectTransform:
   m_Father: {fileID: 641199774}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12123,7 +12078,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &288061268
 GameObject:
   m_ObjectHideFlags: 0
@@ -12299,7 +12254,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 78942762}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14024,7 +13979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &347189554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14095,6 +14050,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66189be89a9224744b099f10c59f02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 0}
+  starCount: {fileID: 0}
+  levelIndex: 1
+  worldIndex: 0
+  levelButton1: {fileID: 0}
+  levelButton2: {fileID: 0}
+  levelButton3: {fileID: 0}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 0}
+  Animal: {fileID: 1825810029}
+  level: {fileID: 0}
+  levelEnd: {fileID: 0}
+  animatedLevelEnd: {fileID: 0}
+  sumScore: 0
+  task: 0
   QnA:
   - Question: ONE
     Objects: {fileID: 21300000, guid: 2b7862c448361e24eb91fe51526e2a5b, type: 3}
@@ -14137,32 +14107,10 @@ MonoBehaviour:
   - {fileID: 1893898333}
   currentQuestion: 0
   QuestionImg: {fileID: 32726368}
-  GoPanel: {fileID: 1908543157}
   QuestionTxt: {fileID: 715371830}
   QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
-  ScoreTxt: {fileID: 556417414}
+  taskNumber: {fileID: 0}
   score: 0
-  levelIndex: 1
-  worldIndex: 0
-  countStarCount: 0
-  countSpaceStarCount: 0
-  threeCornStickerScore: 0
-  twoCornStickerScore: 0
-  lambStickerScore: 0
-  stickerOne: {fileID: 802231668}
-  stickerTwo: {fileID: 802231667}
-  stickerThree: {fileID: 802231660}
-  countMenuButton: {fileID: 0}
-  levelButton1: {fileID: 0}
-  levelButton2: {fileID: 0}
-  levelButton3: {fileID: 0}
-  completedButton: {fileID: 0}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  countStars: {fileID: 310504457}
-  menuStars: {fileID: 1720954665}
-  Animal: {fileID: 1825810029}
 --- !u!4 &347189556
 Transform:
   m_ObjectHideFlags: 0
@@ -15479,65 +15427,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
-  sumStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  appleStickerScore: 0
-  basketStickerScore: 0
-  pigStickerScore: 0
-  bananaStickerScore: 0
-  clusterStickerScore: 0
-  monkeyStickerScore: 0
-  asteroidStickerScore: 0
-  blackholeStickerScore: 0
-  llamaStickerScore: 0
-  levelIndex: 4
-  worldIndex: 2
-  FirstValue: {fileID: 1789822907}
-  SecondValue: {fileID: 704152903}
-  Function: {fileID: 1775194724}
-  Alt1: {fileID: 1771188398}
-  Alt2: {fileID: 1487175037}
-  Alt3: {fileID: 1546671085}
-  AnswerSpot: {fileID: 978671609}
-  scoreCount: {fileID: 1179308564}
-  ONE: {fileID: 975850521}
-  TWO: {fileID: 1776819375}
-  THREE: {fileID: 1498161788}
-  appleSpawn: {fileID: 1594468548}
-  apple: {fileID: 482795837948789169, guid: 8ca1e0ddf09001c44bd81d7ea2745df7, type: 3}
-  stickerOne: {fileID: 802231666}
-  stickerTwo: {fileID: 802231665}
-  stickerThree: {fileID: 802231664}
-  stickerFour: {fileID: 756320350}
-  stickerFive: {fileID: 404703126}
-  stickerSix: {fileID: 712146883}
-  stickerSeven: {fileID: 929747279}
-  stickerEight: {fileID: 1059226102}
-  stickerNine: {fileID: 1543463660}
-  sumMenuButton: {fileID: 1127849941}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1797065426}
   levelButton2: {fileID: 639277659}
   levelButton3: {fileID: 1780259574}
-  animatedLevelEnd1: {fileID: 0}
-  animatedLevelEnd2: {fileID: 0}
-  animatedLevelEnd3: {fileID: 0}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 1022386183}
-  menuStars: {fileID: 1505387751}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 4
+  Animal: {fileID: 1693060764}
+  level: {fileID: 1167373306}
+  levelEnd: {fileID: 962181325}
+  animatedLevelEnd: {fileID: 1907221329}
+  sumScore: 0
+  task: 0
+  FirstValue: {fileID: 1789822907}
+  SecondValue: {fileID: 704152903}
+  Function: {fileID: 1775194724}
+  AnswerSpot: {fileID: 978671609}
+  taskNumber: {fileID: 1179308564}
+  Alt1: {fileID: 1771188398}
+  Alt2: {fileID: 1487175037}
+  Alt3: {fileID: 1546671085}
   button1: {fileID: 262507104}
   button2: {fileID: 676549831}
   button3: {fileID: 1346997171}
+  ONE: {fileID: 975850521}
+  TWO: {fileID: 1776819375}
+  THREE: {fileID: 1498161788}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 1167373306}
-  switchOn: {fileID: 962181325}
-  Animal: {fileID: 1693060764}
   firstObjectSlot: {fileID: 743288033}
   secondObjectSlot: {fileID: 1238976067}
   objectSprite:
@@ -15704,11 +15625,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19cdab1f169be1d4b8b66081838b1562, type: 3}
---- !u!1 &387420723 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7751017368296436236, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &390119497
 GameObject:
   m_ObjectHideFlags: 0
@@ -16055,7 +15971,6 @@ RectTransform:
   - {fileID: 1167373306}
   - {fileID: 280854867}
   - {fileID: 962181325}
-  - {fileID: 1120301653}
   - {fileID: 914099488}
   - {fileID: 1594468550}
   - {fileID: 1693060765}
@@ -16128,11 +16043,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &404703126 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3858413582356388994, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &405099612
 GameObject:
   m_ObjectHideFlags: 0
@@ -17592,7 +17502,7 @@ GameObject:
   - component: {fileID: 428428349}
   - component: {fileID: 428428348}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17612,8 +17522,8 @@ RectTransform:
   m_Father: {fileID: 1400697570}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17650,7 +17560,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &428428349
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18226,11 +18136,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &442784024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 774669713174927727, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &444496578
 GameObject:
   m_ObjectHideFlags: 0
@@ -19128,7 +19033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8203394043084060660, guid: 4dbd269586ae7ca4f8a4c593da016796, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8203394043084060660, guid: 4dbd269586ae7ca4f8a4c593da016796, type: 3}
       propertyPath: m_AnchorMax.x
@@ -20036,11 +19941,6 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 846800662572404065, guid: 3f719eb1ebe249c46bac56417d2fa549, type: 3}
   m_PrefabInstance: {fileID: 483360851}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &484536419 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8088257858148987840, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &485306181
 GameObject:
@@ -21286,9 +21186,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436757935}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22035,7 +21935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248520876808517867, guid: dbe1edeb264dd14449f56f489feb23b5, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8248520876808517867, guid: dbe1edeb264dd14449f56f489feb23b5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -23473,7 +23373,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1436757935}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23793,7 +23693,7 @@ GameObject:
   - component: {fileID: 565359574}
   - component: {fileID: 565359573}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23933,7 +23833,7 @@ RectTransform:
   m_Children:
   - {fileID: 257313489}
   m_Father: {fileID: 2096609654}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.75, y: 0.5}
   m_AnchorMax: {x: 0.75, y: 0.5}
@@ -24743,9 +24643,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 715659774}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24865,7 +24765,7 @@ GameObject:
   - component: {fileID: 593678331}
   - component: {fileID: 593678332}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24885,8 +24785,8 @@ RectTransform:
   m_Father: {fileID: 1406885175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -24931,7 +24831,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!224 &593880313 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3429686591764532362, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -25934,55 +25834,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028f55c8cefd5b746a5709093e0e5423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  divScore: 0
-  divJungleStarCount: 0
-  divSpaceStarCount: 0
-  avocadoStickerScore: 0
-  toolStickerScore: 0
-  tigerStickerScore: 0
-  driedfishStickerScore: 0
-  octopusStickerScore: 0
-  catStickerScore: 0
-  levelIndex: 2
-  worldIndex: 2
-  FirstValue: {fileID: 1475835214}
-  SecondValue: {fileID: 1987163974}
-  Function: {fileID: 924743891}
-  Alt1: {fileID: 335683295}
-  Alt2: {fileID: 467832849}
-  Alt3: {fileID: 1726847837}
-  AnswerSpot: {fileID: 1232449729}
-  scoreCount: {fileID: 2034105342}
-  ONE: {fileID: 2009949677}
-  TWO: {fileID: 2056386129}
-  THREE: {fileID: 881314817}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 1451988622}
-  stickerTwo: {fileID: 943862442}
-  stickerThree: {fileID: 41483809}
-  stickerFour: {fileID: 1764820923}
-  stickerFive: {fileID: 1104104459}
-  stickerSix: {fileID: 484536419}
-  divMenuButton: {fileID: 368597189}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 2118442610}
   levelButton2: {fileID: 1699415849}
   levelButton3: {fileID: 567797370}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  divStars: {fileID: 1119881579}
-  menuStars: {fileID: 2138780503}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 2
+  Animal: {fileID: 2075813474}
+  level: {fileID: 1526498471}
+  levelEnd: {fileID: 1844982670}
+  animatedLevelEnd: {fileID: 1602816161}
+  divScore: 0
+  task: 0
+  FirstValue: {fileID: 1475835214}
+  SecondValue: {fileID: 1987163974}
+  Function: {fileID: 924743891}
+  AnswerSpot: {fileID: 1232449729}
+  taskNumber: {fileID: 2034105342}
+  Alt1: {fileID: 335683295}
+  Alt2: {fileID: 467832849}
+  Alt3: {fileID: 1726847837}
   button1: {fileID: 819256048}
   button2: {fileID: 420485294}
   button3: {fileID: 92096463}
+  ONE: {fileID: 2009949677}
+  TWO: {fileID: 2056386129}
+  THREE: {fileID: 881314817}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 1526498471}
-  switchOn: {fileID: 1844982670}
-  Animal: {fileID: 2075813474}
+  firstObjectSlot: {fileID: 0}
+  secondObjectSlot: {fileID: 0}
+  objectSprite: []
 --- !u!1 &610623940
 GameObject:
   m_ObjectHideFlags: 0
@@ -27026,7 +26912,7 @@ GameObject:
   - component: {fileID: 641199776}
   - component: {fileID: 641199775}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28494,11 +28380,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696953767}
   m_CullTransparentMesh: 1
---- !u!1 &699017415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8646682276661464065, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &701766305
 GameObject:
   m_ObjectHideFlags: 0
@@ -28909,11 +28790,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708984851}
   m_CullTransparentMesh: 1
---- !u!1 &712146883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4781292998840097010, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &715371829
 GameObject:
   m_ObjectHideFlags: 0
@@ -29037,62 +28913,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subScore: 0
-  subStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 5
-  worldIndex: 2
-  switchOff: {fileID: 442362057}
-  switchOn: {fileID: 822415597}
-  FirstValue: {fileID: 196384925}
-  SecondValue: {fileID: 1028063965}
-  Function: {fileID: 3377031}
-  Alt1: {fileID: 840046131}
-  Alt2: {fileID: 768871365}
-  Alt3: {fileID: 1589934690}
-  AnswerSpot: {fileID: 1423882123}
-  scoreCount: {fileID: 119229476}
-  ONE: {fileID: 394385588}
-  TWO: {fileID: 1900137223}
-  THREE: {fileID: 1966147330}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 802231661}
-  stickerTwo: {fileID: 802231663}
-  stickerThree: {fileID: 802231662}
-  stickerFour: {fileID: 699017415}
-  stickerFive: {fileID: 1435587012}
-  stickerSix: {fileID: 1210317241}
-  stickerSeven: {fileID: 1932917645}
-  stickerEight: {fileID: 850603114}
-  stickerNine: {fileID: 897954652}
-  subMenuButton: {fileID: 1508602789}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1342287532}
   levelButton2: {fileID: 262836504}
   levelButton3: {fileID: 1443978034}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 2095371362}
-  menuStars: {fileID: 1198049900}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 5
+  Animal: {fileID: 1583288675}
+  level: {fileID: 442362057}
+  levelEnd: {fileID: 822415597}
+  animatedLevelEnd: {fileID: 590689389}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 196384925}
+  SecondValue: {fileID: 1028063965}
+  Function: {fileID: 3377031}
+  AnswerSpot: {fileID: 1423882123}
+  taskNumber: {fileID: 119229476}
+  Alt1: {fileID: 840046131}
+  Alt2: {fileID: 768871365}
+  Alt3: {fileID: 1589934690}
   button1: {fileID: 1637914943}
   button2: {fileID: 2065234006}
   button3: {fileID: 1448507690}
+  ONE: {fileID: 394385588}
+  TWO: {fileID: 1900137223}
+  THREE: {fileID: 1966147330}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 1583288675}
   firstObjectSlot: {fileID: 1113107225}
   secondObjectSlot: {fileID: 246020719}
   objectSprite:
@@ -30427,11 +30279,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751126222}
   m_CullTransparentMesh: 1
---- !u!1 &756320350 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3656002267160674726, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &760066129
 GameObject:
   m_ObjectHideFlags: 0
@@ -30953,9 +30800,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2132550888}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32829,9 +32676,113 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 42566427}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: divStars
+      value: 
+      objectReference: {fileID: 1119881579}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subStars
+      value: 
+      objectReference: {fileID: 2095371362}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumStars
+      value: 
+      objectReference: {fileID: 1022386183}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: multStars
+      value: 
+      objectReference: {fileID: 186057282}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: worldIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: divMenuStars
+      value: 
+      objectReference: {fileID: 2138780503}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subMenuStars
+      value: 
+      objectReference: {fileID: 1198049900}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumMenuStars
+      value: 
+      objectReference: {fileID: 1505387751}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: divMenuButton
+      value: 
+      objectReference: {fileID: 368597189}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: multMenuStars
+      value: 
+      objectReference: {fileID: 2009467766}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subMenuButton
+      value: 
+      objectReference: {fileID: 1508602789}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumMenuButton
+      value: 
+      objectReference: {fileID: 1127849941}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: multMenuButton
+      value: 
+      objectReference: {fileID: 1329916127}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: div1
+      value: 
+      objectReference: {fileID: 2132550888}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: div2
+      value: 
+      objectReference: {fileID: 609377424}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: div3
+      value: 
+      objectReference: {fileID: 1154250889}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub1
+      value: 
+      objectReference: {fileID: 912344939}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub2
+      value: 
+      objectReference: {fileID: 715659774}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub3
+      value: 
+      objectReference: {fileID: 906460866}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum1
+      value: 
+      objectReference: {fileID: 385868508}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum2
+      value: 
+      objectReference: {fileID: 1436757935}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum3
+      value: 
+      objectReference: {fileID: 78942762}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: mult1
+      value: 
+      objectReference: {fileID: 221378034}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: mult2
+      value: 
+      objectReference: {fileID: 1065523398}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: mult3
+      value: 
+      objectReference: {fileID: 1659828921}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: worldIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
@@ -32840,23 +32791,23 @@ PrefabInstance:
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 385868508}
+      objectReference: {fileID: 965872508}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 912344939}
+      objectReference: {fileID: 42566427}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 221378034}
+      objectReference: {fileID: 42566427}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2132550888}
+      objectReference: {fileID: 42566427}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 347189555}
+      objectReference: {fileID: 42566427}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
@@ -32866,8 +32817,48 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetStickers
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OpenResetWarning
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OpenResetWarning
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: OpenResetWarning
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: OpenResetWarning
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
       value: OpenResetWarning
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StickerBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MenuControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: MenuControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: MenuControl, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
@@ -32879,11 +32870,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
---- !u!1 &802231660 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4287893758202308374, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &802231661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1187084697507962629, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -32912,16 +32898,6 @@ GameObject:
 --- !u!1 &802231666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5336435359699609623, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &802231667 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5676771327779652057, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &802231668 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2787937726705110856, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 802231659}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &802231669 stripped
@@ -32976,6 +32952,7 @@ RectTransform:
   m_Children:
   - {fileID: 327434184}
   - {fileID: 946260136}
+  - {fileID: 1400697570}
   - {fileID: 1655175970}
   m_Father: {fileID: 1787820160}
   m_RootOrder: 0
@@ -33233,7 +33210,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 609377424}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35289,7 +35266,7 @@ RectTransform:
   - {fileID: 1727135882}
   - {fileID: 317506266}
   m_Father: {fileID: 1787820160}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2474375, y: 0.62}
   m_AnchorMax: {x: 0.9628125, y: 1}
@@ -35586,11 +35563,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849761053}
   m_CullTransparentMesh: 1
---- !u!1 &850603114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2209351320338588003, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &852876710
 GameObject:
   m_ObjectHideFlags: 0
@@ -37497,11 +37469,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &897954652 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 565681036438202203, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &906460864
 GameObject:
   m_ObjectHideFlags: 0
@@ -37546,62 +37513,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subScore: 0
-  subStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 6
-  worldIndex: 2
-  switchOff: {fileID: 993616420}
-  switchOn: {fileID: 1373176529}
-  FirstValue: {fileID: 1451286229}
-  SecondValue: {fileID: 1860768861}
-  Function: {fileID: 619992854}
-  Alt1: {fileID: 599903786}
-  Alt2: {fileID: 1420014235}
-  Alt3: {fileID: 2098926545}
-  AnswerSpot: {fileID: 1003644124}
-  scoreCount: {fileID: 1305700481}
-  ONE: {fileID: 138484583}
-  TWO: {fileID: 2080314052}
-  THREE: {fileID: 986154436}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 802231661}
-  stickerTwo: {fileID: 802231663}
-  stickerThree: {fileID: 802231662}
-  stickerFour: {fileID: 699017415}
-  stickerFive: {fileID: 1435587012}
-  stickerSix: {fileID: 1210317241}
-  stickerSeven: {fileID: 1932917645}
-  stickerEight: {fileID: 850603114}
-  stickerNine: {fileID: 897954652}
-  subMenuButton: {fileID: 1508602789}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1342287532}
   levelButton2: {fileID: 262836504}
   levelButton3: {fileID: 1443978034}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 2095371362}
-  menuStars: {fileID: 1198049900}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 6
+  Animal: {fileID: 1307613256}
+  level: {fileID: 993616420}
+  levelEnd: {fileID: 1373176529}
+  animatedLevelEnd: {fileID: 1362852225}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 1451286229}
+  SecondValue: {fileID: 1860768861}
+  Function: {fileID: 619992854}
+  AnswerSpot: {fileID: 1003644124}
+  taskNumber: {fileID: 1305700481}
+  Alt1: {fileID: 599903786}
+  Alt2: {fileID: 1420014235}
+  Alt3: {fileID: 2098926545}
   button1: {fileID: 642158558}
   button2: {fileID: 896966508}
   button3: {fileID: 2013939806}
+  ONE: {fileID: 138484583}
+  TWO: {fileID: 2080314052}
+  THREE: {fileID: 986154436}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 1307613256}
   firstObjectSlot: {fileID: 82793675}
   secondObjectSlot: {fileID: 512436741}
   objectSprite:
@@ -37770,62 +37713,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subScore: 0
-  subStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 4
-  worldIndex: 2
-  switchOff: {fileID: 504004279}
-  switchOn: {fileID: 1335454314}
-  FirstValue: {fileID: 264349092}
-  SecondValue: {fileID: 1762432791}
-  Function: {fileID: 233092978}
-  Alt1: {fileID: 301373908}
-  Alt2: {fileID: 652652473}
-  Alt3: {fileID: 1392834319}
-  AnswerSpot: {fileID: 1569156667}
-  scoreCount: {fileID: 593678332}
-  ONE: {fileID: 828449552}
-  TWO: {fileID: 8050546}
-  THREE: {fileID: 528272034}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 802231661}
-  stickerTwo: {fileID: 802231663}
-  stickerThree: {fileID: 802231662}
-  stickerFour: {fileID: 699017415}
-  stickerFive: {fileID: 1435587012}
-  stickerSix: {fileID: 1210317241}
-  stickerSeven: {fileID: 1932917645}
-  stickerEight: {fileID: 850603114}
-  stickerNine: {fileID: 897954652}
-  subMenuButton: {fileID: 1508602789}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1342287532}
   levelButton2: {fileID: 262836504}
   levelButton3: {fileID: 1443978034}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 2095371362}
-  menuStars: {fileID: 1198049900}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 4
+  Animal: {fileID: 1419323188}
+  level: {fileID: 504004279}
+  levelEnd: {fileID: 1335454314}
+  animatedLevelEnd: {fileID: 1601504242}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 264349092}
+  SecondValue: {fileID: 1762432791}
+  Function: {fileID: 233092978}
+  AnswerSpot: {fileID: 1569156667}
+  taskNumber: {fileID: 593678332}
+  Alt1: {fileID: 301373908}
+  Alt2: {fileID: 652652473}
+  Alt3: {fileID: 1392834319}
   button1: {fileID: 357914587}
   button2: {fileID: 1455455678}
   button3: {fileID: 1808956149}
+  ONE: {fileID: 828449552}
+  TWO: {fileID: 8050546}
+  THREE: {fileID: 528272034}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 1419323188}
   firstObjectSlot: {fileID: 1030273677}
   secondObjectSlot: {fileID: 1324190165}
   objectSprite:
@@ -38056,7 +37975,7 @@ RectTransform:
   - {fileID: 61521823}
   - {fileID: 1236481126}
   m_Father: {fileID: 400250006}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2474375, y: 0.62}
   m_AnchorMax: {x: 0.9628125, y: 1}
@@ -38749,11 +38668,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926296343}
   m_CullTransparentMesh: 1
---- !u!1 &929747279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5394624945872519665, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931077706
 GameObject:
   m_ObjectHideFlags: 0
@@ -39299,11 +39213,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942513839}
   m_CullTransparentMesh: 1
---- !u!1 &943862442 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5726737999206567466, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &946260135
 GameObject:
   m_ObjectHideFlags: 0
@@ -39402,7 +39311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850377357808825757, guid: 19cdab1f169be1d4b8b66081838b1562, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1850377357808825757, guid: 19cdab1f169be1d4b8b66081838b1562, type: 3}
       propertyPath: m_AnchorMax.x
@@ -39997,7 +39906,7 @@ Transform:
   m_LocalScale: {x: 4.4293256, y: 2.4362, z: 1}
   m_Children: []
   m_Father: {fileID: 1787820160}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &955385608
 SpriteRenderer:
@@ -40945,7 +40854,7 @@ GameObject:
   - component: {fileID: 981227133}
   - component: {fileID: 981227132}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42026,7 +41935,7 @@ GameObject:
   - component: {fileID: 1007352536}
   - component: {fileID: 1007352535}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42239,6 +42148,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66189be89a9224744b099f10c59f02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 0}
+  starCount: {fileID: 0}
+  levelIndex: 3
+  worldIndex: 0
+  levelButton1: {fileID: 0}
+  levelButton2: {fileID: 0}
+  levelButton3: {fileID: 0}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 0}
+  Animal: {fileID: 0}
+  level: {fileID: 0}
+  levelEnd: {fileID: 0}
+  animatedLevelEnd: {fileID: 0}
+  sumScore: 0
+  task: 0
   QnA:
   - Question: TWO
     Objects: {fileID: 21300000, guid: 114faad35d3889649b03b8c067448a52, type: 3}
@@ -42253,32 +42177,10 @@ MonoBehaviour:
   - {fileID: 931077706}
   currentQuestion: 0
   QuestionImg: {fileID: 1990234278}
-  GoPanel: {fileID: 798282727}
   QuestionTxt: {fileID: 429651579}
   QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
-  ScoreTxt: {fileID: 997176631}
+  taskNumber: {fileID: 0}
   score: 0
-  levelIndex: 3
-  worldIndex: 0
-  countStarCount: 0
-  countSpaceStarCount: 0
-  threeCornStickerScore: 0
-  twoCornStickerScore: 0
-  lambStickerScore: 0
-  stickerOne: {fileID: 802231668}
-  stickerTwo: {fileID: 802231667}
-  stickerThree: {fileID: 802231660}
-  countMenuButton: {fileID: 0}
-  levelButton1: {fileID: 0}
-  levelButton2: {fileID: 0}
-  levelButton3: {fileID: 0}
-  completedButton: {fileID: 0}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  countStars: {fileID: 0}
-  menuStars: {fileID: 2009467766}
-  Animal: {fileID: 0}
 --- !u!4 &1010229508
 Transform:
   m_ObjectHideFlags: 0
@@ -43039,7 +42941,7 @@ GameObject:
   - component: {fileID: 1023182377}
   - component: {fileID: 1023182378}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43059,8 +42961,8 @@ RectTransform:
   m_Father: {fileID: 565359572}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -43105,7 +43007,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &1023644138
 GameObject:
   m_ObjectHideFlags: 0
@@ -44748,9 +44650,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 78942762}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44897,16 +44799,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054607241}
   m_CullTransparentMesh: 1
---- !u!1 &1055835412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1087604456327940319, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1059226102 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3079262171634800183, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1060098175
 GameObject:
   m_ObjectHideFlags: 0
@@ -45027,55 +44919,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba5c32cc8cce8a43950670f985adc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multScore: 0
-  multJungleStarCount: 0
-  multSpaceStarCount: 0
-  lycheeStickerScore: 0
-  pitahayaStickerScore: 0
-  frogStickerScore: 0
-  flagStickerScore: 0
-  rocketStickerScore: 0
-  laikaStickerScore: 0
-  levelIndex: 2
-  worldIndex: 2
-  FirstValue: {fileID: 568176993}
-  SecondValue: {fileID: 952972478}
-  Function: {fileID: 2023726271}
-  Alt1: {fileID: 617892364}
-  Alt2: {fileID: 616775913}
-  Alt3: {fileID: 1835440678}
-  AnswerSpot: {fileID: 1514290976}
-  scoreCount: {fileID: 31641655}
-  ONE: {fileID: 1334827112}
-  TWO: {fileID: 231135191}
-  THREE: {fileID: 1079224532}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 387420723}
-  stickerTwo: {fileID: 1078449013}
-  stickerThree: {fileID: 442784024}
-  stickerFour: {fileID: 1055835412}
-  stickerFive: {fileID: 1199095784}
-  stickerSix: {fileID: 1854176452}
-  multMenuButton: {fileID: 1329916127}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1759831453}
   levelButton2: {fileID: 751126222}
   levelButton3: {fileID: 1219321122}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  multStars: {fileID: 186057282}
-  menuStars: {fileID: 2009467766}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 2
+  Animal: {fileID: 547556105}
+  level: {fileID: 1664417431}
+  levelEnd: {fileID: 1745758067}
+  animatedLevelEnd: {fileID: 1349503625}
+  multScore: 0
+  task: 0
+  FirstValue: {fileID: 568176993}
+  SecondValue: {fileID: 952972478}
+  Function: {fileID: 2023726271}
+  AnswerSpot: {fileID: 1514290976}
+  taskNumber: {fileID: 31641655}
+  Alt1: {fileID: 617892364}
+  Alt2: {fileID: 616775913}
+  Alt3: {fileID: 1835440678}
   button1: {fileID: 1825434067}
   button2: {fileID: 277149244}
   button3: {fileID: 2008059259}
+  ONE: {fileID: 1334827112}
+  TWO: {fileID: 231135191}
+  THREE: {fileID: 1079224532}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 1664417431}
-  switchOn: {fileID: 1745758067}
-  Animal: {fileID: 547556105}
+  firstObjectSlot: {fileID: 0}
+  secondObjectSlot: {fileID: 0}
+  objectSprite: []
 --- !u!1 &1066070537
 GameObject:
   m_ObjectHideFlags: 0
@@ -45535,11 +45413,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1078449013 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5522778503846685669, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1078451050
 GameObject:
   m_ObjectHideFlags: 0
@@ -46441,11 +46314,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1104104459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1827309280057240390, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104362923
 GameObject:
   m_ObjectHideFlags: 0
@@ -47222,7 +47090,7 @@ GameObject:
   - component: {fileID: 1120301655}
   - component: {fileID: 1120301654}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47240,8 +47108,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1179308566}
-  m_Father: {fileID: 400250006}
-  m_RootOrder: 3
+  m_Father: {fileID: 1167373306}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88, y: 0.62}
   m_AnchorMax: {x: 0.93, y: 0.7}
@@ -47878,9 +47746,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 221378034}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48686,55 +48554,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028f55c8cefd5b746a5709093e0e5423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  divScore: 0
-  divJungleStarCount: 0
-  divSpaceStarCount: 0
-  avocadoStickerScore: 0
-  toolStickerScore: 0
-  tigerStickerScore: 0
-  driedfishStickerScore: 0
-  octopusStickerScore: 0
-  catStickerScore: 0
-  levelIndex: 3
-  worldIndex: 2
-  FirstValue: {fileID: 1925949355}
-  SecondValue: {fileID: 873899778}
-  Function: {fileID: 1108046131}
-  Alt1: {fileID: 1082196197}
-  Alt2: {fileID: 604383566}
-  Alt3: {fileID: 1812128745}
-  AnswerSpot: {fileID: 414159168}
-  scoreCount: {fileID: 71156363}
-  ONE: {fileID: 496912820}
-  TWO: {fileID: 1771361233}
-  THREE: {fileID: 72840403}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 1451988622}
-  stickerTwo: {fileID: 943862442}
-  stickerThree: {fileID: 41483809}
-  stickerFour: {fileID: 1764820923}
-  stickerFive: {fileID: 1104104459}
-  stickerSix: {fileID: 484536419}
-  divMenuButton: {fileID: 368597189}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 2118442610}
   levelButton2: {fileID: 1699415849}
   levelButton3: {fileID: 567797370}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  divStars: {fileID: 1119881579}
-  menuStars: {fileID: 2138780503}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 3
+  Animal: {fileID: 1832486712}
+  level: {fileID: 1278284872}
+  levelEnd: {fileID: 2088515847}
+  animatedLevelEnd: {fileID: 1700719700}
+  divScore: 0
+  task: 0
+  FirstValue: {fileID: 1925949355}
+  SecondValue: {fileID: 873899778}
+  Function: {fileID: 1108046131}
+  AnswerSpot: {fileID: 414159168}
+  taskNumber: {fileID: 71156363}
+  Alt1: {fileID: 1082196197}
+  Alt2: {fileID: 604383566}
+  Alt3: {fileID: 1812128745}
   button1: {fileID: 2025704127}
   button2: {fileID: 652724992}
   button3: {fileID: 1937626094}
+  ONE: {fileID: 496912820}
+  TWO: {fileID: 1771361233}
+  THREE: {fileID: 72840403}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 1278284872}
-  switchOn: {fileID: 2088515847}
-  Animal: {fileID: 1832486712}
+  firstObjectSlot: {fileID: 0}
+  secondObjectSlot: {fileID: 0}
+  objectSprite: []
 --- !u!1 &1154494256
 GameObject:
   m_ObjectHideFlags: 0
@@ -49157,6 +49011,7 @@ RectTransform:
   m_Children:
   - {fileID: 1094428648}
   - {fileID: 856107550}
+  - {fileID: 1120301653}
   - {fileID: 250857718}
   m_Father: {fileID: 400250006}
   m_RootOrder: 0
@@ -49318,7 +49173,7 @@ GameObject:
   - component: {fileID: 1179308565}
   - component: {fileID: 1179308564}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49357,7 +49212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &1179308565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49380,8 +49235,8 @@ RectTransform:
   m_Father: {fileID: 1120301653}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -49874,11 +49729,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0024414062, y: 0.00024414062}
   m_SizeDelta: {x: 0.0050049, y: 0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1199095784 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1741024999407717696, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1201124647
 GameObject:
   m_ObjectHideFlags: 0
@@ -50112,11 +49962,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206577921}
   m_CullTransparentMesh: 1
---- !u!1 &1210317241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8610730664771641538, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211495428
 GameObject:
   m_ObjectHideFlags: 0
@@ -51540,7 +51385,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1436757935}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53430,7 +53275,7 @@ GameObject:
   - component: {fileID: 1305700480}
   - component: {fileID: 1305700481}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53450,8 +53295,8 @@ RectTransform:
   m_Father: {fileID: 1392180689}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -53496,7 +53341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &1306659105
 GameObject:
   m_ObjectHideFlags: 0
@@ -54201,7 +54046,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1154250889}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55578,9 +55423,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065523398}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55931,7 +55776,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 221378034}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -56177,9 +56022,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 906460866}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57419,7 +57264,7 @@ GameObject:
   - component: {fileID: 1388845045}
   - component: {fileID: 1388845044}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57751,6 +57596,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66189be89a9224744b099f10c59f02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 0}
+  starCount: {fileID: 0}
+  levelIndex: 2
+  worldIndex: 0
+  levelButton1: {fileID: 0}
+  levelButton2: {fileID: 0}
+  levelButton3: {fileID: 0}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 0}
+  Animal: {fileID: 0}
+  level: {fileID: 0}
+  levelEnd: {fileID: 0}
+  animatedLevelEnd: {fileID: 0}
+  sumScore: 0
+  task: 0
   QnA:
   - Question: SIX
     Objects: {fileID: 21300000, guid: 6283c92d57d518644aecbfc16234b4c6, type: 3}
@@ -57793,32 +57653,10 @@ MonoBehaviour:
   - {fileID: 1968423812}
   currentQuestion: 0
   QuestionImg: {fileID: 1700337987}
-  GoPanel: {fileID: 563505929}
   QuestionTxt: {fileID: 722006298}
   QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
-  ScoreTxt: {fileID: 1437245709}
+  taskNumber: {fileID: 0}
   score: 0
-  levelIndex: 2
-  worldIndex: 0
-  countStarCount: 0
-  countSpaceStarCount: 0
-  threeCornStickerScore: 0
-  twoCornStickerScore: 0
-  lambStickerScore: 0
-  stickerOne: {fileID: 802231668}
-  stickerTwo: {fileID: 802231667}
-  stickerThree: {fileID: 802231660}
-  countMenuButton: {fileID: 0}
-  levelButton1: {fileID: 0}
-  levelButton2: {fileID: 0}
-  levelButton3: {fileID: 0}
-  completedButton: {fileID: 0}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  countStars: {fileID: 0}
-  menuStars: {fileID: 2009467766}
-  Animal: {fileID: 0}
 --- !u!114 &1391882188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57890,7 +57728,7 @@ GameObject:
   - component: {fileID: 1392180691}
   - component: {fileID: 1392180690}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58265,7 +58103,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 715659774}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -58362,7 +58200,7 @@ GameObject:
   - component: {fileID: 1400697572}
   - component: {fileID: 1400697571}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58380,8 +58218,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428428347}
-  m_Father: {fileID: 1787820160}
-  m_RootOrder: 3
+  m_Father: {fileID: 804867374}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88, y: 0.62}
   m_AnchorMax: {x: 0.93, y: 0.7}
@@ -58609,7 +58447,7 @@ GameObject:
   - component: {fileID: 1406885177}
   - component: {fileID: 1406885176}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58970,7 +58808,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1659828921}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59772,11 +59610,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434402547}
   m_CullTransparentMesh: 1
---- !u!1 &1435587012 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1666152445850894037, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1436757933
 GameObject:
   m_ObjectHideFlags: 0
@@ -59821,65 +59654,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
-  sumStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  appleStickerScore: 0
-  basketStickerScore: 0
-  pigStickerScore: 0
-  bananaStickerScore: 0
-  clusterStickerScore: 0
-  monkeyStickerScore: 0
-  asteroidStickerScore: 0
-  blackholeStickerScore: 0
-  llamaStickerScore: 0
-  levelIndex: 5
-  worldIndex: 2
-  FirstValue: {fileID: 1032758415}
-  SecondValue: {fileID: 977707363}
-  Function: {fileID: 71935366}
-  Alt1: {fileID: 772836716}
-  Alt2: {fileID: 1134433574}
-  Alt3: {fileID: 1285110450}
-  AnswerSpot: {fileID: 2034708746}
-  scoreCount: {fileID: 1023182378}
-  ONE: {fileID: 1531509880}
-  TWO: {fileID: 1104362923}
-  THREE: {fileID: 1799683362}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 802231666}
-  stickerTwo: {fileID: 802231665}
-  stickerThree: {fileID: 802231664}
-  stickerFour: {fileID: 756320350}
-  stickerFive: {fileID: 404703126}
-  stickerSix: {fileID: 712146883}
-  stickerSeven: {fileID: 929747279}
-  stickerEight: {fileID: 1059226102}
-  stickerNine: {fileID: 1543463660}
-  sumMenuButton: {fileID: 1127849941}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1797065426}
   levelButton2: {fileID: 639277659}
   levelButton3: {fileID: 1780259574}
-  animatedLevelEnd1: {fileID: 0}
-  animatedLevelEnd2: {fileID: 0}
-  animatedLevelEnd3: {fileID: 0}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 1022386183}
-  menuStars: {fileID: 1505387751}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 5
+  Animal: {fileID: 990487125}
+  level: {fileID: 797852995}
+  levelEnd: {fileID: 1721728819}
+  animatedLevelEnd: {fileID: 511506301}
+  sumScore: 0
+  task: 0
+  FirstValue: {fileID: 1032758415}
+  SecondValue: {fileID: 977707363}
+  Function: {fileID: 71935366}
+  AnswerSpot: {fileID: 2034708746}
+  taskNumber: {fileID: 1023182378}
+  Alt1: {fileID: 772836716}
+  Alt2: {fileID: 1134433574}
+  Alt3: {fileID: 1285110450}
   button1: {fileID: 1726005080}
   button2: {fileID: 410094601}
   button3: {fileID: 357580242}
+  ONE: {fileID: 1531509880}
+  TWO: {fileID: 1104362923}
+  THREE: {fileID: 1799683362}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 797852995}
-  switchOn: {fileID: 1721728819}
-  Animal: {fileID: 990487125}
   firstObjectSlot: {fileID: 1979638404}
   secondObjectSlot: {fileID: 849761053}
   objectSprite:
@@ -61197,11 +61003,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451467530}
   m_CullTransparentMesh: 0
---- !u!1 &1451988622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2285146341217843248, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1455455672
 GameObject:
   m_ObjectHideFlags: 0
@@ -63580,7 +63381,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 715659774}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64773,11 +64574,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1543463660 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7342166315772834198, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1544926007
 GameObject:
   m_ObjectHideFlags: 0
@@ -66251,7 +66047,7 @@ Transform:
   m_LocalScale: {x: 4.4293256, y: 2.4362, z: 1}
   m_Children: []
   m_Father: {fileID: 400250006}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601504242
 GameObject:
@@ -66360,9 +66156,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 912344939}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -66541,9 +66337,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 609377424}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -66958,7 +66754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -66999,23 +66795,23 @@ PrefabInstance:
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 385868508}
+      objectReference: {fileID: 965872508}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 912344939}
+      objectReference: {fileID: 965872508}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 221378034}
+      objectReference: {fileID: 965872508}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 2132550888}
+      objectReference: {fileID: 965872508}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 347189555}
+      objectReference: {fileID: 965872508}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
@@ -67053,24 +66849,28 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenStickerBook
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
@@ -67078,23 +66878,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SumScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: SubScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: MultiplyScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: DivideScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: CountScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
@@ -68899,7 +68699,7 @@ GameObject:
   - component: {fileID: 1645644349}
   - component: {fileID: 1645644348}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69043,7 +68843,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 804867374}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22479166, y: 0.64722216}
   m_AnchorMax: {x: 0.30600002, y: 0.7962963}
@@ -69380,55 +69180,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba5c32cc8cce8a43950670f985adc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multScore: 0
-  multJungleStarCount: 0
-  multSpaceStarCount: 0
-  lycheeStickerScore: 0
-  pitahayaStickerScore: 0
-  frogStickerScore: 0
-  flagStickerScore: 0
-  rocketStickerScore: 0
-  laikaStickerScore: 0
-  levelIndex: 3
-  worldIndex: 2
-  FirstValue: {fileID: 978397528}
-  SecondValue: {fileID: 1592421385}
-  Function: {fileID: 1265966556}
-  Alt1: {fileID: 1809765414}
-  Alt2: {fileID: 1484588034}
-  Alt3: {fileID: 1129638483}
-  AnswerSpot: {fileID: 1133578788}
-  scoreCount: {fileID: 252958705}
-  ONE: {fileID: 834922816}
-  TWO: {fileID: 791790881}
-  THREE: {fileID: 1700828248}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 387420723}
-  stickerTwo: {fileID: 1078449013}
-  stickerThree: {fileID: 442784024}
-  stickerFour: {fileID: 1055835412}
-  stickerFive: {fileID: 1199095784}
-  stickerSix: {fileID: 1854176452}
-  multMenuButton: {fileID: 1329916127}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 1759831453}
   levelButton2: {fileID: 751126222}
   levelButton3: {fileID: 1219321122}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  multStars: {fileID: 186057282}
-  menuStars: {fileID: 2009467766}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 3
+  Animal: {fileID: 716985338}
+  level: {fileID: 405478029}
+  levelEnd: {fileID: 546731083}
+  animatedLevelEnd: {fileID: 1837242266}
+  multScore: 0
+  task: 0
+  FirstValue: {fileID: 978397528}
+  SecondValue: {fileID: 1592421385}
+  Function: {fileID: 1265966556}
+  AnswerSpot: {fileID: 1133578788}
+  taskNumber: {fileID: 252958705}
+  Alt1: {fileID: 1809765414}
+  Alt2: {fileID: 1484588034}
+  Alt3: {fileID: 1129638483}
   button1: {fileID: 1584457579}
   button2: {fileID: 1382473613}
   button3: {fileID: 476873630}
+  ONE: {fileID: 834922816}
+  TWO: {fileID: 791790881}
+  THREE: {fileID: 1700828248}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 405478029}
-  switchOn: {fileID: 546731083}
-  Animal: {fileID: 716985338}
+  firstObjectSlot: {fileID: 0}
+  secondObjectSlot: {fileID: 0}
+  objectSprite: []
 --- !u!1 &1662015811
 GameObject:
   m_ObjectHideFlags: 0
@@ -69940,7 +69726,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 609377424}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -70489,7 +70275,7 @@ RectTransform:
   m_Children:
   - {fileID: 1474944463}
   m_Father: {fileID: 2096609654}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -70861,9 +70647,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1154250889}
-        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -72679,7 +72465,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1659828921}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -72895,6 +72681,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736510388}
   m_CullTransparentMesh: 1
+--- !u!114 &1743297490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1745143297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73211,7 +73008,7 @@ GameObject:
   - component: {fileID: 1749521970}
   - component: {fileID: 1749521969}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74356,11 +74153,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763131120}
   m_CullTransparentMesh: 1
---- !u!1 &1764820923 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1873862350567911975, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767572889
 GameObject:
   m_ObjectHideFlags: 0
@@ -75386,7 +75178,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1065523398}
         m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -75734,7 +75526,6 @@ RectTransform:
   - {fileID: 804867374}
   - {fileID: 702845550}
   - {fileID: 1439016459}
-  - {fileID: 1400697570}
   - {fileID: 846716073}
   - {fileID: 955385607}
   - {fileID: 947199242}
@@ -76205,7 +75996,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2132550888}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -79287,9 +79078,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1659828921}
-        m_TargetAssemblyTypeName: MultiplyScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -79924,11 +79715,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851674334}
   m_CullTransparentMesh: 1
---- !u!1 &1854176452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 908869186354667851, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1858944734
 GameObject:
   m_ObjectHideFlags: 0
@@ -81915,9 +81701,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385868508}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 965872508}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -82681,7 +82467,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 906460866}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -83170,7 +82956,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1154250889}
         m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
-        m_MethodName: StartJungle
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -83384,11 +83170,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932624023}
   m_CullTransparentMesh: 1
---- !u!1 &1932917645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8585628677130250073, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1933052092
 GameObject:
   m_ObjectHideFlags: 0
@@ -84926,7 +84707,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 78942762}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -87218,7 +86999,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 906460866}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -87823,7 +87604,7 @@ GameObject:
   - component: {fileID: 2034105343}
   - component: {fileID: 2034105342}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87843,8 +87624,8 @@ RectTransform:
   m_Father: {fileID: 199430714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -87881,7 +87662,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &2034105343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -88213,7 +87994,7 @@ GameObject:
   - component: {fileID: 2046981529}
   - component: {fileID: 2046981528}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88233,8 +88014,8 @@ RectTransform:
   m_Father: {fileID: 48919495}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -88271,7 +88052,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &2046981529
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -89914,9 +89695,9 @@ RectTransform:
   - {fileID: 1893619648}
   - {fileID: 2131256981}
   - {fileID: 2118442611}
-  - {fileID: 464191132}
   - {fileID: 1699415850}
   - {fileID: 567797371}
+  - {fileID: 464191132}
   - {fileID: 276632978}
   m_Father: {fileID: 126503996}
   m_RootOrder: 5
@@ -90698,8 +90479,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1391882187}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
+      - m_Target: {fileID: 609377424}
+        m_TargetAssemblyTypeName: DivideScript, Assembly-CSharp
         m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
@@ -90917,55 +90698,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028f55c8cefd5b746a5709093e0e5423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  divScore: 0
-  divJungleStarCount: 0
-  divSpaceStarCount: 0
-  avocadoStickerScore: 0
-  toolStickerScore: 0
-  tigerStickerScore: 0
-  driedfishStickerScore: 0
-  octopusStickerScore: 0
-  catStickerScore: 0
-  levelIndex: 1
-  worldIndex: 2
-  FirstValue: {fileID: 1465641944}
-  SecondValue: {fileID: 1466465129}
-  Function: {fileID: 916553412}
-  Alt1: {fileID: 513473235}
-  Alt2: {fileID: 1905469511}
-  Alt3: {fileID: 142314313}
-  AnswerSpot: {fileID: 771478876}
-  scoreCount: {fileID: 2046981528}
-  ONE: {fileID: 953396140}
-  TWO: {fileID: 156541000}
-  THREE: {fileID: 1532423198}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 1451988622}
-  stickerTwo: {fileID: 943862442}
-  stickerThree: {fileID: 41483809}
-  stickerFour: {fileID: 1764820923}
-  stickerFive: {fileID: 1104104459}
-  stickerSix: {fileID: 484536419}
-  divMenuButton: {fileID: 368597189}
+  book: {fileID: 965872508}
+  starCount: {fileID: 1743297490}
   levelButton1: {fileID: 2118442610}
   levelButton2: {fileID: 1699415849}
   levelButton3: {fileID: 567797370}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  divStars: {fileID: 1119881579}
-  menuStars: {fileID: 2138780503}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 2
+  levelIndex: 1
+  Animal: {fileID: 1442381739}
+  level: {fileID: 291601920}
+  levelEnd: {fileID: 1471740282}
+  animatedLevelEnd: {fileID: 766911664}
+  divScore: 0
+  task: 0
+  FirstValue: {fileID: 1465641944}
+  SecondValue: {fileID: 1466465129}
+  Function: {fileID: 916553412}
+  AnswerSpot: {fileID: 771478876}
+  taskNumber: {fileID: 2046981528}
+  Alt1: {fileID: 513473235}
+  Alt2: {fileID: 1905469511}
+  Alt3: {fileID: 142314313}
   button1: {fileID: 1104625756}
   button2: {fileID: 889080884}
   button3: {fileID: 167266298}
+  ONE: {fileID: 953396140}
+  TWO: {fileID: 156541000}
+  THREE: {fileID: 1532423198}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 291601920}
-  switchOn: {fileID: 1471740282}
-  Animal: {fileID: 1442381739}
+  firstObjectSlot: {fileID: 0}
+  secondObjectSlot: {fileID: 0}
+  objectSprite: []
 --- !u!1 &2133291036
 GameObject:
   m_ObjectHideFlags: 0

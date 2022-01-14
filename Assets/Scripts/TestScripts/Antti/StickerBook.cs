@@ -9,7 +9,7 @@ public class StickerBook : MonoBehaviour
     public StarCount starCount;
 
     public int bookIndex = 0;
-    public int worldIndex = 0;
+    public int worldIndex;
 
     public SumScript sum1;
     public SumScript sum2;
@@ -196,6 +196,11 @@ public class StickerBook : MonoBehaviour
         countFarmStarCount = threeCornStickerScore + twoCornStickerScore + lambStickerScore;
         countJungleStarCount = 0;
         countSpaceStarCount = 0;
+
+        multJungleStarCount = lycheeStickerScore + pitahayaStickerScore + frogStickerScore;
+        multSpaceStarCount = flagStickerScore + rocketStickerScore + laikaStickerScore;
+        divJungleStarCount = avocadoStickerScore + toolStickerScore + tigerStickerScore;
+        divSpaceStarCount = driedfishStickerScore + octopusStickerScore + catStickerScore;
     }
 
     public void CountStars()
@@ -624,9 +629,9 @@ public class StickerBook : MonoBehaviour
     public void UpdateStats() // Updates stats on the last page of Sticker Book
     {
         statsAllInt = 33;
-        statsCollectedInt = appleStickerScore + basketStickerScore + pigStickerScore + bananaStickerScore + clusterStickerScore + monkeyStickerScore + asteroidStickerScore + blackholeStickerScore + llamaStickerScore + carrotStickerScore + bucketStickerScore + bunnyStickerScore + coconutStickerScore + ocularsStickerScore + slothStickerScore + starStickerScore + planetStickerScore + cowStickerScore + threeCornStickerScore + twoCornStickerScore + lambStickerScore + lycheeStickerScore + pitahayaStickerScore + flagStickerScore + rocketStickerScore + laikaStickerScore + avocadoStickerScore + toolStickerScore + tigerStickerScore + driedfishStickerScore + octopusStickerScore + catStickerScore;
+        statsCollectedInt = appleStickerScore + basketStickerScore + pigStickerScore + bananaStickerScore + clusterStickerScore + monkeyStickerScore + asteroidStickerScore + blackholeStickerScore + llamaStickerScore + carrotStickerScore + bucketStickerScore + bunnyStickerScore + coconutStickerScore + ocularsStickerScore + slothStickerScore + starStickerScore + planetStickerScore + cowStickerScore + threeCornStickerScore + twoCornStickerScore + lambStickerScore + lycheeStickerScore + pitahayaStickerScore + frogStickerScore + flagStickerScore + rocketStickerScore + laikaStickerScore + avocadoStickerScore + toolStickerScore + tigerStickerScore + driedfishStickerScore + octopusStickerScore + catStickerScore;
         statsFarmInt = appleStickerScore + basketStickerScore + pigStickerScore + carrotStickerScore + bucketStickerScore + bunnyStickerScore + threeCornStickerScore + twoCornStickerScore + lambStickerScore;
-        statsJungleInt = bananaStickerScore + clusterStickerScore + monkeyStickerScore + coconutStickerScore + ocularsStickerScore + slothStickerScore + lycheeStickerScore + pitahayaStickerScore + avocadoStickerScore + toolStickerScore + tigerStickerScore;
+        statsJungleInt = bananaStickerScore + clusterStickerScore + monkeyStickerScore + coconutStickerScore + ocularsStickerScore + slothStickerScore + lycheeStickerScore + pitahayaStickerScore + frogStickerScore + avocadoStickerScore + toolStickerScore + tigerStickerScore;
         statsSpaceInt = asteroidStickerScore + blackholeStickerScore + llamaStickerScore + starStickerScore + planetStickerScore + cowStickerScore + flagStickerScore + rocketStickerScore + laikaStickerScore + driedfishStickerScore + octopusStickerScore + catStickerScore;
 
         statsAll.text = statsCollectedInt + " / " + statsAllInt;
@@ -640,32 +645,40 @@ public class StickerBook : MonoBehaviour
             allCollected.text = "YOU'VE COLLECTED ALL STICKERS!";
         }
     }
+
+    public void UpdateLevelButtons()
+    {
+        if (worldIndex > 0)
+        {
+            sum1.UpdateLevelButtons();
+            sum2.UpdateLevelButtons();
+            sum3.UpdateLevelButtons();
+            sub1.UpdateLevelButtons();
+            sub2.UpdateLevelButtons();
+            sub3.UpdateLevelButtons();
+            if (sum1.levelIndex == 1)
+            {
+                count1.UpdateLevelButtons();
+                count2.UpdateLevelButtons();
+                count3.UpdateLevelButtons();
+            }
+            if (sum1.levelIndex >= 2)
+            {
+                mult1.UpdateLevelButtons();
+                mult2.UpdateLevelButtons();
+                mult3.UpdateLevelButtons();
+                div1.UpdateLevelButtons();
+                div2.UpdateLevelButtons();
+                div3.UpdateLevelButtons();
+            }
+        }
+    }
     public void UpdateAll() // Updates Stickers, stars and stats
     {
         UpdateStickers();
         CountStars();
         UpdateStats();
-        sum1.UpdateLevelButtons();
-        sum2.UpdateLevelButtons();
-        sum3.UpdateLevelButtons();
-        sub1.UpdateLevelButtons();
-        sub2.UpdateLevelButtons();
-        sub3.UpdateLevelButtons();
-        if (sum1.levelIndex == 1)
-        {
-            count1.UpdateLevelButtons();
-            count2.UpdateLevelButtons();
-            count3.UpdateLevelButtons();
-        }
-        if (sum1.levelIndex >= 2)
-        {
-            mult1.UpdateLevelButtons();
-            mult2.UpdateLevelButtons();
-            mult3.UpdateLevelButtons();
-            div1.UpdateLevelButtons();
-            div2.UpdateLevelButtons();
-            div3.UpdateLevelButtons();
-        }
+        UpdateLevelButtons();
     }
 
     // Start is called before the first frame update

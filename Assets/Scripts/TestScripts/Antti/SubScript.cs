@@ -54,6 +54,16 @@ public class SubScript : MonoBehaviour
         task = subScore + 1;
     }
 
+    public void SetWorldIndex()
+    {
+        worldIndex = book.worldIndex;
+    }
+
+    public void SetLevelIndex(int level)
+    {
+        levelIndex = level;
+    }
+
     public void ResetScore() // resets temporart level score
     {
         subScore = 0;
@@ -824,6 +834,7 @@ public class SubScript : MonoBehaviour
 
     private void Start()
     {
+        SetWorldIndex();
         completedButton = starCount.completedButton;
         clearButton = starCount.clearButton;
         Load();

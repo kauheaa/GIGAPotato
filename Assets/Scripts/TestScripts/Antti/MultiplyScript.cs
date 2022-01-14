@@ -54,6 +54,15 @@ public class MultiplyScript : MonoBehaviour
         task = multScore + 1;
     }
 
+    public void SetWorldIndex()
+    {
+        worldIndex = book.worldIndex;
+    }
+    public void SetLevelIndex(int level)
+    {
+        levelIndex = level;
+    }
+
     public void ResetScore() // resets temporart level score
     {
         multScore = 0;
@@ -495,7 +504,7 @@ public class MultiplyScript : MonoBehaviour
     {
         switch (worldIndex)
         {
-            case 1:
+            case 2:
                 switch (levelIndex)
                 {
                     case 1:
@@ -524,7 +533,7 @@ public class MultiplyScript : MonoBehaviour
                         break;
                 }
                 break;
-            case 2:
+            case 3:
                 switch (levelIndex)
                 {
                     case 4:
@@ -543,35 +552,6 @@ public class MultiplyScript : MonoBehaviour
                         break;
                     case 6:
                         switch (book.laikaStickerScore)
-                        {
-                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
-                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
-                        }
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-            case 3:
-                switch (levelIndex)
-                {
-                    case 7:
-                        switch (book.asteroidStickerScore)
-                        {
-                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
-                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
-                        }
-                        break;
-                    case 8:
-                        switch (book.blackholeStickerScore)
-                        {
-                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
-                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
-                        }
-                        break;
-                    case 9:
-                        switch (book.llamaStickerScore)
                         {
                             case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
                             case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
@@ -628,6 +608,7 @@ public class MultiplyScript : MonoBehaviour
 
     private void Start()
     {
+        SetWorldIndex();
         completedButton = starCount.completedButton;
         clearButton = starCount.clearButton;
         Load();
