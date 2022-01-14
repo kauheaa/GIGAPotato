@@ -2047,7 +2047,6 @@ MonoBehaviour:
   - {fileID: 0}
   currentQuestion: 0
   QuestionImg: {fileID: 0}
-  GoPanel: {fileID: 0}
   QuestionTxt: {fileID: 0}
   QuestionSprite: {fileID: 0}
   taskNumber: {fileID: 0}
@@ -2390,7 +2389,6 @@ MonoBehaviour:
   - {fileID: 0}
   currentQuestion: 0
   QuestionImg: {fileID: 0}
-  GoPanel: {fileID: 0}
   QuestionTxt: {fileID: 0}
   QuestionSprite: {fileID: 0}
   taskNumber: {fileID: 0}
@@ -3369,7 +3367,6 @@ MonoBehaviour:
   - {fileID: 0}
   currentQuestion: 0
   QuestionImg: {fileID: 0}
-  GoPanel: {fileID: 0}
   QuestionTxt: {fileID: 0}
   QuestionSprite: {fileID: 0}
   taskNumber: {fileID: 0}
@@ -4063,11 +4060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8707621640895703512, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -4080,7 +4077,7 @@ PrefabInstance:
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1356026572}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -4111,7 +4108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SumScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
