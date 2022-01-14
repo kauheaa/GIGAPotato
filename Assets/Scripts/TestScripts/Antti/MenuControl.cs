@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class MenuControl : MonoBehaviour
 {
     public StickerBook book;
-    public SumScript sum;
     public GameObject stickerbookButton;
     [SerializeField] private Transform settingsMenu;
     [SerializeField] private Transform resetWarning;

@@ -11,6 +11,22 @@ public class StickerBook : MonoBehaviour
     public int bookIndex = 0;
     public int worldIndex = 0;
 
+    public SumScript sum1;
+    public SumScript sum2;
+    public SumScript sum3;
+    public SubScript sub1;
+    public SubScript sub2;
+    public SubScript sub3;
+    public CountScript count1;
+    public CountScript count2;
+    public CountScript count3;
+    public MultiplyScript mult1;
+    public MultiplyScript mult2;
+    public MultiplyScript mult3;
+    public DivideScript div1;
+    public DivideScript div2;
+    public DivideScript div3;
+
     // All starCounts
     public int sumFarmStarCount, sumJungleStarCount, sumSpaceStarCount;
     public int subFarmStarCount, subJungleStarCount, subSpaceStarCount;
@@ -457,7 +473,7 @@ public class StickerBook : MonoBehaviour
         switch (bucketStickerScore)
         {
             case 0: bucketSticker.gameObject.SetActive(false); break;
-            case 1: bucketSticker.gameObject.SetActive(true); break;
+            case 1: bucketSticker.gameObject.SetActive(true);  break;
         }
         switch (bunnyStickerScore)
         {
@@ -629,6 +645,27 @@ public class StickerBook : MonoBehaviour
         UpdateStickers();
         CountStars();
         UpdateStats();
+        sum1.UpdateLevelButtons();
+        sum2.UpdateLevelButtons();
+        sum3.UpdateLevelButtons();
+        sub1.UpdateLevelButtons();
+        sub2.UpdateLevelButtons();
+        sub3.UpdateLevelButtons();
+        if (sum1.levelIndex == 1)
+        {
+            count1.UpdateLevelButtons();
+            count2.UpdateLevelButtons();
+            count3.UpdateLevelButtons();
+        }
+        if (sum1.levelIndex >= 2)
+        {
+            mult1.UpdateLevelButtons();
+            mult2.UpdateLevelButtons();
+            mult3.UpdateLevelButtons();
+            div1.UpdateLevelButtons();
+            div2.UpdateLevelButtons();
+            div3.UpdateLevelButtons();
+        }
     }
 
     // Start is called before the first frame update
@@ -703,5 +740,6 @@ public class StickerBook : MonoBehaviour
         SaveBook();
         UpdateAll();
     }
+
 
 }

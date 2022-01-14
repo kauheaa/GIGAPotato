@@ -206,6 +206,11 @@ public class CountScript : MonoBehaviour
         generateQuestion();
     }
 
+    public void UpdateLevelButtons()
+    {
+
+    }
+
     public void retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

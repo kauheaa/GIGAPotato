@@ -14,7 +14,7 @@ public class StarCount : MonoBehaviour
 
     // MENU
     public GameObject sumMenuButton, subMenuButton, countMenuButton, multMenuButton, divMenuButton; // Category buttons that change sprites when category is completed
-    public Sprite completedButton; // Sprite for completed level and category button
+    public Sprite clearButton, completedButton; // Sprite for completed level and category button
 
     // STARS
     public Sprite noStars, oneStar, twoStar, threeStar; // StarCount sprites
@@ -62,15 +62,18 @@ public class StarCount : MonoBehaviour
                     case 0:
                         sumStars.GetComponent<Image>().sprite = noStars;
                         sumMenuStars.GetComponent<Image>().sprite = noStars;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         sumStars.GetComponent<Image>().sprite = oneStar;
                         sumMenuStars.GetComponent<Image>().sprite = oneStar;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
 
                     case 2:
                         sumStars.GetComponent<Image>().sprite = twoStar;
                         sumMenuStars.GetComponent<Image>().sprite = twoStar;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         sumStars.GetComponent<Image>().sprite = threeStar;
@@ -85,15 +88,18 @@ public class StarCount : MonoBehaviour
                     case 0:
                         sumStars.GetComponent<Image>().sprite = noStars;
                         sumMenuStars.GetComponent<Image>().sprite = noStars;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         sumStars.GetComponent<Image>().sprite = oneStar;
                         sumMenuStars.GetComponent<Image>().sprite = oneStar;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
 
                     case 2:
                         sumStars.GetComponent<Image>().sprite = twoStar;
                         sumMenuStars.GetComponent<Image>().sprite = twoStar;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         sumStars.GetComponent<Image>().sprite = threeStar;
@@ -108,14 +114,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         sumStars.GetComponent<Image>().sprite = noStars;
                         sumMenuStars.GetComponent<Image>().sprite = noStars;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         sumStars.GetComponent<Image>().sprite = oneStar;
                         sumMenuStars.GetComponent<Image>().sprite = oneStar;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         sumStars.GetComponent<Image>().sprite = twoStar;
                         sumMenuStars.GetComponent<Image>().sprite = twoStar;
+                        sumMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         sumStars.GetComponent<Image>().sprite = threeStar;
@@ -141,15 +150,18 @@ public class StarCount : MonoBehaviour
                     case 0:
                         subStars.GetComponent<Image>().sprite = noStars;
                         subMenuStars.GetComponent<Image>().sprite = noStars;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         subStars.GetComponent<Image>().sprite = oneStar;
                         subMenuStars.GetComponent<Image>().sprite = oneStar;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
 
                     case 2:
                         subStars.GetComponent<Image>().sprite = twoStar;
                         subMenuStars.GetComponent<Image>().sprite = twoStar;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         subStars.GetComponent<Image>().sprite = threeStar;
@@ -164,15 +176,18 @@ public class StarCount : MonoBehaviour
                     case 0:
                         subStars.GetComponent<Image>().sprite = noStars;
                         subMenuStars.GetComponent<Image>().sprite = noStars;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         subStars.GetComponent<Image>().sprite = oneStar;
                         subMenuStars.GetComponent<Image>().sprite = oneStar;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
 
                     case 2:
                         subStars.GetComponent<Image>().sprite = twoStar;
                         subMenuStars.GetComponent<Image>().sprite = twoStar;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         subStars.GetComponent<Image>().sprite = threeStar;
@@ -187,14 +202,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         subStars.GetComponent<Image>().sprite = noStars;
                         subMenuStars.GetComponent<Image>().sprite = noStars;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         subStars.GetComponent<Image>().sprite = oneStar;
                         subMenuStars.GetComponent<Image>().sprite = oneStar;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         subStars.GetComponent<Image>().sprite = twoStar;
                         subMenuStars.GetComponent<Image>().sprite = twoStar;
+                        subMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         subStars.GetComponent<Image>().sprite = threeStar;
@@ -220,14 +238,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         countStars.GetComponent<Image>().sprite = noStars;
                         countMenuStars.GetComponent<Image>().sprite = noStars;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         countStars.GetComponent<Image>().sprite = oneStar;
                         countMenuStars.GetComponent<Image>().sprite = oneStar;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         countStars.GetComponent<Image>().sprite = twoStar;
                         countMenuStars.GetComponent<Image>().sprite = twoStar;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         countStars.GetComponent<Image>().sprite = threeStar;
@@ -242,14 +263,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         countStars.GetComponent<Image>().sprite = noStars;
                         countMenuStars.GetComponent<Image>().sprite = noStars;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         countStars.GetComponent<Image>().sprite = oneStar;
                         countMenuStars.GetComponent<Image>().sprite = oneStar;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         countStars.GetComponent<Image>().sprite = twoStar;
                         countMenuStars.GetComponent<Image>().sprite = twoStar;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         countStars.GetComponent<Image>().sprite = threeStar;
@@ -264,14 +288,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         countStars.GetComponent<Image>().sprite = noStars;
                         countMenuStars.GetComponent<Image>().sprite = noStars;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         countStars.GetComponent<Image>().sprite = oneStar;
                         countMenuStars.GetComponent<Image>().sprite = oneStar;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         countStars.GetComponent<Image>().sprite = twoStar;
                         countMenuStars.GetComponent<Image>().sprite = twoStar;
+                        countMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         countStars.GetComponent<Image>().sprite = threeStar;
@@ -300,14 +327,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         multStars.GetComponent<Image>().sprite = noStars;
                         multMenuStars.GetComponent<Image>().sprite = noStars;
+                        multMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         multStars.GetComponent<Image>().sprite = oneStar;
                         multMenuStars.GetComponent<Image>().sprite = oneStar;
+                        multMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         multStars.GetComponent<Image>().sprite = twoStar;
                         multMenuStars.GetComponent<Image>().sprite = twoStar;
+                        multMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         multStars.GetComponent<Image>().sprite = threeStar;
@@ -322,14 +352,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         multStars.GetComponent<Image>().sprite = noStars;
                         multMenuStars.GetComponent<Image>().sprite = noStars;
+                        multMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         multStars.GetComponent<Image>().sprite = oneStar;
                         multMenuStars.GetComponent<Image>().sprite = oneStar;
+                        multMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         multStars.GetComponent<Image>().sprite = twoStar;
                         multMenuStars.GetComponent<Image>().sprite = twoStar;
+                        multMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         multStars.GetComponent<Image>().sprite = threeStar;
@@ -358,14 +391,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         divStars.GetComponent<Image>().sprite = noStars;
                         divMenuStars.GetComponent<Image>().sprite = noStars;
+                        divMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         divStars.GetComponent<Image>().sprite = oneStar;
                         divMenuStars.GetComponent<Image>().sprite = oneStar;
+                        divMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         divStars.GetComponent<Image>().sprite = twoStar;
                         divMenuStars.GetComponent<Image>().sprite = twoStar;
+                        divMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         divStars.GetComponent<Image>().sprite = threeStar;
@@ -380,14 +416,17 @@ public class StarCount : MonoBehaviour
                     case 0:
                         divStars.GetComponent<Image>().sprite = noStars;
                         divMenuStars.GetComponent<Image>().sprite = noStars;
+                        divMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 1:
                         divStars.GetComponent<Image>().sprite = oneStar;
                         divMenuStars.GetComponent<Image>().sprite = oneStar;
+                        divMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 2:
                         divStars.GetComponent<Image>().sprite = twoStar;
                         divMenuStars.GetComponent<Image>().sprite = twoStar;
+                        divMenuButton.GetComponent<Image>().sprite = clearButton;
                         break;
                     case 3:
                         divStars.GetComponent<Image>().sprite = threeStar;

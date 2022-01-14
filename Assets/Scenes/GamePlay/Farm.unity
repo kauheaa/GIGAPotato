@@ -10042,62 +10042,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 973064300315609855}
-  subScore: 0
-  farmStarCount: 0
-  jungleStarCount: 0
-  spaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 2
-  worldIndex: 1
-  switchOff: {fileID: 887163345}
-  switchOn: {fileID: 463188864}
-  FirstValue: {fileID: 1081382124}
-  SecondValue: {fileID: 25354080}
-  Function: {fileID: 171040942}
-  Alt1: {fileID: 327058734}
-  Alt2: {fileID: 662876015}
-  Alt3: {fileID: 429474216}
-  AnswerSpot: {fileID: 648562733}
-  scoreCount: {fileID: 467756815}
-  ONE: {fileID: 2049327790}
-  TWO: {fileID: 336149637}
-  THREE: {fileID: 161775086}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 328665135}
-  stickerTwo: {fileID: 1271604329}
-  stickerThree: {fileID: 639977215}
-  stickerFour: {fileID: 776826919}
-  stickerFive: {fileID: 1439669538}
-  stickerSix: {fileID: 1919132787}
-  stickerSeven: {fileID: 445144728}
-  stickerEight: {fileID: 1005988729}
-  stickerNine: {fileID: 976168755}
-  subMenuButton: {fileID: 953794044}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 229662638}
-  menuStars: {fileID: 1538720649}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 1
+  levelIndex: 2
+  Animal: {fileID: 489721405}
+  level: {fileID: 887163345}
+  levelEnd: {fileID: 463188864}
+  animatedLevelEnd: {fileID: 1536666996}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 1081382124}
+  SecondValue: {fileID: 25354080}
+  Function: {fileID: 171040942}
+  AnswerSpot: {fileID: 648562733}
+  taskNumber: {fileID: 467756815}
+  Alt1: {fileID: 327058734}
+  Alt2: {fileID: 662876015}
+  Alt3: {fileID: 429474216}
   button1: {fileID: 25769661}
   button2: {fileID: 2077896569}
   button3: {fileID: 2047906954}
+  ONE: {fileID: 2049327790}
+  TWO: {fileID: 336149637}
+  THREE: {fileID: 161775086}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 489721405}
   firstObjectSlot: {fileID: 155462122}
   secondObjectSlot: {fileID: 45408793}
   objectSprite:
@@ -10162,13 +10137,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   book: {fileID: 973064300315609855}
   starCount: {fileID: 377878067}
+  levelButton1: {fileID: 1212961984}
+  levelButton2: {fileID: 947693204}
+  levelButton3: {fileID: 90068221}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
+  completedButton: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
   worldIndex: 1
   levelIndex: 3
-  stickerIndex: 0
   Animal: {fileID: 198044229}
   level: {fileID: 825579665}
   levelEnd: {fileID: 2088087516}
-  animatedLevelEnd: {fileID: 0}
+  animatedLevelEnd: {fileID: 1153237461}
   sumScore: 0
   task: 0
   FirstValue: {fileID: 1002869910}
@@ -10284,79 +10263,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373610600}
   m_CullTransparentMesh: 1
---- !u!1 &377878061 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 973064300803673501, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 973064300315609845}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &377878066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377878061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  book: {fileID: 0}
-  worldIndex: 0
-  levelIndex: 0
-  sumMenuButton: {fileID: 0}
-  sumLevelButton1: {fileID: 0}
-  sumLevelButton2: {fileID: 0}
-  sumLevelButton3: {fileID: 0}
-  subMenuButton: {fileID: 0}
-  subLevelButton1: {fileID: 0}
-  subLevelButton2: {fileID: 0}
-  subLevelButton3: {fileID: 0}
-  countMenuButton: {fileID: 0}
-  countLevelButton1: {fileID: 0}
-  countLevelButton2: {fileID: 0}
-  countLevelButton3: {fileID: 0}
-  multMenuButton: {fileID: 0}
-  multLevelButton1: {fileID: 0}
-  multLevelButton2: {fileID: 0}
-  multLevelButton3: {fileID: 0}
-  divMenuButton: {fileID: 0}
-  divLevelButton1: {fileID: 0}
-  divLevelButton2: {fileID: 0}
-  divLevelButton3: {fileID: 0}
-  completedButton: {fileID: 0}
-  oneStar: {fileID: 0}
-  twoStar: {fileID: 0}
-  threeStar: {fileID: 0}
-  sumStars: {fileID: 0}
-  sumMenuStars: {fileID: 0}
-  subStars: {fileID: 0}
-  subMenuStars: {fileID: 0}
-  countStars: {fileID: 0}
-  countMenuStars: {fileID: 0}
-  multStars: {fileID: 0}
-  multMenuStars: {fileID: 0}
-  divStars: {fileID: 0}
-  divMenuStars: {fileID: 0}
-  sumFarmStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  subFarmStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  countFarmStarCount: 0
-  countJungleStarCount: 0
-  countSpaceStarCount: 0
-  multJungleStarCount: 0
-  multSpaceStarCount: 0
-  divJungleStarCount: 0
-  divSpaceStarCount: 0
 --- !u!114 &377878067 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 973064300315609845}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377878061}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
@@ -14522,62 +14434,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 973064300315609855}
-  subScore: 0
-  farmStarCount: 0
-  jungleStarCount: 0
-  spaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 3
-  worldIndex: 1
-  switchOff: {fileID: 1355504108}
-  switchOn: {fileID: 579370631}
-  FirstValue: {fileID: 569720510}
-  SecondValue: {fileID: 379823510}
-  Function: {fileID: 610655316}
-  Alt1: {fileID: 1485245007}
-  Alt2: {fileID: 708119284}
-  Alt3: {fileID: 870720499}
-  AnswerSpot: {fileID: 1424720521}
-  scoreCount: {fileID: 1344193586}
-  ONE: {fileID: 2014302695}
-  TWO: {fileID: 1495901286}
-  THREE: {fileID: 2015109006}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 328665135}
-  stickerTwo: {fileID: 1271604329}
-  stickerThree: {fileID: 639977215}
-  stickerFour: {fileID: 776826919}
-  stickerFive: {fileID: 1439669538}
-  stickerSix: {fileID: 1919132787}
-  stickerSeven: {fileID: 445144728}
-  stickerEight: {fileID: 1005988729}
-  stickerNine: {fileID: 976168755}
-  subMenuButton: {fileID: 953794044}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 229662638}
-  menuStars: {fileID: 1538720649}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 1
+  levelIndex: 3
+  Animal: {fileID: 1260534824}
+  level: {fileID: 1355504108}
+  levelEnd: {fileID: 579370631}
+  animatedLevelEnd: {fileID: 232772399}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 569720510}
+  SecondValue: {fileID: 379823510}
+  Function: {fileID: 610655316}
+  AnswerSpot: {fileID: 1424720521}
+  taskNumber: {fileID: 1344193586}
+  Alt1: {fileID: 1485245007}
+  Alt2: {fileID: 708119284}
+  Alt3: {fileID: 870720499}
   button1: {fileID: 1556660412}
   button2: {fileID: 1703337559}
   button3: {fileID: 2120128715}
+  ONE: {fileID: 2014302695}
+  TWO: {fileID: 1495901286}
+  THREE: {fileID: 2015109006}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 1260534824}
   firstObjectSlot: {fileID: 1832286226}
   secondObjectSlot: {fileID: 911042420}
   objectSprite:
@@ -14872,13 +14759,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   book: {fileID: 973064300315609855}
   starCount: {fileID: 377878067}
+  levelButton1: {fileID: 1212961984}
+  levelButton2: {fileID: 947693204}
+  levelButton3: {fileID: 90068221}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
+  completedButton: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
   worldIndex: 1
   levelIndex: 2
-  stickerIndex: 0
   Animal: {fileID: 526594367}
   level: {fileID: 535273185}
   levelEnd: {fileID: 2028930187}
-  animatedLevelEnd: {fileID: 0}
+  animatedLevelEnd: {fileID: 1034818358}
   sumScore: 0
   task: 0
   FirstValue: {fileID: 2025424889}
@@ -18070,62 +17961,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 973064300315609855}
-  subScore: 0
-  farmStarCount: 0
-  jungleStarCount: 0
-  spaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 1
-  worldIndex: 1
-  switchOff: {fileID: 1506112771}
-  switchOn: {fileID: 1855497450}
-  FirstValue: {fileID: 401612474}
-  SecondValue: {fileID: 174559965}
-  Function: {fileID: 1912976407}
-  Alt1: {fileID: 752403795}
-  Alt2: {fileID: 1062936517}
-  Alt3: {fileID: 1893264783}
-  AnswerSpot: {fileID: 1701989529}
-  scoreCount: {fileID: 2020627426}
-  ONE: {fileID: 91935049}
-  TWO: {fileID: 1902639384}
-  THREE: {fileID: 702060685}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 328665135}
-  stickerTwo: {fileID: 1271604329}
-  stickerThree: {fileID: 639977215}
-  stickerFour: {fileID: 776826919}
-  stickerFive: {fileID: 1439669538}
-  stickerSix: {fileID: 1919132787}
-  stickerSeven: {fileID: 445144728}
-  stickerEight: {fileID: 1005988729}
-  stickerNine: {fileID: 976168755}
-  subMenuButton: {fileID: 953794044}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 229662638}
-  menuStars: {fileID: 1538720649}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 1
+  levelIndex: 1
+  Animal: {fileID: 1316775135}
+  level: {fileID: 1506112771}
+  levelEnd: {fileID: 1855497450}
+  animatedLevelEnd: {fileID: 1300212640}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 401612474}
+  SecondValue: {fileID: 174559965}
+  Function: {fileID: 1912976407}
+  AnswerSpot: {fileID: 1701989529}
+  taskNumber: {fileID: 467756815}
+  Alt1: {fileID: 752403795}
+  Alt2: {fileID: 1062936517}
+  Alt3: {fileID: 1893264783}
   button1: {fileID: 527451506}
   button2: {fileID: 1039260904}
   button3: {fileID: 1607503939}
+  ONE: {fileID: 91935049}
+  TWO: {fileID: 1902639384}
+  THREE: {fileID: 702060685}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 1316775135}
   firstObjectSlot: {fileID: 1893165465}
   secondObjectSlot: {fileID: 502707678}
   objectSprite:
@@ -38092,13 +37958,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   book: {fileID: 973064300315609855}
   starCount: {fileID: 377878067}
+  levelButton1: {fileID: 1212961984}
+  levelButton2: {fileID: 947693204}
+  levelButton3: {fileID: 90068221}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
+  completedButton: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
   worldIndex: 1
   levelIndex: 1
-  stickerIndex: 0
   Animal: {fileID: 1939661947}
   level: {fileID: 266804666}
   levelEnd: {fileID: 1022735153}
-  animatedLevelEnd: {fileID: 0}
+  animatedLevelEnd: {fileID: 108540129}
   sumScore: 0
   task: 0
   FirstValue: {fileID: 1545086976}
@@ -51856,7 +51726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 973064300315609855}
-  sum: {fileID: 0}
   stickerbookButton: {fileID: 4887357}
   settingsMenu: {fileID: 0}
   resetWarning: {fileID: 0}
@@ -55536,14 +55405,6 @@ PrefabInstance:
       value: OpenStickerSpreadMid3
       objectReference: {fileID: 0}
     - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-      propertyPath: oneStar
-      value: 
-      objectReference: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-      propertyPath: twoStar
-      value: 
-      objectReference: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: subStars
       value: 
       objectReference: {fileID: 229662638}
@@ -55555,10 +55416,6 @@ PrefabInstance:
       propertyPath: menuStars
       value: 
       objectReference: {fileID: 693728070}
-    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-      propertyPath: threeStar
-      value: 
-      objectReference: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
     - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: countStars
       value: 
@@ -55595,10 +55452,6 @@ PrefabInstance:
       propertyPath: countMenuStars
       value: 
       objectReference: {fileID: 1077831095}
-    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-      propertyPath: completedButton
-      value: 
-      objectReference: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
     - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: countMenuButton
       value: 
@@ -55647,6 +55500,42 @@ PrefabInstance:
       propertyPath: sum
       value: 
       objectReference: {fileID: 1498324802}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub1
+      value: 
+      objectReference: {fileID: 727255512}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub2
+      value: 
+      objectReference: {fileID: 371488627}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub3
+      value: 
+      objectReference: {fileID: 547726276}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum1
+      value: 
+      objectReference: {fileID: 1498324802}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum2
+      value: 
+      objectReference: {fileID: 557324541}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum3
+      value: 
+      objectReference: {fileID: 373085302}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: count1
+      value: 
+      objectReference: {fileID: 1342980262}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: count2
+      value: 
+      objectReference: {fileID: 1173210010}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: count3
+      value: 
+      objectReference: {fileID: 2008525893}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: stickerOne
       value: 
@@ -55870,11 +55759,11 @@ PrefabInstance:
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 727255512}
+      objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1342980262}
+      objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -55893,11 +55782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ResetStickers
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ResetStickers
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -55905,11 +55794,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SubScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: CountScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -55917,11 +55806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -55975,7 +55864,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 973064300315609845}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377878061}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df0da8921302ad4b921b1fca8f10f2d, type: 3}
@@ -56351,7 +56240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -56372,19 +56261,19 @@ PrefabInstance:
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2030866127}
+      objectReference: {fileID: 973064300315609855}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1498324802}
+      objectReference: {fileID: 2030866127}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 727255512}
+      objectReference: {fileID: 973064300315609855}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2008525893}
+      objectReference: {fileID: 973064300315609855}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -56406,32 +56295,40 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UpdateStickers
+      value: OpenStickerBook
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StickerBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SumScript, Assembly-CSharp
+      value: MenuControl, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: SubScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: CountScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName

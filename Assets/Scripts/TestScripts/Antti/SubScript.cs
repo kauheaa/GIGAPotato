@@ -6,281 +6,78 @@ using UnityEngine.UI;
 
 public class SubScript : MonoBehaviour
 {
-    public StickerBook book;
-    int firstValue, secondValue, thirdValue, fourthValue, tempValue, finalValue, Alternative1, Alternative2;
-    //[SerializeField] public int sumScore = 0;
-    //[SerializeField] public int divScore = 0;
-    //[SerializeField] public int multScore = 0;
-    [SerializeField] public int subScore = 0;
-    [SerializeField] public int farmStarCount = 0;
-    [SerializeField] public int jungleStarCount = 0;
-    [SerializeField] public int spaceStarCount = 0;
-    [SerializeField] public int carrotStickerScore = 0;
-    [SerializeField] public int bucketStickerScore = 0;
-    [SerializeField] public int bunnyStickerScore = 0;
-    [SerializeField] public int coconutStickerScore = 0;
-    [SerializeField] public int ocularsStickerScore = 0;
-    [SerializeField] public int slothStickerScore = 0;
-    [SerializeField] public int starStickerScore = 0;
-    [SerializeField] public int planetStickerScore = 0;
-    [SerializeField] public int cowStickerScore = 0;
-    public int levelIndex = 0;
-    public int worldIndex = 0;
-    [SerializeField] private Transform switchOff, switchOn;
-    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple;
-    public GameObject stickerOne, stickerTwo, stickerThree, stickerFour, stickerFive, stickerSix, stickerSeven, stickerEight, stickerNine;
-    public GameObject subMenuButton, levelButton1, levelButton2, levelButton3;
-    public Sprite oneStar, twoStar, threeStar;
-    public GameObject subStars, menuStars;
-    public Button button1, button2, button3;
-    public Sprite blueButton, redButton, greenButton, completedButton;
-    public GameObject Animal;
+    public StickerBook book; // StickerBook
+    public StarCount starCount; // StarCount
 
-    public GameObject firstObjectSlot;
-    public GameObject secondObjectSlot;
-    //public GameObject firstTenObjectSlot;
-    //public GameObject firstOverTenSlot;
-    //public GameObject secondTenObjectSlot;
-    //public GameObject secondOverTenSlot;
+    // MENU
+    public GameObject levelButton1, levelButton2, levelButton3; // Category and Level buttons which' sprites change when category or level is completed
+    public Sprite clearButton, completedButton; // Sprite for completed level and category button
 
-    public Sprite[] objectSprite;
-    //public Sprite[] tenObjectSprite;
+    // LEVEL
+    public int worldIndex = 0;                           // Number defining world (1 = Farm, 2 = Jungle, 3 = Space)
+    public int levelIndex = 0;                           // Number of level in category
+    public GameObject Animal;                            // Character that reacts to answers
+    [SerializeField] private Transform level, levelEnd;  // level and level end canvas that are opened and closed when score is 5
+    public GameObject animatedLevelEnd;                  // LevelEnd with flying sticker and Next button, different if level has been completed before
+    [SerializeField] public int subScore = 0;            // Temporary level score, reset after unlocking sticker or restarting level
+    public int task = 0;                                 // Tells the running number of the current task in level
 
+    // TASK
+    int firstValue, secondValue, thirdValue, fourthValue, tempValue, finalValue, Alternative1, Alternative2;     // Task calculation values
+    public Text FirstValue, SecondValue, Function, AnswerSpot, taskNumber;              // Text boxes for task calculation values
 
-    //public void saveScore()
-    //{
-    //    saveScore.SaveSubScore(this);
-    //    SubScript[] tempArray = GameObject.FindObjectsOfType<SubScript>();
-    //    foreach (SubScript i in tempArray)
-    //    {
-    //        i.LoadScore();
-    //    }
+    // ANSWER BUTTONS
+    public Text Alt1, Alt2, Alt3;                       // Text boxes for answer option values
+    public Button button1, button2, button3;            // Task answer buttons
+    public GameObject ONE, TWO, THREE;                  // Answer button's children image object that are unlocked when answer is clicked, sprite changes to red or green
+    public Sprite blueButton, redButton, greenButton;   // Sprites for answer buttons
 
-    //}
-    //public void LoadScore()
-    //{
-    //    string path = Application.persistentDataPath + "/subscore.txt";
-    //    if (File.Exists(path))
-    //    {
-    //        scoreData data = saveScore.LoadSubScore();
-    //        subStarCount = data.subStarCount;
-    //        subJungleStarCount = data.subJungleStarCount;
-    //        subSpaceStarCount = data.subSpaceStarCount;
+    // COUNTABLE OBJECT
+    public GameObject firstObjectSlot;      // Countable object that changes based on task's firstValue
+    public GameObject secondObjectSlot;     // Countable object that changes based on task's secondValue
+    public Sprite[] objectSprite;           // List of countable object sprites for different numbers
 
-    //        carrotStickerScore = data.carrotStickerScore;
-    //        bucketStickerScore = data.bucketStickerScore;
-    //        bunnyStickerScore = data.bunnyStickerScore;
-
-    //        coconutStickerScore = data.coconutStickerScore;
-    //        ocularsStickerScore = data.ocularsStickerScore;
-    //        slothStickerScore = data.slothStickerScore;
-
-    //        starStickerScore = data.starStickerScore;
-    //        planetStickerScore = data.planetStickerScore;
-    //        cowStickerScore = data.cowStickerScore;
-    //        Debug.Log("sub stickers loaded");
-    //    }
-    //    else
-    //    {
-    //        saveScore();
-    //    }
-
-    //}
-
-    public void SetLevelIndex(int index)
+    public void CountStars()                    // Checks StarCounts and updates stars
     {
-        levelIndex = index;
+        starCount.SubStarCount();
     }
-    public void SetWorld(int world)
+    public void Save()                          // Saves Stickers and StarCounts
     {
-        worldIndex = world;
+        book.SaveBook();
+    }
+    public void Load()                          // Loads saved Stickers and StarCounts or creates empty save if there is none
+    {
+        book.LoadBook();
+    }
+    public void SetTaskNumber()
+    {
+        task = subScore + 1;
     }
 
-    public void ResetScore()
+    public void ResetScore() // resets temporart level score
     {
         subScore = 0;
-        scoreCount.text = subScore.ToString();
     }
 
-    public void CheckStickers()
+    public void Score() // score defines when level end pops up
     {
-        if (carrotStickerScore == 1)
-        {
-            stickerOne.gameObject.SetActive(true);
-            if (worldIndex == 1)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (bucketStickerScore == 1)
-        {
-            stickerTwo.gameObject.SetActive(true);
-            if (worldIndex == 1)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (bunnyStickerScore == 1)
-        {
-            stickerThree.gameObject.SetActive(true);
-            if (worldIndex == 1)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (coconutStickerScore == 1)
-        {
-            stickerFour.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (ocularsStickerScore == 1)
-        {
-            stickerFive.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (slothStickerScore == 1)
-        {
-            stickerSix.gameObject.SetActive(true);
-            if (worldIndex == 2)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (starStickerScore == 1)
-        {
-            stickerSeven.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton1.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (planetStickerScore == 1)
-        {
-            stickerEight.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton2.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-        if (cowStickerScore == 1)
-        {
-            stickerNine.gameObject.SetActive(true);
-            if (worldIndex == 3)
-            {
-                levelButton3.GetComponent<Image>().sprite = completedButton;
-            }
-        }
-    }
-    public void StarCount()
-    {
-        farmStarCount = book.subFarmStarCount;
-        jungleStarCount = book.subJungleStarCount;
-        spaceStarCount = book.subSpaceStarCount;
+        subScore += 1;
+        SetTaskNumber();
     }
 
-    public void CheckStars()
+    public void AnimatedLevelEnd()
     {
-        switch (worldIndex)
-        {
-            case 1:
-                if (farmStarCount == 1)
-                {
-                    subStars.GetComponent<Image>().sprite = oneStar;
-                    menuStars.GetComponent<Image>().sprite = oneStar;
-                }
-                if (farmStarCount == 2)
-                {
-                    subStars.GetComponent<Image>().sprite = twoStar;
-                    menuStars.GetComponent<Image>().sprite = twoStar;
-                }
-                if (farmStarCount == 3)
-                {
-                    subStars.GetComponent<Image>().sprite = threeStar;
-                    menuStars.GetComponent<Image>().sprite = threeStar;
-                    subMenuButton.GetComponent<Image>().sprite = completedButton;
-                }
-                break;
-            case 2:
-                if (jungleStarCount == 1)
-                {
-                    subStars.GetComponent<Image>().sprite = oneStar;
-                    menuStars.GetComponent<Image>().sprite = oneStar;
-                }
-                if (jungleStarCount == 2)
-                {
-                    subStars.GetComponent<Image>().sprite = twoStar;
-                    menuStars.GetComponent<Image>().sprite = twoStar;
-                }
-                if (jungleStarCount == 3)
-                {
-                    subStars.GetComponent<Image>().sprite = threeStar;
-                    menuStars.GetComponent<Image>().sprite = threeStar;
-                    subMenuButton.GetComponent<Image>().sprite = completedButton;
-                }
-                break;
-            case 3:
-                if (spaceStarCount == 1)
-                {
-                    subStars.GetComponent<Image>().sprite = oneStar;
-                    menuStars.GetComponent<Image>().sprite = oneStar;
-                }
-                if (spaceStarCount == 2)
-                {
-                    subStars.GetComponent<Image>().sprite = twoStar;
-                    menuStars.GetComponent<Image>().sprite = twoStar;
-                }
-                if (spaceStarCount == 3)
-                {
-                    subStars.GetComponent<Image>().sprite = threeStar;
-                    menuStars.GetComponent<Image>().sprite = threeStar;
-                    subMenuButton.GetComponent<Image>().sprite = completedButton;
-                }
-                break;
-            default:
-                Debug.Log("No level index set");
-                break;
-        }
+
     }
 
-    private void Start()
-    {
-        //LoadScore();
-        CheckStickers();
-        StarCount();
-        CheckStars();
-        AnswerSpot.text = "?";
-    }
-
-    public void UpdateStickers()
-    {
-        CheckStickers();
-        StarCount();
-        CheckStars();
-        //saveScore();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        //   score = int.Parse(scoreCount.text);
-    }
-
-    public void ChooseObject()
+    public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
     {
         if (worldIndex == 1)
         {
-            secondObjectSlot.GetComponent<Image>().color = new Color(0, 0, 0, .5f);
             for (int i = 0; i < objectSprite.Length; i++)
             {
                 //FIRST CALCULATION OBJECT SPRITE
-
-                switch (firstValue)
+                switch (firstValue) //first sprite when first value is 10 or smaller
                 {
                     case 0:
                         firstObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
@@ -332,9 +129,8 @@ public class SubScript : MonoBehaviour
                         break;
                 }
 
-            //SECOND OBJECT SPRITE
-
-                switch (secondValue)
+                //SECOND OBJECT SPRITE
+                switch (secondValue) //second sprite when first value is 10 or smaller
                 {
                     case 0:
                         secondObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
@@ -385,16 +181,17 @@ public class SubScript : MonoBehaviour
                         secondObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
                         break;
                 }
-
             }
+            //Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
         }
-        Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
     }
+
     public void GenerateTask()
     {
         switch (levelIndex)
         {
             case 1:
+                // Function values in level 1
                 firstValue = Random.Range(0, 5);
                 secondValue = Random.Range(0, 5);
                 thirdValue = firstValue;
@@ -405,14 +202,15 @@ public class SubScript : MonoBehaviour
                     firstValue = fourthValue;
                     secondValue = thirdValue;
                 }
-
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
 
-                //First Alternative
+                // First Alternative
                 tempValue = Random.Range(0, 5);
                 while (tempValue == finalValue)
                 {
@@ -420,7 +218,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(1, 5);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -430,6 +228,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 2:
+                // Function values in level 2
                 firstValue = Random.Range(0, 10);
                 secondValue = Random.Range(0, 10);
                 thirdValue = firstValue;
@@ -443,11 +242,13 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
 
-                //First Alternative
+                // First Alternative
                 tempValue = Random.Range(0, 10);
                 while (tempValue == finalValue)
                 {
@@ -455,7 +256,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(1, 10);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -465,6 +266,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 3:
+                // Function values in level 3
                 firstValue = Random.Range(0, 15);
                 secondValue = Random.Range(0, 15);
                 thirdValue = firstValue;
@@ -478,11 +280,13 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+                
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
-
-                //First Alternative
+                
+                // First Alternative
                 tempValue = Random.Range(0, 15);
                 while (tempValue == finalValue)
                 {
@@ -490,7 +294,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(1, 15);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -500,6 +304,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 4:
+                // Function values in level 4
                 firstValue = Random.Range(10, 20);
                 secondValue = Random.Range(1, 15);
                 thirdValue = firstValue;
@@ -513,11 +318,13 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
 
-                //First Alternative
+                // First Alternative
                 tempValue = Random.Range(0, 20);
                 while (tempValue == finalValue)
                 {
@@ -525,7 +332,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(1, 20);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -535,6 +342,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 5:
+                // Function values in level 5
                 firstValue = Random.Range(10, 50);
                 secondValue = Random.Range(10, 50);
                 thirdValue = firstValue;
@@ -548,6 +356,8 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
@@ -560,7 +370,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(1, 50);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -570,6 +380,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 6:
+                // Function values in level 6
                 firstValue = Random.Range(10, 100);
                 secondValue = Random.Range(10, 100);
                 thirdValue = firstValue;
@@ -583,6 +394,8 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
@@ -595,7 +408,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(1, 10);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -605,6 +418,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 7:
+                // Function values in level 7
                 firstValue = Random.Range(250, 500);
                 secondValue = Random.Range(100, 500);
                 thirdValue = firstValue;
@@ -618,6 +432,8 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
@@ -630,7 +446,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(0, 500);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -640,6 +456,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 8:
+                // Function values in level 8
                 firstValue = Random.Range(500, 1000);
                 secondValue = Random.Range(250, 1000);
                 thirdValue = firstValue;
@@ -653,6 +470,8 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
@@ -665,7 +484,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(0, 1000);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -675,6 +494,7 @@ public class SubScript : MonoBehaviour
                 break;
 
             case 9:
+                // Function values in level 9
                 firstValue = Random.Range(1000, 10000);
                 secondValue = Random.Range(1000, 10000);
                 thirdValue = firstValue;
@@ -688,6 +508,8 @@ public class SubScript : MonoBehaviour
 
                 FirstValue.text = firstValue.ToString();
                 SecondValue.text = secondValue.ToString();
+
+                // Correct answer
                 finalValue = firstValue - secondValue;
 
                 ChooseObject();
@@ -700,7 +522,7 @@ public class SubScript : MonoBehaviour
                 }
                 Alternative1 = tempValue;
 
-                //Second Alternative
+                // Second Alternative
                 tempValue = Random.Range(0, 10000);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
@@ -745,12 +567,9 @@ public class SubScript : MonoBehaviour
             Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
         }
 
-
-
-
-
-        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
+        Debug.Log(firstValue + Function.text + secondValue + "=" + finalValue);
     }
+
     public void AltOne()
     {
         if (Alt1.text == finalValue.ToString())
@@ -809,7 +628,7 @@ public class SubScript : MonoBehaviour
         }
     }
 
-    public void stickerScoreCount()
+    public void UpdateStickers()
     {
         switch (worldIndex)
         {
@@ -817,24 +636,83 @@ public class SubScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 1:
-                        if (carrotStickerScore < 1)
+                        book.UnlockCarrot();
+                        break;
+                    case 2:
+                        book.UnlockBucket();
+                        break;
+                    case 3:
+                        book.UnlockBunny();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 2:
+                switch (levelIndex)
+                {
+                    case 4:
+                        book.UnlockCoconut();
+                        break;
+                    case 5:
+                        book.UnlockOculars();
+                        break;
+                    case 6:
+                        book.UnlockSloth();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 7:
+                        book.UnlockStar();
+                        break;
+                    case 8:
+                        book.UnlockPlanet();
+                        break;
+                    case 9:
+                        book.UnlockCow();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+    }
+
+    public void UpdateLevelButtons()
+    {
+        switch (worldIndex)
+        {
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        switch (book.carrotStickerScore)
                         {
-                            carrotStickerScore += 1;
-                            Debug.Log("Carrot unlocked");
+                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     case 2:
-                        if (bucketStickerScore < 1)
+                        switch (book.bucketStickerScore)
                         {
-                            bucketStickerScore += 1;
-                            Debug.Log("Bucket unlocked");
+                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     case 3:
-                        if (bunnyStickerScore < 1)
+                        switch (book.bunnyStickerScore)
                         {
-                            bunnyStickerScore += 1;
-                            Debug.Log("Bunny unlocked");
+                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     default:
@@ -846,24 +724,24 @@ public class SubScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 4:
-                        if (coconutStickerScore < 1)
+                        switch (book.coconutStickerScore)
                         {
-                            coconutStickerScore += 1;
-                            Debug.Log("Coconut unlocked");
+                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     case 5:
-                        if (ocularsStickerScore < 1)
+                        switch (book.ocularsStickerScore)
                         {
-                            ocularsStickerScore += 1;
-                            Debug.Log("Oculars unlocked");
+                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     case 6:
-                        if (slothStickerScore < 1)
+                        switch (book.slothStickerScore)
                         {
-                            slothStickerScore += 1;
-                            Debug.Log("Sloth unlocked");
+                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     default:
@@ -875,24 +753,24 @@ public class SubScript : MonoBehaviour
                 switch (levelIndex)
                 {
                     case 7:
-                        if (starStickerScore < 1)
+                        switch (book.starStickerScore)
                         {
-                            starStickerScore += 1;
-                            Debug.Log("Star sticker unlocked");
+                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     case 8:
-                        if (planetStickerScore < 1)
+                        switch (book.planetStickerScore)
                         {
-                            planetStickerScore += 1;
-                            Debug.Log("Planet unlocked");
+                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     case 9:
-                        if (cowStickerScore < 1)
+                        switch (book.cowStickerScore)
                         {
-                            cowStickerScore += 1;
-                            Debug.Log("Cow unlocked");
+                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
                         }
                         break;
                     default:
@@ -902,40 +780,39 @@ public class SubScript : MonoBehaviour
                 break;
         }
     }
-
     public void ResetTask()
     {
         if (subScore >= 5)
         {
-            stickerScoreCount();
-            switchOn.gameObject.SetActive(true);
+            UpdateStickers();
+            CountStars();
+            levelEnd.gameObject.SetActive(true);
             Animal.GetComponent<Animator>().SetBool("Dance", true);
-            switchOff.gameObject.SetActive(false);
+            level.gameObject.SetActive(false);
         }
-
-        ONE.gameObject.SetActive(false);
-        button1.interactable = true;
-        TWO.gameObject.SetActive(false);
-        button2.interactable = true;
-        THREE.gameObject.SetActive(false);
-        button3.interactable = true;
-        AnswerSpot.text = "?";
-        GenerateTask();
-        Animal.GetComponent<Animator>().SetBool("Happy", false);
+        else
+        {
+            SetTaskNumber();
+            taskNumber.text = task + "/5";
+            ONE.gameObject.SetActive(false);
+            button1.interactable = true;
+            TWO.gameObject.SetActive(false);
+            button2.interactable = true;
+            THREE.gameObject.SetActive(false);
+            button3.interactable = true;
+            AnswerSpot.text = "?";
+            GenerateTask();
+            Animal.GetComponent<Animator>().SetBool("Happy", false);
+        }
     }
 
     IEnumerator Correct()
     {
+        Animal.GetComponent<Animator>().SetBool("Happy", true);
         Score();
         AnswerSpot.text = finalValue.ToString();
-        scoreCount.text = subScore.ToString();
-        Animal.GetComponent<Animator>().SetBool("Happy", true);
         yield return new WaitForSeconds(1f);
         ResetTask();
-    }
-    public void Score()
-    {
-        subScore += 1;
     }
 
     public void StartLevel()
@@ -943,6 +820,21 @@ public class SubScript : MonoBehaviour
         ResetTask();
         GenerateTask();
         ResetScore();
+    }
+
+    private void Start()
+    {
+        completedButton = starCount.completedButton;
+        clearButton = starCount.clearButton;
+        Load();
+        CountStars();
+        UpdateLevelButtons();
+        SetTaskNumber();
+        taskNumber.text = task + "/5";
+        AnswerSpot.text = "?";
+    }
+    void Update()
+    {
 
     }
 }
