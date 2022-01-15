@@ -638,65 +638,6 @@ public class SubScript : MonoBehaviour
         }
     }
 
-    public void UpdateStickers()
-    {
-        switch (worldIndex)
-        {
-            case 1:
-                switch (levelIndex)
-                {
-                    case 1:
-                        book.UnlockCarrot();
-                        break;
-                    case 2:
-                        book.UnlockBucket();
-                        break;
-                    case 3:
-                        book.UnlockBunny();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-            case 2:
-                switch (levelIndex)
-                {
-                    case 4:
-                        book.UnlockCoconut();
-                        break;
-                    case 5:
-                        book.UnlockOculars();
-                        break;
-                    case 6:
-                        book.UnlockSloth();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-            case 3:
-                switch (levelIndex)
-                {
-                    case 7:
-                        book.UnlockStar();
-                        break;
-                    case 8:
-                        book.UnlockPlanet();
-                        break;
-                    case 9:
-                        book.UnlockCow();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-        }
-        book.UpdateStickers();
-    }
-
     public void UpdateLevelButtons()
     {
         switch (worldIndex)
@@ -790,6 +731,68 @@ public class SubScript : MonoBehaviour
                 break;
         }
     }
+
+    public void UpdateStickers()
+    {
+        switch (worldIndex)
+        {
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        book.UnlockCarrot();
+                        break;
+                    case 2:
+                        book.UnlockBucket();
+                        break;
+                    case 3:
+                        book.UnlockBunny();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 2:
+                switch (levelIndex)
+                {
+                    case 4:
+                        book.UnlockCoconut();
+                        break;
+                    case 5:
+                        book.UnlockOculars();
+                        break;
+                    case 6:
+                        book.UnlockSloth();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 7:
+                        book.UnlockStar();
+                        break;
+                    case 8:
+                        book.UnlockPlanet();
+                        break;
+                    case 9:
+                        book.UnlockCow();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+        UpdateLevelButtons();
+    }
+
+ 
     public void ResetTask()
     {
         if (subScore >= 5)

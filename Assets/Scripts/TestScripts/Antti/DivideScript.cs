@@ -537,48 +537,6 @@ public class DivideScript : MonoBehaviour
         }
     }
 
-    public void UpdateStickers()
-    {
-        switch (worldIndex)
-        {
-            case 2:
-                switch (levelIndex)
-                {
-                    case 1:
-                        book.UnlockAvocado();
-                        break;
-                    case 2:
-                        book.UnlockTool();
-                        break;
-                    case 3:
-                        book.UnlockTiger();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-            case 3:
-                switch (levelIndex)
-                {
-                    case 4:
-                        book.UnlockDriedfish();
-                        break;
-                    case 5:
-                        book.UnlockOctopus();
-                        break;
-                    case 6:
-                        book.UnlockCat();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-        }
-        book.UpdateStickers();
-    }
-
     public void UpdateLevelButtons()
     {
         switch (worldIndex)
@@ -643,6 +601,51 @@ public class DivideScript : MonoBehaviour
                 break;
         }
     }
+
+    public void UpdateStickers()
+    {
+        switch (worldIndex)
+        {
+            case 2:
+                switch (levelIndex)
+                {
+                    case 1:
+                        book.UnlockAvocado();
+                        break;
+                    case 2:
+                        book.UnlockTool();
+                        break;
+                    case 3:
+                        book.UnlockTiger();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 4:
+                        book.UnlockDriedfish();
+                        break;
+                    case 5:
+                        book.UnlockOctopus();
+                        break;
+                    case 6:
+                        book.UnlockCat();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+        UpdateLevelButtons();
+    }
+
+
     public void ResetTask()
     {
         if (divScore >= 5)

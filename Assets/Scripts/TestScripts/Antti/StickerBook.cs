@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StickerBook : MonoBehaviour
 {
     public StarCount starCount;
+    public GameObject stickerbookButton;
 
     public int bookIndex = 0;
     public int worldIndex;
@@ -449,6 +450,12 @@ public class StickerBook : MonoBehaviour
         {
             catStickerScore += 1;
         }
+    }
+
+    public void NoNewStickers()
+    {
+        stickerbookButton.GetComponent<Animator>().SetBool("NewStickers", false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
     }
 
 

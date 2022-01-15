@@ -458,48 +458,6 @@ public class MultiplyScript : MonoBehaviour
         }
     }
 
-    public void UpdateStickers()
-    {
-        switch (worldIndex)
-        {
-            case 2:
-                switch (levelIndex)
-                {
-                    case 1:
-                        book.UnlockLychee();
-                        break;
-                    case 2:
-                        book.UnlockPitahaya();
-                        break;
-                    case 3:
-                        book.UnlockFrog();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-            case 3:
-                switch (levelIndex)
-                {
-                    case 4:
-                        book.UnlockFlag();
-                        break;
-                    case 5:
-                        book.UnlockRocket();
-                        break;
-                    case 6:
-                        book.UnlockLaika();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-        }
-        book.UpdateStickers();
-    }
-
     public void UpdateLevelButtons()
     {
         switch (worldIndex)
@@ -564,6 +522,50 @@ public class MultiplyScript : MonoBehaviour
                 break;
         }
     }
+    public void UpdateStickers()
+    {
+        switch (worldIndex)
+        {
+            case 2:
+                switch (levelIndex)
+                {
+                    case 1:
+                        book.UnlockLychee();
+                        break;
+                    case 2:
+                        book.UnlockPitahaya();
+                        break;
+                    case 3:
+                        book.UnlockFrog();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 4:
+                        book.UnlockFlag();
+                        break;
+                    case 5:
+                        book.UnlockRocket();
+                        break;
+                    case 6:
+                        book.UnlockLaika();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+        UpdateLevelButtons();
+    }
+
+ 
     public void ResetTask()
     {
         if (multScore >= 5)

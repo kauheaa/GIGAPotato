@@ -56,30 +56,6 @@ public class CountScript : MonoBehaviour
     }
 
     // Gives stickers +1 at level end if they have < 1
-    public void UpdateStickers()
-    {
-        switch (worldIndex)
-        {
-            case 1:
-                switch (levelIndex)
-                {
-                    case 1:
-                        book.UnlockThreeCorn();
-                        break;
-                    case 2:
-                        book.UnlockTwoCorn();
-                        break;
-                    case 3:
-                        book.UnlockLamb();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-        }
-        book.UpdateStickers();
-    }
 
     public void UpdateLevelButtons()
     {
@@ -115,6 +91,31 @@ public class CountScript : MonoBehaviour
                 }
                 break;
         }
+    }
+    public void UpdateStickers()
+    {
+        switch (worldIndex)
+        {
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        book.UnlockThreeCorn();
+                        break;
+                    case 2:
+                        book.UnlockTwoCorn();
+                        break;
+                    case 3:
+                        book.UnlockLamb();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+        UpdateLevelButtons();
     }
 
     public void StartCount()
