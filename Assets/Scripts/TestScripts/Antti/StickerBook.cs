@@ -7,6 +7,11 @@ using UnityEngine.UI;
 public class StickerBook : MonoBehaviour
 {
     public StarCount starCount;
+    public WriteToFile writeToFile;
+
+    public string stickerScores;
+    public Text test;
+
 
     public int bookIndex = 0;
     public int worldIndex;
@@ -26,6 +31,10 @@ public class StickerBook : MonoBehaviour
     public DivideScript div1;
     public DivideScript div2;
     public DivideScript div3;
+
+    // Player name
+    public string playerName;
+    public Text player;
 
     // All starCounts
     public int sumFarmStarCount, sumJungleStarCount, sumSpaceStarCount;
@@ -754,5 +763,8 @@ public class StickerBook : MonoBehaviour
         UpdateAll();
     }
 
+    public void Update()
+    {
 
+    }
 }

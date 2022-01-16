@@ -9,7 +9,7 @@
 		echo("Field 1:" . $text1);
 		echo("Field 2:" . $text2);
 		echo("Field 3:" . $text3);
-		$file = fopen("data.txt", "a");
+		$file = fopen("data.txt", "w"); // a adds, 
 		fwrite($file, $text1);
 		fwrite($file, $text2);
 		fwrite($file, $text3);
@@ -17,8 +17,6 @@
 	}
 	else
 	{
-		$file = fopen("data.txt", "r");
-		echo fread($file, filesize("data.txt"));
-		fclose($file);
+		echo("Message delivery failed...");
 	}
 ?>

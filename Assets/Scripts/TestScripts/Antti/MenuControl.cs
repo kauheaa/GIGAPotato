@@ -90,6 +90,7 @@ public class MenuControl : MonoBehaviour
     private void Start()
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
+        book.LoadBook();
     }
 
     private void Update()
