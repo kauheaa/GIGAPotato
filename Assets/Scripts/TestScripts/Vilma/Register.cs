@@ -17,7 +17,7 @@ public class Register : MonoBehaviour
     IEnumerator RegisterPlayer()
     {
         WWWForm form = new WWWForm();
-        form.AddField("name", nameField.text);
+        form.AddField("username", nameField.text);
         form.AddField("password", passwordField.text);
         WWW www = new WWW("http://kauheaa.com/gigapotato/sqlconnect/register.php", form);
         yield return www;
