@@ -113,6 +113,15 @@ public class StickerBook : MonoBehaviour
     public Text congrats;
     public Text allCollected;
 
+    public GUIStyle style;
+
+    void setFontStyle()
+    {
+    style.font = Resources.Load<Font>("Fonts/GIGATitleFont_Regular");
+    }
+        
+
+
 
     public void SaveBook()
     {
@@ -691,6 +700,7 @@ public class StickerBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        setFontStyle();
         LoadBook();
         UpdateAll();
     }

@@ -171,8 +171,10 @@ public class CountScript : MonoBehaviour
             options[i].GetComponent<Button>().interactable = true;
             options[i].GetComponent<Image>().sprite = options[i].GetComponent<CountAnswerScript>().blueButton;
             options[i].GetComponent<CountAnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
-            
+            options[i].transform.GetChild(1).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
+            options[i].GetComponent<Animator>().SetBool("Correct", false);
+            options[i].GetComponent<Animator>().SetBool("Incorrect", false);
+
             if(QnA[currentQuestion].CorrectAnswer == i+1)
             {
                 options[i].GetComponent<CountAnswerScript>().isCorrect = true;
