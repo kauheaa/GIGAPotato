@@ -629,7 +629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL COMPLETED
+  m_Text: LEVEL COMPLETED!
 --- !u!222 &39875570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -989,7 +989,7 @@ GameObject:
   - component: {fileID: 62220062}
   - component: {fileID: 62220061}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,9 +2517,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498324802}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2532,6 +2532,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadFirst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3098,6 +3110,7 @@ RectTransform:
   m_Children:
   - {fileID: 99546104}
   - {fileID: 126426877}
+  - {fileID: 1557727975}
   - {fileID: 1210412876}
   m_Father: {fileID: 1904938977}
   m_RootOrder: 0
@@ -5415,21 +5428,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadMid1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2008525893}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5442,6 +5443,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5501,7 +5514,7 @@ GameObject:
   - component: {fileID: 195459411}
   - component: {fileID: 195459412}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5521,8 +5534,8 @@ RectTransform:
   m_Father: {fileID: 1557727975}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5567,7 +5580,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &198044229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4231637990720777546, guid: 1f36ce957c1926741a180e640a40d291, type: 3}
@@ -5840,7 +5853,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &200961499
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6857,21 +6870,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 547726276}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6884,6 +6885,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadFirst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8956,7 +8969,7 @@ GameObject:
   - component: {fileID: 316389515}
   - component: {fileID: 316389514}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8975,7 +8988,7 @@ RectTransform:
   m_Children:
   - {fileID: 928057758}
   m_Father: {fileID: 512037407}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88, y: 0.62}
   m_AnchorMax: {x: 0.93, y: 0.7}
@@ -9173,7 +9186,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 547726276}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9744,7 +9757,7 @@ RectTransform:
   m_Children:
   - {fileID: 1395625258}
   - {fileID: 2096264026}
-  - {fileID: 1018069851}
+  - {fileID: 812184796}
   m_Father: {fileID: 504102690}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10065,62 +10078,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subScore: 0
-  subStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 2
-  worldIndex: 1
-  switchOff: {fileID: 887163345}
-  switchOn: {fileID: 463188864}
-  FirstValue: {fileID: 1081382124}
-  SecondValue: {fileID: 25354080}
-  Function: {fileID: 171040942}
-  Alt1: {fileID: 327058734}
-  Alt2: {fileID: 662876015}
-  Alt3: {fileID: 429474216}
-  AnswerSpot: {fileID: 648562733}
-  scoreCount: {fileID: 467756815}
-  ONE: {fileID: 2049327790}
-  TWO: {fileID: 336149637}
-  THREE: {fileID: 161775086}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 328665135}
-  stickerTwo: {fileID: 1271604329}
-  stickerThree: {fileID: 639977215}
-  stickerFour: {fileID: 776826919}
-  stickerFive: {fileID: 1439669538}
-  stickerSix: {fileID: 1919132787}
-  stickerSeven: {fileID: 445144728}
-  stickerEight: {fileID: 1005988729}
-  stickerNine: {fileID: 976168755}
-  subMenuButton: {fileID: 953794044}
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 229662638}
-  menuStars: {fileID: 1538720649}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 1
+  levelIndex: 2
+  Animal: {fileID: 489721405}
+  level: {fileID: 887163345}
+  levelEnd: {fileID: 463188864}
+  animatedLevelEnd: {fileID: 1536666996}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 1081382124}
+  SecondValue: {fileID: 25354080}
+  Function: {fileID: 171040942}
+  AnswerSpot: {fileID: 648562733}
+  taskNumber: {fileID: 467756815}
+  Alt1: {fileID: 327058734}
+  Alt2: {fileID: 662876015}
+  Alt3: {fileID: 429474216}
   button1: {fileID: 25769661}
   button2: {fileID: 2077896569}
   button3: {fileID: 2047906954}
+  ONE: {fileID: 2049327790}
+  TWO: {fileID: 336149637}
+  THREE: {fileID: 161775086}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 489721405}
   firstObjectSlot: {fileID: 155462122}
   secondObjectSlot: {fileID: 45408793}
   objectSprite:
@@ -10183,62 +10172,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
-  sumStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  appleStickerScore: 0
-  basketStickerScore: 0
-  pigStickerScore: 0
-  bananaStickerScore: 0
-  clusterStickerScore: 0
-  monkeyStickerScore: 0
-  asteroidStickerScore: 0
-  blackholeStickerScore: 0
-  llamaStickerScore: 0
-  levelIndex: 3
-  worldIndex: 1
-  FirstValue: {fileID: 1002869910}
-  SecondValue: {fileID: 807270265}
-  Function: {fileID: 917268916}
-  Alt1: {fileID: 1503392514}
-  Alt2: {fileID: 1866369533}
-  Alt3: {fileID: 750383639}
-  AnswerSpot: {fileID: 918262151}
-  scoreCount: {fileID: 1428282837}
-  ONE: {fileID: 638253759}
-  TWO: {fileID: 1965640582}
-  THREE: {fileID: 1275057252}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 446858899}
-  stickerTwo: {fileID: 1318589033}
-  stickerThree: {fileID: 307599861}
-  stickerFour: {fileID: 973064300315609851}
-  stickerFive: {fileID: 973064300315609850}
-  stickerSix: {fileID: 973064300315609849}
-  stickerSeven: {fileID: 973064300315609854}
-  stickerEight: {fileID: 973064300315609853}
-  stickerNine: {fileID: 973064300315609852}
-  sumMenuButton: {fileID: 1733980915}
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 1212961984}
   levelButton2: {fileID: 947693204}
   levelButton3: {fileID: 90068221}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 865204667}
-  menuStars: {fileID: 693728070}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
+  completedButton: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
+  worldIndex: 1
+  levelIndex: 3
+  Animal: {fileID: 198044229}
+  level: {fileID: 825579665}
+  levelEnd: {fileID: 2088087516}
+  animatedLevelEnd: {fileID: 1153237461}
+  sumScore: 0
+  task: 0
+  FirstValue: {fileID: 1002869910}
+  SecondValue: {fileID: 807270265}
+  Function: {fileID: 917268916}
+  AnswerSpot: {fileID: 918262151}
+  taskNumber: {fileID: 1428282837}
+  Alt1: {fileID: 1503392514}
+  Alt2: {fileID: 1866369533}
+  Alt3: {fileID: 750383639}
   button1: {fileID: 204926828}
   button2: {fileID: 198595759}
   button3: {fileID: 2048008838}
+  ONE: {fileID: 638253759}
+  TWO: {fileID: 1965640582}
+  THREE: {fileID: 1275057252}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 825579665}
-  switchOn: {fileID: 2088087516}
-  Animal: {fileID: 198044229}
   firstObjectSlot: {fileID: 388750546}
   secondObjectSlot: {fileID: 155057855}
   objectSprite:
@@ -10335,6 +10300,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373610600}
   m_CullTransparentMesh: 1
+--- !u!114 &377878067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &379823507
 GameObject:
   m_ObjectHideFlags: 0
@@ -10439,7 +10415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 846800662572404065, guid: 3f719eb1ebe249c46bac56417d2fa549, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 846800662572404065, guid: 3f719eb1ebe249c46bac56417d2fa549, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11700,7 +11676,6 @@ RectTransform:
   - {fileID: 1966852815}
   - {fileID: 2069761172}
   - {fileID: 1026566312}
-  - {fileID: 1020789736}
   - {fileID: 1626633459}
   - {fileID: 891764955}
   m_Father: {fileID: 1232621727}
@@ -11964,7 +11939,7 @@ GameObject:
   - component: {fileID: 467756814}
   - component: {fileID: 467756815}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11984,8 +11959,8 @@ RectTransform:
   m_Father: {fileID: 1183848121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12030,7 +12005,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &472173241
 GameObject:
   m_ObjectHideFlags: 0
@@ -12258,7 +12233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &476244615
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12905,8 +12880,8 @@ RectTransform:
   m_Children:
   - {fileID: 1042787994}
   - {fileID: 344081919}
+  - {fileID: 1018069851}
   - {fileID: 1231323481}
-  - {fileID: 812184796}
   - {fileID: 2062493712}
   - {fileID: 1253386256}
   m_Father: {fileID: 1232621727}
@@ -13226,7 +13201,7 @@ GameObject:
   - component: {fileID: 508123820}
   - component: {fileID: 508123819}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13510,7 +13485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &511862878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13550,9 +13525,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 266804666}
+  - {fileID: 316389513}
   - {fileID: 1229150389}
   - {fileID: 1022735153}
-  - {fileID: 316389513}
   - {fileID: 735508570}
   - {fileID: 262049416}
   - {fileID: 1716067474}
@@ -14406,7 +14381,7 @@ RectTransform:
   - {fileID: 95159578}
   - {fileID: 749000421}
   m_Father: {fileID: 1904938977}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6166042, y: 0.7238149}
   m_AnchorMax: {x: 0.6166042, y: 0.7238149}
@@ -14494,62 +14469,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subScore: 0
-  subStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 3
-  worldIndex: 1
-  switchOff: {fileID: 1355504108}
-  switchOn: {fileID: 579370631}
-  FirstValue: {fileID: 569720510}
-  SecondValue: {fileID: 379823510}
-  Function: {fileID: 610655316}
-  Alt1: {fileID: 1485245007}
-  Alt2: {fileID: 708119284}
-  Alt3: {fileID: 870720499}
-  AnswerSpot: {fileID: 1424720521}
-  scoreCount: {fileID: 1344193586}
-  ONE: {fileID: 2014302695}
-  TWO: {fileID: 1495901286}
-  THREE: {fileID: 2015109006}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 328665135}
-  stickerTwo: {fileID: 1271604329}
-  stickerThree: {fileID: 639977215}
-  stickerFour: {fileID: 776826919}
-  stickerFive: {fileID: 1439669538}
-  stickerSix: {fileID: 1919132787}
-  stickerSeven: {fileID: 445144728}
-  stickerEight: {fileID: 1005988729}
-  stickerNine: {fileID: 976168755}
-  subMenuButton: {fileID: 953794044}
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 229662638}
-  menuStars: {fileID: 1538720649}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 1
+  levelIndex: 3
+  Animal: {fileID: 1260534824}
+  level: {fileID: 1355504108}
+  levelEnd: {fileID: 579370631}
+  animatedLevelEnd: {fileID: 232772399}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 569720510}
+  SecondValue: {fileID: 379823510}
+  Function: {fileID: 610655316}
+  AnswerSpot: {fileID: 1424720521}
+  taskNumber: {fileID: 1344193586}
+  Alt1: {fileID: 1485245007}
+  Alt2: {fileID: 708119284}
+  Alt3: {fileID: 870720499}
   button1: {fileID: 1556660412}
   button2: {fileID: 1703337559}
   button3: {fileID: 2120128715}
+  ONE: {fileID: 2014302695}
+  TWO: {fileID: 1495901286}
+  THREE: {fileID: 2015109006}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 1260534824}
   firstObjectSlot: {fileID: 1832286226}
   secondObjectSlot: {fileID: 911042420}
   objectSprite:
@@ -14842,62 +14793,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
-  sumStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  appleStickerScore: 0
-  basketStickerScore: 0
-  pigStickerScore: 0
-  bananaStickerScore: 0
-  clusterStickerScore: 0
-  monkeyStickerScore: 0
-  asteroidStickerScore: 0
-  blackholeStickerScore: 0
-  llamaStickerScore: 0
-  levelIndex: 2
-  worldIndex: 1
-  FirstValue: {fileID: 2025424889}
-  SecondValue: {fileID: 1710707265}
-  Function: {fileID: 1756440054}
-  Alt1: {fileID: 1842854851}
-  Alt2: {fileID: 666216157}
-  Alt3: {fileID: 421658547}
-  AnswerSpot: {fileID: 1083362796}
-  scoreCount: {fileID: 582334110}
-  ONE: {fileID: 1655143433}
-  TWO: {fileID: 514434741}
-  THREE: {fileID: 548494574}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 446858899}
-  stickerTwo: {fileID: 1318589033}
-  stickerThree: {fileID: 307599861}
-  stickerFour: {fileID: 973064300315609851}
-  stickerFive: {fileID: 973064300315609850}
-  stickerSix: {fileID: 973064300315609849}
-  stickerSeven: {fileID: 973064300315609854}
-  stickerEight: {fileID: 973064300315609853}
-  stickerNine: {fileID: 973064300315609852}
-  sumMenuButton: {fileID: 1733980915}
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 1212961984}
   levelButton2: {fileID: 947693204}
   levelButton3: {fileID: 90068221}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 865204667}
-  menuStars: {fileID: 693728070}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
+  completedButton: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
+  worldIndex: 1
+  levelIndex: 2
+  Animal: {fileID: 526594367}
+  level: {fileID: 535273185}
+  levelEnd: {fileID: 2028930187}
+  animatedLevelEnd: {fileID: 1034818358}
+  sumScore: 0
+  task: 0
+  FirstValue: {fileID: 2025424889}
+  SecondValue: {fileID: 1710707265}
+  Function: {fileID: 1756440054}
+  AnswerSpot: {fileID: 1083362796}
+  taskNumber: {fileID: 582334110}
+  Alt1: {fileID: 1842854851}
+  Alt2: {fileID: 666216157}
+  Alt3: {fileID: 421658547}
   button1: {fileID: 1114535264}
   button2: {fileID: 111349184}
   button3: {fileID: 69315042}
+  ONE: {fileID: 1655143433}
+  TWO: {fileID: 514434741}
+  THREE: {fileID: 548494574}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 535273185}
-  switchOn: {fileID: 2028930187}
-  Animal: {fileID: 526594367}
   firstObjectSlot: {fileID: 224776310}
   secondObjectSlot: {fileID: 1046360630}
   objectSprite:
@@ -15415,7 +15342,7 @@ GameObject:
   - component: {fileID: 582334109}
   - component: {fileID: 582334110}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15435,8 +15362,8 @@ RectTransform:
   m_Father: {fileID: 508123818}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15481,7 +15408,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!224 &585713513 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 973064300803673500, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -15499,7 +15426,7 @@ GameObject:
   - component: {fileID: 608647224}
   - component: {fileID: 608647223}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15519,8 +15446,8 @@ RectTransform:
   m_Father: {fileID: 812184796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15557,7 +15484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &608647224
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15831,7 +15758,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 557324541}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17296,7 +17223,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &696663403
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18069,62 +17996,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20310caaf1d07de46a73e33433eea212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subScore: 0
-  subStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  carrotStickerScore: 0
-  bucketStickerScore: 0
-  bunnyStickerScore: 0
-  coconutStickerScore: 0
-  ocularsStickerScore: 0
-  slothStickerScore: 0
-  starStickerScore: 0
-  planetStickerScore: 0
-  cowStickerScore: 0
-  levelIndex: 1
-  worldIndex: 1
-  switchOff: {fileID: 1506112771}
-  switchOn: {fileID: 1855497450}
-  FirstValue: {fileID: 401612474}
-  SecondValue: {fileID: 174559965}
-  Function: {fileID: 1912976407}
-  Alt1: {fileID: 752403795}
-  Alt2: {fileID: 1062936517}
-  Alt3: {fileID: 1893264783}
-  AnswerSpot: {fileID: 1701989529}
-  scoreCount: {fileID: 2020627426}
-  ONE: {fileID: 91935049}
-  TWO: {fileID: 1902639384}
-  THREE: {fileID: 702060685}
-  appleSpawn: {fileID: 0}
-  apple: {fileID: 0}
-  stickerOne: {fileID: 328665135}
-  stickerTwo: {fileID: 1271604329}
-  stickerThree: {fileID: 639977215}
-  stickerFour: {fileID: 776826919}
-  stickerFive: {fileID: 1439669538}
-  stickerSix: {fileID: 1919132787}
-  stickerSeven: {fileID: 445144728}
-  stickerEight: {fileID: 1005988729}
-  stickerNine: {fileID: 976168755}
-  subMenuButton: {fileID: 953794044}
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  subStars: {fileID: 229662638}
-  menuStars: {fileID: 1538720649}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  worldIndex: 1
+  levelIndex: 1
+  Animal: {fileID: 1316775135}
+  level: {fileID: 1506112771}
+  levelEnd: {fileID: 1855497450}
+  animatedLevelEnd: {fileID: 1300212640}
+  subScore: 0
+  task: 0
+  FirstValue: {fileID: 401612474}
+  SecondValue: {fileID: 174559965}
+  Function: {fileID: 1912976407}
+  AnswerSpot: {fileID: 1701989529}
+  taskNumber: {fileID: 2020627426}
+  Alt1: {fileID: 752403795}
+  Alt2: {fileID: 1062936517}
+  Alt3: {fileID: 1893264783}
   button1: {fileID: 527451506}
   button2: {fileID: 1039260904}
   button3: {fileID: 1607503939}
+  ONE: {fileID: 91935049}
+  TWO: {fileID: 1902639384}
+  THREE: {fileID: 702060685}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  Animal: {fileID: 1316775135}
   firstObjectSlot: {fileID: 1893165465}
   secondObjectSlot: {fileID: 502707678}
   objectSprite:
@@ -19314,7 +19217,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &782255141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20495,7 +20398,7 @@ GameObject:
   - component: {fileID: 812184798}
   - component: {fileID: 812184797}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20513,8 +20416,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 608647222}
-  m_Father: {fileID: 504102690}
-  m_RootOrder: 3
+  m_Father: {fileID: 344081919}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88, y: 0.62}
   m_AnchorMax: {x: 0.93, y: 0.7}
@@ -22170,7 +22073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 846800662572404065, guid: 3f719eb1ebe249c46bac56417d2fa549, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 846800662572404065, guid: 3f719eb1ebe249c46bac56417d2fa549, type: 3}
       propertyPath: m_AnchorMax.x
@@ -23352,7 +23255,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 373085302}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23598,7 +23501,7 @@ GameObject:
   - component: {fileID: 928057760}
   - component: {fileID: 928057759}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23618,8 +23521,8 @@ RectTransform:
   m_Father: {fileID: 316389513}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -23656,7 +23559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &928057760
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24646,7 +24549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL COMPLETED
+  m_Text: LEVEL COMPLETED!
 --- !u!222 &963556947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24835,7 +24738,7 @@ GameObject:
   - component: {fileID: 981298459}
   - component: {fileID: 981298458}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25715,7 +25618,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 344081919}
+  m_Father: {fileID: 504102690}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22479166, y: 0.64722216}
@@ -25830,7 +25733,7 @@ GameObject:
   - component: {fileID: 1020789738}
   - component: {fileID: 1020789737}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25848,8 +25751,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1720326780}
-  m_Father: {fileID: 457810287}
-  m_RootOrder: 3
+  m_Father: {fileID: 1966852815}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88, y: 0.62}
   m_AnchorMax: {x: 0.93, y: 0.7}
@@ -25971,7 +25874,7 @@ RectTransform:
   - {fileID: 635521222}
   - {fileID: 1690367201}
   m_Father: {fileID: 512037407}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -26349,21 +26252,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 557324541}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26376,6 +26267,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadFirst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28388,7 +28291,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL COMPLETED
+  m_Text: LEVEL COMPLETED!
 --- !u!222 &1087338188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29372,21 +29275,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 373085302}
-        m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29399,6 +29290,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadFirst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29647,6 +29550,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66189be89a9224744b099f10c59f02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
+  levelIndex: 2
+  worldIndex: 1
+  levelButton1: {fileID: 1611086599}
+  levelButton2: {fileID: 1333439736}
+  levelButton3: {fileID: 274410843}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  Animal: {fileID: 527557108}
+  level: {fileID: 1966852815}
+  levelEnd: {fileID: 1026566312}
+  animatedLevelEnd: {fileID: 1185377973}
+  sumScore: 0
+  task: 0
   QnA:
   - Question: SIX
     Objects: {fileID: 21300000, guid: 3647a92bb0fc8c340a079cc7e9758174, type: 3}
@@ -29689,32 +29607,10 @@ MonoBehaviour:
   - {fileID: 841342850}
   currentQuestion: 0
   QuestionImg: {fileID: 1362821124}
-  GoPanel: {fileID: 1026566311}
   QuestionTxt: {fileID: 0}
   QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
-  ScoreTxt: {fileID: 1720326781}
+  taskNumber: {fileID: 1720326781}
   score: 0
-  levelIndex: 2
-  worldIndex: 1
-  countStarCount: 0
-  countSpaceStarCount: 0
-  threeCornStickerScore: 0
-  twoCornStickerScore: 0
-  lambStickerScore: 0
-  stickerOne: {fileID: 497881465}
-  stickerTwo: {fileID: 1094034303}
-  stickerThree: {fileID: 1989673304}
-  countMenuButton: {fileID: 0}
-  levelButton1: {fileID: 1611086599}
-  levelButton2: {fileID: 1333439736}
-  levelButton3: {fileID: 274410843}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  countStars: {fileID: 1469187563}
-  menuStars: {fileID: 1077831095}
-  Animal: {fileID: 527557108}
 --- !u!1 &1180362172
 GameObject:
   m_ObjectHideFlags: 0
@@ -29822,33 +29718,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadMid1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: CloseStickerSpreadLast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1342980262}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29861,6 +29733,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29921,7 +29805,7 @@ GameObject:
   - component: {fileID: 1183848123}
   - component: {fileID: 1183848122}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30699,7 +30583,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 126593953}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22479166, y: 0.64722216}
   m_AnchorMax: {x: 0.30600002, y: 0.7962963}
@@ -31415,7 +31299,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL COMPLETED
+  m_Text: LEVEL COMPLETED!
 --- !u!222 &1221941097
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31458,7 +31342,7 @@ RectTransform:
   - {fileID: 1265660076}
   - {fileID: 1806458346}
   m_Father: {fileID: 512037407}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -31559,7 +31443,7 @@ RectTransform:
   - {fileID: 121232212}
   - {fileID: 2114265968}
   m_Father: {fileID: 504102690}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -32650,7 +32534,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL COMPLETED
+  m_Text: LEVEL COMPLETED!
 --- !u!222 &1269459496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33500,33 +33384,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 727255512}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 727255512}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: SaveScore
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33539,6 +33399,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadFirst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34966,6 +34838,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66189be89a9224744b099f10c59f02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
+  levelIndex: 1
+  worldIndex: 1
+  levelButton1: {fileID: 1611086599}
+  levelButton2: {fileID: 1333439736}
+  levelButton3: {fileID: 274410843}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  Animal: {fileID: 1617684225}
+  level: {fileID: 126593953}
+  levelEnd: {fileID: 1992225798}
+  animatedLevelEnd: {fileID: 1180362172}
+  sumScore: 0
+  task: 0
   QnA:
   - Question: ONE
     Objects: {fileID: 21300000, guid: 497a4a2d2156cfc419449e32b654ed7d, type: 3}
@@ -35008,32 +34895,10 @@ MonoBehaviour:
   - {fileID: 1240521030}
   currentQuestion: 0
   QuestionImg: {fileID: 225356150}
-  GoPanel: {fileID: 1992225797}
   QuestionTxt: {fileID: 1880897087}
   QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
-  ScoreTxt: {fileID: 195459412}
+  taskNumber: {fileID: 195459412}
   score: 0
-  levelIndex: 1
-  worldIndex: 1
-  countStarCount: 0
-  countSpaceStarCount: 0
-  threeCornStickerScore: 0
-  twoCornStickerScore: 0
-  lambStickerScore: 0
-  stickerOne: {fileID: 497881465}
-  stickerTwo: {fileID: 1094034303}
-  stickerThree: {fileID: 1989673304}
-  countMenuButton: {fileID: 0}
-  levelButton1: {fileID: 1611086599}
-  levelButton2: {fileID: 1333439736}
-  levelButton3: {fileID: 274410843}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  countStars: {fileID: 1469187563}
-  menuStars: {fileID: 1077831095}
-  Animal: {fileID: 1617684225}
 --- !u!1 &1344193583
 GameObject:
   m_ObjectHideFlags: 0
@@ -35046,7 +34911,7 @@ GameObject:
   - component: {fileID: 1344193585}
   - component: {fileID: 1344193586}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35066,8 +34931,8 @@ RectTransform:
   m_Father: {fileID: 981298457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -35112,7 +34977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &1347693093
 GameObject:
   m_ObjectHideFlags: 0
@@ -35573,7 +35438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &1357005031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36455,7 +36320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &1422652686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36634,7 +36499,7 @@ GameObject:
   - component: {fileID: 1428282836}
   - component: {fileID: 1428282837}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36654,8 +36519,8 @@ RectTransform:
   m_Father: {fileID: 62220060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -36700,7 +36565,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &1429192291
 GameObject:
   m_ObjectHideFlags: 0
@@ -38157,62 +38022,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sumScore: 0
-  sumStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  appleStickerScore: 0
-  basketStickerScore: 0
-  pigStickerScore: 0
-  bananaStickerScore: 0
-  clusterStickerScore: 0
-  monkeyStickerScore: 0
-  asteroidStickerScore: 0
-  blackholeStickerScore: 0
-  llamaStickerScore: 0
-  levelIndex: 1
-  worldIndex: 1
-  FirstValue: {fileID: 1545086976}
-  SecondValue: {fileID: 400385279}
-  Function: {fileID: 1425711255}
-  Alt1: {fileID: 478317786}
-  Alt2: {fileID: 852701393}
-  Alt3: {fileID: 1188587774}
-  AnswerSpot: {fileID: 560926380}
-  scoreCount: {fileID: 928057759}
-  ONE: {fileID: 1199755486}
-  TWO: {fileID: 1742225127}
-  THREE: {fileID: 1392362178}
-  appleSpawn: {fileID: 1716067473}
-  apple: {fileID: 5939439161111798659, guid: 839bc45f72cb697458d54cb5a0d68b71, type: 3}
-  stickerOne: {fileID: 446858899}
-  stickerTwo: {fileID: 1318589033}
-  stickerThree: {fileID: 307599861}
-  stickerFour: {fileID: 973064300315609851}
-  stickerFive: {fileID: 973064300315609850}
-  stickerSix: {fileID: 973064300315609849}
-  stickerSeven: {fileID: 973064300315609854}
-  stickerEight: {fileID: 973064300315609853}
-  stickerNine: {fileID: 973064300315609852}
-  sumMenuButton: {fileID: 1733980915}
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
   levelButton1: {fileID: 1212961984}
   levelButton2: {fileID: 947693204}
   levelButton3: {fileID: 90068221}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 865204667}
-  menuStars: {fileID: 693728070}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
+  completedButton: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
+  worldIndex: 1
+  levelIndex: 1
+  Animal: {fileID: 1939661947}
+  level: {fileID: 266804666}
+  levelEnd: {fileID: 1022735153}
+  animatedLevelEnd: {fileID: 108540129}
+  sumScore: 0
+  task: 0
+  FirstValue: {fileID: 1545086976}
+  SecondValue: {fileID: 400385279}
+  Function: {fileID: 1425711255}
+  AnswerSpot: {fileID: 560926380}
+  taskNumber: {fileID: 928057759}
+  Alt1: {fileID: 478317786}
+  Alt2: {fileID: 852701393}
+  Alt3: {fileID: 1188587774}
   button1: {fileID: 672239156}
   button2: {fileID: 1657541207}
   button3: {fileID: 2062353488}
+  ONE: {fileID: 1199755486}
+  TWO: {fileID: 1742225127}
+  THREE: {fileID: 1392362178}
   blueButton: {fileID: 21300000, guid: b8edda9c9e82fb649b2805552a386b0b, type: 3}
   redButton: {fileID: 21300000, guid: 5d911da3703a69e46a915d2fd4b3ff52, type: 3}
   greenButton: {fileID: 21300000, guid: 5cd6393a374182e4f93c851bb83271d7, type: 3}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  switchOff: {fileID: 266804666}
-  switchOn: {fileID: 1022735153}
-  Animal: {fileID: 1939661947}
   firstObjectSlot: {fileID: 1000135519}
   secondObjectSlot: {fileID: 2074039279}
   objectSprite:
@@ -39147,21 +38988,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 371488627}
-        m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39174,6 +39003,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadFirst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39575,7 +39416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &1545930578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39855,7 +39696,7 @@ GameObject:
   - component: {fileID: 1557727977}
   - component: {fileID: 1557727976}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39873,8 +39714,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 195459410}
-  m_Father: {fileID: 1904938977}
-  m_RootOrder: 3
+  m_Father: {fileID: 126593953}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88, y: 0.62}
   m_AnchorMax: {x: 0.93, y: 0.7}
@@ -41068,7 +40909,7 @@ GameObject:
   - component: {fileID: 1625960170}
   - component: {fileID: 1625960169}
   m_Layer: 5
-  m_Name: CorrectAnswerCounter
+  m_Name: TaskNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41208,7 +41049,7 @@ RectTransform:
   - {fileID: 842113457}
   - {fileID: 1356623454}
   m_Father: {fileID: 457810287}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6166042, y: 0.7238149}
   m_AnchorMax: {x: 0.6166042, y: 0.7238149}
@@ -41729,21 +41570,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadMid1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1173210010}
-        m_TargetAssemblyTypeName: CountScript, Assembly-CSharp
-        m_MethodName: UpdateStickers
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: SaveBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41756,6 +41585,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2030866127}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: PlaySaveAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2030866127}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenStickerSpreadMid1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43208,7 +43049,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 371488627}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43833,7 +43674,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL COMPLETED
+  m_Text: LEVEL COMPLETED!
 --- !u!222 &1707470562
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44246,7 +44087,7 @@ GameObject:
   - component: {fileID: 1720326782}
   - component: {fileID: 1720326781}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44266,8 +44107,8 @@ RectTransform:
   m_Father: {fileID: 1020789736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -44304,7 +44145,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!222 &1720326782
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44832,7 +44673,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 373085302}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45056,7 +44897,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1498324802}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45643,7 +45484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL COMPLETED
+  m_Text: LEVEL COMPLETED!
 --- !u!222 &1776657044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47902,7 +47743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STICKER UNLOCKED!
+  m_Text: STICKER UNLOCKED
 --- !u!222 &1887710089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48721,7 +48562,6 @@ RectTransform:
   - {fileID: 126593953}
   - {fileID: 1385008518}
   - {fileID: 1992225798}
-  - {fileID: 1557727975}
   - {fileID: 541668535}
   - {fileID: 686819266}
   m_Father: {fileID: 1232621727}
@@ -48890,7 +48730,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 547726276}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49878,7 +49718,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 371488627}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50262,6 +50102,7 @@ RectTransform:
   m_Children:
   - {fileID: 807403677}
   - {fileID: 1204498045}
+  - {fileID: 1020789736}
   - {fileID: 1984652253}
   m_Father: {fileID: 457810287}
   m_RootOrder: 0
@@ -50595,7 +50436,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1966852815}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22479166, y: 0.64722216}
   m_AnchorMax: {x: 0.30600002, y: 0.7962963}
@@ -50979,7 +50820,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 727255512}
         m_TargetAssemblyTypeName: SubScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51249,6 +51090,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66189be89a9224744b099f10c59f02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 973064300315609855}
+  starCount: {fileID: 377878067}
+  levelIndex: 3
+  worldIndex: 1
+  levelButton1: {fileID: 1611086599}
+  levelButton2: {fileID: 1333439736}
+  levelButton3: {fileID: 274410843}
+  clearButton: {fileID: 0}
+  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
+  Animal: {fileID: 973761439}
+  level: {fileID: 1042787994}
+  levelEnd: {fileID: 1231323481}
+  animatedLevelEnd: {fileID: 191684763}
+  sumScore: 0
+  task: 0
   QnA:
   - Question: ELEVEN
     Objects: {fileID: 21300000, guid: 2a33de7b8d5f5594e8ce7c78a14aabb0, type: 3}
@@ -51284,7 +51140,7 @@ MonoBehaviour:
     - 12
     - 18
     - 15
-    CorrectAnswer: 2
+    CorrectAnswer: 3
   - Question: SIXTEEN
     Objects: {fileID: 21300000, guid: de3b85779eea18a45a55955bfb28f601, type: 3}
     Answers:
@@ -51326,32 +51182,10 @@ MonoBehaviour:
   - {fileID: 1336624797}
   currentQuestion: 0
   QuestionImg: {fileID: 166052302}
-  GoPanel: {fileID: 1231323480}
   QuestionTxt: {fileID: 0}
   QuestionSprite: {fileID: 21300000, guid: 2fc255ef1a3b23a47bce3fd9e2a0d6a9, type: 3}
-  ScoreTxt: {fileID: 608647223}
+  taskNumber: {fileID: 608647223}
   score: 0
-  levelIndex: 3
-  worldIndex: 1
-  countStarCount: 0
-  countSpaceStarCount: 0
-  threeCornStickerScore: 0
-  twoCornStickerScore: 0
-  lambStickerScore: 0
-  stickerOne: {fileID: 497881465}
-  stickerTwo: {fileID: 1094034303}
-  stickerThree: {fileID: 1989673304}
-  countMenuButton: {fileID: 0}
-  levelButton1: {fileID: 1611086599}
-  levelButton2: {fileID: 1333439736}
-  levelButton3: {fileID: 274410843}
-  completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  countStars: {fileID: 1469187563}
-  menuStars: {fileID: 1077831095}
-  Animal: {fileID: 973761439}
 --- !u!1 &2014302695
 GameObject:
   m_ObjectHideFlags: 0
@@ -51619,7 +51453,7 @@ GameObject:
   - component: {fileID: 2020627425}
   - component: {fileID: 2020627426}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51639,8 +51473,8 @@ RectTransform:
   m_Father: {fileID: 1625960168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.05, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -51685,7 +51519,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: X/X
 --- !u!1 &2024309067
 GameObject:
   m_ObjectHideFlags: 0
@@ -51972,6 +51806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 973064300315609855}
   stickerbookButton: {fileID: 4887357}
   settingsMenu: {fileID: 0}
   resetWarning: {fileID: 0}
@@ -54865,7 +54700,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 557324541}
         m_TargetAssemblyTypeName: SumScript, Assembly-CSharp
-        m_MethodName: StartFarm
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55650,10 +55485,142 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenStickerSpreadMid3
       objectReference: {fileID: 0}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subStars
+      value: 
+      objectReference: {fileID: 229662638}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumStars
+      value: 
+      objectReference: {fileID: 865204667}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: menuStars
+      value: 
+      objectReference: {fileID: 693728070}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: countStars
+      value: 
+      objectReference: {fileID: 1469187563}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: worldIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: levelButton1
+      value: 
+      objectReference: {fileID: 1212961984}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: levelButton2
+      value: 
+      objectReference: {fileID: 947693204}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: levelButton3
+      value: 
+      objectReference: {fileID: 90068221}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subMenuStars
+      value: 
+      objectReference: {fileID: 1538720649}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumMenuStars
+      value: 
+      objectReference: {fileID: 693728070}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subMenuButton
+      value: 
+      objectReference: {fileID: 953794044}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumMenuButton
+      value: 
+      objectReference: {fileID: 1733980915}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: countMenuStars
+      value: 
+      objectReference: {fileID: 1077831095}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: countMenuButton
+      value: 
+      objectReference: {fileID: 1769238176}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subLevelButton1
+      value: 
+      objectReference: {fileID: 962879648}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subLevelButton2
+      value: 
+      objectReference: {fileID: 784317852}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subLevelButton3
+      value: 
+      objectReference: {fileID: 1135346501}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumLevelButton1
+      value: 
+      objectReference: {fileID: 1212961984}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumLevelButton2
+      value: 
+      objectReference: {fileID: 947693204}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumLevelButton3
+      value: 
+      objectReference: {fileID: 90068221}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: countLevelButton1
+      value: 
+      objectReference: {fileID: 1611086599}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: countLevelButton2
+      value: 
+      objectReference: {fileID: 1333439736}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: countLevelButton3
+      value: 
+      objectReference: {fileID: 274410843}
     - target: {fileID: 7410482481698847867, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_Text
       value: X
       objectReference: {fileID: 0}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum
+      value: 
+      objectReference: {fileID: 1498324802}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub1
+      value: 
+      objectReference: {fileID: 727255512}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub2
+      value: 
+      objectReference: {fileID: 371488627}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sub3
+      value: 
+      objectReference: {fileID: 547726276}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum1
+      value: 
+      objectReference: {fileID: 1498324802}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum2
+      value: 
+      objectReference: {fileID: 557324541}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sum3
+      value: 
+      objectReference: {fileID: 373085302}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: count1
+      value: 
+      objectReference: {fileID: 1342980262}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: count2
+      value: 
+      objectReference: {fileID: 1173210010}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: count3
+      value: 
+      objectReference: {fileID: 2008525893}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: stickerOne
       value: 
@@ -55670,6 +55637,10 @@ PrefabInstance:
       propertyPath: stickerTwo
       value: 
       objectReference: {fileID: 1318589033}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: worldIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: stickerFive
       value: 
@@ -55771,6 +55742,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1938917115}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: stickerbookButton
+      value: 
+      objectReference: {fileID: 4887357}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: stickerThirtythree
       value: 
       objectReference: {fileID: 1231494691}
@@ -55848,11 +55823,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8707621640895703512, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -55865,15 +55844,19 @@ PrefabInstance:
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1498324802}
+      objectReference: {fileID: 973064300315609855}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 727255512}
+      objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1342980262}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -55888,23 +55871,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ResetStickers
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ResetStickers
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SumScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SubScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: CountScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -55912,11 +55895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8822566369215513185, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -56346,7 +56329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -56367,19 +56350,19 @@ PrefabInstance:
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2030866127}
+      objectReference: {fileID: 973064300315609855}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1498324802}
+      objectReference: {fileID: 2030866127}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 727255512}
+      objectReference: {fileID: 973064300315609855}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2008525893}
+      objectReference: {fileID: 973064300315609855}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -56401,32 +56384,40 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UpdateStickers
+      value: OpenStickerBook
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: UpdateStickers
+      value: NoNewStickers
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: UpdateStickers
+      value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: UpdateAll
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StickerBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SumScript, Assembly-CSharp
+      value: MenuControl, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: SubScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: CountScript, Assembly-CSharp
+      value: StickerBook, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6085630533084024239, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName

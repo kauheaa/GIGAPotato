@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MenuControl : MonoBehaviour
 {
+    public StickerBook book;
     public GameObject stickerbookButton;
     [SerializeField] private Transform settingsMenu;
     [SerializeField] private Transform resetWarning;
@@ -198,6 +199,7 @@ public class MenuControl : MonoBehaviour
     public void PlaySaveAnim()
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", true);
+        stickerbookButton.GetComponent<Animator>().SetBool("NewStickers", true);
     }
 
 
