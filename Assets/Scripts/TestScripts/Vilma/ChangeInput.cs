@@ -7,7 +7,8 @@ public class ChangeInput : MonoBehaviour
 {
     EventSystem system;
     public Selectable firstInput;
-    public Button loginButton;
+    public Button button;
+    public Register signin;
 
     void Start()
     {
@@ -36,8 +37,9 @@ public class ChangeInput : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
-            loginButton.onClick.Invoke();
+            button.onClick.Invoke();
             Debug.Log("Button pressed");
         }
+        
     }
 }

@@ -12,12 +12,6 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform settingsMenu;
     [SerializeField] private Transform resetWarning;
     [SerializeField] private Transform stickerBook;
-    [SerializeField] private Transform stickerSpreadFirst;
-    [SerializeField] private Transform stickerSpreadMid1;
-    [SerializeField] private Transform stickerSpreadMid2;
-    [SerializeField] private Transform stickerSpreadMid3;
-    [SerializeField] private Transform stickerSpreadMid4;
-    [SerializeField] private Transform stickerSpreadLast;
     [SerializeField] private Transform farmWorld;
     [SerializeField] private Transform additionCat;
     [SerializeField] private Transform substractCat;
@@ -131,69 +125,6 @@ public class MenuControl : MonoBehaviour
     public void CloseStickerBook()
     {
         stickerBook.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadFirst()
-    {
-        stickerSpreadFirst.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-        stickerSpreadMid3.gameObject.SetActive(false);
-        stickerSpreadMid2.gameObject.SetActive(false);
-        stickerSpreadMid1.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadFirst()
-    {
-        stickerSpreadFirst.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid1()
-    {
-        stickerSpreadMid1.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-        stickerSpreadMid3.gameObject.SetActive(false);
-        stickerSpreadMid2.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid1 ()
-    {
-        stickerSpreadMid1.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid2()
-    {
-        stickerSpreadMid2.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-        stickerSpreadMid3.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid2()
-    {
-        stickerSpreadMid2.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid3()
-    {
-        stickerSpreadMid3.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid3()
-    {
-        stickerSpreadMid3.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid4()
-    {
-        stickerSpreadMid4.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid4()
-    {
-        stickerSpreadMid4.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadLast()
-    {
-        stickerSpreadLast.gameObject.SetActive(true);
-    }
-    public void CloseStickerSpreadLast()
-    {
-        stickerSpreadLast.gameObject.SetActive(false);
     }
 
 

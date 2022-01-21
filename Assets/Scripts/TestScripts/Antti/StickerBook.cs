@@ -9,6 +9,28 @@ public class StickerBook : MonoBehaviour
     public StarCount starCount;
     public GameObject stickerbookButton;
 
+    public Text playerDisplay;
+    public Text scoreDisplay;
+    public int databaseScore;
+
+    public GameObject loginButton;
+    public GameObject signinButton;
+    public GameObject logoutButton;
+
+    public GameObject avatar;
+    public Sprite loggedInAvatar;
+    public Sprite loggedOutAvatar;
+
+    [SerializeField] private Transform FirstSpread;
+    [SerializeField] private Transform RegisterSpread;
+    [SerializeField] private Transform LoginSpread;
+    [SerializeField] private Transform Spread1;
+    [SerializeField] private Transform Spread2;
+    [SerializeField] private Transform Spread3;
+    [SerializeField] private Transform Spread4;
+    [SerializeField] private Transform Spread5;
+    [SerializeField] private Transform Spread6;
+
     public int bookIndex = 0;
     public int worldIndex;
 
@@ -113,84 +135,163 @@ public class StickerBook : MonoBehaviour
     public Text congrats;
     public Text allCollected;
 
-    public GUIStyle style;
 
-    void setFontStyle()
+    public void OpenSpread1()
     {
-    style.font = Resources.Load<Font>("Fonts/GIGATitleFont_Regular");
+        Spread1.gameObject.SetActive(true);
+        Spread2.gameObject.SetActive(false);
+        Spread3.gameObject.SetActive(false);
+        Spread4.gameObject.SetActive(false);
+        Spread5.gameObject.SetActive(false);
+        Spread6.gameObject.SetActive(false);
+        LoginSpread.gameObject.SetActive(false);
+        RegisterSpread.gameObject.SetActive(false);
+        FirstSpread.gameObject.SetActive(false);
     }
-        
+    public void OpenSpread2()
+    {
+        Spread2.gameObject.SetActive(true);
+        Spread3.gameObject.SetActive(false);
+        Spread4.gameObject.SetActive(false);
+        Spread5.gameObject.SetActive(false);
+        Spread6.gameObject.SetActive(false);
+        LoginSpread.gameObject.SetActive(false);
+        RegisterSpread.gameObject.SetActive(false);
+        FirstSpread.gameObject.SetActive(false);
+    }
+    public void OpenSpread3()
+    {
+        Spread3.gameObject.SetActive(true);
+        Spread4.gameObject.SetActive(false);
+        Spread5.gameObject.SetActive(false);
+        Spread6.gameObject.SetActive(false);
+        LoginSpread.gameObject.SetActive(false);
+        RegisterSpread.gameObject.SetActive(false);
+        FirstSpread.gameObject.SetActive(false);
+    }
+    public void OpenSpread4()
+    {
+        Spread4.gameObject.SetActive(true);
+        Spread5.gameObject.SetActive(false);
+        Spread6.gameObject.SetActive(false);
+        LoginSpread.gameObject.SetActive(false);
+        RegisterSpread.gameObject.SetActive(false);
+        FirstSpread.gameObject.SetActive(false);
+    }
+    public void OpenSpread5()
+    {
+        Spread5.gameObject.SetActive(true);
+        Spread6.gameObject.SetActive(false);
+        LoginSpread.gameObject.SetActive(false);
+        RegisterSpread.gameObject.SetActive(false);
+        FirstSpread.gameObject.SetActive(false);
+    }
+    public void OpenSpread6()
+    {
+        Spread6.gameObject.SetActive(true);
+        LoginSpread.gameObject.SetActive(false);
+        RegisterSpread.gameObject.SetActive(false);
+        FirstSpread.gameObject.SetActive(false);
+    }
+    public void OpenLoginSpread()
+    {
+        LoginSpread.gameObject.SetActive(true);
+        RegisterSpread.gameObject.SetActive(false);
+    }
+    public void OpenRegisterSpread()
+    {
+        RegisterSpread.gameObject.SetActive(true);
+        LoginSpread.gameObject.SetActive(false);
+    }
 
+    public void OpenFirstSpread()
+    {
+        FirstSpread.gameObject.SetActive(true);
+        LoginSpread.gameObject.SetActive(false);
+        RegisterSpread.gameObject.SetActive(false);
+    }
 
+    public void CloseLoginSpread()
+    {
+        LoginSpread.gameObject.SetActive(false);
+    }
+    public void CloseRegisterSpread()
+    {
+        RegisterSpread.gameObject.SetActive(false);
+    }
 
     public void SaveBook()
     {
-        saveScore.SaveBook(this);
+        //saveScore.SaveBook(this);
+        databaseScore = DatabaseManager.score;
+        IncreaseScore();
+        SavePlayerData();
     }
     public void LoadBook()
     {
-        string path = Application.persistentDataPath + "/booksave.txt";
-        if (File.Exists(path))
-        {
-            scoreData data = saveScore.LoadBook();
-            {
-                sumFarmStarCount = data.sumFarmStarCount;
-                sumJungleStarCount = data.sumJungleStarCount;
-                sumSpaceStarCount = data.sumSpaceStarCount;
-                subFarmStarCount = data.subFarmStarCount;
-                subJungleStarCount = data.subJungleStarCount;
-                subSpaceStarCount = data.subSpaceStarCount;
-                countFarmStarCount = data.countFarmStarCount;
-                countJungleStarCount = data.countJungleStarCount;
-                countSpaceStarCount = data.countSpaceStarCount;
-                multJungleStarCount = data.multJungleStarCount;
-                multSpaceStarCount = data.multSpaceStarCount;
-                divJungleStarCount = data.divJungleStarCount;
-                divSpaceStarCount = data.divSpaceStarCount;
+        scoreDisplay.text = "Stickers collected: " + DatabaseManager.score;
+        //string path = Application.persistentDataPath + "/booksave.txt";
+        //if (File.Exists(path))
+        //{
+        //    scoreData data = saveScore.LoadBook();
+        //    {
+        //        sumFarmStarCount = data.sumFarmStarCount;
+        //        sumJungleStarCount = data.sumJungleStarCount;
+        //        sumSpaceStarCount = data.sumSpaceStarCount;
+        //        subFarmStarCount = data.subFarmStarCount;
+        //        subJungleStarCount = data.subJungleStarCount;
+        //        subSpaceStarCount = data.subSpaceStarCount;
+        //        countFarmStarCount = data.countFarmStarCount;
+        //        countJungleStarCount = data.countJungleStarCount;
+        //        countSpaceStarCount = data.countSpaceStarCount;
+        //        multJungleStarCount = data.multJungleStarCount;
+        //        multSpaceStarCount = data.multSpaceStarCount;
+        //        divJungleStarCount = data.divJungleStarCount;
+        //        divSpaceStarCount = data.divSpaceStarCount;
 
-                appleStickerScore = data.appleStickerScore;
-                basketStickerScore = data.basketStickerScore;
-                pigStickerScore = data.pigStickerScore;
-                carrotStickerScore = data.carrotStickerScore;
-                bucketStickerScore = data.bucketStickerScore;
-                bunnyStickerScore = data.bunnyStickerScore;
-                threeCornStickerScore = data.threeCornStickerScore;
-                twoCornStickerScore = data.twoCornStickerScore;
-                lambStickerScore = data.lambStickerScore;
+        //        appleStickerScore = data.appleStickerScore;
+        //        basketStickerScore = data.basketStickerScore;
+        //        pigStickerScore = data.pigStickerScore;
+        //        carrotStickerScore = data.carrotStickerScore;
+        //        bucketStickerScore = data.bucketStickerScore;
+        //        bunnyStickerScore = data.bunnyStickerScore;
+        //        threeCornStickerScore = data.threeCornStickerScore;
+        //        twoCornStickerScore = data.twoCornStickerScore;
+        //        lambStickerScore = data.lambStickerScore;
 
-                bananaStickerScore = data.bananaStickerScore;
-                clusterStickerScore = data.clusterStickerScore;
-                monkeyStickerScore = data.monkeyStickerScore;
-                coconutStickerScore = data.coconutStickerScore;
-                ocularsStickerScore = data.ocularsStickerScore;
-                slothStickerScore = data.slothStickerScore;
-                lycheeStickerScore = data.lycheeStickerScore;
-                pitahayaStickerScore = data.pitahayaStickerScore;
-                frogStickerScore = data.frogStickerScore;
-                avocadoStickerScore = data.avocadoStickerScore;
-                toolStickerScore = data.toolStickerScore;
-                tigerStickerScore = data.tigerStickerScore;
+        //        bananaStickerScore = data.bananaStickerScore;
+        //        clusterStickerScore = data.clusterStickerScore;
+        //        monkeyStickerScore = data.monkeyStickerScore;
+        //        coconutStickerScore = data.coconutStickerScore;
+        //        ocularsStickerScore = data.ocularsStickerScore;
+        //        slothStickerScore = data.slothStickerScore;
+        //        lycheeStickerScore = data.lycheeStickerScore;
+        //        pitahayaStickerScore = data.pitahayaStickerScore;
+        //        frogStickerScore = data.frogStickerScore;
+        //        avocadoStickerScore = data.avocadoStickerScore;
+        //        toolStickerScore = data.toolStickerScore;
+        //        tigerStickerScore = data.tigerStickerScore;
 
-                asteroidStickerScore = data.asteroidStickerScore;
-                blackholeStickerScore = data.blackholeStickerScore;
-                llamaStickerScore = data.llamaStickerScore;
-                starStickerScore = data.starStickerScore;
-                planetStickerScore = data.planetStickerScore;
-                cowStickerScore = data.cowStickerScore;
-                flagStickerScore = data.flagStickerScore;
-                rocketStickerScore = data.rocketStickerScore;
-                laikaStickerScore = data.laikaStickerScore;
-                driedfishStickerScore = data.driedfishStickerScore;
-                octopusStickerScore = data.octopusStickerScore;
-                catStickerScore = data.catStickerScore;
-            }
-            Debug.Log("Book loaded");
-        }
-        else
-        {
-            SaveBook();
-            Debug.Log("Empty save created");
-        }
+        //        asteroidStickerScore = data.asteroidStickerScore;
+        //        blackholeStickerScore = data.blackholeStickerScore;
+        //        llamaStickerScore = data.llamaStickerScore;
+        //        starStickerScore = data.starStickerScore;
+        //        planetStickerScore = data.planetStickerScore;
+        //        cowStickerScore = data.cowStickerScore;
+        //        flagStickerScore = data.flagStickerScore;
+        //        rocketStickerScore = data.rocketStickerScore;
+        //        laikaStickerScore = data.laikaStickerScore;
+        //        driedfishStickerScore = data.driedfishStickerScore;
+        //        octopusStickerScore = data.octopusStickerScore;
+        //        catStickerScore = data.catStickerScore;
+        //    }
+        //    Debug.Log("Book loaded");
+        //}
+        //else
+        //{
+        //    SaveBook();
+        //    Debug.Log("Empty save created");
+        //}
     }
 
     public void UpdateStarCounts()
@@ -225,6 +326,8 @@ public class StickerBook : MonoBehaviour
         if (appleStickerScore < 1)
         {
             appleStickerScore += 1;
+            IncreaseScore();
+            scoreDisplay.text = "New score: " + DatabaseManager.score;
         }
     }
     public void UnlockBasket()
@@ -697,12 +800,40 @@ public class StickerBook : MonoBehaviour
         UpdateLevelButtons();
     }
 
+    public void UpdatePlayerInfo()
+    {
+        if (DatabaseManager.LoggedIn)
+        {
+            playerDisplay.text = DatabaseManager.username;
+            scoreDisplay.text = "Stickers collected:" + DatabaseManager.score;
+            avatar.gameObject.GetComponent<Image>().sprite = loggedInAvatar;
+            loginButton.gameObject.SetActive(false);
+            signinButton.gameObject.SetActive(false);
+            logoutButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            playerDisplay.text = "NO ONE...";
+            scoreDisplay.text = "Stickers collected:" + DatabaseManager.score;
+            avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;
+            loginButton.gameObject.SetActive(true);
+            signinButton.gameObject.SetActive(true);
+            logoutButton.gameObject.SetActive(false);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        setFontStyle();
+        //scoreDisplay.text = "Stickers collected: " + DatabaseManager.score;
+        UpdatePlayerInfo();
         LoadBook();
         UpdateAll();
+    }
+
+    void OnApplicationQuit()
+    {
+        LogOut();
     }
 
 
@@ -771,5 +902,43 @@ public class StickerBook : MonoBehaviour
         UpdateAll();
     }
 
+    private void Awake()
+    {
+        UpdatePlayerInfo();
+    }
+
+    public void CallSaveData()
+    {
+        StartCoroutine(SavePlayerData());
+    }
+
+    IEnumerator SavePlayerData()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("name", DatabaseManager.username);
+        form.AddField("score", DatabaseManager.score);
+        WWW www = new WWW("http://kauheaa.com/gigapotato/sqlconnect/savedata.php", form);
+        yield return www;
+        if (www.text[0] == '0')
+        {
+            Debug.Log("Score saved:" + www.text);
+        }
+        else
+        {
+            Debug.Log("Save failed. Error #" + www.text);
+        }
+    }
+
+    public void IncreaseScore()
+    {
+        DatabaseManager.score++;
+        //scoreDisplay.text = "Stickers collected: " + DatabaseManager.score;
+    }
+    public void LogOut()
+    {
+        DatabaseManager.LogOut();
+        UpdatePlayerInfo();
+        //scoreDisplay.text = "Stickers collected: " + DatabaseManager.score;
+    }
 
 }
