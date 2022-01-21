@@ -7,14 +7,7 @@ using UnityEngine.UI;
 public class StickerBook : MonoBehaviour
 {
     public StarCount starCount;
-    public WriteToFile writeToFile;
-
-    [SerializeField] private Transform registerSpread;
-    [SerializeField] private Transform loginSpread;
-
-    public string stickerScores;
-    public Text test;
-
+    public GameObject stickerbookButton;
 
     public int bookIndex = 0;
     public int worldIndex;
@@ -34,10 +27,6 @@ public class StickerBook : MonoBehaviour
     public DivideScript div1;
     public DivideScript div2;
     public DivideScript div3;
-
-    // Player name
-    public string playerName;
-    public Text player;
 
     // All starCounts
     public int sumFarmStarCount, sumJungleStarCount, sumSpaceStarCount;
@@ -124,6 +113,15 @@ public class StickerBook : MonoBehaviour
     public Text congrats;
     public Text allCollected;
 
+    public GUIStyle style;
+
+    void setFontStyle()
+    {
+    style.font = Resources.Load<Font>("Fonts/GIGATitleFont_Regular");
+    }
+        
+
+
 
     public void SaveBook()
     {
@@ -193,25 +191,6 @@ public class StickerBook : MonoBehaviour
             SaveBook();
             Debug.Log("Empty save created");
         }
-    }
-
-    public void GoToRegister()
-    {
-        registerSpread.gameObject.SetActive(true);
-    }
-    public void GoToLogin()
-    {
-        loginSpread.gameObject.SetActive(true);
-    }
-
-    public void CloseRegister()
-    {
-        registerSpread.gameObject.SetActive(false);
-    }
-
-    public void CloseLogin()
-    {
-        loginSpread.gameObject.SetActive(false);
     }
 
     public void UpdateStarCounts()
@@ -482,6 +461,12 @@ public class StickerBook : MonoBehaviour
         }
     }
 
+    public void NoNewStickers()
+    {
+        stickerbookButton.GetComponent<Animator>().SetBool("NewStickers", false);
+        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
+    }
+
 
     public void UpdateStickers()
     {
@@ -715,6 +700,7 @@ public class StickerBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        setFontStyle();
         LoadBook();
         UpdateAll();
     }
@@ -785,8 +771,5 @@ public class StickerBook : MonoBehaviour
         UpdateAll();
     }
 
-    public void Update()
-    {
 
-    }
 }

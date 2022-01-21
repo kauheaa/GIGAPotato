@@ -200,6 +200,7 @@ public class MenuControl : MonoBehaviour
     public void PlaySaveAnim()
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", true);
+        stickerbookButton.GetComponent<Animator>().SetBool("NewStickers", true);
     }
 
 

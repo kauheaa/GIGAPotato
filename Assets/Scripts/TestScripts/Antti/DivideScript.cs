@@ -483,18 +483,16 @@ public class DivideScript : MonoBehaviour
     {
         if (Alt1.text == finalValue.ToString())
         {
-            ONE.gameObject.SetActive(true);
+            button1.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            ONE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt1.text != finalValue.ToString())
         {
-            ONE.gameObject.SetActive(true);
+            button1.GetComponent<Animator>().SetBool("Incorrect", true);
             button1.interactable = false;
-            ONE.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -503,18 +501,16 @@ public class DivideScript : MonoBehaviour
 
         if (Alt2.text == finalValue.ToString())
         {
-            TWO.gameObject.SetActive(true);
+            button2.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            TWO.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt2.text != finalValue.ToString())
         {
-            TWO.gameObject.SetActive(true);
+            button2.GetComponent<Animator>().SetBool("Incorrect", true);
             button2.interactable = false;
-            TWO.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -522,61 +518,17 @@ public class DivideScript : MonoBehaviour
     {
         if (Alt3.text == finalValue.ToString())
         {
-            THREE.gameObject.SetActive(true);
+            button3.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            THREE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt3.text != finalValue.ToString())
         {
-            THREE.gameObject.SetActive(true);
+            button3.GetComponent<Animator>().SetBool("Incorrect", true);
             button3.interactable = false;
-            THREE.GetComponent<Image>().sprite = redButton;
         }
-    }
-
-    public void UpdateStickers()
-    {
-        switch (worldIndex)
-        {
-            case 2:
-                switch (levelIndex)
-                {
-                    case 1:
-                        book.UnlockAvocado();
-                        break;
-                    case 2:
-                        book.UnlockTool();
-                        break;
-                    case 3:
-                        book.UnlockTiger();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-            case 3:
-                switch (levelIndex)
-                {
-                    case 4:
-                        book.UnlockDriedfish();
-                        break;
-                    case 5:
-                        book.UnlockOctopus();
-                        break;
-                    case 6:
-                        book.UnlockCat();
-                        break;
-                    default:
-                        Debug.Log("No level index set");
-                        break;
-                }
-                break;
-        }
-        book.UpdateStickers();
     }
 
     public void UpdateLevelButtons()
@@ -643,8 +595,59 @@ public class DivideScript : MonoBehaviour
                 break;
         }
     }
+
+    public void UpdateStickers()
+    {
+        switch (worldIndex)
+        {
+            case 2:
+                switch (levelIndex)
+                {
+                    case 1:
+                        book.UnlockAvocado();
+                        break;
+                    case 2:
+                        book.UnlockTool();
+                        break;
+                    case 3:
+                        book.UnlockTiger();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 4:
+                        book.UnlockDriedfish();
+                        break;
+                    case 5:
+                        book.UnlockOctopus();
+                        break;
+                    case 6:
+                        book.UnlockCat();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+        UpdateLevelButtons();
+    }
+
+
     public void ResetTask()
     {
+        button1.GetComponent<Animator>().SetBool("Correct", false);
+        button2.GetComponent<Animator>().SetBool("Correct", false);
+        button3.GetComponent<Animator>().SetBool("Correct", false);
+        button1.GetComponent<Animator>().SetBool("Incorrect", false);
+        button2.GetComponent<Animator>().SetBool("Incorrect", false);
+        button3.GetComponent<Animator>().SetBool("Incorrect", false);
         if (divScore >= 5)
         {
             UpdateStickers();
