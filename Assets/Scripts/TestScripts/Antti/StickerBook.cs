@@ -9,6 +9,9 @@ public class StickerBook : MonoBehaviour
     public StarCount starCount;
     public WriteToFile writeToFile;
 
+    [SerializeField] private Transform registerSpread;
+    [SerializeField] private Transform loginSpread;
+
     public string stickerScores;
     public Text test;
 
@@ -190,6 +193,25 @@ public class StickerBook : MonoBehaviour
             SaveBook();
             Debug.Log("Empty save created");
         }
+    }
+
+    public void GoToRegister()
+    {
+        registerSpread.gameObject.SetActive(true);
+    }
+    public void GoToLogin()
+    {
+        loginSpread.gameObject.SetActive(true);
+    }
+
+    public void CloseRegister()
+    {
+        registerSpread.gameObject.SetActive(false);
+    }
+
+    public void CloseLogin()
+    {
+        loginSpread.gameObject.SetActive(false);
     }
 
     public void UpdateStarCounts()
