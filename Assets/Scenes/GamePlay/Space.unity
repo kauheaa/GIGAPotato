@@ -5623,6 +5623,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: StickerBookCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: divStars
+      value: 
+      objectReference: {fileID: 188366816}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subStars
+      value: 
+      objectReference: {fileID: 899959516}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumStars
+      value: 
+      objectReference: {fileID: 559651967}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: multStars
+      value: 
+      objectReference: {fileID: 1423622460}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: divMenuStars
+      value: 
+      objectReference: {fileID: 2092700038}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subMenuStars
+      value: 
+      objectReference: {fileID: 238520959}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumMenuStars
+      value: 
+      objectReference: {fileID: 248201732}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: divMenuButton
+      value: 
+      objectReference: {fileID: 353932947}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: multMenuStars
+      value: 
+      objectReference: {fileID: 130618041}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: subMenuButton
+      value: 
+      objectReference: {fileID: 1949369221}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: sumMenuButton
+      value: 
+      objectReference: {fileID: 148787201}
+    - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: multMenuButton
+      value: 
+      objectReference: {fileID: 1992907572}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: div1
       value: 
@@ -5689,6 +5737,11 @@ PrefabInstance:
       objectReference: {fileID: 1966383203}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+--- !u!1 &188366816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 973064300803673501, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 188366815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &188551991
 GameObject:
   m_ObjectHideFlags: 0
@@ -56010,10 +56063,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  book: {fileID: 0}
+  book: {fileID: 1591411996}
+  starCount: {fileID: 1431005471}
   stickerbookButton: {fileID: 1966383203}
-  settingsMenu: {fileID: 0}
-  resetWarning: {fileID: 1563871969}
+  sum1: {fileID: 322219457}
+  sum2: {fileID: 100033322}
+  sum3: {fileID: 1228573338}
+  sub1: {fileID: 1685799401}
+  sub2: {fileID: 1786648709}
+  sub3: {fileID: 1428261027}
+  count1: {fileID: 0}
+  count2: {fileID: 0}
+  count3: {fileID: 0}
+  mult1: {fileID: 380001324}
+  mult2: {fileID: 1429912620}
+  mult3: {fileID: 1383995317}
+  div1: {fileID: 1213564453}
+  div2: {fileID: 839795278}
+  div3: {fileID: 518535920}
   stickerBook: {fileID: 1191794336}
   farmWorld: {fileID: 1845133703}
   additionCat: {fileID: 1917348011}
@@ -58191,7 +58258,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 188366815}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 188366816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
@@ -65835,7 +65902,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 188366815}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 188366816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df0da8921302ad4b921b1fca8f10f2d, type: 3}

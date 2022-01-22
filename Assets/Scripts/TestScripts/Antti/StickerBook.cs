@@ -904,7 +904,23 @@ public class StickerBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateAll(); // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - starcount scores and sprites
+        sum1 = canvasControl.sum1;
+        sum2 = canvasControl.sum2;
+        sum3 = canvasControl.sum3;
+        sub1 = canvasControl.sub1;
+        sub2 = canvasControl.sub2;
+        sub3 = canvasControl.sub3;
+        count1 = canvasControl.count1;
+        count2 = canvasControl.count2;
+        count3 = canvasControl.count3;
+        mult1 = canvasControl.mult1;
+        mult2 = canvasControl.mult2;
+        mult3 = canvasControl.mult3;
+        div1 = canvasControl.div1;
+        div2 = canvasControl.div2;
+        div3 = canvasControl.div3;
+
+    UpdateAll(); // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - starcount scores and sprites
         if (DatabaseManager.LoggedIn == false)
         {
             OpenFirstSpread();

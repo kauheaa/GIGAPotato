@@ -25,6 +25,10 @@ public class StarCount : MonoBehaviour
     public int multJungleStarCount, multSpaceStarCount;
     public int divJungleStarCount, divSpaceStarCount;
 
+    public void SetWorldIndex()
+    {
+        worldIndex = book.worldIndex;
+    }
     public void UpdateStarCounts()
     {
         book.UpdateStarCounts();
@@ -55,22 +59,26 @@ public class StarCount : MonoBehaviour
                         sumStars.GetComponent<Image>().sprite = noStars;
                         sumMenuStars.GetComponent<Image>().sprite = noStars;
                         sumMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("0 Stars updated");
                         break;
                     case 1:
                         sumStars.GetComponent<Image>().sprite = oneStar;
                         sumMenuStars.GetComponent<Image>().sprite = oneStar;
                         sumMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("1 Stars updated");
                         break;
 
                     case 2:
                         sumStars.GetComponent<Image>().sprite = twoStar;
                         sumMenuStars.GetComponent<Image>().sprite = twoStar;
                         sumMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("2 Stars updated");
                         break;
                     case 3:
                         sumStars.GetComponent<Image>().sprite = threeStar;
                         sumMenuStars.GetComponent<Image>().sprite = threeStar;
                         sumMenuButton.GetComponent<Image>().sprite = completedButton;
+                        Debug.Log("3 Stars updated");
                         break;
                 }
                 break;
@@ -125,8 +133,9 @@ public class StarCount : MonoBehaviour
                         break;
                 }
                 break;
+                
             default:
-                //Debug.Log("No world index set");
+                Debug.Log("No world index set");
                 break;
         }
     }
@@ -143,22 +152,26 @@ public class StarCount : MonoBehaviour
                         subStars.GetComponent<Image>().sprite = noStars;
                         subMenuStars.GetComponent<Image>().sprite = noStars;
                         subMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("0 Stars updated");
                         break;
                     case 1:
                         subStars.GetComponent<Image>().sprite = oneStar;
                         subMenuStars.GetComponent<Image>().sprite = oneStar;
                         subMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("1 Stars updated");
                         break;
 
                     case 2:
                         subStars.GetComponent<Image>().sprite = twoStar;
                         subMenuStars.GetComponent<Image>().sprite = twoStar;
                         subMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("2 Stars updated");
                         break;
                     case 3:
                         subStars.GetComponent<Image>().sprite = threeStar;
                         subMenuStars.GetComponent<Image>().sprite = threeStar;
                         subMenuButton.GetComponent<Image>().sprite = completedButton;
+                        Debug.Log("3 Stars updated");
                         break;
                 }
                 break;
@@ -214,7 +227,7 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                //Debug.Log("No world index set");
+                Debug.Log("No world index set");
                 break;
         }
     }
@@ -444,6 +457,7 @@ public class StarCount : MonoBehaviour
 
     void Start()
     {
+        SetWorldIndex();
         CountStars();
     }
 
