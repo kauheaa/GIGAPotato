@@ -482,7 +482,7 @@ public class SumScript : MonoBehaviour
             Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
         }
 
-        Debug.Log(firstValue + Function.text + secondValue + "=" + finalValue);
+        //Debug.Log(firstValue + Function.text + secondValue + "=" + finalValue);
     }
 
     public void AltOne()
@@ -580,7 +580,7 @@ public class SumScript : MonoBehaviour
                         }
                         break;
                     default:
-                        Debug.Log("No level index set");
+                        //Debug.Log("No level index set");
                         break;
                 }
                 break;
@@ -609,7 +609,7 @@ public class SumScript : MonoBehaviour
                         }
                         break;
                     default:
-                        Debug.Log("No level index set");
+                        //Debug.Log("No level index set");
                         break;
                 }
                 break;
@@ -638,7 +638,7 @@ public class SumScript : MonoBehaviour
                         }
                         break;
                     default:
-                        Debug.Log("No level index set");
+                        //Debug.Log("No level index set");
                         break;
                 }
                 break;
@@ -662,7 +662,7 @@ public class SumScript : MonoBehaviour
                         book.UnlockPig();
                         break;
                     default:
-                        Debug.Log("No level index set");
+                        //Debug.Log("No level index set");
                         break;
                 }
                 break;
@@ -679,7 +679,7 @@ public class SumScript : MonoBehaviour
                         book.UnlockMonkey();
                         break;
                     default:
-                        Debug.Log("No level index set");
+                        //Debug.Log("No level index set");
                         break;
                 }
                 break;
@@ -696,7 +696,7 @@ public class SumScript : MonoBehaviour
                         book.UnlockLlama();
                         break;
                     default:
-                        Debug.Log("No level index set");
+                        //Debug.Log("No level index set");
                         break;
                 }
                 break;
@@ -735,6 +735,7 @@ public class SumScript : MonoBehaviour
             GenerateTask();
             Animal.GetComponent<Animator>().SetBool("Happy", false);
         }
+        Debug.Log("Level Reset");
     }
 
     IEnumerator Correct()

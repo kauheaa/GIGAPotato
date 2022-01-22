@@ -6,116 +6,118 @@ public class WriteToFile : MonoBehaviour
 {
     public StickerBook book;
     public string stickerScores;
-    
-    IEnumerator SendDataToFile()
+
+    IEnumerator SavePlayerData()
     {
-        bool successful = true;
         WWWForm form = new WWWForm();
-        form.AddField("Field", book.appleStickerScore);
-        form.AddField("Field", book.sumFarmStarCount);
-        form.AddField("Field", book.sumJungleStarCount);
-        form.AddField("Field", book.sumSpaceStarCount);
-        form.AddField("Field", book.subFarmStarCount);
-        form.AddField("Field", book.subJungleStarCount);
-        form.AddField("Field", book.subSpaceStarCount);
-        form.AddField("Field", book.countFarmStarCount);
-        form.AddField("Field", book.countJungleStarCount);
-        form.AddField("Field", book.countSpaceStarCount);
-        form.AddField("Field", book.multJungleStarCount);
-        form.AddField("Field", book.multSpaceStarCount);
-        form.AddField("Field", book.divJungleStarCount);
-        form.AddField("Field", book.divSpaceStarCount);
+        form.AddField("name", DatabaseManager.username);
+        form.AddField("sumfarm", book.sumFarmStarCount);
+        form.AddField("sumjungle", book.sumJungleStarCount);
+        form.AddField("sumspace", book.sumSpaceStarCount);
+        form.AddField("substar", book.subFarmStarCount);
+        form.AddField("subjungle", book.subJungleStarCount);
+        form.AddField("subspace", book.subSpaceStarCount);
+        form.AddField("countfarm", book.countFarmStarCount);
+        form.AddField("countjungle", book.countJungleStarCount);
+        form.AddField("countspace", book.countSpaceStarCount);
+        form.AddField("multjungle", book.multJungleStarCount);
+        form.AddField("multspace", book.multSpaceStarCount);
+        form.AddField("divjungle", book.divJungleStarCount);
+        form.AddField("divspace", book.divSpaceStarCount);
 
-        form.AddField("Field", book.appleStickerScore);
-        form.AddField("Field", book.basketStickerScore);
-        form.AddField("Field", book.pigStickerScore);
-        form.AddField("Field", book.carrotStickerScore);
-        form.AddField("Field", book.bucketStickerScore);
-        form.AddField("Field", book.bunnyStickerScore);
-        form.AddField("Field", book.threeCornStickerScore);
-        form.AddField("Field", book.twoCornStickerScore);
-        form.AddField("Field", book.lambStickerScore);
+        form.AddField("apple", book.appleStickerScore);
+        form.AddField("basket", book.basketStickerScore);
+        form.AddField("pig", book.pigStickerScore);
+        form.AddField("carrot", book.carrotStickerScore);
+        form.AddField("bucket", book.bucketStickerScore);
+        form.AddField("bunny", book.bunnyStickerScore);
+        form.AddField("twocorn", book.threeCornStickerScore);
+        form.AddField("threecorn", book.twoCornStickerScore);
+        form.AddField("unicorn", book.lambStickerScore);
 
-        form.AddField("Field", book.bananaStickerScore);
-        form.AddField("Field", book.clusterStickerScore);
-        form.AddField("Field", book.monkeyStickerScore);
-        form.AddField("Field", book.coconutStickerScore);
-        form.AddField("Field", book.ocularsStickerScore);
-        form.AddField("Field", book.slothStickerScore);
-        form.AddField("Field", book.lycheeStickerScore);
-        form.AddField("Field", book.pitahayaStickerScore);
-        form.AddField("Field", book.frogStickerScore);
-        form.AddField("Field", book.avocadoStickerScore);
-        form.AddField("Field", book.toolStickerScore);
-        form.AddField("Field", book.tigerStickerScore);
+        form.AddField("banana", book.bananaStickerScore);
+        form.AddField("cluster", book.clusterStickerScore);
+        form.AddField("monkey", book.monkeyStickerScore);
+        form.AddField("coconut", book.coconutStickerScore);
+        form.AddField("oculars", book.ocularsStickerScore);
+        form.AddField("sloth", book.slothStickerScore);
+        form.AddField("lychee", book.lycheeStickerScore);
+        form.AddField("pitahaya", book.pitahayaStickerScore);
+        form.AddField("frog", book.frogStickerScore);
+        form.AddField("avocado", book.avocadoStickerScore);
+        form.AddField("tool", book.toolStickerScore);
+        form.AddField("tiger", book.tigerStickerScore);
 
-        form.AddField("Field", book.asteroidStickerScore);
-        form.AddField("Field", book.blackholeStickerScore);
-        form.AddField("Field", book.llamaStickerScore);
-        form.AddField("Field", book.starStickerScore);
-        form.AddField("Field", book.planetStickerScore);
-        form.AddField("Field", book.cowStickerScore);
-        form.AddField("Field", book.flagStickerScore);
-        form.AddField("Field", book.rocketStickerScore);
-        form.AddField("Field", book.laikaStickerScore);
-        form.AddField("Field", book.driedfishStickerScore);
-        form.AddField("Field", book.octopusStickerScore);
-        form.AddField("Field", book.catStickerScore);
+        form.AddField("asteroid", book.asteroidStickerScore);
+        form.AddField("blackhole", book.blackholeStickerScore);
+        form.AddField("llama", book.llamaStickerScore);
+        form.AddField("star", book.starStickerScore);
+        form.AddField("planet", book.planetStickerScore);
+        form.AddField("cow", book.cowStickerScore);
+        form.AddField("flag", book.flagStickerScore);
+        form.AddField("rocket", book.rocketStickerScore);
+        form.AddField("laika", book.laikaStickerScore);
+        form.AddField("driedfish", book.driedfishStickerScore);
+        form.AddField("octopus", book.octopusStickerScore);
+        form.AddField("cat", book.catStickerScore);
 
-        WWW www = new WWW("http://kauheaa.com/gigapotato/FromUnity.php", form);
+        WWW www = new WWW("http://kauheaa.com/gigapotato/sqlconnect/savedata.php", form);
 
         yield return www;
-        if (www.error != null)
+        if (www.text[0] == '0')
         {
-            Debug.Log("Something went wrong.");
-            successful = false;
+            Debug.Log("Score saved:" + www.text);
         }
         else
         {
-            Debug.Log(www.text);
-            successful = true;
+            Debug.Log("Save failed. Error #" + www.text);
         }
     }
 
-    IEnumerator GetDataFromFile()
+    public void CallSaveData()
     {
-        bool successful = true;
-        WWWForm form = new WWWForm();
-        WWW www = new WWW("http://kauheaa.com/gigapotato/FromUnity.php", form);
-
-        yield return www;
-        if (www.error != null)
-        {
-            Debug.Log("Something went wrong.");
-            successful = false;
-        }
-        else
-        {
-            Debug.Log(www.text);
-            stickerScores = www.text;
-
-            successful = true;
-        }
+        StartCoroutine(SavePlayerData());
     }
 
-    public void SendData()
-    {
-        StartCoroutine(SendDataToFile());
-    }
+    //IEnumerator GetDataFromFile()
+    //{
+    //    bool successful = true;
+    //    WWWForm form = new WWWForm();
+    //    WWW www = new WWW("http://kauheaa.com/gigapotato/FromUnity.php", form);
 
-    public void GetData()
-    {
-        StartCoroutine(GetDataFromFile());
-    }
+    //    yield return www;
+    //    if (www.error != null)
+    //    {
+    //        Debug.Log("Something went wrong.");
+    //        successful = false;
+    //    }
+    //    else
+    //    {
+    //        Debug.Log(www.text);
+    //        stickerScores = www.text;
 
-    void Start()
-    {
+    //        successful = true;
+    //    }
+    //}
 
-    }
+    //public void SendData()
+    //{
+    //    StartCoroutine(SendDataToFile());
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public void GetData()
+    //{
+    //    StartCoroutine(GetDataFromFile());
+    //}
+
+    //void Start()
+    //{
+
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
 }

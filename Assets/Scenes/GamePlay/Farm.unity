@@ -3037,9 +3037,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: OpenSpread1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5971,9 +5971,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadMid1
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: OpenSpread2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7759,13 +7759,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: OpenSpread1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 973064300315609846}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11765,7 +11777,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 973064300315609845}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 973064300315609846}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
@@ -15294,6 +15306,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508123817}
   m_CullTransparentMesh: 1
+--- !u!1001 &508611432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1160.6278
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 778.6889
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -920.4371
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558768, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956311468067558769, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: book
+      value: 
+      objectReference: {fileID: 973064300315609855}
+    - target: {fileID: 1956311468067558782, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+      propertyPath: m_Name
+      value: SaveDataManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+--- !u!114 &508611433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1956311468067558769, guid: cce814dafc9add148bb66970ca8718f0, type: 3}
+  m_PrefabInstance: {fileID: 508611432}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528292645d513254fa2b45ce61f17d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &511857857
 GameObject:
   m_ObjectHideFlags: 0
@@ -30017,6 +30101,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 973064300315609846}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1034818362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33560,6 +33656,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 973064300315609846}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1153237465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34141,9 +34249,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadMid1
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: OpenSpread2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38056,13 +38164,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: OpenSpread1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 973064300315609846}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -44257,9 +44377,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadFirst
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: OpenSpread1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47260,9 +47380,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2030866127}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: OpenStickerSpreadMid1
+      - m_Target: {fileID: 973064300315609855}
+        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
+        m_MethodName: OpenSpread2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -62965,6 +63085,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1498324802}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: save
+      value: 
+      objectReference: {fileID: 508611433}
+    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: sub1
       value: 
       objectReference: {fileID: 727255512}
@@ -63206,6 +63330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+--- !u!1 &973064300315609846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 973064300803673501, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &973064300315609849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4781292998840097010, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -63241,7 +63370,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 973064300315609845}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 973064300315609846}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df0da8921302ad4b921b1fca8f10f2d, type: 3}

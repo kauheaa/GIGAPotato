@@ -46,7 +46,7 @@ public class StarCount : MonoBehaviour
     public void SumStarCount() // Counts and updates sum stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
@@ -127,14 +127,14 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
     public void SubStarCount() // Counts and updates sub stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
@@ -215,14 +215,14 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
     public void CountStarCount() // Counts and updates count stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
@@ -301,18 +301,18 @@ public class StarCount : MonoBehaviour
             //    }
             //    break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
     public void MultStarCount() // Counts and updates mult stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
-                Debug.Log("No mult levels in Farm");
+                //Debug.Log("No mult levels in Farm");
                 break;
             case 2:
                 switch (multJungleStarCount)
@@ -365,18 +365,18 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
     public void DivStarCount() // Counts and updates div stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
-                Debug.Log("No div levels in Farm");
+                //Debug.Log("No div levels in Farm");
                 break;
             case 2:
                 switch (divJungleStarCount)
@@ -429,7 +429,7 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
