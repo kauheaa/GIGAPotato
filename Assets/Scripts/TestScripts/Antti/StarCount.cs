@@ -46,7 +46,6 @@ public class StarCount : MonoBehaviour
     public void SumStarCount() // Counts and updates sum stars
     {
         UpdateStarCounts();
-        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:

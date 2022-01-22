@@ -41,10 +41,6 @@ public class MultiplyScript : MonoBehaviour
     {
         starCount.MultStarCount();
     }
-    public void Save()                          // Saves Stickers and StarCounts
-    {
-        book.SaveBook();
-    }
     public void Load()                          // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
         book.LoadBook();
@@ -72,11 +68,6 @@ public class MultiplyScript : MonoBehaviour
     {
         multScore += 1;
         SetTaskNumber();
-    }
-
-    public void AnimatedLevelEnd()
-    {
-
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -525,12 +516,15 @@ public class MultiplyScript : MonoBehaviour
                 {
                     case 1:
                         book.UnlockLychee();
+                        book.OpenSpread3();
                         break;
                     case 2:
                         book.UnlockPitahaya();
+                        book.OpenSpread3();
                         break;
                     case 3:
                         book.UnlockFrog();
+                        book.OpenSpread3();
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -542,12 +536,15 @@ public class MultiplyScript : MonoBehaviour
                 {
                     case 4:
                         book.UnlockFlag();
+                        book.OpenSpread5();
                         break;
                     case 5:
                         book.UnlockRocket();
+                        book.OpenSpread5();
                         break;
                     case 6:
                         book.UnlockLaika();
+                        book.OpenSpread5();
                         break;
                     default:
                         Debug.Log("No level index set");

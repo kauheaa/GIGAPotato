@@ -8,7 +8,6 @@ public class ChangeInput : MonoBehaviour
     EventSystem system;
     public Selectable firstInput;
     public Button button;
-    public Register signin;
 
     void Start()
     {

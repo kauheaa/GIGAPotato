@@ -6,6 +6,7 @@ public static class DatabaseManager
 {
     public static string username;
     public static string score;
+    public static int avatarIndex;
 
     // Farm sticker scores
     public static int appleStickerScore = 0;

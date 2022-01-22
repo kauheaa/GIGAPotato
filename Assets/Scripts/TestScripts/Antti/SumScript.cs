@@ -41,11 +41,7 @@ public class SumScript : MonoBehaviour
     {
         starCount.SumStarCount();
     }
-    public void Save()                          // Saves Stickers and StarCounts
-    {
-        book.SaveBook();
-    }
-    public void Load()                          // Loads saved Stickers and StarCounts or creates empty save if there is none
+    public void Load()                  // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
         book.LoadBook();
     }
@@ -72,11 +68,6 @@ public class SumScript : MonoBehaviour
     {
         sumScore += 1;
         SetTaskNumber();
-    }
-
-    public void AnimatedLevelEnd()
-    {
-
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -654,12 +645,15 @@ public class SumScript : MonoBehaviour
                 {
                     case 1:
                         book.UnlockApple();
+                        book.OpenSpread1();
                         break;
                     case 2:
                         book.UnlockBasket();
+                        book.OpenSpread1();
                         break;
                     case 3:
                         book.UnlockPig();
+                        book.OpenSpread1();
                         break;
                     default:
                         //Debug.Log("No level index set");
@@ -671,12 +665,15 @@ public class SumScript : MonoBehaviour
                 {
                     case 4:
                         book.UnlockBanana();
+                        book.OpenSpread2();
                         break;
                     case 5:
                         book.UnlockCluster();
+                        book.OpenSpread2();
                         break;
                     case 6:
                         book.UnlockMonkey();
+                        book.OpenSpread2(); 
                         break;
                     default:
                         //Debug.Log("No level index set");
@@ -688,12 +685,15 @@ public class SumScript : MonoBehaviour
                 {
                     case 7:
                         book.UnlockAsteroid();
+                        book.OpenSpread3();
                         break;
                     case 8:
                         book.UnlockBlackhole();
+                        book.OpenSpread3();
                         break;
                     case 9:
                         book.UnlockLlama();
+                        book.OpenSpread3();
                         break;
                     default:
                         //Debug.Log("No level index set");

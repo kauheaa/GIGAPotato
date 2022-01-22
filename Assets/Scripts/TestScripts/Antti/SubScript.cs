@@ -41,11 +41,7 @@ public class SubScript : MonoBehaviour
     {
         starCount.SubStarCount();
     }
-    public void Save()                          // Saves Stickers and StarCounts
-    {
-        book.SaveBook();
-    }
-    public void Load()                          // Loads saved Stickers and StarCounts or creates empty save if there is none
+    public void Load()                  // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
         book.LoadBook();
     }
@@ -73,11 +69,6 @@ public class SubScript : MonoBehaviour
     {
         subScore += 1;
         SetTaskNumber();
-    }
-
-    public void AnimatedLevelEnd()
-    {
-
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -735,12 +726,15 @@ public class SubScript : MonoBehaviour
                 {
                     case 1:
                         book.UnlockCarrot();
+                        book.OpenSpread1();
                         break;
                     case 2:
                         book.UnlockBucket();
+                        book.OpenSpread1();
                         break;
                     case 3:
                         book.UnlockBunny();
+                        book.OpenSpread1();
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -752,12 +746,15 @@ public class SubScript : MonoBehaviour
                 {
                     case 4:
                         book.UnlockCoconut();
+                        book.OpenSpread3();
                         break;
                     case 5:
                         book.UnlockOculars();
+                        book.OpenSpread3();
                         break;
                     case 6:
                         book.UnlockSloth();
+                        book.OpenSpread3();
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -769,12 +766,15 @@ public class SubScript : MonoBehaviour
                 {
                     case 7:
                         book.UnlockStar();
+                        book.OpenSpread5();
                         break;
                     case 8:
                         book.UnlockPlanet();
+                        book.OpenSpread5();
                         break;
                     case 9:
                         book.UnlockCow();
+                        book.OpenSpread5();
                         break;
                     default:
                         Debug.Log("No level index set");

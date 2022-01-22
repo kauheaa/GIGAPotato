@@ -1,24 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Register : MonoBehaviour
 {
     public StickerBook book;
-    private bool usernameTaken;
-    public Text tempName;
+
     public InputField nameField;
     public InputField passwordField;
     public InputField verifyPasswordField;
-    public Button registerButton;
+    public Button submitButton;
+
+    private bool usernameTaken;
+    public Text tempName;
 
     public Text usernameError;
     public Text passwordError1;
     public Text passwordError2;
+
     public void CallRegister()
     {
         StartCoroutine(RegisterPlayer());
+    }
+
+    public void ResetErrors()       // wipes error messages above inputFields
+    {
+        usernameError.text = "";
+        passwordError1.text = "";
+        passwordError2.text = "";
+    }
+
+    public void ResetFields()       // resets register form fields
+    {
+        nameField.text = "";
+        passwordField.text = "";
+        verifyPasswordField.text = "";
     }
 
     IEnumerator RegisterPlayer()
@@ -31,9 +47,10 @@ public class Register : MonoBehaviour
         if (www.text == "0")
         {
             Debug.Log("User created successfully");
+            ResetErrors();
+            ResetFields();
             usernameTaken = false;
-            book.OpenFirstSpread();
-
+            book.OpenLoginSpread(); // closes register and login spreads and opens first spread
         }
         else
         {
@@ -46,12 +63,18 @@ public class Register : MonoBehaviour
         }
     }
 
-    public void VerifyInputs()
+    // Assign this function to RegisterForm Name, Password and VerifyPassword input fields in inspector
+    public void VerifyInputs()  // Makes submitButton interactable when username is >= 3 characters, password >=5 and PasswordField and verifyPassword field inputs match
     {
-        registerButton.interactable = (nameField.text.Length >= 3 && passwordField.text.Length >= 5 && verifyPasswordField.text == passwordField.text);
+        submitButton.interactable = (nameField.text.Length >= 3 && passwordField.text.Length >= 5 && verifyPasswordField.text == passwordField.text);
+    }
+    public void ForceUppercase()    // forces name field input uppercase
+    {
+        nameField.onValidateInput += delegate (string s, int i, char c)
+        { return char.ToUpper(c); };
     }
 
-    public void CheckUsername()
+    public void CheckUsername()     // checks is username 3 or more characters long and prints error if not
     {
         if (nameField.text.Length < 3)
         {
@@ -63,7 +86,7 @@ public class Register : MonoBehaviour
         }
     }
 
-    public void CheckPassword()
+    public void CheckPassword()     // checks is password 5 or more characters long and prints error if not
     {
         if (passwordField.text.Length < 5)
         {
@@ -74,7 +97,7 @@ public class Register : MonoBehaviour
             passwordError1.text = "";
         }
     }
-    public void VerifyPassword()
+    public void VerifyPassword()    // checks if password and verifyPassword fields match, prints error if not
     {
         if (verifyPasswordField.text != passwordField.text)
         {
@@ -118,11 +141,8 @@ public class Register : MonoBehaviour
     private void Start()
     {
         usernameTaken = false;
-        usernameError.text = "";
-        passwordError1.text = "";
-        passwordError2.text = "";
-        nameField.onValidateInput +=
-           delegate (string s, int i, char c) { return char.ToUpper(c); };
+        ResetErrors();      // wipes error messages above inputFields
+        ForceUppercase();   // forces name field input uppercase
     }
 
 }

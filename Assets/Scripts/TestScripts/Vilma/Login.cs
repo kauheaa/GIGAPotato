@@ -1,14 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Login : MonoBehaviour
 {
-    public StickerBook book;
+    public StickerBook book;        // stickerbook in the scene
+    public SaveDataManager save;    // saveDataManager in the scene
+ 
     public InputField nameField;
     public InputField passwordField;
-
     public Button submitButton;
 
     private bool userNotFound;
@@ -19,83 +19,122 @@ public class Login : MonoBehaviour
     public Text usernameError;
     public Text loginError;
 
-
-    public void CallLogin()
+    public void CallLogin()     // Sends username and password to PHP and gets back name and score attached to username. Picks score apart into stickerScore ints and updates sticker score to book.
     {
         StartCoroutine(LoginPlayer());
     }
 
-    IEnumerator LoginPlayer()
+    public void ResetErrors()       // wipes error messages above inputFields
+    {
+        usernameError.text = "";
+        loginError.text = "";
+    }
+
+    public void ResetFields()       // resets login form fields
+    {
+        nameField.text = "";
+        passwordField.text = "";
+    }
+
+
+    IEnumerator LoginPlayer()   // Sends username and password to PHP and gets back name and score attached to username. Picks score apart into stickerScore ints and updates sticker score to book.
     {
         WWWForm form = new WWWForm();
         form.AddField("username", nameField.text);
         form.AddField("password", passwordField.text);
         WWW www = new WWW("http://kauheaa.com/gigapotato/sqlconnect/login.php", form);
         yield return www;
-        if (www.text[0] == '0') //check if first character of string is 0
+        if (www.text[0] == '0') // Check if first character of string is 0 (0 = there were no errors in php)
         {
-            usernameError.text = "";
-            loginError.text = "";
+            ResetErrors();
             DatabaseManager.username = nameField.text;
-            DatabaseManager.score = www.text;
-            string[] webResults = www.text.Split('3'); // splits the text by character (single quote for character, double for string)
-            Debug.Log(webResults[0]); // makes the results an array and posts first item as string
-            int webNumber1 = int.Parse(webResults[0]);
-            int webNumber2 = int.Parse(webResults[1]);
-            int webNumber3 = int.Parse(webResults[2]);
-            int webNumber4 = int.Parse(webResults[3]);
-            int webNumber5 = int.Parse(webResults[4]);
-            int webNumber6 = int.Parse(webResults[5]);
-            int webNumber7 = int.Parse(webResults[6]);
-            int webNumber8 = int.Parse(webResults[7]);
-            int webNumber9 = int.Parse(webResults[8]);
-            int webNumber10 = int.Parse(webResults[9]);
-            int webNumber11 = int.Parse(webResults[10]);
-            int webNumber12 = int.Parse(webResults[11]);
-            int webNumber13 = int.Parse(webResults[12]);// turns second string item on array into int
-            Debug.Log("webnumbers are " + webNumber1 + ", " + webNumber2 + ", " + webNumber3 + ", " + webNumber4 + ", " + webNumber5 + ", " + webNumber6 + ", " + webNumber7 + ", " + webNumber8 + ", " + webNumber9 + ", " + webNumber10 + ", " + webNumber11 + ", " + webNumber12 + ", " + webNumber13);
-            DatabaseManager.appleStickerScore = int.Parse(webResults[1]);
-            DatabaseManager.basketStickerScore = int.Parse(webResults[2]);
-            DatabaseManager.pigStickerScore = int.Parse(webResults[3]);
-            DatabaseManager.carrotStickerScore = int.Parse(webResults[4]);
-            DatabaseManager.bucketStickerScore = int.Parse(webResults[5]);
-            DatabaseManager.bunnyStickerScore = int.Parse(webResults[6]);
-            DatabaseManager.threeCornStickerScore = int.Parse(webResults[7]);
-            DatabaseManager.twoCornStickerScore = int.Parse(webResults[8]);
-            DatabaseManager.lambStickerScore = int.Parse(webResults[9]);
+            ResetFields();
+            
+            if (www.text != "0")
+            {
+                DatabaseManager.score = www.text;
+                string[] score = www.text.Split('3'); // splits the text by character (single quote for a character, double for string)
 
-            DatabaseManager.bananaStickerScore = int.Parse(webResults[10]);
-            DatabaseManager.clusterStickerScore = int.Parse(webResults[11]);
-            DatabaseManager.monkeyStickerScore = int.Parse(webResults[12]);
-            DatabaseManager.coconutStickerScore = int.Parse(webResults[13]);
-            DatabaseManager.ocularsStickerScore = int.Parse(webResults[14]);
-            DatabaseManager.slothStickerScore = int.Parse(webResults[15]);
-            DatabaseManager.lycheeStickerScore = int.Parse(webResults[16]);
-            DatabaseManager.pitahayaStickerScore = int.Parse(webResults[17]);
-            DatabaseManager.frogStickerScore = int.Parse(webResults[18]);
-            DatabaseManager.avocadoStickerScore = int.Parse(webResults[19]);
-            DatabaseManager.toolStickerScore = int.Parse(webResults[20]);
-            DatabaseManager.tigerStickerScore = int.Parse(webResults[21]);
-
-            DatabaseManager.asteroidStickerScore = int.Parse(webResults[22]);
-            DatabaseManager.blackholeStickerScore = int.Parse(webResults[23]);
-            DatabaseManager.llamaStickerScore = int.Parse(webResults[24]);
-            DatabaseManager.starStickerScore = int.Parse(webResults[25]);
-            DatabaseManager.planetStickerScore = int.Parse(webResults[26]);
-            DatabaseManager.cowStickerScore = int.Parse(webResults[27]);
-            DatabaseManager.flagStickerScore = int.Parse(webResults[28]);
-            DatabaseManager.rocketStickerScore = int.Parse(webResults[29]);
-            DatabaseManager.laikaStickerScore = int.Parse(webResults[30]);
-            DatabaseManager.driedfishStickerScore = int.Parse(webResults[31]);
-            DatabaseManager.octopusStickerScore = int.Parse(webResults[32]);
-            DatabaseManager.catStickerScore = int.Parse(webResults[33]);
-            book.LoadBook();
-            book.UpdatePlayerInfo();
-            book.OpenFirstSpread();
+                // picks apart saved score string and turns the characters into ints
+                DatabaseManager.appleStickerScore = int.Parse(score[1]);
+                DatabaseManager.basketStickerScore = int.Parse(score[2]);
+                DatabaseManager.pigStickerScore = int.Parse(score[3]);
+                DatabaseManager.carrotStickerScore = int.Parse(score[4]);
+                DatabaseManager.bucketStickerScore = int.Parse(score[5]);
+                DatabaseManager.bunnyStickerScore = int.Parse(score[6]);
+                DatabaseManager.threeCornStickerScore = int.Parse(score[7]);
+                DatabaseManager.twoCornStickerScore = int.Parse(score[8]);
+                DatabaseManager.lambStickerScore = int.Parse(score[9]);
+                DatabaseManager.bananaStickerScore = int.Parse(score[10]);
+                DatabaseManager.clusterStickerScore = int.Parse(score[11]);
+                DatabaseManager.monkeyStickerScore = int.Parse(score[12]);
+                DatabaseManager.coconutStickerScore = int.Parse(score[13]);
+                DatabaseManager.ocularsStickerScore = int.Parse(score[14]);
+                DatabaseManager.slothStickerScore = int.Parse(score[15]);
+                DatabaseManager.lycheeStickerScore = int.Parse(score[16]);
+                DatabaseManager.pitahayaStickerScore = int.Parse(score[17]);
+                DatabaseManager.frogStickerScore = int.Parse(score[18]);
+                DatabaseManager.avocadoStickerScore = int.Parse(score[19]);
+                DatabaseManager.toolStickerScore = int.Parse(score[20]);
+                DatabaseManager.tigerStickerScore = int.Parse(score[21]);
+                DatabaseManager.asteroidStickerScore = int.Parse(score[22]);
+                DatabaseManager.blackholeStickerScore = int.Parse(score[23]);
+                DatabaseManager.llamaStickerScore = int.Parse(score[24]);
+                DatabaseManager.starStickerScore = int.Parse(score[25]);
+                DatabaseManager.planetStickerScore = int.Parse(score[26]);
+                DatabaseManager.cowStickerScore = int.Parse(score[27]);
+                DatabaseManager.flagStickerScore = int.Parse(score[28]);
+                DatabaseManager.rocketStickerScore = int.Parse(score[29]);
+                DatabaseManager.laikaStickerScore = int.Parse(score[30]);
+                DatabaseManager.driedfishStickerScore = int.Parse(score[31]);
+                DatabaseManager.octopusStickerScore = int.Parse(score[32]);
+                DatabaseManager.catStickerScore = int.Parse(score[33]);
+            }
+            else
+            {
+                DatabaseManager.score = "3030303030303030303030303030303030303030303030303030303030303030303";
+                string[] score = DatabaseManager.score.Split('3'); // splits the text by character (single quote for a character, double for string)
+                // picks apart saved score string and turns the characters into ints
+                DatabaseManager.appleStickerScore = int.Parse(score[1]);
+                DatabaseManager.basketStickerScore = int.Parse(score[2]);
+                DatabaseManager.pigStickerScore = int.Parse(score[3]);
+                DatabaseManager.carrotStickerScore = int.Parse(score[4]);
+                DatabaseManager.bucketStickerScore = int.Parse(score[5]);
+                DatabaseManager.bunnyStickerScore = int.Parse(score[6]);
+                DatabaseManager.threeCornStickerScore = int.Parse(score[7]);
+                DatabaseManager.twoCornStickerScore = int.Parse(score[8]);
+                DatabaseManager.lambStickerScore = int.Parse(score[9]);
+                DatabaseManager.bananaStickerScore = int.Parse(score[10]);
+                DatabaseManager.clusterStickerScore = int.Parse(score[11]);
+                DatabaseManager.monkeyStickerScore = int.Parse(score[12]);
+                DatabaseManager.coconutStickerScore = int.Parse(score[13]);
+                DatabaseManager.ocularsStickerScore = int.Parse(score[14]);
+                DatabaseManager.slothStickerScore = int.Parse(score[15]);
+                DatabaseManager.lycheeStickerScore = int.Parse(score[16]);
+                DatabaseManager.pitahayaStickerScore = int.Parse(score[17]);
+                DatabaseManager.frogStickerScore = int.Parse(score[18]);
+                DatabaseManager.avocadoStickerScore = int.Parse(score[19]);
+                DatabaseManager.toolStickerScore = int.Parse(score[20]);
+                DatabaseManager.tigerStickerScore = int.Parse(score[21]);
+                DatabaseManager.asteroidStickerScore = int.Parse(score[22]);
+                DatabaseManager.blackholeStickerScore = int.Parse(score[23]);
+                DatabaseManager.llamaStickerScore = int.Parse(score[24]);
+                DatabaseManager.starStickerScore = int.Parse(score[25]);
+                DatabaseManager.planetStickerScore = int.Parse(score[26]);
+                DatabaseManager.cowStickerScore = int.Parse(score[27]);
+                DatabaseManager.flagStickerScore = int.Parse(score[28]);
+                DatabaseManager.rocketStickerScore = int.Parse(score[29]);
+                DatabaseManager.laikaStickerScore = int.Parse(score[30]);
+                DatabaseManager.driedfishStickerScore = int.Parse(score[31]);
+                DatabaseManager.octopusStickerScore = int.Parse(score[32]);
+                DatabaseManager.catStickerScore = int.Parse(score[33]);
+            }
+            book.LoadBook();        // book loads scores above and updates all (player info, login buttons, stickers, stars, level buttons)
+            book.OpenFirstSpread(); // closes register and login spreads and opens first spread
         }
         else
         {
-            if (www.text[0] == '5')
+            if (www.text[0] == '5') // php error code 5 = username doesn't exist
             {
                 userNotFound = true;
                 tempName.text = nameField.text;
@@ -104,7 +143,7 @@ public class Login : MonoBehaviour
             {
                 usernameError.text = "";
             }
-            if (www.text[0] == '6')
+            if (www.text[0] == '6') // php error code 6 = password was incorrect
             {
                 wrongPassword = true;
                 tempPassword.text = passwordField.text;
@@ -117,18 +156,22 @@ public class Login : MonoBehaviour
         }
     }
 
-    public void VerifyInputs()
+    // Assign this function to LoginForm Name and Password input fields in inspector
+    public void VerifyInputs()      // Makes submitButton interactable when username is >= 3 characters and password >=5
     {
         submitButton.interactable = (nameField.text.Length >= 3 && passwordField.text.Length >= 5);
     }
 
+    public void ForceUppercase()    // forces name field input uppercase
+    {
+        nameField.onValidateInput += delegate (string s, int i, char c)
+        { return char.ToUpper(c); };
+    }
+
     private void Start()
     {
-        usernameError.text = "";
-        loginError.text = "";
-
-        nameField.onValidateInput +=
-            delegate (string s, int i, char c) { return char.ToUpper(c); };
+        ResetErrors();      // wipes error messages above inputFields
+        ForceUppercase();   // forces name field input uppercase
     }
 
     private void Update()

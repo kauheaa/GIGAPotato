@@ -41,10 +41,6 @@ public class DivideScript : MonoBehaviour
     {
         starCount.DivStarCount();
     }
-    public void Save()                          // Saves Stickers and StarCounts
-    {
-        book.SaveBook();
-    }
     public void Load()                          // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
         book.LoadBook();
@@ -73,11 +69,6 @@ public class DivideScript : MonoBehaviour
     {
         divScore += 1;
         SetTaskNumber();
-    }
-
-    public void AnimatedLevelEnd()
-    {
-
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -605,12 +596,15 @@ public class DivideScript : MonoBehaviour
                 {
                     case 1:
                         book.UnlockAvocado();
+                        book.OpenSpread4();
                         break;
                     case 2:
                         book.UnlockTool();
+                        book.OpenSpread4();
                         break;
                     case 3:
                         book.UnlockTiger();
+                        book.OpenSpread4();
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -622,12 +616,15 @@ public class DivideScript : MonoBehaviour
                 {
                     case 4:
                         book.UnlockDriedfish();
+                        book.OpenSpread6();
                         break;
                     case 5:
                         book.UnlockOctopus();
+                        book.OpenSpread6();
                         break;
                     case 6:
                         book.UnlockCat();
+                        book.OpenSpread6();
                         break;
                     default:
                         Debug.Log("No level index set");
