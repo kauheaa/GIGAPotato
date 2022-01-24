@@ -96,6 +96,14 @@ fmod_editor.log
 
 $ echo "fmod.log" >> .gitignore
 $ echo "fmod_editor.log" >> .gitignore
+$ echo "/[Aa]ssets/**/FMODStudioCache.asset" >> .gitignore
+$ echo "/[Aa]ssets/**/FMODStudioCache.asset.meta" >> .gitignore
+$ echo "/[Aa]ssets/Plugins/FMOD/Cache.meta" >> .gitignore
+$ echo "/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta" >> .gitignore
 
 $ git rm --cached fmod.log
 $ git rm --cached fmod_editor.log
+$ git rm --cached /[Aa]ssets/**/FMODStudioCache.asset
+$ git rm --/[Aa]ssets/**/FMODStudioCache.asset.meta
+$ git rm --/[Aa]ssets/Plugins/FMOD/Cache.meta
+$ git rm --/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
