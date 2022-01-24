@@ -11071,7 +11071,7 @@ MonoBehaviour:
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  clearButton: {fileID: 0}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
   completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   worldIndex: 1
   levelIndex: 2
@@ -11160,7 +11160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasContol: {fileID: 0}
   book: {fileID: 973064300315609855}
   starCount: {fileID: 1258868183}
   levelButton1: {fileID: 1212961984}
@@ -16261,7 +16260,7 @@ MonoBehaviour:
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  clearButton: {fileID: 0}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
   completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   worldIndex: 1
   levelIndex: 3
@@ -16580,7 +16579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasContol: {fileID: 0}
   book: {fileID: 973064300315609855}
   starCount: {fileID: 1258868183}
   levelButton1: {fileID: 1212961984}
@@ -20362,7 +20360,7 @@ MonoBehaviour:
   levelButton1: {fileID: 962879648}
   levelButton2: {fileID: 784317852}
   levelButton3: {fileID: 1135346501}
-  clearButton: {fileID: 0}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
   completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   worldIndex: 1
   levelIndex: 1
@@ -33120,7 +33118,7 @@ MonoBehaviour:
   levelButton1: {fileID: 1611086599}
   levelButton2: {fileID: 1333439736}
   levelButton3: {fileID: 274410843}
-  clearButton: {fileID: 0}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
   completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   Animal: {fileID: 527557108}
   level: {fileID: 1966852815}
@@ -36014,85 +36012,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254479852}
   m_CullTransparentMesh: 1
---- !u!1 &1258868182
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1258868184}
-  - component: {fileID: 1258868183}
-  m_Layer: 0
-  m_Name: StarCount
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1258868183
+--- !u!114 &1258868183 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+  m_PrefabInstance: {fileID: 7189380405375618435}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258868182}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 308cc7c596b32ee419962a6440c77a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  book: {fileID: 973064300315609855}
-  worldIndex: 1
-  sumMenuButton: {fileID: 1733980915}
-  subMenuButton: {fileID: 953794044}
-  countMenuButton: {fileID: 1769238176}
-  multMenuButton: {fileID: 0}
-  divMenuButton: {fileID: 0}
-  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
-  completedButton: {fileID: 21300000, guid: 63f8c4e8eca85f6448522c1162b39c38, type: 3}
-  noStars: {fileID: 21300000, guid: 1824a5e0290114f4d8709fe347f9225e, type: 3}
-  oneStar: {fileID: 21300000, guid: 46b332af65076d24e873b4946514645d, type: 3}
-  twoStar: {fileID: 21300000, guid: 971d432fa7db01c49a6d26cd1b7c54ec, type: 3}
-  threeStar: {fileID: 21300000, guid: a4662510a7ec75c4fbcc1c84c866f1c7, type: 3}
-  sumStars: {fileID: 865204667}
-  sumMenuStars: {fileID: 693728070}
-  subStars: {fileID: 229662638}
-  subMenuStars: {fileID: 1538720649}
-  countStars: {fileID: 1469187563}
-  countMenuStars: {fileID: 1077831095}
-  multStars: {fileID: 0}
-  multMenuStars: {fileID: 0}
-  divStars: {fileID: 0}
-  divMenuStars: {fileID: 0}
-  sumFarmStarCount: 0
-  sumJungleStarCount: 0
-  sumSpaceStarCount: 0
-  subFarmStarCount: 0
-  subJungleStarCount: 0
-  subSpaceStarCount: 0
-  countFarmStarCount: 0
-  countJungleStarCount: 0
-  countSpaceStarCount: 0
-  multJungleStarCount: 0
-  multSpaceStarCount: 0
-  divJungleStarCount: 0
-  divSpaceStarCount: 0
---- !u!4 &1258868184
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258868182}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 879.1763, y: 619.79456, z: -481.1175}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260534824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3111291556898002514, guid: 418e037ad95374c438e2584510bbfa57, type: 3}
@@ -38544,7 +38474,7 @@ MonoBehaviour:
   levelButton1: {fileID: 1611086599}
   levelButton2: {fileID: 1333439736}
   levelButton3: {fileID: 274410843}
-  clearButton: {fileID: 0}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
   completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   Animal: {fileID: 1617684225}
   level: {fileID: 126593953}
@@ -42110,7 +42040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de89d31f6b503942991b189f1649aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasContol: {fileID: 0}
   book: {fileID: 973064300315609855}
   starCount: {fileID: 1258868183}
   levelButton1: {fileID: 1212961984}
@@ -56516,7 +56445,7 @@ MonoBehaviour:
   levelButton1: {fileID: 1611086599}
   levelButton2: {fileID: 1333439736}
   levelButton3: {fileID: 274410843}
-  clearButton: {fileID: 0}
+  clearButton: {fileID: 21300000, guid: b81cc8ad585841442a6fb54114ae8882, type: 3}
   completedButton: {fileID: 21300000, guid: 5b3ba71405ed3bb42999eb049f99aab9, type: 3}
   Animal: {fileID: 973761439}
   level: {fileID: 1042787994}
@@ -61644,6 +61573,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+--- !u!1001 &7189380405375618435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: book
+      value: 
+      objectReference: {fileID: 973064300315609855}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: subStars
+      value: 
+      objectReference: {fileID: 229662638}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: sumStars
+      value: 
+      objectReference: {fileID: 865204667}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: countStars
+      value: 
+      objectReference: {fileID: 1469187563}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: subMenuStars
+      value: 
+      objectReference: {fileID: 1538720649}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: sumMenuStars
+      value: 
+      objectReference: {fileID: 693728070}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: subMenuButton
+      value: 
+      objectReference: {fileID: 953794044}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: sumMenuButton
+      value: 
+      objectReference: {fileID: 1733980915}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: countMenuStars
+      value: 
+      objectReference: {fileID: 1077831095}
+    - target: {fileID: 7189380404453408852, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: countMenuButton
+      value: 
+      objectReference: {fileID: 1769238176}
+    - target: {fileID: 7189380404453408853, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_Name
+      value: StarCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 879.1763
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 619.79456
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -481.1175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189380404453408859, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3464c57180a5577408ed36c20b72258b, type: 3}
 --- !u!1001 &7743294941844607822
 PrefabInstance:
   m_ObjectHideFlags: 0
