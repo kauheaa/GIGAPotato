@@ -17,7 +17,7 @@ public class ButtonSFX : MonoBehaviour
             RuntimeManager.PlayOneShot(soundEvent);
         }
     }
-    private static ButtonSFX instance;
+    
 
 
     
