@@ -20,6 +20,71 @@ MonoBehaviour:
   - Name: 
     Value: 744
   Exists: 1
+--- !u!114 &-7678552863848897061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Banks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637781996156689556
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5029092076621938245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637781996156729567
+  FileSizes:
+  - Name: 
+    Value: 790
+  Exists: 1
+--- !u!114 &-910848568815387877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jungle
+  m_EditorClassIdentifier: 
+  Path: event:/Jungle
+  Guid:
+    Data1: 1631632990
+    Data2: 1271948272
+    Data3: 188941702
+    Data4: 563901548
+  Banks:
+  - {fileID: -7678552863848897061}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,17 +98,45 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -9187377112570193089}
-  - {fileID: 4927408065815638316}
+  - {fileID: -5029092076621938245}
+  - {fileID: -7678552863848897061}
   EditorEvents:
-  - {fileID: 2208601944467381146}
+  - {fileID: -910848568815387877}
+  - {fileID: 528801095008134683}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4927408065815638316}
+  - {fileID: -7678552863848897061}
   StringsBanks:
-  - {fileID: -9187377112570193089}
-  cacheTime: 637779368461214656
+  - {fileID: -5029092076621938245}
+  cacheTime: 637781996156729567
   cacheVersion: 10
+--- !u!114 &528801095008134683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Farm
+  m_EditorClassIdentifier: 
+  Path: event:/Farm
+  Guid:
+    Data1: 769569264
+    Data2: 1126528472
+    Data3: -768326761
+    Data4: 21062177
+  Banks:
+  - {fileID: -7678552863848897061}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1120
 --- !u!114 &2208601944467381146
 MonoBehaviour:
   m_ObjectHideFlags: 0
