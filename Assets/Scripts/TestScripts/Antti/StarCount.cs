@@ -46,7 +46,6 @@ public class StarCount : MonoBehaviour
     public void SumStarCount() // Counts and updates sum stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
@@ -56,22 +55,26 @@ public class StarCount : MonoBehaviour
                         sumStars.GetComponent<Image>().sprite = noStars;
                         sumMenuStars.GetComponent<Image>().sprite = noStars;
                         sumMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("0 Stars updated");
                         break;
                     case 1:
                         sumStars.GetComponent<Image>().sprite = oneStar;
                         sumMenuStars.GetComponent<Image>().sprite = oneStar;
                         sumMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("1 Stars updated");
                         break;
 
                     case 2:
                         sumStars.GetComponent<Image>().sprite = twoStar;
                         sumMenuStars.GetComponent<Image>().sprite = twoStar;
                         sumMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("2 Stars updated");
                         break;
                     case 3:
                         sumStars.GetComponent<Image>().sprite = threeStar;
                         sumMenuStars.GetComponent<Image>().sprite = threeStar;
                         sumMenuButton.GetComponent<Image>().sprite = completedButton;
+                        Debug.Log("3 Stars updated");
                         break;
                 }
                 break;
@@ -126,6 +129,7 @@ public class StarCount : MonoBehaviour
                         break;
                 }
                 break;
+                
             default:
                 Debug.Log("No world index set");
                 break;
@@ -134,7 +138,7 @@ public class StarCount : MonoBehaviour
     public void SubStarCount() // Counts and updates sub stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
@@ -144,22 +148,26 @@ public class StarCount : MonoBehaviour
                         subStars.GetComponent<Image>().sprite = noStars;
                         subMenuStars.GetComponent<Image>().sprite = noStars;
                         subMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("0 Stars updated");
                         break;
                     case 1:
                         subStars.GetComponent<Image>().sprite = oneStar;
                         subMenuStars.GetComponent<Image>().sprite = oneStar;
                         subMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("1 Stars updated");
                         break;
 
                     case 2:
                         subStars.GetComponent<Image>().sprite = twoStar;
                         subMenuStars.GetComponent<Image>().sprite = twoStar;
                         subMenuButton.GetComponent<Image>().sprite = clearButton;
+                        Debug.Log("2 Stars updated");
                         break;
                     case 3:
                         subStars.GetComponent<Image>().sprite = threeStar;
                         subMenuStars.GetComponent<Image>().sprite = threeStar;
                         subMenuButton.GetComponent<Image>().sprite = completedButton;
+                        Debug.Log("3 Stars updated");
                         break;
                 }
                 break;
@@ -222,7 +230,7 @@ public class StarCount : MonoBehaviour
     public void CountStarCount() // Counts and updates count stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
@@ -301,18 +309,18 @@ public class StarCount : MonoBehaviour
             //    }
             //    break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
     public void MultStarCount() // Counts and updates mult stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
-                Debug.Log("No mult levels in Farm");
+                //Debug.Log("No mult levels in Farm");
                 break;
             case 2:
                 switch (multJungleStarCount)
@@ -365,18 +373,18 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
     public void DivStarCount() // Counts and updates div stars
     {
         UpdateStarCounts();
-        Debug.Log("Stars counted");
+        //Debug.Log("Stars counted");
         switch (worldIndex)
         {
             case 1:
-                Debug.Log("No div levels in Farm");
+                //Debug.Log("No div levels in Farm");
                 break;
             case 2:
                 switch (divJungleStarCount)
@@ -429,7 +437,7 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }

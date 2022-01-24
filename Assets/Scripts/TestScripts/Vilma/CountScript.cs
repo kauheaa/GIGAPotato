@@ -34,10 +34,6 @@ public class CountScript : MonoBehaviour
     {
         starCount.CountStarCount();
     }
-    public void Save()              // Saves Stickers and StarCounts
-    {
-        book.SaveBook();
-    }
     public void Load()              // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
         book.LoadBook();
@@ -48,7 +44,7 @@ public class CountScript : MonoBehaviour
     }
     public void SetWorldIndex()
     {
-        worldIndex = book.worldIndex;
+        worldIndex = starCount.worldIndex;
     }
     public void SetLevelIndex(int level)
     {
@@ -101,11 +97,14 @@ public class CountScript : MonoBehaviour
                 {
                     case 1:
                         book.UnlockThreeCorn();
+                        book.OpenSpread2();
                         break;
                     case 2:
                         book.UnlockTwoCorn();
+                        book.OpenSpread2();
                         break;
                     case 3:
+                        book.OpenSpread2();
                         book.UnlockLamb();
                         break;
                     default:
