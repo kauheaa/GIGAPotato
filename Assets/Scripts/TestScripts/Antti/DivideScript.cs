@@ -52,7 +52,7 @@ public class DivideScript : MonoBehaviour
 
     public void SetWorldIndex()
     {
-        worldIndex = book.worldIndex;
+        worldIndex = starCount.worldIndex;
     }
 
     public void SetLevelIndex(int level)
@@ -346,7 +346,7 @@ public class DivideScript : MonoBehaviour
 
             case 5:
                 // Function values in level 5
-                firstValue = Random.Range(1, 10);
+                firstValue = Random.Range(1, 50);
                 secondValue = Random.Range(1, 5);
                 thirdValue = firstValue * secondValue;
                 if (firstValue > secondValue)
@@ -364,24 +364,24 @@ public class DivideScript : MonoBehaviour
                 finalValue = firstValue / secondValue;
 
                 //First Alterntive
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 50);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 50);
                 }
                 Alternative1 = tempValue;
                 // Second Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 50);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 50);
                 }
                 Alternative2 = tempValue;
                 break;
 
             case 6:
                 // Function values in level 6
-                firstValue = Random.Range(1, 10);
+                firstValue = Random.Range(1, 100);
                 secondValue = Random.Range(1, 5);
                 thirdValue = firstValue * secondValue;
                 if (firstValue > secondValue)
@@ -399,17 +399,17 @@ public class DivideScript : MonoBehaviour
                 finalValue = firstValue / secondValue;
 
                 //First Alterntive
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 100);
                 while (tempValue == finalValue)
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 100);
                 }
                 Alternative1 = tempValue;
                 // Second Alternative
-                tempValue = Random.Range(0, 10);
+                tempValue = Random.Range(0, 100);
                 while (tempValue == finalValue || (tempValue == Alternative1))
                 {
-                    tempValue = Random.Range(0, 10);
+                    tempValue = Random.Range(0, 100);
                 }
                 Alternative2 = tempValue;
                 break;

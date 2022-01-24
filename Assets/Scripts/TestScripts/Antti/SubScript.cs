@@ -52,7 +52,7 @@ public class SubScript : MonoBehaviour
 
     public void SetWorldIndex()
     {
-        worldIndex = book.worldIndex;
+        worldIndex = starCount.worldIndex;
     }
 
     public void SetLevelIndex(int level)

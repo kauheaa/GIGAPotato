@@ -101,7 +101,6 @@ public class MenuControl : MonoBehaviour
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
         stickerBook.gameObject.SetActive(true);
-        starCount.SetWorldIndex();
         if (DatabaseManager.LoggedIn == true)
         {
             stickerBook.gameObject.SetActive(false);

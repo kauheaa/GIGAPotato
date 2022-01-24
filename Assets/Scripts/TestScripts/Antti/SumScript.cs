@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SumScript : MonoBehaviour
 {
+    public MenuControl canvasContol; // CanvasController
     public StickerBook book; // StickerBook
     public StarCount starCount; // StarCount
 
@@ -52,7 +53,7 @@ public class SumScript : MonoBehaviour
 
     public void SetWorldIndex()
     {
-        worldIndex = book.worldIndex;
+        worldIndex = starCount.worldIndex;
     }
     public void SetLevelIndex(int level)
     {

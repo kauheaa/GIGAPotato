@@ -904,6 +904,7 @@ public class StickerBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        worldIndex = starCount.worldIndex;
         sum1 = canvasControl.sum1;
         sum2 = canvasControl.sum2;
         sum3 = canvasControl.sum3;

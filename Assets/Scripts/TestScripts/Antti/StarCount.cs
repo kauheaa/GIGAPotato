@@ -25,10 +25,6 @@ public class StarCount : MonoBehaviour
     public int multJungleStarCount, multSpaceStarCount;
     public int divJungleStarCount, divSpaceStarCount;
 
-    public void SetWorldIndex()
-    {
-        worldIndex = book.worldIndex;
-    }
     public void UpdateStarCounts()
     {
         book.UpdateStarCounts();
@@ -457,7 +453,6 @@ public class StarCount : MonoBehaviour
 
     void Start()
     {
-        SetWorldIndex();
         CountStars();
     }
 
