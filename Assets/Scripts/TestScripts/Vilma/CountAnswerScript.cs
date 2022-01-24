@@ -16,8 +16,7 @@ public class CountAnswerScript : MonoBehaviour
 
     private void Start()
     {
-//      startColor = GetComponent<Image>().color;
-
+        //      startColor = GetComponent<Image>().color;
         blueButton = GetComponent<Image>().sprite;
     }
 
@@ -46,14 +45,14 @@ public class CountAnswerScript : MonoBehaviour
     {
         if(isCorrect)
         {
-            GetComponent<Image>().sprite = greenButton;
+            GetComponent<Animator>().SetBool("Correct", true);
             GetComponent<Button>().interactable = false;
             Debug.Log("Correct Answer");
             quizManager.correct();
         }
         else
         {
-            GetComponent<Image>().sprite = redButton;
+            GetComponent<Animator>().SetBool("Incorrect", true);
             GetComponent<Button>().interactable = false;
             Debug.Log("Wrong Answer");
             quizManager.wrong();

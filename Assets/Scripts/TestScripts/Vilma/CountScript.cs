@@ -5,210 +5,130 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-// "CountScript" is your "QuizManager"
+// "CountScript" is the same as "QuizManager"
 public class CountScript : MonoBehaviour
 {
+    public StickerBook book;    // StickerBook
+    public StarCount starCount; // StarCount
+    public int levelIndex = 0;  // Defines level number in category
+    public int worldIndex = 0;  // Defines world the level is in (1 = Farm, 2 = Jungle, 3 = Space)
+    public GameObject levelButton1, levelButton2, levelButton3; // Category and Level buttons which' sprites change when category or level is completed
+    public Sprite clearButton, completedButton; // Sprite for uncompleted and completed level button
+    public GameObject Animal;                            // Character that reacts to answers
+    [SerializeField] private Transform level, levelEnd;  // level and level end canvas that are opened and closed when score is 5
+    public GameObject animatedLevelEnd;                  // LevelEnd with flying sticker and Next button, different if level has been completed before
+    [SerializeField] public int sumScore = 0;            // Temporary level score, reset after unlocking sticker or restarting level
+    public int task = 0;                                 // Tells the running number of the current task in level
+
     public List<QuestionAndAnswers> QnA;
     public GameObject[] options;
     public int currentQuestion;
     public GameObject QuestionImg;
-    public GameObject GoPanel;
     public Text QuestionTxt;
-    //public GameObject QuestionImg;
     public Sprite QuestionSprite;
-    public Text ScoreTxt;
+    public Text taskNumber; // This is shown as score +1 to imply the running number of task instead of score
     int totalQuestions = 0;
     public int score;
-    // These are needed for Stickers, Starcount and saving
-    public int levelIndex = 0;
-    public int worldIndex = 0;
-    [SerializeField] public int countStarCount = 0;
-    [SerializeField] public int countSpaceStarCount = 0;
-    [SerializeField] public int threeCornStickerScore = 0;
-    [SerializeField] public int twoCornStickerScore = 0;
-    [SerializeField] public int lambStickerScore = 0;
-    public GameObject stickerOne, stickerTwo, stickerThree;
-    public Sprite oneStar, twoStar, threeStar;
-    public GameObject countStars, menuStars;
-    public GameObject Animal;
 
-    // saves sticker score and updates it to all instances of same script in the scene
-    public void SaveScore()
+    public void CountStars()        // Checks StarCounts and updates stars
     {
-        saveScore.SaveCountScore(this);
-        CountScript[] tempArray = GameObject.FindObjectsOfType<CountScript>();
-        foreach (CountScript i in tempArray)
-        {
-            i.LoadScore();
-        }
+        starCount.CountStarCount();
+    }
+    public void Save()              // Saves Stickers and StarCounts
+    {
+        book.SaveBook();
+    }
+    public void Load()              // Loads saved Stickers and StarCounts or creates empty save if there is none
+    {
+        book.LoadBook();
+    }
+    public void SetTaskNumber()
+    {
+        task = score + 1;
+    }
+    public void SetWorldIndex()
+    {
+        worldIndex = book.worldIndex;
+    }
+    public void SetLevelIndex(int level)
+    {
+        levelIndex = level;
+    }
 
-    }
-    // loads sticker scores
-    public void LoadScore()
-    {
-        string path = Application.persistentDataPath + "/countscore.txt";
-        if (File.Exists(path))
-        {
-            scoreData data = saveScore.LoadCountScore();
-            countStarCount = data.countStarCount;
-
-            threeCornStickerScore = data.threeCornStickerScore;
-            twoCornStickerScore = data.twoCornStickerScore;
-            lambStickerScore = data.lambStickerScore;
-
-            Debug.Log("count stickers loaded");
-        }
-        else
-        {
-            SaveScore();
-        }
-    }
-  
-    // gives level an index that separates it from other levels; added in inspector
-    public void SetLevelIndex(int index)
-    {
-        levelIndex = index;
-    }
-    public void SetWorld(int world)
-    {
-        worldIndex = world;
-    }
     // Gives stickers +1 at level end if they have < 1
-    public void CheckStickers()
+
+    public void UpdateLevelButtons()
     {
-        if (score >= 5)
+        switch (worldIndex)
         {
-            switch (levelIndex)
-            {
-                case 1:
-                    if (threeCornStickerScore < 1)
-                    {
-                        threeCornStickerScore += 1;
-                        Debug.Log("Corn unlocked");
-                    }
-                    break;
-                case 2:
-                    if (twoCornStickerScore < 1)
-                    {
-                        twoCornStickerScore += 1;
-                        Debug.Log("More Corn unlocked");
-                    }
-                    break;
-                case 3:
-                    if (lambStickerScore < 1)
-                    {
-                        lambStickerScore += 1;
-                        Debug.Log("Lamb unlocked");
-                    }
-                    break;
-                default:
-                    Debug.Log("No level index set");
-                    break;
-            }
-
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        switch (book.threeCornStickerScore)
+                        {
+                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 2:
+                        switch (book.twoCornStickerScore)
+                        {
+                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 3:
+                        switch (book.lambStickerScore)
+                        {
+                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
         }
-    }
-    // Unlocks stickers if their score is 1
-    public void UnlockStickers()
-    {
-
-        if (threeCornStickerScore == 1)
-        {
-            stickerOne.gameObject.SetActive(true);
-        }
-        if (twoCornStickerScore == 1)
-        {
-            stickerTwo.gameObject.SetActive(true);
-        }
-        if (lambStickerScore == 1)
-        {
-            stickerThree.gameObject.SetActive(true);
-        }
-    }
-    // Unlocks a star each time a sticker is unlocked
-    public void UnlockStars()
-    {
-        countStarCount = threeCornStickerScore + twoCornStickerScore + lambStickerScore;
-
-        if (countStarCount == 1)
-        {
-            countStars.GetComponent<Image>().sprite = oneStar;
-            menuStars.GetComponent<Image>().sprite = oneStar;
-        }
-        if (countStarCount == 2)
-        {
-            countStars.GetComponent<Image>().sprite = twoStar;
-            menuStars.GetComponent<Image>().sprite = twoStar;
-        }
-        if (countStarCount == 3)
-        {
-            countStars.GetComponent<Image>().sprite = threeStar;
-            menuStars.GetComponent<Image>().sprite = threeStar;
-        }
-    }
-
-
-
-    private void Start()
-    {   
-        LoadScore();
-        CheckStickers();
-        UnlockStickers();
-        UnlockStars();
-        totalQuestions = QnA.Count;
-        GoPanel.SetActive(false);
-        QuestionImg.SetActive(true);
-        generateQuestion();
-    }
-
-    void Update()
-    {
-        // Show the score real-time instead of only LevelEnd to check if sticker works correctly
-        ScoreTxt.text = score + "/" + totalQuestions;
     }
     public void UpdateStickers()
     {
-        CheckStickers();
-        UnlockStickers();
-        UnlockStars();
-        SaveScore();
-    }
-    public void ResetStickers()
-    {
-        countStarCount = 0;
-        threeCornStickerScore = 0;
-        twoCornStickerScore = 0;
-        lambStickerScore = 0;
-        SaveScore();
+        switch (worldIndex)
+        {
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        book.UnlockThreeCorn();
+                        break;
+                    case 2:
+                        book.UnlockTwoCorn();
+                        break;
+                    case 3:
+                        book.UnlockLamb();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+        UpdateLevelButtons();
     }
 
-    //  I'm not sure if this is needed at all, or if ResetScore is enough on it's own. Depends on how replaying the level will work..?
-    //  ResetScore will be needed when/if opening LevelEnd is bound to score; score needs to be reset before replaying, so LevelEnd is not opened at the level start.
-    //  You can delete this if you feel it's unnecessary.
     public void StartCount()
     {
         ResetScore();
         totalQuestions = QnA.Count;
-        GoPanel.SetActive(false);
+        levelEnd.gameObject.SetActive(false);
         QuestionImg.SetActive(true);
-        generateQuestion();
-    }
-
-    public void retry()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    void GameOver()
-    {
-        QuestionImg.SetActive(false);
-        GoPanel.SetActive(true);
- //       ScoreTxt.text = score + "/" + totalQuestions;
+        ResetTask();
     }
 
     public void correct()
     {
-        //when you are right
         score += 1;
         Animal.GetComponent<Animator>().SetBool("Happy", true);
         //QnA.RemoveAt(currentQuestion);
@@ -217,14 +137,14 @@ public class CountScript : MonoBehaviour
 
     public void wrong()
     {
-        
-        
+
     }
 
     IEnumerator waitForNext()
     {
         yield return new WaitForSeconds(1);
-        generateQuestion();
+        taskNumber.text = task + "/ 5";
+        ResetTask();
     }
 
 /*
@@ -251,8 +171,10 @@ public class CountScript : MonoBehaviour
             options[i].GetComponent<Button>().interactable = true;
             options[i].GetComponent<Image>().sprite = options[i].GetComponent<CountAnswerScript>().blueButton;
             options[i].GetComponent<CountAnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
-            
+            options[i].transform.GetChild(1).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
+            options[i].GetComponent<Animator>().SetBool("Correct", false);
+            options[i].GetComponent<Animator>().SetBool("Incorrect", false);
+
             if(QnA[currentQuestion].CorrectAnswer == i+1)
             {
                 options[i].GetComponent<CountAnswerScript>().isCorrect = true;
@@ -262,10 +184,18 @@ public class CountScript : MonoBehaviour
 
 
 
-    void generateQuestion()
+    void ResetTask()
     {
         //if(QnA.Count > 0)
-        if(score <= 4)
+        if(score >= 5)
+        {
+            UpdateStickers();
+            CountStars();
+            levelEnd.gameObject.SetActive(true);
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
+            level.gameObject.SetActive(false);
+        }
+        else
         {
             Animal.GetComponent<Animator>().SetBool("Happy", false);
             currentQuestion = Random.Range(0, QnA.Count);
@@ -273,27 +203,34 @@ public class CountScript : MonoBehaviour
             QuestionSprite = QnA[currentQuestion].Objects;
             QuestionImg.GetComponent<Image>().sprite = QuestionSprite;
             SetAnswers();
-
-            CheckStickers();
+            SetTaskNumber();
+            taskNumber.text = task + "/5";
         }
-        else
-        {
-            Animal.GetComponent<Animator>().SetBool("Dance", true);
-            Debug.Log("Out of Questions");
-            GameOver();
-
-            CheckStickers();
-        }
-
-
     }
 
-
-    // ResetScore will be needed when/if opening LevelEnd is bound to score; score needs to be reset before replaying, so LevelEnd is not opened at the level start
-    // and also so LevelEnd can be reopened when the level is replayed.
     public void ResetScore()
     {
         score = 0;
-        ScoreTxt.text = score + "/" + totalQuestions;
+        taskNumber.text = task + "/ 5";
+    }
+    private void Start()
+    {
+        SetWorldIndex();
+        Load();
+        completedButton = starCount.completedButton;
+        clearButton = starCount.clearButton;
+        CountStars();
+        UpdateLevelButtons();
+        totalQuestions = QnA.Count;
+        levelEnd.gameObject.SetActive(false);
+        QuestionImg.SetActive(true);
+        ResetTask();
+        SetTaskNumber();
+        taskNumber.text = task + "/5";
+    }
+
+    void Update()
+    {
+
     }
 }
