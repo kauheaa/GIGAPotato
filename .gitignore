@@ -93,21 +93,3 @@ fmod_editor.log
 # FMOD 1.10.x (Legacy)
 /Assets/FMODAssets/*
 /Assets/FMODStudioCache.meta
-
-$ echo "fmod.log" >> .gitignore
-$ echo "fmod_editor.log" >> .gitignore
-$ echo "/[Aa]ssets/**/FMODStudioCache.asset" >> .gitignore
-$ echo "/[Aa]ssets/**/FMODStudioCache.asset.meta" >> .gitignore
-$ echo "/[Aa]ssets/Plugins/FMOD/Cache.meta" >> .gitignore
-$ echo "/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta" >> .gitignore
-
-$ git rm --cached fmod.log
-$ git rm --cached fmod_editor.log
-$ git rm --cached /[Aa]ssets/**/FMODStudioCache.asset
-$ git rm --/[Aa]ssets/**/FMODStudioCache.asset.meta
-$ git rm --/[Aa]ssets/Plugins/FMOD/Cache.meta
-$ git rm --/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
-fmod_editor.log
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-fmod_editor.log
-fmod_editor.log
