@@ -176,7 +176,21 @@ public class StickerBook : MonoBehaviour
         }
     }
 
+    public void ResetButtonFunction()
+    {
+        canvasControl.OpenResetWarning();
+    }
+    
+    public void CloseResetWarning()
+    {
+        canvasControl.CloseResetWarning();
+    }
 
+    public void ResetWarningOK()
+    {
+        ResetStickers();
+        CloseResetWarning();
+    }
 
     public void UpdateStickers()
     {
