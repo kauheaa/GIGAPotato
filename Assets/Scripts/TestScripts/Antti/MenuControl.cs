@@ -26,7 +26,7 @@ public class MenuControl : MonoBehaviour
     public DivideScript div2;
     public DivideScript div3;
     //[SerializeField] private Transform settingsMenu;
-    //[SerializeField] private Transform resetWarning;
+    [SerializeField] private Transform resetWarning;
     [SerializeField] private Transform stickerBook;
     [SerializeField] private Transform farmWorld;
     [SerializeField] private Transform additionCat;
@@ -384,10 +384,15 @@ public class MenuControl : MonoBehaviour
 
 
 
-    //public void OpenResetWarning()
-    //{
-    //    resetWarning.gameObject.SetActive(true);
-    //}
+    public void OpenResetWarning()
+    {
+        resetWarning.gameObject.SetActive(true);
+    }
+
+    public void CloseResetWarning()
+    {
+        resetWarning.gameObject.SetActive(false);
+    }
 
     public void MoveToJungle()
     {

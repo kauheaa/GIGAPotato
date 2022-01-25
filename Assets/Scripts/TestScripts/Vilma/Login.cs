@@ -150,7 +150,7 @@ public class Login : MonoBehaviour
             }
             else
             {
-                usernameError.text = "";
+                loginError.text = "";
             }
             Debug.Log("User login failed. Error number #" + www.text);
         }
@@ -192,7 +192,7 @@ public class Login : MonoBehaviour
         if (wrongPassword == true)
         {
             loginError.text = "INCORRECT PASSWORD";
-            if (nameField.text != tempName.text)
+            if (tempPassword.text != passwordField.text)
             {
                 wrongPassword = false;
             }
