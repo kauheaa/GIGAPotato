@@ -41,11 +41,7 @@ public class SubScript : MonoBehaviour
     {
         starCount.SubStarCount();
     }
-    public void Save()                          // Saves Stickers and StarCounts
-    {
-        book.SaveBook();
-    }
-    public void Load()                          // Loads saved Stickers and StarCounts or creates empty save if there is none
+    public void Load()                  // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
         book.LoadBook();
     }
@@ -56,7 +52,7 @@ public class SubScript : MonoBehaviour
 
     public void SetWorldIndex()
     {
-        worldIndex = book.worldIndex;
+        worldIndex = starCount.worldIndex;
     }
 
     public void SetLevelIndex(int level)
@@ -73,11 +69,6 @@ public class SubScript : MonoBehaviour
     {
         subScore += 1;
         SetTaskNumber();
-    }
-
-    public void AnimatedLevelEnd()
-    {
-
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -584,18 +575,16 @@ public class SubScript : MonoBehaviour
     {
         if (Alt1.text == finalValue.ToString())
         {
-            ONE.gameObject.SetActive(true);
+            button1.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            ONE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt1.text != finalValue.ToString())
         {
-            ONE.gameObject.SetActive(true);
+            button1.GetComponent<Animator>().SetBool("Incorrect", true);
             button1.interactable = false;
-            ONE.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -604,18 +593,16 @@ public class SubScript : MonoBehaviour
 
         if (Alt2.text == finalValue.ToString())
         {
-            TWO.gameObject.SetActive(true);
+            button2.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            TWO.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt2.text != finalValue.ToString())
         {
-            TWO.gameObject.SetActive(true);
+            button2.GetComponent<Animator>().SetBool("Incorrect", true);
             button2.interactable = false;
-            TWO.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -623,18 +610,16 @@ public class SubScript : MonoBehaviour
     {
         if (Alt3.text == finalValue.ToString())
         {
-            THREE.gameObject.SetActive(true);
+            button3.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            THREE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt3.text != finalValue.ToString())
         {
-            THREE.gameObject.SetActive(true);
+            button3.GetComponent<Animator>().SetBool("Incorrect", true);
             button3.interactable = false;
-            THREE.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -741,12 +726,15 @@ public class SubScript : MonoBehaviour
                 {
                     case 1:
                         book.UnlockCarrot();
+                        book.OpenSpread1();
                         break;
                     case 2:
                         book.UnlockBucket();
+                        book.OpenSpread1();
                         break;
                     case 3:
                         book.UnlockBunny();
+                        book.OpenSpread1();
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -758,12 +746,15 @@ public class SubScript : MonoBehaviour
                 {
                     case 4:
                         book.UnlockCoconut();
+                        book.OpenSpread3();
                         break;
                     case 5:
                         book.UnlockOculars();
+                        book.OpenSpread3();
                         break;
                     case 6:
                         book.UnlockSloth();
+                        book.OpenSpread3();
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -775,12 +766,15 @@ public class SubScript : MonoBehaviour
                 {
                     case 7:
                         book.UnlockStar();
+                        book.OpenSpread5();
                         break;
                     case 8:
                         book.UnlockPlanet();
+                        book.OpenSpread5();
                         break;
                     case 9:
                         book.UnlockCow();
+                        book.OpenSpread5();
                         break;
                     default:
                         Debug.Log("No level index set");
@@ -795,6 +789,12 @@ public class SubScript : MonoBehaviour
  
     public void ResetTask()
     {
+        button1.GetComponent<Animator>().SetBool("Correct", false);
+        button2.GetComponent<Animator>().SetBool("Correct", false);
+        button3.GetComponent<Animator>().SetBool("Correct", false);
+        button1.GetComponent<Animator>().SetBool("Incorrect", false);
+        button2.GetComponent<Animator>().SetBool("Incorrect", false);
+        button3.GetComponent<Animator>().SetBool("Incorrect", false);
         if (subScore >= 5)
         {
             UpdateStickers();

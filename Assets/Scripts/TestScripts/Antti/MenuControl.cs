@@ -8,16 +8,26 @@ using UnityEngine.UI;
 public class MenuControl : MonoBehaviour
 {
     public StickerBook book;
+    public StarCount starCount;
     public GameObject stickerbookButton;
-    [SerializeField] private Transform settingsMenu;
-    [SerializeField] private Transform resetWarning;
+    public SumScript sum1;
+    public SumScript sum2;
+    public SumScript sum3;
+    public SubScript sub1;
+    public SubScript sub2;
+    public SubScript sub3;
+    public CountScript count1;
+    public CountScript count2;
+    public CountScript count3;
+    public MultiplyScript mult1;
+    public MultiplyScript mult2;
+    public MultiplyScript mult3;
+    public DivideScript div1;
+    public DivideScript div2;
+    public DivideScript div3;
+    //[SerializeField] private Transform settingsMenu;
+    //[SerializeField] private Transform resetWarning;
     [SerializeField] private Transform stickerBook;
-    [SerializeField] private Transform stickerSpreadFirst;
-    [SerializeField] private Transform stickerSpreadMid1;
-    [SerializeField] private Transform stickerSpreadMid2;
-    [SerializeField] private Transform stickerSpreadMid3;
-    [SerializeField] private Transform stickerSpreadMid4;
-    [SerializeField] private Transform stickerSpreadLast;
     [SerializeField] private Transform farmWorld;
     [SerializeField] private Transform additionCat;
     [SerializeField] private Transform substractCat;
@@ -90,17 +100,294 @@ public class MenuControl : MonoBehaviour
     private void Start()
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
+        stickerBook.gameObject.SetActive(true);
+        if (DatabaseManager.LoggedIn == true)
+        {
+            stickerBook.gameObject.SetActive(false);
+        }
+
     }
 
-    private void Update()
+    public void ResetSumScore() // resets task score in all sum scripts
     {
-        PauseGame();
+        sum1.ResetScore();
+        sum2.ResetScore();
+        sum3.ResetScore();
     }
 
-    public void OpenResetWarning()
+    public void ResetSubScore() // resets task score in all sub scripts
     {
-        resetWarning.gameObject.SetActive(true);
+        sub1.ResetScore();
+        sub2.ResetScore();
+        sub3.ResetScore();
     }
+
+    public void ResetCountScore() // resets task score in all count scripts
+    {
+        count1.ResetScore();
+        count2.ResetScore();
+        count3.ResetScore();
+    }
+
+    public void ResetMultScore() // resets task score in all mult scripts
+    {
+        mult1.ResetScore();
+        mult2.ResetScore();
+        mult3.ResetScore();
+    }
+
+    public void ResetDivScore() // resets task score in all div scripts
+    {
+        div1.ResetScore();
+        div2.ResetScore();
+        div3.ResetScore();
+    }
+
+                                            // LEVEL SELECTION BUTTONS
+    public void AddLevel1Button()           // Addition level 1 button
+    {
+        addLevel1Canvas.gameObject.SetActive(true);
+        ResetSumScore();
+        addLevel1Start.gameObject.SetActive(true);
+        addLevel1Level.gameObject.SetActive(true);
+        addLevel1End.gameObject.SetActive(false);
+    }
+
+    public void AddLevel2Button()           //Addition level 2 button
+    {
+        addLevel2Canvas.gameObject.SetActive(true);
+        ResetSumScore();
+        addLevel2Start.gameObject.SetActive(true);
+        addLevel2Level.gameObject.SetActive(true);
+        addLevel2End.gameObject.SetActive(false);
+    }
+
+    public void AddLevel3Button()           //Addition level 3 button
+    {
+        addLevel3Canvas.gameObject.SetActive(true);
+        ResetSumScore();
+        addLevel3Start.gameObject.SetActive(true);
+        addLevel3Level.gameObject.SetActive(true);
+        addLevel3End.gameObject.SetActive(false);
+    }
+
+    public void SubLevel1Button()           // Sub level 1 button
+    {
+        subLevel1Canvas.gameObject.SetActive(true);
+        ResetSubScore();
+        subLevel1Start.gameObject.SetActive(true);
+        subLevel1Level.gameObject.SetActive(true);
+        subLevel1End.gameObject.SetActive(false);
+    }
+
+    public void SubLevel2Button()           //Sub level 2 button
+    {
+        subLevel2Canvas.gameObject.SetActive(true);
+        ResetSubScore();
+        subLevel2Start.gameObject.SetActive(true);
+        subLevel2Level.gameObject.SetActive(true);
+        subLevel2End.gameObject.SetActive(false);
+    }
+
+    public void SubLevel3Button()           //Sub level 3 button
+    {
+        subLevel3Canvas.gameObject.SetActive(true);
+        ResetSubScore();
+        subLevel3Start.gameObject.SetActive(true);
+        subLevel3Level.gameObject.SetActive(true);
+        subLevel3End.gameObject.SetActive(false);
+    }
+
+    public void CountLevel1Button()         // Count level 1 button
+    {
+        countLevel1Canvas.gameObject.SetActive(true);
+        ResetCountScore();
+        countLevel1Start.gameObject.SetActive(true);
+        countLevel1Level.gameObject.SetActive(true);
+        countLevel1End.gameObject.SetActive(false);
+    }
+
+    public void CountLevel2Button()         //Count level 2 button
+    {
+        countLevel2Canvas.gameObject.SetActive(true);
+        ResetCountScore();
+        countLevel2Start.gameObject.SetActive(true);
+        countLevel2Level.gameObject.SetActive(true);
+        countLevel2End.gameObject.SetActive(false);
+    }
+
+    public void CountLevel3Button()         //Count level 3 button
+    {
+        countLevel3Canvas.gameObject.SetActive(true);
+        ResetCountScore();
+        countLevel3Start.gameObject.SetActive(true);
+        countLevel3Level.gameObject.SetActive(true);
+        countLevel3End.gameObject.SetActive(false);
+    }
+
+    public void MultLevel1Button()          // Mult level 1 button
+    {
+        multLevel1Canvas.gameObject.SetActive(true);
+        ResetMultScore();
+        multLevel1Start.gameObject.SetActive(true);
+        multLevel1Level.gameObject.SetActive(true);
+        multLevel1End.gameObject.SetActive(false);
+    }
+
+    public void MultLevel2Button()          //Mult level 2 button
+    {
+        multLevel2Canvas.gameObject.SetActive(true);
+        ResetMultScore();
+        multLevel2Start.gameObject.SetActive(true);
+        multLevel2Level.gameObject.SetActive(true);
+        multLevel2End.gameObject.SetActive(false);
+    }
+
+    public void MultLevel3Button()          //Mult level 3 button
+    {
+        multLevel3Canvas.gameObject.SetActive(true);
+        ResetMultScore();
+        multLevel3Start.gameObject.SetActive(true);
+        multLevel3Level.gameObject.SetActive(true);
+        multLevel3End.gameObject.SetActive(false);
+    }
+
+    public void DivLevel1Button()           // Div level 1 button
+    {
+        divLevel1Canvas.gameObject.SetActive(true);
+        ResetDivScore();
+        divLevel1Start.gameObject.SetActive(true);
+        divLevel1Level.gameObject.SetActive(true);
+        divLevel1End.gameObject.SetActive(false);
+    }
+
+    public void DivLevel2Button()           // Div level 2 button
+    {
+        divLevel2Canvas.gameObject.SetActive(true);
+        ResetDivScore();
+        divLevel2Start.gameObject.SetActive(true);
+        divLevel2Level.gameObject.SetActive(true);
+        divLevel2End.gameObject.SetActive(false);
+    }
+
+    public void DivLevel3Button()           // Div level 3 button
+    {
+        divLevel3Canvas.gameObject.SetActive(true);
+        ResetDivScore();
+        divLevel3Start.gameObject.SetActive(true);
+        divLevel3Level.gameObject.SetActive(true);
+        divLevel3End.gameObject.SetActive(false);
+    }
+
+                                             // NEXT LEVEL BUTTONS
+
+    public void AddLevel1NextButton()       // Add level 1-2 Next button
+    {
+        addLevel1Canvas.gameObject.SetActive(false);
+        addLevel2Canvas.gameObject.SetActive(true);
+        sum2.StartLevel();
+        addLevel2End.gameObject.SetActive(false);
+        addLevel2Start.gameObject.SetActive(false);
+        addLevel2Level.gameObject.SetActive(true);
+    }
+
+    public void AddLevel2NextButton()       // Add level 2-3 Next button
+    {
+        addLevel2Canvas.gameObject.SetActive(false);
+        addLevel3Canvas.gameObject.SetActive(true);
+        sum3.StartLevel();
+        addLevel3End.gameObject.SetActive(false);
+        addLevel3Start.gameObject.SetActive(false);
+        addLevel3Level.gameObject.SetActive(true);
+    }
+
+    public void SubLevel1NextButton()       // Sub level 1-2 Next button
+    {
+        subLevel1Canvas.gameObject.SetActive(false);
+        subLevel2Canvas.gameObject.SetActive(true);
+        sub2.StartLevel();
+        subLevel2End.gameObject.SetActive(false);
+        subLevel2Start.gameObject.SetActive(false);
+        subLevel2Level.gameObject.SetActive(true);
+    }
+
+    public void SubLevel2NextButton()       // Sub level 2-3 Next button
+    {
+        subLevel2Canvas.gameObject.SetActive(false);
+        subLevel3Canvas.gameObject.SetActive(true);
+        sub3.StartLevel();
+        subLevel3End.gameObject.SetActive(false);
+        subLevel3Start.gameObject.SetActive(false);
+        subLevel3Level.gameObject.SetActive(true);
+    }
+
+    public void CountLevel1NextButton()       // Countlevel 1-2 Next button
+    {
+        countLevel1Canvas.gameObject.SetActive(false);
+        countLevel2Canvas.gameObject.SetActive(true);
+        count2.StartCount();
+        countLevel2End.gameObject.SetActive(false);
+        countLevel2Start.gameObject.SetActive(false);
+        countLevel2Level.gameObject.SetActive(true);
+    }
+
+    public void CountLevel2NextButton()       // Countlevel 2-3 Next button
+    {
+        countLevel2Canvas.gameObject.SetActive(false);
+        countLevel3Canvas.gameObject.SetActive(true);
+        count3.StartCount();
+        countLevel3End.gameObject.SetActive(false);
+        countLevel3Start.gameObject.SetActive(false);
+        countLevel3Level.gameObject.SetActive(true);
+    }
+
+    public void MultLevel1NextButton()       // Mult level 1-2 Next button
+    {
+        multLevel1Canvas.gameObject.SetActive(false);
+        multLevel2Canvas.gameObject.SetActive(true);
+        mult2.StartLevel();
+        multLevel2End.gameObject.SetActive(false);
+        multLevel2Start.gameObject.SetActive(false);
+        multLevel2Level.gameObject.SetActive(true);
+    }
+
+    public void MultLevel2NextButton()       // Mult level 2-3 Next button
+    {
+        multLevel2Canvas.gameObject.SetActive(false);
+        multLevel3Canvas.gameObject.SetActive(true);
+        mult3.StartLevel();
+        multLevel3End.gameObject.SetActive(false);
+        multLevel3Start.gameObject.SetActive(false);
+        multLevel3Level.gameObject.SetActive(true);
+    }
+
+    public void DivLevel1NextButton()       // Div level 1-2 Next button
+    {
+        divLevel1Canvas.gameObject.SetActive(false);
+        divLevel2Canvas.gameObject.SetActive(true);
+        div2.StartLevel();
+        divLevel2End.gameObject.SetActive(false);
+        divLevel2Start.gameObject.SetActive(false);
+        divLevel2Level.gameObject.SetActive(true);
+    }
+
+    public void DivLevel2NextButton()       // Div level 2-3 Next button
+    {
+        divLevel2Canvas.gameObject.SetActive(false);
+        divLevel3Canvas.gameObject.SetActive(true);
+        div3.StartLevel();
+        divLevel3End.gameObject.SetActive(false);
+        divLevel3Start.gameObject.SetActive(false);
+        divLevel3Level.gameObject.SetActive(true);
+    }
+
+
+
+
+    //public void OpenResetWarning()
+    //{
+    //    resetWarning.gameObject.SetActive(true);
+    //}
 
     public void MoveToJungle()
     {
@@ -130,69 +417,6 @@ public class MenuControl : MonoBehaviour
     public void CloseStickerBook()
     {
         stickerBook.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadFirst()
-    {
-        stickerSpreadFirst.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-        stickerSpreadMid3.gameObject.SetActive(false);
-        stickerSpreadMid2.gameObject.SetActive(false);
-        stickerSpreadMid1.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadFirst()
-    {
-        stickerSpreadFirst.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid1()
-    {
-        stickerSpreadMid1.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-        stickerSpreadMid3.gameObject.SetActive(false);
-        stickerSpreadMid2.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid1 ()
-    {
-        stickerSpreadMid1.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid2()
-    {
-        stickerSpreadMid2.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-        stickerSpreadMid3.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid2()
-    {
-        stickerSpreadMid2.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid3()
-    {
-        stickerSpreadMid3.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-        stickerSpreadMid4.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid3()
-    {
-        stickerSpreadMid3.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadMid4()
-    {
-        stickerSpreadMid4.gameObject.SetActive(true);
-        stickerSpreadLast.gameObject.SetActive(false);
-    }
-    public void CloseStickerSpreadMid4()
-    {
-        stickerSpreadMid4.gameObject.SetActive(false);
-    }
-    public void OpenStickerSpreadLast()
-    {
-        stickerSpreadLast.gameObject.SetActive(true);
-    }
-    public void CloseStickerSpreadLast()
-    {
-        stickerSpreadLast.gameObject.SetActive(false);
     }
 
 
@@ -259,11 +483,8 @@ public class MenuControl : MonoBehaviour
         divideCat.gameObject.SetActive(false);
     }
 
-    /*Addition level 1 buttons*/
-    public void OpenAddLevel1Canvas()
-    {
-        addLevel1Canvas.gameObject.SetActive(true);
-    }
+
+
     public void CloseAddLevel1Canvas()
     {
         addLevel1Canvas.gameObject.SetActive(false);
@@ -298,6 +519,7 @@ public class MenuControl : MonoBehaviour
     public void OpenAddLevel2Canvas()
     {
         addLevel2Canvas.gameObject.SetActive(true);
+        ResetSumScore();
     }
     public void CloseAddLevel2Canvas()
     {
@@ -333,6 +555,7 @@ public class MenuControl : MonoBehaviour
     public void OpenAddLevel3Canvas()
     {
         addLevel3Canvas.gameObject.SetActive(true);
+        ResetSumScore();
     }
     public void CloseAddLevel3Canvas()
     {

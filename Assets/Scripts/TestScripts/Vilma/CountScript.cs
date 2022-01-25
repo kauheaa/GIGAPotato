@@ -34,10 +34,6 @@ public class CountScript : MonoBehaviour
     {
         starCount.CountStarCount();
     }
-    public void Save()              // Saves Stickers and StarCounts
-    {
-        book.SaveBook();
-    }
     public void Load()              // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
         book.LoadBook();
@@ -48,7 +44,7 @@ public class CountScript : MonoBehaviour
     }
     public void SetWorldIndex()
     {
-        worldIndex = book.worldIndex;
+        worldIndex = starCount.worldIndex;
     }
     public void SetLevelIndex(int level)
     {
@@ -101,11 +97,14 @@ public class CountScript : MonoBehaviour
                 {
                     case 1:
                         book.UnlockThreeCorn();
+                        book.OpenSpread2();
                         break;
                     case 2:
                         book.UnlockTwoCorn();
+                        book.OpenSpread2();
                         break;
                     case 3:
+                        book.OpenSpread2();
                         book.UnlockLamb();
                         break;
                     default:
@@ -171,8 +170,10 @@ public class CountScript : MonoBehaviour
             options[i].GetComponent<Button>().interactable = true;
             options[i].GetComponent<Image>().sprite = options[i].GetComponent<CountAnswerScript>().blueButton;
             options[i].GetComponent<CountAnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
-            
+            options[i].transform.GetChild(1).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
+            options[i].GetComponent<Animator>().SetBool("Correct", false);
+            options[i].GetComponent<Animator>().SetBool("Incorrect", false);
+
             if(QnA[currentQuestion].CorrectAnswer == i+1)
             {
                 options[i].GetComponent<CountAnswerScript>().isCorrect = true;
