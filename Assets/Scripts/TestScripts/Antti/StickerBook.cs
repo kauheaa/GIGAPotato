@@ -8,6 +8,7 @@ public class StickerBook : MonoBehaviour
     public MenuControl canvasControl;
 
     public GameObject stickerbookButton; // UI canvas button to open sticker book
+    public Button closeBookButton;
 
     public GameObject loginButton;  // button to open log in spread
     public GameObject signinButton; // button to open register spread
@@ -143,6 +144,7 @@ public class StickerBook : MonoBehaviour
         {
             playerDisplay.text = DatabaseManager.username;  // updates name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedInAvatar;    // updates logged in avatar
+            closeBookButton.interactable = true;
             playerStats.gameObject.SetActive(true);
             loginButton.gameObject.SetActive(false);        // hides login button
             signinButton.gameObject.SetActive(false);       // hides register button
@@ -153,6 +155,7 @@ public class StickerBook : MonoBehaviour
         {
             playerDisplay.text = "NO ONE...";               // resets name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;   // updates logged out avatar
+            closeBookButton.interactable = false;
             playerStats.gameObject.SetActive(false);
             loginButton.gameObject.SetActive(true);         // reveals login button
             signinButton.gameObject.SetActive(true);        // reveals register button
