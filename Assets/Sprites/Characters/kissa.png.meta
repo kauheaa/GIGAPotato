@@ -4,40 +4,28 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 672213136768971422
-    second: korvat
+    second: "p\xE4\xE41"
   - first:
       213: 7619965409434552934
     second: torso
   - first:
       213: 1763073683386087617
-    second: "p\xE4\xE41"
-  - first:
-      213: 6343752578290400804
-    second: torso
-  - first:
-      213: 8896816794368176624
     second: "k\xE4siVasen"
   - first:
-      213: -4789958849288535251
+      213: 6343752578290400804
     second: "k\xE4siOikea"
+  - first:
+      213: 8896816794368176624
+    second: "p\xE4\xE42"
+  - first:
+      213: -4789958849288535251
+    second: "h\xE4nt\xE4"
   - first:
       213: -7695221651918951281
-    second: "p\xE4\xE43"
+    second: jalkaVasen
   - first:
       213: 3414180193652723133
-    second: "p\xE4\xE42"
-  - first:
-      213: 6250784262022388946
-    second: "k\xE4siOikea"
-  - first:
-      213: -2052107140044240154
-    second: kasvot
-  - first:
-      213: 6826209279416738714
-    second: "p\xE4\xE43"
-  - first:
-      213: 7096176615765637303
-    second: "p\xE4\xE42"
+    second: jalkaOikea
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: korvat
+      name: "p\xE4\xE41"
       rect:
         serializedVersion: 2
-        x: 64
-        y: 455
-        width: 197
-        height: 88
+        x: 15
+        y: 328
+        width: 204
+        height: 253
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,13 +136,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "p\xE4\xE41"
+      name: torso
       rect:
         serializedVersion: 2
-        x: 352
-        y: 312
-        width: 204
-        height: 253
+        x: 275
+        y: 350
+        width: 179
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a4c16ea2e8fb960800000000000000
+      internalID: 7619965409434552934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "k\xE4siVasen"
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 471
+        width: 79
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,13 +178,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: torso
+      name: "k\xE4siOikea"
       rect:
         serializedVersion: 2
-        x: 612
-        y: 334
-        width: 179
-        height: 161
+        x: 673
+        y: 462
+        width: 82
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,13 +199,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "k\xE4siVasen"
+      name: "p\xE4\xE42"
       rect:
         serializedVersion: 2
-        x: 856
-        y: 455
-        width: 79
-        height: 96
+        x: 123
+        y: 18
+        width: 204
+        height: 253
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,13 +220,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "k\xE4siOikea"
+      name: "h\xE4nt\xE4"
       rect:
         serializedVersion: 2
-        x: 1010
-        y: 446
-        width: 82
-        height: 99
+        x: 682
+        y: 237
+        width: 51
+        height: 163
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,13 +241,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "p\xE4\xE43"
+      name: jalkaVasen
       rect:
         serializedVersion: 2
-        x: 57
-        y: 170
-        width: 208
-        height: 261
+        x: 457
+        y: 65
+        width: 63
+        height: 101
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,95 +262,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "p\xE4\xE42"
-      rect:
-        serializedVersion: 2
-        x: 462
-        y: 2
-        width: 204
-        height: 253
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dbd48d90cca916f20800000000000000
-      internalID: 3414180193652723133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "h\xE4nt\xE4"
-      rect:
-        serializedVersion: 2
-        x: 1019
-        y: 221
-        width: 51
-        height: 163
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dc52711b2f3fb650800000000000000
-      internalID: 6250784262022388946
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kasvot
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 12
-        width: 157
-        height: 129
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6eace9cbd637583e0800000000000000
-      internalID: -2052107140044240154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jalkaVasen
-      rect:
-        serializedVersion: 2
-        x: 794
-        y: 49
-        width: 63
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a932c1e3c219bbe50800000000000000
-      internalID: 6826209279416738714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: jalkaOikea
       rect:
         serializedVersion: 2
-        x: 979
-        y: 63
+        x: 642
+        y: 79
         width: 64
         height: 107
       alignment: 0
@@ -351,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b8f42ee80faa7260800000000000000
-      internalID: 7096176615765637303
+      spriteID: dbd48d90cca916f20800000000000000
+      internalID: 3414180193652723133
       vertices: []
       indices: 
       edges: []
