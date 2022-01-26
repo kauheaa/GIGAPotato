@@ -233,7 +233,7 @@ public class CalculateS : MonoBehaviour
         score += 1;
     }
 
-    /*public void SaveScore()
+    /*public void saveScore()
     {
         saveScore.SaveSumScore(S);
     }

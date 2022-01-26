@@ -1,172 +1,536 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SubScript : MonoBehaviour
 {
-    int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;
-    //[SerializeField] public int sumScore = 0;
-    //[SerializeField] public int divScore = 0;
-    //[SerializeField] public int multScore = 0;
-    [SerializeField] public int subScore = 0;
-    [SerializeField] public int subStarCount = 0;
-    [SerializeField] public int carrotStickerScore = 0;
-    [SerializeField] public int bucketStickerScore = 0;
-    [SerializeField] public int bunnyStickerScore = 0;
-    public int levelIndex = 0;
-    [SerializeField] private Transform switchOff, switchOn;
-    public Text FirstValue, SecondValue, Function, Alt1, Alt2, Alt3, AnswerSpot, scoreCount;
-    public GameObject ONE, TWO, THREE, appleSpawn, apple, stickerOne, stickerTwo, stickerThree;
-    public Sprite oneStar, twoStar, threeStar;
-    public GameObject subStars, menuStars;
-    public Button button1, button2, button3;
-    public Sprite blueButton, redButton, greenButton;
+    public StickerBook book; // StickerBook
+    public StarCount starCount; // StarCount
 
+    // MENU
+    public GameObject levelButton1, levelButton2, levelButton3; // Category and Level buttons which' sprites change when category or level is completed
+    public Sprite clearButton, completedButton; // Sprite for completed level and category button
 
-    public void SaveScore()
+    // LEVEL
+    public int worldIndex = 0;                           // Number defining world (1 = Farm, 2 = Jungle, 3 = Space)
+    public int levelIndex = 0;                           // Number of level in category
+    public GameObject Animal;                            // Character that reacts to answers
+    [SerializeField] private Transform level, levelEnd;  // level and level end canvas that are opened and closed when score is 5
+    public GameObject animatedLevelEnd;                  // LevelEnd with flying sticker and Next button, different if level has been completed before
+    [SerializeField] public int subScore = 0;            // Temporary level score, reset after unlocking sticker or restarting level
+    public int task = 0;                                 // Tells the running number of the current task in level
+
+    // TASK
+    int firstValue, secondValue, thirdValue, fourthValue, tempValue, finalValue, Alternative1, Alternative2;     // Task calculation values
+    public Text FirstValue, SecondValue, Function, AnswerSpot, taskNumber;              // Text boxes for task calculation values
+
+    // ANSWER BUTTONS
+    public Text Alt1, Alt2, Alt3;                       // Text boxes for answer option values
+    public Button button1, button2, button3;            // Task answer buttons
+    public GameObject ONE, TWO, THREE;                  // Answer button's children image object that are unlocked when answer is clicked, sprite changes to red or green
+    public Sprite blueButton, redButton, greenButton;   // Sprites for answer buttons
+
+    // COUNTABLE OBJECT
+    public GameObject firstObjectSlot;      // Countable object that changes based on task's firstValue
+    public GameObject secondObjectSlot;     // Countable object that changes based on task's secondValue
+    public Sprite[] objectSprite;           // List of countable object sprites for different numbers
+
+    public void CountStars()                    // Checks StarCounts and updates stars
     {
-        saveScore.SaveSubScore(this);
-
-        //luo väliaikaisen listan, joka etsii hierarkiassa olevat subScore instanssit ja käy läpi,
-        //käy läpi kaikki löytämänsä instanssit ja käskee niitä hakemaan tietokannasta kaikki tallennetut arvot;
-        //näin kaikissa subScore-instansseissa näkyy kaikkien tarrojen "StickerScore" jolloin seuraava tallennus
-        //ei ylikirjoita arvoja nollaksi 
-        SubScript[] tempArray = GameObject.FindObjectsOfType<SubScript>();
-        foreach (SubScript i in tempArray)
-        {
-            i.LoadScore();
-        }
-
+        starCount.SubStarCount();
     }
-    public void LoadScore()
+    public void Load()                  // Loads saved Stickers and StarCounts or creates empty save if there is none
     {
-        scoreData data = saveScore.LoadSubScore();
-        subStarCount = data.subStarCount;
-        carrotStickerScore = data.carrotStickerScore;
-        bucketStickerScore = data.bucketStickerScore;
-        bunnyStickerScore = data.bunnyStickerScore;
-        Debug.Log("carrot: " + carrotStickerScore + " bucket: " + bucketStickerScore + " bunny: " + bunnyStickerScore);
-
+        book.LoadBook();
     }
-
-    public void SetLevelIndex(int index)
+    public void SetTaskNumber()
     {
-        levelIndex = index;
+        task = subScore + 1;
     }
 
-    public void ResetScore()
+    public void SetWorldIndex()
+    {
+        worldIndex = starCount.worldIndex;
+    }
+
+    public void SetLevelIndex(int level)
+    {
+        levelIndex = level;
+    }
+
+    public void ResetScore() // resets temporart level score
     {
         subScore = 0;
-        scoreCount.text = subScore.ToString();
     }
 
-    private void Start()
+    public void Score() // score defines when level end pops up
     {
-        LoadScore();
-        AnswerSpot.text = "?";
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        //   score = int.Parse(scoreCount.text);
-
-        subStarCount = carrotStickerScore + bucketStickerScore + bunnyStickerScore;
-
-        if (carrotStickerScore == 1)
-        {
-            stickerOne.gameObject.SetActive(true);
-        }
-        if (bucketStickerScore == 1)
-        {
-            stickerTwo.gameObject.SetActive(true);
-        }
-        if (bunnyStickerScore == 1)
-        {
-            stickerThree.gameObject.SetActive(true);
-        }
-        if (subStarCount == 1)
-        {
-            subStars.GetComponent<Image>().sprite = oneStar;
-            menuStars.GetComponent<Image>().sprite = oneStar;
-        }
-        if (subStarCount == 2)
-        {
-            subStars.GetComponent<Image>().sprite = twoStar;
-            menuStars.GetComponent<Image>().sprite = twoStar;
-        }
-        if (subStarCount == 3)
-        {
-            subStars.GetComponent<Image>().sprite = threeStar;
-            menuStars.GetComponent<Image>().sprite = threeStar;
-        }
+        subScore += 1;
+        SetTaskNumber();
     }
 
-    public void SubFarm()
+    public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
     {
-        if (levelIndex == 1)
+        if (worldIndex == 1)
         {
-            firstValue = Random.Range(6, 10);
-            secondValue = Random.Range(1, 5);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
+            for (int i = 0; i < objectSprite.Length; i++)
+            {
+                //FIRST CALCULATION OBJECT SPRITE
+                switch (firstValue) //first sprite when first value is 10 or smaller
+                {
+                    case 0:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
+                        break;
+                    case 1:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[1];
+                        break;
+                    case 2:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[2];
+                        break;
+                    case 3:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[3];
+                        break;
+                    case 4:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[4];
+                        break;
+                    case 5:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[5];
+                        break;
+                    case 6:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[6];
+                        break;
+                    case 7:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[7];
+                        break;
+                    case 8:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[8];
+                        break;
+                    case 9:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[9];
+                        break;
+                    case 10:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[10];
+                        break;
+                    case 11:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[11];
+                        break;
+                    case 12:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[12];
+                        break;
+                    case 13:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[13];
+                        break;
+                    case 14:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[14];
+                        break;
+                    case 15:
+                        firstObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
+                        break;
+                }
+
+                //SECOND OBJECT SPRITE
+                switch (secondValue) //second sprite when first value is 10 or smaller
+                {
+                    case 0:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[0];
+                        break;
+                    case 1:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[1];
+                        break;
+                    case 2:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[2];
+                        break;
+                    case 3:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[3];
+                        break;
+                    case 4:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[4];
+                        break;
+                    case 5:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[5];
+                        break;
+                    case 6:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[6];
+                        break;
+                    case 7:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[7];
+                        break;
+                    case 8:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[8];
+                        break;
+                    case 9:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[9];
+                        break;
+                    case 10:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[10];
+                        break;
+                    case 11:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[11];
+                        break;
+                    case 12:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[12];
+                        break;
+                    case 13:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[13];
+                        break;
+                    case 14:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[14];
+                        break;
+                    case 15:
+                        secondObjectSlot.GetComponent<Image>().sprite = objectSprite[15];
+                        break;
+                }
+            }
+            //Debug.Log("firstvalue: " + firstValue + ", secondvalue: " + secondValue);
         }
-        if (levelIndex == 2)
+    }
+
+    public void GenerateTask()
+    {
+        switch (levelIndex)
         {
-            firstValue = Random.Range(11, 15);
-            secondValue = Random.Range(1, 10);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 3)
-        {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(1, 19);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 4)
-        {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 5)
-        {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 6)
-        {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 7)
-        {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 8)
-        {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
-        }
-        if (levelIndex == 9)
-        {
-            firstValue = Random.Range(20, 25);
-            secondValue = Random.Range(20, 25);
-            FirstValue.text = firstValue.ToString();
-            SecondValue.text = secondValue.ToString();
+            case 1:
+                // Function values in level 1
+                firstValue = Random.Range(0, 5);
+                secondValue = Random.Range(0, 5);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                // First Alternative
+                tempValue = Random.Range(0, 5);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 5);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(1, 5);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(1, 5);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 2:
+                // Function values in level 2
+                firstValue = Random.Range(0, 10);
+                secondValue = Random.Range(0, 10);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                // First Alternative
+                tempValue = Random.Range(0, 10);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 10);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(1, 10);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(1, 10);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 3:
+                // Function values in level 3
+                firstValue = Random.Range(0, 15);
+                secondValue = Random.Range(0, 15);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+                
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+                
+                // First Alternative
+                tempValue = Random.Range(0, 15);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 15);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(1, 15);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(1, 15);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 4:
+                // Function values in level 4
+                firstValue = Random.Range(10, 20);
+                secondValue = Random.Range(1, 15);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                // First Alternative
+                tempValue = Random.Range(0, 20);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 20);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(1, 20);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(1, 20);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 5:
+                // Function values in level 5
+                firstValue = Random.Range(10, 50);
+                secondValue = Random.Range(10, 50);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                //First Alternative
+                tempValue = Random.Range(0, 50);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 50);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(1, 50);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(1, 50);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 6:
+                // Function values in level 6
+                firstValue = Random.Range(10, 100);
+                secondValue = Random.Range(10, 100);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                //First Alternative
+                tempValue = Random.Range(0, 100);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 100);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(1, 10);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(1, 10);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 7:
+                // Function values in level 7
+                firstValue = Random.Range(250, 500);
+                secondValue = Random.Range(100, 500);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                //First Alternative
+                tempValue = Random.Range(0, 500);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 500);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(0, 500);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 500);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 8:
+                // Function values in level 8
+                firstValue = Random.Range(500, 1000);
+                secondValue = Random.Range(250, 1000);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                //First Alternative
+                tempValue = Random.Range(0, 1000);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 1000);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(0, 1000);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 1000);
+                }
+                Alternative2 = tempValue;
+                break;
+
+            case 9:
+                // Function values in level 9
+                firstValue = Random.Range(1000, 10000);
+                secondValue = Random.Range(1000, 10000);
+                thirdValue = firstValue;
+                fourthValue = secondValue;
+
+                if (firstValue < secondValue)
+                {
+                    firstValue = fourthValue;
+                    secondValue = thirdValue;
+                }
+
+                FirstValue.text = firstValue.ToString();
+                SecondValue.text = secondValue.ToString();
+
+                // Correct answer
+                finalValue = firstValue - secondValue;
+
+                ChooseObject();
+
+                //First Alternative
+                tempValue = Random.Range(0, 10000);
+                while (tempValue == finalValue)
+                {
+                    tempValue = Random.Range(0, 10000);
+                }
+                Alternative1 = tempValue;
+
+                // Second Alternative
+                tempValue = Random.Range(0, 10000);
+                while (tempValue == finalValue || (tempValue == Alternative1))
+                {
+                    tempValue = Random.Range(0, 10000);
+                }
+                Alternative2 = tempValue;
+                break;
         }
 
         if (firstValue - secondValue < 0)
@@ -177,23 +541,6 @@ public class SubScript : MonoBehaviour
         }
 
         Function.text = "-";
-        finalValue = firstValue - secondValue;
-
-
-        tempValue = Random.Range(2, 20);
-        while (tempValue == finalValue)
-        {
-            tempValue = Random.Range(2, 20);
-        }
-        Alternative1 = tempValue;
-
-        //Second Alternative
-        tempValue = Random.Range(2, 20);
-        while (tempValue == finalValue || (tempValue == Alternative1))
-        {
-            tempValue = Random.Range(2, 20);
-        }
-        Alternative2 = tempValue;
 
         tempValue = Random.Range(1, 6);
         if (tempValue == 1)
@@ -221,28 +568,23 @@ public class SubScript : MonoBehaviour
             Alt1.text = Alternative2.ToString(); Alt2.text = Alternative1.ToString(); Alt3.text = finalValue.ToString();
         }
 
-
-
-
-
-        Debug.Log(firstValue + "  FUNCTION  " + secondValue + "=" + finalValue);
+        Debug.Log(firstValue + Function.text + secondValue + "=" + finalValue);
     }
+
     public void AltOne()
     {
         if (Alt1.text == finalValue.ToString())
         {
-            ONE.gameObject.SetActive(true);
+            button1.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            ONE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt1.text != finalValue.ToString())
         {
-            ONE.gameObject.SetActive(true);
+            button1.GetComponent<Animator>().SetBool("Incorrect", true);
             button1.interactable = false;
-            ONE.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -251,18 +593,16 @@ public class SubScript : MonoBehaviour
 
         if (Alt2.text == finalValue.ToString())
         {
-            TWO.gameObject.SetActive(true);
+            button2.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            TWO.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt2.text != finalValue.ToString())
         {
-            TWO.gameObject.SetActive(true);
+            button2.GetComponent<Animator>().SetBool("Incorrect", true);
             button2.interactable = false;
-            TWO.GetComponent<Image>().sprite = redButton;
         }
     }
 
@@ -270,135 +610,245 @@ public class SubScript : MonoBehaviour
     {
         if (Alt3.text == finalValue.ToString())
         {
-            THREE.gameObject.SetActive(true);
+            button3.GetComponent<Animator>().SetBool("Correct", true);
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
-            THREE.GetComponent<Image>().sprite = greenButton;
             StartCoroutine(Correct());
         }
         if (Alt3.text != finalValue.ToString())
         {
-            THREE.gameObject.SetActive(true);
+            button3.GetComponent<Animator>().SetBool("Incorrect", true);
             button3.interactable = false;
-            THREE.GetComponent<Image>().sprite = redButton;
         }
     }
 
-    public void ResetV()
+    public void UpdateLevelButtons()
     {
-        if (subScore == 5)
+        switch (worldIndex)
         {
-            switchOn.gameObject.SetActive(true);
-            switchOff.gameObject.SetActive(false);
-            switch (levelIndex)
-            {
-                case 1:
-                    if (carrotStickerScore < 1)
-                    {
-                        carrotStickerScore += 1;
-                        Debug.Log("Carrot unlocked");
-                    }
-                    break;
-                case 2:
-                    if (bucketStickerScore < 1)
-                    {
-                        bucketStickerScore += 1;
-                        Debug.Log("Bucket unlocked");
-                    }
-                    break;
-                case 3:
-                    if (bunnyStickerScore < 1)
-                    {
-                        bunnyStickerScore += 1;
-                        Debug.Log("Bunny unlocked");
-                    }
-                    break;
-                default:
-                    Debug.Log("No level index set");
-                    break;
-            }
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        switch (book.carrotStickerScore)
+                        {
+                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 2:
+                        switch (book.bucketStickerScore)
+                        {
+                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 3:
+                        switch (book.bunnyStickerScore)
+                        {
+                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 2:
+                switch (levelIndex)
+                {
+                    case 4:
+                        switch (book.coconutStickerScore)
+                        {
+                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 5:
+                        switch (book.ocularsStickerScore)
+                        {
+                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 6:
+                        switch (book.slothStickerScore)
+                        {
+                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 7:
+                        switch (book.starStickerScore)
+                        {
+                            case 0: levelButton1.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton1.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 8:
+                        switch (book.planetStickerScore)
+                        {
+                            case 0: levelButton2.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton2.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    case 9:
+                        switch (book.cowStickerScore)
+                        {
+                            case 0: levelButton3.GetComponent<Image>().sprite = clearButton; break;
+                            case 1: levelButton3.GetComponent<Image>().sprite = completedButton; break;
+                        }
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
         }
-        ONE.gameObject.SetActive(false);
-        button1.interactable = true;
-        TWO.gameObject.SetActive(false);
-        button2.interactable = true;
-        THREE.gameObject.SetActive(false);
-        button3.interactable = true;
-        AnswerSpot.text = "?";
-        SubFarm();
     }
+
+    public void UpdateStickers()
+    {
+        switch (worldIndex)
+        {
+            case 1:
+                switch (levelIndex)
+                {
+                    case 1:
+                        book.UnlockCarrot();
+                        book.OpenSpread1();
+                        break;
+                    case 2:
+                        book.UnlockBucket();
+                        book.OpenSpread1();
+                        break;
+                    case 3:
+                        book.UnlockBunny();
+                        book.OpenSpread1();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 2:
+                switch (levelIndex)
+                {
+                    case 4:
+                        book.UnlockCoconut();
+                        book.OpenSpread3();
+                        break;
+                    case 5:
+                        book.UnlockOculars();
+                        book.OpenSpread3();
+                        break;
+                    case 6:
+                        book.UnlockSloth();
+                        book.OpenSpread3();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+            case 3:
+                switch (levelIndex)
+                {
+                    case 7:
+                        book.UnlockStar();
+                        book.OpenSpread5();
+                        break;
+                    case 8:
+                        book.UnlockPlanet();
+                        book.OpenSpread5();
+                        break;
+                    case 9:
+                        book.UnlockCow();
+                        book.OpenSpread5();
+                        break;
+                    default:
+                        Debug.Log("No level index set");
+                        break;
+                }
+                break;
+        }
+        book.UpdateStickers();
+        UpdateLevelButtons();
+    }
+
+ 
+    public void ResetTask()
+    {
+        button1.GetComponent<Animator>().SetBool("Correct", false);
+        button2.GetComponent<Animator>().SetBool("Correct", false);
+        button3.GetComponent<Animator>().SetBool("Correct", false);
+        button1.GetComponent<Animator>().SetBool("Incorrect", false);
+        button2.GetComponent<Animator>().SetBool("Incorrect", false);
+        button3.GetComponent<Animator>().SetBool("Incorrect", false);
+        if (subScore >= 5)
+        {
+            UpdateStickers();
+            CountStars();
+            levelEnd.gameObject.SetActive(true);
+            Animal.GetComponent<Animator>().SetBool("Dance", true);
+            level.gameObject.SetActive(false);
+        }
+        else
+        {
+            SetTaskNumber();
+            taskNumber.text = task + "/5";
+            ONE.gameObject.SetActive(false);
+            button1.interactable = true;
+            TWO.gameObject.SetActive(false);
+            button2.interactable = true;
+            THREE.gameObject.SetActive(false);
+            button3.interactable = true;
+            AnswerSpot.text = "?";
+            GenerateTask();
+            Animal.GetComponent<Animator>().SetBool("Happy", false);
+        }
+    }
+
     IEnumerator Correct()
     {
+        Animal.GetComponent<Animator>().SetBool("Happy", true);
         Score();
         AnswerSpot.text = finalValue.ToString();
-        scoreCount.text = subScore.ToString();
         yield return new WaitForSeconds(1f);
-        ResetV();
-
-
-
-
-    }
-    public void Score()
-    {
-        subScore += 1;
+        ResetTask();
     }
 
-    public void SubJungle()
+    public void StartLevel()
     {
-        firstValue = Random.Range(1, 100);
-        secondValue = Random.Range(1, 100);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
-
-        if (firstValue - secondValue < 0)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
-
-        Function.text = "+";
-        finalValue = firstValue - secondValue;
-
-    }
-    public void SubSpace()
-    {
-        firstValue = Random.Range(1, 1000);
-        secondValue = Random.Range(1, 1000);
-        FirstValue.text = firstValue.ToString();
-        SecondValue.text = secondValue.ToString();
-
-        if (firstValue - secondValue < 0)
-        {
-            tempValue = secondValue;
-            secondValue = firstValue;
-            firstValue = tempValue;
-        }
-
-        Function.text = "+";
-        finalValue = firstValue - secondValue;
-
-    }
-
-    public void StartFarm()
-    {
-        ResetV();
-        SubFarm();
+        ResetTask();
+        GenerateTask();
         ResetScore();
-
     }
-    public void StartJungle()
+
+    private void Start()
     {
-        ResetV();
-        SubJungle();
+        SetWorldIndex();
+        completedButton = starCount.completedButton;
+        clearButton = starCount.clearButton;
+        Load();
+        CountStars();
+        UpdateLevelButtons();
+        SetTaskNumber();
+        taskNumber.text = task + "/5";
+        AnswerSpot.text = "?";
     }
-    public void StartSpace()
+    void Update()
     {
-        ResetV();
-        SubSpace();
+
     }
-
-
 }
