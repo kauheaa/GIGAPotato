@@ -17,7 +17,7 @@ public class SumScript : MonoBehaviour
     public int worldIndex = 0;                           // Number defining world (1 = Farm, 2 = Jungle, 3 = Space)
     public int levelIndex = 0;                           // Number of level in category
     public GameObject Animal;                            // Character that reacts to answers
-    [SerializeField] private Transform level, levelEnd;  // level and level end canvas that are opened and closed when score is 5
+    [SerializeField] private Transform level, levelEnd, levelFail;  // level and level end canvas that are opened and closed when score is 5
     public GameObject animatedLevelEnd;                  // LevelEnd with flying sticker and Next button, different if level has been completed before
     [SerializeField] public int sumScore = 0;            // Temporary level score, reset after unlocking sticker or restarting level
     [SerializeField] public int wrongScore = 0;
@@ -80,16 +80,16 @@ public class SumScript : MonoBehaviour
                 wrongScore += 1;
                 if (wrongScore == 4)
                 {
-                    levelEnd.gameObject.SetActive(true);
-                    animatedLevelEnd.GetComponent<Animator>().SetBool("Fail", true);
+                    levelFail.gameObject.SetActive(true);
+                    
                 }
                 break;
             case 3:
                 wrongScore += 1;
                 if (wrongScore == 2)
                 {
-                    levelEnd.gameObject.SetActive(true);
-                    animatedLevelEnd.GetComponent<Animator>().SetBool("Fail", true);
+                    levelFail.gameObject.SetActive(true);
+                    
                 }
                 break;
             
