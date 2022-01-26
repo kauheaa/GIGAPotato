@@ -37,12 +37,25 @@ public class StarCount : MonoBehaviour
 
     public void subLevelScore()
     {
-        levelScore -= 1;
+        if (levelScore > 0)
+        {
+            levelScore -= 1;
+        }
     }
 
     public void resetLevelScore()
     {
         levelScore = 0;
+    }
+
+    public void hideStarScore()
+    {
+        scoreStars.gameObject.SetActive(false);
+    }
+
+    public void showStarScore()
+    {
+        scoreStars.gameObject.SetActive(true);
     }
 
     public void levelScoreStars()
@@ -502,6 +515,7 @@ public class StarCount : MonoBehaviour
     void Start()
     {
         CountStars();
+        hideStarScore();
     }
 
     void Update()

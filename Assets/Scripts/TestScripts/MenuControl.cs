@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class MenuControl : MonoBehaviour
 {
+    public Button farmButton;
+    public Button jungleButton;
+    public Button spaceButton;
+    public GameObject menuFinger;
     public StickerBook book;
     public StarCount starCount;
     public GameObject stickerbookButton;
@@ -99,11 +103,18 @@ public class MenuControl : MonoBehaviour
 
     private void Start()
     {
+        //if (DatabaseManager.LoggedIn == false)
+        //{
+        //    farmButton.interactable = false;
+        //    jungleButton.interactable = false;
+        //    spaceButton.interactable = false;
+        //}
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
-        stickerBook.gameObject.SetActive(true);
         if (DatabaseManager.LoggedIn == true)
         {
-            stickerBook.gameObject.SetActive(false);
+            farmButton.interactable = true;
+            jungleButton.interactable = true;
+            spaceButton.interactable = true;
         }
 
     }
@@ -1059,8 +1070,13 @@ public class MenuControl : MonoBehaviour
 
   
 
-    public void StartMenuCredits()
-    {
-        
-    }
+    //private void Update()
+    //{
+    //    if (DatabaseManager.LoggedIn == true)
+    //    {
+    //        farmButton.interactable = true;
+    //        jungleButton.interactable = true;
+    //        spaceButton.interactable = true;
+    //    }
+    //}
 }

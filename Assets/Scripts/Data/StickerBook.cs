@@ -166,7 +166,7 @@ public class StickerBook : MonoBehaviour
         {
             playerDisplay.text = "NO ONE...";               // resets name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;   // updates logged out avatar
-            closeBookButton.interactable = false;
+            //closeBookButton.interactable = false;
             if (GameObject.Find("fingerPointing") != null)
             {
                 fingerPointing.gameObject.SetActive(true);
