@@ -66,15 +66,21 @@ public class SumScript : MonoBehaviour
     {
         sumScore = 0;
         wrongScore = 0;
-        starCount.resetLevelScore();
-        starCount.levelScoreStars();
+        if (worldIndex > 1)
+        {
+            starCount.resetLevelScore();
+            starCount.levelScoreStars();
+        }
     }
 
     public void Score() // score defines when level end pops up //---------------------------------------------------------------------TÄMÄÄ
     {
         sumScore += 1;
-        starCount.addLevelScore();
-        starCount.levelScoreStars();
+        if (worldIndex > 1)
+        {
+            starCount.addLevelScore();
+            starCount.levelScoreStars();
+        }
         SetTaskNumber();
     }
 

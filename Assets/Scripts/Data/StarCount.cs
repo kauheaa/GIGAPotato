@@ -50,12 +50,18 @@ public class StarCount : MonoBehaviour
 
     public void hideStarScore()
     {
-        scoreStars.gameObject.SetActive(false);
+        if (worldIndex > 1)
+        {
+            scoreStars.gameObject.SetActive(false);
+        }
     }
 
     public void showStarScore()
     {
-        scoreStars.gameObject.SetActive(true);
+        if (worldIndex > 1)
+        {
+            scoreStars.gameObject.SetActive(true);
+        }
     }
 
     public void levelScoreStars()
