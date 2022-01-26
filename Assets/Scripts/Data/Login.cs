@@ -160,6 +160,7 @@ public class Login : MonoBehaviour
     public void VerifyInputs()      // Makes submitButton interactable when username is >= 3 characters and password >=5
     {
         submitButton.interactable = (nameField.text.Length >= 3 && passwordField.text.Length >= 5);
+        book.closeBookButton.interactable = (nameField.text == "DEV");
     }
 
     public void ForceUppercase()    // forces name field input uppercase
