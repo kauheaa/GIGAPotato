@@ -138,6 +138,8 @@ public class StickerBook : MonoBehaviour
     public Text allCollected;
     public string congratsText;
     public string congratsTitle;
+
+
     public void DestroyHand()
     {
         Destroy(fingerPointing);
@@ -175,6 +177,8 @@ public class StickerBook : MonoBehaviour
             logoutButton.gameObject.SetActive(false);       // hides log out button
         }
     }
+
+
 
     public void ResetButtonFunction()
     {

@@ -785,7 +785,6 @@ public class SubScript : MonoBehaviour
         book.UpdateStickers();
         UpdateLevelButtons();
     }
-
  
     public void ResetTask()
     {

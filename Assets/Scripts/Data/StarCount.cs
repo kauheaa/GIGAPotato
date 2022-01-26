@@ -25,6 +25,54 @@ public class StarCount : MonoBehaviour
     public int multJungleStarCount, multSpaceStarCount;
     public int divJungleStarCount, divSpaceStarCount;
 
+    // level score star sprites
+    public Sprite[] scoreStarSprite;
+    public GameObject scoreStars;
+    public int levelScore;
+
+    public void addLevelScore()
+    {
+        levelScore += 1;
+    }
+
+    public void subLevelScore()
+    {
+        levelScore -= 1;
+    }
+
+    public void resetLevelScore()
+    {
+        levelScore = 0;
+    }
+
+    public void levelScoreStars()
+    {
+        for (int i = 0; i < scoreStarSprite.Length; i++)
+        {
+            switch (levelScore) //first sprite when first value is 10 or smaller
+            {
+                case 0:
+                    scoreStars.gameObject.GetComponent<Image>().sprite = scoreStarSprite[0];
+                    break;
+                case 1:
+                    scoreStars.gameObject.GetComponent<Image>().sprite = scoreStarSprite[1];
+                    break;
+                case 2:
+                    scoreStars.gameObject.GetComponent<Image>().sprite = scoreStarSprite[2];
+                    break;
+                case 3:
+                    scoreStars.gameObject.GetComponent<Image>().sprite = scoreStarSprite[3];
+                    break;
+                case 4:
+                    scoreStars.gameObject.GetComponent<Image>().sprite = scoreStarSprite[4];
+                    break;
+                case 5:
+                    scoreStars.gameObject.GetComponent<Image>().sprite = scoreStarSprite[5];
+                    break;
+            }
+        }
+    }
+
     public void UpdateStarCounts()
     {
         book.UpdateStarCounts();

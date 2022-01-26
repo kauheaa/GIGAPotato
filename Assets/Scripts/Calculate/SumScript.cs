@@ -23,6 +23,8 @@ public class SumScript : MonoBehaviour
     [SerializeField] public int wrongScore = 0;
     public int task = 0;                                 // Tells the running number of the current task in level
 
+    public GameObject scoreStars;//-------------------------------------------------------------------------------------------------------------------------------------------------------TÄMÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
     // TASK
     int firstValue, secondValue, tempValue, finalValue, Alternative1, Alternative2;     // Task calculation values
     public Text FirstValue, SecondValue, Function, AnswerSpot, taskNumber;              // Text boxes for task calculation values
@@ -60,37 +62,36 @@ public class SumScript : MonoBehaviour
         levelIndex = level;
     }
 
-    public void ResetScore() // resets temporart level score
+    public void ResetScore() // resets temporart level score //---------------------------------------------------------------------TÄMÄÄ
     {
         sumScore = 0;
         wrongScore = 0;
+        starCount.resetLevelScore();
+        starCount.levelScoreStars();
     }
 
-    public void Score() // score defines when level end pops up
+    public void Score() // score defines when level end pops up //---------------------------------------------------------------------TÄMÄÄ
     {
         sumScore += 1;
+        starCount.addLevelScore();
+        starCount.levelScoreStars();
         SetTaskNumber();
     }
-    public void WrongScore()
+
+    public void WrongScore() //----------------------------------------------------------------------------------------------------------TÄMÄÄ
     {
        
         switch (worldIndex)
         {
             case 2:
-                wrongScore += 1;
-                if (wrongScore == 4)
-                {
-                    levelFail.gameObject.SetActive(true);
-                    
-                }
+                sumScore -= 1;
+                starCount.subLevelScore();
+                starCount.levelScoreStars();
                 break;
             case 3:
-                wrongScore += 1;
-                if (wrongScore == 2)
-                {
-                    levelFail.gameObject.SetActive(true);
-                    
-                }
+                sumScore -= 1;
+                starCount.subLevelScore();
+                starCount.levelScoreStars();
                 break;
             
         }
@@ -521,7 +522,7 @@ public class SumScript : MonoBehaviour
             //ONE.gameObject.SetActive(true);
 
             button1.interactable = false;
-            WrongScore();
+            WrongScore(); //-----------------------------------------------------------------------------------------------------------------TÄMÄÄ
             //button1.GetComponent<Image>().sprite = redButton;
             button1.GetComponent<Animator>().SetBool("Incorrect", true);
         }
@@ -545,9 +546,9 @@ public class SumScript : MonoBehaviour
             button2.GetComponent<Animator>().SetBool("Incorrect", true);
             //TWO.gameObject.SetActive(true);
             button2.interactable = false;
-            WrongScore();
-            //Alt2.GetComponent<Image>().sprite = redButton;
-            
+            WrongScore();//-----------------------------------------------------------------------------------------------------------------TÄMÄÄ
+                         //Alt2.GetComponent<Image>().sprite = redButton;
+
         }
     }
 
@@ -567,7 +568,7 @@ public class SumScript : MonoBehaviour
         {
             //THREE.gameObject.SetActive(true);
             button3.interactable = false;
-            WrongScore();
+            WrongScore();//-----------------------------------------------------------------------------------------------------------------TÄMÄÄ
             //Alt3.GetComponent<Image>().sprite = redButton;
             button3.GetComponent<Animator>().SetBool("Incorrect", true);
         }
