@@ -504,7 +504,6 @@ public class MenuControl : MonoBehaviour
     public void CloseAddLevel1Canvas()
     {
         addLevel1Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenAddLevel1Start()
     {
@@ -517,12 +516,10 @@ public class MenuControl : MonoBehaviour
     public void OpenAddLevel1Level()
     {
         addLevel1Level.gameObject.SetActive(true);
-
     }
     public void CloseAddLevel1Level()
     {
         addLevel1Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenAddLevel1End()
     {
@@ -543,7 +540,6 @@ public class MenuControl : MonoBehaviour
     public void CloseAddLevel2Canvas()
     {
         addLevel2Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenAddLevel2Start()
     {
@@ -556,12 +552,10 @@ public class MenuControl : MonoBehaviour
     public void OpenAddLevel2Level()
     {
         addLevel2Level.gameObject.SetActive(true);
-
     }
     public void CloseAddLevel2Level()
     {
         addLevel2Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenAddLevel2End()
     {
@@ -582,7 +576,6 @@ public class MenuControl : MonoBehaviour
     public void CloseAddLevel3Canvas()
     {
         addLevel3Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenAddLevel3Start()
     {
@@ -595,12 +588,10 @@ public class MenuControl : MonoBehaviour
     public void OpenAddLevel3Level()
     {
         addLevel3Level.gameObject.SetActive(true);
-
     }
     public void CloseAddLevel3Level()
     {
         addLevel3Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenAddLevel3End()
     {
@@ -620,7 +611,6 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel1Canvas()
     {
         subLevel1Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenSubLevel1Start()
     {
@@ -637,7 +627,6 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel1Level()
     {
         subLevel1Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenSubLevel1End()
     {
@@ -657,7 +646,6 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel2Canvas()
     {
         subLevel2Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenSubLevel2Start()
     {
@@ -674,7 +662,6 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel2Level()
     {
         subLevel2Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenSubLevel2End()
     {
@@ -694,7 +681,6 @@ public class MenuControl : MonoBehaviour
     public void CloseSubLevel3Canvas()
     {
         subLevel3Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenSubLevel3Start()
     {
@@ -707,12 +693,10 @@ public class MenuControl : MonoBehaviour
     public void OpenSubLevel3Level()
     {
         subLevel3Level.gameObject.SetActive(true);
-        
     }
     public void CloseSubLevel3Level()
     {
         subLevel3Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenSubLevel3End()
     {
@@ -732,7 +716,6 @@ public class MenuControl : MonoBehaviour
     public void CloseCountLevel1Canvas()
     {
         countLevel1Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenCountLevel1Start()
     {
@@ -749,7 +732,6 @@ public class MenuControl : MonoBehaviour
     public void CloseCountLevel1Level()
     {
         countLevel1Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenCountLevel1End()
     {
@@ -841,7 +823,6 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel1Canvas()
     {
         multLevel1Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenMultLevel1Start()
     {
@@ -858,7 +839,6 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel1Level()
     {
         multLevel1Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenMultLevel1End()
     {
@@ -878,7 +858,6 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel2Canvas()
     {
         multLevel2Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenMultLevel2Start()
     {
@@ -895,7 +874,6 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel2Level()
     {
         multLevel2Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenMultLevel2End()
     {
@@ -915,7 +893,6 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel3Canvas()
     {
         multLevel3Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenMultLevel3Start()
     {
@@ -932,7 +909,6 @@ public class MenuControl : MonoBehaviour
     public void CloseMultLevel3Level()
     {
         multLevel3Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenMultLevel3End()
     {
@@ -952,7 +928,6 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel1Canvas()
     {
         divLevel1Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenDivLevel1Start()
     {
@@ -969,7 +944,6 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel1Level()
     {
         divLevel1Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenDivLevel1End()
     {
@@ -989,7 +963,6 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel2Canvas()
     {
         divLevel2Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenDivLevel2Start()
     {
@@ -1006,7 +979,6 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel2Level()
     {
         divLevel2Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenDivLevel2End()
     {
@@ -1026,7 +998,6 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel3Canvas()
     {
         divLevel3Canvas.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenDivLevel3Start()
     {
@@ -1043,7 +1014,6 @@ public class MenuControl : MonoBehaviour
     public void CloseDivLevel3Level()
     {
         divLevel3Level.gameObject.SetActive(false);
-        starCount.hideStarScore();
     }
     public void OpenDivLevel3End()
     {
