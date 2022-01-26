@@ -2803,7 +2803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &67941083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,6 +3358,7 @@ MonoBehaviour:
   levelEnd: {fileID: 1996556127}
   animatedLevelEnd: {fileID: 1052586104}
   sumScore: 0
+  wrongScore: 0
   task: 0
   FirstValue: {fileID: 1349105976}
   SecondValue: {fileID: 259505536}
@@ -4094,7 +4094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &92096463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12471,7 +12470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &277149244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15605,7 +15603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &357580247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16703,6 +16700,7 @@ MonoBehaviour:
   levelEnd: {fileID: 962181325}
   animatedLevelEnd: {fileID: 1907221329}
   sumScore: 0
+  wrongScore: 0
   task: 0
   FirstValue: {fileID: 1789822907}
   SecondValue: {fileID: 704152903}
@@ -17218,7 +17216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &400250006
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17874,7 +17872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &410094599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18556,7 +18553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &420485294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21349,7 +21345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &476873630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25080,7 +25075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &554076615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30350,7 +30344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &676549829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43655,7 +43648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &962181325
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46129,7 +46122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1011412400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59727,7 +59719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &1346997176
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -61109,7 +61100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1382473613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61661,23 +61651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1386439371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64493,6 +64466,7 @@ MonoBehaviour:
   levelEnd: {fileID: 1721728819}
   animatedLevelEnd: {fileID: 511506301}
   sumScore: 0
+  wrongScore: 0
   task: 0
   FirstValue: {fileID: 1032758415}
   SecondValue: {fileID: 977707363}
@@ -65494,7 +65468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &1448507695
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -70966,23 +70939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1584457579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77506,23 +77462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1726005078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83856,23 +83795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1825434067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92324,7 +92246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &2008059259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94682,7 +94603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &2059993889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94915,7 +94835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &2065234004
 MonoBehaviour:
   m_ObjectHideFlags: 0
