@@ -20,6 +20,7 @@ public class SumScript : MonoBehaviour
     [SerializeField] private Transform level, levelEnd;  // level and level end canvas that are opened and closed when score is 5
     public GameObject animatedLevelEnd;                  // LevelEnd with flying sticker and Next button, different if level has been completed before
     [SerializeField] public int sumScore = 0;            // Temporary level score, reset after unlocking sticker or restarting level
+    [SerializeField] public int wrongScore = 0;
     public int task = 0;                                 // Tells the running number of the current task in level
 
     // TASK
@@ -62,12 +63,38 @@ public class SumScript : MonoBehaviour
     public void ResetScore() // resets temporart level score
     {
         sumScore = 0;
+        wrongScore = 0;
     }
 
     public void Score() // score defines when level end pops up
     {
         sumScore += 1;
         SetTaskNumber();
+    }
+    public void WrongScore()
+    {
+       
+        switch (worldIndex)
+        {
+            case 2:
+                wrongScore += 1;
+                if (wrongScore == 4)
+                {
+                    levelEnd.gameObject.SetActive(true);
+                    animatedLevelEnd.GetComponent<Animator>().SetBool("Fail", true);
+                }
+                break;
+            case 3:
+                wrongScore += 1;
+                if (wrongScore == 2)
+                {
+                    levelEnd.gameObject.SetActive(true);
+                    animatedLevelEnd.GetComponent<Animator>().SetBool("Fail", true);
+                }
+                break;
+            
+        }
+
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -492,7 +519,9 @@ public class SumScript : MonoBehaviour
         if (Alt1.text != finalValue.ToString())
         {
             //ONE.gameObject.SetActive(true);
+
             button1.interactable = false;
+            WrongScore();
             //button1.GetComponent<Image>().sprite = redButton;
             button1.GetComponent<Animator>().SetBool("Incorrect", true);
         }
@@ -516,6 +545,7 @@ public class SumScript : MonoBehaviour
             button2.GetComponent<Animator>().SetBool("Incorrect", true);
             //TWO.gameObject.SetActive(true);
             button2.interactable = false;
+            WrongScore();
             //Alt2.GetComponent<Image>().sprite = redButton;
             
         }
@@ -537,6 +567,7 @@ public class SumScript : MonoBehaviour
         {
             //THREE.gameObject.SetActive(true);
             button3.interactable = false;
+            WrongScore();
             //Alt3.GetComponent<Image>().sprite = redButton;
             button3.GetComponent<Animator>().SetBool("Incorrect", true);
         }
@@ -723,6 +754,7 @@ public class SumScript : MonoBehaviour
         }
         else
         {
+           
             SetTaskNumber();
             taskNumber.text = task + "/5";
             ONE.gameObject.SetActive(false);
@@ -766,9 +798,5 @@ public class SumScript : MonoBehaviour
         taskNumber.text = task + "/5";
         AnswerSpot.text = "?";
     }
-
-    void Update()
-    {
-
-    }
+   
 }
