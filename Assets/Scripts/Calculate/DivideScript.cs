@@ -20,8 +20,9 @@ public class DivideScript : MonoBehaviour
     [SerializeField] private Transform level, levelEnd;  // level and level end canvas that are opened and closed when score is 5
     public GameObject animatedLevelEnd;                  // LevelEnd with flying sticker and Next button, different if level has been completed before
     [SerializeField] public int divScore = 0;            // Temporary level score, reset after unlocking sticker or restarting level
+    [SerializeField] public int wrongScore = 0;
     public int task = 0;                                 // Tells the running number of the current task in level
-
+    public GameObject scoreStars;
     // TASK
     int firstValue, secondValue, thirdValue, fourthValue, tempValue, finalValue, Alternative1, Alternative2;     // Task calculation values
     public Text FirstValue, SecondValue, Function, AnswerSpot, taskNumber;              // Text boxes for task calculation values
@@ -63,12 +64,36 @@ public class DivideScript : MonoBehaviour
     public void ResetScore() // resets temporart level score
     {
         divScore = 0;
+        wrongScore = 0;
+        starCount.resetLevelScore();
+        starCount.levelScoreStars();
     }
 
     public void Score() // score defines when level end pops up
     {
         divScore += 1;
+        starCount.addLevelScore();
+        starCount.levelScoreStars();
         SetTaskNumber();
+    }
+    public void WrongScore() //----------------------------------------------------------------------------------------------------------TÄMÄÄ
+    {
+
+        switch (worldIndex)
+        {
+            case 2:
+                divScore -= 1;
+                starCount.subLevelScore();
+                starCount.levelScoreStars();
+                break;
+            case 3:
+                divScore -= 1;
+                starCount.subLevelScore();
+                starCount.levelScoreStars();
+                break;
+
+        }
+
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -484,6 +509,7 @@ public class DivideScript : MonoBehaviour
         {
             button1.GetComponent<Animator>().SetBool("Incorrect", true);
             button1.interactable = false;
+            WrongScore();
         }
     }
 
@@ -502,6 +528,7 @@ public class DivideScript : MonoBehaviour
         {
             button2.GetComponent<Animator>().SetBool("Incorrect", true);
             button2.interactable = false;
+            WrongScore();
         }
     }
 
@@ -519,6 +546,7 @@ public class DivideScript : MonoBehaviour
         {
             button3.GetComponent<Animator>().SetBool("Incorrect", true);
             button3.interactable = false;
+            WrongScore();
         }
     }
 
