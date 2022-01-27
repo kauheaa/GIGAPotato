@@ -95,6 +95,14 @@ public class SubScript : MonoBehaviour
 
             }
         }
+        Animal.GetComponent<Animator>().SetBool("Wrong", true);
+        StartCoroutine(waitHeadShake());
+    }
+
+    IEnumerator waitHeadShake()
+    {
+        yield return new WaitForSeconds(1);
+        Animal.GetComponent<Animator>().SetBool("Wrong", false);
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -823,6 +831,7 @@ public class SubScript : MonoBehaviour
         button1.GetComponent<Animator>().SetBool("Incorrect", false);
         button2.GetComponent<Animator>().SetBool("Incorrect", false);
         button3.GetComponent<Animator>().SetBool("Incorrect", false);
+        Animal.GetComponent<Animator>().SetBool("Wrong", false);
         if (subScore >= 5)
         {
             UpdateStickers();

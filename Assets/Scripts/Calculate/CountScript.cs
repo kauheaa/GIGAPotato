@@ -136,7 +136,14 @@ public class CountScript : MonoBehaviour
 
     public void wrong()
     {
+        Animal.GetComponent<Animator>().SetBool("Wrong", true);
+        StartCoroutine(waitHeadShake());
+    }
 
+    IEnumerator waitHeadShake()
+    {
+        yield return new WaitForSeconds(1);
+        Animal.GetComponent<Animator>().SetBool("Wrong", false);
     }
 
     IEnumerator waitForNext()
@@ -173,8 +180,9 @@ public class CountScript : MonoBehaviour
             options[i].transform.GetChild(1).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
             options[i].GetComponent<Animator>().SetBool("Correct", false);
             options[i].GetComponent<Animator>().SetBool("Incorrect", false);
+            Animal.GetComponent<Animator>().SetBool("Wrong", false);
 
-            if(QnA[currentQuestion].CorrectAnswer == i+1)
+            if (QnA[currentQuestion].CorrectAnswer == i+1)
             {
                 options[i].GetComponent<CountAnswerScript>().isCorrect = true;
             }
