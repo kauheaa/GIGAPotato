@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2850243493129296788
-    second: "p\xE4\xE4"
+    second: "p\xE4\xE41"
   - first:
       213: 8169536970801416073
     second: "p\xE4\xE42"
@@ -13,22 +13,34 @@ TextureImporter:
     second: "k\xE4siVasen"
   - first:
       213: -3795197954432596791
-    second: toro
+    second: torso
   - first:
       213: 6794189648887094634
     second: "k\xE4siOikea"
   - first:
       213: -1549316358181999858
-    second: "p\xE4ssi_5"
+    second: "p\xE4\xE43"
   - first:
       213: -1207486492874932871
-    second: jalkaVasen
+    second: kasvot
   - first:
       213: 8142865895807843765
     second: "p\xE4ssi_7"
   - first:
       213: 2261144131596669591
-    second: jalkaOikea
+    second: "p\xE4ssi_8"
+  - first:
+      213: -368594182630094674
+    second: kasvot
+  - first:
+      213: 1619439060183057814
+    second: "p\xE4ssi_8"
+  - first:
+      213: 499087224400445947
+    second: "p\xE4ssi_17"
+  - first:
+      213: -6574991754649349818
+    second: sarvet
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,7 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "p\xE4\xE4"
+      name: "p\xE4\xE41"
       rect:
         serializedVersion: 2
         x: 954
@@ -181,7 +193,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toro
+      name: torso
       rect:
         serializedVersion: 2
         x: 1026
@@ -223,7 +235,49 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "p\xE4ssi_5"
+      name: "p\xE4\xE43"
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 676
+        width: 355
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b2cd91bf8bf7ae0800000000000000
+      internalID: -1549316358181999858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasvot
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 639
+        width: 267
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d7b19ae652e3fe0800000000000000
+      internalID: -1207486492874932871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "p\xE4ssi_8"
       rect:
         serializedVersion: 2
         x: 924
@@ -237,8 +291,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0b2cd91bf8bf7ae0800000000000000
-      internalID: -1549316358181999858
+      spriteID: 79257cd8b92316f10800000000000000
+      internalID: 2261144131596669591
       vertices: []
       indices: 
       edges: []
@@ -258,14 +312,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97d7b19ae652e3fe0800000000000000
-      internalID: -1207486492874932871
+      spriteID: ea8ce063b8d72eaf0800000000000000
+      internalID: -368594182630094674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "p\xE4ssi_7"
+      name: jalkaOikea
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 329
+        width: 147
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6958a9dbe37697610800000000000000
+      internalID: 1619439060183057814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "p\xE4ssi_17"
       rect:
         serializedVersion: 2
         x: 1415
@@ -279,20 +354,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bdf445b365410170800000000000000
-      internalID: 8142865895807843765
+      spriteID: bf10352bf2d1de600800000000000000
+      internalID: 499087224400445947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jalkaOikea
+      name: sarvet
       rect:
         serializedVersion: 2
-        x: 1422
-        y: 329
-        width: 147
-        height: 322
+        x: 2235
+        y: 246
+        width: 659
+        height: 303
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,8 +375,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79257cd8b92316f10800000000000000
-      internalID: 2261144131596669591
+      spriteID: 641d00fb5dfe0c4a0800000000000000
+      internalID: -6574991754649349818
       vertices: []
       indices: 
       edges: []

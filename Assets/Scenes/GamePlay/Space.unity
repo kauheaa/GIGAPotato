@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &14166585
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2884,9 +2884,12 @@ MonoBehaviour:
   Animal: {fileID: 482416786}
   level: {fileID: 164492882}
   levelEnd: {fileID: 1078434750}
+  levelFail: {fileID: 0}
   animatedLevelEnd: {fileID: 1706560915}
   sumScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 1132252214}
   SecondValue: {fileID: 654497652}
   Function: {fileID: 1339703050}
@@ -3278,7 +3281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &118584027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3940,7 +3943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &144042032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7965,7 +7968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &237351497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8784,7 +8786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &261457006
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10529,7 +10531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &289856095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11652,9 +11653,12 @@ MonoBehaviour:
   Animal: {fileID: 642968227}
   level: {fileID: 1144941870}
   levelEnd: {fileID: 573595114}
+  levelFail: {fileID: 0}
   animatedLevelEnd: {fileID: 983253396}
   sumScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 711049638}
   SecondValue: {fileID: 1487145034}
   Function: {fileID: 1878734446}
@@ -12213,7 +12217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &329064704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13245,7 +13248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &348695297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15962,7 +15964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &385115299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22329,7 +22330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &531000191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24794,7 +24794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &566180620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27157,6 +27157,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634148008}
   m_CullTransparentMesh: 1
+--- !u!1 &634377834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2839442011672342233, guid: d251688abbacd0a4597df54957b5e50f, type: 3}
+  m_PrefabInstance: {fileID: 492723719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637370909
 GameObject:
   m_ObjectHideFlags: 0
@@ -32623,7 +32628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &760190792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35935,7 +35939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &855922882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36907,9 +36911,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'ARE YOU SURE?
-
-    UNSAVED PROGRESS WILL BE LOST!'
+  m_Text: ARE YOU SURE?
 --- !u!222 &884745899
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41136,7 +41138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &974974461
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42835,7 +42837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1026472653
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45790,7 +45792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1092694461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46847,23 +46848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1114612995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48557,7 +48541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1150034077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50694,7 +50678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &1207228732
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -51388,9 +51371,12 @@ MonoBehaviour:
   Animal: {fileID: 1961022361}
   level: {fileID: 1852027544}
   levelEnd: {fileID: 900046294}
+  levelFail: {fileID: 0}
   animatedLevelEnd: {fileID: 79313170}
   sumScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 912456887}
   SecondValue: {fileID: 839854661}
   Function: {fileID: 1879044572}
@@ -54041,7 +54027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1304341754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54960,23 +54945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1317551433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55407,7 +55375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1320066635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56222,7 +56189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1334064893
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57216,6 +57183,15 @@ MonoBehaviour:
   multSpaceStarCount: 0
   divJungleStarCount: 0
   divSpaceStarCount: 0
+  scoreStarSprite:
+  - {fileID: 21300000, guid: d7077125cbea0744c9dbec0d848c6713, type: 3}
+  - {fileID: 21300000, guid: 66f4cc050ff3f9c4fbba351580c21191, type: 3}
+  - {fileID: 21300000, guid: f3b56f832ea44c14ea3f0e3285beb14f, type: 3}
+  - {fileID: 21300000, guid: d29496fa589004f49ab4746672907d03, type: 3}
+  - {fileID: 21300000, guid: 07a06f20067adeb4caeacdd3fbf55a8d, type: 3}
+  - {fileID: 21300000, guid: 666d03ed5f4ab8842a37faba6a30cb6b, type: 3}
+  scoreStars: {fileID: 634377834}
+  levelScore: 0
 --- !u!4 &1354636366
 Transform:
   m_ObjectHideFlags: 0
@@ -59103,6 +59079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmButton: {fileID: 0}
+  jungleButton: {fileID: 0}
+  spaceButton: {fileID: 0}
+  menuFinger: {fileID: 0}
   book: {fileID: 1591411996}
   starCount: {fileID: 1354636365}
   stickerbookButton: {fileID: 1966383203}
@@ -60522,7 +60502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1418399809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64185,7 +64164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1481677266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -64457,7 +64436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1485261768
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67904,7 +67883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1568599935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69262,7 +69240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1589818100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72487,7 +72464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1668678257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -73137,7 +73114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &1673646806
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -77299,23 +77275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1770740208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78614,7 +78573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1787672914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79895,23 +79854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1812073122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84166,7 +84108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1887218131
 RectTransform:
   m_ObjectHideFlags: 0
@@ -87071,7 +87013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!222 &1948414441
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93376,7 +93317,7 @@ RectTransform:
   - {fileID: 1719985066}
   - {fileID: 1530752583}
   m_Father: {fileID: 934045536}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
