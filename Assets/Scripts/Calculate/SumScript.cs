@@ -766,7 +766,6 @@ public class SumScript : MonoBehaviour
         }
         else
         {
-           
             SetTaskNumber();
             taskNumber.text = task + "/5";
             ONE.gameObject.SetActive(false);

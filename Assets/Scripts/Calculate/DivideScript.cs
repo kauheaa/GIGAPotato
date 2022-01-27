@@ -78,20 +78,21 @@ public class DivideScript : MonoBehaviour
     }
     public void WrongScore() //----------------------------------------------------------------------------------------------------------TÄMÄÄ
     {
-
-        switch (worldIndex)
+        if (divScore > 0)
         {
-            case 2:
-                divScore -= 1;
-                starCount.subLevelScore();
-                starCount.levelScoreStars();
-                break;
-            case 3:
-                divScore -= 1;
-                starCount.subLevelScore();
-                starCount.levelScoreStars();
-                break;
-
+            switch (worldIndex)
+            {
+                case 2:
+                    divScore -= 1;
+                    starCount.subLevelScore();
+                    starCount.levelScoreStars();
+                    break;
+                case 3:
+                    divScore -= 1;
+                    starCount.subLevelScore();
+                    starCount.levelScoreStars();
+                    break;
+            }
         }
 
     }
@@ -678,6 +679,7 @@ public class DivideScript : MonoBehaviour
             UpdateStickers();
             CountStars();
             levelEnd.gameObject.SetActive(true);
+            starCount.hideStarScore();
             Animal.GetComponent<Animator>().SetBool("Dance", true);
             level.gameObject.SetActive(false);
         }
@@ -711,6 +713,7 @@ public class DivideScript : MonoBehaviour
         ResetTask();
         GenerateTask();
         ResetScore();
+        starCount.showStarScore();
     }
 
     private void Start()

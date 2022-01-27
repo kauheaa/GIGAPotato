@@ -77,22 +77,23 @@ public class MultiplyScript : MonoBehaviour
     }
     public void WrongScore() //----------------------------------------------------------------------------------------------------------TÄMÄÄ
     {
-
-        switch (worldIndex)
+        if (multScore > 0)
         {
-            case 2:
-                multScore -= 1;
-                starCount.subLevelScore();
-                starCount.levelScoreStars();
-                break;
-            case 3:
-                multScore -= 1;
-                starCount.subLevelScore();
-                starCount.levelScoreStars();
-                break;
+            switch (worldIndex)
+            {
+                case 2:
+                    multScore -= 1;
+                    starCount.subLevelScore();
+                    starCount.levelScoreStars();
+                    break;
+                case 3:
+                    multScore -= 1;
+                    starCount.subLevelScore();
+                    starCount.levelScoreStars();
+                    break;
 
+            }
         }
-
     }
 
     public void ChooseObject() // Chooses sprite from list matching the numbers presented in task
@@ -598,6 +599,7 @@ public class MultiplyScript : MonoBehaviour
             UpdateStickers();
             CountStars();
             levelEnd.gameObject.SetActive(true);
+            starCount.hideStarScore();
             Animal.GetComponent<Animator>().SetBool("Dance", true);
             level.gameObject.SetActive(false);
         }
@@ -631,6 +633,7 @@ public class MultiplyScript : MonoBehaviour
         ResetTask();
         GenerateTask();
         ResetScore();
+        starCount.showStarScore();
     }
 
     private void Start()
