@@ -5318,18 +5318,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1498324801}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        - {m_Target: {fileID: 1498324801}, m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp, m_MethodName: AltOne, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+      m_CallsDirty: 1
 --- !u!114 &672239156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15052,17 +15042,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da4c85c8cd68b49a228d03bee844b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmButton: {fileID: 0}
+  jungleButton: {fileID: 0}
+  spaceButton: {fileID: 0}
+  menuFinger: {fileID: 0}
   book: {fileID: 0}
+  starCount: {fileID: 0}
   stickerbookButton: {fileID: 0}
-  settingsMenu: {fileID: 0}
+  sum1: {fileID: 0}
+  sum2: {fileID: 0}
+  sum3: {fileID: 0}
+  sub1: {fileID: 0}
+  sub2: {fileID: 0}
+  sub3: {fileID: 0}
+  count1: {fileID: 0}
+  count2: {fileID: 0}
+  count3: {fileID: 0}
+  mult1: {fileID: 0}
+  mult2: {fileID: 0}
+  mult3: {fileID: 0}
+  div1: {fileID: 0}
+  div2: {fileID: 0}
+  div3: {fileID: 0}
   resetWarning: {fileID: 0}
   stickerBook: {fileID: 0}
-  stickerSpreadFirst: {fileID: 0}
-  stickerSpreadMid1: {fileID: 0}
-  stickerSpreadMid2: {fileID: 0}
-  stickerSpreadMid3: {fileID: 0}
-  stickerSpreadMid4: {fileID: 0}
-  stickerSpreadLast: {fileID: 0}
   farmWorld: {fileID: 0}
   additionCat: {fileID: 0}
   substractCat: {fileID: 0}
