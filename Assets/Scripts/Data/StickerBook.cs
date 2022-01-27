@@ -958,10 +958,10 @@ public class StickerBook : MonoBehaviour
         div3 = canvasControl.div3;
 
     UpdateAll(); // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - starcount scores and sprites
-        if (DatabaseManager.LoggedIn == false)
-        {
-            OpenFirstSpread();
-        }
+        //if (DatabaseManager.LoggedIn == false)
+        //{
+        //    OpenFirstSpread();
+        //}
     }
 
 }

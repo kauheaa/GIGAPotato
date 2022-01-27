@@ -110,7 +110,7 @@ public class MenuControl : MonoBehaviour
         //    spaceButton.interactable = false;
         //}
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
-        if (DatabaseManager.LoggedIn == true)
+        if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
         {
             farmButton.interactable = true;
             jungleButton.interactable = true;
