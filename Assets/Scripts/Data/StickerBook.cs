@@ -444,9 +444,7 @@ public class StickerBook : MonoBehaviour
     // AnimatedLevelEnd button function
     public void AnimatedLevelEnd() // saves sticker scores | plays stickerbook button anim | updates stickers, stars, buttons, player info and stats | plays sticker button anim
     {
-        canvasControl.PlaySaveAnim();   // plays stickerbook button "Saved" animation and then "NewStickers" animation
-        UpdateAll();    // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - book starcount and all sprites based on book sticker scores
-        CallSaveData(); // sets database score by combining all current book stickerScores into a string, saves score into database for logged in username
+        canvasControl.Save();   // plays stickerbook button "Saved" animation and then "NewStickers" animation
     }
 
     public void ResetStickers() // Resets the whole stickerbook, saves scores as 0 and updates all (player info, login buttons, stickers, stars, level buttons)
@@ -940,6 +938,7 @@ public class StickerBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadBook();
         worldIndex = starCount.worldIndex;
         sum1 = canvasControl.sum1;
         sum2 = canvasControl.sum2;

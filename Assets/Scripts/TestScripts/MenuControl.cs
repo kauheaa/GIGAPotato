@@ -13,6 +13,7 @@ public class MenuControl : MonoBehaviour
     public GameObject menuFinger;
     public StickerBook book;
     public StarCount starCount;
+    public SaveDataManager saveManager;
     public GameObject stickerbookButton;
     public SumScript sum1;
     public SumScript sum2;
@@ -116,6 +117,7 @@ public class MenuControl : MonoBehaviour
             jungleButton.interactable = true;
             spaceButton.interactable = true;
         }
+
 
     }
 
@@ -437,15 +439,13 @@ public class MenuControl : MonoBehaviour
     }
 
 
-    public void PlaySaveAnim()
+    public void Save()
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", true);
         stickerbookButton.GetComponent<Animator>().SetBool("NewStickers", true);
+        book.UpdateAll();           // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - book starcount and all sprites based on book sticker scores
+        saveManager.CallSaveData(); // sets database score by combining all current book stickerScores into a string, saves score into database for logged in username
     }
-
-
-
-
 
     //FARM
     public void OpenFarmWorld()

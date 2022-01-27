@@ -1466,6 +1466,7 @@ MonoBehaviour:
   menuFinger: {fileID: 0}
   book: {fileID: 965872508}
   starCount: {fileID: 975264203}
+  saveManager: {fileID: 2136399548}
   stickerbookButton: {fileID: 1612285898}
   sum1: {fileID: 385868508}
   sum2: {fileID: 1436757935}
@@ -5834,7 +5835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130513065
@@ -5909,7 +5910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132122019
@@ -9633,7 +9634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &228802200
@@ -13920,7 +13921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08514944, y: 0.37149063}
   m_AnchorMax: {x: 1, y: 0.66726303}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0.24998856}
+  m_AnchoredPosition: {x: 0, y: 0.24998474}
   m_SizeDelta: {x: 0, y: -0.50002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313663366
@@ -14597,7 +14598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &339649419
@@ -15197,7 +15198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.75, y: 0.5}
   m_AnchorMax: {x: 0.75, y: 0.5}
-  m_AnchoredPosition: {x: 35.200012, y: -119}
+  m_AnchoredPosition: {x: 35.19995, y: -119}
   m_SizeDelta: {x: 286, y: 259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &354579678
@@ -18246,9 +18247,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20970,7 +20971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474949813
@@ -21950,9 +21951,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22934,7 +22935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: 0.00021362305}
+  m_AnchoredPosition: {x: -0.0024414062, y: 0.00024414062}
   m_SizeDelta: {x: 0.005126953, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &511506303
@@ -23000,9 +23001,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24322,7 +24323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546932899
@@ -26608,9 +26609,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28099,7 +28100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617450040
@@ -31054,7 +31055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707185849
@@ -33185,9 +33186,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34098,7 +34099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &781224788
@@ -34912,10 +34913,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 418133073698002395, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.563477
+      objectReference: {fileID: 0}
+    - target: {fileID: 418133073698002395, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6221924
+      objectReference: {fileID: 0}
     - target: {fileID: 694353787327015125, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: bf58f3d5ece3cb1409fe81fb0c48f097, type: 2}
+    - target: {fileID: 773407965153753505, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.563477
+      objectReference: {fileID: 0}
+    - target: {fileID: 973064300172354851, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.46106
+      objectReference: {fileID: 0}
     - target: {fileID: 973064300803673497, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
@@ -35012,6 +35029,38 @@ PrefabInstance:
       propertyPath: save
       value: 
       objectReference: {fileID: 2136399548}
+    - target: {fileID: 1749587497707565093, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18.417847
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087424102643612118, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18.417847
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301168868510650588, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.563477
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169138587503504845, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.563477
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169138587503504845, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6221924
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237494826627382360, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.563477
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237494826627382360, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6221924
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113611541318724127, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.1673584
+      objectReference: {fileID: 0}
     - target: {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: divStars
       value: 
@@ -35060,6 +35109,22 @@ PrefabInstance:
       propertyPath: multMenuButton
       value: 
       objectReference: {fileID: 1329916127}
+    - target: {fileID: 7187270428026004668, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6221924
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205287331050389369, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.625977
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358224907230640554, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.897339
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420753092325246612, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6221924
+      objectReference: {fileID: 0}
     - target: {fileID: 7431332325794315062, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_SizeDelta.y
       value: -1078.9758
@@ -35087,6 +35152,10 @@ PrefabInstance:
     - target: {fileID: 7431332325794315062, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966042061445355870, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18.417847
       objectReference: {fileID: 0}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: div1
@@ -35188,6 +35257,10 @@ PrefabInstance:
       propertyPath: scoreStarSprite.Array.data[5]
       value: 
       objectReference: {fileID: 21300000, guid: 4520a2fde6154d34b821848bf9b9b2de, type: 3}
+    - target: {fileID: 9070468800747821467, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6221924
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -37769,7 +37842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &847848628
@@ -43108,7 +43181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960677552
@@ -47952,7 +48025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: 0.00021362305}
+  m_AnchoredPosition: {x: -0.0024414062, y: 0.00024414062}
   m_SizeDelta: {x: 0.005126953, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1052586106
@@ -48018,9 +48091,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51574,9 +51647,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51974,7 +52047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141988924
@@ -53615,9 +53688,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59670,7 +59743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: 0.00021362305}
+  m_AnchoredPosition: {x: -0.0024414062, y: 0.00024414062}
   m_SizeDelta: {x: 0.005126953, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1349503627
@@ -59736,9 +59809,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -60311,9 +60384,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -67112,7 +67185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480331441
@@ -69897,7 +69970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559271323
@@ -71181,9 +71254,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -71338,9 +71411,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -75970,9 +76043,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -84659,7 +84732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: 0.00021362305}
+  m_AnchoredPosition: {x: -0.0024414062, y: 0.00024414062}
   m_SizeDelta: {x: 0.005126953, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1837242268
@@ -84725,9 +84798,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -86327,7 +86400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8304643}
   m_AnchorMax: {x: 0.076175675, y: 1}
-  m_AnchoredPosition: {x: -21.398315, y: 20.867676}
+  m_AnchoredPosition: {x: -21.398193, y: 20.867676}
   m_SizeDelta: {x: 48.754456, y: 46.535416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885038249
@@ -87395,9 +87468,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965872508}
-        m_TargetAssemblyTypeName: StickerBook, Assembly-CSharp
-        m_MethodName: AnimatedLevelEnd
+      - m_Target: {fileID: 42566427}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
