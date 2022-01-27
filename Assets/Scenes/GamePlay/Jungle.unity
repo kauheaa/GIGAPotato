@@ -1484,7 +1484,7 @@ MonoBehaviour:
   div2: {fileID: 609377424}
   div3: {fileID: 1154250889}
   resetWarning: {fileID: 802231660}
-  stickerBook: {fileID: 802231672}
+  stickerBook: {fileID: 802231667}
   farmWorld: {fileID: 126503996}
   additionCat: {fileID: 610623941}
   substractCat: {fileID: 771952724}
@@ -9397,7 +9397,9 @@ MonoBehaviour:
   levelEnd: {fileID: 1439016459}
   animatedLevelEnd: {fileID: 1132793737}
   multScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 1137862115}
   SecondValue: {fileID: 561884868}
   Function: {fileID: 1524635781}
@@ -27785,7 +27787,9 @@ MonoBehaviour:
   levelEnd: {fileID: 1844982670}
   animatedLevelEnd: {fileID: 1602816161}
   divScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 1475835214}
   SecondValue: {fileID: 1987163974}
   Function: {fileID: 924743891}
@@ -31385,7 +31389,9 @@ MonoBehaviour:
   levelEnd: {fileID: 822415597}
   animatedLevelEnd: {fileID: 590689389}
   subScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 196384925}
   SecondValue: {fileID: 1028063965}
   Function: {fileID: 3377031}
@@ -35222,10 +35228,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 42566427}
     - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-      propertyPath: fingerPointing
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8526706297711603445, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
       propertyPath: stickerbookButton
       value: 
       objectReference: {fileID: 1612285898}
@@ -35297,6 +35299,11 @@ GameObject:
 --- !u!1 &802231666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5336435359699609623, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 802231659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &802231667 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9085034373653778529, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 802231659}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &802231672 stripped
@@ -40565,7 +40572,9 @@ MonoBehaviour:
   levelEnd: {fileID: 1373176529}
   animatedLevelEnd: {fileID: 1362852225}
   subScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 1451286229}
   SecondValue: {fileID: 1860768861}
   Function: {fileID: 619992854}
@@ -40765,7 +40774,9 @@ MonoBehaviour:
   levelEnd: {fileID: 1335454314}
   animatedLevelEnd: {fileID: 1601504242}
   subScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 264349092}
   SecondValue: {fileID: 1762432791}
   Function: {fileID: 233092978}
@@ -48575,7 +48586,9 @@ MonoBehaviour:
   levelEnd: {fileID: 1745758067}
   animatedLevelEnd: {fileID: 1349503625}
   multScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 568176993}
   SecondValue: {fileID: 952972478}
   Function: {fileID: 2023726271}
@@ -52445,7 +52458,9 @@ MonoBehaviour:
   levelEnd: {fileID: 2088515847}
   animatedLevelEnd: {fileID: 1700719700}
   divScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 1925949355}
   SecondValue: {fileID: 873899778}
   Function: {fileID: 1108046131}
@@ -74587,7 +74602,9 @@ MonoBehaviour:
   levelEnd: {fileID: 546731083}
   animatedLevelEnd: {fileID: 1837242266}
   multScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 978397528}
   SecondValue: {fileID: 1592421385}
   Function: {fileID: 1265966556}
@@ -96848,7 +96865,9 @@ MonoBehaviour:
   levelEnd: {fileID: 1471740282}
   animatedLevelEnd: {fileID: 766911664}
   divScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 1465641944}
   SecondValue: {fileID: 1466465129}
   Function: {fileID: 916553412}

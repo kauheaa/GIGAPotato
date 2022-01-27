@@ -1591,7 +1591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &69315042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3229,7 +3228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &111349184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6305,7 +6303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &198595759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6710,23 +6707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &204926828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10999,7 +10979,9 @@ MonoBehaviour:
   levelEnd: {fileID: 463188864}
   animatedLevelEnd: {fileID: 1536666996}
   subScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 1081382124}
   SecondValue: {fileID: 25354080}
   Function: {fileID: 171040942}
@@ -16041,7 +16023,9 @@ MonoBehaviour:
   levelEnd: {fileID: 579370631}
   animatedLevelEnd: {fileID: 232772399}
   subScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 569720510}
   SecondValue: {fileID: 379823510}
   Function: {fileID: 610655316}
@@ -19921,7 +19905,9 @@ MonoBehaviour:
   levelEnd: {fileID: 1855497450}
   animatedLevelEnd: {fileID: 1300212640}
   subScore: 0
+  wrongScore: 0
   task: 0
+  scoreStars: {fileID: 0}
   FirstValue: {fileID: 401612474}
   SecondValue: {fileID: 174559965}
   Function: {fileID: 1912976407}
@@ -30949,23 +30935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CalculateS, Assembly-CSharp
-          m_MethodName: AltOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1114535264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45977,7 +45946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1657541207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55529,7 +55497,7 @@ MonoBehaviour:
   div2: {fileID: 0}
   div3: {fileID: 0}
   resetWarning: {fileID: 973064300315609846}
-  stickerBook: {fileID: 585713513}
+  stickerBook: {fileID: 973064300315609847}
   farmWorld: {fileID: 1913762940}
   additionCat: {fileID: 479733830}
   substractCat: {fileID: 511857858}
@@ -56212,7 +56180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &2047906954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56432,7 +56399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &2048008838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56802,7 +56768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &2062353488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57535,7 +57500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f61deefa46acb4c8f8ef7559231703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &2077896569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59546,6 +59510,11 @@ PrefabInstance:
 --- !u!224 &973064300315609846 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 436882450077907382, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
+  m_PrefabInstance: {fileID: 973064300315609845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &973064300315609847 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9085034373653778529, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_PrefabInstance: {fileID: 973064300315609845}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &973064300315609855 stripped

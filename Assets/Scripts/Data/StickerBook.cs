@@ -561,6 +561,7 @@ public class StickerBook : MonoBehaviour
             catStickerScore = DatabaseManager.catStickerScore;
 
             UpdateAll();    // updates: player name and avatar, login buttons, stats - unlocks/hides stickers - level button sprites - book starcount and all sprites based on book sticker scores
+            Debug.Log("Stickerbook scores are updated to match Database Score");
         }
         else
         {

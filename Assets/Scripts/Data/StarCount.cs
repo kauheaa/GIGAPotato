@@ -198,7 +198,7 @@ public class StarCount : MonoBehaviour
                 break;
                 
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
@@ -290,7 +290,7 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No world index set");
+                //Debug.Log("No world index set");
                 break;
         }
     }
@@ -376,7 +376,7 @@ public class StarCount : MonoBehaviour
             //    }
             //    break;
             default:
-                //Debug.Log("No world index set");
+                ////Debug.Log("No world index set");
                 break;
         }
     }
@@ -440,7 +440,7 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                //Debug.Log("No world index set");
+                ////Debug.Log("No world index set");
                 break;
         }
     }
@@ -504,7 +504,7 @@ public class StarCount : MonoBehaviour
                 }
                 break;
             default:
-                //Debug.Log("No world index set");
+                ////Debug.Log("No world index set");
                 break;
         }
     }

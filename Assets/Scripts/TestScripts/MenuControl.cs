@@ -443,8 +443,9 @@ public class MenuControl : MonoBehaviour
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", true);
         stickerbookButton.GetComponent<Animator>().SetBool("NewStickers", true);
-        book.UpdateAll();           // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - book starcount and all sprites based on book sticker scores
+        starCount.UpdateStarCounts();
         saveManager.CallSaveData(); // sets database score by combining all current book stickerScores into a string, saves score into database for logged in username
+        book.UpdateAll();           // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - book starcount and all sprites based on book sticker scores
     }
 
     //FARM

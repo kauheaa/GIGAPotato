@@ -638,16 +638,10 @@ public class MultiplyScript : MonoBehaviour
         SetWorldIndex();
         completedButton = starCount.completedButton;
         clearButton = starCount.clearButton;
-        Load();
         CountStars();
         UpdateLevelButtons();
         SetTaskNumber();
         taskNumber.text = task + "/5";
         AnswerSpot.text = "?";
-    }
-
-    void Update()
-    {
-
     }
 }

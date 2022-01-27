@@ -718,7 +718,6 @@ public class DivideScript : MonoBehaviour
         SetWorldIndex();
         completedButton = starCount.completedButton;
         clearButton = starCount.clearButton;
-        Load();
         CountStars();
         UpdateLevelButtons();
         SetTaskNumber();

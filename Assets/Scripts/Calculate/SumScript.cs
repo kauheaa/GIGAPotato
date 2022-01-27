@@ -779,7 +779,7 @@ public class SumScript : MonoBehaviour
             GenerateTask();
             Animal.GetComponent<Animator>().SetBool("Happy", false);
         }
-        Debug.Log("Level Reset");
+        //Debug.Log("Level Reset");
     }
 
     IEnumerator Correct()
@@ -804,7 +804,6 @@ public class SumScript : MonoBehaviour
         SetWorldIndex();
         completedButton = starCount.completedButton;
         clearButton = starCount.clearButton;
-        Load();
         CountStars();
         UpdateLevelButtons();
         SetTaskNumber();
