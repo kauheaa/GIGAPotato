@@ -117,7 +117,10 @@ public class MenuControl : MonoBehaviour
             jungleButton.interactable = true;
             spaceButton.interactable = true;
         }
-
+        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
+        {
+            Debug.Log("Master Bank Loaded");
+        }
 
     }
 
@@ -410,21 +413,37 @@ public class MenuControl : MonoBehaviour
 
     public void MoveToJungle()
     {
+        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
+        {
+            Debug.Log("Master Bank Loaded");
+        }
         SceneManager.LoadScene("Jungle");
     }
 
     public void MoveToFarm()
     {
+        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
+        {
+            Debug.Log("Master Bank Loaded");
+        }
         SceneManager.LoadScene("Farm");
     }
 
     public void MoveToSpace()
     {
+        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
+        {
+            Debug.Log("Master Bank Loaded");
+        }
         SceneManager.LoadScene("Space");
     }
 
     public void MoveToMain()
     {
+        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
+        {
+            Debug.Log("Master Bank Loaded");
+        }
         SceneManager.LoadScene("Main");
     }
 
