@@ -942,6 +942,7 @@ public class StickerBook : MonoBehaviour
         if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
         {
             closeBookButton.interactable = true;
+            canvasControl.menuFinger.gameObject.SetActive(false);
         }
         LoadBook();
         worldIndex = starCount.worldIndex;
