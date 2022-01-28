@@ -131,6 +131,7 @@ public class Login : MonoBehaviour
             }
             book.LoadBook();        // book loads scores above and updates all (player info, login buttons, stickers, stars, level buttons)
             book.OpenFirstSpread(); // closes register and login spreads and opens first spread
+            book.closeBookButton.interactable = true;
         }
         else
         {

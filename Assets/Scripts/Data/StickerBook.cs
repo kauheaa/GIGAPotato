@@ -164,7 +164,7 @@ public class StickerBook : MonoBehaviour
         }
         else
         {
-            playerDisplay.text = "NO ONE...";               // resets name showing on the first page
+            playerDisplay.text = "NO ONE...\n\n LOG IN TO SAVE YOUR PROGRESS!";               // resets name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;   // updates logged out avatar
             //closeBookButton.interactable = false;
             if (GameObject.Find("fingerPointing") != null)
@@ -939,6 +939,10 @@ public class StickerBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
+        {
+            closeBookButton.interactable = true;
+        }
         LoadBook();
         worldIndex = starCount.worldIndex;
         sum1 = canvasControl.sum1;

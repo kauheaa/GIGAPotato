@@ -734,15 +734,15 @@ public class SumScript : MonoBehaviour
                 {
                     case 7:
                         book.UnlockAsteroid();
-                        book.OpenSpread3();
+                        book.OpenSpread4();
                         break;
                     case 8:
                         book.UnlockBlackhole();
-                        book.OpenSpread3();
+                        book.OpenSpread4();
                         break;
                     case 9:
                         book.UnlockLlama();
-                        book.OpenSpread3();
+                        book.OpenSpread4();
                         break;
                     default:
                         //Debug.Log("No level index set");

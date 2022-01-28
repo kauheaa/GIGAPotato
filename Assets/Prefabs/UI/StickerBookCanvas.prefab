@@ -4515,7 +4515,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: c0ae2612861f7ff499224429eeffdaaf, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 55d7405525f8af64f8cc70c84c8a23bf, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 8f822102b67bbb54eabdfe57f7cc1b60, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: da91de4652393b640b8eb9721d12ab3e, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 0d01da8330eda8542a47169cc4ed79b1, type: 3}
@@ -6182,8 +6182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.027885417, y: 0.6418902}
   m_AnchorMax: {x: 0.5, y: 0.73475635}
-  m_AnchoredPosition: {x: -4.8974, y: -59}
-  m_SizeDelta: {x: -150.79, y: 29.7894}
+  m_AnchoredPosition: {x: -4.8974, y: -150}
+  m_SizeDelta: {x: -150.79, y: 211.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5245782968043076612
 CanvasRenderer:
@@ -6220,13 +6220,18 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 6
     m_MaxSize: 80
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NO ONE...
+  m_Text: 'NO ONE...
+
+
+    LOG IN TO
+
+    SAVE YOUR PROGRESS!'
 --- !u!1 &1641886516947385461
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,8 +8004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.027885417, y: 0.09010185}
   m_AnchorMax: {x: 0.51760423, y: 0.9446759}
-  m_AnchoredPosition: {x: -18.417786, y: 99}
-  m_SizeDelta: {x: -177.8297, y: -243.7034}
+  m_AnchoredPosition: {x: -18.417786, y: 87.30426}
+  m_SizeDelta: {x: -177.8297, y: -267.0949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9074532857483497649
 CanvasRenderer:
@@ -8032,20 +8037,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4e457946e86c7534f8412939592ad4b6, type: 3}
-    m_FontSize: 60
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
-    m_MaxSize: 60
+    m_MaxSize: 80
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'THIS BOOK
-
-    BELONGS TO:'
+  m_Text: LOG IN
 --- !u!1 &2491888714864405964
 GameObject:
   m_ObjectHideFlags: 0

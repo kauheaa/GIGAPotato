@@ -102,27 +102,6 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform levelExitWarning;
 
 
-    private void Start()
-    {
-        //if (DatabaseManager.LoggedIn == false)
-        //{
-        //    farmButton.interactable = false;
-        //    jungleButton.interactable = false;
-        //    spaceButton.interactable = false;
-        //}
-        stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", false);
-        if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
-        {
-            farmButton.interactable = true;
-            jungleButton.interactable = true;
-            spaceButton.interactable = true;
-        }
-        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
-        {
-            Debug.Log("Master Bank Loaded");
-        }
-
-    }
 
     public void ResetSumScore() // resets task score in all sum scripts
     {
@@ -1109,7 +1088,21 @@ public class MenuControl : MonoBehaviour
         
     }
 
-  
+    private void Start()
+    {
+        if (DatabaseManager.LoggedIn == false)
+        {
+            OpenStickerBook();
+            book.closeBookButton.interactable = false;
+        }
+        if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
+        {
+            book.closeBookButton.interactable = true;
+        }
+
+    }
+
+
 
     //private void Update()
     //{
