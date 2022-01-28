@@ -440,10 +440,6 @@ public class MenuControl : MonoBehaviour
 
     public void MoveToMain()
     {
-        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
-        {
-            Debug.Log("Master Bank Loaded");
-        }
         SceneManager.LoadScene("Main");
     }
 
