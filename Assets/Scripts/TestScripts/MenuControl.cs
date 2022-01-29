@@ -396,7 +396,7 @@ public class MenuControl : MonoBehaviour
         {
             Debug.Log("Master Bank Loaded");
         }
-        SceneManager.LoadScene("Jungle");
+            SceneManager.LoadScene("Jungle");
     }
 
     public void MoveToFarm()
@@ -405,7 +405,7 @@ public class MenuControl : MonoBehaviour
         {
             Debug.Log("Master Bank Loaded");
         }
-        SceneManager.LoadScene("Farm");
+            SceneManager.LoadScene("Farm");
     }
 
     public void MoveToSpace()
@@ -414,7 +414,7 @@ public class MenuControl : MonoBehaviour
         {
             Debug.Log("Master Bank Loaded");
         }
-        SceneManager.LoadScene("Space");
+            SceneManager.LoadScene("Space");
     }
 
     public void MoveToMain()
