@@ -4,25 +4,34 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -46113112877981611
-    second: kamera
-  - first:
-      213: -4436534083155619370
     second: "p\xE4\xE42"
   - first:
+      213: -4436534083155619370
+    second: kamera
+  - first:
       213: 4102495356157111629
-    second: "p\xE4\xE41"
+    second: "p\xE4\xE42"
   - first:
       213: 1900245865192147217
     second: "k\xE4siVasen"
   - first:
       213: -4308012981502794269
-    second: "k\xE4siOikea"
+    second: sammakko_4
   - first:
       213: -5210590832648242364
-    second: jalkaVasen
+    second: "k\xE4siOikea"
   - first:
       213: 5037196305948154741
-    second: jalkaOikea
+    second: kasvot
+  - first:
+      213: 7516990659764073879
+    second: "k\xE4siOikea"
+  - first:
+      213: 2118058433270627464
+    second: kasvot
+  - first:
+      213: -4561792586384878902
+    second: "p\xE4\xE43"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kamera
+      name: "p\xE4\xE41"
       rect:
         serializedVersion: 2
-        x: 156
-        y: 520
-        width: 178
-        height: 130
+        x: 179
+        y: 1214
+        width: 601
+        height: 660
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,13 +142,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "p\xE4\xE42"
+      name: kamera
       rect:
         serializedVersion: 2
-        x: 578
-        y: 434
-        width: 187
-        height: 199
+        x: 1004
+        y: 1689
+        width: 591
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,13 +163,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "p\xE4\xE41"
+      name: "p\xE4\xE42"
       rect:
         serializedVersion: 2
-        x: 80
-        y: 218
-        width: 181
-        height: 198
+        x: 1619
+        y: 1133
+        width: 601
+        height: 666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +187,10 @@ TextureImporter:
       name: "k\xE4siVasen"
       rect:
         serializedVersion: 2
-        x: 387
-        y: 300
-        width: 72
-        height: 163
+        x: 1288
+        y: 1001
+        width: 242
+        height: 542
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,13 +205,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "k\xE4siOikea"
+      name: sammakko_4
       rect:
         serializedVersion: 2
-        x: 813
-        y: 277
-        width: 73
-        height: 171
+        x: 2236
+        y: 1402
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,13 +226,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jalkaVasen
+      name: "k\xE4siOikea"
       rect:
         serializedVersion: 2
-        x: 350
-        y: 33
-        width: 103
-        height: 224
+        x: 2354
+        y: 911
+        width: 244
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,13 +247,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jalkaOikea
+      name: kasvot
       rect:
         serializedVersion: 2
-        x: 679
-        y: 41
-        width: 89
-        height: 212
+        x: 212
+        y: 834
+        width: 539
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,6 +263,69 @@ TextureImporter:
       bones: []
       spriteID: 57b13ff1a57b7e540800000000000000
       internalID: 5037196305948154741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jalkaVasen
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 347
+        width: 343
+        height: 745
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795ba27ad27b15860800000000000000
+      internalID: 7516990659764073879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jalkaOikea
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 379
+        width: 296
+        height: 705
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cbd905cead46d10800000000000000
+      internalID: 2118058433270627464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "p\xE4\xE43"
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 106
+        width: 606
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2d485efc141b0c0800000000000000
+      internalID: -4561792586384878902
       vertices: []
       indices: 
       edges: []
