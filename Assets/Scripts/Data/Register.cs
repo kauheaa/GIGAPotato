@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,18 +9,33 @@ public class Register : MonoBehaviour
     public StickerBook book;
 
     public InputField nameField;
-    public InputField passwordField;
-    public InputField verifyPasswordField;
     public Button submitButton;
 
-    private bool usernameTaken;
     public Text tempName;
-
     public Text usernameError;
-    public Text passwordError1;
-    public Text passwordError2;
 
-    public void CallRegister()
+    public VisualPasswordManager passwordManager;
+
+    //regular expression (regex) restricting username to safe characters
+    private static readonly string UsernameAllowedPattern = @"^[a-zA-Z0-9_-]*$";
+    
+    private bool usernameTaken;
+
+    //public bool IsUsernameValid(string username)
+    //{
+    //    foreach (char c in username)
+    //    {
+    //        if (char.IsLetterOrDigit(c) && c != '-' && c != '_')
+    //        {
+    //            return false;
+    //        }
+    //    }
+    //    return true;
+    //}
+
+
+    
+	public void CallRegister()      //triggers registration
     {
         StartCoroutine(RegisterPlayer());
     }
@@ -26,113 +43,88 @@ public class Register : MonoBehaviour
     public void ResetErrors()       // wipes error messages above inputFields
     {
         usernameError.text = "";
-        passwordError1.text = "";
-        passwordError2.text = "";
     }
 
     public void ResetFields()       // resets register form fields
     {
         nameField.text = "";
-        passwordField.text = "";
-        verifyPasswordField.text = "";
-    }
+        passwordManager.ResetVisualPassword();
+	}
 
     IEnumerator RegisterPlayer()
     {
-        WWWForm form = new WWWForm();
-        form.AddField("username", nameField.text);
-        form.AddField("password", passwordField.text);
-        WWW www = new WWW("http://kauheaa.com/gigapotato/sqlconnect/register.php", form);
-        yield return www;
-        if (www.text == "0")
+        string usernameKey = "user_" + nameField.text;
+
+        //check if username already exists in playerprefs
+        //if not, builds password from the object placements and saves it under usernameKey
+        if (PlayerPrefs.HasKey(usernameKey))
         {
-            Debug.Log("User created successfully");
-            ResetErrors();
-            ResetFields();
-            usernameTaken = false;
-            book.OpenLoginSpread(); // closes register and login spreads and opens first spread
+            usernameTaken = true;
+            tempName.text = nameField.text;
+            yield break;
         }
-        else
-        {
-            if (www.text[0] == '3')
-            {
-                usernameTaken = true;
-                tempName.text = nameField.text;
-            }
-            Debug.Log("User creation failed. Error number #" + www.text);
-        }
+
+        string passwordString = CreatePasswordString();
+        PlayerPrefs.SetString(usernameKey, passwordString);
+        
+        Debug.Log("User created successfully");
+        ResetErrors();
+        ResetFields();
+        usernameTaken = false;
+        book.OpenLoginSpread(); // closes register and login spreads and opens first spread
     }
 
     // Assign this function to RegisterForm Name, Password and VerifyPassword input fields in inspector
-    public void VerifyInputs()  // Makes submitButton interactable when username is >= 3 characters, password >=5 and PasswordField and verifyPassword field inputs match
+    public void VerifyInputs()  
     {
-        submitButton.interactable = (nameField.text.Length >= 3 && passwordField.text.Length >= 5 && verifyPasswordField.text == passwordField.text);
+        // checks username input length and allowed characters
+        bool isUsernameValid = nameField.text.Length >= 3 && Regex.IsMatch(nameField.text, UsernameAllowedPattern);
+        // Makes submitButton interactable when inputs are valid
+        submitButton.interactable = isUsernameValid;
     }
+
+    private string CreatePasswordString() // constructs the password from the object placements not caring about the order of the placement
+    {
+        Dictionary<string, string> placements = passwordManager.GetObjectPlacements();
+        return $"apple{placements["apple"]}carrot{placements["carrot"]}corn{placements["corn"]}";
+    }
+
+
     public void ForceUppercase()    // forces name field input uppercase
     {
         nameField.onValidateInput += delegate (string s, int i, char c)
         { return char.ToUpper(c); };
     }
 
-    public void CheckUsername()     // checks is username 3 or more characters long and prints error if not
-    {
-        if (nameField.text.Length < 3)
-        {
-            usernameError.text = "USERNAME IS TOO SHORT";
-        }
-        else
-        {
-            usernameError.text = "";
-        }
-    }
-
-    public void CheckPassword()     // checks is password 5 or more characters long and prints error if not
-    {
-        if (passwordField.text.Length < 5)
-        {
-            passwordError1.text = "PASSWORD IS TOO SHORT";
-        }
-        else
-        {
-            passwordError1.text = "";
-        }
-    }
-    public void VerifyPassword()    // checks if password and verifyPassword fields match, prints error if not
-    {
-        if (verifyPasswordField.text != passwordField.text)
-        {
-            passwordError2.text = "PASSWORDS DON'T MATCH";
-        }
-        else
-        {
-            passwordError2.text = "";
-        }
-    }
-
 
     private void Update()
     {
+
+        List<string> usernameErrors = new List<string>();
+        List<string> passwordErrors = new List<string>();
+
         if(nameField.text.Length > 0)
         {
-            CheckUsername();
-        }
-        if (passwordField.text.Length > 0)
-        {
-            CheckPassword();
-        }
-        if (verifyPasswordField.text.Length > 0)
-        {
-            VerifyPassword();
-        }
-        if (usernameTaken == true)
-        {
-            usernameError.text = "USERNAME TAKEN";
-            if (nameField.text != tempName.text)
+		    // checks is username 3 or more characters long and prints error if not
+			if (nameField.text.Length < 3)
+			{
+				usernameErrors.Add("USERNAME IS TOO SHORT");
+			}
+            if (!Regex.IsMatch(nameField.text, UsernameAllowedPattern))
             {
-                usernameTaken = false;
+                usernameErrors.Add("USERNAME CAN ONLY INCLUDE LETTERS, NUMBERS, - AND _");
             }
-        }
-        else
+			if (usernameTaken)
+			{
+				usernameErrors.Add("USERNAME TAKEN");
+				if (nameField.text != tempName.text)
+				{
+					usernameTaken = false;
+				}
+			}
+            usernameError.text = string.Join("\n", usernameErrors);
+		}
+        else if (usernameError.text != "")
         {
             usernameError.text = "";
         }
@@ -141,7 +133,6 @@ public class Register : MonoBehaviour
     private void Start()
     {
         usernameTaken = false;
-        ResetErrors();      // wipes error messages above inputFields
         ForceUppercase();   // forces name field input uppercase
     }
 
