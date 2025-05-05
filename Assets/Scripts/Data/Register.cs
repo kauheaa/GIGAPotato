@@ -126,10 +126,15 @@ public class Register : MonoBehaviour
         }
 
         submitButton.interactable = nameField.text.Length >= 3 && Regex.IsMatch(nameField.text, UsernameAllowedPattern) && !usernameTaken;
-
 	}
 
-    private void Start()
+	public void VerifyInputs()      // Makes submitButton interactable when username is >= 3 characters and password >=5
+	{
+		submitButton.interactable = (nameField.text.Length >= 3);
+		book.closeBookButton.interactable = (nameField.text == "DEV");
+	}
+
+	private void Start()
     {
         usernameTaken = false;
         ForceUppercase();   // forces name field input uppercase

@@ -15,6 +15,7 @@ public class StickerBook : MonoBehaviour
     public GameObject signinButton; // button to open register spread
     public GameObject logoutButton; // button to log out
 
+    public Text firstSpreadTitle;
     public Text playerDisplay;      // where player name shows
     [SerializeField] private Transform playerStats;
     public GameObject avatar;       // player avatar indicating logged in status
@@ -149,6 +150,7 @@ public class StickerBook : MonoBehaviour
     {
         if (DatabaseManager.LoggedIn)
         {
+            firstSpreadTitle.text = "LOGGED IN AS";
             playerDisplay.text = DatabaseManager.username;  // updates name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedInAvatar;    // updates logged in avatar
             closeBookButton.interactable = true;
@@ -164,7 +166,8 @@ public class StickerBook : MonoBehaviour
         }
         else
         {
-            playerDisplay.text = "";               // resets name showing on the first page
+			firstSpreadTitle.text = "LOG IN TO SAVE PROGRESS";
+			playerDisplay.text = "";               // resets name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;   // updates logged out avatar
             //closeBookButton.interactable = false;
             if (GameObject.Find("fingerPointing") != null)
