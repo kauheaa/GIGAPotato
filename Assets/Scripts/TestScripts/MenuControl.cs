@@ -1092,15 +1092,15 @@ public class MenuControl : MonoBehaviour
     private void Start()
     {
         Debug.Log(DatabaseManager.LoggedIn);
-        if (DatabaseManager.LoggedIn == false)
-        {
-            OpenStickerBook();
-            book.closeBookButton.interactable = false;
-        }
-        if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
-        {
-            book.closeBookButton.interactable = true;
-        }
+        //if (DatabaseManager.LoggedIn == false)
+        //{
+        //    OpenStickerBook();
+        //    book.closeBookButton.interactable = false;
+        //}
+        //if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
+        //{
+        //    book.closeBookButton.interactable = true;
+        //}
 
     }
 

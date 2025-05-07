@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SaveDataManager : MonoBehaviour
 {
@@ -84,9 +85,38 @@ public class SaveDataManager : MonoBehaviour
             Debug.Log("Login to save");
         }
 	}
-	private void Awake()
+	void Awake()
     {
-        Debug.Log("SaveDataManager woke up. DatabaseScore is " + DatabaseManager.score);
+
+		EnsureDefaultUser();
+		Debug.Log("SaveDataManager woke up. DatabaseScore is " + DatabaseManager.score);
     }
+
+	void EnsureDefaultUser()
+	{
+		string defaultKey = "user_data_" + DatabaseManager.DefaultUsername;
+		if (!PlayerPrefs.HasKey(defaultKey))
+		{
+			string defaultScore = "3030303030303030303030303030303030303030303030303030303030303030303";
+			PlayerPrefs.SetString(defaultKey, defaultScore);
+		}
+		string allUsers = PlayerPrefs.GetString("all_users", "");
+		if (!allUsers.Contains(DatabaseManager.DefaultUsername))
+		{
+			allUsers += (allUsers.Length > 0 ? "|" : "") + DatabaseManager.DefaultUsername;
+			PlayerPrefs.SetString("all_users", allUsers);
+
+			string allPasswords = PlayerPrefs.GetString("all_passwords", "");
+			allPasswords += (allPasswords.Length > 0 ? "|" : "");
+			PlayerPrefs.SetString("all_passwords", allPasswords);
+		}
+		PlayerPrefs.Save();
+
+		if (!DatabaseManager.LoggedIn)
+		{
+			DatabaseManager.username = DatabaseManager.DefaultUsername;
+			DatabaseManager.LoadDefaultScore();
+		}
+	}
 
 }

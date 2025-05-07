@@ -130,6 +130,8 @@ public class VisualPasswordManager : MonoBehaviour
         placementObjectMap.Clear();
         selectedObject = null;
         selectedPlacement = null;
+
+        Debug.Log("password reset");
 	}
 
     private Sprite GetSprite(string objectName)

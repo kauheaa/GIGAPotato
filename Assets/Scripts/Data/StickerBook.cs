@@ -140,6 +140,8 @@ public class StickerBook : MonoBehaviour
     public string congratsText;
     public string congratsTitle;
 
+    public VisualPasswordManager passwordManager;
+
 
     public void DestroyHand()
     {
@@ -162,6 +164,7 @@ public class StickerBook : MonoBehaviour
             playerStats.gameObject.SetActive(true);
             loginButton.gameObject.SetActive(false);        // hides login button
             signinButton.gameObject.SetActive(false);       // hides register button
+            Debug.Log("is it hidden?");
             logoutButton.gameObject.SetActive(true);        // reveals log out button
 
         }
@@ -170,7 +173,7 @@ public class StickerBook : MonoBehaviour
 			firstSpreadTitle.text = "LOG IN TO SAVE PROGRESS";
 			playerDisplay.text = "";               // resets name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;   // updates logged out avatar
-            closeBookButton.interactable = false;
+            //closeBookButton.interactable = false;
             if (GameObject.Find("fingerPointing") != null)
             {
                 fingerPointing.gameObject.SetActive(true);
@@ -860,7 +863,8 @@ public class StickerBook : MonoBehaviour
     // Stickerbook spreads
     public void OpenSpread1()
     {
-        Spread1.gameObject.SetActive(true);
+		passwordManager.ResetVisualPassword();
+		Spread1.gameObject.SetActive(true);
         Spread2.gameObject.SetActive(false);
         Spread3.gameObject.SetActive(false);
         Spread4.gameObject.SetActive(false);
@@ -869,7 +873,7 @@ public class StickerBook : MonoBehaviour
         LoginSpread.gameObject.SetActive(false);
         RegisterSpread.gameObject.SetActive(false);
         FirstSpread.gameObject.SetActive(false);
-    }
+	}
     public void OpenSpread2()
     {
         Spread2.gameObject.SetActive(true);
@@ -919,14 +923,14 @@ public class StickerBook : MonoBehaviour
     {
         FirstSpread.gameObject.SetActive(true);
         LoginSpread.gameObject.SetActive(true);
-        RegisterSpread.gameObject.SetActive(false);
-    }
+		DestroyHand();
+	}
     public void OpenRegisterSpread()
     {
         FirstSpread.gameObject.SetActive(true);
-        RegisterSpread.gameObject.SetActive(true);
-        LoginSpread.gameObject.SetActive(false);
-    }
+        LoginSpread.gameObject.SetActive(true);
+		DestroyHand();
+	}
 
     public void OpenFirstSpread()
     {
@@ -938,14 +942,16 @@ public class StickerBook : MonoBehaviour
     public void CloseBook()
     {
         canvasControl.CloseStickerBook();
+        passwordManager.ResetVisualPassword();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+		closeBookButton.interactable = true;
+        Debug.Log("close button enabled");
         if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
         {
-            closeBookButton.interactable = true;
             canvasControl.menuFinger.gameObject.SetActive(false);
         }
         LoadBook();
@@ -967,10 +973,10 @@ public class StickerBook : MonoBehaviour
         div3 = canvasControl.div3;
 
         UpdateAll(); // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - starcount scores and sprites
-        if (DatabaseManager.LoggedIn == false)
-        {
-            OpenFirstSpread();
-        }
+        //if (DatabaseManager.LoggedIn == false)
+        //{
+        //    OpenFirstSpread();
+        //}
     }
 
 }
