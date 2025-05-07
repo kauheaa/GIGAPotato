@@ -523,8 +523,4 @@ public class StarCount : MonoBehaviour
         CountStars();
         hideStarScore();
     }
-
-    void Update()
-    {
-    }
 }
