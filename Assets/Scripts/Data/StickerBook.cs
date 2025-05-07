@@ -150,6 +150,7 @@ public class StickerBook : MonoBehaviour
     {
         if (DatabaseManager.LoggedIn)
         {
+            Debug.Log("STICKETBOOK SAYS databasemanager is logged in, attempted to update player data");
             firstSpreadTitle.text = "LOGGED IN AS";
             playerDisplay.text = DatabaseManager.username;  // updates name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedInAvatar;    // updates logged in avatar
@@ -169,7 +170,7 @@ public class StickerBook : MonoBehaviour
 			firstSpreadTitle.text = "LOG IN TO SAVE PROGRESS";
 			playerDisplay.text = "";               // resets name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;   // updates logged out avatar
-            //closeBookButton.interactable = false;
+            closeBookButton.interactable = false;
             if (GameObject.Find("fingerPointing") != null)
             {
                 fingerPointing.gameObject.SetActive(true);
@@ -929,10 +930,10 @@ public class StickerBook : MonoBehaviour
 
     public void OpenFirstSpread()
     {
-        FirstSpread.gameObject.SetActive(true);
         LoginSpread.gameObject.SetActive(false);
         RegisterSpread.gameObject.SetActive(false);
-    }
+		FirstSpread.gameObject.SetActive(true);
+	}
 
     public void CloseBook()
     {
@@ -965,11 +966,11 @@ public class StickerBook : MonoBehaviour
         div2 = canvasControl.div2;
         div3 = canvasControl.div3;
 
-    UpdateAll(); // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - starcount scores and sprites
-        //if (DatabaseManager.LoggedIn == false)
-        //{
-        //    OpenFirstSpread();
-        //}
+        UpdateAll(); // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - starcount scores and sprites
+        if (DatabaseManager.LoggedIn == false)
+        {
+            OpenFirstSpread();
+        }
     }
 
 }
