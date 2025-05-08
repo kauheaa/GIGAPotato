@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,8 +50,8 @@ public class Register : MonoBehaviour
         string allPasswords = PlayerPrefs.GetString("all_passwords", "");
 
 
-		Debug.Log($"all users before registering {allUsers}");
-		Debug.Log($"all passwords before registering {allPasswords}");
+		//Debug.Log($"all users before registering {allUsers}");
+		//Debug.Log($"all passwords before registering {allPasswords}");
 
 		List<string> userList = new List<string>(allUsers.Split('|'));
 		List<string> passwordList = new List<string>(allPasswords.Split('|'));
@@ -60,7 +61,9 @@ public class Register : MonoBehaviour
         {
             usernameTaken = true;
             lastFailedUsername = username;
-            yield break;
+
+			Debug.Log($"{username} already exists");
+			yield break;
         }
 
         // add new user and password
@@ -76,14 +79,118 @@ public class Register : MonoBehaviour
 		allUsers = PlayerPrefs.GetString("all_users", "");
 		allPasswords = PlayerPrefs.GetString("all_passwords", "");
 
-		Debug.Log($"all users before registering {allUsers}");
-		Debug.Log($"all passwords before registering {allPasswords}");
+		//Debug.Log($"all users after registering {allUsers}");
+		//Debug.Log($"all passwords after registering {allPasswords}");
 
 		ResetErrors();
         ResetFields();
         usernameTaken = false;
-        book.OpenLoginSpread(); // closes register and login spreads and opens first spread
 
+
+		if (DatabaseManager.username == DatabaseManager.DefaultUsername)
+        {
+            string key = "user_data_" + username;
+            PlayerPrefs.SetString(key, DatabaseManager.score);
+            Debug.Log($"Migrated default user data to new user {username}");
+
+			string defaultKey = "user_data_" + DatabaseManager.DefaultUsername;
+			PlayerPrefs.SetString(defaultKey, "3030303030303030303030303030303030303030303030303030303030303030303");
+            Debug.Log("Default user reset");
+		}
+
+		DatabaseManager.username = username;
+		Debug.Log($"Database username is {DatabaseManager.username}");
+		Debug.Log($"Database score is {DatabaseManager.score}");
+
+		string scoreKey = "user_data_" + username;
+		if (PlayerPrefs.HasKey(scoreKey))
+		{
+			DatabaseManager.score = PlayerPrefs.GetString(scoreKey);
+
+			// splits the text by character (single quote for a character, double for string)
+			string[] score = DatabaseManager.score.Split('3');
+			Debug.Log($"Load score {DatabaseManager.score}");
+
+			// picks apart saved score string and turns the characters into ints
+			DatabaseManager.appleStickerScore = int.Parse(score[1]);
+			DatabaseManager.basketStickerScore = int.Parse(score[2]);
+			DatabaseManager.pigStickerScore = int.Parse(score[3]);
+			DatabaseManager.carrotStickerScore = int.Parse(score[4]);
+			DatabaseManager.bucketStickerScore = int.Parse(score[5]);
+			DatabaseManager.bunnyStickerScore = int.Parse(score[6]);
+			DatabaseManager.threeCornStickerScore = int.Parse(score[7]);
+			DatabaseManager.twoCornStickerScore = int.Parse(score[8]);
+			DatabaseManager.lambStickerScore = int.Parse(score[9]);
+			DatabaseManager.bananaStickerScore = int.Parse(score[10]);
+			DatabaseManager.clusterStickerScore = int.Parse(score[11]);
+			DatabaseManager.monkeyStickerScore = int.Parse(score[12]);
+			DatabaseManager.coconutStickerScore = int.Parse(score[13]);
+			DatabaseManager.ocularsStickerScore = int.Parse(score[14]);
+			DatabaseManager.slothStickerScore = int.Parse(score[15]);
+			DatabaseManager.lycheeStickerScore = int.Parse(score[16]);
+			DatabaseManager.pitahayaStickerScore = int.Parse(score[17]);
+			DatabaseManager.frogStickerScore = int.Parse(score[18]);
+			DatabaseManager.avocadoStickerScore = int.Parse(score[19]);
+			DatabaseManager.toolStickerScore = int.Parse(score[20]);
+			DatabaseManager.tigerStickerScore = int.Parse(score[21]);
+			DatabaseManager.asteroidStickerScore = int.Parse(score[22]);
+			DatabaseManager.blackholeStickerScore = int.Parse(score[23]);
+			DatabaseManager.llamaStickerScore = int.Parse(score[24]);
+			DatabaseManager.starStickerScore = int.Parse(score[25]);
+			DatabaseManager.planetStickerScore = int.Parse(score[26]);
+			DatabaseManager.cowStickerScore = int.Parse(score[27]);
+			DatabaseManager.flagStickerScore = int.Parse(score[28]);
+			DatabaseManager.rocketStickerScore = int.Parse(score[29]);
+			DatabaseManager.laikaStickerScore = int.Parse(score[30]);
+			DatabaseManager.driedfishStickerScore = int.Parse(score[31]);
+			DatabaseManager.octopusStickerScore = int.Parse(score[32]);
+			DatabaseManager.catStickerScore = int.Parse(score[33]);
+		}
+		else
+		{
+			DatabaseManager.score = "3030303030303030303030303030303030303030303030303030303030303030303";
+
+			// splits the text by character (single quote for a character, double for string)
+			string[] score = DatabaseManager.score.Split('3');
+			Debug.Log($"No user logged in; score defaulted to {DatabaseManager.score}");
+
+			DatabaseManager.appleStickerScore = int.Parse(score[1]);
+			DatabaseManager.basketStickerScore = int.Parse(score[2]);
+			DatabaseManager.pigStickerScore = int.Parse(score[3]);
+			DatabaseManager.carrotStickerScore = int.Parse(score[4]);
+			DatabaseManager.bucketStickerScore = int.Parse(score[5]);
+			DatabaseManager.bunnyStickerScore = int.Parse(score[6]);
+			DatabaseManager.threeCornStickerScore = int.Parse(score[7]);
+			DatabaseManager.twoCornStickerScore = int.Parse(score[8]);
+			DatabaseManager.lambStickerScore = int.Parse(score[9]);
+			DatabaseManager.bananaStickerScore = int.Parse(score[10]);
+			DatabaseManager.clusterStickerScore = int.Parse(score[11]);
+			DatabaseManager.monkeyStickerScore = int.Parse(score[12]);
+			DatabaseManager.coconutStickerScore = int.Parse(score[13]);
+			DatabaseManager.ocularsStickerScore = int.Parse(score[14]);
+			DatabaseManager.slothStickerScore = int.Parse(score[15]);
+			DatabaseManager.lycheeStickerScore = int.Parse(score[16]);
+			DatabaseManager.pitahayaStickerScore = int.Parse(score[17]);
+			DatabaseManager.frogStickerScore = int.Parse(score[18]);
+			DatabaseManager.avocadoStickerScore = int.Parse(score[19]);
+			DatabaseManager.toolStickerScore = int.Parse(score[20]);
+			DatabaseManager.tigerStickerScore = int.Parse(score[21]);
+			DatabaseManager.asteroidStickerScore = int.Parse(score[22]);
+			DatabaseManager.blackholeStickerScore = int.Parse(score[23]);
+			DatabaseManager.llamaStickerScore = int.Parse(score[24]);
+			DatabaseManager.starStickerScore = int.Parse(score[25]);
+			DatabaseManager.planetStickerScore = int.Parse(score[26]);
+			DatabaseManager.cowStickerScore = int.Parse(score[27]);
+			DatabaseManager.flagStickerScore = int.Parse(score[28]);
+			DatabaseManager.rocketStickerScore = int.Parse(score[29]);
+			DatabaseManager.laikaStickerScore = int.Parse(score[30]);
+			DatabaseManager.driedfishStickerScore = int.Parse(score[31]);
+			DatabaseManager.octopusStickerScore = int.Parse(score[32]);
+			DatabaseManager.catStickerScore = int.Parse(score[33]);
+		}
+
+		book.LoadBook();
+		book.OpenFirstSpread();
 	}
 
     private string CreatePasswordString() // constructs the password from the object placements not caring about the order of the placement
@@ -106,7 +213,7 @@ public class Register : MonoBehaviour
         List<string> usernameErrors = new List<string>();
 
 		// Reset taken flag if name is no longer taken
-		if (usernameTaken && !PlayerPrefs.HasKey("user_" + nameField.text))
+		if (usernameTaken && !PlayerPrefs.HasKey("user_data_" + nameField.text))
 		{
 			usernameTaken = false;
 		}
@@ -131,7 +238,7 @@ public class Register : MonoBehaviour
 	public void VerifyInputs()      // Makes submitButton interactable when username is >= 3 characters and password >=5
 	{
 		submitButton.interactable = (nameField.text.Length >= 3);
-		book.closeBookButton.interactable = (nameField.text == "DEV");
+		//book.closeBookButton.interactable = (nameField.text == "DEV");
 	}
 
 	private void Start()

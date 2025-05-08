@@ -27,13 +27,11 @@ public class SaveDataManager : MonoBehaviour
             PlayerPrefs.SetString(saveKey, DatabaseManager.score);
             PlayerPrefs.Save();
 
-            Debug.Log($"Score {DatabaseManager.score} saved for user {DatabaseManager.username}");
+            Debug.Log($"Attempting to save core {DatabaseManager.score} for user {DatabaseManager.username}");
 
-			string scoreKey = "user_data_" + username;
-
-			if (PlayerPrefs.HasKey(scoreKey))
+			if (PlayerPrefs.HasKey(saveKey))
 			{
-				DatabaseManager.score = PlayerPrefs.GetString(scoreKey);
+				DatabaseManager.score = PlayerPrefs.GetString(saveKey);
 
 				// splits the text by character (single quote for a character, double for string)
 				string[] score = DatabaseManager.score.Split('3');

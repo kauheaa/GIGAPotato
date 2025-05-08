@@ -183,7 +183,6 @@ public class StickerBook : MonoBehaviour
             firstSpreadTitle.text = "LOGGED IN AS";
             playerDisplay.text = DatabaseManager.username;  // updates name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedInAvatar;    // updates logged in avatar
-            closeBookButton.interactable = true;
             if (GameObject.Find("fingerPointing") != null)
             {
                 DestroyHand();
@@ -197,10 +196,9 @@ public class StickerBook : MonoBehaviour
         }
         else
         {
-			firstSpreadTitle.text = "LOG IN TO SAVE PROGRESS";
+			firstSpreadTitle.text = "CREATE PLAYER PROFILE TO SAVE YOUR PROGRESS";
 			playerDisplay.text = "";               // resets name showing on the first page
             avatar.gameObject.GetComponent<Image>().sprite = loggedOutAvatar;   // updates logged out avatar
-            //closeBookButton.interactable = false;
             if (GameObject.Find("fingerPointing") != null)
             {
                 fingerPointing.gameObject.SetActive(true);
@@ -550,6 +548,7 @@ public class StickerBook : MonoBehaviour
     {
         DatabaseManager.LogOut();
         ResetStickers();    // Resets the whole stickerbook, saves scores as 0 and updates all (player info, login buttons, stickers, stars, level buttons)
+        OpenFirstSpread();
     }
 
 
@@ -975,7 +974,6 @@ public class StickerBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		closeBookButton.interactable = true;
         Debug.Log("close button enabled");
         if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
         {

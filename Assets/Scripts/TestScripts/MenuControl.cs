@@ -425,7 +425,6 @@ public class MenuControl : MonoBehaviour
     public void OpenStickerBook()
     {
         stickerBook.gameObject.SetActive(true);
-        Debug.Log("stickebook opened");
     }
     public void CloseStickerBook()
     {
@@ -1083,16 +1082,7 @@ public class MenuControl : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(DatabaseManager.LoggedIn);
-        //if (DatabaseManager.LoggedIn == false)
-        //{
-        //    OpenStickerBook();
-        //    book.closeBookButton.interactable = false;
-        //}
-        //if (starCount.worldIndex == 0 && DatabaseManager.LoggedIn == true)
-        //{
-        //    book.closeBookButton.interactable = true;
-        //}
+        //Debug.Log(DatabaseManager.LoggedIn);
 
     }
 

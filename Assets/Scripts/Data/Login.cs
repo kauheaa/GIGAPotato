@@ -173,14 +173,13 @@ public class Login : MonoBehaviour
 
 		book.LoadBook();
 		book.OpenFirstSpread();
-		book.closeBookButton.interactable = true;
 	}
 
     // Assign this function to LoginForm Name and Password input fields in inspector
     public void VerifyInputs()      // Makes submitButton interactable when username is >= 3 characters and password >=5
     {
         submitButton.interactable = (nameField.text.Length >= 3 );
-        book.closeBookButton.interactable = (nameField.text == "DEV");
+        //book.closeBookButton.interactable = (nameField.text == "DEV");
     }
 
     public void ForceUppercase()    // forces name field input uppercase
