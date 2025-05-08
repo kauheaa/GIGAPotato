@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,8 @@ public class StickerBook : MonoBehaviour
     public GameObject signinButton; // button to open register spread
 	public GameObject logoutButton; // button to log out
 	public GameObject resetButton;
-
+	public GameObject manageButton;
+    
 
 	public Text firstSpreadTitle;
     public Text playerDisplay;      // where player name shows
@@ -160,10 +162,6 @@ public class StickerBook : MonoBehaviour
 					quitMenu.gameObject.SetActive(false);
 				}
 			}
-			if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-			{
-                return;
-			}
 		}
 	}
 
@@ -196,7 +194,6 @@ public class StickerBook : MonoBehaviour
             playerStats.gameObject.SetActive(true);
             loginButton.gameObject.SetActive(false);        // hides login button
             signinButton.gameObject.SetActive(false);       // hides register button
-            Debug.Log("is it hidden?");
             logoutButton.gameObject.SetActive(true);        // reveals log out button
 
         }
@@ -447,6 +444,35 @@ public class StickerBook : MonoBehaviour
             }
         }
     }
+
+    public void DeleteEverything()
+    {
+        string defaultUsername = DatabaseManager.DefaultUsername;
+		string defaultScore = "3030303030303030303030303030303030303030303030303030303030303030303";
+		string defaultKey = "user_data_" + defaultUsername;
+
+		string allUsers = PlayerPrefs.GetString("all_users", "");
+		List<string> userList = new List<string>(allUsers.Split('|'));
+
+		foreach (string user in userList)
+        {
+            if (!string.IsNullOrEmpty(user) && user != defaultUsername)
+            {
+                string userKey = "user_data_" + user;
+                PlayerPrefs.DeleteKey(userKey);
+            }
+        }
+
+		PlayerPrefs.SetString("all_users", defaultUsername);
+		PlayerPrefs.SetString("all_passwords", "");
+		PlayerPrefs.SetString(defaultKey, defaultScore);
+
+		DatabaseManager.username = defaultUsername;
+        DatabaseManager.score = defaultScore;
+
+        UpdateAll();
+	}
+
     public void UpdateAll()     // updates: player name and avatar, login buttons, stats - unlocks/hides stickers - level button sprites - book starcount and all sprites based on book sticker scores
     {
         UpdatePlayerInfo();     // updates first page name, avatar sprite and register/login/logout button visibility
@@ -455,9 +481,10 @@ public class StickerBook : MonoBehaviour
         UpdateStats();          // updates the book stats page values
         UpdateLevelButtons();   // updates sprites to all sum/sub/count/div/mult based on stickerscores and world index
 		resetButton.gameObject.SetActive(DatabaseManager.score != "3030303030303030303030303030303030303030303030303030303030303030303");
+		manageButton.gameObject.SetActive(PlayerPrefs.HasKey("all_users") && PlayerPrefs.GetString("all_users", "") != "DEFAULT_USER" && PlayerPrefs.GetString("all_users", "") != null);
 	}
 
-    public void CallSaveData() // sets database score by combining all book sticker scores into a string, saves score into database for logged in username
+    public void CallSaveData() // sets database score by combining all book sticker scores into a string, saves score into database for logged in userKey
     {
         save.CallSaveData();
     }
@@ -529,7 +556,7 @@ public class StickerBook : MonoBehaviour
         driedfishStickerScore = 0;
         octopusStickerScore = 0;
         catStickerScore = 0;
-        CallSaveData(); // sets database score by combining all book sticker scores into a string, saves score into database for logged in username
+        CallSaveData(); // sets database score by combining all book sticker scores into a string, saves score into database for logged in userKey
         UpdateAll();    // updates: player name and avatar, login buttons, stats - unlocks/hides stickers - level button sprites - book starcount and all sprites based on book sticker scores
     }
     
@@ -934,15 +961,21 @@ public class StickerBook : MonoBehaviour
         RegisterSpread.gameObject.SetActive(false);
         FirstSpread.gameObject.SetActive(false);
     }
+
+    public string tab = "";
+
     public void OpenLoginSpread()
     {
+        tab = "Login";
         FirstSpread.gameObject.SetActive(true);
         LoginSpread.gameObject.SetActive(true);
 		if (fingerPointing != null) DestroyHand();
+
 	}
     public void OpenRegisterSpread()
     {
-        FirstSpread.gameObject.SetActive(true);
+		tab = "Register";
+		FirstSpread.gameObject.SetActive(true);
         LoginSpread.gameObject.SetActive(true);
 		if (fingerPointing != null) DestroyHand();
 	}

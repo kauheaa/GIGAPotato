@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class VisualPasswordManager : MonoBehaviour
@@ -38,6 +39,7 @@ public class VisualPasswordManager : MonoBehaviour
             selectedObject = null;
 			Debug.Log($"Deselected object: {objectName}");
 
+			EventSystem.current.SetSelectedGameObject(null);
 			return;
         }
 
@@ -45,7 +47,13 @@ public class VisualPasswordManager : MonoBehaviour
         selectedPlacement = null;
 
         Debug.Log("Selected object: " + objectName);
-    }
+
+		Button objectBtn = objectButtons.Find(btn => btn.name.ToLower() == objectName);
+		if (objectBtn != null)
+		{
+			EventSystem.current.SetSelectedGameObject(objectBtn.gameObject);
+		}
+	}
 
     public void AssignPlacement(string placementName)
     {
@@ -63,6 +71,9 @@ public class VisualPasswordManager : MonoBehaviour
             selectedObject = heldObject;
             selectedPlacement = clickedPlacement;
 			Debug.Log($"Selected object {selectedObject} at {selectedPlacement}");
+
+			// Set selected placement visually
+			EventSystem.current.SetSelectedGameObject(clickedPlacement.gameObject);
 		}
 
         // Clicking placement with object selected
@@ -74,7 +85,10 @@ public class VisualPasswordManager : MonoBehaviour
                 selectedObject = heldObject;
                 selectedPlacement = clickedPlacement;
 				Debug.Log($"Selection switched to {heldObject} at {clickedPlacement}");
-                return;
+
+				// Set selected placement visually
+				EventSystem.current.SetSelectedGameObject(clickedPlacement.gameObject);
+				return;
 			}
             
             // if clicked placement is empty; move object there
@@ -89,6 +103,8 @@ public class VisualPasswordManager : MonoBehaviour
                 placementObjectMap[clickedPlacement] = selectedObject;
 
                 clickedPlacement.image.sprite = GetSprite(selectedObject);
+
+				EventSystem.current.SetSelectedGameObject(null);
 
 				Debug.Log($"{selectedObject} moved from {oldPlacementName} to {placementName}");
 			}

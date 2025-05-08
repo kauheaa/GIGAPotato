@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text.RegularExpressions;
-using UnityEditor.EventSystems;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -210,7 +208,7 @@ public class Register : MonoBehaviour
     }
 
 
-    private void Update()
+    public void Update()
     {
 
         List<string> usernameErrors = new List<string>();
@@ -236,6 +234,8 @@ public class Register : MonoBehaviour
         }
 
         submitButton.interactable = nameField.text.Length >= 3 && Regex.IsMatch(nameField.text, UsernameAllowedPattern) && !usernameTaken;
+
+
 	}
 
 	public void VerifyInputs()      // Makes submitButton interactable when username is >= 3 characters and password >=5
@@ -244,7 +244,7 @@ public class Register : MonoBehaviour
 		//book.closeBookButton.interactable = (nameField.text == "DEV");
 	}
 
-	private void Start()
+	public void Start()
     {
         usernameTaken = false;
         ForceUppercase();   // forces name field input uppercase

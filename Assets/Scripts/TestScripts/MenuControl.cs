@@ -431,7 +431,6 @@ public class MenuControl : MonoBehaviour
         stickerBook.gameObject.SetActive(false);
     }
 
-
     public void Save()
     {
         stickerbookButton.GetComponent<Animator>().SetBool("StickerSaved", true);
@@ -1085,6 +1084,4 @@ public class MenuControl : MonoBehaviour
         //Debug.Log(DatabaseManager.LoggedIn);
 
     }
-
-
 }

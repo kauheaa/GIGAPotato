@@ -65,7 +65,7 @@ public class Login : MonoBehaviour
 		lastTriedUsername = username;
 		lastTriedPassword = enteredPassword;
 
-		if (index == -1)
+		if (index == -1 || index >= passwordList.Count)
 		{
 			userNotFound = true;
 			passwordManager.ResetVisualPassword();
@@ -207,7 +207,6 @@ public class Login : MonoBehaviour
 		}
 
 		if (nameField.text.Length > 0) VerifyInputs();
-
 	}
 
 }
