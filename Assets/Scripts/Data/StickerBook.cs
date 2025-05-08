@@ -141,14 +141,41 @@ public class StickerBook : MonoBehaviour
     public string congratsTitle;
 
     public VisualPasswordManager passwordManager;
+    [SerializeField] private Transform quitMenu;
+
+	public void Update()
+	{
+		if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+		{
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				if (!quitMenu.gameObject.activeSelf)
+				{
+					quitMenu.gameObject.SetActive(true);
+				}
+				else
+				{
+					quitMenu.gameObject.SetActive(false);
+				}
+			}
+		}
+	}
 
 
     public void DestroyHand()
     {
         Destroy(fingerPointing);
     }
+	public void QuitButtonPressed()
+	{
+		Application.Quit();
+	}
+	public void QuitCancelButtonPressed()
+	{
+		quitMenu.gameObject.SetActive(false);
+	}
 
-    public void UpdatePlayerInfo() // updates first page name, avatar and register/login/logout button visibility
+	public void UpdatePlayerInfo() // updates first page name, avatar and register/login/logout button visibility
     {
         if (DatabaseManager.LoggedIn)
         {

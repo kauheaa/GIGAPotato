@@ -102,7 +102,6 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private Transform levelExitWarning;
 
 
-
     public void ResetSumScore() // resets task score in all sum scripts
     {
         sum1.ResetScore();
@@ -1074,20 +1073,13 @@ public class MenuControl : MonoBehaviour
     
 
 
-    public void ExitButtonPressed()
-    {
-        Application.Quit();
-    }
+
 
     public void PauseGame()
     {
     }
 
 
-    public void QuitButtonPressed()
-    {
-        
-    }
 
     private void Start()
     {
@@ -1105,14 +1097,4 @@ public class MenuControl : MonoBehaviour
     }
 
 
-
-    //private void Update()
-    //{
-    //    if (DatabaseManager.LoggedIn == true)
-    //    {
-    //        farmButton.interactable = true;
-    //        jungleButton.interactable = true;
-    //        spaceButton.interactable = true;
-    //    }
-    //}
 }
