@@ -6204,11 +6204,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
---- !u!224 &188366816 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6694173234488724859, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 188366815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &188366817 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9085034373653778529, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
@@ -59395,7 +59390,7 @@ MonoBehaviour:
   div1: {fileID: 1213564453}
   div2: {fileID: 839795278}
   div3: {fileID: 518535920}
-  resetWarning: {fileID: 188366816}
+  resetWarning: {fileID: 0}
   stickerBook: {fileID: 188366817}
   farmWorld: {fileID: 1845133703}
   additionCat: {fileID: 1917348011}
@@ -89786,6 +89781,8 @@ GameObject:
   - component: {fileID: 2011168348}
   - component: {fileID: 2011168347}
   - component: {fileID: 2011168346}
+  - component: {fileID: 2011168350}
+  - component: {fileID: 2011168349}
   m_Layer: 5
   m_Name: GameplayCanvas
   m_TagString: Untagged
@@ -89874,6 +89871,44 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2011168349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011168344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 67a208ffd56374ecc90e2f221f220822, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2011168350
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011168344}
+  m_CullTransparentMesh: 1
 --- !u!1 &2011783712
 GameObject:
   m_ObjectHideFlags: 0

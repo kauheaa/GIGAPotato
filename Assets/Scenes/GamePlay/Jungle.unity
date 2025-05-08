@@ -1483,7 +1483,7 @@ MonoBehaviour:
   div1: {fileID: 2132550888}
   div2: {fileID: 609377424}
   div3: {fileID: 1154250889}
-  resetWarning: {fileID: 802231660}
+  resetWarning: {fileID: 0}
   stickerBook: {fileID: 802231667}
   farmWorld: {fileID: 126503996}
   additionCat: {fileID: 610623941}
@@ -6050,6 +6050,8 @@ GameObject:
   - component: {fileID: 138306783}
   - component: {fileID: 138306782}
   - component: {fileID: 138306781}
+  - component: {fileID: 138306785}
+  - component: {fileID: 138306784}
   m_Layer: 5
   m_Name: GameplayCanvas
   m_TagString: Untagged
@@ -6138,6 +6140,44 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &138306784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138306779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 67a208ffd56374ecc90e2f221f220822, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &138306785
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138306779}
+  m_CullTransparentMesh: 1
 --- !u!1 &138484583
 GameObject:
   m_ObjectHideFlags: 0
@@ -35371,11 +35411,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7147586787748065954, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
---- !u!224 &802231660 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6694173234488724859, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
-  m_PrefabInstance: {fileID: 802231659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &802231661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1187084697507962629, guid: d5e3835c24c214545af0d6f50127dbad, type: 3}
