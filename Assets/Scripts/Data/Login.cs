@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Login : MonoBehaviour
@@ -69,6 +70,7 @@ public class Login : MonoBehaviour
 			userNotFound = true;
 			passwordManager.ResetVisualPassword();
 			loginError.text = "USER DOESN'T EXIST";
+			EventSystem.current.SetSelectedGameObject(nameField.gameObject, null);
 			yield break;
 		}
 		if (index >= passwordList.Count || passwordList[index] != enteredPassword)
@@ -76,6 +78,7 @@ public class Login : MonoBehaviour
 			wrongPassword = true;
 			passwordManager.ResetVisualPassword();
 			loginError.text = "PASSWORD IS INCORRECT";
+			EventSystem.current.SetSelectedGameObject(nameField.gameObject, null);
 			yield break;
 		}
 

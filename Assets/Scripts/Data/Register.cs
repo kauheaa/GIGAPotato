@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using UnityEditor.EventSystems;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Register : MonoBehaviour
@@ -63,6 +65,7 @@ public class Register : MonoBehaviour
             lastFailedUsername = username;
 
 			Debug.Log($"{username} already exists");
+			EventSystem.current.SetSelectedGameObject(nameField.gameObject, null);
 			yield break;
         }
 

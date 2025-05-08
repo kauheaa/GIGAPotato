@@ -13,9 +13,11 @@ public class StickerBook : MonoBehaviour
 
     public GameObject loginButton;  // button to open log in spread
     public GameObject signinButton; // button to open register spread
-    public GameObject logoutButton; // button to log out
+	public GameObject logoutButton; // button to log out
+	public GameObject resetButton;
 
-    public Text firstSpreadTitle;
+
+	public Text firstSpreadTitle;
     public Text playerDisplay;      // where player name shows
     [SerializeField] private Transform playerStats;
     public GameObject avatar;       // player avatar indicating logged in status
@@ -158,6 +160,10 @@ public class StickerBook : MonoBehaviour
 					quitMenu.gameObject.SetActive(false);
 				}
 			}
+			if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+			{
+                return;
+			}
 		}
 	}
 
@@ -208,24 +214,6 @@ public class StickerBook : MonoBehaviour
             signinButton.gameObject.SetActive(true);        // reveals register button
             logoutButton.gameObject.SetActive(false);       // hides log out button
         }
-    }
-
-
-
-    public void ResetButtonFunction()
-    {
-        canvasControl.OpenResetWarning();
-    }
-    
-    public void CloseResetWarning()
-    {
-        canvasControl.CloseResetWarning();
-    }
-
-    public void ResetWarningOK()
-    {
-        ResetStickers();
-        CloseResetWarning();
     }
 
     public void UpdateStickers()
@@ -466,7 +454,8 @@ public class StickerBook : MonoBehaviour
         CountStars();           // updates book starCounts based on sticker scores, and all sum/sub/count/div/mult starCount sprites
         UpdateStats();          // updates the book stats page values
         UpdateLevelButtons();   // updates sprites to all sum/sub/count/div/mult based on stickerscores and world index
-    }
+		resetButton.gameObject.SetActive(DatabaseManager.score != "3030303030303030303030303030303030303030303030303030303030303030303");
+	}
 
     public void CallSaveData() // sets database score by combining all book sticker scores into a string, saves score into database for logged in username
     {
@@ -949,19 +938,18 @@ public class StickerBook : MonoBehaviour
     {
         FirstSpread.gameObject.SetActive(true);
         LoginSpread.gameObject.SetActive(true);
-		DestroyHand();
+		if (fingerPointing != null) DestroyHand();
 	}
     public void OpenRegisterSpread()
     {
         FirstSpread.gameObject.SetActive(true);
         LoginSpread.gameObject.SetActive(true);
-		DestroyHand();
+		if (fingerPointing != null) DestroyHand();
 	}
 
     public void OpenFirstSpread()
     {
         LoginSpread.gameObject.SetActive(false);
-        RegisterSpread.gameObject.SetActive(false);
 		FirstSpread.gameObject.SetActive(true);
 	}
 
@@ -998,10 +986,6 @@ public class StickerBook : MonoBehaviour
         div3 = canvasControl.div3;
 
         UpdateAll(); // updates: player info, login buttons, stats - unlocks/hides stickers - level button sprites - starcount scores and sprites
-        //if (DatabaseManager.LoggedIn == false)
-        //{
-        //    OpenFirstSpread();
-        //}
     }
 
 }

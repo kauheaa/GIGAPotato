@@ -18,6 +18,54 @@ public class SaveDataManager : MonoBehaviour
         SavePlayerData();
     }
 
+	//public void ResetCurrentPlayerData()
+	//{
+	//	string username = DatabaseManager.LoggedIn ? DatabaseManager.username : DatabaseManager.DefaultUsername;
+	//	string scoreKey = "user_data_" + username;
+	//	string resetScore = "3030303030303030303030303030303030303030303030303030303030303030303";
+
+	//	PlayerPrefs.SetString(scoreKey, resetScore);
+	//	Debug.Log($"{username} data reset");
+	//	DatabaseManager.score = resetScore;
+
+	//	string[] score = DatabaseManager.score.Split('3');
+	//	DatabaseManager.appleStickerScore = int.Parse(score[1]);
+	//	DatabaseManager.basketStickerScore = int.Parse(score[2]);
+	//	DatabaseManager.pigStickerScore = int.Parse(score[3]);
+	//	DatabaseManager.carrotStickerScore = int.Parse(score[4]);
+	//	DatabaseManager.bucketStickerScore = int.Parse(score[5]);
+	//	DatabaseManager.bunnyStickerScore = int.Parse(score[6]);
+	//	DatabaseManager.threeCornStickerScore = int.Parse(score[7]);
+	//	DatabaseManager.twoCornStickerScore = int.Parse(score[8]);
+	//	DatabaseManager.lambStickerScore = int.Parse(score[9]);
+	//	DatabaseManager.bananaStickerScore = int.Parse(score[10]);
+	//	DatabaseManager.clusterStickerScore = int.Parse(score[11]);
+	//	DatabaseManager.monkeyStickerScore = int.Parse(score[12]);
+	//	DatabaseManager.coconutStickerScore = int.Parse(score[13]);
+	//	DatabaseManager.ocularsStickerScore = int.Parse(score[14]);
+	//	DatabaseManager.slothStickerScore = int.Parse(score[15]);
+	//	DatabaseManager.lycheeStickerScore = int.Parse(score[16]);
+	//	DatabaseManager.pitahayaStickerScore = int.Parse(score[17]);
+	//	DatabaseManager.frogStickerScore = int.Parse(score[18]);
+	//	DatabaseManager.avocadoStickerScore = int.Parse(score[19]);
+	//	DatabaseManager.toolStickerScore = int.Parse(score[20]);
+	//	DatabaseManager.tigerStickerScore = int.Parse(score[21]);
+	//	DatabaseManager.asteroidStickerScore = int.Parse(score[22]);
+	//	DatabaseManager.blackholeStickerScore = int.Parse(score[23]);
+	//	DatabaseManager.llamaStickerScore = int.Parse(score[24]);
+	//	DatabaseManager.starStickerScore = int.Parse(score[25]);
+	//	DatabaseManager.planetStickerScore = int.Parse(score[26]);
+	//	DatabaseManager.cowStickerScore = int.Parse(score[27]);
+	//	DatabaseManager.flagStickerScore = int.Parse(score[28]);
+	//	DatabaseManager.rocketStickerScore = int.Parse(score[29]);
+	//	DatabaseManager.laikaStickerScore = int.Parse(score[30]);
+	//	DatabaseManager.driedfishStickerScore = int.Parse(score[31]);
+	//	DatabaseManager.octopusStickerScore = int.Parse(score[32]);
+	//	DatabaseManager.catStickerScore = int.Parse(score[33]);
+	//	book.LoadBook();
+	//	book.OpenFirstSpread();
+	//}
+
 
     private void SavePlayerData()    // saves database score as a string into database for logged in username
     {
