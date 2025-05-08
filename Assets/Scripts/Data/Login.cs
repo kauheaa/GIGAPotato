@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Login : MonoBehaviour
@@ -64,11 +65,12 @@ public class Login : MonoBehaviour
 		lastTriedUsername = username;
 		lastTriedPassword = enteredPassword;
 
-		if (index == -1)
+		if (index == -1 || index >= passwordList.Count)
 		{
 			userNotFound = true;
 			passwordManager.ResetVisualPassword();
 			loginError.text = "USER DOESN'T EXIST";
+			EventSystem.current.SetSelectedGameObject(nameField.gameObject, null);
 			yield break;
 		}
 		if (index >= passwordList.Count || passwordList[index] != enteredPassword)
@@ -76,6 +78,7 @@ public class Login : MonoBehaviour
 			wrongPassword = true;
 			passwordManager.ResetVisualPassword();
 			loginError.text = "PASSWORD IS INCORRECT";
+			EventSystem.current.SetSelectedGameObject(nameField.gameObject, null);
 			yield break;
 		}
 
@@ -173,14 +176,13 @@ public class Login : MonoBehaviour
 
 		book.LoadBook();
 		book.OpenFirstSpread();
-		book.closeBookButton.interactable = true;
 	}
 
     // Assign this function to LoginForm Name and Password input fields in inspector
     public void VerifyInputs()      // Makes submitButton interactable when username is >= 3 characters and password >=5
     {
         submitButton.interactable = (nameField.text.Length >= 3 );
-        book.closeBookButton.interactable = (nameField.text == "DEV");
+        //book.closeBookButton.interactable = (nameField.text == "DEV");
     }
 
     public void ForceUppercase()    // forces name field input uppercase
@@ -205,7 +207,6 @@ public class Login : MonoBehaviour
 		}
 
 		if (nameField.text.Length > 0) VerifyInputs();
-
 	}
 
 }

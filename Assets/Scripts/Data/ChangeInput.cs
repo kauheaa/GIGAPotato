@@ -36,7 +36,6 @@ public class ChangeInput : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
-            button.onClick.Invoke();
             Debug.Log("Button pressed");
         }
         
